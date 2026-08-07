@@ -1126,43 +1126,188 @@ input, textarea {
 #home-right-place .compare__cell[data-col="psykolog"] {
   border-right: 1px solid #f2e2da;
 }
- .audience-grid {
-  margin-top: 56px;
+.who-we-help-section {
+  background-color: #FCF5F2; 
+  padding: 80px 40px;
+  font-family: var(--font-body), sans-serif;
+}
+
+.wwh-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.wwh-header__media {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.wwh-image {
+  width: 100%;
+  height: 520px;
+  display: block;
+  object-fit: cover;
+}
+
+.wwh-image-tag {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: #ffffff;
+  color: #333333;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 30px;
+}
+
+.wwh-header__content {
+  max-width: 480px;
+}
+
+.wwh-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #a34633;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 24px;
+}
+
+.wwh-badge__dot {
+  color: #27a75c; 
+  font-size: 14px;
+}
+
+.wwh-title {
+  font-family: var(--font-heading), serif;
+  font-size: 44px;
+  font-weight: 600;
+  color: #222222;
+  margin: 0 0 16px 0;
+}
+
+.wwh-title em {
+  color: #b54a36; 
+  font-style: italic;
+}
+
+.wwh-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555555;
+  margin: 0 0 32px 0;
+}
+
+.wwh-pills {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.wwh-pill {
+  background: #ffffff;
+  color: #b54a36;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid #f2e2da;
+}
+
+.btn-primary {
+  background: #b54a36;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+
+.audience-grid {
+  margin: 64px auto 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
   text-align: left;
 }
 
- .audience-card {
-  background: #fff;
-  border: 1px solid var(--border-soft);
-  border-radius: 18px;
-  padding: 24px;
+.audience-card {
+  background: #ffffff;
+  border: 1px solid #f2e2da; 
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
   transition: transform 0.3s ease, background 0.3s, border-color 0.3s;
-}
- .audience-card h3 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 20px;
-  color: var(--ink-900);
-  margin-top: 18px;
-}
- .audience-card p {
-  font-size: 14px;
-  margin-top: 8px;
-}
- .audience-card:hover {
-  transform: translateY(-4px);
-}
- .audience-card--feature {
-  background: var(--brand-primary-hover);
-  border-color: var(--brand-primary-hover);
-}
- .audience-card--feature h3,  .audience-card--feature p {
-  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
+.audience-card:hover {
+  transform: translateY(-4px);
+}
+
+.audience-card h3 {
+  font-family: var(--font-heading), serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: #222222;
+  margin: 24px 0 12px 0;
+}
+
+.audience-card p {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.audience-card:hover {
+  background: #b54a36;
+  border-color: #b54a36;
+}
+
+.audience-card:hover h3, 
+.audience-card:hover p {
+  color: #ffffff;
+}
+
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fcf1ef; 
+  color: #b54a36; 
+}
+
+
+.icon-circle svg {
+  width: 20px;
+  height: 20px;
+}
 
 #home-short-wait{
  .intro-video {
