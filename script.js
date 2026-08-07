@@ -100,19 +100,102 @@
   }
 
   const navToggle = document.getElementById('navToggle');
+  const navDrawer = document.getElementById('mobileNav');
+  const navBackdrop = document.getElementById('navBackdrop');
+  const navDrawerClose = document.getElementById('navDrawerClose');
+
+  /** Returns all focusable children inside the drawer */
+  function getFocusable() {
+    if (!navDrawer) return [];
+    return Array.from(navDrawer.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    ));
+  }
+
+  function openMobileNav() {
+    if (!navDrawer || !navToggle) return;
+    // 1. Remove hidden so the element is in the layout (transition can fire)
+    navDrawer.removeAttribute('hidden');
+    navBackdrop && navBackdrop.classList.add('is-visible');
+
+    // 2. Force a reflow so the browser registers the element before the class change
+    navDrawer.getBoundingClientRect();
+
+    // 3. Animate in
+    navDrawer.classList.add('is-open');
+    navBackdrop && navBackdrop.classList.add('is-open');
+
+    // 4. Update ARIA state
+    navToggle.setAttribute('aria-expanded', 'true');
+    navToggle.classList.add('is-active');
+    navDrawer.removeAttribute('aria-hidden');
+
+    // 5. Prevent background scroll
+    document.body.style.overflow = 'hidden';
+
+    // 6. Move focus to first focusable element in drawer
+    const focusable = getFocusable();
+    if (focusable.length) focusable[0].focus();
+  }
+
   function closeMobileNav() {
-    if (!navToggle) return;
+    if (!navDrawer || !navToggle) return;
+
+    navDrawer.classList.remove('is-open');
+    navBackdrop && navBackdrop.classList.remove('is-open');
     navToggle.setAttribute('aria-expanded', 'false');
     navToggle.classList.remove('is-active');
-    headerBar && headerBar.classList.remove('is-nav-open');
+    navDrawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+
+    // Wait for CSS transition, then re-add hidden and clean up backdrop
+    const duration = parseFloat(getComputedStyle(navDrawer).transitionDuration) * 1000 || 400;
+    setTimeout(() => {
+      // Only hide if drawer is still closed (guard against rapid re-open)
+      if (!navDrawer.classList.contains('is-open')) {
+        navDrawer.setAttribute('hidden', '');
+        navBackdrop && navBackdrop.classList.remove('is-visible');
+      }
+    }, duration);
+
+    // Return focus to the toggle button
+    navToggle.focus();
   }
+
   function initMobileNav() {
-    if (!navToggle) return;
+    if (!navToggle || !navDrawer) return;
+
     navToggle.addEventListener('click', () => {
-      const open = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!open));
-      navToggle.classList.toggle('is-active', !open);
-      headerBar && headerBar.classList.toggle('is-nav-open', !open);
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      isOpen ? closeMobileNav() : openMobileNav();
+    });
+
+    // Close button inside drawer
+    navDrawerClose && navDrawerClose.addEventListener('click', closeMobileNav);
+
+    // Backdrop click closes drawer
+    navBackdrop && navBackdrop.addEventListener('click', closeMobileNav);
+
+    // Escape key closes drawer
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+        closeMobileNav();
+      }
+    });
+
+    // Focus trap: keep Tab/Shift+Tab inside the open drawer
+    navDrawer.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') return;
+      if (!navDrawer.classList.contains('is-open')) return;
+      const focusable = getFocusable();
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
     });
   }
 

@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&family=Inria+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="responsive.css">
 </head>
 <body>
 
@@ -55,20 +56,52 @@
           </button>
         </div>
       </div>
-
-      <div class="site-header__panel" id="mobileNav">
-        <nav class="site-header__mobile-nav">
-          <a href="#home-conditions" data-scroll data-close-nav>Services</a>
-          <a href="#home-formats" data-scroll data-close-nav>Therapy</a>
-          <a href="#home-right-place" data-scroll data-close-nav>About Us</a>
-          <a href="#home-pricing" data-scroll data-close-nav>Pricing</a>
-          <a href="#home-locations" data-scroll data-close-nav>Contact</a>
-          <button type="button" class="btn btn--primary" data-scroll data-target="#home-final-cta" data-close-nav>Book An Appointment</button>
-        </nav>
-      </div>
     </div>
   </div>
 </header>
+
+<!-- Mobile nav drawer overlay -->
+<div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+<!-- Mobile nav drawer -->
+<nav class="nav-drawer" id="mobileNav" role="dialog" aria-modal="true" aria-label="Site navigation" hidden>
+  <div class="nav-drawer__header">
+    <a href="#home-hero" class="site-header__brand" data-scroll data-close-nav>
+      <img src="images/logo.webp" alt="psykolog.no" class="site-header__logo">
+    </a>
+    <button type="button" class="nav-drawer__close" id="navDrawerClose" aria-label="Close menu">
+      <svg class="icon" data-icon="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+
+  <div class="nav-drawer__body">
+    <a href="#home-conditions" class="nav-drawer__link" data-scroll data-close-nav>
+      <span class="nav-drawer__link-text">Services</span>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="#home-formats" class="nav-drawer__link" data-scroll data-close-nav>
+      <span class="nav-drawer__link-text">Therapy</span>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="#home-right-place" class="nav-drawer__link" data-scroll data-close-nav>
+      <span class="nav-drawer__link-text">About Us</span>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="#home-pricing" class="nav-drawer__link" data-scroll data-close-nav>
+      <span class="nav-drawer__link-text">Pricing</span>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="#home-locations" class="nav-drawer__link" data-scroll data-close-nav>
+      <span class="nav-drawer__link-text">Contact</span>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+
+  <div class="nav-drawer__footer">
+    <button type="button" class="btn btn--primary nav-drawer__cta" data-scroll data-target="#home-final-cta" data-close-nav>Book An Appointment</button>
+    <p class="nav-drawer__tagline">No referral needed &middot; Available within 1&ndash;3 days</p>
+  </div>
+</nav>
 
 <main>
 
@@ -82,7 +115,7 @@
     <span class="hero__glow"></span>
     <span class="hero__bottom-fade"></span>
 
-    <div class="container hero__inner">
+    <div class="container hero__inner ">
       <div class="hero__badge">
         <span class="hero__badge-dot">✳</span>
         <span>Available in Morning, Evening and Weekend</span>
