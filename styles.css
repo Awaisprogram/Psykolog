@@ -86,14 +86,12 @@ input, textarea {
 .container {
   max-width: 1312px;
   margin: 0 auto;
-  padding: 0 24px;
 }
 
 .section {
   position: relative;
   overflow: hidden;
-  padding-top: 96px;
-  padding-bottom: 96px;
+  padding: 96px 24px;
 }
 .section--white {
   background: var(--surface-white);
@@ -177,7 +175,19 @@ input, textarea {
   color: var(--ink-900);
   text-wrap: balance;
 }
-.h2 em {
+
+.h2-italic{
+  font-style: italic;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--ink-900);
+  font-size: 44px;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+
+.h2 em ,.h2-italic em {
   font-style: italic;
   color: var(--brand-primary-hover);
 }
@@ -908,9 +918,8 @@ input, textarea {
   margin-top: 44px;
   display: flex;
   flex-wrap: wrap;
-  background: #FFFFFF6B;
+  background: rgb(255 255 255 / 80%);
   backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
   border: 1px solid #FFFFFF9E;
   border-radius: 20px;
   padding: 22px 26px;
@@ -922,6 +931,12 @@ input, textarea {
   align-items: center;
   gap: 12px;
   padding-right: 20px;
+}
+.hero__stat-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 .hero__stat-n {
   display: block;
@@ -949,6 +964,14 @@ input, textarea {
   background: var(--surface-cream);
   border-radius: var(--radius-lg);
   padding: 16px;
+}
+
+.signs__intro__para{
+  font-size: 19px;
+  line-height: 30px;
+  max-width: 480px ;
+  color: var(--ink-body);
+  margin-top: 18px;
 }
 .signs__list {
   background: #fff;
@@ -1020,72 +1043,88 @@ input, textarea {
 }
 }
 
- #home-right-place {
-
-.compare {
+ #home-right-place .compare {
   max-width: 1312px;
   margin: 56px auto 0;
   text-align: left;
 }
- 
- .compare__kicker {
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-}
- .compare__table {
-  background: #fff;
-  border-radius: var(--radius-lg);
+
+#home-right-place .compare__table {
+  background: #ffffff;
+  border-radius: 20px;
   overflow: hidden;
-  border: 1px solid #EBD8CE;
-  box-shadow: 0 18px 44px -28px rgba(90, 42, 32, 0.28);
+  border: 1px solid #f2e2da;
+  box-shadow: 0px 14px 40px -26px #3a181180; /* Requested shadow applied */
 }
- .compare__row {
+
+/* Row Grid Alignment */
+#home-right-place .compare__row {
   display: grid;
   grid-template-columns: 1.25fr 1fr 1fr;
-  border-top: 1px solid var(--border-softer);
+  border-top: 1px solid #f2e2da;
 }
- .compare__row--head {
-  background: #FDF6F1;
-  border-bottom: 1px solid #EBD8CE;
-  border-top: 0;
+
+/* Table Header */
+#home-right-place .compare__row--head {
+  background: #fdf5f2; /* Soft peach/cream header background */
+  border-top: none;
+  border-bottom: 1px solid #f2e2da;
+}
+
+#home-right-place .compare__col--empty {
+  border-right: 1px solid #f2e2da;
+}
+
+#home-right-place .compare__col {
+  display: flex;
+  align-items: center;
+  padding: 24px 32px;
   font-weight: 700;
   font-size: 16px;
+  color: #ad3e28; /* Reddish-brown header text */
 }
- .compare__col {
+
+#home-right-place .compare__col--psy {
+  border-right: 1px solid #f2e2da;
+}
+
+/* Row Labels (Column 1) */
+#home-right-place .compare__label {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 22px 30px;
-  color: var(--ink-700);
-  transition: background 0.35s;
-}
- .compare__col--psy {
-  color: var(--brand-primary-hover);
-}
- .compare__col.is-active {
-  background: var(--surface-terracotta-soft);
-}
- .compare__label {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 20px 30px;
+  gap: 14px;
+  padding: 24px 32px;
   font-weight: 600;
   font-size: 15px;
-  color: var(--ink-900);
+  color: #2b2b2b;
+  border-right: 1px solid #f2e2da;
 }
- .compare__cell {
+
+/* Small Icon Circles */
+#home-right-place .icon-circle--sm {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fcefe8;
+  color: #ad3e28;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Table Body Cells (Columns 2 & 3) */
+#home-right-place .compare__cell {
   display: flex;
   align-items: center;
-  padding: 20px 30px;
+  padding: 24px 32px;
   font-size: 15px;
-  transition: background 0.35s;
+  color: #555555;
+  line-height: 1.5;
 }
- .compare__cell.is-active {
-  background: var(--surface-terracotta-soft);
+
+#home-right-place .compare__cell[data-col="psykolog"] {
+  border-right: 1px solid #f2e2da;
 }
  .audience-grid {
   margin-top: 56px;
@@ -1122,7 +1161,6 @@ input, textarea {
 }
  .audience-card--feature h3,  .audience-card--feature p {
   color: #fff;
-}
 }
 
 
@@ -1196,7 +1234,7 @@ input, textarea {
   width: 0;
   height: 0;
   margin-left: 5px;
-  border-left: 17px solid #fff;
+  border-left: 17px solid #C24C33;
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
 }
@@ -1207,6 +1245,7 @@ input, textarea {
   bottom: 16px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 14px;
   background: rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(18px) saturate(160%);
@@ -2057,7 +2096,7 @@ input, textarea {
 }
 
 .site-footer {
-  background: #fff;
+  background:#5C2A20;
   padding: 64px 0 24px;
 }
 .site-footer__newsletter {
@@ -2066,7 +2105,8 @@ input, textarea {
   justify-content: space-between;
   gap: 32px;
   flex-wrap: wrap;
-  background: var(--surface-cream);
+  background: #FFFFFF0F;
+  border: 1px solid #FFFFFF24;
   border-radius: var(--radius-lg);
   padding: 40px;
   margin-bottom: 48px;
@@ -2074,12 +2114,13 @@ input, textarea {
 .site-footer__newsletter h3 {
   font-family: var(--font-heading);
   font-size: 22px;
-  color: var(--ink-900);
+  color: #FFFFFF;
 }
 .site-footer__newsletter p {
   font-size: 14px;
   margin-top: 6px;
   max-width: 420px;
+  color: #E4D3CB;
 }
 .site-footer__cols {
   display: grid;
@@ -2143,14 +2184,13 @@ input, textarea {
 .footer-col__title {
   font-weight: 700;
   font-size: 13px;
-  text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--ink-900);
+  color: #C9AFA4;
   margin-bottom: 6px;
 }
 .footer-col a {
-  font-size: 14px;
-  color: var(--ink-muted);
+  font-size: 15px;
+  color: #F8EBE2;
   text-decoration: none;
 }
 .footer-col a:hover {
