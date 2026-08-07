@@ -161,29 +161,8 @@
     });
   }
 
-  /* -------------------------------------------------------------------
-     5. Psykolog vs Psykiatrist compare tabs
-     ------------------------------------------------------------------- */
-  function initCompare() {
-    const tabs = document.getElementById('compareTabs');
-    const table = document.getElementById('compareTable');
-    if (!tabs || !table) return;
+  
 
-    function setActive(which) {
-      tabs.querySelectorAll('.tab').forEach((t) => t.classList.toggle('is-active', t.dataset.compare === which));
-      table.querySelectorAll('[data-col]').forEach((el) => el.classList.toggle('is-active', el.dataset.col === which));
-    }
-    tabs.addEventListener('click', (e) => {
-      const btn = e.target.closest('[data-compare]');
-      if (!btn) return;
-      setActive(btn.dataset.compare);
-    });
-    setActive('psykolog');
-  }
-
-  /* -------------------------------------------------------------------
-     6. Audience card hover lift (feature card handled by CSS already)
-     ------------------------------------------------------------------- */
 
   /* -------------------------------------------------------------------
      7. How it works — sticky-stack stepper
@@ -780,7 +759,6 @@
     initMobileNav();
     initReveal();
     initSigns();
-    initCompare();
     initHiw();
     initConditions();
     initFormats();
