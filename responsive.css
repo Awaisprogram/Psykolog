@@ -6,6 +6,9 @@
   .section {
     padding: 80px 24px;
   }
+  .container {
+    padding: 0 2px;
+  }
 
   /* ---- FIX: topbar had no horizontal padding, was flush to edges ---- */
   #home-netbar {
@@ -22,6 +25,10 @@
       padding: 8px 8px 8px 20px;
     }
   }
+  .hero__inner {
+      padding-top: 40px;
+      margin: 0 16px;
+    }
 
   .wwh-header {
     gap: 32px;
@@ -86,6 +93,9 @@
   .section {
     padding: 56px 16px;
   }
+  .container {
+    padding: 0 2px;
+  }
 
   .h2 {
     font-size: 32px;
@@ -95,13 +105,17 @@
     font-size: 32px;
   }
 
-  .split, .split-top, .grid-3 {
+  .split, .split-top, .grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
 
-  /* ---- FIX: topbar — tighter padding + center/wrap so links don't
-     collide with the uppercase label on narrow phones ---- */
+  #home-psychologists{
+    .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  }
   #home-netbar {
     .netbar__row {
       padding: 10px 16px;
@@ -178,6 +192,7 @@
 
     .hero__inner {
       padding-top: 40px;
+      margin: 0 16px;
     }
 
     .hero__title {

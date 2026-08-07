@@ -84,14 +84,15 @@ input, textarea {
 }
 
 .container {
-  max-width: 1312px;
+  max-width: 1360px;
   margin: 0 auto;
+  padding: 0 24px;
 }
 
 .section {
   position: relative;
   overflow: hidden;
-  padding: 96px 24px;
+  padding: 96px 0;
 }
 .section--white {
   background: var(--surface-white);
@@ -1295,7 +1296,7 @@ input, textarea {
 }
 .who-we-help-section {
   background-color: #FFF7F3; 
-  padding: 80px 40px;
+  padding: 80px 20px;
   font-family: var(--font-body), sans-serif;
 }
 
@@ -2093,7 +2094,7 @@ input, textarea {
 }
 
 /* 3-Column Grid */
-.grid-3 {
+.grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
