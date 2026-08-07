@@ -2852,7 +2852,7 @@ input, textarea {
   cursor: pointer;
   font-weight: 600;
   font-size: 15px;
-  color: var(--ink-900);
+  color: #C24C33;
   text-align: left;
 }
 #home-faq .faq-item__panel {

@@ -10,14 +10,12 @@
     padding: 0 2px;
   }
 
-  /* ---- FIX: topbar had no horizontal padding, was flush to edges ---- */
   #home-netbar {
     .netbar__row {
       padding: 10px 24px;
     }
   }
 
-  /* ---- FIX: header had no horizontal padding, bar was flush to edges ---- */
   .site-header {
     padding: 16px 24px 0;
 
@@ -25,6 +23,16 @@
       padding: 8px 8px 8px 20px;
     }
   }
+
+  #home-hero {
+    .hero__stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      padding: 16px;
+    }
+  }
+    
   .hero__inner {
       padding-top: 40px;
       margin: 0 16px;
@@ -145,8 +153,6 @@
     }
   }
 
-  /* ---- FIX: header — inset the pill, shrink logo/button/toggle so
-     everything fits in the row instead of overflowing/overlapping ---- */
   .site-header {
     padding: 12px 16px 0;
 
@@ -177,10 +183,6 @@
     }
   }
 
-  /* ---- FIX: hero's -86px negative margin was tuned for the desktop
-     header height; with the shorter mobile header above, this keeps
-     the hero from riding up under/away from it. Re-check against your
-     actual rendered header height and nudge if needed. ---- */
   #home-hero {
     margin-top: -70px;
   }
@@ -189,6 +191,7 @@
     min-height: auto;
     padding-top: 100px;
     padding-bottom: 56px;
+    
 
     .hero__inner {
       padding-top: 40px;
@@ -218,7 +221,7 @@
 
     .hero__stats {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 16px;
       padding: 16px;
     }
@@ -226,11 +229,6 @@
     .hero__stat {
       min-width: 0;
       padding-right: 0;
-
-      &:nth-child(even) {
-        border-left: 1px solid #ebd8ce;
-        padding-left: 16px;
-      }
     }
   }
 
