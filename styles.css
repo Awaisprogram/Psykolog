@@ -2882,6 +2882,151 @@ input, textarea {
 }
 
 
+#home-final-cta {
+  padding: 100px 0;
+  text-align: center;
+  font-family: var(--font-body), sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+#home-final-cta .container {
+  max-width: 1312px;
+  margin: 0 auto;
+  background: radial-gradient(46% 62% at 92% 88%, rgba(240, 147, 103, 0.14) 0%, rgba(240, 147, 103, 0) 70%),
+radial-gradient(46% 62% at 8% 84%, rgba(248, 216, 212, 0.55) 0%, rgba(248, 216, 212, 0) 70%),
+radial-gradient(58% 74% at 50% 0%, rgba(248, 235, 226, 0.9) 0%, rgba(248, 235, 226, 0) 72%);
+  padding: 52px 260px ;
+}
+
+/* Eyebrow / Badge */
+#home-final-cta .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #ebd8ce;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #b54a36;
+  margin-bottom: 24px;
+}
+
+#home-final-cta .eyebrow__dot {
+  color: #27a75c;
+  font-size: 13px;
+}
+
+
+
+
+
+#home-final-cta .cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+#home-final-cta .btn--lg {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 40px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+#home-final-cta .btn--primary {
+  background-color: #b54a36;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 16px 32px rgba(181, 74, 54, 0.25);
+  padding: 8px 12px 8px 32px; /* Adjusted padding to accommodate the icon */
+}
+
+#home-final-cta .btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 36px rgba(181, 74, 54, 0.3);
+}
+
+#home-final-cta .btn__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background-color: #f0b8a4;
+  color: #b54a36;
+  border-radius: 50%;
+}
+
+#home-final-cta .btn__icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Outline White Button */
+#home-final-cta .btn--outline {
+  background-color: #ffffff;
+  color: #222222;
+  border: 1px solid #ebd8ce;
+  padding: 16px 32px; /* Standard symmetric padding */
+}
+
+#home-final-cta .btn--outline:hover {
+  background-color: #fdf5f2;
+}
+
+/* Horizontal Divider Line */
+#home-final-cta .cta-divider {
+  width: 100%;
+  max-width: 800px;
+  height: 1px;
+  background-color: #f2e2da;
+  margin: 56px auto 32px auto;
+}
+
+/* Trust Checklist Row */
+#home-final-cta .check-list--row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+#home-final-cta .check-list__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  color: #555555;
+  font-weight: 500;
+}
+
+#home-final-cta .check-list__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #f8ded7;
+  color: #b54a36;
+  font-size: 11px;
+  font-weight: bold;
+}
+
 
 /* Header Area */
 #home-instagram .instagram__head {
@@ -3032,21 +3177,7 @@ input, textarea {
   color: #b54a36;
   border-bottom-color: #b54a36;
 }
-#home-final-cta {
-  position: relative;
-  overflow: hidden;
-}
-#home-final-cta .cta-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 32px;
-}
-#home-final-cta .h2--cta {
-  margin-top: 18px;
-}
+
 
 .site-footer {
   background: #5C2A20; 
