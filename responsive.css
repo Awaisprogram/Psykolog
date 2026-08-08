@@ -69,6 +69,20 @@
     }
   }
 
+  .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .faq-card {
+    padding: 12px 24px;
+  }
+
+   .faq-layout__left {
+    position: relative;
+    top: 0;
+  }
+
   #home-org {
     .org-grid {
       grid-template-columns: 1fr 1fr;

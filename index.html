@@ -1091,100 +1091,204 @@
 
   <!-- ============ FAQ ============ -->
   <section id="home-faq" class="section section--peach">
-    <div class="container">
-      <div class="split-top">
-        <div>
-          <div class="eyebrow"><span class="eyebrow__dot">✳</span><span>What happens next?</span></div>
-          <h2 class="h2">Frequently Asked <em>Questions.</em></h2>
-          <p class="lede">The questions people ask most, answered plainly. Anything else, send us a message and a psychologist will answer.</p>
+  <div class="container">
+    <div class="faq-layout">
+      
+      <!-- Left Column: Headers and Patient Card -->
+      <div class="faq-layout__left">
+        <div class="eyebrow">
+          <span class="eyebrow__dot">✳</span>
+          <span>WHAT HAPPENS NEXT?</span>
         </div>
+        <h2 class="h2">Frequently Asked <em>Questions.</em></h2>
+        <p class="lede">The questions people ask most, answered plainly. Anything else, send us a message and a psychologist will answer.</p>
+        
+        <div class="patient-card">
+          <div class="patient-card__header">
+            <div class="avatar-group">
+              <span class="avatar" style="background-color: #e4e9e4;">D</span>
+              <span class="avatar" style="background-color: #e0f2d8;">C</span>
+              <span class="avatar" style="background-color: #f6dbd5;">B</span>
+              <span class="avatar" style="background-color: #fbe5d6;">A</span>
+            </div>
+            <h3 class="patient-card__title">Asked by our patients</h3>
+          </div>
+          <p>These are the questions people ask us most often before booking their first consultation.</p>
+          <button type="button" class="btn btn--primary">
+            <span style="text-decoration: underline; text-underline-offset: 4px;">Ask Your Own Question</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
 
-        <div class="faq-list" id="faqList">
-          <div class="faq-item is-open">
-            <button type="button" class="faq-item__trigger">
-              <span>How much does a psychologist cost?</span>
-              <svg class="icon accordion__chevron" data-icon="chevron-down"></svg>
-            </button>
-            <div class="faq-item__panel">
-              <div class="faq-item__panel-inner"><p>The pris psykolog at psykolog.no depends on the type of session. A standard 45-minute individual session typically costs between Kr 1,200 and Kr 1,800.</p></div>
+      <!-- Right Column: FAQ List inside a white card -->
+      <div class="faq-layout__right">
+        <div class="faq-card">
+          <div class="faq-list" id="faqList">
+            
+            <div class="faq-item is-open">
+              <button type="button" class="faq-item__trigger">
+                <span>How much does a psychologist cost?</span>
+                <span class="faq-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                    <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                    <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-item__panel">
+                <div class="faq-item__panel-inner">
+                  <p>The pris psykolog at psykolog.no depends on the type of session. A standard 45-minute individual session typically costs between Kr 1,200 and Kr 1,800.</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <button type="button" class="faq-item__trigger">
-              <span>How long does therapy last?</span>
-              <svg class="icon accordion__chevron" data-icon="chevron-down"></svg>
-            </button>
-            <div class="faq-item__panel">
-              <div class="faq-item__panel-inner"><p>The time of therapy depends on your individual situation. Our psychologist will discuss a treatment plan with you after the first session and adjust it based on your progress.</p></div>
+            
+            <div class="faq-item">
+              <button type="button" class="faq-item__trigger">
+                <span>How long does therapy last?</span>
+                <span class="faq-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                    <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                    <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-item__panel">
+                <div class="faq-item__panel-inner">
+                  <p>The time of therapy depends on your individual situation. Our psychologist will discuss a treatment plan with you after the first session and adjust it based on your progress.</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <button type="button" class="faq-item__trigger">
-              <span>How do I know if I need to see a psychologist?</span>
-              <svg class="icon accordion__chevron" data-icon="chevron-down"></svg>
-            </button>
-            <div class="faq-item__panel">
-              <div class="faq-item__panel-inner"><p>See a psychologist if your thoughts, emotions, or behaviours are affecting your daily life, relationships, work, or studies. A psychologist can help if you are experiencing persistent stress, anxiety, or sadness, difficulty coping with life changes, or low self-esteem or overwhelming emotions.</p></div>
+            
+            <div class="faq-item">
+              <button type="button" class="faq-item__trigger">
+                <span>How do I know if I need to see a psychologist?</span>
+                <span class="faq-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                    <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                    <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-item__panel">
+                <div class="faq-item__panel-inner">
+                  <p>See a psychologist if your thoughts, emotions, or behaviours are affecting your daily life, relationships, work, or studies. A psychologist can help if you are experiencing persistent stress, anxiety, or sadness, difficulty coping with life changes, or low self-esteem or overwhelming emotions.</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <button type="button" class="faq-item__trigger">
-              <span>Do I need a referral to see a private psychologist?</span>
-              <svg class="icon accordion__chevron" data-icon="chevron-down"></svg>
-            </button>
-            <div class="faq-item__panel">
-              <div class="faq-item__panel-inner"><p>At psykolog.no, you book directly without a referral from your GP or any other doctor. Private practicing psychologists are available with a short waiting time.</p></div>
+            
+            <div class="faq-item">
+              <button type="button" class="faq-item__trigger">
+                <span>Do I need a referral to see a private psychologist?</span>
+                <span class="faq-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                    <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                    <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-item__panel">
+                <div class="faq-item__panel-inner">
+                  <p>At psykolog.no, you book directly without a referral from your GP or any other doctor. Private practicing psychologists are available with a short waiting time.</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <button type="button" class="faq-item__trigger">
-              <span>What can I expect in my first session with an online psychologist?</span>
-              <svg class="icon accordion__chevron" data-icon="chevron-down"></svg>
-            </button>
-            <div class="faq-item__panel">
-              <div class="faq-item__panel-inner"><p>The first online therapy session is primarily an assessment and orientation. Your psychologist will focus on understanding your emotional concerns, symptoms, and personal background.</p></div>
+            
+            <div class="faq-item">
+              <button type="button" class="faq-item__trigger">
+                <span>What can I expect in my first session with an online psychologist?</span>
+                <span class="faq-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                    <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                    <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-item__panel">
+                <div class="faq-item__panel-inner">
+                  <p>The first online therapy session is primarily an assessment and orientation. Your psychologist will focus on understanding your emotional concerns, symptoms, and personal background.</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <button type="button" class="faq-item__trigger">
-              <span>How do I know if therapy is working?</span>
-              <svg class="icon accordion__chevron" data-icon="chevron-down"></svg>
-            </button>
-            <div class="faq-item__panel">
-              <div class="faq-item__panel-inner"><p>Therapy is working when there are positive changes in how you think, feel, or respond to everyday situations. Progress is often gradual, and improvements may look different for each person.</p></div>
+            
+            <div class="faq-item">
+              <button type="button" class="faq-item__trigger">
+                <span>How do I know if therapy is working?</span>
+                <span class="faq-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                    <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                    <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-item__panel">
+                <div class="faq-item__panel-inner">
+                  <p>Therapy is working when there are positive changes in how you think, feel, or respond to everyday situations. Progress is often gradual, and improvements may look different for each person.</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <button type="button" class="faq-item__trigger">
-              <span>Are conversations with a psychologist confidential?</span>
-              <svg class="icon accordion__chevron" data-icon="chevron-down"></svg>
-            </button>
-            <div class="faq-item__panel">
-              <div class="faq-item__panel-inner"><p>Yes. All of our psychologists are legally bound by confidentiality, and what you share remains between you and the psychologist.</p></div>
+            
+            <div class="faq-item">
+              <button type="button" class="faq-item__trigger">
+                <span>Are conversations with a psychologist confidential?</span>
+                <span class="faq-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                    <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                    <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-item__panel">
+                <div class="faq-item__panel-inner">
+                  <p>Yes. All of our psychologists are legally bound by confidentiality, and what you share remains between you and the psychologist.</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <button type="button" class="faq-item__trigger">
-              <span>How can you make a payment for a session?</span>
-              <svg class="icon accordion__chevron" data-icon="chevron-down"></svg>
-            </button>
-            <div class="faq-item__panel">
-              <div class="faq-item__panel-inner"><p>You will receive an SMS link where you can pay with Vipps or credit card within 48 hours, then an invoice will be sent.</p></div>
+            
+            <div class="faq-item">
+              <button type="button" class="faq-item__trigger">
+                <span>How can you make a payment for a session?</span>
+                <span class="faq-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                    <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                    <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-item__panel">
+                <div class="faq-item__panel-inner">
+                  <p>You will receive an SMS link where you can pay with Vipps or credit card within 48 hours, then an invoice will be sent.</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <button type="button" class="faq-item__trigger">
-              <span>Can children and young people get help?</span>
-              <svg class="icon accordion__chevron" data-icon="chevron-down"></svg>
-            </button>
-            <div class="faq-item__panel">
-              <div class="faq-item__panel-inner"><p>Yes, we have psychologists specialising in children and adolescents. Sessions are often done in collaboration with guardians.</p></div>
+            
+            <div class="faq-item">
+              <button type="button" class="faq-item__trigger">
+                <span>Can children and young people get help?</span>
+                <span class="faq-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                    <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                    <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-item__panel">
+                <div class="faq-item__panel-inner">
+                  <p>Yes, we have psychologists specialising in children and adolescents. Sessions are often done in collaboration with guardians.</p>
+                </div>
+              </div>
             </div>
+            
           </div>
         </div>
       </div>
+      
     </div>
-  </section>
+  </div>
+</section>
 
  <!-- ============ FINAL CTA ============ -->
 
