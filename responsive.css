@@ -69,6 +69,15 @@
     }
   }
 
+  .insurance-banner__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .insurance-banner__logos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .faq-layout {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -409,6 +418,10 @@
     .price-card {
       padding: 24px;
     }
+  }
+
+  .insurance-banner__logos {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   #home-gift {
