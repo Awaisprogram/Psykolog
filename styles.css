@@ -2680,10 +2680,10 @@ input, textarea {
 /* Card Titles */
 .org-card h3 {
   font-family: var(--font-heading), serif;
-  font-size: 26px;
-  font-weight: 500;
+  font-size: 32px;
+  font-weight: 700;
   line-height: 1.25;
-  color: #222222;
+  color: #241C19;
   margin: 0 0 20px 0;
 }
 
@@ -2697,9 +2697,9 @@ input, textarea {
 .bullet-list li {
   position: relative;
   padding-left: 18px;
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.5;
-  color: #444444;
+  color:#241C19;
   margin-bottom: 10px;
 }
 
@@ -2714,9 +2714,9 @@ input, textarea {
 
 /* Card Description */
 .card-desc {
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.6;
-  color: #555555;
+  color: #241C19;
   margin: 0 0 32px 0;
 }
 
@@ -2741,13 +2741,13 @@ input, textarea {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  border: 1px solid #b54a36;
-  color: #b54a36;
+  border: 2px solid#C24C33;
+  color: #C24C33;
   background: transparent;
   padding: 10px 22px;
   border-radius: 30px;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   text-decoration: none;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -2765,8 +2765,8 @@ input, textarea {
   color: #ffffff;
   padding: 12px 24px;
   border-radius: 30px;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   text-decoration: none;
   transition: opacity 0.3s ease;
 }
@@ -2776,60 +2776,6 @@ input, textarea {
 }
 }
 
-#home-reviews .stars-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-#home-reviews .stars-row__score {
-  font-weight: 700;
-}
-#home-reviews .stars-row__note {
-  color: var(--ink-muted);
-  font-size: 14px;
-}
-#home-reviews .review-card {
-  background: #fff;
-  border: 1px solid var(--border-softer);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-}
-#home-reviews .review-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--border-active);
-  box-shadow: 0 8px 32px rgba(194, 76, 51, 0.12);
-}
-#home-reviews .review-card__mark {
-  font-family: var(--font-heading);
-  font-size: 40px;
-  color: var(--border-active);
-  line-height: 1;
-}
-#home-reviews .review-card p {
-  font-size: 14px;
-  margin-top: 12px;
-}
-#home-reviews .review-card__foot {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 20px;
-}
-#home-reviews .review-card__who {
-  display: block;
-  font-weight: 700;
-  font-size: 13px;
-  color: var(--ink-900);
-}
-#home-reviews .review-card__meta {
-  display: block;
-  font-size: 12px;
-  color: var(--ink-muted);
-}
 
 #home-faq {
   background-color: var(--surface-peach);
@@ -2838,11 +2784,7 @@ input, textarea {
   overflow: visible;
 }
 
-#home-faq .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+
 
 .faq-layout {
   display: grid;
@@ -2998,9 +2940,9 @@ input, textarea {
   padding: 28px 0;
   cursor: pointer;
   font-family: var(--font-heading), serif; 
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 700;
-  color: #b54a36;
+  color:#C24C33;
   text-align: left;
 }
 
