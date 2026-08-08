@@ -2043,7 +2043,6 @@ input, textarea {
 
 #home-psychologists{
   background-color: #ffffff;
-  padding: 80px 0;
   font-family: var(--font-body), sans-serif;
 
 
@@ -2301,7 +2300,6 @@ input, textarea {
 
 #home-pricing{
   background-color: #ffffff;
-  padding: 80px 0;
   font-family: var(--font-body), sans-serif;
 
 .pricing-layout {
@@ -2546,7 +2544,6 @@ input, textarea {
 
 
 
-
 #home-locations .locations {
   display: grid;
   grid-template-columns: 0.6fr 1.2fr;
@@ -2624,8 +2621,7 @@ input, textarea {
 }
 
 #home-org{
-  background-color: #fdf8f5; /* Warm light cream background */
-  padding: 80px 0;
+  background-color: #fdf8f5; 
   font-family: var(--font-body), sans-serif;
 
 
@@ -2868,7 +2864,6 @@ input, textarea {
 
 #home-faq {
   background-color: var(--surface-peach);
-  padding: 80px 0;
   font-family: var(--font-body), sans-serif;
   overflow: visible;
 }
@@ -3088,7 +3083,6 @@ input, textarea {
 
 
 #home-final-cta {
-  padding: 100px 0;
   text-align: center;
   font-family: var(--font-body), sans-serif;
   position: relative;
