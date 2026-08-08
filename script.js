@@ -852,16 +852,26 @@
     initArticlesPagination();
     initAiAssistant();
 
-    // hero video: attempt autoplay, fall back to poster only
+    // hero video: defer loading until after page load to avoid LCP render delay
     const heroVideo = document.querySelector('[data-hero-video]');
     if (heroVideo) {
       const src = heroVideo.dataset.heroVideo;
       if (src) {
-        heroVideo.src = src;
-        heroVideo.muted = true;
-        const tryPlay = () => { const p = heroVideo.play(); if (p && p.catch) p.catch(() => {}); };
-        heroVideo.addEventListener('canplay', tryPlay, { once: true });
-        setTimeout(tryPlay, 800);
+        const initHeroVideo = () => {
+          heroVideo.src = src;
+          heroVideo.muted = true;
+          const tryPlay = () => { const p = heroVideo.play(); if (p && p.catch) p.catch(() => {}); };
+          heroVideo.addEventListener('canplay', tryPlay, { once: true });
+          setTimeout(tryPlay, 800);
+        };
+
+        if (window.requestIdleCallback) {
+          window.requestIdleCallback(initHeroVideo, { timeout: 2000 });
+        } else {
+          window.addEventListener('load', () => {
+            setTimeout(initHeroVideo, 500);
+          });
+        }
       }
     }
   });
