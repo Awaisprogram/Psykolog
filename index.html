@@ -718,14 +718,14 @@
       <div class="accordion__panel" id="moreTxPanel">
         <div class="accordion__panel-inner">
           <div class="tag-row">
-            <span class="tag">ISTDP</span>
-            <span class="tag">Emotion-Focused Therapy (EFT)</span>
-            <span class="tag">Exposure therapy</span>
-            <span class="tag">Prolonged Exposure</span>
-            <span class="tag">Body-oriented psychotherapy</span>
-            <span class="tag">Trauma treatment (specialised)</span>
-            <span class="tag">Mindfulness</span>
-            <span class="tag">ADHD guidance</span>
+            <span class="tags">ISTDP</span>
+            <span class="tags">Emotion-Focused Therapy (EFT)</span>
+            <span class="tags">Exposure therapy</span>
+            <span class="tags">Prolonged Exposure</span>
+            <span class="tags">Body-oriented psychotherapy</span>
+            <span class="tags">Trauma treatment (specialised)</span>
+            <span class="tags">Mindfulness</span>
+            <span class="tags">ADHD guidance</span>
           </div>
         </div>
       </div>
@@ -1188,46 +1188,52 @@
 
   <!-- ============ ARTICLES ============ -->
   <section id="home-articles" class="section section--white">
-    <div class="container">
-      <div class="articles__head">
-        <div>
-          <div class="eyebrow"><span class="eyebrow__dot">✳</span><span>From our psychologists</span></div>
-          <h2 class="h2">Learn More About <em>Mental Health.</em></h2>
-        </div>
-        <a href="#" class="link-arrow">View all articles →</a>
+  <div class="container">
+    <div class="section-head section-head--center">
+      <div class="eyebrow">
+        <span class="eyebrow__dot">✳</span>
+        <span>FROM OUR PSYCHOLOGISTS</span>
       </div>
-
-      <div class="grid-3">
-        <a href="#" class="article-card">
-          <div class="article-card__media"><img src="https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?auto=format&fit=crop&w=900&q=72" alt="A parent with a young child at home" loading="lazy"></div>
-          <span class="chip">Depression</span>
-          <h3>Depression and postpartum psychosis</h3>
-          <p>What to look for, and when to ask for help early.</p>
-        </a>
-        <a href="#" class="article-card">
-          <div class="article-card__media"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=72" alt="A notebook and pen in daylight" loading="lazy"></div>
-          <span class="chip">Therapy</span>
-          <h3>Cognitive behavioural therapy as self-help</h3>
-          <p>Which CBT tools you can use between sessions.</p>
-        </a>
-        <a href="#" class="article-card">
-          <div class="article-card__media"><img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=900&q=72" alt="Quiet morning light in a bedroom" loading="lazy"></div>
-          <span class="chip">Sleep</span>
-          <h3>Sleep after trauma</h3>
-          <p>Why sleep breaks down after difficult events, and what helps.</p>
-        </a>
-      </div>
-
-      <div class="pagination" id="articlesPagination">
-        <button type="button" class="pagination__nav" data-page-prev aria-label="Previous page">←</button>
-        <button type="button" class="pagination__num is-active" data-page="1">1</button>
-        <button type="button" class="pagination__num" data-page="2">2</button>
-        <button type="button" class="pagination__num" data-page="3">3</button>
-        <button type="button" class="pagination__num" data-page="4">4</button>
-        <button type="button" class="pagination__nav" data-page-next aria-label="Next page">→</button>
-      </div>
+      <h2 class="h2">Learn More About <em>Mental Health.</em></h2>
     </div>
-  </section>
+
+    <div class="grid-3">
+      <a href="#" class="article-card">
+        <div class="article-card__media">
+          <img src="https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?auto=format&fit=crop&w=900&q=72" alt="A parent with a young child at home" loading="lazy">
+        </div>
+        <span class="article-chip">Depression</span>
+        <h3>Depression and postpartum psychosis</h3>
+        <p>What to look for, and when to ask for help early.</p>
+      </a>
+
+      <!-- Article Card 2 -->
+      <a href="#" class="article-card">
+        <div class="article-card__media">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=72" alt="A notebook and pen in daylight" loading="lazy">
+        </div>
+        <span class="article-chip">Therapy</span>
+        <h3>Cognitive behavioural therapy as self-help</h3>
+        <p>Which CBT tools you can use between sessions.</p>
+      </a>
+
+      <!-- Article Card 3 -->
+      <a href="#" class="article-card">
+        <div class="article-card__media">
+          <img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=900&q=72" alt="Quiet morning light in a bedroom" loading="lazy">
+        </div>
+        <span class="article-chip">Sleep</span>
+        <h3>Sleep after trauma</h3>
+        <p>Why sleep breaks down after difficult events, and what helps.</p>
+      </a>
+    </div>
+
+    <!-- Centered Bottom Link -->
+    <div class="articles__footer">
+      <a href="#" class="link-arrow">View all articles →</a>
+    </div>
+  </div>
+</section>
 
   <!-- ============ FINAL CTA ============ -->
   <section id="home-final-cta" class="section section--cream section--center">
@@ -1252,50 +1258,90 @@
 <!-- ============ FOOTER ============ -->
 <footer id="home-footer" class="site-footer">
   <div class="container">
+    <!-- Newsletter Card -->
     <div class="site-footer__newsletter">
-      <div>
+      <div class="newsletter-text">
         <h3>Subscribe to get updated</h3>
         <p>Professional psychological support that is easier to find, understand, and access.</p>
       </div>
       <form class="newsletter-form" onsubmit="return false">
-        <input type="email" placeholder="Your email address" required aria-label="Email address">
-        <button type="submit" class="btn btn--primary">Get started</button>
+        <input type="email" placeholder="Enter your email" required aria-label="Email address">
+        <button type="submit" class="btn--subscribe">Get started</button>
       </form>
     </div>
 
+    <!-- Navigation Columns -->
     <div class="site-footer__cols">
       <div class="footer-col">
         <p class="footer-col__title">Services</p>
-        <a href="#">Individual therapy</a><a href="#">Couples therapy</a><a href="#">Family therapy</a>
-        <a href="#">Video consultation</a><a href="#">Psychotherapies</a>
+        <a href="#">Individual therapy</a>
+        <a href="#">Couples therapy</a>
+        <a href="#">Family therapy</a>
+        <a href="#">Video consultation</a>
+        <a href="#">Psychotherapies</a>
       </div>
       <div class="footer-col">
         <p class="footer-col__title">Conditions</p>
-        <a href="#">Anxiety</a><a href="#">Depression</a><a href="#">ADHD</a><a href="#">Burnout</a><a href="#">All conditions</a>
+        <a href="#">Anxiety</a>
+        <a href="#">Depression</a>
+        <a href="#">ADHD</a>
+        <a href="#">Burnout</a>
+        <a href="#">All conditions</a>
       </div>
       <div class="footer-col">
         <p class="footer-col__title">Clinic</p>
-        <a href="#">Our psychologists</a><a href="#">How it works</a><a href="#">Pricing</a>
-        <a href="#">Oslo clinic</a><a href="#">Ski clinic</a><a href="#">Career</a>
+        <a href="#">Our psychologists</a>
+        <a href="#">How it works</a>
+        <a href="#">Pricing</a>
+        <a href="#">Oslo clinic</a>
+        <a href="#">Ski clinic</a>
+        <a href="#">Career</a>
       </div>
       <div class="footer-col">
         <p class="footer-col__title">Company</p>
-        <a href="#">About us</a><a href="#">Articles</a><a href="#">Join the team</a>
-        <a href="#">For businesses</a><a href="#">Tell a Friend</a><a href="#">Contact</a>
+        <a href="#">About us</a>
+        <a href="#">Articles</a>
+        <a href="#">Join the team</a>
+        <a href="#">For businesses</a>
+        <a href="#">Tell a Friend</a>
+        <a href="#">Contact</a>
       </div>
       <div class="footer-col">
         <p class="footer-col__title">Legal</p>
-        <a href="#">Privacy policy</a><a href="#">Terms of service</a><a href="#">Confidentiality</a>
-        <a href="#">Consent Declaration</a><a href="#">Cookie settings</a><a href="#">Patient rights</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of service</a>
+        <a href="#">Confidentiality</a>
+        <a href="#">Consent Declaration</a>
+        <a href="#">Cookie settings</a>
+        <a href="#">Patient rights</a>
       </div>
     </div>
 
+    <!-- Bottom Bar -->
     <div class="site-footer__bottom">
-      <span>© 2026 Psykolog.no — Licensed psychologists in Norway</span>
-      <div class="site-footer__social">
-        <a href="#" aria-label="Instagram"><svg class="icon" data-icon="instagram"></svg></a>
-        <a href="#" aria-label="LinkedIn"><svg class="icon" data-icon="linkedin"></svg></a>
-        <a href="#" aria-label="Facebook"><svg class="icon" data-icon="facebook"></svg></a>
+      <span class="site-footer__copy">© 2026 Psykolog.no — Licensed psychologists in Norway</span>
+      <div class="site-footer__right">
+        <div class="site-footer__social">
+          <a href="#" aria-label="Instagram" class="social-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="social-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="social-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+        </div>
         <span class="site-footer__credit">Designed &amp; Developed By Sysinn</span>
       </div>
     </div>
