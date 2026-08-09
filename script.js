@@ -112,28 +112,29 @@
     ));
   }
 
+  const NAV_DRAWER_CLOSE_DELAY = 400;
+
   function openMobileNav() {
     if (!navDrawer || !navToggle) return;
-    // 1. Remove hidden so the element is in the layout (transition can fire)
+    // 1. Ensure the drawer is visible in the layout.
     navDrawer.removeAttribute('hidden');
     navBackdrop && navBackdrop.classList.add('is-visible');
 
-    // 2. Force a reflow so the browser registers the element before the class change
-    navDrawer.getBoundingClientRect();
+    // 2. Defer class application until the next animation frame to avoid forced reflow.
+    requestAnimationFrame(() => {
+      navDrawer.classList.add('is-open');
+      navBackdrop && navBackdrop.classList.add('is-open');
+    });
 
-    // 3. Animate in
-    navDrawer.classList.add('is-open');
-    navBackdrop && navBackdrop.classList.add('is-open');
-
-    // 4. Update ARIA state
+    // 3. Update ARIA state
     navToggle.setAttribute('aria-expanded', 'true');
     navToggle.classList.add('is-active');
     navDrawer.removeAttribute('aria-hidden');
 
-    // 5. Prevent background scroll
+    // 4. Prevent background scroll
     document.body.style.overflow = 'hidden';
 
-    // 6. Move focus to first focusable element in drawer
+    // 5. Move focus to first focusable element in drawer
     const focusable = getFocusable();
     if (focusable.length) focusable[0].focus();
   }
@@ -148,15 +149,14 @@
     navDrawer.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
 
-    // Wait for CSS transition, then re-add hidden and clean up backdrop
-    const duration = parseFloat(getComputedStyle(navDrawer).transitionDuration) * 1000 || 400;
+    // Wait for CSS transition, then re-add hidden and clean up backdrop.
     setTimeout(() => {
       // Only hide if drawer is still closed (guard against rapid re-open)
       if (!navDrawer.classList.contains('is-open')) {
         navDrawer.setAttribute('hidden', '');
         navBackdrop && navBackdrop.classList.remove('is-visible');
       }
-    }, duration);
+    }, NAV_DRAWER_CLOSE_DELAY);
 
     // Return focus to the toggle button
     navToggle.focus();
