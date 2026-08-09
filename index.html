@@ -10,6 +10,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&family=Inria+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="responsive.css">
+<link rel="preload" as="image" href="images/Banner.webp" fetchpriority="high">
+
 </head>
 <body>
 
@@ -108,9 +110,10 @@
 
   <!-- ============ HERO ============ -->
   <section id="home-hero" class="hero">
-    <video class="hero__video" autoplay muted loop playsinline preload="none"
-      poster="images/Banner.webp" data-hero-video="images/Hero_Video.mp4"
-      aria-label="A woman standing on the shore at sunset, breathing"></video>
+   <video class="hero__video" autoplay muted loop playsinline preload="none"
+  poster="images/Banner.webp" fetchpriority="high"
+  data-hero-video="images/Hero_Video.mp4"
+  aria-label="A woman standing on the shore at sunset, breathing"></video>
     <span class="hero__blur"></span>
     <span class="hero__tint"></span>
     <span class="hero__glow"></span>
