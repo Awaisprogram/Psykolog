@@ -203,12 +203,22 @@ body {
     gap: 32px;
   }
 
+  .hero__video {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  
+
   #home-psychologists{
     .grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
   }
+  
   #home-netbar {
     .netbar__row {
       padding: 10px 16px;
