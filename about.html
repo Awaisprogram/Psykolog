@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>psykolog.no — Private Online Psychologist</title>
+<meta name="description" content="Find a private psychologist online or in clinic in Norway. No referral needed, appointment within 1 to 3 days.">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+
+<div id="home-netbar" class="netbar">
+  <div class="container">
+    <div class="netbar__row">
+      <span class="netbar__label">
+        <span class="netbar__rule"></span>
+        <span class="netbar__text">Our mental health network</span>
+      </span>
+      <nav class="netbar__links" aria-label="Related sites">
+        <a href="#" class="netbar__link" style="--rule:transparent">Dps.no <span class="netbar__go">↗</span></a>
+        <a href="#" class="netbar__link">Psykiater.no <span class="netbar__go">↗</span></a>
+        <a href="#" class="netbar__link">Spesialistpsykiatri.no <span class="netbar__go">↗</span></a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<header id="home-header" class="site-header" data-header>
+  <div class="container">
+    <div class="site-header__bar">
+      <div class="site-header__row">
+        <a href="#home-hero" class="site-header__brand" data-scroll>
+          <img src="/logo.webp" alt="psykolog.no" class="site-header__logo">
+        </a>
+
+        <nav class="site-header__nav" aria-label="Primary">
+          <a href="#home-conditions" data-scroll>Services</a>
+          <a href="#home-formats" data-scroll>Therapy</a>
+          <a href="#home-right-place" data-scroll>About Us</a>
+          <a href="#home-pricing" data-scroll>Pricing</a>
+          <a href="#home-locations" data-scroll>Contact</a>
+        </nav>
+
+        <div class="site-header__actions">
+          <button type="button" class="btn btn--primary" data-scroll data-target="#home-final-cta">Book An Appointment</button>
+          <button type="button" class="site-header__toggle" id="navToggle" aria-expanded="false" aria-label="Open menu" aria-controls="mobileNav">
+            <span class="burger">
+              <span class="burger__bar burger__bar--1"></span>
+              <span class="burger__bar burger__bar--2"></span>
+              <span class="burger__bar burger__bar--3"></span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile nav drawer overlay -->
+<div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+<!-- Mobile nav drawer -->
+<nav class="nav-drawer" id="mobileNav" role="dialog" aria-modal="true" aria-label="Site navigation" hidden>
+  <div class="nav-drawer__header">
+    <a href="#home-hero" class="site-header__brand" data-scroll data-close-nav>
+      <img src="/logo.webp" alt="psykolog.no" class="site-header__logo">
+    </a>
+    <button type="button" class="nav-drawer__close" id="navDrawerClose" aria-label="Close menu">
+      <svg class="icon" data-icon="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+
+  <div class="nav-drawer__body">
+    <a href="#home-conditions" class="nav-drawer__link" data-scroll data-close-nav>
+      <span class="nav-drawer__link-text">Services</span>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="#home-formats" class="nav-drawer__link" data-scroll data-close-nav>
+      <span class="nav-drawer__link-text">Therapy</span>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="#home-right-place" class="nav-drawer__link" data-scroll data-close-nav>
+      <span class="nav-drawer__link-text">About Us</span>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="#home-pricing" class="nav-drawer__link" data-scroll data-close-nav>
+      <span class="nav-drawer__link-text">Pricing</span>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="#home-locations" class="nav-drawer__link" data-scroll data-close-nav>
+      <span class="nav-drawer__link-text">Contact</span>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+
+  <div class="nav-drawer__footer">
+    <button type="button" class="btn btn--primary nav-drawer__cta" data-scroll data-target="#home-final-cta" data-close-nav>Book An Appointment</button>
+    <p class="nav-drawer__tagline">No referral needed &middot; Available within 1&ndash;3 days</p>
+  </div>
+</nav>
+
+<main>
+
+ <!-- ============ HERO ============ -->
+
+<section id="about-hero" class="page-hero" style="background-image:url('https://sysinn.net/psykolog.no/wp-content/uploads/2026/08/About_hero.webp')">
+  <div class="container page-hero__inner">
+    <nav class="page-hero__crumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>/</span><span>About Us</span>
+    </nav>
+    <h1 class="page-hero__title">About <em>Psykolog.no</em></h1>
+    <p class="page-hero__lede">We are a Norwegian mental health platform built to make it easier for people across Norway to find and book an authorised psychologist. Fast, without a referral, and without a long wait.</p>
+  </div>
+</section>
+
+ <!-- ============ Mental Health Help For Everyone ============ -->
+
+<section id="about-mission" class="section section--peach">
+  <div class="container">
+    <div class="mission">
+      <div class="mission__text">
+        <h2 class="h2">Mental Health Help For <em>Everyone</em></h2>
+        <p class="lede">At psykolog.no, we believe that mental health is the foundation of a good life. When you are struggling, whether with anxiety, depression, sleep problems, stress, or relationship difficulties. You deserve access to qualified, professional help.</p>
+        <p class="lede">We built psykolog.no to make specialized psychological treatment accessible to everyone. We connect you with an authorised psychologist who can help. We offer both in- person consultations at our clinics in Oslo and Ski and video consultations for patients across all of Norway. No referral from your GP is needed.</p>
+        <h3 class="mission__subhead">Ready To <em>Get Started?</em></h3>
+        <p class="lede">Book an appointment with an authorized psychologist today. Fast , east and no referral needed.</p>
+      </div>
+	 
+      <div class="mission__media">
+        <img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/08/Mental-Health-Help-For-Everyone.webp" alt="A woman on a video consultation with a psychologist" loading="lazy">
+        <div class="mission__card">
+          <span class="icon-square">
+           <img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/08/Bestill_time.svg" alt="Calendar clock" class="icon">
+          </span>
+          <div>
+            <h4>Book An Appointment!</h4>
+            <p>Book an appointment with authorized psycologist that best works for you online or in-clinic.</p>
+          </div>
+      </div>
+	</div>	
+    </div>
+  </div>
+</section>
+
+ <!-- ============ What We Stand For ============ -->
+
+<section id="about-values" class="section section--white">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <h2 class="h2">What We <em>Stand For</em></h2>
+      <p class="lede">Three core principles guide everything we do at psykolog.no. How we select our psychologists, design our services, and support our patients.</p>
+    </div>
+    <div class="values">
+      <div class="values__list" id="valuesList">
+        <button type="button" class="values__item is-active" data-value="0"
+          data-title="Accessibility For All"
+          data-desc="Mental health care should not depend on where you live, how much you earn, or whether you know the right doctor. We are building a platform that reaches every corner of Norway, online and in person.">
+          <span class="icon-square"><svg class="icon" data-icon="user"></svg></span>
+          <span class="values__name">Accessibility For All</span>
+          <span class="values__arrow">→</span>
+        </button>
+        <button type="button" class="values__item" data-value="1"
+          data-title="Clinical Quality"
+          data-desc="Every psychologist on psykolog.no is HPR-registered and reviewed for their expertise before joining the platform.">
+          <span class="icon-square"><svg class="icon" data-icon="heart-pulse"></svg></span>
+          <span class="values__name">Clinical Quality</span>
+          <span class="values__arrow">→</span>
+        </button>
+        <button type="button" class="values__item" data-value="2"
+          data-title="The Individual In Focus"
+          data-desc="Treatment is built around you, your situation, your pace, and what actually helps you move forward.">
+          <span class="icon-square"><svg class="icon" data-icon="users"></svg></span>
+          <span class="values__name">The Individual In Focus</span>
+          <span class="values__arrow">→</span>
+        </button>
+        <button type="button" class="values__item" data-value="3"
+          data-title="Privacy and Confidentiality"
+          data-desc="Everything you share stays between you and your psychologist, protected under Norwegian healthcare confidentiality law.">
+          <span class="icon-square"><svg class="icon" data-icon="video"></svg></span>
+          <span class="values__name">Privacy and Confidentiality</span>
+          <span class="values__arrow">→</span>
+        </button>
+        <button type="button" class="values__item" data-value="4"
+          data-title="Fast Access , No Waiting"
+          data-desc="Most patients are seen within 1 to 3 days, with no referral and no long waiting list to get started.">
+          <span class="icon-square"><svg class="icon" data-icon="video"></svg></span>
+          <span class="values__name">Fast Access , No Waiting</span>
+          <span class="values__arrow">→</span>
+        </button>
+      </div>
+      <div class="values__preview" id="valuesPreview">
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=72" alt="A psychologist in conversation with a patient" data-value-img="0" class="is-active">
+        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=72" alt="A psychologist reviewing clinical notes" data-value-img="1" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=900&q=72" alt="A psychologist listening attentively" data-value-img="2" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=900&q=72" alt="A confidential video consultation" data-value-img="3" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=72" alt="A quick, easy booking moment" data-value-img="4" loading="lazy">
+        <span class="values__scrim"></span>
+        <div class="values__caption">
+          <h3 id="valuesTitle">Accessibility For All</h3>
+          <p id="valuesDesc">Mental health care should not depend on where you live, how much you earn, or whether you know the right doctor. We are building a platform that reaches every corner of Norway, online and in person.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- ============ What We Treat ============ -->
+
+<section id="about-treat" class="section section--peach">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <h2 class="h2">What We <em>Treat</em></h2>
+      <p class="lede">Our psychologists and specialists treat a wide range of mental health conditions using evidence-based methods.</p>
+    </div>
+
+    <div class="treat-grid">
+      <div class="treat-card">
+        <span class="icon-circle"><svg class="icon" data-icon="brain"></svg></span>
+        <h3>Depression</h3>
+        <p>Low mood, loss of interest, fatigue, and negative thinking. CBT and other therapies provide strong, lasting relief.</p>
+      </div>
+      <div class="treat-card">
+        <span class="icon-circle"><svg class="icon" data-icon="cloud-rain"></svg></span>
+        <h3>Anxiety &amp; social anxiety</h3>
+        <p>General anxiety, social anxiety disorder, panic disorder, phobias, and performance anxiety.</p>
+      </div>
+      <div class="treat-card">
+        <span class="icon-circle"><svg class="icon" data-icon="moon"></svg></span>
+        <h3>Sleep problems</h3>
+        <p>Insomnia, difficulty falling asleep, waking at night. CBT-I is the gold-standard treatment.</p>
+      </div>
+      <div class="treat-card">
+        <span class="icon-circle"><svg class="icon" data-icon="flame"></svg></span>
+        <h3>Anger management</h3>
+        <p>Anger outbursts, irritability, and difficulty controlling reactions. CBT and practical skills help.</p>
+      </div>
+      <div class="treat-card">
+        <span class="icon-circle"><svg class="icon" data-icon="shuffle"></svg></span>
+        <h3>ADHD assessment</h3>
+        <p>Adult ADHD screening, diagnosis, and treatment planning in collaboration with specialist doctors.</p>
+      </div>
+      <div class="treat-card">
+        <span class="icon-circle"><svg class="icon" data-icon="repeat"></svg></span>
+        <h3>Trauma &amp; PTSD</h3>
+        <p>Complex and single-event trauma, PTSD, and stress-related conditions using EMDR and CBT.</p>
+      </div>
+      <div class="treat-card">
+        <span class="icon-circle"><svg class="icon" data-icon="heart"></svg></span>
+        <h3>Personality disorders</h3>
+        <p>Borderline, avoidant, narcissistic, and other personality disorders using DBT, MBT, and schema therapy.</p>
+      </div>
+      <div class="treat-card">
+        <span class="icon-circle"><svg class="icon" data-icon="battery-low"></svg></span>
+        <h3>Stress &amp; burnout</h3>
+        <p>Work-related stress, chronic burnout, and exhaustion syndrome with practical recovery programs.</p>
+      </div>
+      <div class="treat-card">
+        <span class="icon-circle"><svg class="icon" data-icon="briefcase"></svg></span>
+        <h3>Workplace mental health</h3>
+        <p>Corporate psychology services for employers who want to support their employees' mental wellbeing.</p>
+      </div>
+    </div>
+
+    <div class="treat-cta">
+      <p>Book an appointment with an authorized psychologist at psykolog.no today.</p>
+      <button type="button" class="btn btn--primary btn--lg" data-scroll data-target="#home-psychologists">
+        Find a psychologist
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+ <!-- ============ The Professional Behind Psykolog.no ============ -->
+
+<section id="about-professional" class="section section--white">
+  <div class="container">
+    <div class="professional">
+      <div class="professional__media">
+        <img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/08/Dr.Rehan_.webp" alt="Portrait of Dr Rehan Bin Nawaz" loading="lazy">
+      </div>
+      <div class="professional__content">
+        <h2 class="professional__title">The Professional Behind<br><em>Psykolog.no</em></h2>
+        <h3 class="professional__name">Dr Rehan Bin Nawaz</h3>
+        <p class="professional__role">Psychiatrist &amp; Addiction Medicine Specialist</p>
+        <p class="professional__bio">An experienced physician specialising in psychiatry and addiction medicine. Dr. Rehan has worked at Oslo University Hospital, Ahus (Akershus University Hospital), Lovisenberg Diakonale Sykehus and Sykehuset Østfold.</p>
+        <div class="professional__tags">
+          <span class="prof-tag">Physician</span>
+          <span class="prof-tag">Psychiatrist and Specialist</span>
+          <span class="prof-tag">Substance Abuse</span>
+          <span class="prof-tag">Addiction Medicine</span>
+        </div>
+        <a href="#" class="prof-link">
+          <span>Read more about Dr. Rehan</span>
+          <span class="prof-link__icon">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- ============ Why Choose Psykolog.no? ============ -->
+
+<section id="about-why" class="section section--peach">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <h2 class="h2-italic">Why Choose <em>Psykolog.no?</em></h2>
+      <p class="lede">Here is what makes psykolog.no different.</p>
+    </div>
+
+    <div class="why-media">
+      <img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/08/Why_Choose.webp" alt="A psychologist session alongside a video consultation" loading="lazy">
+    </div>
+
+    <div class="why-grid">
+      <div class="why-col">
+        <div class="why-item">
+          <span class="list-icon"><img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/08/List.svg" alt="icon" ></span>
+          <p>You do not need to see your GP first. Book directly with a psychologist, without any waiting or administrative hurdles.</p>
+        </div>
+        <div class="why-item">
+          <span class="list-icon"><img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/08/List.svg" alt="icon"></span>
+          <p>Every psychologist and psychiatrist in our network is authorised by Helsedirektoratet and has trained at recognized Norwegian hospitals.</p>
+        </div>
+      </div>
+      <div class="why-col">
+        <div class="why-item">
+          <span class="list-icon"><img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/08/List.svg" alt="icon" ></span>
+          <p>Typical waiting time is 1 to 3 working days. When you are struggling, you should not have to wait months for help.</p>
+        </div>
+        <div class="why-item">
+          <span class="list-icon"><img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/08/List.svg" alt="icon" ></span>
+          <p>Online therapy and video consultations across Norway since launch.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- ============ Languages We Speak ============ -->
+
+<section id="home-languages" class="section">
+  <div class="container languages-container">
+    
+    <div class="languages-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m5 8 6 6"/>
+        <path d="m4 14 6-6 2-3"/>
+        <path d="M2 5h12"/>
+        <path d="M7 2h1"/>
+        <path d="m22 22-5-10-5 10"/>
+        <path d="M14 18h6"/>
+      </svg>
+    </div>
+
+    <h2 class="h2">
+      Languages We <em>Speak</em>
+    </h2>
+
+    <p class="lede">
+      Mental health is easier to talk about in your own language. Our team<br class="desktop-break"> 
+      serves patients in the following languages.
+    </p>
+
+    <div class="languages-list">
+      <span class="language-tag">Norwegian</span>
+      <span class="language-tag">Swedish</span>
+      <span class="language-tag">Danish</span>
+      <span class="language-tag">English</span>
+      <span class="language-tag">Urdu</span>
+      <span class="language-tag">Polish</span>
+    </div>
+    
+  </div>
+</section>
+
+ <!-- ============ Banner ============ -->
+
+<section id="network-banner" class="section">
+  <div class="container">
+    <div class="network-wrapper">
+      
+      <!-- Left Content -->
+      <div class="network-content">
+        <h2 class="network-title">
+          <em>Part of</em> <em class="highlight">Psykiater.no Network?</em>
+        </h2>
+        <p class="network-text">
+          Psykolog.no is part of the same professional network as Psykiater.no, one of Norway's leading private mental health and addiction clinics, providing access to experienced mental health professionals across Norway. psykiater.no is one of Norway's largest and leading private psychiatric clinics, with one of the country's most visited websites within psychiatry.
+        </p>
+      </div>
+
+      <!-- Right Card -->
+      <div class="network-card">
+        <div class="network-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+        </div>
+        <p class="network-card-text">
+          If you have a question before booking, you are welcome to contact us by phone, SMS, or the contact form on our contact page.
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer id="home-footer" class="site-footer">
+  <div class="container">
+    <!-- Newsletter Card -->
+    <div class="site-footer__newsletter">
+      <div class="newsletter-text">
+        <h3>Subscribe to get updated</h3>
+        <p>Professional psychological support that is easier to find, understand, and access.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="return false">
+        <input type="email" placeholder="Enter your email" required aria-label="Email address">
+        <button type="submit" class="btn--subscribe">Get started</button>
+      </form>
+    </div>
+
+    <!-- Navigation Columns -->
+    <div class="site-footer__cols">
+      <div class="footer-col">
+        <p class="footer-col__title">Services</p>
+        <a href="#">Individual therapy</a>
+        <a href="#">Couples therapy</a>
+        <a href="#">Family therapy</a>
+        <a href="#">Video consultation</a>
+        <a href="#">Psychotherapies</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Conditions</p>
+        <a href="#">Anxiety</a>
+        <a href="#">Depression</a>
+        <a href="#">ADHD</a>
+        <a href="#">Burnout</a>
+        <a href="#">All conditions</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Clinic</p>
+        <a href="#">Our psychologists</a>
+        <a href="#">How it works</a>
+        <a href="#">Pricing</a>
+        <a href="#">Oslo clinic</a>
+        <a href="#">Ski clinic</a>
+        <a href="#">Career</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Company</p>
+        <a href="#">About us</a>
+        <a href="#">Articles</a>
+        <a href="#">Join the team</a>
+        <a href="#">For businesses</a>
+        <a href="#">Tell a Friend</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Legal</p>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of service</a>
+        <a href="#">Confidentiality</a>
+        <a href="#">Consent Declaration</a>
+        <a href="#">Cookie settings</a>
+        <a href="#">Patient rights</a>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="site-footer__bottom">
+      <span class="site-footer__copy">© 2026 Psykolog.no — Licensed psychologists in Norway</span>
+      <div class="site-footer__right">
+        <div class="site-footer__social">
+          <a href="#" aria-label="Instagram" class="social-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="social-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="social-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+        </div>
+        <span class="site-footer__credit">Designed &amp; Developed By Sysinn</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ AI MATCHING ASSISTANT ============ -->
+<button type="button" class="ai-launcher" id="aiLauncher" aria-label="Open the psychologist matching assistant">
+  <span class="ai-launcher__halo"></span>
+  <span class="ai-launcher__core">
+    <svg class="icon" data-icon="sparkles"></svg>
+  </span>
+</button>
+
+<div class="ai-scrim" id="aiScrim" hidden>
+  <div class="ai-modal" role="dialog" aria-modal="true" aria-label="Psychologist matching assistant" id="aiModal">
+    <div class="ai-modal__head">
+      <div class="ai-modal__head-row">
+        <span class="ai-modal__brand">
+          <span class="icon-circle"><svg class="icon" data-icon="sparkles"></svg></span>
+          <span>
+            <span class="ai-modal__title">Find your psychologist</span>
+            <span class="ai-modal__subtitle">Takes about 2 minutes · nothing is stored</span>
+          </span>
+        </span>
+        <span class="ai-modal__step" id="aiStepLabel">Step 1 of 4</span>
+        <button type="button" class="ai-modal__close" id="aiCloseBtn" aria-label="Close">✕</button>
+      </div>
+      <div class="ai-modal__progress"><span id="aiProgressBar"></span></div>
+    </div>
+
+    <div class="ai-modal__body" id="aiBody">
+
+      <!-- Step 0: concerns -->
+      <div class="ai-screen is-active" data-ai-step="0">
+        <h2>What best describes how you are feeling today?</h2>
+        <p id="aiSelCount">Select everything that applies, there is no wrong answer.</p>
+        <div class="ai-cards" id="aiConcernCards"></div>
+        <div class="ai-own">
+          <button type="button" class="ai-own__toggle" id="aiOwnToggle">
+            <span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="pencil"></svg></span>
+            <span>Describe it in your own words</span>
+            <span class="ai-own__badge">Optional</span>
+          </button>
+          <div class="ai-own__panel" id="aiOwnPanel">
+            <div class="ai-own__panel-inner">
+              <textarea id="aiOwnWords" placeholder="Say as much or as little as you like…" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 1: duration -->
+      <div class="ai-screen" data-ai-step="1">
+        <h2>How long have you been experiencing this?</h2>
+        <p>A rough sense is enough, it helps us understand what kind of support fits.</p>
+        <div class="ai-seg" id="aiDurations">
+          <button type="button" class="ai-seg__opt" data-duration="0"><span class="ai-seg__dot"></span>A few days</button>
+          <button type="button" class="ai-seg__opt" data-duration="1"><span class="ai-seg__dot"></span>1 to 2 weeks</button>
+          <button type="button" class="ai-seg__opt" data-duration="2"><span class="ai-seg__dot"></span>About a month</button>
+          <button type="button" class="ai-seg__opt" data-duration="3"><span class="ai-seg__dot"></span>Several months</button>
+          <button type="button" class="ai-seg__opt" data-duration="4"><span class="ai-seg__dot"></span>More than a year</button>
+          <button type="button" class="ai-seg__opt" data-duration="5"><span class="ai-seg__dot"></span>I'm not sure</button>
+        </div>
+      </div>
+
+      <!-- Step 2: dynamic questions -->
+      <div class="ai-screen" data-ai-step="2">
+        <h2>A few questions, based on what you told us.</h2>
+        <p>Answer what you can. You can skip anything that does not fit.</p>
+        <div id="aiQuestions"></div>
+      </div>
+
+      <!-- Step 3: prefs -->
+      <div class="ai-screen" data-ai-step="3">
+        <h2>What kind of support are you looking for?</h2>
+        <p>Choose as many as apply, and "not sure yet" is a perfectly good answer.</p>
+        <div class="ai-prefs" id="aiPrefs">
+          <button type="button" class="ai-pref" data-pref="Individual therapy"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="user"></svg></span><span>Individual therapy</span><span class="ai-pref__check">✓</span></button>
+          <button type="button" class="ai-pref" data-pref="Couples therapy"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="heart-handshake"></svg></span><span>Couples therapy</span><span class="ai-pref__check">✓</span></button>
+          <button type="button" class="ai-pref" data-pref="Child psychologist"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="baby"></svg></span><span>Child psychologist</span><span class="ai-pref__check">✓</span></button>
+          <button type="button" class="ai-pref" data-pref="Family therapy"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="users"></svg></span><span>Family therapy</span><span class="ai-pref__check">✓</span></button>
+          <button type="button" class="ai-pref" data-pref="Online sessions"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="video"></svg></span><span>Online sessions</span><span class="ai-pref__check">✓</span></button>
+          <button type="button" class="ai-pref" data-pref="In-person sessions"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="building-2"></svg></span><span>In-person sessions</span><span class="ai-pref__check">✓</span></button>
+          <button type="button" class="ai-pref" data-pref="First time in therapy"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="sparkles"></svg></span><span>First time in therapy</span><span class="ai-pref__check">✓</span></button>
+          <button type="button" class="ai-pref" data-pref="Not sure yet"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="compass"></svg></span><span>Not sure yet</span><span class="ai-pref__check">✓</span></button>
+        </div>
+      </div>
+
+      <!-- Step 4: matching animation -->
+      <div class="ai-screen" data-ai-step="4">
+        <span class="ai-loader">
+          <span class="ai-loader__halo"></span>
+          <svg class="icon" data-icon="sparkles"></svg>
+        </span>
+        <h2>Finding psychologists who best match what you have shared…</h2>
+        <div class="ai-loader__lines" id="aiMatchLines">
+          <span>Reading what you have shared…</span>
+          <span>Comparing it with our psychologists' areas of expertise…</span>
+          <span>Putting your shortlist together…</span>
+        </div>
+        <div class="ai-loader__bar"><span id="aiMatchBar"></span></div>
+        <span class="ai-loader__dots"><span></span><span></span><span></span></span>
+      </div>
+
+      <!-- Step 5: results -->
+      <div class="ai-screen" data-ai-step="5">
+        <div class="eyebrow"><span class="eyebrow__dot">✳</span><span>Your shortlist</span></div>
+        <h2>Recommended psychologists</h2>
+        <p id="aiMatchIntro">These psychologists work across the concerns people most often bring to us.</p>
+        <div class="ai-results" id="aiResults"></div>
+        <div class="ai-disclaimer">
+          <svg class="icon" data-icon="info"></svg>
+          <p>This assistant helps you identify psychologists whose expertise aligns with what you have shared. It does not provide medical advice, diagnosis, or emergency support. If you are experiencing a mental health crisis, please contact your local emergency services or a qualified healthcare provider immediately.</p>
+        </div>
+        <div class="text-center mt-20">
+          <button type="button" class="btn btn--outline" id="aiRestartBtn">Start over</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ai-modal__foot" id="aiFoot">
+      <button type="button" class="btn btn--outline" id="aiBackBtn">Previous</button>
+      <button type="button" class="btn btn--primary" id="aiNextBtn" disabled>Continue</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

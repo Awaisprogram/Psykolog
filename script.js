@@ -298,30 +298,57 @@
   /* -------------------------------------------------------------------
      9. Therapy formats — picker + preview swap
      ------------------------------------------------------------------- */
-  const FORMAT_DATA = [
-    { chip: 'One to one', title: 'Individual Therapy', desc: 'Meet one to one with a psychologist to discuss your thoughts, emotions, behaviours and challenges in a confidential setting.' },
-    { chip: 'For partners', title: 'Couples Therapy', desc: 'Work with your partner to improve communication, resolve conflicts, rebuild trust and strengthen your relationship.' },
-    { chip: 'For families', title: 'Family Therapy', desc: 'Bring family members together to improve communication, manage conflicts and create healthier family relationships.' },
-    { chip: 'By secure video', title: 'Online Therapy', desc: 'Meet your psychologist by secure video from wherever you are, with the same standard of care as in clinic.' }
-  ];
-  function initFormats() {
-    const list = document.getElementById('formatsList');
-    const preview = document.getElementById('formatsPreview');
-    if (!list || !preview) return;
-    const chipEl = document.getElementById('formatsChip');
-    const titleEl = document.getElementById('formatsTitle');
-    const descEl = document.getElementById('formatsDesc');
+  function initTabbedPreview(config) {
+  const list = document.getElementById(config.listId);
+  const preview = document.getElementById(config.previewId);
+  if (!list || !preview) return;
 
-    list.addEventListener('click', (e) => {
-      const btn = e.target.closest('[data-format]');
-      if (!btn) return;
-      const idx = btn.dataset.format;
-      list.querySelectorAll('.formats__item').forEach((it) => it.classList.toggle('is-active', it === btn));
-      preview.querySelectorAll('[data-format-img]').forEach((img) => img.classList.toggle('is-active', img.dataset.formatImg === idx));
-      const d = FORMAT_DATA[+idx];
-      if (d) { chipEl.textContent = d.chip; titleEl.textContent = d.title; descEl.textContent = d.desc; }
+  const titleEl = config.titleId ? document.getElementById(config.titleId) : null;
+  const descEl = config.descId ? document.getElementById(config.descId) : null;
+  const chipEl = config.chipId ? document.getElementById(config.chipId) : null;
+
+  list.addEventListener('click', function (e) {
+    const btn = e.target.closest(`[${config.itemAttr}]`);
+    if (!btn) return;
+
+    const idx = btn.getAttribute(config.itemAttr);
+
+    list.querySelectorAll(config.itemClass).forEach(function (it) {
+      it.classList.toggle('is-active', it === btn);
     });
-  }
+
+    preview.querySelectorAll(`[${config.imgAttr}]`).forEach(function (img) {
+      img.classList.toggle('is-active', img.getAttribute(config.imgAttr) === idx);
+    });
+
+    if (chipEl) chipEl.textContent = btn.getAttribute('data-chip') || '';
+    if (titleEl) titleEl.textContent = btn.getAttribute('data-title') || '';
+    if (descEl) descEl.textContent = btn.getAttribute('data-desc') || '';
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initTabbedPreview({
+    listId: 'formatsList',
+    previewId: 'formatsPreview',
+    chipId: 'formatsChip',
+    titleId: 'formatsTitle',
+    descId: 'formatsDesc',
+    itemAttr: 'data-format',
+    itemClass: '.formats__item',
+    imgAttr: 'data-format-img'
+  });
+
+  initTabbedPreview({
+    listId: 'valuesList',
+    previewId: 'valuesPreview',
+    titleId: 'valuesTitle',
+    descId: 'valuesDesc',
+    itemAttr: 'data-value',
+    itemClass: '.values__item',
+    imgAttr: 'data-value-img'
+  });
+});
 
   /* -------------------------------------------------------------------
      10. Psychotherapies — "read more" accordion
@@ -336,18 +363,6 @@
     });
   }
 
-  /* -------------------------------------------------------------------
-     11. Pricing card selection
-     ------------------------------------------------------------------- */
-  function initPricing() {
-    const grid = document.getElementById('priceGrid');
-    if (!grid) return;
-    grid.addEventListener('click', (e) => {
-      const card = e.target.closest('.price-card');
-      if (!card) return;
-      grid.querySelectorAll('.price-card').forEach((c) => c.classList.toggle('is-active', c === card));
-    });
-  }
 
   /* -------------------------------------------------------------------
      12. Locations — clinic tabs + map + book button
@@ -391,31 +406,7 @@
     });
   }
 
-  /* -------------------------------------------------------------------
-     14. Articles pagination (static demo data, 4 pages)
-     ------------------------------------------------------------------- */
-  function initArticlesPagination() {
-    const pag = document.getElementById('articlesPagination');
-    if (!pag) return;
-    const nums = pag.querySelectorAll('.pagination__num');
-    const prev = pag.querySelector('[data-page-prev]');
-    const next = pag.querySelector('[data-page-next]');
-    let page = 1;
-    const max = nums.length;
-
-    function render() {
-      nums.forEach((n) => n.classList.toggle('is-active', +n.dataset.page === page));
-      prev.disabled = page === 1;
-      next.disabled = page === max;
-    }
-    pag.addEventListener('click', (e) => {
-      const num = e.target.closest('[data-page]');
-      if (num) { page = +num.dataset.page; render(); return; }
-      if (e.target.closest('[data-page-prev]')) { page = Math.max(1, page - 1); render(); }
-      if (e.target.closest('[data-page-next]')) { page = Math.min(max, page + 1); render(); }
-    });
-    render();
-  }
+  
 
   /* -------------------------------------------------------------------
      15. AI matching assistant — full multi-step wizard
@@ -831,6 +822,8 @@
 
     showStep();
   }
+	
+	
 
   /* -------------------------------------------------------------------
      Init
@@ -876,3 +869,5 @@
     }
   });
 })();
+
+ 
