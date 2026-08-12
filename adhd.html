@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>psykolog.no — Private Online Psychologist</title>
+<meta name="description" content="Find a private psychologist online or in clinic in Norway. No referral needed, appointment within 1 to 3 days.">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+
+<div id="home-netbar" class="netbar">
+  <div class="container">
+    <div class="netbar__row">
+      <span class="netbar__label">
+        <span class="netbar__rule"></span>
+        <span class="netbar__text">Our mental health network</span>
+      </span>
+      <nav class="netbar__links" aria-label="Related sites">
+        <a href="#" class="netbar__link" style="--rule:transparent">Dps.no <span class="netbar__go">↗</span></a>
+        <a href="#" class="netbar__link">Psykiater.no <span class="netbar__go">↗</span></a>
+        <a href="#" class="netbar__link">Spesialistpsykiatri.no <span class="netbar__go">↗</span></a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<header id="home-header" class="site-header" data-header>
+  <div class="container">
+    <div class="site-header__bar">
+      <div class="site-header__row">
+        <a href="#home-hero" class="site-header__brand" data-scroll>
+          <img src="/logo.webp" alt="psykolog.no" class="site-header__logo">
+        </a>
+
+        <nav class="site-header__nav" aria-label="Primary">
+          <a href="#home-conditions" data-scroll>Services</a>
+          <a href="#home-formats" data-scroll>Therapy</a>
+          <a href="#home-right-place" data-scroll>About Us</a>
+          <a href="#home-pricing" data-scroll>Pricing</a>
+          <a href="#home-locations" data-scroll>Contact</a>
+        </nav>
+
+        <div class="site-header__actions">
+          <button type="button" class="btn btn--primary" data-scroll data-target="#home-final-cta">Book An Appointment</button>
+          <button type="button" class="site-header__toggle" id="navToggle" aria-expanded="false" aria-label="Open menu" aria-controls="mobileNav">
+            <span class="burger">
+              <span class="burger__bar burger__bar--1"></span>
+              <span class="burger__bar burger__bar--2"></span>
+              <span class="burger__bar burger__bar--3"></span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile nav drawer overlay -->
+<div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+<!-- Mobile nav drawer -->
+<nav class="nav-drawer" id="mobileNav" role="dialog" aria-modal="true" aria-label="Site navigation" hidden>
+  <div class="nav-drawer__header">
+    <a href="#home-hero" class="site-header__brand" data-scroll data-close-nav>
+      <img src="/logo.webp" alt="psykolog.no" class="site-header__logo">
+    </a>
+    <button type="button" class="nav-drawer__close" id="navDrawerClose" aria-label="Close menu">
+      <svg class="icon" data-icon="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+
+  <div class="nav-drawer__body">
+    <a href="#home-conditions" class="nav-drawer__link" data-scroll data-close-nav>
+      <span class="nav-drawer__link-text">Services</span>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="#home-formats" class="nav-drawer__link" data-scroll data-close-nav>
+      <span class="nav-drawer__link-text">Therapy</span>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="#home-right-place" class="nav-drawer__link" data-scroll data-close-nav>
+      <span class="nav-drawer__link-text">About Us</span>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="#home-pricing" class="nav-drawer__link" data-scroll data-close-nav>
+      <span class="nav-drawer__link-text">Pricing</span>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="#home-locations" class="nav-drawer__link" data-scroll data-close-nav>
+      <span class="nav-drawer__link-text">Contact</span>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+
+  <div class="nav-drawer__footer">
+    <button type="button" class="btn btn--primary nav-drawer__cta" data-scroll data-target="#home-final-cta" data-close-nav>Book An Appointment</button>
+    <p class="nav-drawer__tagline">No referral needed &middot; Available within 1&ndash;3 days</p>
+  </div>
+</nav>
+
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section id="adhd-hero" class="hero" data-top>
+    <img class="hero__video" style="object-fit:cover;width:100%;height:100%;position:absolute;inset:0" src="images/Adhd__hero.webp" alt="A man in conversation with his psychologist in a bright consulting room">
+
+    <div class="container page-hero__inner">
+      <nav class="page-hero__crumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>/</span><span>ADHD</span>
+    </nav>
+      <h1 class="page-hero__title">What IS ADHD? Symptoms Diagnosis & <em>Treatment</em></h1>
+      <div class="page-hero__lede">
+        <p>Learn about ADHD, including common symptoms, causes, diagnosis, and treatment options. Find out how ADHD affects children and adults and when to seek professional help.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JUMP NAV ============ -->
+  <div class="container">
+    <div class="ps-jump-wrap">
+      <span class="ps-jump-fade ps-jump-fade--left"></span>
+      <span class="ps-jump-fade ps-jump-fade--right"></span>
+      <nav class="ps-jump" id="jumpNav" aria-label="On this page">
+        <a href="#adhd-what" data-jump="what" class="is-active">What is ADHD</a>
+        <a href="#adhd-subtypes" data-jump="subtypes">Subtypes</a>
+        <a href="#adhd-causes" data-jump="causes">Causes</a>
+        <a href="#adhd-symptoms" data-jump="symptoms">Symptoms</a>
+        <a href="#adhd-ages" data-jump="ages">Life stages</a>
+        <a href="#adhd-assessment" data-jump="assessment">Assessment</a>
+        <a href="#adhd-treatment" data-jump="treatment">Treatment</a>
+        <a href="#adhd-living" data-jump="living">Daily life</a>
+        <a href="#adhd-help" data-jump="help">Recognise yourself</a>
+        <a href="#adhd-cooccurring" data-jump="cooccurring">Co-occurring</a>
+        <a href="#adhd-myths" data-jump="myths">Myths</a>
+        <a href="#adhd-faq" data-jump="faq">FAQ</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ============ WHAT IS ADHD ============ -->
+  <section id="adhd-what" class="section section--white" data-sec="what">
+    <div class="container">
+      <div class="ps-aside">
+        <div data-reveal>
+          <h2 class="h2">What Is <em>ADHD?</em></h2>
+          <p class="lede">ADHD (Attention Deficit Hyperactivity Disorder) is one of the most common neurodevelopmental conditions in adults. It is a neurodevelopmental disorder that affects attention, impulse control, and executive functions. It occurs in children and adults, across all genders and backgrounds. This page explains what ADHD is, how it presents across different life stages, how it is diagnosed and what treatments are available.</p>
+          <p class="lede">ADHD stands for Attention Deficit Hyperactivity Disorder. It is a neurodevelopmental condition, meaning it originates in the way the brain develops and functions. According to Helsenorge, around 5% of children and adolescents have ADHD, and for many, the symptoms continue into adulthood.</p>
+          <p class="lede">It is not being caused by personal weakness, poor parenting, or lack of effort. ADHD affects executive function. The brain systems are responsible for attention regulation, impulse control, working memory, emotional regulation, and the ability to plan and follow through on tasks. These are not things a person with ADHD chooses to struggle with. They are rooted in neurological differences in dopamine and norepinephrine signaling in the prefrontal cortex.</p>
+          <p class="lede">However, it remains significantly underdiagnosed, especially in women.</p>
+        </div>
+
+        <div class="ps-aside__rail" data-reveal>
+          <div class="ps-stat-box">
+            <span class="icon-circle icon-circle--lg"><svg class="icon" data-icon="percent"></svg></span>
+            <p class="ps-stat-box__n">5%</p>
+            <p class="ps-stat-box__d">of children and adolescents have ADHD, according to Helsenorge, and for many the symptoms continue into adulthood.</p>
+          </div>
+
+          <div class="ps-add-box">
+            <p class="ps-add-box__q">What does ADD mean?</p>
+            <p class="ps-add-box__a">ADD (Attention Deficit Disorder) is an older term. It was used to describe people with attention problems but without visible hyperactivity. It is no longer used as a formal diagnostic label in current clinical guidelines, including the DSM-5 or ICD-11.</p>
+            <div class="accordion" id="addAccordion">
+              <div class="accordion__panel" id="addPanel">
+                <div class="accordion__panel-inner">
+                  <p class="ps-add-box__extra">Today, clinicians use the term "ADHD Predominantly Inattentive Presentation" to describe the same presentation. This subtype involves significant difficulty with focus, organization, and follow-through. But without the restlessness or impulsivity more commonly seen in boys.</p>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="ps-add-box__toggle" id="addToggle" aria-expanded="false" aria-label="Read more">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WATCH VIDEO ============ -->
+  <section class="section section--peach">
+    <div class="container">
+      <div class="ps-video-head">
+        <div>
+          <p class="ps-video-head__kicker">Watch · 3 min</p>
+          <h2 class="h2">Understand ADHD in <em>three minutes</em></h2>
+        </div>
+        <p class="lede lede--narrow">One of our psychologists explains what ADHD is, how it affects attention and executive function, and what an assessment involves.</p>
+      </div>
+      <button type="button" class="ps-video-btn" id="adhdVideoBtn" aria-label="Play video: What ADHD actually is">
+        <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=1400&q=72" alt="A psychologist being filmed while explaining ADHD">
+        <span class="ps-video-btn__scrim"></span>
+        <span class="ps-video-btn__play"><span class="ps-video-btn__play-icon"></span></span>
+        <span class="ps-video-btn__label"><span>What ADHD actually is</span></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ SUBTYPES ============ -->
+  <section id="adhd-subtypes" class="section section--white" data-sec="subtypes">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="h2">The Three ADHD <em>Subtypes</em></h2>
+        <p class="lede">Not everyone with ADHD presents the same way. It is divided into 3 subtypes. ADHD is diagnosed in three subtypes, based on which symptoms are most prominent.</p>
+      </div>
+
+      <div class="grid-3" id="subtypesGrid">
+        <div class="ps-subtype-card" data-subtype="0">
+          <div class="ps-subtype-card__head">
+            <span class="icon-circle"><svg class="icon" data-icon="cloud"></svg></span>
+            <span class="ps-subtype-card__num"><span>01</span></span>
+          </div>
+          <h3>Inattentive (ADD)</h3>
+          <p>Difficulty sustaining attention, frequent mind-wandering, losing items, forgetting tasks, and being easily distracted. Often missed in childhood, especially in girls. This is the most common presentation in adults.</p>
+        </div>
+        <div class="ps-subtype-card" data-subtype="1">
+          <div class="ps-subtype-card__head">
+            <span class="icon-circle"><svg class="icon" data-icon="zap"></svg></span>
+            <span class="ps-subtype-card__num"><span>02</span></span>
+          </div>
+          <h3>Hyperactive-Impulsive</h3>
+          <p>Physical restlessness, difficulty staying seated, interrupting others, and acting before thinking. More commonly diagnosed in childhood.</p>
+        </div>
+        <div class="ps-subtype-card" data-subtype="2">
+          <div class="ps-subtype-card__head">
+            <span class="icon-circle"><svg class="icon" data-icon="layers"></svg></span>
+            <span class="ps-subtype-card__num"><span>03</span></span>
+          </div>
+          <h3>Combined Presentation</h3>
+          <p>A combination of inattentive and hyperactive-impulsive symptoms. Often considered the most clinically significant presentation in adults.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAUSES ============ -->
+  <section id="adhd-causes" class="section section--peach" data-sec="causes">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="h2">What are the causes and <em>risk factors</em> of ADHD?</h2>
+        <p class="lede">ADHD does not have a single cause. It results from a combination of genetic, neurological, and environmental factors. No single factor causes ADHD on its own.</p>
+      </div>
+
+      <div class="ps-g2">
+        <div class="ps-cause-card">
+          <span class="icon-circle"><svg class="icon" data-icon="dna"></svg></span>
+          <div>
+            <h3>Genetics</h3>
+            <p>ADHD is one of the most heritable conditions in psychiatry. It often runs in families. Having a parent or sibling with ADHD significantly raises the risk in other family members.</p>
+          </div>
+        </div>
+        <div class="ps-cause-card">
+          <span class="icon-circle"><svg class="icon" data-icon="brain"></svg></span>
+          <div>
+            <h3>Brain development and neurobiology</h3>
+            <p>Certain areas of the brain, particularly those involved in executive function, attention, and reward, develop more slowly or function differently in people with ADHD. The prefrontal cortex, which manages planning and impulse control, is especially affected. These are biological differences, not signs of damage.</p>
+          </div>
+        </div>
+        <div class="ps-cause-card">
+          <span class="icon-circle"><svg class="icon" data-icon="baby"></svg></span>
+          <div>
+            <h3>Prenatal and perinatal factors</h3>
+            <p>Exposure to tobacco smoke, alcohol, or certain substances during pregnancy is associated with a higher risk of ADHD in the child. Premature birth, low birth weight, and complications during delivery may also raise risk. These factors interact with genetic predisposition rather than causing ADHD independently.</p>
+          </div>
+        </div>
+        <div class="ps-cause-card">
+          <span class="icon-circle"><svg class="icon" data-icon="leaf"></svg></span>
+          <div>
+            <h3>Environmental factors</h3>
+            <p>Exposure to environmental toxins such as lead in early childhood has been linked to attention problems. Significant early-life adversity, chronic stress, and trauma may also affect brain development in ways that worsen ADHD symptoms, though these do not cause ADHD in the absence of a genetic predisposition.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ps-not-cause">
+        <span class="icon-circle icon-circle--lg"><svg class="icon" data-icon="circle-x"></svg></span>
+        <div>
+          <h3>What does NOT cause ADHD?</h3>
+          <p>Research consistently shows that ADHD is not caused by poor parenting, too much screen time, sugar, diet alone, or lack of discipline. These myths are persistent but not supported by evidence. ADHD exists across all cultures, socioeconomic groups, and parenting styles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SYMPTOMS ============ -->
+  <section id="adhd-symptoms" class="section section--white" data-sec="symptoms">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="h2">Symptoms of <em>ADHD</em></h2>
+        <p class="lede">ADHD symptoms vary depending on age, sex, and individual differences. They generally involve inattention, hyperactivity, and impulsivity, but the way these symptoms show can differ between children, adolescents, and adults.</p>
+      </div>
+
+      <div class="ps-symgroups" id="symptomGroups">
+        <div class="ps-symgroup is-open" data-symgroup="0">
+          <button type="button" class="ps-symgroup__trigger">
+            <span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="zap"></svg></span>
+            <span class="ps-symgroup__title">Hyperactive / impulsive</span>
+            <span class="ps-symgroup__count">9 signs</span>
+            <svg class="icon accordion__chevron" data-icon="chevron-down"></svg>
+          </button>
+          <div class="accordion__panel">
+            <div class="accordion__panel-inner">
+              <div class="ps-symlist">
+                <div><span>✓</span><span>The person often fidgets with their fingers/hands and feet or writhes.</span></div>
+                <div><span>✓</span><span>The person often leaves their seat, despite the fact that the person is expected to remain seated.</span></div>
+                <div><span>✓</span><span>Unnecessary running and physical activity, i.e. not related to sports/hobbies or similar. In the elderly, it often manifests itself in the form of a feeling of constant restlessness.</span></div>
+                <div><span>✓</span><span>Problems with staying quiet and still during certain activities, often during play among children.</span></div>
+                <div><span>✓</span><span>Usually on the move or can be considered to be powered by an engine.</span></div>
+                <div><span>✓</span><span>Very talkative.</span></div>
+                <div><span>✓</span><span>Answers questions before they are formulated.</span></div>
+                <div><span>✓</span><span>Problems related to waiting for your turn.</span></div>
+                <div><span>✓</span><span>Interrupts or disrupts others' conversations, games, and activities.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ps-symgroup" data-symgroup="1">
+          <button type="button" class="ps-symgroup__trigger">
+            <span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="cloud"></svg></span>
+            <span class="ps-symgroup__title">Inattentive</span>
+            <span class="ps-symgroup__count">7 signs</span>
+            <svg class="icon accordion__chevron" data-icon="chevron-down"></svg>
+          </button>
+          <div class="accordion__panel">
+            <div class="accordion__panel-inner">
+              <div class="ps-symlist">
+                <div><span>✓</span><span>Has a short attention span and is easily distracted by external stimuli.</span></div>
+                <div><span>✓</span><span>Carelessness in completing tasks, such as homework.</span></div>
+                <div><span>✓</span><span>Tends to forget and lose things</span></div>
+                <div><span>✓</span><span>Struggling to complete, or struggling to complete, tasks that require a lot of cognitive resources.</span></div>
+                <div><span>✓</span><span>The tendency not to listen to or carry out instructions.</span></div>
+                <div><span>✓</span><span>Continuous switching between varying tasks.</span></div>
+                <div><span>✓</span><span>Struggling to complete organised tasks or activities.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ps-symgroup" data-symgroup="2">
+          <button type="button" class="ps-symgroup__trigger">
+            <span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="layers"></svg></span>
+            <span class="ps-symgroup__title">Combined</span>
+            <span class="ps-symgroup__count">9 signs</span>
+            <svg class="icon accordion__chevron" data-icon="chevron-down"></svg>
+          </button>
+          <div class="accordion__panel">
+            <div class="accordion__panel-inner">
+              <div class="ps-symlist">
+                <div><span>✓</span><span>Inattention: Difficulty maintaining focus on tasks.</span></div>
+                <div><span>✓</span><span>Hyperactivity: restlessness and constant fidgeting.</span></div>
+                <div><span>✓</span><span>Impulsivity: Failure to think about consequences before acting.</span></div>
+                <div><span>✓</span><span>Poor executive functioning: Difficulty organising tasks.</span></div>
+                <div><span>✓</span><span>Procrastination: the tendency to put off tasks.</span></div>
+                <div><span>✓</span><span>Time management challenges: Difficulty estimating time.</span></div>
+                <div><span>✓</span><span>Forgetfulness: Forgetting appointments and commitments.</span></div>
+                <div><span>✓</span><span>Difficulty focusing on tasks: easily distracted from activities.</span></div>
+                <div><span>✓</span><span>Impaired working memory: Difficulty holding and manipulating information.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LIFE STAGES ============ -->
+  <section id="adhd-ages" class="section section--peach" data-sec="ages">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="h2">ADHD Across Ages and <em>Life Stages</em></h2>
+        <p class="lede">ADHD does not look the same at every age. The way it presents, the challenges it creates, and the support that helps change significantly across the lifespan. Below is a brief overview of ADHD at each life stage.</p>
+      </div>
+
+      <div class="split mt-40" data-reveal>
+        <div class="ps-age-media">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=72" alt="A boy at his school desk, attention drifting to other things">
+        </div>
+        <div>
+          <p class="ps-age-kicker">Children and adolescents</p>
+          <h3 class="ps-age-title">ADHD in Children and adolescents</h3>
+          <p class="lede">In younger children, ADHD most often appears as visible hyperactivity. Like running, climbing, difficulty sitting still, and impulsive behavior in class. Inattention shows as failure to follow instructions, losing items, not completing schoolwork, and difficulty waiting for a turn.</p>
+          <p class="lede">ADHD in children may affect school performance, friendships, and family relationships. Children with ADHD are often described as "disruptive" or "difficult." Early assessment and support make a significant difference to long-term outcomes.</p>
+          <p class="lede">Adolescents who have not been diagnosed may be labeled as lazy, rebellious or unmotivated. Understanding ADHD can be beneficial both for the young person and for the adults around them.</p>
+        </div>
+      </div>
+
+      <div class="split mt-40" data-reveal>
+        <div>
+          <p class="ps-age-kicker">Adults</p>
+          <h3 class="ps-age-title">ADHD in adults</h3>
+          <p class="lede">In adults, hyperactivity may become less visible and feel more like internal restlessness. The most common adult ADHD difficulties include managing deadlines, organizing daily life, maintaining relationships, sustaining focus in meetings, and staying on top of finances and administration. Many adults developed coping strategies in childhood that mask the condition. It may lead to a late diagnosis.</p>
+          <p class="lede">Adult ADHD frequently co-occurs with anxiety, depression, sleep problems and substance use.</p>
+          <a href="#" class="link-arrow mt-20">ADHD in adults <span>→</span></a>
+        </div>
+        <div class="ps-age-media">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=72" alt="Two adults at work, overwhelmed by competing demands">
+        </div>
+      </div>
+
+      <div class="ps-women-wrap mt-40" data-reveal>
+        <p class="ps-age-kicker">Women and girls</p>
+        <h3 class="ps-age-title">ADHD in Women and girls: Symptoms, Late Diagnosis and Why It Matters</h3>
+        <p class="lede">ADHD in women is one of the most underrecognized areas in mental health. For decades, ADHD was diagnosed almost exclusively in boys, with visible hyperactivity as a central feature. Girls and women with ADHD tend to present very differently. This means many go undiagnosed for years or are misdiagnosed with anxiety or depression.</p>
+        <p class="lede">The consequences of late or missed diagnosis in women are serious. Without understanding the neurological basis of their difficulties, many women internalise their struggles as personal failure. The chronic shame, self-blame, and exhaustion that result can lead to significant mental health difficulties, including depression, anxiety, burnout, and relationship problems.</p>
+
+        <div class="ps-women">
+          <div class="ps-women__panel">
+            <p class="ps-women__title">Signs of ADHD in Women</p>
+            <p class="ps-women__lede">Women with ADHD may:</p>
+            <div class="ps-women__list">
+              <span><span class="check-list__dot"></span>Feel overwhelmed by simple tasks</span>
+              <span><span class="check-list__dot"></span>Struggle with emotional regulation</span>
+              <span><span class="check-list__dot"></span>Have difficulty prioritizing</span>
+              <span><span class="check-list__dot"></span>Experience chronic guilt</span>
+              <span><span class="check-list__dot"></span>Overwork to compensate</span>
+              <span><span class="check-list__dot"></span>Forget important responsibilities</span>
+              <span><span class="check-list__dot"></span>Feel exhausted after social interaction</span>
+              <span><span class="check-list__dot"></span>Mask symptoms to appear "organized"</span>
+            </div>
+          </div>
+          <div class="ps-women__media">
+            <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=900&q=72" alt="A woman at her desk, worn down by the effort of keeping up">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLINIC BANNER ============ -->
+  <section class="section section--terracotta">
+    <span class="ps-tex-dot"></span>
+    <div class="container">
+      <div class="split" data-reveal>
+        <div>
+          <p class="ps-age-kicker ps-age-kicker--light">ADHD Psychologist</p>
+          <h2 class="h2" style="color:#fff">Private assessment with short waiting times</h2>
+          <p class="lede" style="color:rgba(255,255,255,.85)">At psykolog.no, our ADHD psychologist Oslo, Ski, and online all over Norway offer private assessment and treatment with short waiting times and direct online booking.</p>
+          <p class="lede" style="color:rgba(255,255,255,.85)">We have a physical clinic in Oslo and Ski with multiple private practicing psychologists for ADHD. Whether you prefer a face-to-face session or a video consultation from home, we make it easy to access the assessment you need.</p>
+          <div class="mt-30">
+            <button type="button" class="btn btn--light" data-scroll data-target="#adhd-assessment">Looking for an ADHD psychologist? Book directly online <span>→</span></button>
+          </div>
+        </div>
+        <div class="ps-clinic-points">
+          <div><span class="icon-circle icon-circle--on-dark"><svg class="icon" data-icon="file-x"></svg></span><span>Private ADHD assessment with no referral, short waiting time</span></div>
+          <div><span class="icon-circle icon-circle--on-dark"><svg class="icon" data-icon="building-2"></svg></span><span>In-person appointments at our clinic</span></div>
+          <div><span class="icon-circle icon-circle--on-dark"><svg class="icon" data-icon="video"></svg></span><span>Online video sessions available for who prefer remote access</span></div>
+          <div><span class="icon-circle icon-circle--on-dark"><svg class="icon" data-icon="badge-check"></svg></span><span>Psychologists with specialist experience in adult ADHD, ADHD in women, and co-occurring conditions</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ADULTS VS CHILDREN ============ -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="h2">ADHD in Adults vs. <em>ADHD in Children</em></h2>
+        <p class="lede">When assessing ADHD in adults, clinicians look for different patterns than when assessing children. Adults with ADHD often show the following:</p>
+      </div>
+      <div class="ps-g2">
+        <div class="ps-pattern-card"><span>01</span><span>More prominent internal restlessness rather than visible physical hyperactivity</span></div>
+        <div class="ps-pattern-card"><span>02</span><span>Executive function difficulties in work and relationships, rather than classroom behaviour</span></div>
+        <div class="ps-pattern-card"><span>03</span><span>A history of chronic underachievement relative to their intellectual potential</span></div>
+        <div class="ps-pattern-card"><span>04</span><span>Burnout from years of compensating without support.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ASSESSMENT ============ -->
+  <section id="adhd-assessment" class="section section--peach" data-sec="assessment">
+    <div class="container">
+      <div class="split-top">
+        <div>
+          <h2 class="h2">Private ADHD <em>Assessment</em></h2>
+          <p class="lede">Getting a private ADHD assessment at psykolog.no means you do not need a referral from your GP. You book directly online, choose your ADHD psychologist, and begin the assessment process within days rather than months.</p>
+          <p class="lede">Our ADHD assessments are conducted by licensed, authorized psychologists registered in the Norwegian Health Personnel Registry. An ADHD assessment at psykolog.no starts with a survey interview, followed by questionnaires, structured interviews, and neuropsychological tests.</p>
+
+          <div class="ps-steps" id="assessSteps">
+            <div class="ps-steps__item" data-step="0"><span class="ps-steps__num">1</span><div><h3>Initial screening of symptoms</h3><p>The first consultation is a thorough conversation about your current difficulties, daily life, work or school situation, and the history of your symptoms. This decides whether a full ADHD assessment should be carried out.</p></div></div>
+            <div class="ps-steps__item" data-step="1"><span class="ps-steps__num">2</span><div><h3>Assessment</h3><p>If a full assessment is indicated, you complete standardized questionnaires, a structured clinical interview, and where relevant, neuropsychological tests measuring attention, working memory and executive function.</p></div></div>
+            <div class="ps-steps__item" data-step="2"><span class="ps-steps__num">3</span><div><h3>Feedback and diagnosis</h3><p>Your psychologist reviews all results with you in a feedback session. If the assessment supports an ADHD diagnosis, this is confirmed at this stage. You receive a written assessment report that you can use with your GP, employer, or NAV.</p></div></div>
+            <div class="ps-steps__item" data-step="3"><span class="ps-steps__num">4</span><div><h3>Treatment plan</h3><p>Your psychologist develops a treatment plan together with you. This may include CBT, coaching, psychoeducation and practical strategies. If medication may be relevant, you are referred to a psychiatrist — which in our network means a seamless handover to psykiater.no.</p></div></div>
+          </div>
+
+          <div class="mt-30">
+            <button type="button" class="btn btn--primary" data-scroll data-target="#adhd-cta">Book your assessment</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="ps-shots" id="assessPreview">
+            <img data-shot="0" class="is-active" src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=900&q=72" alt="A psychologist listening during the first conversation">
+            <img data-shot="1" src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=900&q=72" alt="A psychologist taking notes during the assessment">
+            <img data-shot="2" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=72" alt="A psychologist going through the results with a patient">
+            <img data-shot="3" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=72" alt="A clinician explaining a treatment plan">
+            <span class="ps-shots__scrim"></span>
+            <span class="ps-shots__badge"><span id="shotNum">1</span><span id="shotLabel">Initial screening</span></span>
+            <div class="ps-shots__caption">
+              <p id="shotCaption">A conversation about how things actually are</p>
+              <p id="shotSub">Your difficulties, daily life, work or school, and history.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TREATMENT ============ -->
+  <section id="adhd-treatment" class="section section--white" data-sec="treatment">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="h2">ADHD Treatment. What Does a Psychologist Do <em>After Diagnosis?</em></h2>
+        <p class="lede">An ADHD diagnosis is not the end of the process; it is the beginning. The effective treatment can make a profound difference to your quality of life. At psykolog.no, our ADHD psychologists offer a range of evidence-based therapeutic approaches tailored to your specific needs.</p>
+      </div>
+
+      <div class="ps-treatments" id="treatmentRows">
+        <div class="ps-treat-row" data-treat="0">
+          <div class="ps-treat-row__top"><span class="chip">Step 1</span><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="repeat"></svg></span></div>
+          <h3>Cognitive Behavioural Therapy for ADHD (CBT)</h3>
+          <p>CBT is one of the effective psychological treatments for ADHD in adults. CBT teaches practical skills to address the challenges of ADHD. A CBT program for ADHD might include the following:</p>
+          <div class="ps-treat-row__list">
+            <span><span class="check-list__dot"></span>Organisational and planning strategies: external structure systems, time management tools, prioritisation techniques</span>
+            <span><span class="check-list__dot"></span>Procrastination intervention: breaking the avoidance cycle, task initiation strategies</span>
+            <span><span class="check-list__dot"></span>Emotional regulation skills: managing frustration, impulsivity, and rejection sensitivity</span>
+            <span><span class="check-list__dot"></span>Working memory compensatory strategies</span>
+            <span><span class="check-list__dot"></span>Self-compassion and reframing: addressing shame, perfectionism, and negative self-talk related to ADHD</span>
+          </div>
+        </div>
+
+        <div class="ps-treat-row" data-treat="1">
+          <div class="ps-treat-row__top"><span class="chip">Step 2</span><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="waves"></svg></span></div>
+          <h3>Dialectical Behaviour Therapy (DBT) for ADHD</h3>
+          <p>DBT is particularly effective for the emotional dysregulation component of ADHD. DBT has strong evidence for ADHD, particularly for adults who struggle with rejection sensitivity, impulsivity, and emotional outbursts.</p>
+        </div>
+
+        <div class="ps-treat-row" data-treat="2">
+          <div class="ps-treat-row__top"><span class="chip">Step 3</span><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="brain"></svg></span></div>
+          <h3>Metacognitive Therapy (MCT) and ADHD</h3>
+          <p>MCT addresses the persistent worry, rumination, and "thought loops" that many adults with ADHD experience. It helps you change your relationship with unhelpful thinking patterns rather than fighting the content of those thoughts. MCT is available from several of our psychologists at psykolog.no.</p>
+        </div>
+
+        <div class="ps-treat-row" data-treat="3">
+          <div class="ps-treat-row__top"><span class="chip">Step 4</span><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="compass"></svg></span></div>
+          <h3>Coaching and Psychoeducation</h3>
+          <p>ADHD coaching helps you build personalised systems for managing the practical challenges of ADHD. Combined with psychoeducation, a deep understanding of how your ADHD brain works is crucial. This is often the most impactful form of support.</p>
+        </div>
+
+        <div class="ps-treat-row" data-treat="4">
+          <div class="ps-treat-row__top"><span class="chip">Step 5</span><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="pill"></svg></span></div>
+          <h3>Medication (The Role of the Psychiatrist)</h3>
+          <p>Psychological treatment and medication are not mutually exclusive. For many adults with ADHD, a combination is the most effective approach. At psykolog.no, our psychologists do not prescribe medication (only medical doctors and psychiatrists can). However, we work closely with psychiatrists and can refer you appropriately if medication is considered beneficial. We can also support you through the process of ADHD medication — monitoring effects, building complementary psychological skills, and adjusting your treatment plan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DAILY LIFE ============ -->
+  <section id="adhd-living" class="section section--peach" data-sec="living">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="h2">Living With ADHD: Practical Strategies for <em>Daily Life</em></h2>
+        <p class="lede">Understanding how ADHD affects your daily life allows you to design your environment and routines.</p>
+      </div>
+
+      <div class="ps-g4">
+        <div class="ps-living-card">
+          <div class="ps-living-card__head"><span class="icon-circle"><svg class="icon" data-icon="calendar-check"></svg></span><span class="ps-living-card__n">01</span></div>
+          <h3>Organization &amp; Time</h3>
+          <div class="ps-living-card__list">
+            <span><span class="check-list__dot"></span>Externalise everything: write things down, set alarms, and use physical reminders</span>
+            <span><span class="check-list__dot"></span>Use time blocking: assign specific tasks to specific time slots, not just days</span>
+            <span><span class="check-list__dot"></span>Use visual timers and reminders.</span>
+          </div>
+        </div>
+        <div class="ps-living-card">
+          <div class="ps-living-card__head"><span class="icon-circle"><svg class="icon" data-icon="heart"></svg></span><span class="ps-living-card__n">02</span></div>
+          <h3>Emotional Regulation</h3>
+          <div class="ps-living-card__list">
+            <span><span class="check-list__dot"></span>Name the emotion: emotional dysregulation often decreases once feelings are identified</span>
+            <span><span class="check-list__dot"></span>Use the STOP technique: Stop, Take a breath, Observe, Proceed before reacting</span>
+            <span><span class="check-list__dot"></span>Build recovery time into your schedule after demanding social or cognitive situations</span>
+            <span><span class="check-list__dot"></span>Reduce shame by recognising that ADHD struggles are neurological, not moral failings</span>
+          </div>
+        </div>
+        <div class="ps-living-card">
+          <div class="ps-living-card__head"><span class="icon-circle"><svg class="icon" data-icon="briefcase"></svg></span><span class="ps-living-card__n">03</span></div>
+          <h3>Work &amp; Productivity</h3>
+          <div class="ps-living-card__list">
+            <span><span class="check-list__dot"></span>Lean into hyperfocus: schedule demanding tasks when you naturally feel engaged</span>
+            <span><span class="check-list__dot"></span>Break large tasks into micro-steps.</span>
+            <span><span class="check-list__dot"></span>Request reasonable workplace adjustments.</span>
+          </div>
+        </div>
+        <div class="ps-living-card">
+          <div class="ps-living-card__head"><span class="icon-circle"><svg class="icon" data-icon="moon"></svg></span><span class="ps-living-card__n">04</span></div>
+          <h3>Sleep &amp; Wellbeing</h3>
+          <div class="ps-living-card__list">
+            <span><span class="check-list__dot"></span>Anchor your sleep schedule; consistency is especially important for ADHD brains</span>
+            <span><span class="check-list__dot"></span>Reduce screen stimulation 1 to 2 hours before bedtime</span>
+            <span><span class="check-list__dot"></span>Prioritise physical exercise, one of the most evidence-based ADHD interventions</span>
+            <span><span class="check-list__dot"></span>Maintain regular meals to stabilise blood sugar.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RECOGNISE YOURSELF ============ -->
+  <section id="adhd-help" class="section section--white" data-sec="help">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="h2">Where do you <em>recognise yourself?</em></h2>
+        <p class="lede">ADHD shows up differently depending on who you are and where you are in life. Choose the closest starting point.</p>
+      </div>
+
+      <div class="ps-g4">
+        <a href="#adhd-ages" class="ps-audience-card" style="--rule:#C24C33">
+          <span class="ps-audience-card__top"><span>ADHD in children</span><span>→</span></span>
+          <span class="ps-audience-card__d">Visible hyperactivity, school and friendships</span>
+        </a>
+        <a href="#adhd-ages" class="ps-audience-card" style="--rule:#F09367">
+          <span class="ps-audience-card__top"><span>ADHD in adults</span><span>→</span></span>
+          <span class="ps-audience-card__d">Internal restlessness and executive function</span>
+        </a>
+        <a href="#adhd-ages" class="ps-audience-card" style="--rule:#E8B8AC">
+          <span class="ps-audience-card__top"><span>ADHD in women</span><span>→</span></span>
+          <span class="ps-audience-card__d">Late diagnosis and masked symptoms</span>
+        </a>
+        <a href="#adhd-living" class="ps-audience-card" style="--rule:#8F3420">
+          <span class="ps-audience-card__top"><span>ADHD at work</span><span>→</span></span>
+          <span class="ps-audience-card__d">Deadlines, focus and workplace strategies</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CO-OCCURRING ============ -->
+  <section id="adhd-cooccurring" class="section section--peach" data-sec="cooccurring">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="h2">ADHD and <em>co-occurring conditions</em></h2>
+        <p class="lede">ADHD often occurs together with other mental health challenges. Many people with ADHD also experience one or more other mental health conditions, some of which may appear first and mask the underlying ADHD. A thorough assessment at psykolog.no helps you get the full picture.</p>
+      </div>
+
+      <div class="grid-3">
+        <a href="#" class="ps-cooccur-card">
+          <span class="ps-cooccur-card__top"><span class="icon-circle"><svg class="icon" data-icon="activity"></svg></span><span>→</span></span>
+          <h3>ADHD and anxiety</h3>
+          <p>Many adults with ADHD also have an anxiety disorder. The constant effort to compensate for ADHD difficulties often creates chronic stress and worry. Symptoms overlap significantly, making diagnosis tricky.</p>
+        </a>
+        <a href="#" class="ps-cooccur-card">
+          <span class="ps-cooccur-card__top"><span class="icon-circle"><svg class="icon" data-icon="cloud-rain"></svg></span><span>→</span></span>
+          <h3>ADHD and depression</h3>
+          <p>Years of underperforming despite real effort, repeated failures and low self-esteem make depression very common in adults with undiagnosed or untreated ADHD.</p>
+        </a>
+        <a href="#" class="ps-cooccur-card">
+          <span class="ps-cooccur-card__top"><span class="icon-circle"><svg class="icon" data-icon="moon"></svg></span><span>→</span></span>
+          <h3>ADHD and sleep problems</h3>
+          <p>ADHD is linked to delayed sleep phase, difficulty switching off the brain at night, and restless sleep. Sleep deprivation in turn worsens all ADHD symptoms.</p>
+        </a>
+        <a href="#" class="ps-cooccur-card">
+          <span class="ps-cooccur-card__top"><span class="icon-circle"><svg class="icon" data-icon="refresh-cw"></svg></span><span>→</span></span>
+          <h3>ADHD and OCD</h3>
+          <p>Both conditions involve executive function difficulties and repetitive thought patterns, though in different ways. Misdiagnosis between the two is common. A thorough assessment distinguishes them clearly.</p>
+        </a>
+        <a href="#" class="ps-cooccur-card">
+          <span class="ps-cooccur-card__top"><span class="icon-circle"><svg class="icon" data-icon="puzzle"></svg></span><span>→</span></span>
+          <h3>ADHD and autism (ASD)</h3>
+          <p>ADHD and autism spectrum disorder frequently co-occur. Both affect executive function and social communication, though through different mechanisms.</p>
+        </a>
+        <a href="#" class="ps-cooccur-card">
+          <span class="ps-cooccur-card__top"><span class="icon-circle"><svg class="icon" data-icon="user-round"></svg></span><span>→</span></span>
+          <h3>ADHD and low self-esteem</h3>
+          <p>Chronic underachievement, being misunderstood, and years of negative feedback create deep patterns of low self-esteem in people with ADHD. Psychoeducation and CBT both directly address this layer of the condition.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY CHOOSE / BOOK CTA ============ -->
+  <section id="adhd-cta" class="section section--white" data-book>
+    <div class="container">
+      <div class="ps-why">
+        <div data-reveal>
+          <h2 class="h2">Why Choose Psykolog.no For <em>ADHD Assessment and Treatment?</em></h2>
+          <p class="lede">Our ADHD psychologists have specific clinical experience in adult ADHD, ADHD in women, late diagnosis, and ADHD with co-occurring conditions. We develop a personalized treatment plan covering psychological therapy, practical strategies, and referral to a psychiatrist if medication is needed.</p>
+          <p class="lede">Book a private ADHD assessment with a licensed psychologist. No referral, no waiting list. Available in person and online from anywhere in Norway.</p>
+          <div class="mt-30">
+            <button type="button" class="btn btn--primary btn--lg">Book Your ADHD Assessment Today <span>→</span></button>
+          </div>
+        </div>
+        <div class="ps-why__media" data-reveal>
+          <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=900&q=72" alt="An illustrated brain with an ADHD thought bubble">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MYTHS ============ -->
+  <section id="adhd-myths" class="section section--peach" data-sec="myths">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="h2">Myths and facts about <em>ADHD</em></h2>
+      </div>
+
+      <div class="ps-myths">
+        <div class="ps-g2">
+          <div class="ps-myth-card ps-myth-card--myth"><span class="ps-myth-card__n">01</span><span class="ps-myth-card__mark">✕</span><span>ADHD isn't real.</span></div>
+          <div class="ps-myth-card ps-myth-card--fact"><span class="ps-myth-card__mark">✓</span><span>ADHD is a well-recognized neurodevelopmental disorder supported by decades of scientific research.</span></div>
+        </div>
+        <div class="ps-g2">
+          <div class="ps-myth-card ps-myth-card--myth"><span class="ps-myth-card__n">02</span><span class="ps-myth-card__mark">✕</span><span>Kids grow out of ADHD.</span></div>
+          <div class="ps-myth-card ps-myth-card--fact"><span class="ps-myth-card__mark">✓</span><span>ADHD often continues into adolescence and adulthood, although symptoms may change over time.</span></div>
+        </div>
+        <div class="ps-g2">
+          <div class="ps-myth-card ps-myth-card--myth"><span class="ps-myth-card__n">03</span><span class="ps-myth-card__mark">✕</span><span>Technology causes ADHD.</span></div>
+          <div class="ps-myth-card ps-myth-card--fact"><span class="ps-myth-card__mark">✓</span><span>ADHD is a neurodevelopmental condition influenced by genetics and brain development. Technology does not cause ADHD.</span></div>
+        </div>
+        <div class="ps-g2">
+          <div class="ps-myth-card ps-myth-card--myth"><span class="ps-myth-card__n">04</span><span class="ps-myth-card__mark">✕</span><span>ADHD is overdiagnosed.</span></div>
+          <div class="ps-myth-card ps-myth-card--fact"><span class="ps-myth-card__mark">✓</span><span>Many people with ADHD remain undiagnosed or receive a diagnosis later in life. Accurate diagnosis requires a comprehensive clinical assessment.</span></div>
+        </div>
+        <div class="ps-g2">
+          <div class="ps-myth-card ps-myth-card--myth"><span class="ps-myth-card__n">05</span><span class="ps-myth-card__mark">✕</span><span>People with ADHD are just lazy.</span></div>
+          <div class="ps-myth-card ps-myth-card--fact"><span class="ps-myth-card__mark">✓</span><span>ADHD affects executive functions such as attention, planning, organization, impulse control, and self-regulation. It is not a sign of laziness.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="adhd-faq" class="section section--white" data-sec="faq">
+    <div class="container">
+      <div class="split-top">
+        <div>
+          <h2 class="h2">Frequently Asked <em>Questions</em></h2>
+          <p class="lede">Still unsure whether an assessment is the right next step? Speak to one of our psychologists.</p>
+          <div class="mt-30">
+            <button type="button" class="btn btn--primary" data-scroll data-target="#adhd-cta">Book an appointment</button>
+          </div>
+        </div>
+
+        <div class="faq-list" id="adhdFaqList">
+          <div class="faq-item is-open">
+            <button type="button" class="faq-item__trigger">
+              <span>What is the difference between ADHD and ADD?</span>
+              <span class="faq-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                  <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-item__panel"><div class="faq-item__panel-inner"><p>ADD (Attention Deficit Disorder) is an older diagnostic term that was used to describe the inattentive presentation of ADHD. It is no longer used in current clinical guidelines such as the DSM-5 or ICD-11. Today, clinicians use the term "ADHD Predominantly Inattentive Presentation."</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger">
+              <span>Can adults be diagnosed with ADHD?</span>
+              <span class="faq-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                  <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-item__panel"><div class="faq-item__panel-inner"><p>Yes, ADHD is diagnosed in adults, including those who were completely missed in childhood. Many adults receive their first ADHD diagnosis in their 30s, 40s or later. Adult ADHD is a clinical condition and can be assessed by an authorized psychologist or psychiatrist.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger">
+              <span>Can I get an ADHD diagnosis without a GP referral in Norway?</span>
+              <span class="faq-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                  <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-item__panel"><div class="faq-item__panel-inner"><p>Yes. In the private sector, you can book an ADHD assessment directly with a licensed psychologist without a referral from your GP. At psykolog.no, you can book your consultation online easily with our private practising psychologist for ADHD.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger">
+              <span>What is the difference between an ADHD psychologist and an ADHD psychiatrist?</span>
+              <span class="faq-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                  <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-item__panel"><div class="faq-item__panel-inner"><p>An ADHD psychologist holds a professional psychology degree and specialises in assessment, diagnosis, support, and psychological treatment of ADHD through therapy and coaching. The ADHD psychiatrist is a medical doctor who can additionally prescribe ADHD medication. For most adults seeking an initial ADHD assessment and therapy, a psychologist is the right starting point. If medication is also needed, the psychologist can refer you to a psychiatrist. At psykolog.no, we offer both psychological assessment and psychiatric referral.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger">
+              <span>What happens after an ADHD diagnosis?</span>
+              <span class="faq-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                  <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-item__panel"><div class="faq-item__panel-inner"><p>After an ADHD diagnosis, you will receive a written assessment report and a feedback session with your psychologist, and a treatment or support plan based on your specific difficulties and goals. This may include CBT, coaching, psychoeducation, and referral to a psychiatrist for medication assessment. The written report can be shared with your GP, employer, school, or NAV if you need accommodations or support with benefits.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger">
+              <span>What are the most common ADHD symptoms in girls and women?</span>
+              <span class="faq-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                  <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-item__panel"><div class="faq-item__panel-inner"><p>The most common ADHD symptoms in women include persistent disorganisation, chronic procrastination, difficulty starting tasks, emotional sensitivity, and difficulty in chaotic or multi-demand environments; masking and hormonal fluctuation worsen symptoms around the menstrual cycle.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger">
+              <span>Can adults be diagnosed with ADHD for the first time?</span>
+              <span class="faq-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                  <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-item__panel"><div class="faq-item__panel-inner"><p>Yes, absolutely. There is no age limit for an ADHD diagnosis. Many adults, particularly women, receive their first diagnosis in their 30s, 40s, or later. ADHD is a lifelong condition, though its impact changes across life stages.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger">
+              <span>When is it okay to stop taking ADHD medication?</span>
+              <span class="faq-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                  <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-item__panel"><div class="faq-item__panel-inner"><p>The choice to stop taking ADHD medication should be discussed with the prescribing doctor. You may find that your child needs extra support from teachers and family members to reinforce good behaviour once the medication is stopped.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger">
+              <span>Can ADHD affect work performance?</span>
+              <span class="faq-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                  <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-item__panel"><div class="faq-item__panel-inner"><p>ADHD also affects concentration, time management, organisation, meeting deadlines, and prioritising tasks. Professional treatment and workplace strategies are beneficial for adults with ADHD.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger">
+              <span>What is the best treatment for ADHD?</span>
+              <span class="faq-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19" class="icon-vertical" />
+                  <line x1="5" y1="12" x2="19" y2="12" class="icon-horizontal" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-item__panel"><div class="faq-item__panel-inner"><p>Treatments for ADHD in adults typically involve medication, education, skills training and psychological counselling. A combination of these is often the most effective treatment. These treatments can help manage many symptoms of ADHD.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer id="home-footer" class="site-footer">
+  <div class="container">
+    <!-- Newsletter Card -->
+    <div class="site-footer__newsletter">
+      <div class="newsletter-text">
+        <h3>Subscribe to get updated</h3>
+        <p>Professional psychological support that is easier to find, understand, and access.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="return false">
+        <input type="email" placeholder="Enter your email" required aria-label="Email address">
+        <button type="submit" class="btn--subscribe">Get started</button>
+      </form>
+    </div>
+
+    <!-- Navigation Columns -->
+    <div class="site-footer__cols">
+      <div class="footer-col">
+        <p class="footer-col__title">Services</p>
+        <a href="#">Individual therapy</a>
+        <a href="#">Couples therapy</a>
+        <a href="#">Family therapy</a>
+        <a href="#">Video consultation</a>
+        <a href="#">Psychotherapies</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Conditions</p>
+        <a href="#">Anxiety</a>
+        <a href="#">Depression</a>
+        <a href="#">ADHD</a>
+        <a href="#">Burnout</a>
+        <a href="#">All conditions</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Clinic</p>
+        <a href="#">Our psychologists</a>
+        <a href="#">How it works</a>
+        <a href="#">Pricing</a>
+        <a href="#">Oslo clinic</a>
+        <a href="#">Ski clinic</a>
+        <a href="#">Career</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Company</p>
+        <a href="#">About us</a>
+        <a href="#">Articles</a>
+        <a href="#">Join the team</a>
+        <a href="#">For businesses</a>
+        <a href="#">Tell a Friend</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Legal</p>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of service</a>
+        <a href="#">Confidentiality</a>
+        <a href="#">Consent Declaration</a>
+        <a href="#">Cookie settings</a>
+        <a href="#">Patient rights</a>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="site-footer__bottom">
+      <span class="site-footer__copy">© 2026 Psykolog.no — Licensed psychologists in Norway</span>
+      <div class="site-footer__right">
+        <div class="site-footer__social">
+          <a href="#" aria-label="Instagram" class="social-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="social-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="social-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+        </div>
+        <span class="site-footer__credit">Designed &amp; Developed By Sysinn</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ AI MATCHING ASSISTANT ============ -->
+<button type="button" class="ai-launcher" id="aiLauncher" aria-label="Open the psychologist matching assistant">
+  <span class="ai-launcher__halo"></span>
+  <span class="ai-launcher__core">
+    <svg class="icon" data-icon="sparkles"></svg>
+  </span>
+</button>
+
+<div class="ai-scrim" id="aiScrim" hidden>
+  <div class="ai-modal" role="dialog" aria-modal="true" aria-label="Psychologist matching assistant" id="aiModal">
+    <div class="ai-modal__head">
+      <div class="ai-modal__head-row">
+        <span class="ai-modal__brand">
+          <span class="icon-circle"><svg class="icon" data-icon="sparkles"></svg></span>
+          <span>
+            <span class="ai-modal__title">Find your psychologist</span>
+            <span class="ai-modal__subtitle">Takes about 2 minutes · nothing is stored</span>
+          </span>
+        </span>
+        <span class="ai-modal__step" id="aiStepLabel">Step 1 of 4</span>
+        <button type="button" class="ai-modal__close" id="aiCloseBtn" aria-label="Close">✕</button>
+      </div>
+      <div class="ai-modal__progress"><span id="aiProgressBar"></span></div>
+    </div>
+
+    <div class="ai-modal__body" id="aiBody">
+
+      <!-- Step 0: concerns -->
+      <div class="ai-screen is-active" data-ai-step="0">
+        <h2>What best describes how you are feeling today?</h2>
+        <p id="aiSelCount">Select everything that applies, there is no wrong answer.</p>
+        <div class="ai-cards" id="aiConcernCards"></div>
+        <div class="ai-own">
+          <button type="button" class="ai-own__toggle" id="aiOwnToggle">
+            <span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="pencil"></svg></span>
+            <span>Describe it in your own words</span>
+            <span class="ai-own__badge">Optional</span>
+          </button>
+          <div class="ai-own__panel" id="aiOwnPanel">
+            <div class="ai-own__panel-inner">
+              <textarea id="aiOwnWords" placeholder="Say as much or as little as you like…" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 1: duration -->
+      <div class="ai-screen" data-ai-step="1">
+        <h2>How long have you been experiencing this?</h2>
+        <p>A rough sense is enough, it helps us understand what kind of support fits.</p>
+        <div class="ai-seg" id="aiDurations">
+          <button type="button" class="ai-seg__opt" data-duration="0"><span class="ai-seg__dot"></span>A few days</button>
+          <button type="button" class="ai-seg__opt" data-duration="1"><span class="ai-seg__dot"></span>1 to 2 weeks</button>
+          <button type="button" class="ai-seg__opt" data-duration="2"><span class="ai-seg__dot"></span>About a month</button>
+          <button type="button" class="ai-seg__opt" data-duration="3"><span class="ai-seg__dot"></span>Several months</button>
+          <button type="button" class="ai-seg__opt" data-duration="4"><span class="ai-seg__dot"></span>More than a year</button>
+          <button type="button" class="ai-seg__opt" data-duration="5"><span class="ai-seg__dot"></span>I'm not sure</button>
+        </div>
+      </div>
+
+      <!-- Step 2: dynamic questions -->
+      <div class="ai-screen" data-ai-step="2">
+        <h2>A few questions, based on what you told us.</h2>
+        <p>Answer what you can. You can skip anything that does not fit.</p>
+        <div id="aiQuestions"></div>
+      </div>
+
+      <!-- Step 3: prefs -->
+      <div class="ai-screen" data-ai-step="3">
+        <h2>What kind of support are you looking for?</h2>
+        <p>Choose as many as apply, and "not sure yet" is a perfectly good answer.</p>
+        <div class="ai-prefs" id="aiPrefs">
+          <button type="button" class="ai-pref" data-pref="Individual therapy"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="user"></svg></span><span>Individual therapy</span><span class="ai-pref__check">✓</span></button>
+          <button type="button" class="ai-pref" data-pref="Couples therapy"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="heart-handshake"></svg></span><span>Couples therapy</span><span class="ai-pref__check">✓</span></button>
+          <button type="button" class="ai-pref" data-pref="Child psychologist"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="baby"></svg></span><span>Child psychologist</span><span class="ai-pref__check">✓</span></button>
+          <button type="button" class="ai-pref" data-pref="Family therapy"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="users"></svg></span><span>Family therapy</span><span class="ai-pref__check">✓</span></button>
+          <button type="button" class="ai-pref" data-pref="Online sessions"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="video"></svg></span><span>Online sessions</span><span class="ai-pref__check">✓</span></button>
+          <button type="button" class="ai-pref" data-pref="In-person sessions"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="building-2"></svg></span><span>In-person sessions</span><span class="ai-pref__check">✓</span></button>
+          <button type="button" class="ai-pref" data-pref="First time in therapy"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="sparkles"></svg></span><span>First time in therapy</span><span class="ai-pref__check">✓</span></button>
+          <button type="button" class="ai-pref" data-pref="Not sure yet"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="compass"></svg></span><span>Not sure yet</span><span class="ai-pref__check">✓</span></button>
+        </div>
+      </div>
+
+      <!-- Step 4: matching animation -->
+      <div class="ai-screen" data-ai-step="4">
+        <span class="ai-loader">
+          <span class="ai-loader__halo"></span>
+          <svg class="icon" data-icon="sparkles"></svg>
+        </span>
+        <h2>Finding psychologists who best match what you have shared…</h2>
+        <div class="ai-loader__lines" id="aiMatchLines">
+          <span>Reading what you have shared…</span>
+          <span>Comparing it with our psychologists' areas of expertise…</span>
+          <span>Putting your shortlist together…</span>
+        </div>
+        <div class="ai-loader__bar"><span id="aiMatchBar"></span></div>
+        <span class="ai-loader__dots"><span></span><span></span><span></span></span>
+      </div>
+
+      <!-- Step 5: results -->
+      <div class="ai-screen" data-ai-step="5">
+        <div class="eyebrow"><span class="eyebrow__dot">✳</span><span>Your shortlist</span></div>
+        <h2>Recommended psychologists</h2>
+        <p id="aiMatchIntro">These psychologists work across the concerns people most often bring to us.</p>
+        <div class="ai-results" id="aiResults"></div>
+        <div class="ai-disclaimer">
+          <svg class="icon" data-icon="info"></svg>
+          <p>This assistant helps you identify psychologists whose expertise aligns with what you have shared. It does not provide medical advice, diagnosis, or emergency support. If you are experiencing a mental health crisis, please contact your local emergency services or a qualified healthcare provider immediately.</p>
+        </div>
+        <div class="text-center mt-20">
+          <button type="button" class="btn btn--outline" id="aiRestartBtn">Start over</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ai-modal__foot" id="aiFoot">
+      <button type="button" class="btn btn--outline" id="aiBackBtn">Previous</button>
+      <button type="button" class="btn btn--primary" id="aiNextBtn" disabled>Continue</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -87,7 +87,7 @@
   }
 
   /* -------------------------------------------------------------------
-     2. Sticky header scroll state + mobile nav
+     2. Sticky header scroll state
      ------------------------------------------------------------------- */
   const headerBar = document.querySelector('.site-header__bar');
   function initHeader() {
@@ -99,103 +99,58 @@
     onScroll();
   }
 
+  /* -------------------------------------------------------------------
+     2b. Mobile nav — right-side drawer (scrim, scroll lock, esc, outside click)
+     ------------------------------------------------------------------- */
   const navToggle = document.getElementById('navToggle');
-  const navDrawer = document.getElementById('mobileNav');
-  const navBackdrop = document.getElementById('navBackdrop');
-  const navDrawerClose = document.getElementById('navDrawerClose');
+  let navScrim = null;
 
-  /** Returns all focusable children inside the drawer */
-  function getFocusable() {
-    if (!navDrawer) return [];
-    return Array.from(navDrawer.querySelectorAll(
-      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
-    ));
-  }
-
-  const NAV_DRAWER_CLOSE_DELAY = 400;
-
-  function openMobileNav() {
-    if (!navDrawer || !navToggle) return;
-    // 1. Ensure the drawer is visible in the layout.
-    navDrawer.removeAttribute('hidden');
-    navBackdrop && navBackdrop.classList.add('is-visible');
-
-    // 2. Defer class application until the next animation frame to avoid forced reflow.
-    requestAnimationFrame(() => {
-      navDrawer.classList.add('is-open');
-      navBackdrop && navBackdrop.classList.add('is-open');
-    });
-
-    // 3. Update ARIA state
-    navToggle.setAttribute('aria-expanded', 'true');
-    navToggle.classList.add('is-active');
-    navDrawer.removeAttribute('aria-hidden');
-
-    // 4. Prevent background scroll
-    document.body.style.overflow = 'hidden';
-
-    // 5. Move focus to first focusable element in drawer
-    const focusable = getFocusable();
-    if (focusable.length) focusable[0].focus();
+  function getNavScrim() {
+    if (navScrim) return navScrim;
+    navScrim = document.createElement('div');
+    navScrim.className = 'site-header__scrim';
+    navScrim.style.position = 'fixed';
+    navScrim.style.inset = '0';
+    navScrim.style.background = 'rgba(0,0,0,0.4)';
+    navScrim.style.opacity = '0';
+    navScrim.style.visibility = 'hidden';
+    navScrim.style.transition = 'opacity 0.3s ease';
+    navScrim.style.zIndex = '999';
+    navScrim.addEventListener('click', closeMobileNav);
+    document.body.appendChild(navScrim);
+    return navScrim;
   }
 
   function closeMobileNav() {
-    if (!navDrawer || !navToggle) return;
-
-    navDrawer.classList.remove('is-open');
-    navBackdrop && navBackdrop.classList.remove('is-open');
+    if (!navToggle) return;
     navToggle.setAttribute('aria-expanded', 'false');
     navToggle.classList.remove('is-active');
-    navDrawer.setAttribute('aria-hidden', 'true');
+    headerBar && headerBar.classList.remove('is-nav-open');
     document.body.style.overflow = '';
+    const scrim = getNavScrim();
+    scrim.style.opacity = '0';
+    scrim.style.visibility = 'hidden';
+  }
 
-    // Wait for CSS transition, then re-add hidden and clean up backdrop.
-    setTimeout(() => {
-      // Only hide if drawer is still closed (guard against rapid re-open)
-      if (!navDrawer.classList.contains('is-open')) {
-        navDrawer.setAttribute('hidden', '');
-        navBackdrop && navBackdrop.classList.remove('is-visible');
-      }
-    }, NAV_DRAWER_CLOSE_DELAY);
-
-    // Return focus to the toggle button
-    navToggle.focus();
+  function openMobileNav() {
+    if (!navToggle) return;
+    navToggle.setAttribute('aria-expanded', 'true');
+    navToggle.classList.add('is-active');
+    headerBar && headerBar.classList.add('is-nav-open');
+    document.body.style.overflow = 'hidden';
+    const scrim = getNavScrim();
+    scrim.style.visibility = 'visible';
+    requestAnimationFrame(() => { scrim.style.opacity = '1'; });
   }
 
   function initMobileNav() {
-    if (!navToggle || !navDrawer) return;
-
+    if (!navToggle) return;
     navToggle.addEventListener('click', () => {
-      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-      isOpen ? closeMobileNav() : openMobileNav();
+      const open = navToggle.getAttribute('aria-expanded') === 'true';
+      open ? closeMobileNav() : openMobileNav();
     });
-
-    // Close button inside drawer
-    navDrawerClose && navDrawerClose.addEventListener('click', closeMobileNav);
-
-    // Backdrop click closes drawer
-    navBackdrop && navBackdrop.addEventListener('click', closeMobileNav);
-
-    // Escape key closes drawer
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
-        closeMobileNav();
-      }
-    });
-
-    // Focus trap: keep Tab/Shift+Tab inside the open drawer
-    navDrawer.addEventListener('keydown', (e) => {
-      if (e.key !== 'Tab') return;
-      if (!navDrawer.classList.contains('is-open')) return;
-      const focusable = getFocusable();
-      if (!focusable.length) return;
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (e.shiftKey) {
-        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
-      } else {
-        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
-      }
+      if (e.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') closeMobileNav();
     });
   }
 
@@ -243,9 +198,6 @@
       btn.addEventListener('click', () => { btn.classList.toggle('is-active'); update(); });
     });
   }
-
-  
-
 
   /* -------------------------------------------------------------------
      7. How it works — sticky-stack stepper
@@ -299,56 +251,62 @@
      9. Therapy formats — picker + preview swap
      ------------------------------------------------------------------- */
   function initTabbedPreview(config) {
-  const list = document.getElementById(config.listId);
-  const preview = document.getElementById(config.previewId);
-  if (!list || !preview) return;
-
-  const titleEl = config.titleId ? document.getElementById(config.titleId) : null;
-  const descEl = config.descId ? document.getElementById(config.descId) : null;
-  const chipEl = config.chipId ? document.getElementById(config.chipId) : null;
-
-  list.addEventListener('click', function (e) {
-    const btn = e.target.closest(`[${config.itemAttr}]`);
-    if (!btn) return;
-
-    const idx = btn.getAttribute(config.itemAttr);
-
-    list.querySelectorAll(config.itemClass).forEach(function (it) {
-      it.classList.toggle('is-active', it === btn);
+    const list = document.getElementById(config.listId);
+    const preview = document.getElementById(config.previewId);
+    if (!list || !preview) return;
+ 
+    const titleEl = config.titleId ? document.getElementById(config.titleId) : null;
+    const descEl = config.descId ? document.getElementById(config.descId) : null;
+    const chipEl = config.chipId ? document.getElementById(config.chipId) : null;
+ 
+    list.addEventListener('click', function (e) {
+      const btn = e.target.closest(`[${config.itemAttr}]`);
+      if (!btn) return;
+ 
+      const idx = btn.getAttribute(config.itemAttr);
+ 
+      list.querySelectorAll(config.itemClass).forEach(function (it) {
+        it.classList.toggle('is-active', it === btn);
+      });
+ 
+      preview.querySelectorAll(`[${config.imgAttr}]`).forEach(function (img) {
+        img.classList.toggle('is-active', img.getAttribute(config.imgAttr) === idx);
+      });
+ 
+      if (chipEl) chipEl.textContent = btn.getAttribute('data-chip') || '';
+      if (titleEl) titleEl.textContent = btn.getAttribute('data-title') || '';
+      if (descEl) descEl.textContent = btn.getAttribute('data-desc') || '';
     });
-
-    preview.querySelectorAll(`[${config.imgAttr}]`).forEach(function (img) {
-      img.classList.toggle('is-active', img.getAttribute(config.imgAttr) === idx);
+  }
+ 
+  // FIX: wrap both tabbed-preview instances (formats + values) in a single
+  // initFormats() function so the main init flow below can call it safely.
+  // Previously this logic lived in its own standalone DOMContentLoaded
+  // listener while the main init block called a non-existent initFormats(),
+  // which threw a ReferenceError and silently killed every init call after it.
+  function initFormats() {
+    initTabbedPreview({
+      listId: 'formatsList',
+      previewId: 'formatsPreview',
+      chipId: 'formatsChip',
+      titleId: 'formatsTitle',
+      descId: 'formatsDesc',
+      itemAttr: 'data-format',
+      itemClass: '.formats__item',
+      imgAttr: 'data-format-img'
     });
-
-    if (chipEl) chipEl.textContent = btn.getAttribute('data-chip') || '';
-    if (titleEl) titleEl.textContent = btn.getAttribute('data-title') || '';
-    if (descEl) descEl.textContent = btn.getAttribute('data-desc') || '';
-  });
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  initTabbedPreview({
-    listId: 'formatsList',
-    previewId: 'formatsPreview',
-    chipId: 'formatsChip',
-    titleId: 'formatsTitle',
-    descId: 'formatsDesc',
-    itemAttr: 'data-format',
-    itemClass: '.formats__item',
-    imgAttr: 'data-format-img'
-  });
-
-  initTabbedPreview({
-    listId: 'valuesList',
-    previewId: 'valuesPreview',
-    titleId: 'valuesTitle',
-    descId: 'valuesDesc',
-    itemAttr: 'data-value',
-    itemClass: '.values__item',
-    imgAttr: 'data-value-img'
-  });
-});
+ 
+    initTabbedPreview({
+      listId: 'valuesList',
+      previewId: 'valuesPreview',
+      titleId: 'valuesTitle',
+      descId: 'valuesDesc',
+      itemAttr: 'data-value',
+      itemClass: '.values__item',
+      imgAttr: 'data-value-img'
+    });
+  }
+ 
 
   /* -------------------------------------------------------------------
      10. Psychotherapies — "read more" accordion
@@ -363,6 +321,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* -------------------------------------------------------------------
+     11. Pricing card selection
+     ------------------------------------------------------------------- */
+  function initPricing() {
+    const grid = document.getElementById('priceGrid');
+    if (!grid) return;
+    grid.addEventListener('click', (e) => {
+      const card = e.target.closest('.price-card');
+      if (!card) return;
+      grid.querySelectorAll('.price-card').forEach((c) => c.classList.toggle('is-active', c === card));
+    });
+  }
 
   /* -------------------------------------------------------------------
      12. Locations — clinic tabs + map + book button
@@ -406,7 +376,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  
+  /* -------------------------------------------------------------------
+     14. Articles pagination (static demo data, 4 pages)
+     ------------------------------------------------------------------- */
+  function initArticlesPagination() {
+    const pag = document.getElementById('articlesPagination');
+    if (!pag) return;
+    const nums = pag.querySelectorAll('.pagination__num');
+    const prev = pag.querySelector('[data-page-prev]');
+    const next = pag.querySelector('[data-page-next]');
+    let page = 1;
+    const max = nums.length;
+
+    function render() {
+      nums.forEach((n) => n.classList.toggle('is-active', +n.dataset.page === page));
+      prev.disabled = page === 1;
+      next.disabled = page === max;
+    }
+    pag.addEventListener('click', (e) => {
+      const num = e.target.closest('[data-page]');
+      if (num) { page = +num.dataset.page; render(); return; }
+      if (e.target.closest('[data-page-prev]')) { page = Math.max(1, page - 1); render(); }
+      if (e.target.closest('[data-page-next]')) { page = Math.min(max, page + 1); render(); }
+    });
+    render();
+  }
 
   /* -------------------------------------------------------------------
      15. AI matching assistant — full multi-step wizard
@@ -822,8 +816,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     showStep();
   }
-	
-	
 
   /* -------------------------------------------------------------------
      Init
@@ -845,29 +837,377 @@ document.addEventListener('DOMContentLoaded', function () {
     initArticlesPagination();
     initAiAssistant();
 
-    // hero video: defer loading until after page load to avoid LCP render delay
+    // hero video: attempt autoplay, fall back to poster only
     const heroVideo = document.querySelector('[data-hero-video]');
     if (heroVideo) {
       const src = heroVideo.dataset.heroVideo;
       if (src) {
-        const initHeroVideo = () => {
-          heroVideo.src = src;
-          heroVideo.muted = true;
-          const tryPlay = () => { const p = heroVideo.play(); if (p && p.catch) p.catch(() => {}); };
-          heroVideo.addEventListener('canplay', tryPlay, { once: true });
-          setTimeout(tryPlay, 800);
-        };
-
-        if (window.requestIdleCallback) {
-          window.requestIdleCallback(initHeroVideo, { timeout: 2000 });
-        } else {
-          window.addEventListener('load', () => {
-            setTimeout(initHeroVideo, 500);
-          });
-        }
+        heroVideo.src = src;
+        heroVideo.muted = true;
+        const tryPlay = () => { const p = heroVideo.play(); if (p && p.catch) p.catch(() => {}); };
+        heroVideo.addEventListener('canplay', tryPlay, { once: true });
+        setTimeout(tryPlay, 800);
       }
     }
   });
 })();
 
- 
+
+/* =========================================================
+   adhd.js — interactivity for the ADHD page
+   Vanilla JS, no dependencies. Runs after DOMContentLoaded.
+   ========================================================= */
+(function () {
+  "use strict";
+
+  const $ = (sel, ctx) => (ctx || document).querySelector(sel);
+  const $$ = (sel, ctx) => Array.from((ctx || document).querySelectorAll(sel));
+
+  function debounce(fn, wait) {
+    let t;
+    return function (...args) {
+      clearTimeout(t);
+      t = setTimeout(() => fn.apply(this, args), wait);
+    };
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initHeaderScroll();
+    initMobileNav();
+    initSmoothScroll();
+    initReveal();
+    initJumpNav();
+    initAddAccordion();
+    initVideoButton();
+    initAccordionGroup({
+      groupSelector: "#symptomGroups",
+      itemSelector: ".ps-symgroup",
+      triggerSelector: ".ps-symgroup__trigger",
+      exclusive: true,
+    });
+    initAccordionGroup({
+      groupSelector: "#adhdFaqList",
+      itemSelector: ".faq-item",
+      triggerSelector: ".faq-item__trigger",
+      exclusive: true,
+    });
+    initAssessmentSteps();
+    initNewsletterForm();
+  });
+
+  /* ---------------------------------------------------------
+     Header: shrink/shadow state once the page has scrolled
+  --------------------------------------------------------- */
+  function initHeaderScroll() {
+    const bar = $(".site-header__bar");
+    if (!bar) return;
+    const onScroll = () => {
+      bar.classList.toggle("is-scrolled", window.scrollY > 12);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* ---------------------------------------------------------
+     Mobile off-canvas nav drawer
+  --------------------------------------------------------- */
+  function initMobileNav() {
+    const toggle = $("#navToggle");
+    const drawer = $("#navDrawer");
+    const backdrop = $("#navBackdrop");
+    const closeBtn = $("#navDrawerClose");
+    if (!toggle || !drawer || !backdrop) return;
+
+    function open() {
+      drawer.hidden = false;
+      backdrop.classList.add("is-visible");
+      // allow the browser to register hidden=false before animating in
+      requestAnimationFrame(() => {
+        drawer.classList.add("is-open");
+        backdrop.classList.add("is-open");
+      });
+      toggle.classList.add("is-active");
+      toggle.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+
+    function close() {
+      drawer.classList.remove("is-open");
+      backdrop.classList.remove("is-open");
+      toggle.classList.remove("is-active");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+      const onEnd = () => {
+        drawer.hidden = true;
+        backdrop.classList.remove("is-visible");
+        drawer.removeEventListener("transitionend", onEnd);
+      };
+      drawer.addEventListener("transitionend", onEnd);
+    }
+
+    toggle.addEventListener("click", () => {
+      const isOpen = drawer.classList.contains("is-open");
+      isOpen ? close() : open();
+    });
+    closeBtn && closeBtn.addEventListener("click", close);
+    backdrop.addEventListener("click", close);
+    $$("[data-close-nav]", drawer).forEach((el) =>
+      el.addEventListener("click", close)
+    );
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && drawer.classList.contains("is-open")) close();
+    });
+  }
+
+  /* ---------------------------------------------------------
+     Smooth-scroll for any [data-scroll][data-target] control,
+     offset by the sticky header's height.
+  --------------------------------------------------------- */
+  function initSmoothScroll() {
+    const headerBar = $(".site-header");
+    const offset = () => (headerBar ? headerBar.offsetHeight + 24 : 24);
+
+    $$("[data-scroll]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetSel = btn.getAttribute("data-target");
+        const target = targetSel && $(targetSel);
+        if (!target) return;
+        const top =
+          target.getBoundingClientRect().top + window.scrollY - offset();
+        window.scrollTo({ top, behavior: "smooth" });
+      });
+    });
+
+    // Jump nav links use plain #hash hrefs — smooth-scroll those too.
+    $$('#jumpNav a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const target = $(link.getAttribute("href"));
+        if (!target) return;
+        e.preventDefault();
+        const top =
+          target.getBoundingClientRect().top + window.scrollY - offset();
+        window.scrollTo({ top, behavior: "smooth" });
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------
+     Fade/slide-up reveal for [data-reveal] elements
+  --------------------------------------------------------- */
+  function initReveal() {
+    const items = $$("[data-reveal]");
+    if (!items.length) return;
+
+    if (!("IntersectionObserver" in window)) {
+      items.forEach((el) => el.classList.add("is-visible"));
+      return;
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+    );
+
+    items.forEach((el) => io.observe(el));
+  }
+
+  /* ---------------------------------------------------------
+     Jump nav: highlight the section in view + edge fades
+     for the horizontally-scrollable pill bar
+  --------------------------------------------------------- */
+  function initJumpNav() {
+    const wrap = $("#jumpNav") && $("#jumpNav").closest(".ps-jump-wrap");
+    const nav = $("#jumpNav");
+    if (!wrap || !nav) return;
+
+    const links = $$("a[data-jump]", nav);
+    const sections = $$("[data-sec]");
+    const headerOffset = () => {
+      const header = $(".site-header");
+      return (header ? header.offsetHeight : 0) + wrap.offsetHeight + 40;
+    };
+
+    function setActive(name) {
+      links.forEach((l) =>
+        l.classList.toggle("is-active", l.dataset.jump === name)
+      );
+    }
+
+    const onScroll = debounce(() => {
+      let current = sections[0] && sections[0].dataset.sec;
+      const scrollPos = window.scrollY + headerOffset();
+      sections.forEach((sec) => {
+        if (sec.offsetTop <= scrollPos) current = sec.dataset.sec;
+      });
+      if (current) setActive(current);
+    }, 50);
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    function updateFades() {
+      const maxScroll = nav.scrollWidth - nav.clientWidth - 2;
+      wrap.classList.toggle("is-scrollable-left", nav.scrollLeft > 2);
+      wrap.classList.toggle("is-scrollable-right", nav.scrollLeft < maxScroll);
+    }
+    nav.addEventListener("scroll", updateFades, { passive: true });
+    window.addEventListener("resize", debounce(updateFades, 100));
+    updateFades();
+  }
+
+  /* ---------------------------------------------------------
+     Single "What does ADD mean?" accordion toggle
+  --------------------------------------------------------- */
+  function initAddAccordion() {
+    const toggle = $("#addToggle");
+    const wrapper = $("#addAccordion");
+    if (!toggle || !wrapper) return;
+
+    toggle.addEventListener("click", () => {
+      const isOpen = wrapper.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.textContent = isOpen ? "\u2212" : "+"; // − / +
+    });
+  }
+
+  /* ---------------------------------------------------------
+     "Watch video" button — placeholder play/pause state.
+     Swap this for a real <video>/iframe embed when ready;
+     it dispatches a custom event other scripts can hook into.
+  --------------------------------------------------------- */
+  function initVideoButton() {
+    const btn = $("#adhdVideoBtn");
+    if (!btn) return;
+
+    btn.addEventListener("click", () => {
+      const playing = btn.classList.toggle("is-playing");
+      btn.dispatchEvent(
+        new CustomEvent("ps:video-toggle", { detail: { playing }, bubbles: true })
+      );
+      btn.setAttribute("aria-label", playing ? "Pause video" : btn.dataset.label || "Play video");
+    });
+  }
+
+  /* ---------------------------------------------------------
+     Generic accordion-group helper — used for the symptom
+     groups and the FAQ list. exclusive: true closes siblings.
+  --------------------------------------------------------- */
+  function initAccordionGroup({ groupSelector, itemSelector, triggerSelector, exclusive }) {
+    const group = $(groupSelector);
+    if (!group) return;
+    const items = $$(itemSelector, group);
+
+    items.forEach((item) => {
+      const trigger = $(triggerSelector, item);
+      if (!trigger) return;
+      trigger.addEventListener("click", () => {
+        const willOpen = !item.classList.contains("is-open");
+        if (exclusive) {
+          items.forEach((i) => i.classList.remove("is-open"));
+        }
+        item.classList.toggle("is-open", willOpen);
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------
+     Assessment steps <-> preview image sync
+  --------------------------------------------------------- */
+  function initAssessmentSteps() {
+    const stepsWrap = $("#assessSteps");
+    const preview = $("#assessPreview");
+    if (!stepsWrap || !preview) return;
+
+    const steps = $$(".ps-steps__item", stepsWrap);
+    const shots = $$("img[data-shot]", preview);
+    const shotNum = $("#shotNum");
+    const shotLabel = $("#shotLabel");
+    const shotCaption = $("#shotCaption");
+    const shotSub = $("#shotSub");
+
+    const meta = [
+      {
+        label: "Initial screening",
+        caption: "A conversation about how things actually are",
+        sub: "Your difficulties, daily life, work or school, and history.",
+      },
+      {
+        label: "Assessment",
+        caption: "Questionnaires, interviews and testing",
+        sub: "Structured tools measuring attention, memory and executive function.",
+      },
+      {
+        label: "Feedback & diagnosis",
+        caption: "Going through the results together",
+        sub: "A clear explanation of what the assessment found.",
+      },
+      {
+        label: "Treatment plan",
+        caption: "Building a plan that fits your life",
+        sub: "Therapy, coaching, and referral to a psychiatrist if needed.",
+      },
+    ];
+
+    function activate(index) {
+      steps.forEach((s, i) => s.classList.toggle("is-active", i === index));
+      shots.forEach((img) =>
+        img.classList.toggle("is-active", Number(img.dataset.shot) === index)
+      );
+      const m = meta[index];
+      if (!m) return;
+      if (shotNum) shotNum.textContent = String(index + 1);
+      if (shotLabel) shotLabel.textContent = m.label;
+      if (shotCaption) shotCaption.textContent = m.caption;
+      if (shotSub) shotSub.textContent = m.sub;
+    }
+
+    steps.forEach((step, i) => {
+      step.addEventListener("click", () => activate(i));
+      step.addEventListener("mouseenter", () => activate(i));
+    });
+
+    activate(0);
+  }
+
+  /* ---------------------------------------------------------
+     Footer newsletter: consent checkbox + fake submit
+  --------------------------------------------------------- */
+  function initNewsletterForm() {
+    const form = $("#newsletterForm");
+    const consentBox = $("#consentBox");
+    if (!form) return;
+
+    let consented = true; // matches the pre-checked "✓" markup
+    if (consentBox) {
+      consentBox.classList.add("is-checked");
+      consentBox.closest(".ps-consent").addEventListener("click", (e) => {
+        e.preventDefault();
+        consented = !consented;
+        consentBox.classList.toggle("is-checked", consented);
+      });
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const input = $('input[type="email"]', form);
+      if (!input || !input.value || !consented) {
+        input && input.focus();
+        return;
+      }
+      const submitBtn = $(".btn--subscribe", form);
+      const originalText = submitBtn ? submitBtn.textContent : "";
+      if (submitBtn) submitBtn.textContent = "Subscribed";
+      input.value = "";
+      setTimeout(() => {
+        if (submitBtn) submitBtn.textContent = originalText;
+      }, 2500);
+    });
+  }
+})();
