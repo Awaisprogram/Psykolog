@@ -1,9 +1,29 @@
 /* =====================================================================
-   psykolog.no — production script
+   psykolog.no — production script (merged: main site + ADHD page)
    Vanilla JS, no dependencies. Organised by feature block.
+
+   NOTE ON THIS MERGE:
+   The original main script and adhd.js each shipped their own copies of
+   header-scroll, mobile-nav, smooth-scroll and reveal-on-scroll. Only
+   one implementation of each survives here — the adhd.js versions were
+   kept, since the site uses the side-drawer markup (#navDrawer /
+   #navBackdrop / #navDrawerClose / [data-close-nav]), which the old
+   main-script version did not target. Everything else from both files
+   is preserved and initialised exactly once.
    ===================================================================== */
 (() => {
   'use strict';
+
+  const $ = (sel, ctx) => (ctx || document).querySelector(sel);
+  const $$ = (sel, ctx) => Array.from((ctx || document).querySelectorAll(sel));
+
+  function debounce(fn, wait) {
+    let t;
+    return function (...args) {
+      clearTimeout(t);
+      t = setTimeout(() => fn.apply(this, args), wait);
+    };
+  }
 
   /* -------------------------------------------------------------------
      0. Icon renderer — lightweight inline-SVG icon set
@@ -68,112 +88,140 @@
     });
   }
 
-  /* -------------------------------------------------------------------
-     1. Smooth scroll for [data-scroll]
-     ------------------------------------------------------------------- */
-  function initSmoothScroll() {
-    document.addEventListener('click', (e) => {
-      const el = e.target.closest('[data-scroll]');
-      if (!el) return;
-      const targetSel = el.dataset.target || el.getAttribute('href');
-      if (!targetSel || !targetSel.startsWith('#')) return;
-      const target = document.querySelector(targetSel);
-      if (!target) return;
-      e.preventDefault();
-      const top = target.getBoundingClientRect().top + window.scrollY - 90;
-      window.scrollTo({ top, behavior: 'smooth' });
-      if (el.dataset.closeNav !== undefined) closeMobileNav();
-    });
-  }
-
-  /* -------------------------------------------------------------------
-     2. Sticky header scroll state
-     ------------------------------------------------------------------- */
   const headerBar = document.querySelector('.site-header__bar');
-  function initHeader() {
-    if (!headerBar) return;
+
+  /* ---------------------------------------------------------
+     Header: shrink/shadow state once the page has scrolled
+     (single implementation — replaces the two near-duplicates)
+  --------------------------------------------------------- */
+  function initHeaderScroll() {
+    const bar = headerBar || $(".site-header__bar");
+    if (!bar) return;
     const onScroll = () => {
-      headerBar.classList.toggle('is-scrolled', window.scrollY > 40);
+      bar.classList.toggle("is-scrolled", window.scrollY > 12);
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  /* -------------------------------------------------------------------
-     2b. Mobile nav — right-side drawer (scrim, scroll lock, esc, outside click)
-     ------------------------------------------------------------------- */
-  const navToggle = document.getElementById('navToggle');
-  let navScrim = null;
-
-  function getNavScrim() {
-    if (navScrim) return navScrim;
-    navScrim = document.createElement('div');
-    navScrim.className = 'site-header__scrim';
-    navScrim.style.position = 'fixed';
-    navScrim.style.inset = '0';
-    navScrim.style.background = 'rgba(0,0,0,0.4)';
-    navScrim.style.opacity = '0';
-    navScrim.style.visibility = 'hidden';
-    navScrim.style.transition = 'opacity 0.3s ease';
-    navScrim.style.zIndex = '999';
-    navScrim.addEventListener('click', closeMobileNav);
-    document.body.appendChild(navScrim);
-    return navScrim;
-  }
-
-  function closeMobileNav() {
-    if (!navToggle) return;
-    navToggle.setAttribute('aria-expanded', 'false');
-    navToggle.classList.remove('is-active');
-    headerBar && headerBar.classList.remove('is-nav-open');
-    document.body.style.overflow = '';
-    const scrim = getNavScrim();
-    scrim.style.opacity = '0';
-    scrim.style.visibility = 'hidden';
-  }
-
-  function openMobileNav() {
-    if (!navToggle) return;
-    navToggle.setAttribute('aria-expanded', 'true');
-    navToggle.classList.add('is-active');
-    headerBar && headerBar.classList.add('is-nav-open');
-    document.body.style.overflow = 'hidden';
-    const scrim = getNavScrim();
-    scrim.style.visibility = 'visible';
-    requestAnimationFrame(() => { scrim.style.opacity = '1'; });
-  }
-
+  /* ---------------------------------------------------------
+     Mobile off-canvas nav drawer (side drawer)
+     single implementation — kept from adhd.js, since this is
+     the markup the site actually ships (#navDrawer / #navBackdrop)
+  --------------------------------------------------------- */
   function initMobileNav() {
-    if (!navToggle) return;
-    navToggle.addEventListener('click', () => {
-      const open = navToggle.getAttribute('aria-expanded') === 'true';
-      open ? closeMobileNav() : openMobileNav();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') closeMobileNav();
-    });
-  }
+    const toggle = $("#navToggle");
+    const drawer = $("#mobileNav") || $("#navDrawer");
+    const backdrop = $("#navBackdrop") || $(".nav-backdrop");
+    const closeBtn = $("#navDrawerClose") || $("#mobileNavClose");
+    if (!toggle || !drawer || !backdrop) return;
 
-  /* -------------------------------------------------------------------
-     3. Reveal-on-scroll
-     ------------------------------------------------------------------- */
-  function initReveal() {
-    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const els = document.querySelectorAll('[data-reveal]');
-    if (reduced) { els.forEach((el) => el.classList.add('is-visible')); return; }
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
-        }
+    function open() {
+      drawer.hidden = false;
+      backdrop.classList.add("is-visible");
+      requestAnimationFrame(() => {
+        drawer.classList.add("is-open");
+        backdrop.classList.add("is-open");
       });
-    }, { threshold: 0.12 });
-    els.forEach((el) => io.observe(el));
+      toggle.classList.add("is-active");
+      toggle.setAttribute("aria-expanded", "true");
+      headerBar && headerBar.classList.add("is-nav-open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function close() {
+      drawer.classList.remove("is-open");
+      backdrop.classList.remove("is-open");
+      toggle.classList.remove("is-active");
+      toggle.setAttribute("aria-expanded", "false");
+      headerBar && headerBar.classList.remove("is-nav-open");
+      document.body.style.overflow = "";
+      const onEnd = () => {
+        drawer.hidden = true;
+        backdrop.classList.remove("is-visible");
+        drawer.removeEventListener("transitionend", onEnd);
+      };
+      drawer.addEventListener("transitionend", onEnd);
+    }
+
+    toggle.addEventListener("click", () => {
+      const isOpen = drawer.classList.contains("is-open");
+      isOpen ? close() : open();
+    });
+    closeBtn && closeBtn.addEventListener("click", close);
+    backdrop.addEventListener("click", close);
+    $$("[data-close-nav]", drawer).forEach((el) =>
+      el.addEventListener("click", close)
+    );
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && drawer.classList.contains("is-open")) close();
+    });
+  }
+
+  /* ---------------------------------------------------------
+     Smooth-scroll for [data-scroll][data-target] and #jumpNav
+     links, offset by the sticky header's height.
+     single implementation — kept from adhd.js (superset of
+     the main script's version, which only handled [data-scroll])
+  --------------------------------------------------------- */
+  function initSmoothScroll() {
+    const header = $(".site-header");
+    const offset = () => (header ? header.offsetHeight + 24 : 24);
+
+    $$("[data-scroll]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetSel = btn.getAttribute("data-target") || btn.getAttribute("href");
+        const target = targetSel && $(targetSel);
+        if (!target) return;
+        const top =
+          target.getBoundingClientRect().top + window.scrollY - offset();
+        window.scrollTo({ top, behavior: "smooth" });
+      });
+    });
+
+    $$('#jumpNav a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const target = $(link.getAttribute("href"));
+        if (!target) return;
+        e.preventDefault();
+        const top =
+          target.getBoundingClientRect().top + window.scrollY - offset();
+        window.scrollTo({ top, behavior: "smooth" });
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------
+     Fade/slide-up reveal for [data-reveal] elements
+     single implementation — kept from adhd.js (adds a support
+     check + rootMargin over the main script's version)
+  --------------------------------------------------------- */
+  function initReveal() {
+    const items = $$("[data-reveal]");
+    if (!items.length) return;
+
+    if (!("IntersectionObserver" in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      items.forEach((el) => el.classList.add("is-visible"));
+      return;
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+    );
+
+    items.forEach((el) => io.observe(el));
   }
 
   /* -------------------------------------------------------------------
-     4. Signs — toggleable recognition list
+     Signs — toggleable recognition list
      ------------------------------------------------------------------- */
   function initSigns() {
     const list = document.getElementById('signsList');
@@ -200,7 +248,7 @@
   }
 
   /* -------------------------------------------------------------------
-     7. How it works — sticky-stack stepper
+     How it works — sticky-stack stepper
      ------------------------------------------------------------------- */
   function initHiw() {
     const list = document.getElementById('hiwList');
@@ -213,14 +261,8 @@
   }
 
   /* -------------------------------------------------------------------
-     8. Conditions — category filter + hover/accordion panel + show all
+     Conditions — category filter + accordion panel + show all
      ------------------------------------------------------------------- */
-  const CONDITION_CATS = {
-    all: null,
-    worry: ['worry'],
-    mood: ['mood'],
-    behaviour: ['behaviour']
-  };
   function initConditions() {
     const catBar = document.getElementById('condCats');
     const grid = document.getElementById('condGrid');
@@ -248,42 +290,37 @@
   }
 
   /* -------------------------------------------------------------------
-     9. Therapy formats — picker + preview swap
+     Therapy formats — picker + preview swap
      ------------------------------------------------------------------- */
   function initTabbedPreview(config) {
     const list = document.getElementById(config.listId);
     const preview = document.getElementById(config.previewId);
     if (!list || !preview) return;
- 
+
     const titleEl = config.titleId ? document.getElementById(config.titleId) : null;
     const descEl = config.descId ? document.getElementById(config.descId) : null;
     const chipEl = config.chipId ? document.getElementById(config.chipId) : null;
- 
+
     list.addEventListener('click', function (e) {
       const btn = e.target.closest(`[${config.itemAttr}]`);
       if (!btn) return;
- 
+
       const idx = btn.getAttribute(config.itemAttr);
- 
+
       list.querySelectorAll(config.itemClass).forEach(function (it) {
         it.classList.toggle('is-active', it === btn);
       });
- 
+
       preview.querySelectorAll(`[${config.imgAttr}]`).forEach(function (img) {
         img.classList.toggle('is-active', img.getAttribute(config.imgAttr) === idx);
       });
- 
+
       if (chipEl) chipEl.textContent = btn.getAttribute('data-chip') || '';
       if (titleEl) titleEl.textContent = btn.getAttribute('data-title') || '';
       if (descEl) descEl.textContent = btn.getAttribute('data-desc') || '';
     });
   }
- 
-  // FIX: wrap both tabbed-preview instances (formats + values) in a single
-  // initFormats() function so the main init flow below can call it safely.
-  // Previously this logic lived in its own standalone DOMContentLoaded
-  // listener while the main init block called a non-existent initFormats(),
-  // which threw a ReferenceError and silently killed every init call after it.
+
   function initFormats() {
     initTabbedPreview({
       listId: 'formatsList',
@@ -295,7 +332,7 @@
       itemClass: '.formats__item',
       imgAttr: 'data-format-img'
     });
- 
+
     initTabbedPreview({
       listId: 'valuesList',
       previewId: 'valuesPreview',
@@ -306,10 +343,9 @@
       imgAttr: 'data-value-img'
     });
   }
- 
 
   /* -------------------------------------------------------------------
-     10. Psychotherapies — "read more" accordion
+     Psychotherapies — "read more" accordion
      ------------------------------------------------------------------- */
   function initMoreTherapies() {
     const toggle = document.getElementById('moreTxToggle');
@@ -322,7 +358,7 @@
   }
 
   /* -------------------------------------------------------------------
-     11. Pricing card selection
+     Pricing card selection
      ------------------------------------------------------------------- */
   function initPricing() {
     const grid = document.getElementById('priceGrid');
@@ -335,7 +371,7 @@
   }
 
   /* -------------------------------------------------------------------
-     12. Locations — clinic tabs + map + book button
+     Locations — clinic tabs + map + book button
      ------------------------------------------------------------------- */
   const CLINIC_DATA = [
     { short: 'Oslo', mapTitle: 'Map of Oslo', map: 'https://www.openstreetmap.org/export/embed.html?bbox=10.70%2C59.895%2C10.80%2C59.93&layer=mapnik' },
@@ -363,7 +399,7 @@
   }
 
   /* -------------------------------------------------------------------
-     13. FAQ accordion
+     FAQ accordion (main site FAQ list — #faqList)
      ------------------------------------------------------------------- */
   function initFaq() {
     const list = document.getElementById('faqList');
@@ -377,7 +413,7 @@
   }
 
   /* -------------------------------------------------------------------
-     14. Articles pagination (static demo data, 4 pages)
+     Articles pagination (static demo data, 4 pages)
      ------------------------------------------------------------------- */
   function initArticlesPagination() {
     const pag = document.getElementById('articlesPagination');
@@ -403,11 +439,11 @@
   }
 
   /* -------------------------------------------------------------------
-     15. AI matching assistant — full multi-step wizard
+     AI matching assistant — full multi-step wizard
      ------------------------------------------------------------------- */
   const AI_CONCERNS = [
     { id: 'anxiety', t: 'Anxiety', d: 'Worry that is hard to switch off', icon: 'activity' },
-    { id: 'stress', t: 'Stress', d: 'Ongoing pressure and overload', icon: 'gauge' },
+    { id: 'stress', t: 'Stress', d: 'Ongoing pressure and overload', icon: 'target' },
     { id: 'burnout', t: 'Burnout', d: 'Exhaustion after long strain', icon: 'battery-low' },
     { id: 'depression', t: 'Depression', d: 'Low mood and lost interest', icon: 'cloud-rain' },
     { id: 'panic', t: 'Panic attacks', d: 'Sudden, intense physical fear', icon: 'heart' },
@@ -817,214 +853,13 @@
     showStep();
   }
 
-  /* -------------------------------------------------------------------
-     Init
-     ------------------------------------------------------------------- */
-  document.addEventListener('DOMContentLoaded', () => {
-    renderIcons();
-    initSmoothScroll();
-    initHeader();
-    initMobileNav();
-    initReveal();
-    initSigns();
-    initHiw();
-    initConditions();
-    initFormats();
-    initMoreTherapies();
-    initPricing();
-    initLocations();
-    initFaq();
-    initArticlesPagination();
-    initAiAssistant();
-
-    // hero video: attempt autoplay, fall back to poster only
-    const heroVideo = document.querySelector('[data-hero-video]');
-    if (heroVideo) {
-      const src = heroVideo.dataset.heroVideo;
-      if (src) {
-        heroVideo.src = src;
-        heroVideo.muted = true;
-        const tryPlay = () => { const p = heroVideo.play(); if (p && p.catch) p.catch(() => {}); };
-        heroVideo.addEventListener('canplay', tryPlay, { once: true });
-        setTimeout(tryPlay, 800);
-      }
-    }
-  });
-})();
-
-
-/* =========================================================
-   adhd.js — interactivity for the ADHD page
-   Vanilla JS, no dependencies. Runs after DOMContentLoaded.
-   ========================================================= */
-(function () {
-  "use strict";
-
-  const $ = (sel, ctx) => (ctx || document).querySelector(sel);
-  const $$ = (sel, ctx) => Array.from((ctx || document).querySelectorAll(sel));
-
-  function debounce(fn, wait) {
-    let t;
-    return function (...args) {
-      clearTimeout(t);
-      t = setTimeout(() => fn.apply(this, args), wait);
-    };
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    initHeaderScroll();
-    initMobileNav();
-    initSmoothScroll();
-    initReveal();
-    initJumpNav();
-    initAddAccordion();
-    initVideoButton();
-    initAccordionGroup({
-      groupSelector: "#symptomGroups",
-      itemSelector: ".ps-symgroup",
-      triggerSelector: ".ps-symgroup__trigger",
-      exclusive: true,
-    });
-    initAccordionGroup({
-      groupSelector: "#adhdFaqList",
-      itemSelector: ".faq-item",
-      triggerSelector: ".faq-item__trigger",
-      exclusive: true,
-    });
-    initAssessmentSteps();
-    initNewsletterForm();
-  });
-
-  /* ---------------------------------------------------------
-     Header: shrink/shadow state once the page has scrolled
-  --------------------------------------------------------- */
-  function initHeaderScroll() {
-    const bar = $(".site-header__bar");
-    if (!bar) return;
-    const onScroll = () => {
-      bar.classList.toggle("is-scrolled", window.scrollY > 12);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-  }
-
-  /* ---------------------------------------------------------
-     Mobile off-canvas nav drawer
-  --------------------------------------------------------- */
-  function initMobileNav() {
-    const toggle = $("#navToggle");
-    const drawer = $("#navDrawer");
-    const backdrop = $("#navBackdrop");
-    const closeBtn = $("#navDrawerClose");
-    if (!toggle || !drawer || !backdrop) return;
-
-    function open() {
-      drawer.hidden = false;
-      backdrop.classList.add("is-visible");
-      // allow the browser to register hidden=false before animating in
-      requestAnimationFrame(() => {
-        drawer.classList.add("is-open");
-        backdrop.classList.add("is-open");
-      });
-      toggle.classList.add("is-active");
-      toggle.setAttribute("aria-expanded", "true");
-      document.body.style.overflow = "hidden";
-    }
-
-    function close() {
-      drawer.classList.remove("is-open");
-      backdrop.classList.remove("is-open");
-      toggle.classList.remove("is-active");
-      toggle.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
-      const onEnd = () => {
-        drawer.hidden = true;
-        backdrop.classList.remove("is-visible");
-        drawer.removeEventListener("transitionend", onEnd);
-      };
-      drawer.addEventListener("transitionend", onEnd);
-    }
-
-    toggle.addEventListener("click", () => {
-      const isOpen = drawer.classList.contains("is-open");
-      isOpen ? close() : open();
-    });
-    closeBtn && closeBtn.addEventListener("click", close);
-    backdrop.addEventListener("click", close);
-    $$("[data-close-nav]", drawer).forEach((el) =>
-      el.addEventListener("click", close)
-    );
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && drawer.classList.contains("is-open")) close();
-    });
-  }
-
-  /* ---------------------------------------------------------
-     Smooth-scroll for any [data-scroll][data-target] control,
-     offset by the sticky header's height.
-  --------------------------------------------------------- */
-  function initSmoothScroll() {
-    const headerBar = $(".site-header");
-    const offset = () => (headerBar ? headerBar.offsetHeight + 24 : 24);
-
-    $$("[data-scroll]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const targetSel = btn.getAttribute("data-target");
-        const target = targetSel && $(targetSel);
-        if (!target) return;
-        const top =
-          target.getBoundingClientRect().top + window.scrollY - offset();
-        window.scrollTo({ top, behavior: "smooth" });
-      });
-    });
-
-    // Jump nav links use plain #hash hrefs — smooth-scroll those too.
-    $$('#jumpNav a[href^="#"]').forEach((link) => {
-      link.addEventListener("click", (e) => {
-        const target = $(link.getAttribute("href"));
-        if (!target) return;
-        e.preventDefault();
-        const top =
-          target.getBoundingClientRect().top + window.scrollY - offset();
-        window.scrollTo({ top, behavior: "smooth" });
-      });
-    });
-  }
-
-  /* ---------------------------------------------------------
-     Fade/slide-up reveal for [data-reveal] elements
-  --------------------------------------------------------- */
-  function initReveal() {
-    const items = $$("[data-reveal]");
-    if (!items.length) return;
-
-    if (!("IntersectionObserver" in window)) {
-      items.forEach((el) => el.classList.add("is-visible"));
-      return;
-    }
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
-    );
-
-    items.forEach((el) => io.observe(el));
-  }
-
   /* ---------------------------------------------------------
      Jump nav: highlight the section in view + edge fades
-     for the horizontally-scrollable pill bar
+     for the horizontally-scrollable pill bar (ADHD page)
   --------------------------------------------------------- */
   function initJumpNav() {
-    const wrap = $("#jumpNav") && $("#jumpNav").closest(".ps-jump-wrap");
     const nav = $("#jumpNav");
+    const wrap = nav && nav.closest(".ps-jump-wrap");
     if (!wrap || !nav) return;
 
     const links = $$("a[data-jump]", nav);
@@ -1078,9 +913,7 @@
   }
 
   /* ---------------------------------------------------------
-     "Watch video" button — placeholder play/pause state.
-     Swap this for a real <video>/iframe embed when ready;
-     it dispatches a custom event other scripts can hook into.
+     "Watch video" button — placeholder play/pause state
   --------------------------------------------------------- */
   function initVideoButton() {
     const btn = $("#adhdVideoBtn");
@@ -1097,7 +930,7 @@
 
   /* ---------------------------------------------------------
      Generic accordion-group helper — used for the symptom
-     groups and the FAQ list. exclusive: true closes siblings.
+     groups and the ADHD FAQ list. exclusive: true closes siblings.
   --------------------------------------------------------- */
   function initAccordionGroup({ groupSelector, itemSelector, triggerSelector, exclusive }) {
     const group = $(groupSelector);
@@ -1210,4 +1043,57 @@
       }, 2500);
     });
   }
+
+  /* -------------------------------------------------------------------
+     Init — every feature initialised exactly once
+     ------------------------------------------------------------------- */
+  document.addEventListener('DOMContentLoaded', () => {
+    renderIcons();
+    initHeaderScroll();
+    initMobileNav();
+    initSmoothScroll();
+    initReveal();
+
+    initSigns();
+    initHiw();
+    initConditions();
+    initFormats();
+    initMoreTherapies();
+    initPricing();
+    initLocations();
+    initFaq();
+    initArticlesPagination();
+    initAiAssistant();
+
+    initJumpNav();
+    initAddAccordion();
+    initVideoButton();
+    initAccordionGroup({
+      groupSelector: "#symptomGroups",
+      itemSelector: ".ps-symgroup",
+      triggerSelector: ".ps-symgroup__trigger",
+      exclusive: true,
+    });
+    initAccordionGroup({
+      groupSelector: "#adhdFaqList",
+      itemSelector: ".faq-item",
+      triggerSelector: ".faq-item__trigger",
+      exclusive: true,
+    });
+    initAssessmentSteps();
+    initNewsletterForm();
+
+    // hero video: attempt autoplay, fall back to poster only
+    const heroVideo = document.querySelector('[data-hero-video]');
+    if (heroVideo) {
+      const src = heroVideo.dataset.heroVideo;
+      if (src) {
+        heroVideo.src = src;
+        heroVideo.muted = true;
+        const tryPlay = () => { const p = heroVideo.play(); if (p && p.catch) p.catch(() => {}); };
+        heroVideo.addEventListener('canplay', tryPlay, { once: true });
+        setTimeout(tryPlay, 800);
+      }
+    }
+  });
 })();

@@ -705,9 +705,10 @@ input, textarea {
   box-shadow: 0 6px 22px -18px rgba(58, 24, 17, 0.3);
   transition: background 0.4s ease, box-shadow 0.4s ease, border-radius 0.3s var(--ease-standard);
 }
-.site-header__bar.is-scrolled {
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 12px 34px -20px rgba(58, 24, 17, 0.42);
+.site-header__bar.is-scrolled,
+.site-header__bar.is-nav-open {
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 16px 36px -18px rgba(58, 24, 17, 0.42);
 }
 .site-header__row {
   display: flex;
