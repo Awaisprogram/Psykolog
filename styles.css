@@ -4860,7 +4860,6 @@ radial-gradient(58% 74% at 50% 0%, rgba(248, 235, 226, 0.9) 0%, rgba(248, 235, 2
   
   .page-hero__title {
     font-family: var(--font-heading);
-    font-style: italic;
     font-weight: 700;
     font-size: 56px;
     max-width: 680px;
@@ -5052,43 +5051,71 @@ radial-gradient(58% 74% at 50% 0%, rgba(248, 235, 226, 0.9) 0%, rgba(248, 235, 2
 }
 
 /* ---- Subtypes ---- */
-.ps-subtype-card {
-  background: #fff;
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  transition: transform 0.3s ease, border-color 0.3s, box-shadow 0.3s;
+#adhd-subtypes {
+  .adhd-subtypes__table {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-soft);
+    overflow: hidden;
+  }
+  .adhd-subtypes__head {
+    display: grid;
+    grid-template-columns: 0.9fr 1.6fr;
+    padding: 20px 32px;
+    background: #5C2A20;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+  .adhd-subtypes__row {
+    display: grid;
+    grid-template-columns: 0.9fr 1.6fr;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 32px;
+    border-top: 1px solid var(--border-softer);
+  }
+  .adhd-subtypes__id {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .adhd-subtypes__art {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    overflow: hidden;
+    flex: 0 0 auto;
+  }
+  .adhd-subtypes__art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .adhd-subtypes__id > span:last-child {
+    display: flex;
+    flex-direction: column;
+  }
+  .adhd-subtypes__n {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ink-faint);
+  }
+  .adhd-subtypes__t {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--ink-900);
+    margin-top: 2px;
+  }
+  .adhd-subtypes__d {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--ink-body);
+  }
 }
-.ps-subtype-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--brand-primary);
-  box-shadow: 0 8px 32px rgba(194, 76, 51, 0.14);
-}
-.ps-subtype-card__head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.ps-subtype-card__num span {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 32px;
-  color: var(--border-active);
-}
-.ps-subtype-card h3 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 20px;
-  color: var(--ink-900);
-  margin-top: 24px;
-}
-.ps-subtype-card p {
-  font-size: 14.5px;
-  line-height: 1.6;
-  color: var(--ink-body);
-  margin-top: 10px;
-}
-
 /* ---- Causes ---- */
 .ps-cause-card {
   display: flex;
