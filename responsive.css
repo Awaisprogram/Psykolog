@@ -180,6 +180,204 @@ body {
   .ai-modal {
     max-width: 92vw;
   }
+
+  /* ── ADHD page ─────────────────────────────────────────────── */
+
+  #adhd-hero {
+    .adhd-container {
+      margin-left: 0;
+    }
+
+    .hero__copy {
+      max-width: 58%;
+      padding-top: 140px;
+      padding-bottom: 64px;
+    }
+
+    .hero__title {
+      font-size: 48px;
+    }
+
+    .hero__lede {
+      font-size: 18px;
+    }
+  }
+
+  .jump-nav {
+    padding-top: 28px;
+  }
+
+  #adhd-what {
+    .info-aside {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  #adhd-subtypes {
+    .sub-head,
+    .sub-row {
+      gap: 24px;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .sub-head {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    .sub-row {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+  #adhd-causes {
+    .cause-grid {
+      grid-template-columns: 1fr;
+      margin-top: 40px;
+    }
+
+    .not-cause {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      padding: 32px;
+    }
+
+    .not-cause__art {
+      width: 160px;
+      align-self: center;
+    }
+  }
+
+  #adhd-ages {
+    .life-row {
+      margin-top: 40px;
+    }
+
+    .life-row + .life-row {
+      margin-top: 48px;
+    }
+
+    .women-wrap {
+      margin-top: 48px;
+    }
+
+    .women-panel {
+      padding: 36px 32px;
+    }
+
+    .women-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .women-grid__media img {
+      min-height: 280px;
+    }
+  }
+
+  #adhd-clinic {
+    .clinic-banner {
+      padding: 44px 36px;
+    }
+
+    .clinic-grid {
+      grid-template-columns: 1fr;
+      margin-top: 32px;
+    }
+  }
+
+  #adhd-assessment {
+    .split-top {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .shots-sticky {
+      position: relative;
+      top: 0;
+    }
+
+    .steps {
+      margin-top: 40px;
+    }
+  }
+
+  #adhd-treatment {
+    .tx-row {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 28px 28px;
+    }
+  }
+
+  #adhd-living {
+    .living-grid {
+      grid-template-columns: 1fr;
+      margin-top: 40px;
+    }
+  }
+
+  #adhd-help {
+    .audience-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+  }
+
+  #adhd-cooccurring {
+    .cooccur-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+  }
+
+  #adhd-cta {
+    .why {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 44px 40px;
+      text-align: center;
+    }
+
+    .why__media img {
+      max-width: 300px;
+    }
+  }
+
+  #adhd-myths {
+    .myth-list {
+      margin-top: 40px;
+    }
+
+    .myth-row__myth {
+      padding-right: 80px;
+    }
+
+    .myth-row__fact {
+      padding-left: 80px;
+    }
+
+    .myth-row__avatar {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  #adhd-faq {
+    .split-top {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .faq-side {
+      position: relative;
+      top: 0;
+    }
+  }
 }
 
 @media (max-width: 767px) {
@@ -684,6 +882,501 @@ body {
 
     .ai-result-card__actions {
       flex-direction: column;
+    }
+  }
+
+  /* ── ADHD page ─────────────────────────────────────────────── */
+
+  .h2--lg {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+
+  .h2--sm {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .lede--sm {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .section--decor::before,
+  .section--decor::after {
+    display: none;
+  }
+
+  .jump-nav {
+    padding-top: 20px;
+  }
+
+  .jump-nav__list a {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  #adhd-hero {
+    margin-top: -70px;
+    display: flex;
+    flex-direction: column;
+
+    .hero__media,
+    .hero__copy {
+      grid-area: unset;
+    }
+
+    .adhd-container {
+      margin-left: 0;
+      padding: 0 16px;
+    }
+
+    .hero__media {
+      position: relative;
+      height: 280px;
+      width: 100%;
+    }
+
+    .hero__media img {
+      position: relative;
+      height: 280px;
+      object-position: center 40%;
+    }
+
+    .hero__copy {
+      max-width: 100%;
+      padding: 32px 0 48px;
+    }
+
+    .hero__badge {
+      padding: 7px 16px;
+    }
+
+    .hero__badge span:last-child {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      white-space: normal;
+    }
+
+    .hero__title {
+      font-size: 38px;
+      margin-top: 20px;
+    }
+
+    .hero__lede {
+      font-size: 16px;
+      line-height: 26px;
+      margin-top: 16px;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  #adhd-what {
+    .info-aside {
+      gap: 32px;
+    }
+
+    .stat-box,
+    .add-box {
+      padding: 22px;
+    }
+
+    .stat-box__n {
+      font-size: 30px;
+      line-height: 38px;
+    }
+  }
+
+  #adhd-video {
+    .video-head {
+      margin-bottom: 20px;
+    }
+
+    .video-btn {
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-btn__play {
+      width: 64px;
+      height: 64px;
+    }
+
+    .video-btn__play-icon {
+      border-top-width: 11px;
+      border-bottom-width: 11px;
+      border-left-width: 18px;
+      margin-left: 4px;
+    }
+
+    .video-btn__label {
+      left: 16px;
+      bottom: 16px;
+      padding: 7px 14px;
+    }
+  }
+
+  #adhd-subtypes {
+    .subtypes {
+      margin-top: 32px;
+    }
+
+    .sub-head {
+      display: none;
+    }
+
+    .sub-row {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 20px 18px;
+    }
+
+    .sub-row__id {
+      gap: 14px;
+    }
+
+    .sub-row__art {
+      width: 72px;
+      height: 58px;
+    }
+
+    .sub-row__t {
+      font-size: 19px;
+      line-height: 26px;
+    }
+
+    .sub-row__d {
+      font-size: 16px;
+      line-height: 24px;
+      align-self: start;
+    }
+  }
+
+  #adhd-causes {
+    .cause-grid {
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .cause-card {
+      flex-direction: column;
+      gap: 14px;
+      padding: 22px;
+    }
+
+    .cause-card h3 {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    .cause-card p {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .not-cause {
+      padding: 24px;
+      border-radius: 18px;
+    }
+
+    .not-cause__art {
+      width: 140px;
+    }
+
+    .not-cause h3 {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    .not-cause p {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  .ps-symgroup__trigger {
+    padding: 16px 18px;
+  }
+
+  .ps-symgroup__title {
+    font-size: 16px;
+  }
+
+  .ps-symlist {
+    padding: 0 18px 18px;
+  }
+
+  #adhd-ages {
+    .life-row {
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .life-row + .life-row {
+      margin-top: 40px;
+    }
+
+    .age-media {
+      max-width: 100%;
+      aspect-ratio: 4 / 3;
+    }
+
+    .age-title {
+      font-size: 26px;
+      line-height: 34px;
+    }
+
+    .women-wrap {
+      margin-top: 40px;
+    }
+
+    .women-panel {
+      padding: 28px 20px;
+      border-radius: 20px;
+    }
+
+    .women-grid {
+      margin-top: 24px;
+      gap: 16px;
+    }
+
+    .women-grid__panel {
+      padding: 24px;
+    }
+
+    .women-grid__title {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    .women-grid__media img {
+      min-height: 220px;
+    }
+  }
+
+  #adhd-clinic {
+    .clinic-banner {
+      padding: 32px 24px;
+      border-radius: 20px;
+    }
+
+    .clinic-banner .btn {
+      margin-top: 28px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .clinic-grid {
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .clinic-grid > div {
+      padding: 18px 20px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  #adhd-assessment {
+    .split-top {
+      gap: 32px;
+    }
+
+    .steps {
+      margin-top: 32px;
+    }
+
+    .steps__item {
+      padding: 20px 18px;
+      gap: 16px;
+    }
+
+    .steps__num {
+      font-size: 28px;
+      line-height: 34px;
+    }
+
+    .steps__item h3 {
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    .steps__item p {
+      font-size: 15px;
+      line-height: 24px;
+    }
+
+    .shots {
+      max-width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 20px;
+    }
+
+    .shots__caption {
+      padding: 18px 20px;
+    }
+
+    .shots__caption p:first-child {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+
+  #adhd-treatment {
+    .treatments {
+      margin-top: 32px;
+    }
+
+    .tx-row {
+      padding: 22px 20px;
+      gap: 20px;
+    }
+
+    .tx-card h3 {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    .tx-card p {
+      font-size: 16px;
+    }
+
+    .tx-card__list span {
+      font-size: 15px;
+    }
+  }
+
+  #adhd-living {
+    .living-grid {
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .living-card {
+      padding: 28px 24px 100px;
+      border-radius: 18px;
+    }
+
+    .living-card__t {
+      font-size: 22px;
+      line-height: 30px;
+    }
+
+    .living-card__list span {
+      font-size: 16px;
+    }
+
+    .living-card__illus {
+      width: 100px;
+      height: 100px;
+      right: 20px;
+      bottom: 20px;
+    }
+  }
+
+  #adhd-help {
+    .audience-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .audience-card__t {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    .audience-card__d {
+      font-size: 15px;
+    }
+  }
+
+  #adhd-cooccurring {
+    .cooccur-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .cooccur-card {
+      padding: 22px;
+    }
+
+    .cooccur-card h3 {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  #adhd-cta {
+    .why {
+      padding: 32px 24px;
+      border-radius: 20px;
+      gap: 28px;
+    }
+
+    .why__media img {
+      max-width: 240px;
+    }
+  }
+
+  #adhd-myths {
+    .myth-list {
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .myth-row {
+      grid-template-columns: 1fr;
+    }
+
+    .myth-row__myth {
+      border-radius: 18px 18px 0 0;
+      padding: 20px 20px 52px;
+    }
+
+    .myth-row__fact {
+      border-radius: 0 0 18px 18px;
+      padding: 52px 20px 20px;
+    }
+
+    .myth-row__myth p {
+      font-size: 17px;
+      line-height: 24px;
+    }
+
+    .myth-row__fact p {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    .myth-row__avatar {
+      width: 56px;
+      height: 56px;
+      border-width: 2px;
+    }
+  }
+
+  #adhd-faq {
+    .split-top {
+      gap: 32px;
+    }
+
+    .faq-item__trigger {
+      padding: 18px 20px;
+    }
+
+    .faq-item__trigger span:first-child {
+      font-size: 17px;
+      line-height: 25px;
+    }
+
+    .faq-item__panel-inner p {
+      font-size: 16px;
+      line-height: 25px;
+      padding: 0 20px 20px;
     }
   }
 }
