@@ -181,6 +181,136 @@ body {
     max-width: 92vw;
   }
 
+
+  /* =========================================================
+     ABOUT US — no breakpoints existed at all previously; fixed
+     heights/two-col grids ran straight from desktop to mobile.
+     ========================================================= */
+  #about-hero {
+    min-height: 480px;
+
+    .page-hero__inner {
+      padding-top: 120px;
+      padding-bottom: 56px;
+    }
+    .page-hero__title {
+      font-size: 42px;
+    }
+    .page-hero__lede {
+      font-size: 17px;
+      max-width: 100%;
+    }
+  }
+
+  #about-mission {
+    .mission {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .mission__text {
+      max-width: 100%;
+    }
+    .mission__media img {
+      height: 360px;
+    }
+    .mission__subhead {
+      font-size: 24px;
+    }
+  }
+
+  #about-values {
+    .values {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .values__preview {
+      order: -1;
+      min-height: 380px;
+    }
+    .values__item {
+      font-size: 19px;
+      padding: 20px 0;
+    }
+  }
+
+  #about-treat {
+    .treat-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .treat-cta {
+      flex-direction: column;
+      text-align: center;
+      padding: 28px;
+      gap: 16px;
+    }
+  }
+
+  #about-professional {
+    .professional {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .professional__media img {
+      height: 360px;
+    }
+    .professional__title {
+      font-size: 34px;
+    }
+    .professional__bio {
+      max-width: 100%;
+    }
+  }
+
+  #about-why {
+    .why-media img {
+      height: 360px;
+    }
+    .why-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .why-col:last-child {
+      border-left: 0;
+      padding-left: 0;
+      margin-top: 4px;
+    }
+    .why-item p {
+      max-width: 100%;
+      font-size: 17px;
+    }
+  }
+
+  #home-languages {
+    padding: 56px 20px;
+
+    .languages-list {
+      gap: 12px;
+    }
+    .language-tag {
+      font-size: 16px;
+      padding: 10px 22px;
+    }
+  }
+
+  #network-banner {
+    padding: 48px 16px;
+
+    .network-wrapper {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 40px;
+      text-align: center;
+    }
+    .network-title {
+      font-size: 30px;
+    }
+    .network-card {
+      padding: 36px 28px;
+    }
+  }
+
   /* ── ADHD page ─────────────────────────────────────────────── */
 
   #adhd-hero {
@@ -882,6 +1012,177 @@ body {
 
     .ai-result-card__actions {
       flex-direction: column;
+    }
+  }
+
+  /* =========================================================
+     ABOUT US — mobile
+     ========================================================= */
+  #about-hero {
+    min-height: 420px;
+    margin-top: -70px;
+
+    .page-hero__inner {
+     padding: 148px 16px 48px;
+    }
+    .page-hero__crumb {
+      font-size: 12px;
+    }
+    .page-hero__title {
+      font-size: 32px;
+      line-height: 1.25;
+    }
+    .page-hero__lede {
+      font-size: 16px;
+      margin-top: 14px;
+    }
+  }
+
+  #about-mission {
+    .mission {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .mission__media img {
+      height: 280px;
+    }
+    /* the desktop card overlays the image absolutely; on mobile it
+       reads better stacked below the image than floating on top of
+       a much shorter image */
+    .mission__card {
+      position: relative;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin-top: 16px;
+    }
+    .mission__subhead {
+      font-size: 22px;
+    }
+  }
+
+  #about-values {
+    .values {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-top: 32px;
+    }
+    .values__preview {
+      order: -1;
+      min-height: 300px;
+    }
+    .values__item {
+      font-size: 18px;
+      padding: 18px 0;
+      gap: 14px;
+    }
+    .values__caption {
+      padding: 20px;
+    }
+    .values__caption h3 {
+      font-size: 22px;
+    }
+  }
+
+  #about-treat {
+    .treat-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .treat-card {
+      padding: 24px;
+    }
+    .treat-cta {
+      flex-direction: column;
+      text-align: center;
+      padding: 24px;
+      gap: 16px;
+
+      .btn {
+        margin-top: 8px;  
+        justify-content: center;
+      }
+    }
+  }
+
+  #about-professional {
+    .professional {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .professional__media img {
+      height: 280px;
+    }
+    .professional__title {
+      font-size: 28px;
+    }
+    .professional__bio {
+      font-size: 16px;
+      line-height: 26px;
+      max-width: 100%;
+    }
+    .professional__tags {
+      gap: 8px;
+    }
+  }
+
+  #about-why {
+    .why-media img {
+      height: 240px;
+    }
+    .why-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .why-col:last-child {
+      border-left: 0;
+      padding-left: 0;
+    }
+    .why-item {
+      padding: 16px 0;
+      gap: 14px;
+    }
+    .why-item p {
+      font-size: 16px;
+      line-height: 24px;
+      max-width: 100%;
+    }
+  }
+
+  #home-languages {
+    padding: 48px 16px;
+
+    .languages-subtext {
+      font-size: 15px;
+    }
+    .languages-list {
+      gap: 10px;
+    }
+    .language-tag {
+      font-size: 15px;
+      padding: 9px 18px;
+    }
+  }
+
+  #network-banner {
+    padding: 40px 16px;
+
+    .network-wrapper {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 28px;
+    }
+    .network-title {
+      font-size: 24px;
+    }
+    .network-text {
+      font-size: 15px;
+    }
+    .network-card {
+      padding: 28px 20px;
+    }
+    .network-card-text {
+      font-size: 15px;
     }
   }
 
