@@ -4766,13 +4766,6 @@ radial-gradient(58% 74% at 50% 0%, rgba(248, 235, 226, 0.9) 0%, rgba(248, 235, 2
         ADHD PAGE STYLES
     ======================================== --> */
 
-/* =====================================================================
-   ADDITIONS TO THE GLOBAL / REUSABLE BLOCK
-   (merge these alongside your existing .h2, .lede, .btn, .section,
-   .ps-tex etc. definitions near the top of styles.css)
-   ===================================================================== */
-
-/* --- texture overlay, same idea as .ps-tex / .ps-tex-dot --- */
 .tex-grid {
   position: absolute;
   inset: 0;
@@ -4977,6 +4970,14 @@ radial-gradient(58% 74% at 50% 0%, rgba(248, 235, 226, 0.9) 0%, rgba(248, 235, 2
   .hero__copy {
     grid-area: 1 / 1;
   }
+
+.adhd-container {
+  max-width: none;
+  
+  margin-left: max(0px, calc((100vw - 1360px) / 2));
+  padding: 0 24px;
+}
+    
   .hero__media {
     position: relative;
     align-self: stretch;
@@ -5239,6 +5240,7 @@ radial-gradient(58% 74% at 50% 0%, rgba(248, 235, 226, 0.9) 0%, rgba(248, 235, 2
     background: #fff;
     padding: 30px 34px;
     transition: background 0.3s ease;
+    cursor: pointer; /* Added cursor pointer for hover UX */
   }
   .sub-row__bar {
     position: absolute;
@@ -5249,21 +5251,31 @@ radial-gradient(58% 74% at 50% 0%, rgba(248, 235, 226, 0.9) 0%, rgba(248, 235, 2
     background: transparent;
     transition: background 0.3s ease;
   }
-  .sub-row.is-active {
+  
+  /* --- Added :hover states alongside .is-active --- */
+  .sub-row.is-active,
+  .sub-row:hover {
     background: var(--surface-cream);
   }
-  .sub-row.is-active .sub-row__bar {
+  .sub-row.is-active .sub-row__bar,
+  .sub-row:hover .sub-row__bar {
     background: var(--brand-primary);
   }
-  .sub-row.is-active .sub-row__t {
+  .sub-row.is-active .sub-row__t,
+  .sub-row:hover .sub-row__t {
     color: var(--brand-primary-hover);
   }
-  .sub-row.is-active .sub-row__art {
+  .sub-row.is-active .sub-row__art,
+  .sub-row:hover .sub-row__art {
     transform: scale(1.06);
+    background: var(--surface-rose);
   }
-  .sub-row.is-active .sub-row__art img {
+  .sub-row.is-active .sub-row__art img,
+  .sub-row:hover .sub-row__art img {
     transform: scale(1.08);
   }
+  /* ------------------------------------------------ */
+
   .sub-row__id {
     display: flex;
     align-items: center;
@@ -5279,9 +5291,6 @@ radial-gradient(58% 74% at 50% 0%, rgba(248, 235, 226, 0.9) 0%, rgba(248, 235, 2
     background: #FDE7E1;
     flex: 0 0 auto;
     transition: transform 0.4s var(--ease-standard), background 0.3s;
-  }
-  .sub-row.is-active .sub-row__art {
-    background: var(--surface-rose);
   }
   .sub-row__art img {
     width: 100%;
