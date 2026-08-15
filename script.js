@@ -69,7 +69,22 @@
     pencil: '<path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 6l4 4"/>',
     compass: '<circle cx="12" cy="12" r="9"/><path d="M15 9l-2 6-6 2 2-6z"/>',
     'building-2': '<rect x="3" y="8" width="8" height="13"/><rect x="13" y="3" width="8" height="18"/><path d="M6 12h2M6 16h2M16 7h2M16 11h2M16 15h2"/>',
-    info: '<circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/>'
+    info: '<circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/>',
+    waves: '<path d="M2 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/><path d="M2 17c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/>',
+    dna: '<path d="M9 3v4M9 17v4M15 3v4M15 17v4"/><path d="M9 7c2 2 4 2 6 0M9 11c2 2 4 2 6 0M9 15c2 2 4 2 6 0"/>',
+    leaf: '<path d="M6 20C14 20 20 14 20 6c-8 0-14 6-14 14z"/><path d="M6 20c0-6 4-10 10-10"/>',
+    puzzle: '<path d="M10 3h4v3a2 2 0 0 0 4 0V3h3v4a2 2 0 0 0 0 4h-3v3h-4v-3a2 2 0 0 0-4 0v3H3v-4a2 2 0 0 0 0-4h3V3z"/>',
+    'user-round': '<circle cx="12" cy="8" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/>',
+    check: '<path d="M5 12l5 5L20 7"/>',
+    x: '<path d="M18 6L6 18M6 6l12 12"/>',
+    image: '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-4 4-3-3-5 5"/>',
+    'calendar-check': '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M9 15l2 2 4-4"/>',
+    'refresh-cw': '<path d="M3 12a9 9 0 0 1 15-6.7"/><path d="M21 3v6h-6"/><path d="M21 12a9 9 0 0 1-15 6.7"/><path d="M3 21v-6h6"/>',
+    percent: '<circle cx="9" cy="9" r="2"/><path d="M15 15l-6-6"/><circle cx="17" cy="17" r="2"/>',
+    'circle-x': '<circle cx="12" cy="12" r="9"/><path d="M15 9l-6 6M9 9l6 6"/>',
+    layers: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>',
+    zap: '<path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/>',
+    cloud: '<path d="M6 16a4 4 0 0 1 0-8 5 5 0 0 1 9.6-1.5A4.5 4.5 0 0 1 18 16z"/>'
   };
 
   function renderIcons(root = document) {
@@ -908,8 +923,24 @@
     toggle.addEventListener("click", () => {
       const isOpen = wrapper.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", String(isOpen));
-      toggle.textContent = isOpen ? "\u2212" : "+"; // − / +
+      toggle.textContent = isOpen ? "\u2212" : "+";
     });
+  }
+
+  /* ---------------------------------------------------------
+     ADHD subtypes — row hover highlight
+  --------------------------------------------------------- */
+  function initSubtypesHover() {
+    const rows = $$(".ps-sub-row");
+    if (!rows.length) return;
+    rows.forEach((row) => {
+      row.addEventListener("mouseenter", () => {
+        rows.forEach((r) => r.classList.remove("is-active"));
+        row.classList.add("is-active");
+      });
+      row.addEventListener("mouseleave", () => row.classList.remove("is-active"));
+    });
+    rows[0]?.classList.add("is-active");
   }
 
   /* ---------------------------------------------------------
@@ -958,7 +989,7 @@
     const preview = $("#assessPreview");
     if (!stepsWrap || !preview) return;
 
-    const steps = $$(".ps-steps__item", stepsWrap);
+    const steps = $$(".steps__item, .ps-steps__item", stepsWrap);
     const shots = $$("img[data-shot]", preview);
     const shotNum = $("#shotNum");
     const shotLabel = $("#shotLabel");
@@ -1067,6 +1098,7 @@
 
     initJumpNav();
     initAddAccordion();
+    initSubtypesHover();
     initVideoButton();
     initAccordionGroup({
       groupSelector: "#symptomGroups",
