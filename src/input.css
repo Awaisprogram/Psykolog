@@ -72,12 +72,26 @@
 }
 
 @layer base {
+  html, body {
+    overflow-x: hidden;
+  }
+
   body {
     @apply bg-white text-ink-body antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply text-ink-900;
+  }
+}
+
+@layer utilities {
+  .section,
+  .section--white,
+  .section--peach,
+  .section--rose,
+  .section--cream {
+    overflow-x: hidden;
   }
 }
 
