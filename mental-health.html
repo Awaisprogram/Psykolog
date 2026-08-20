@@ -1649,7 +1649,6 @@
           <!-- Item 01 -->
           <div class="accordion-item">
             <button
-              onclick="toggleAccordion(this)"
               class="w-full flex items-center justify-between py-5 sm:py-6 bg-transparent border-0 cursor-pointer text-left group"
             >
               <div class="flex items-center gap-4 sm:gap-6">
@@ -1719,7 +1718,6 @@
           <!-- Item 02 -->
           <div class="accordion-item">
             <button
-              onclick="toggleAccordion(this)"
               class="w-full flex items-center justify-between py-5 sm:py-6 bg-transparent border-0 cursor-pointer text-left group"
             >
               <div class="flex items-center gap-4 sm:gap-6">
@@ -1784,7 +1782,6 @@
           <!-- Item 03 -->
           <div class="accordion-item">
             <button
-              onclick="toggleAccordion(this)"
               class="w-full flex items-center justify-between py-5 sm:py-6 bg-transparent border-0 cursor-pointer text-left group"
             >
               <div class="flex items-center gap-4 sm:gap-6">
@@ -1848,7 +1845,6 @@
           <!-- Item 04 -->
           <div class="accordion-item">
             <button
-              onclick="toggleAccordion(this)"
               class="w-full flex items-center justify-between py-5 sm:py-6 bg-transparent border-0 cursor-pointer text-left group"
             >
               <div class="flex items-center gap-4 sm:gap-6">
@@ -2088,9 +2084,7 @@
         </div>
 
         <!-- Card 1 -->
-        <div 
-          onclick="switchRelativeTab(0)"
-          onmouseenter="switchRelativeTab(0)"
+        <div
           id="rel-card-0"
           class="relative_tab_card group cursor-pointer bg-white border border-[#E8DDD7] border-l-4 border-l-[#A85848] rounded-[20px] p-5 sm:p-6 transition-all duration-300 shadow-sm"
           data-image="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop"
@@ -2112,9 +2106,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div 
-          onclick="switchRelativeTab(1)"
-          onmouseenter="switchRelativeTab(1)"
+        <div
           id="rel-card-1"
           class="relative_tab_card group cursor-pointer bg-white border border-[#E8DDD7] border-l-4 border-l-transparent rounded-[20px] p-5 sm:p-6 transition-all duration-300 shadow-sm"
           data-image="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=1000&auto=format&fit=crop"
@@ -2136,9 +2128,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div 
-          onclick="switchRelativeTab(2)"
-          onmouseenter="switchRelativeTab(2)"
+        <div
           id="rel-card-2"
           class="relative_tab_card group cursor-pointer bg-white border border-[#E8DDD7] border-l-4 border-l-transparent rounded-[20px] p-5 sm:p-6 transition-all duration-300 shadow-sm"
           data-image="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1000&auto=format&fit=crop"
@@ -2160,9 +2150,7 @@
         </div>
 
         <!-- Card 4 -->
-        <div 
-          onclick="switchRelativeTab(3)"
-          onmouseenter="switchRelativeTab(3)"
+        <div
           id="rel-card-3"
           class="relative_tab_card group cursor-pointer bg-white border border-[#E8DDD7] border-l-4 border-l-transparent rounded-[20px] p-5 sm:p-6 transition-all duration-300 shadow-sm"
           data-image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop"
@@ -2184,9 +2172,7 @@
         </div>
 
         <!-- Card 5 -->
-        <div 
-          onclick="switchRelativeTab(4)"
-          onmouseenter="switchRelativeTab(4)"
+        <div
           id="rel-card-4"
           class="relative_tab_card group cursor-pointer bg-white border border-[#E8DDD7] border-l-4 border-l-transparent rounded-[20px] p-5 sm:p-6 transition-all duration-300 shadow-sm"
           data-image="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop"
@@ -2249,45 +2235,6 @@
 
   </div>
 </section>
-
-<!-- JavaScript to handle interactive switching -->
-<script>
-  function switchRelativeTab(index) {
-    // Reset all left cards: left border + title color
-    const cards = document.querySelectorAll('.relative_tab_card');
-    cards.forEach((card, idx) => {
-      const title = card.querySelector('.relative_tab_title');
-      if (idx === index) {
-        card.classList.remove('border-l-transparent');
-        card.classList.add('border-l-[#A85848]');
-        title.classList.remove('text-ink-900');
-        title.classList.add('text-[#A85848]');
-      } else {
-        card.classList.remove('border-l-[#A85848]');
-        card.classList.add('border-l-transparent');
-        title.classList.remove('text-[#A85848]');
-        title.classList.add('text-ink-900');
-      }
-    });
-
-    // Get selected card data attributes
-    const selectedCard = document.getElementById(`rel-card-${index}`);
-    const newImage = selectedCard.getAttribute('data-image');
-    const newTitle = selectedCard.getAttribute('data-title');
-
-    // Update right sticky image and text title smoothly
-    const imgElement = document.getElementById('relativesActiveImg');
-    const titleElement = document.getElementById('relativesActiveTitle');
-
-    imgElement.style.opacity = '0.4';
-    setTimeout(() => {
-      imgElement.src = newImage;
-      imgElement.style.opacity = '1';
-    }, 150);
-
-    titleElement.textContent = newTitle;
-  }
-</script>
 
     <!-- CTA Booking / When Should You Seek Help -->
 <section id="mh-book" class="section section--white">
@@ -2411,7 +2358,6 @@
         <!-- Item 1 (Default Open) -->
         <div class="faq-item bg-white border border-[#E8DDD7] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300">
           <button
-            onclick="toggleFaq(this)"
             class="w-full flex items-center justify-between p-6 sm:p-7 bg-transparent border-0 cursor-pointer text-left group"
           >
             <span class="font-serif font-bold text-lg sm:text-xl text-ink-900 group-hover:text-[#A85848] transition-colors pr-4">
@@ -2431,7 +2377,6 @@
         <!-- Item 2 -->
         <div class="faq-item bg-white border border-[#E8DDD7] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300">
           <button
-            onclick="toggleFaq(this)"
             class="w-full flex items-center justify-between p-6 sm:p-7 bg-transparent border-0 cursor-pointer text-left group"
           >
             <span class="font-serif font-bold text-lg sm:text-xl text-ink-900 group-hover:text-[#A85848] transition-colors pr-4">
@@ -2451,7 +2396,6 @@
         <!-- Item 3 -->
         <div class="faq-item bg-white border border-[#E8DDD7] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300">
           <button
-            onclick="toggleFaq(this)"
             class="w-full flex items-center justify-between p-6 sm:p-7 bg-transparent border-0 cursor-pointer text-left group"
           >
             <span class="font-serif font-bold text-lg sm:text-xl text-ink-900 group-hover:text-[#A85848] transition-colors pr-4">
@@ -2471,7 +2415,6 @@
         <!-- Item 4 -->
         <div class="faq-item bg-white border border-[#E8DDD7] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300">
           <button
-            onclick="toggleFaq(this)"
             class="w-full flex items-center justify-between p-6 sm:p-7 bg-transparent border-0 cursor-pointer text-left group"
           >
             <span class="font-serif font-bold text-lg sm:text-xl text-ink-900 group-hover:text-[#A85848] transition-colors pr-4">
@@ -2491,7 +2434,6 @@
         <!-- Item 5 -->
         <div class="faq-item bg-white border border-[#E8DDD7] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300">
           <button
-            onclick="toggleFaq(this)"
             class="w-full flex items-center justify-between p-6 sm:p-7 bg-transparent border-0 cursor-pointer text-left group"
           >
             <span class="font-serif font-bold text-lg sm:text-xl text-ink-900 group-hover:text-[#A85848] transition-colors pr-4">
@@ -2721,5 +2663,7 @@
         });
       });
     </script>
+    <script src="script.js"></script>
+
   </body>
 </html>

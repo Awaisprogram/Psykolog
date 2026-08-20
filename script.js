@@ -428,6 +428,89 @@
   }
 
   /* -------------------------------------------------------------------
+     Mental health page — youth accordion, FAQs, and relative support tabs
+     ------------------------------------------------------------------- */
+  function toggleAccordion(button) {
+    const item = button.closest('.accordion-item');
+    if (!item) return;
+    const content = item.querySelector('.accordion-content');
+    const iconWrap = item.querySelector('.accordion-icon');
+    const isOpen = item.classList.toggle('is-open');
+    if (content) content.classList.toggle('hidden', !isOpen);
+    if (iconWrap) {
+      const svg = iconWrap.querySelector('svg');
+      if (svg) svg.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+  }
+
+  function toggleFaq(button) {
+    const item = button.closest('.faq-item');
+    if (!item) return;
+    const content = item.querySelector('.faq-content');
+    const icon = button.querySelector('.faq-icon');
+    const isOpen = item.classList.toggle('is-open');
+    if (content) content.classList.toggle('hidden', !isOpen);
+    if (icon) icon.textContent = isOpen ? '−' : '+';
+  }
+
+  function switchRelativeTab(index) {
+    const cards = document.querySelectorAll('.relative_tab_card');
+    if (!cards.length) return;
+
+    cards.forEach((card, idx) => {
+      const title = card.querySelector('.relative_tab_title');
+      const isActive = idx === index;
+      card.classList.toggle('border-l-[#A85848]', isActive);
+      card.classList.toggle('border-l-transparent', !isActive);
+      if (title) {
+        title.classList.toggle('text-[#A85848]', isActive);
+        title.classList.toggle('text-ink-900', !isActive);
+      }
+    });
+
+    const selectedCard = document.getElementById(`rel-card-${index}`);
+    if (!selectedCard) return;
+
+    const newImage = selectedCard.getAttribute('data-image');
+    const newTitle = selectedCard.getAttribute('data-title');
+    const imgElement = document.getElementById('relativesActiveImg');
+    const titleElement = document.getElementById('relativesActiveTitle');
+
+    if (imgElement) {
+      imgElement.style.opacity = '0.4';
+      setTimeout(() => {
+        if (newImage) imgElement.src = newImage;
+        imgElement.style.opacity = '1';
+      }, 150);
+    }
+
+    if (titleElement && newTitle) {
+      titleElement.textContent = newTitle;
+    }
+  }
+
+  function initMentalHealthInteractions() {
+    const youthButtons = document.querySelectorAll('#mh-youth .accordion-item button');
+    youthButtons.forEach((button) => {
+      button.addEventListener('click', () => toggleAccordion(button));
+    });
+
+    const faqButtons = document.querySelectorAll('#mh-faq .faq-item button');
+    faqButtons.forEach((button) => {
+      button.addEventListener('click', () => toggleFaq(button));
+    });
+
+    const relativeCards = document.querySelectorAll('.relative_tab_card');
+    relativeCards.forEach((card) => {
+      const idx = Number(card.id.replace('rel-card-', ''));
+      card.addEventListener('click', () => switchRelativeTab(idx));
+      card.addEventListener('mouseenter', () => switchRelativeTab(idx));
+    });
+
+    if (relativeCards.length) switchRelativeTab(0);
+  }
+
+  /* -------------------------------------------------------------------
      Articles pagination (static demo data, 4 pages)
      ------------------------------------------------------------------- */
   function initArticlesPagination() {
@@ -1093,6 +1176,7 @@
     initPricing();
     initLocations();
     initFaq();
+    initMentalHealthInteractions();
     initArticlesPagination();
     initAiAssistant();
 
