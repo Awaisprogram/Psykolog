@@ -5,44 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mental Health | psykolog.no</title>
     <link rel="stylesheet" href="fonts.css" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Fustat", "sans-serif"],
-              serif: ["Inria Serif", "Georgia", "serif"],
-            },
-            colors: {
-              brand: {
-                rust: "#A93E28",
-                brown: "#5C2A20",
-                dark: "#3A1811",
-                darkest: "#2B0F09",
-                heading: "#241C19",
-                gray: "#5B5B5B",
-                taupe: "#6B5F5A",
-                muted: "#8B7F7A",
-                cream: "#FBEFE9",
-                offwhite: "#FFF7F3",
-                border: "#F2E4DC",
-                peach: "#F09367",
-                orange: "#C24C33",
-                pink: "#F8D8D4",
-                rose: "#F1E6DF",
-                mauve: "#C88C7E",
-                active: "#FDE7E1",
-                jumpbg: "#FDF6F2",
-              },
-            },
-          },
-        },
-      };
-    </script>
+    <link rel="stylesheet" href="tailwind.css" />
     <style>
-      /* hide scrollbar for the jump-nav pill row (no Tailwind core utility for this) */
       .ps-jump::-webkit-scrollbar {
         display: none;
       }
@@ -53,7 +17,7 @@
   </head>
   <body class="m-0 bg-white text-brand-taupe font-sans">
     <!-- Netbar -->
-    <div class="relative z-[51] bg-brand-brown">
+    <div class="relative z-[51] bg-ink-600">
       <div class="px-6 md:px-12 lg:px-16">
         <div
           class="max-w-[1312px] mx-auto flex items-center justify-between gap-6 h-[52px]"
@@ -169,13 +133,11 @@
         class="[grid-area:1/1] absolute inset-0 overflow-hidden md:static md:!relative md:!inset-auto md:self-stretch md:w-full md:h-full h-auto aspect-[1860/900] lg:aspect-auto lg:h-full"
       >
         <img
-          src="images/Banner.webp"
+          src="assets/mental-health/hero.webp"
           alt="Mental Health"
           class="absolute inset-0 w-full h-full object-cover object-[72%_50%]"
         />
-        <span
-          class="absolute inset-0 bg-[linear-gradient(100deg,rgba(255,247,243,0.94)_0%,rgba(255,247,243,0.86)_34%,rgba(255,247,243,0.42)_58%,rgba(255,247,243,0.06)_82%)]"
-        ></span>
+        <span class="absolute inset-0"></span>
       </span>
       <div
         class="px-6 md:px-12 lg:px-16 relative w-full [grid-area:2/1] self-start bg-brand-offwhite pt-10 pb-14 lg:[grid-area:1/1] lg:self-end lg:z-[2] lg:pt-[180px] lg:pb-[88px] lg:bg-transparent"
@@ -198,10 +160,12 @@
                 Mental Health
               </h1>
               <p class="text-xl leading-[1.6] text-[#33170F] mt-[22px] mb-0">
-                Mental health is about how you feel about yourself, how you cope
-                with everyday challenges, and how you function in relationships
+                Mental health is about how you feel about yourself. How you cope
+                with everyday challenges and how you function in relationships
                 and work. Good mental health is not the absence of difficult
-                emotions, but the ability to manage them.
+                emotions. However, it is the ability to manage them.
+                Approximately 1 in 2 Norwegians will experience a mental illness
+                during their lifetime.
               </p>
               <div class="mt-8">
                 <button
@@ -222,14 +186,14 @@
     </section>
 
     <!-- Jump Nav -->
-    <div class="px-6 md:px-12 lg:px-16 bg-white pt-10">
-      <div class="max-w-[1312px] mx-auto flex justify-center">
+    <div class="bg-white pt-10">
+      <div class="container">
         <nav
-          class="ps-jump flex items-center gap-0.5 bg-brand-jumpbg rounded-full px-3.5 py-2 overflow-x-auto"
+          class="ps-jump flex items-center gap-0.5 bg-[#FDF6F2] rounded-full px-3.5 py-2 overflow-x-auto"
         >
           <a
             href="#mh-what"
-            class="font-sans font-bold text-[15px] leading-5 whitespace-nowrap text-brand-rust bg-brand-active rounded-full px-[18px] py-2.5"
+            class="font-sans font-bold text-[15px] leading-5 whitespace-nowrap text-brand-hover bg-brand-active rounded-full px-[18px] py-2.5"
             >What is Mental Health</a
           >
           <a
@@ -274,9 +238,9 @@
     <!-- What is Mental Health -->
     <section
       id="mh-what"
-      class="px-6 md:px-12 lg:px-16 bg-white pt-[72px] pb-24"
+      class="section section--white"
     >
-      <div class="max-w-[1312px] mx-auto">
+      <div class="container">
         <div
           class="grid grid-cols-1 gap-12 items-start lg:grid-cols-[1fr_380px] lg:gap-12"
         >
@@ -284,18 +248,21 @@
             <h2
               class="font-serif font-bold text-brand-heading m-0 text-[30px] leading-[39px] md:text-[36px] md:leading-[46px] lg:text-[44px] lg:leading-[56px]"
             >
-              What is <em class="italic text-brand-rust">Mental Health?</em>
+              What is <em class="italic text-brand-hover">Mental Health?</em>
             </h2>
             <p class="text-xl leading-[31px] text-brand-gray mt-[22px] mb-0">
               Mental health is not just the absence of mental illness. It is the
               overall state of your psychological, emotional, and social
               well-being. Everyone has mental health, in the same way that
-              everyone has physical health.
+              everyone has physical health. It can be good or poor. And it can
+              change throughout life.
             </p>
             <p class="text-xl leading-[31px] text-brand-gray mt-[18px] mb-0">
-              Mental health is a state of well being in which an individual
+              Mental health is a state of well-being in which an individual
               realizes their own abilities, can cope with the normal stresses of
-              life, and can work productively.
+              life, and can work productively. Good mental health does not mean
+              feeling happy all the time. It means having the tools to manage
+              difficult feelings without those feelings taking over your life.
             </p>
             <p class="text-xl leading-[31px] text-brand-gray mt-[18px] mb-0">
               In Norway, mental health is best understood through the
@@ -305,13 +272,10 @@
           </div>
           <div class="lg:sticky lg:top-[148px]">
             <div
-              class="relative overflow-hidden bg-brand-brown rounded-3xl px-[30px] py-8"
+              class="relative overflow-hidden bg-ink-600 rounded-3xl px-[30px] py-8"
             >
-              <span
-                class="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(248,216,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(248,216,212,0.05)_1px,transparent_1px)] bg-[length:40px_40px]"
-              ></span>
               <p
-                class="relative font-sans font-semibold text-[11px] tracking-[2px] uppercase text-brand-peach m-0"
+                class="relative font-sans font-extrabold text-[14px] tracking-[2px] uppercase text-[#F09367] m-0"
               >
                 The biopsychosocial model
               </p>
@@ -320,9 +284,14 @@
                   class="flex items-center gap-4 bg-[rgba(248,216,212,0.08)] border border-[rgba(248,216,212,0.15)] rounded-2xl px-5 py-[18px]"
                 >
                   <span
-                    class="inline-flex items-center justify-center w-[54px] h-[54px] rounded-2xl bg-brand-peach flex-none"
-                    >🧬</span
+                    class="inline-flex items-center justify-center w-[54px] h-[54px] flex-none overflow-hidden"
                   >
+                    <img
+                      src="/images/Your Biology.webp"
+                      alt="Biology"
+                      class="w-full h-full object-contain"
+                    />
+                  </span>
                   <span>
                     <span
                       class="block font-serif font-bold text-lg leading-[25px] text-white"
@@ -334,13 +303,19 @@
                     >
                   </span>
                 </div>
+
                 <div
                   class="flex items-center gap-4 bg-[rgba(248,216,212,0.08)] border border-[rgba(248,216,212,0.15)] rounded-2xl px-5 py-[18px]"
                 >
                   <span
-                    class="inline-flex items-center justify-center w-[54px] h-[54px] rounded-2xl bg-brand-peach flex-none"
-                    >🧠</span
+                    class="inline-flex items-center justify-center w-[54px] h-[54px] flex-none overflow-hidden"
                   >
+                    <img
+                      src="/images/Your psychology.webp"
+                      alt="Psychology"
+                      class="w-full h-full object-contain"
+                    />
+                  </span>
                   <span>
                     <span
                       class="block font-serif font-bold text-lg leading-[25px] text-white"
@@ -352,13 +327,19 @@
                     >
                   </span>
                 </div>
+
                 <div
                   class="flex items-center gap-4 bg-[rgba(248,216,212,0.08)] border border-[rgba(248,216,212,0.15)] rounded-2xl px-5 py-[18px]"
                 >
                   <span
-                    class="inline-flex items-center justify-center w-[54px] h-[54px] rounded-2xl bg-brand-peach flex-none"
-                    >👥</span
+                    class="inline-flex items-center justify-center w-[54px] h-[54px] flex-none overflow-hidden"
                   >
+                    <img
+                      src="/images/Your social environment.webp"
+                      alt="Social"
+                      class="w-full h-full object-contain"
+                    />
+                  </span>
                   <span>
                     <span
                       class="block font-serif font-bold text-lg leading-[25px] text-white"
@@ -380,310 +361,700 @@
     <!-- Common Conditions -->
     <section
       id="mh-conditions"
-      class="px-6 md:px-12 lg:px-16 bg-brand-offwhite pt-24 pb-24"
+      class="section section--peach"
     >
-      <div class="max-w-[1312px] mx-auto">
+      <div class="container">
         <div class="max-w-[760px]">
           <h2
             class="font-serif font-bold text-brand-heading m-0 text-[30px] leading-[39px] md:text-[36px] md:leading-[46px] lg:text-[44px] lg:leading-[56px]"
           >
             Common Mental
-            <em class="italic text-brand-rust">Health Conditions</em>
+            <em class="italic text-brand-hover">Health Conditions</em>
           </h2>
           <p class="text-xl leading-[31px] text-brand-gray mt-5 mb-0">
             Mental health covers a wide range of conditions. Every condition has
             its own pattern of symptoms, causes, and treatment.
           </p>
         </div>
+
         <div
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[18px] mt-12"
         >
+          <!-- 1. Anxiety -->
           <a
             href="#"
-            class="flex flex-col bg-white border border-brand-border rounded-[20px] px-6 py-[26px]"
+            class="group flex flex-col justify-between h-full bg-white border border-[#f2e4dc] rounded-[20px] p-[26px_24px] translate-y-0 shadow-none transition-all duration-300 hover:bg-gray-50 hover:border-brand-hover hover:-translate-y-2 hover:shadow-lg"
           >
+            <div>
+              <span
+                class="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-[#FDF0EC]"
+              >
+                <img src="/icons/anxiety.svg" alt="Anxiety" class="w-5 h-5" />
+              </span>
+              <span
+                class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-6"
+                >Anxiety</span
+              >
+              <span class="block text-base leading-6 text-brand-gray mt-2.5"
+                >Persistent worry, fear, and restlessness that get in the way of
+                daily life. The most common mental illness.</span
+              >
+            </div>
             <span
-              class="inline-flex items-center justify-center w-11 h-11 rounded-[13px] bg-brand-offwhite"
-              >😔</span
+              class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B35238] mt-8 group-hover:underline"
             >
-            <span
-              class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-5"
-              >Depression</span
-            >
-            <span
-              class="block text-base leading-6 text-brand-gray mt-2.5 flex-1"
-              >Persistent sadness, loss of interest, changes in sleep and
-              appetite, difficulty concentrating.</span
-            >
+              Read more
+              <svg
+                class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </span>
           </a>
-          <a
-            href="#"
-            class="flex flex-col bg-white border border-brand-border rounded-[20px] px-6 py-[26px]"
-          >
-            <span
-              class="inline-flex items-center justify-center w-11 h-11 rounded-[13px] bg-brand-offwhite"
-              >😰</span
-            >
-            <span
-              class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-5"
-              >Anxiety</span
-            >
-            <span
-              class="block text-base leading-6 text-brand-gray mt-2.5 flex-1"
-              >Excessive worry, fear, restlessness, rapid heartbeat, difficulty
-              controlling worry.</span
-            >
-          </a>
-          <a
-            href="#"
-            class="flex flex-col bg-white border border-brand-border rounded-[20px] px-6 py-[26px]"
-          >
-            <span
-              class="inline-flex items-center justify-center w-11 h-11 rounded-[13px] bg-brand-offwhite"
-              >💭</span
-            >
-            <span
-              class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-5"
-              >PTSD</span
-            >
-            <span
-              class="block text-base leading-6 text-brand-gray mt-2.5 flex-1"
-              >Flashbacks, nightmares, severe anxiety after experiencing or
-              witnessing trauma.</span
-            >
-          </a>
-          <a
-            href="#"
-            class="flex flex-col bg-white border border-brand-border rounded-[20px] px-6 py-[26px]"
-          >
-            <span
-              class="inline-flex items-center justify-center w-11 h-11 rounded-[13px] bg-brand-offwhite"
-              >🔄</span
-            >
-            <span
-              class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-5"
-              >OCD</span
-            >
-            <span
-              class="block text-base leading-6 text-brand-gray mt-2.5 flex-1"
-              >Unwanted repetitive thoughts and behaviors that interfere with
-              daily activities.</span
-            >
-          </a>
-          <a
-            href="#"
-            class="flex flex-col bg-white border border-brand-border rounded-[20px] px-6 py-[26px]"
-          >
-            <span
-              class="inline-flex items-center justify-center w-11 h-11 rounded-[13px] bg-brand-offwhite"
-              >📊</span
-            >
-            <span
-              class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-5"
-              >Bipolar</span
-            >
-            <span
-              class="block text-base leading-6 text-brand-gray mt-2.5 flex-1"
-              >Extreme mood swings including emotional highs and lows affecting
-              energy levels.</span
-            >
-          </a>
-          <a
-            href="#"
-            class="flex flex-col bg-white border border-brand-border rounded-[20px] px-6 py-[26px]"
-          >
-            <span
-              class="inline-flex items-center justify-center w-11 h-11 rounded-[13px] bg-brand-offwhite"
-              >🍽️</span
-            >
-            <span
-              class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-5"
-              >Eating Disorders</span
-            >
-            <span
-              class="block text-base leading-6 text-brand-gray mt-2.5 flex-1"
-              >Serious conditions related to eating behaviors that impact health
-              and emotions.</span
-            >
-          </a>
-          <a
-            href="#"
-            class="flex flex-col bg-white border border-brand-border rounded-[20px] px-6 py-[26px]"
-          >
-            <span
-              class="inline-flex items-center justify-center w-11 h-11 rounded-[13px] bg-brand-offwhite"
-              >😣</span
-            >
-            <span
-              class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-5"
-              >Burnout</span
-            >
-            <span
-              class="block text-base leading-6 text-brand-gray mt-2.5 flex-1"
-              >Physical and emotional exhaustion caused by prolonged stress,
-              often work-related.</span
-            >
-          </a>
-          <a
-            href="#"
-            class="flex flex-col bg-white border border-brand-border rounded-[20px] px-6 py-[26px]"
-          >
-            <span
-              class="inline-flex items-center justify-center w-11 h-11 rounded-[13px] bg-brand-offwhite"
-              >🧩</span
-            >
-            <span
-              class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-5"
-              >ADHD</span
-            >
-            <span
-              class="block text-base leading-6 text-brand-gray mt-2.5 flex-1"
-              >Difficulty focusing, hyperactivity, impulsivity affecting work
-              and relationships.</span
-            >
-          </a>
-        </div>
-      </div>
-    </section>
 
-    <!-- Physical Activity -->
-    <section
-      id="mh-activity"
-      class="px-6 md:px-12 lg:px-16 pt-24 pb-24 bg-white"
-    >
-      <div class="max-w-[1312px] mx-auto">
-        <div class="max-w-[820px] mx-auto text-center">
-          <p
-            class="font-sans font-semibold text-base tracking-[2px] uppercase text-brand-rust m-0"
+          <!-- 2. Depression -->
+          <a
+            href="#"
+            class="group flex flex-col justify-between h-full bg-white border border-[#f2e4dc] rounded-[20px] p-[26px_24px] translate-y-0 shadow-none transition-all duration-300 hover:bg-gray-50 hover:border-brand-hover hover:-translate-y-2 hover:shadow-lg"
           >
-            Movement and mind
-          </p>
-          <h2
-            class="font-serif font-bold text-brand-heading mt-3.5 mb-0 text-[48px]"
+            <div>
+              <span
+                class="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-[#EEF5E8]"
+              >
+                <img
+                  src="/icons/depression.svg"
+                  alt="Depression"
+                  class="w-5 h-5"
+                />
+              </span>
+              <span
+                class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-6"
+                >Depression</span
+              >
+              <span class="block text-base leading-6 text-brand-gray mt-2.5"
+                >Persistent low mood, loss of interest, fatigue, and negative
+                thinking. Often people experience mild to severe episodes of
+                depression.</span
+              >
+            </div>
+            <span
+              class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B35238] mt-8 group-hover:underline"
+            >
+              Read more
+              <svg
+                class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </span>
+          </a>
+
+          <!-- 3. Stress & burnout -->
+          <a
+            href="#"
+            class="group flex flex-col justify-between h-full bg-white border border-[#f2e4dc] rounded-[20px] p-[26px_24px] translate-y-0 shadow-none transition-all duration-300 hover:bg-gray-50 hover:border-brand-hover hover:-translate-y-2 hover:shadow-lg"
           >
-            Connection Between Physical Activity And
-            <em class="italic text-brand-rust">Mental Health</em>
-          </h2>
-          <p class="text-xl leading-[31px] text-brand-gray mt-5 mb-0">
-            The connection between physical and mental health is not a cliché;
-            it is biology. When you exercise, your brain releases dopamine,
-            serotonin, and endorphins.
-          </p>
-        </div>
-        <div
-          class="mt-[52px] bg-white rounded-3xl overflow-hidden border border-brand-border"
-        >
-          <table class="w-full border-collapse">
-            <thead class="bg-brand-offwhite">
-              <tr>
-                <th
-                  class="px-7 py-5 text-left font-sans font-bold text-[15px] text-brand-heading border-b border-brand-border"
-                >
-                  Activity
-                </th>
-                <th
-                  class="px-7 py-5 text-left font-sans font-bold text-[15px] text-brand-heading border-b border-brand-border"
-                >
-                  Frequency
-                </th>
-                <th
-                  class="px-7 py-5 text-left font-sans font-bold text-[15px] text-brand-heading border-b border-brand-border"
-                >
-                  Mental Health Benefits
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="border-b border-brand-border">
-                <td class="px-7 py-6">
-                  <span class="block font-bold text-brand-heading text-base"
-                    >Aerobic Exercise</span
-                  >
-                  <span class="block text-sm text-brand-muted mt-1"
-                    >Running, cycling, swimming</span
-                  >
-                </td>
-                <td class="px-7 py-6 text-[15px] text-brand-gray">
-                  30-60 min<br />3-5x per week
-                </td>
-                <td class="px-7 py-6 text-[15px] text-brand-gray">
-                  Reduces anxiety and depression, improves mood, enhances sleep
-                  quality
-                </td>
-              </tr>
-              <tr class="border-b border-brand-border">
-                <td class="px-7 py-6">
-                  <span class="block font-bold text-brand-heading text-base"
-                    >Strength Training</span
-                  >
-                  <span class="block text-sm text-brand-muted mt-1"
-                    >Weights, resistance bands</span
-                  >
-                </td>
-                <td class="px-7 py-6 text-[15px] text-brand-gray">
-                  20-30 min<br />2-3x per week
-                </td>
-                <td class="px-7 py-6 text-[15px] text-brand-gray">
-                  Boosts self-esteem, improves body image, reduces anxiety
-                  symptoms
-                </td>
-              </tr>
-              <tr class="border-b border-brand-border">
-                <td class="px-7 py-6">
-                  <span class="block font-bold text-brand-heading text-base"
-                    >Yoga &amp; Pilates</span
-                  >
-                  <span class="block text-sm text-brand-muted mt-1"
-                    >Mind-body practices</span
-                  >
-                </td>
-                <td class="px-7 py-6 text-[15px] text-brand-gray">
-                  30-60 min<br />2-3x per week
-                </td>
-                <td class="px-7 py-6 text-[15px] text-brand-gray">
-                  Reduces stress, improves mindfulness, enhances emotional
-                  regulation
-                </td>
-              </tr>
-              <tr class="border-b border-brand-border">
-                <td class="px-7 py-6">
-                  <span class="block font-bold text-brand-heading text-base"
-                    >Walking in Nature</span
-                  >
-                  <span class="block text-sm text-brand-muted mt-1"
-                    >Forest, park, trails</span
-                  >
-                </td>
-                <td class="px-7 py-6 text-[15px] text-brand-gray">
-                  20-30 min<br />Daily
-                </td>
-                <td class="px-7 py-6 text-[15px] text-brand-gray">
-                  Lowers cortisol, reduces rumination, improves attention and
-                  focus
-                </td>
-              </tr>
-              <tr>
-                <td class="px-7 py-6">
-                  <span class="block font-bold text-brand-heading text-base"
-                    >Team Sports</span
-                  >
-                  <span class="block text-sm text-brand-muted mt-1"
-                    >Football, basketball</span
-                  >
-                </td>
-                <td class="px-7 py-6 text-[15px] text-brand-gray">
-                  60 min<br />1-2x per week
-                </td>
-                <td class="px-7 py-6 text-[15px] text-brand-gray">
-                  Social connection, sense of belonging, improved mood and
-                  motivation
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            <div>
+              <span
+                class="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-[#EAF2F8]"
+              >
+                <img
+                  src="/icons/stress-burnout.svg"
+                  alt="Stress & burnout"
+                  class="w-5 h-5"
+                />
+              </span>
+              <span
+                class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-6"
+                >Stress & burnout</span
+              >
+              <span class="block text-base leading-6 text-brand-gray mt-2.5"
+                >Work stress, chronic pressure and exhaustion syndrome. One of
+                the most common reasons for sick leave at the workplace.</span
+              >
+            </div>
+            <span
+              class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B35238] mt-8 group-hover:underline"
+            >
+              Read more
+              <svg
+                class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </span>
+          </a>
+
+          <!-- 4. Sleep problems -->
+          <a
+            href="#"
+            class="group flex flex-col justify-between h-full bg-white border border-[#f2e4dc] rounded-[20px] p-[26px_24px] translate-y-0 shadow-none transition-all duration-300 hover:bg-gray-50 hover:border-brand-hover hover:-translate-y-2 hover:shadow-lg"
+          >
+            <div>
+              <span
+                class="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-[#FAF1E3]"
+              >
+                <img
+                  src="/icons/sleep-problems.svg"
+                  alt="Sleep problems"
+                  class="w-5 h-5"
+                />
+              </span>
+              <span
+                class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-6"
+                >Sleep problems</span
+              >
+              <span class="block text-base leading-6 text-brand-gray mt-2.5"
+                >Insomnia and sleep difficulties affect around 1 in 7 adults and
+                have a direct impact on mental health.</span
+              >
+            </div>
+            <span
+              class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B35238] mt-8 group-hover:underline"
+            >
+              Read more
+              <svg
+                class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </span>
+          </a>
+
+          <!-- 5. ADHD -->
+          <a
+            href="#"
+            class="group flex flex-col justify-between h-full bg-white border border-[#f2e4dc] rounded-[20px] p-[26px_24px] translate-y-0 shadow-none transition-all duration-300 hover:bg-gray-50 hover:border-brand-hover hover:-translate-y-2 hover:shadow-lg"
+          >
+            <div>
+              <span
+                class="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-[#FDF0EC]"
+              >
+                <img src="/icons/adhd.svg" alt="ADHD" class="w-5 h-5" />
+              </span>
+              <span
+                class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-6"
+                >ADHD</span
+              >
+              <span class="block text-base leading-6 text-brand-gray mt-2.5"
+                >Attention, impulse, and executive function challenges that
+                persist into adulthood for most people diagnosed as
+                children.</span
+              >
+            </div>
+            <span
+              class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B35238] mt-8 group-hover:underline"
+            >
+              Read more
+              <svg
+                class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </span>
+          </a>
+
+          <!-- 6. Bipolar disorder -->
+          <a
+            href="#"
+            class="group flex flex-col justify-between h-full bg-white border border-[#f2e4dc] rounded-[20px] p-[26px_24px] translate-y-0 shadow-none transition-all duration-300 hover:bg-gray-50 hover:border-brand-hover hover:-translate-y-2 hover:shadow-lg"
+          >
+            <div>
+              <span
+                class="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-[#EEF5E8]"
+              >
+                <img
+                  src="/icons/bipolar.svg"
+                  alt="Bipolar disorder"
+                  class="w-5 h-5"
+                />
+              </span>
+              <span
+                class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-6"
+                >Bipolar disorder</span
+              >
+              <span class="block text-base leading-6 text-brand-gray mt-2.5"
+                >Episodes of mania and depression alternating over time. A
+                serious but manageable condition with mood stabilisers and
+                therapy.</span
+              >
+            </div>
+            <span
+              class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B35238] mt-8 group-hover:underline"
+            >
+              Read more
+              <svg
+                class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </span>
+          </a>
+
+          <!-- 7. Personality disorders -->
+          <a
+            href="#"
+            class="group flex flex-col justify-between h-full bg-white border border-[#f2e4dc] rounded-[20px] p-[26px_24px] translate-y-0 shadow-none transition-all duration-300 hover:bg-gray-50 hover:border-brand-hover hover:-translate-y-2 hover:shadow-lg"
+          >
+            <div>
+              <span
+                class="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-[#EAF2F8]"
+              >
+                <img
+                  src="/icons/personality-disorders.svg"
+                  alt="Personality disorders"
+                  class="w-5 h-5"
+                />
+              </span>
+              <span
+                class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-6"
+                >Personality disorders</span
+              >
+              <span class="block text-base leading-6 text-brand-gray mt-2.5"
+                >Persistent patterns in how you think, feel and relate to others
+                that cause distress. Includes borderline, avoidant and
+                narcissistic personality disorder.</span
+              >
+            </div>
+            <span
+              class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B35238] mt-8 group-hover:underline"
+            >
+              Read more
+              <svg
+                class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </span>
+          </a>
+
+          <!-- 8. Eating disorders -->
+          <a
+            href="#"
+            class="group flex flex-col justify-between h-full bg-white border border-[#f2e4dc] rounded-[20px] p-[26px_24px] translate-y-0 shadow-none transition-all duration-300 hover:bg-gray-50 hover:border-brand-hover hover:-translate-y-2 hover:shadow-lg"
+          >
+            <div>
+              <span
+                class="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-[#FAF1E3]"
+              >
+                <img
+                  src="/icons/eating-disorders.svg"
+                  alt="Eating disorders"
+                  class="w-5 h-5"
+                />
+              </span>
+              <span
+                class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-6"
+                >Eating disorders</span
+              >
+              <span class="block text-base leading-6 text-brand-gray mt-2.5"
+                >Anorexia, bulimia and binge eating disorder. Serious conditions
+                with significant physical and psychological impact.</span
+              >
+            </div>
+            <span
+              class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B35238] mt-8 group-hover:underline"
+            >
+              Read more
+              <svg
+                class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </span>
+          </a>
+
+          <!-- 9. Grief & loss -->
+          <a
+            href="#"
+            class="group flex flex-col justify-between h-full bg-white border border-[#f2e4dc] rounded-[20px] p-[26px_24px] translate-y-0 shadow-none transition-all duration-300 hover:bg-gray-50 hover:border-brand-hover hover:-translate-y-2 hover:shadow-lg"
+          >
+            <div>
+              <span
+                class="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-[#FDF0EC]"
+              >
+                <img
+                  src="/icons/grief-loss.svg"
+                  alt="Grief & loss"
+                  class="w-5 h-5"
+                />
+              </span>
+              <span
+                class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-6"
+                >Grief & loss</span
+              >
+              <span class="block text-base leading-6 text-brand-gray mt-2.5"
+                >Normal grief becomes complicated grief when it does not ease
+                over time and prevents you from functioning. Professional
+                support is beneficial.</span
+              >
+            </div>
+            <span
+              class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B35238] mt-8 group-hover:underline"
+            >
+              Read more
+              <svg
+                class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </span>
+          </a>
+
+          <!-- 10. Anger management -->
+          <a
+            href="#"
+            class="group flex flex-col justify-between h-full bg-white border border-[#f2e4dc] rounded-[20px] p-[26px_24px] translate-y-0 shadow-none transition-all duration-300 hover:bg-gray-50 hover:border-brand-hover hover:-translate-y-2 hover:shadow-lg"
+          >
+            <div>
+              <span
+                class="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-[#EEF5E8]"
+              >
+                <img
+                  src="/icons/anger-management.svg"
+                  alt="Anger management"
+                  class="w-5 h-5"
+                />
+              </span>
+              <span
+                class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-6"
+                >Anger management</span
+              >
+              <span class="block text-base leading-6 text-brand-gray mt-2.5"
+                >Anger outbursts, irritability, and difficulty controlling
+                strong reactions. CBT and practical skills training help.</span
+              >
+            </div>
+            <span
+              class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B35238] mt-8 group-hover:underline"
+            >
+              Read more
+              <svg
+                class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </span>
+          </a>
+
+          <!-- 11. PTSD & trauma -->
+          <a
+            href="#"
+            class="group flex flex-col justify-between h-full bg-white border border-[#f2e4dc] rounded-[20px] p-[26px_24px] translate-y-0 shadow-none transition-all duration-300 hover:bg-gray-50 hover:border-brand-hover hover:-translate-y-2 hover:shadow-lg"
+          >
+            <div>
+              <span
+                class="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-[#EAF2F8]"
+              >
+                <img
+                  src="/icons/ptsd-trauma.svg"
+                  alt="PTSD & trauma"
+                  class="w-5 h-5"
+                />
+              </span>
+              <span
+                class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-6"
+                >PTSD & trauma</span
+              >
+              <span class="block text-base leading-6 text-brand-gray mt-2.5"
+                >Flashbacks, nightmares, hypervigilance, and avoidance after
+                traumatic events. EMDR and trauma-focused CBT are highly
+                effective.</span
+              >
+            </div>
+            <span
+              class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B35238] mt-8 group-hover:underline"
+            >
+              Read more
+              <svg
+                class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </span>
+          </a>
+
+          <!-- 12. OCD -->
+          <a
+            href="#"
+            class="group flex flex-col justify-between h-full bg-white border border-[#f2e4dc] rounded-[20px] p-[26px_24px] translate-y-0 shadow-none transition-all duration-300 hover:bg-gray-50 hover:border-brand-hover hover:-translate-y-2 hover:shadow-lg"
+          >
+            <div>
+              <span
+                class="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-[#FAF1E3]"
+              >
+                <img src="/icons/ocd.svg" alt="OCD" class="w-5 h-5" />
+              </span>
+              <span
+                class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-6"
+                >OCD</span
+              >
+              <span class="block text-base leading-6 text-brand-gray mt-2.5"
+                >Intrusive thoughts (obsessions) paired with repeated behaviors
+                (compulsions) driven by anxiety. ERP therapy works well.</span
+              >
+            </div>
+            <span
+              class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B35238] mt-8 group-hover:underline"
+            >
+              Read more
+              <svg
+                class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </span>
+          </a>
         </div>
       </div>
     </section>
+    
+    <!-- Physical Activity -->
+   <section
+  id="mh-activity"
+  class="section section--white"
+>
+  <div class="container">
+    <!-- Section Header -->
+    <div class="text-center">
+      <p
+        class="font-sans font-semibold text-md tracking-[2px] uppercase text-brand-hover mb-3"
+      >
+        Movement and mind
+      </p>
+      <h2
+        class="h2"
+      >
+        Connection Between Physical Activity And
+        <em>Mental Health</em>
+      </h2>
+      <p class="max-w-[1130px] mx-auto text-lg md:text-xl leading-[30px] text-ink-body mt-5 mb-0">
+        The connection between physical and mental health is not a cliché; it is
+        biology. When you exercise, your brain releases dopamine, serotonin,
+        and endorphins. The same chemicals that many psychiatric medications
+        try to boost. Building regular movement into your life is one of the
+        highest-impact changes you can make for your mental health. Alongside
+        sleep, social connection and professional support when needed.
+      </p>
+    </div>
+
+    <!-- Table Container -->
+    <div
+      class="mt-14 bg-white rounded-[24px] overflow-hidden border border-border-soft shadow-[0px_18px_44px_-30px_#5C2A204D]"
+    >
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-ink-600">
+            <th
+              class="px-8 py-6 font-sans font-bold text-[12px] tracking-[1.5px] uppercase text-white w-[35%] md:w-[32%]"
+            >
+              WHAT IMPROVES
+            </th>
+            <th
+              class="px-8 py-6 font-sans font-bold text-[12px] tracking-[1.5px] uppercase text-[#f09367] w-[65%] md:w-[68%]"
+            >
+              HOW IT HELPS
+            </th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-border-soft">
+          <!-- Row 1: Brain chemistry -->
+          <tr class="hover:bg-surface-cream/50 transition-colors hover:border-l-3 hover:border-l-brand-hover">
+            <td class="px-8 py-6">
+              <div class="flex items-center gap-4">
+                <span
+                  class="inline-flex items-center justify-center w-16 h-16 rounded-[14px] bg-[#FEF0EA] flex-none"
+                >
+                  <img
+                    src="/icons/brain-chemistry.svg"
+                    alt="Brain chemistry"
+                    class="w-8 h-8"
+                  />
+                </span>
+                <span class="font-serif font-bold text-2xl text-ink-900"
+                  >Brain chemistry</span
+                >
+              </div>
+            </td>
+            <td class="px-8 py-6 text-lg leading-[26px] text-ink-body">
+              Exercise boosts serotonin, dopamine, and norepinephrine, reducing
+              depression and anxiety symptoms.
+            </td>
+          </tr>
+
+          <!-- Row 2: Sleep quality -->
+          <tr class="hover:bg-surface-cream/50 transition-colors hover:border-l-3 hover:border-l-brand-hover">
+            <td class="px-8 py-6">
+              <div class="flex items-center gap-4">
+                <span
+                  class="inline-flex items-center justify-center w-16 h-16 rounded-[14px] bg-[#FEF0EA] flex-none"
+                >
+                  <img
+                    src="/icons/sleep-quality.svg"
+                    alt="Sleep quality"
+                    class="w-8 h-8"
+                  />
+                </span>
+                <span class="font-serif font-bold text-2xl text-ink-900"
+                  >Sleep quality</span
+                >
+              </div>
+            </td>
+            <td class="px-8 py-6 text-lg leading-[26px] text-ink-body">
+              Regular physical activity improves sleep depth and reduces
+              insomnia, and better sleep improves mood.
+            </td>
+          </tr>
+
+          <!-- Row 3: Cognitive function -->
+          <tr class="hover:bg-surface-cream/50 transition-colors hover:border-l-3 hover:border-l-brand-hover">
+            <td class="px-8 py-6">
+              <div class="flex items-center gap-4">
+                <span
+                  class="inline-flex items-center justify-center w-16 h-16 rounded-[14px] bg-[#FEF0EA] flex-none"
+                >
+                  <img
+                    src="/icons/cognitive-function.svg"
+                    alt="Cognitive function"
+                    class="w-8 h-8"
+                  />
+                </span>
+                <span class="font-serif font-bold text-2xl text-ink-900"
+                  >Cognitive function</span
+                >
+              </div>
+            </td>
+            <td class="px-8 py-6 text-lg leading-[26px] text-ink-body">
+              Exercise improves working memory, concentration, and executive
+              function, which is particularly relevant for ADHD.
+            </td>
+          </tr>
+
+          <!-- Row 4: Self-efficacy -->
+          <tr class="hover:bg-surface-cream/50 transition-colors hover:border-l-3 hover:border-l-brand-hover">
+            <td class="px-8 py-6">
+              <div class="flex items-center gap-4">
+                <span
+                  class="inline-flex items-center justify-center w-16 h-16 rounded-[14px] bg-[#FEF0EA] flex-none"
+                >
+                  <img
+                    src="/icons/self-efficacy.svg"
+                    alt="Self-efficacy"
+                    class="w-8 h-8"
+                  />
+                </span>
+                <span class="font-serif font-bold text-2xl text-ink-900"
+                  >Self-efficacy</span
+                >
+              </div>
+            </td>
+            <td class="px-8 py-6 text-lg leading-[26px] text-ink-body">
+              Completing physical challenges, however small, builds a sense of
+              capability that affects other life areas.
+            </td>
+          </tr>
+
+          <!-- Row 5: Social connection -->
+          <tr class="hover:bg-surface-cream/50 transition-colors hover:border-l-3 hover:border-l-brand-hover">
+            <td class="px-8 py-6">
+              <div class="flex items-center gap-4">
+                <span
+                  class="inline-flex items-center justify-center w-16 h-16 rounded-[14px] bg-[#FEF0EA] flex-none"
+                >
+                  <img
+                    src="/icons/social-connection.svg"
+                    alt="Social connection"
+                    class="w-8 h-8"
+                  />
+                </span>
+                <span class="font-serif font-bold text-2xl text-ink-900"
+                  >Social connection</span
+                >
+              </div>
+            </td>
+            <td class="px-8 py-6 text-lg leading-[26px] text-ink-body">
+              Group exercise like a team sport, a running club, or a yoga class.
+              All help to fight isolation, a major risk factor for poor mental
+              health.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
     <!-- When to Seek Help -->
     <section
@@ -693,16 +1064,16 @@
       <div class="max-w-[1312px] mx-auto">
         <div class="max-w-[760px] mb-12">
           <p
-            class="font-sans font-semibold text-base tracking-[2px] uppercase text-brand-rust m-0"
+            class="font-sans font-semibold text-base tracking-[2px] uppercase text-brand-hover m-0"
           >
             Getting support
           </p>
           <h2
             class="font-serif font-bold text-brand-heading mt-3.5 mb-0 text-[30px] leading-[39px] md:text-[36px] md:leading-[46px] lg:text-[44px] lg:leading-[56px]"
           >
-            When to <em class="italic text-brand-rust">Seek Help</em>
+            When to <em class="italic text-brand-hover">Seek Help</em>
           </h2>
-          <p class="text-xl leading-[31px] text-brand-gray mt-5 mb-0">
+          <p class="text-md leading-[31px] text-brand-gray mt-5 mb-0">
             Recognizing when to seek professional help is crucial. Below are
             common signs that indicate you may benefit from talking to a mental
             health professional.
@@ -916,14 +1287,14 @@
       <div class="max-w-[1312px] mx-auto">
         <div class="max-w-[760px] mb-8">
           <p
-            class="font-sans font-semibold text-base tracking-[2px] uppercase text-brand-rust m-0"
+            class="font-sans font-semibold text-base tracking-[2px] uppercase text-brand-hover m-0"
           >
             Ages 13-25
           </p>
           <h2
             class="font-serif font-bold text-brand-heading mt-3.5 mb-0 text-[30px] leading-[39px] md:text-[36px] md:leading-[46px] lg:text-[44px] lg:leading-[56px]"
           >
-            Youth Mental <em class="italic text-brand-rust">Health</em>
+            Youth Mental <em class="italic text-brand-hover">Health</em>
           </h2>
           <p class="text-xl leading-[31px] text-brand-gray mt-5 mb-0">
             Young people face unique mental health challenges. Understanding
@@ -1170,14 +1541,14 @@
         >
           <div>
             <p
-              class="font-sans font-semibold text-base tracking-[2px] uppercase text-brand-rust m-0"
+              class="font-sans font-semibold text-base tracking-[2px] uppercase text-brand-hover m-0"
             >
               Supporting Loved Ones
             </p>
             <h2
               class="font-serif font-bold text-brand-heading mt-3.5 mb-0 text-[30px] leading-[39px] md:text-[36px] md:leading-[46px] lg:text-[44px] lg:leading-[56px]"
             >
-              Support for <em class="italic text-brand-rust">Relatives</em>
+              Support for <em class="italic text-brand-hover">Relatives</em>
             </h2>
             <p class="text-xl leading-[31px] text-brand-gray mt-5 mb-8">
               Supporting someone with mental health challenges can be difficult.
@@ -1307,7 +1678,7 @@
                 class="font-serif font-bold text-[42px] text-brand-heading mt-0 mb-4"
               >
                 Ready to Take the
-                <em class="italic text-brand-rust">First Step?</em>
+                <em class="italic text-brand-hover">First Step?</em>
               </h2>
               <p class="text-lg leading-7 text-brand-gray mt-0 mb-3">
                 You don't have to face mental health challenges alone. Our
@@ -1390,14 +1761,15 @@
         >
           <div class="lg:sticky lg:top-[148px] lg:self-start">
             <p
-              class="font-sans font-semibold text-base tracking-[2px] uppercase text-brand-rust m-0"
+              class="font-sans font-semibold text-base tracking-[2px] uppercase text-brand-hover m-0"
             >
               Questions
             </p>
             <h2
               class="font-serif font-bold text-brand-heading mt-3.5 mb-0 text-[30px] leading-[39px] md:text-[36px] md:leading-[46px] lg:text-[44px] lg:leading-[56px]"
             >
-              Frequently Asked <em class="italic text-brand-rust">Questions</em>
+              Frequently Asked
+              <em class="italic text-brand-hover">Questions</em>
             </h2>
             <p class="text-lg leading-7 text-brand-gray mt-5 mb-8">
               Common questions about mental health services, insurance, and what
