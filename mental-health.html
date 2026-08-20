@@ -1,0 +1,1743 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mental Health | psykolog.no</title>
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Fustat", "sans-serif"],
+              serif: ["Inria Serif", "Georgia", "serif"],
+            },
+            colors: {
+              brand: {
+                rust: "#A93E28",
+                brown: "#5C2A20",
+                dark: "#3A1811",
+                darkest: "#2B0F09",
+                heading: "#241C19",
+                gray: "#5B5B5B",
+                taupe: "#6B5F5A",
+                muted: "#8B7F7A",
+                cream: "#FBEFE9",
+                offwhite: "#FFF7F3",
+                border: "#F2E4DC",
+                peach: "#F09367",
+                orange: "#C24C33",
+                pink: "#F8D8D4",
+                rose: "#F1E6DF",
+                mauve: "#C88C7E",
+                active: "#FDE7E1",
+                jumpbg: "#FDF6F2",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* hide scrollbar for the jump-nav pill row (no Tailwind core utility for this) */
+      .ps-jump::-webkit-scrollbar {
+        display: none;
+      }
+      .ps-jump {
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body class="m-0 bg-white text-brand-taupe font-sans">
+    <!-- Netbar -->
+    <div class="relative z-[51] bg-brand-brown">
+      <div class="px-6 md:px-12 lg:px-16">
+        <div
+          class="max-w-[1312px] mx-auto flex items-center justify-between gap-6 h-[52px]"
+        >
+          <span class="inline-flex items-center gap-3">
+            <span
+              class="w-[22px] h-px bg-[rgba(248,216,212,0.5)] flex-none"
+            ></span>
+            <span
+              class="font-sans font-semibold text-[11px] leading-4 tracking-[2px] uppercase text-white whitespace-nowrap"
+              >Our mental health network</span
+            >
+          </span>
+          <span class="flex items-center gap-0">
+            <a
+              href="#"
+              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-transparent"
+              >Dps.no <span class="text-[11px] text-brand-mauve">↗</span></a
+            >
+            <a
+              href="#"
+              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-[rgba(248,216,212,0.2)]"
+              >Psykiater.no
+              <span class="text-[11px] text-brand-mauve">↗</span></a
+            >
+            <a
+              href="#"
+              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-[rgba(248,216,212,0.2)]"
+              >Spesialistpsykiatri.no
+              <span class="text-[11px] text-brand-mauve">↗</span></a
+            >
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header
+      class="sticky top-0 left-0 right-0 z-50 pt-[18px] pointer-events-none"
+    >
+      <div class="px-6 md:px-12 lg:px-16">
+        <div
+          class="max-w-[1312px] mx-auto bg-white/[.66] backdrop-blur-2xl backdrop-saturate-[1.4] border border-white/[.82] rounded-[22px] p-2.5 pl-[26px] shadow-[0_2px_12px_rgba(0,0,0,0.06)] pointer-events-auto"
+        >
+          <div class="flex items-center justify-between gap-8">
+            <a href="index.html" class="inline-flex flex-none"
+              ><img
+                src="logo.webp"
+                alt="psykolog.no"
+                class="h-[26px] w-auto block brightness-0 opacity-[.86]"
+            /></a>
+            <nav id="navLinks" class="flex gap-9">
+              <a
+                href="index.html#home-conditions"
+                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
+                >Services</a
+              >
+              <a
+                href="index.html#home-formats"
+                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
+                >Therapy</a
+              >
+              <a
+                href="index.html#home-right-place"
+                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
+                >About Us</a
+              >
+              <a
+                href="index.html#home-pricing"
+                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
+                >Pricing</a
+              >
+              <a
+                href="index.html#home-locations"
+                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
+                >Contact</a
+              >
+            </nav>
+            <div class="flex items-center gap-2 flex-none">
+              <button
+                onclick="location.href = '#mh-book'"
+                class="font-sans font-bold text-[15px] leading-5 whitespace-nowrap text-white border-0 rounded-full px-7 py-[13px] cursor-pointer bg-brand-orange"
+              >
+                Book An Appointment
+              </button>
+              <button
+                id="navToggle"
+                class="w-[46px] h-[46px] rounded-full border border-brand-border bg-white cursor-pointer hidden"
+              >
+                <span class="relative block w-[18px] h-3 mx-auto">
+                  <span
+                    class="absolute left-0 top-0 w-[18px] h-0.5 rounded-sm bg-brand-dark"
+                  ></span>
+                  <span
+                    class="absolute left-0 top-[5px] w-[18px] h-0.5 rounded-sm bg-brand-dark"
+                  ></span>
+                  <span
+                    class="absolute left-0 top-[10px] w-[18px] h-0.5 rounded-sm bg-brand-dark"
+                  ></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section
+      class="relative w-full max-w-full overflow-hidden bg-brand-cream grid grid-cols-1 grid-rows-2 mt-0 lg:grid-rows-1 lg:-mt-[86px]"
+    >
+      <span
+        class="[grid-area:1/1] absolute inset-0 overflow-hidden md:static md:!relative md:!inset-auto md:self-stretch md:w-full md:h-full h-auto aspect-[1860/900] lg:aspect-auto lg:h-full"
+      >
+        <img
+          src="images/Banner.webp"
+          alt="Mental Health"
+          class="absolute inset-0 w-full h-full object-cover object-[72%_50%]"
+        />
+        <span
+          class="absolute inset-0 bg-[linear-gradient(100deg,rgba(255,247,243,0.94)_0%,rgba(255,247,243,0.86)_34%,rgba(255,247,243,0.42)_58%,rgba(255,247,243,0.06)_82%)]"
+        ></span>
+      </span>
+      <div
+        class="px-6 md:px-12 lg:px-16 relative w-full [grid-area:2/1] self-start bg-brand-offwhite pt-10 pb-14 lg:[grid-area:1/1] lg:self-end lg:z-[2] lg:pt-[180px] lg:pb-[88px] lg:bg-transparent"
+      >
+        <div class="max-w-[1312px] mx-auto">
+          <div>
+            <div class="max-w-full lg:max-w-[52%]">
+              <div
+                class="inline-flex items-center gap-[9px] bg-white/[.66] backdrop-blur-2xl backdrop-saturate-150 border border-white/[.82] rounded-full px-5 py-[9px]"
+              >
+                <span class="text-[#CE5A43] text-[13px] leading-[13px]">✳</span>
+                <span
+                  class="font-sans font-semibold text-xs leading-4 tracking-[2px] uppercase text-brand-brown whitespace-nowrap"
+                  >Understanding your mental health</span
+                >
+              </div>
+              <h1
+                class="font-serif font-bold text-brand-darkest mt-7 mb-0 text-[34px] leading-[1.25] md:text-[42px] lg:text-[48px] xl:text-[56px]"
+              >
+                Mental Health
+              </h1>
+              <p class="text-xl leading-[1.6] text-[#33170F] mt-[22px] mb-0">
+                Mental health is about how you feel about yourself, how you cope
+                with everyday challenges, and how you function in relationships
+                and work. Good mental health is not the absence of difficult
+                emotions, but the ability to manage them.
+              </p>
+              <div class="mt-8">
+                <button
+                  onclick="location.href = '#mh-book'"
+                  class="inline-flex items-center gap-3.5 font-sans font-bold text-lg leading-[23px] whitespace-nowrap bg-brand-orange text-white border-0 rounded-full pl-8 pr-[17px] py-[17px] cursor-pointer"
+                >
+                  Book a psychologist
+                  <span
+                    class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/20 text-[15px]"
+                    >→</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jump Nav -->
+    <div class="px-6 md:px-12 lg:px-16 bg-white pt-10">
+      <div class="max-w-[1312px] mx-auto flex justify-center">
+        <nav
+          class="ps-jump flex items-center gap-0.5 bg-brand-jumpbg rounded-full px-3.5 py-2 overflow-x-auto"
+        >
+          <a
+            href="#mh-what"
+            class="font-sans font-bold text-[15px] leading-5 whitespace-nowrap text-brand-rust bg-brand-active rounded-full px-[18px] py-2.5"
+            >What is Mental Health</a
+          >
+          <a
+            href="#mh-conditions"
+            class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
+            >Common Conditions</a
+          >
+          <a
+            href="#mh-activity"
+            class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
+            >Physical Activity</a
+          >
+          <a
+            href="#mh-seek"
+            class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
+            >When to Seek Help</a
+          >
+          <a
+            href="#mh-youth"
+            class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
+            >Youth Mental Health</a
+          >
+          <a
+            href="#mh-substance"
+            class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
+            >Substance Abuse</a
+          >
+          <a
+            href="#mh-relatives"
+            class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
+            >For Relatives</a
+          >
+          <a
+            href="#mh-faq"
+            class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
+            >FAQ</a
+          >
+        </nav>
+      </div>
+    </div>
+
+    <!-- What is Mental Health -->
+    <section
+      id="mh-what"
+      class="px-6 md:px-12 lg:px-16 bg-white pt-[72px] pb-24"
+    >
+      <div class="max-w-[1312px] mx-auto">
+        <div
+          class="grid grid-cols-1 gap-12 items-start lg:grid-cols-[1fr_380px] lg:gap-12"
+        >
+          <div>
+            <h2
+              class="font-serif font-bold text-brand-heading m-0 text-[30px] leading-[39px] md:text-[36px] md:leading-[46px] lg:text-[44px] lg:leading-[56px]"
+            >
+              What is <em class="italic text-brand-rust">Mental Health?</em>
+            </h2>
+            <p class="text-xl leading-[31px] text-brand-gray mt-[22px] mb-0">
+              Mental health is not just the absence of mental illness. It is the
+              overall state of your psychological, emotional, and social
+              well-being. Everyone has mental health, in the same way that
+              everyone has physical health.
+            </p>
+            <p class="text-xl leading-[31px] text-brand-gray mt-[18px] mb-0">
+              Mental health is a state of well being in which an individual
+              realizes their own abilities, can cope with the normal stresses of
+              life, and can work productively.
+            </p>
+            <p class="text-xl leading-[31px] text-brand-gray mt-[18px] mb-0">
+              In Norway, mental health is best understood through the
+              biopsychosocial model. This means that the interaction between
+              three things shapes your mental health.
+            </p>
+          </div>
+          <div class="lg:sticky lg:top-[148px]">
+            <div
+              class="relative overflow-hidden bg-brand-brown rounded-3xl px-[30px] py-8"
+            >
+              <span
+                class="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(248,216,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(248,216,212,0.05)_1px,transparent_1px)] bg-[length:40px_40px]"
+              ></span>
+              <p
+                class="relative font-sans font-semibold text-[11px] tracking-[2px] uppercase text-brand-peach m-0"
+              >
+                The biopsychosocial model
+              </p>
+              <div class="relative grid gap-2.5 mt-[22px]">
+                <div
+                  class="flex items-center gap-4 bg-[rgba(248,216,212,0.08)] border border-[rgba(248,216,212,0.15)] rounded-2xl px-5 py-[18px]"
+                >
+                  <span
+                    class="inline-flex items-center justify-center w-[54px] h-[54px] rounded-2xl bg-brand-peach flex-none"
+                    >🧬</span
+                  >
+                  <span>
+                    <span
+                      class="block font-serif font-bold text-lg leading-[25px] text-white"
+                      >Biological</span
+                    >
+                    <span
+                      class="block text-base leading-[21px] text-brand-offwhite mt-[3px]"
+                      >Genetics, brain chemistry, and hormones</span
+                    >
+                  </span>
+                </div>
+                <div
+                  class="flex items-center gap-4 bg-[rgba(248,216,212,0.08)] border border-[rgba(248,216,212,0.15)] rounded-2xl px-5 py-[18px]"
+                >
+                  <span
+                    class="inline-flex items-center justify-center w-[54px] h-[54px] rounded-2xl bg-brand-peach flex-none"
+                    >🧠</span
+                  >
+                  <span>
+                    <span
+                      class="block font-serif font-bold text-lg leading-[25px] text-white"
+                      >Psychological</span
+                    >
+                    <span
+                      class="block text-base leading-[21px] text-brand-offwhite mt-[3px]"
+                      >Thoughts, emotions, behaviors, and coping</span
+                    >
+                  </span>
+                </div>
+                <div
+                  class="flex items-center gap-4 bg-[rgba(248,216,212,0.08)] border border-[rgba(248,216,212,0.15)] rounded-2xl px-5 py-[18px]"
+                >
+                  <span
+                    class="inline-flex items-center justify-center w-[54px] h-[54px] rounded-2xl bg-brand-peach flex-none"
+                    >👥</span
+                  >
+                  <span>
+                    <span
+                      class="block font-serif font-bold text-lg leading-[25px] text-white"
+                      >Social</span
+                    >
+                    <span
+                      class="block text-base leading-[21px] text-brand-offwhite mt-[3px]"
+                      >Relationships, culture, socioeconomic factors</span
+                    >
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Common Conditions -->
+    <section
+      id="mh-conditions"
+      class="px-6 md:px-12 lg:px-16 bg-brand-offwhite pt-24 pb-24"
+    >
+      <div class="max-w-[1312px] mx-auto">
+        <div class="max-w-[760px]">
+          <h2
+            class="font-serif font-bold text-brand-heading m-0 text-[30px] leading-[39px] md:text-[36px] md:leading-[46px] lg:text-[44px] lg:leading-[56px]"
+          >
+            Common Mental
+            <em class="italic text-brand-rust">Health Conditions</em>
+          </h2>
+          <p class="text-xl leading-[31px] text-brand-gray mt-5 mb-0">
+            Mental health covers a wide range of conditions. Every condition has
+            its own pattern of symptoms, causes, and treatment.
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[18px] mt-12"
+        >
+          <a
+            href="#"
+            class="flex flex-col bg-white border border-brand-border rounded-[20px] px-6 py-[26px]"
+          >
+            <span
+              class="inline-flex items-center justify-center w-11 h-11 rounded-[13px] bg-brand-offwhite"
+              >😔</span
+            >
+            <span
+              class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-5"
+              >Depression</span
+            >
+            <span
+              class="block text-base leading-6 text-brand-gray mt-2.5 flex-1"
+              >Persistent sadness, loss of interest, changes in sleep and
+              appetite, difficulty concentrating.</span
+            >
+          </a>
+          <a
+            href="#"
+            class="flex flex-col bg-white border border-brand-border rounded-[20px] px-6 py-[26px]"
+          >
+            <span
+              class="inline-flex items-center justify-center w-11 h-11 rounded-[13px] bg-brand-offwhite"
+              >😰</span
+            >
+            <span
+              class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-5"
+              >Anxiety</span
+            >
+            <span
+              class="block text-base leading-6 text-brand-gray mt-2.5 flex-1"
+              >Excessive worry, fear, restlessness, rapid heartbeat, difficulty
+              controlling worry.</span
+            >
+          </a>
+          <a
+            href="#"
+            class="flex flex-col bg-white border border-brand-border rounded-[20px] px-6 py-[26px]"
+          >
+            <span
+              class="inline-flex items-center justify-center w-11 h-11 rounded-[13px] bg-brand-offwhite"
+              >💭</span
+            >
+            <span
+              class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-5"
+              >PTSD</span
+            >
+            <span
+              class="block text-base leading-6 text-brand-gray mt-2.5 flex-1"
+              >Flashbacks, nightmares, severe anxiety after experiencing or
+              witnessing trauma.</span
+            >
+          </a>
+          <a
+            href="#"
+            class="flex flex-col bg-white border border-brand-border rounded-[20px] px-6 py-[26px]"
+          >
+            <span
+              class="inline-flex items-center justify-center w-11 h-11 rounded-[13px] bg-brand-offwhite"
+              >🔄</span
+            >
+            <span
+              class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-5"
+              >OCD</span
+            >
+            <span
+              class="block text-base leading-6 text-brand-gray mt-2.5 flex-1"
+              >Unwanted repetitive thoughts and behaviors that interfere with
+              daily activities.</span
+            >
+          </a>
+          <a
+            href="#"
+            class="flex flex-col bg-white border border-brand-border rounded-[20px] px-6 py-[26px]"
+          >
+            <span
+              class="inline-flex items-center justify-center w-11 h-11 rounded-[13px] bg-brand-offwhite"
+              >📊</span
+            >
+            <span
+              class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-5"
+              >Bipolar</span
+            >
+            <span
+              class="block text-base leading-6 text-brand-gray mt-2.5 flex-1"
+              >Extreme mood swings including emotional highs and lows affecting
+              energy levels.</span
+            >
+          </a>
+          <a
+            href="#"
+            class="flex flex-col bg-white border border-brand-border rounded-[20px] px-6 py-[26px]"
+          >
+            <span
+              class="inline-flex items-center justify-center w-11 h-11 rounded-[13px] bg-brand-offwhite"
+              >🍽️</span
+            >
+            <span
+              class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-5"
+              >Eating Disorders</span
+            >
+            <span
+              class="block text-base leading-6 text-brand-gray mt-2.5 flex-1"
+              >Serious conditions related to eating behaviors that impact health
+              and emotions.</span
+            >
+          </a>
+          <a
+            href="#"
+            class="flex flex-col bg-white border border-brand-border rounded-[20px] px-6 py-[26px]"
+          >
+            <span
+              class="inline-flex items-center justify-center w-11 h-11 rounded-[13px] bg-brand-offwhite"
+              >😣</span
+            >
+            <span
+              class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-5"
+              >Burnout</span
+            >
+            <span
+              class="block text-base leading-6 text-brand-gray mt-2.5 flex-1"
+              >Physical and emotional exhaustion caused by prolonged stress,
+              often work-related.</span
+            >
+          </a>
+          <a
+            href="#"
+            class="flex flex-col bg-white border border-brand-border rounded-[20px] px-6 py-[26px]"
+          >
+            <span
+              class="inline-flex items-center justify-center w-11 h-11 rounded-[13px] bg-brand-offwhite"
+              >🧩</span
+            >
+            <span
+              class="block font-serif font-bold text-xl leading-[29px] text-brand-heading mt-5"
+              >ADHD</span
+            >
+            <span
+              class="block text-base leading-6 text-brand-gray mt-2.5 flex-1"
+              >Difficulty focusing, hyperactivity, impulsivity affecting work
+              and relationships.</span
+            >
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Physical Activity -->
+    <section
+      id="mh-activity"
+      class="px-6 md:px-12 lg:px-16 pt-24 pb-24 bg-white"
+    >
+      <div class="max-w-[1312px] mx-auto">
+        <div class="max-w-[820px] mx-auto text-center">
+          <p
+            class="font-sans font-semibold text-base tracking-[2px] uppercase text-brand-rust m-0"
+          >
+            Movement and mind
+          </p>
+          <h2
+            class="font-serif font-bold text-brand-heading mt-3.5 mb-0 text-[48px]"
+          >
+            Connection Between Physical Activity And
+            <em class="italic text-brand-rust">Mental Health</em>
+          </h2>
+          <p class="text-xl leading-[31px] text-brand-gray mt-5 mb-0">
+            The connection between physical and mental health is not a cliché;
+            it is biology. When you exercise, your brain releases dopamine,
+            serotonin, and endorphins.
+          </p>
+        </div>
+        <div
+          class="mt-[52px] bg-white rounded-3xl overflow-hidden border border-brand-border"
+        >
+          <table class="w-full border-collapse">
+            <thead class="bg-brand-offwhite">
+              <tr>
+                <th
+                  class="px-7 py-5 text-left font-sans font-bold text-[15px] text-brand-heading border-b border-brand-border"
+                >
+                  Activity
+                </th>
+                <th
+                  class="px-7 py-5 text-left font-sans font-bold text-[15px] text-brand-heading border-b border-brand-border"
+                >
+                  Frequency
+                </th>
+                <th
+                  class="px-7 py-5 text-left font-sans font-bold text-[15px] text-brand-heading border-b border-brand-border"
+                >
+                  Mental Health Benefits
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-brand-border">
+                <td class="px-7 py-6">
+                  <span class="block font-bold text-brand-heading text-base"
+                    >Aerobic Exercise</span
+                  >
+                  <span class="block text-sm text-brand-muted mt-1"
+                    >Running, cycling, swimming</span
+                  >
+                </td>
+                <td class="px-7 py-6 text-[15px] text-brand-gray">
+                  30-60 min<br />3-5x per week
+                </td>
+                <td class="px-7 py-6 text-[15px] text-brand-gray">
+                  Reduces anxiety and depression, improves mood, enhances sleep
+                  quality
+                </td>
+              </tr>
+              <tr class="border-b border-brand-border">
+                <td class="px-7 py-6">
+                  <span class="block font-bold text-brand-heading text-base"
+                    >Strength Training</span
+                  >
+                  <span class="block text-sm text-brand-muted mt-1"
+                    >Weights, resistance bands</span
+                  >
+                </td>
+                <td class="px-7 py-6 text-[15px] text-brand-gray">
+                  20-30 min<br />2-3x per week
+                </td>
+                <td class="px-7 py-6 text-[15px] text-brand-gray">
+                  Boosts self-esteem, improves body image, reduces anxiety
+                  symptoms
+                </td>
+              </tr>
+              <tr class="border-b border-brand-border">
+                <td class="px-7 py-6">
+                  <span class="block font-bold text-brand-heading text-base"
+                    >Yoga &amp; Pilates</span
+                  >
+                  <span class="block text-sm text-brand-muted mt-1"
+                    >Mind-body practices</span
+                  >
+                </td>
+                <td class="px-7 py-6 text-[15px] text-brand-gray">
+                  30-60 min<br />2-3x per week
+                </td>
+                <td class="px-7 py-6 text-[15px] text-brand-gray">
+                  Reduces stress, improves mindfulness, enhances emotional
+                  regulation
+                </td>
+              </tr>
+              <tr class="border-b border-brand-border">
+                <td class="px-7 py-6">
+                  <span class="block font-bold text-brand-heading text-base"
+                    >Walking in Nature</span
+                  >
+                  <span class="block text-sm text-brand-muted mt-1"
+                    >Forest, park, trails</span
+                  >
+                </td>
+                <td class="px-7 py-6 text-[15px] text-brand-gray">
+                  20-30 min<br />Daily
+                </td>
+                <td class="px-7 py-6 text-[15px] text-brand-gray">
+                  Lowers cortisol, reduces rumination, improves attention and
+                  focus
+                </td>
+              </tr>
+              <tr>
+                <td class="px-7 py-6">
+                  <span class="block font-bold text-brand-heading text-base"
+                    >Team Sports</span
+                  >
+                  <span class="block text-sm text-brand-muted mt-1"
+                    >Football, basketball</span
+                  >
+                </td>
+                <td class="px-7 py-6 text-[15px] text-brand-gray">
+                  60 min<br />1-2x per week
+                </td>
+                <td class="px-7 py-6 text-[15px] text-brand-gray">
+                  Social connection, sense of belonging, improved mood and
+                  motivation
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- When to Seek Help -->
+    <section
+      id="mh-seek"
+      class="px-6 md:px-12 lg:px-16 bg-brand-offwhite pt-24 pb-24"
+    >
+      <div class="max-w-[1312px] mx-auto">
+        <div class="max-w-[760px] mb-12">
+          <p
+            class="font-sans font-semibold text-base tracking-[2px] uppercase text-brand-rust m-0"
+          >
+            Getting support
+          </p>
+          <h2
+            class="font-serif font-bold text-brand-heading mt-3.5 mb-0 text-[30px] leading-[39px] md:text-[36px] md:leading-[46px] lg:text-[44px] lg:leading-[56px]"
+          >
+            When to <em class="italic text-brand-rust">Seek Help</em>
+          </h2>
+          <p class="text-xl leading-[31px] text-brand-gray mt-5 mb-0">
+            Recognizing when to seek professional help is crucial. Below are
+            common signs that indicate you may benefit from talking to a mental
+            health professional.
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-1 gap-12 items-center lg:grid-cols-2 lg:gap-16"
+        >
+          <div>
+            <h3
+              class="font-serif font-bold text-[28px] text-brand-heading mt-0 mb-4"
+            >
+              Warning Signs Checklist
+            </h3>
+            <p class="text-base text-brand-gray mb-6">
+              Check the signs you've been experiencing for two weeks or more:
+            </p>
+            <div id="checklistContainer" class="grid gap-2.5">
+              <label
+                class="flex items-start gap-3 bg-white border border-brand-border rounded-[14px] px-[18px] py-4 cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  onchange="updateTally()"
+                  class="mt-0.5 w-5 h-5 accent-brand-orange cursor-pointer"
+                />
+                <span class="text-[15px] text-brand-dark"
+                  >Persistent sadness or feeling empty</span
+                >
+              </label>
+              <label
+                class="flex items-start gap-3 bg-white border border-brand-border rounded-[14px] px-[18px] py-4 cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  onchange="updateTally()"
+                  class="mt-0.5 w-5 h-5 accent-brand-orange cursor-pointer"
+                />
+                <span class="text-[15px] text-brand-dark"
+                  >Loss of interest in activities you once enjoyed</span
+                >
+              </label>
+              <label
+                class="flex items-start gap-3 bg-white border border-brand-border rounded-[14px] px-[18px] py-4 cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  onchange="updateTally()"
+                  class="mt-0.5 w-5 h-5 accent-brand-orange cursor-pointer"
+                />
+                <span class="text-[15px] text-brand-dark"
+                  >Significant changes in sleep (too much or too little)</span
+                >
+              </label>
+              <label
+                class="flex items-start gap-3 bg-white border border-brand-border rounded-[14px] px-[18px] py-4 cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  onchange="updateTally()"
+                  class="mt-0.5 w-5 h-5 accent-brand-orange cursor-pointer"
+                />
+                <span class="text-[15px] text-brand-dark"
+                  >Changes in appetite or weight</span
+                >
+              </label>
+              <label
+                class="flex items-start gap-3 bg-white border border-brand-border rounded-[14px] px-[18px] py-4 cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  onchange="updateTally()"
+                  class="mt-0.5 w-5 h-5 accent-brand-orange cursor-pointer"
+                />
+                <span class="text-[15px] text-brand-dark"
+                  >Difficulty concentrating or making decisions</span
+                >
+              </label>
+              <label
+                class="flex items-start gap-3 bg-white border border-brand-border rounded-[14px] px-[18px] py-4 cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  onchange="updateTally()"
+                  class="mt-0.5 w-5 h-5 accent-brand-orange cursor-pointer"
+                />
+                <span class="text-[15px] text-brand-dark"
+                  >Excessive worry or fear</span
+                >
+              </label>
+              <label
+                class="flex items-start gap-3 bg-white border border-brand-border rounded-[14px] px-[18px] py-4 cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  onchange="updateTally()"
+                  class="mt-0.5 w-5 h-5 accent-brand-orange cursor-pointer"
+                />
+                <span class="text-[15px] text-brand-dark"
+                  >Withdrawal from friends and activities</span
+                >
+              </label>
+              <label
+                class="flex items-start gap-3 bg-white border border-brand-border rounded-[14px] px-[18px] py-4 cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  onchange="updateTally()"
+                  class="mt-0.5 w-5 h-5 accent-brand-orange cursor-pointer"
+                />
+                <span class="text-[15px] text-brand-dark"
+                  >Thoughts of death or suicide</span
+                >
+              </label>
+            </div>
+            <div
+              class="mt-5 bg-white border border-brand-border rounded-[14px] px-5 py-[18px]"
+            >
+              <p class="text-base text-brand-dark m-0">
+                Items checked:
+                <strong id="signsTally" class="text-2xl text-brand-orange"
+                  >0</strong
+                >
+              </p>
+            </div>
+          </div>
+          <div>
+            <div
+              class="bg-white border border-brand-border rounded-[20px] px-[30px] py-8"
+            >
+              <h4
+                class="font-serif font-bold text-[22px] text-brand-heading mt-0 mb-6"
+              >
+                Interpreting Your Results
+              </h4>
+              <div class="grid gap-5">
+                <div class="flex gap-4">
+                  <span
+                    class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#D4EDDA] text-[#155724] font-bold text-[15px] flex-none"
+                    >1-3</span
+                  >
+                  <div>
+                    <p class="font-bold text-brand-heading mt-0 mb-1.5">Mild</p>
+                    <p class="text-[15px] text-brand-gray m-0">
+                      Consider lifestyle changes, self-care, and monitoring
+                      symptoms.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <span
+                    class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#FFF3CD] text-[#856404] font-bold text-[15px] flex-none"
+                    >4-7</span
+                  >
+                  <div>
+                    <p class="font-bold text-brand-heading mt-0 mb-1.5">
+                      Moderate
+                    </p>
+                    <p class="text-[15px] text-brand-gray m-0">
+                      We recommend scheduling a consultation with a
+                      psychologist.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <span
+                    class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#F8D7DA] text-[#721C24] font-bold text-[15px] flex-none"
+                    >8+</span
+                  >
+                  <div>
+                    <p class="font-bold text-brand-heading mt-0 mb-1.5">
+                      Severe
+                    </p>
+                    <p class="text-[15px] text-brand-gray m-0">
+                      Please reach out to a mental health professional as soon
+                      as possible.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button
+                onclick="location.href = '#mh-book'"
+                class="w-full mt-6 font-sans font-bold text-base text-white bg-brand-orange border-0 rounded-full px-8 py-4 cursor-pointer"
+              >
+                Book an Appointment
+              </button>
+            </div>
+            <div
+              class="mt-6 bg-[#FFF3CD] border-l-4 border-[#FFC107] rounded-xl px-6 py-5"
+            >
+              <p class="font-bold text-brand-heading mt-0 mb-2.5">
+                ⚠️ Crisis Support
+              </p>
+              <p class="text-[15px] text-brand-gray mt-0 mb-3">
+                If you're in immediate danger or having thoughts of self-harm:
+              </p>
+              <p class="text-[15px] text-brand-gray m-0">
+                <strong>Emergency:</strong> Call 113
+              </p>
+              <p class="text-[15px] text-brand-gray m-0">
+                <strong>Mental Health Crisis:</strong> 116 123 (24/7)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Youth Mental Health -->
+    <section id="mh-youth" class="px-6 md:px-12 lg:px-16 bg-white pt-24 pb-24">
+      <div class="max-w-[1312px] mx-auto">
+        <div class="max-w-[760px] mb-8">
+          <p
+            class="font-sans font-semibold text-base tracking-[2px] uppercase text-brand-rust m-0"
+          >
+            Ages 13-25
+          </p>
+          <h2
+            class="font-serif font-bold text-brand-heading mt-3.5 mb-0 text-[30px] leading-[39px] md:text-[36px] md:leading-[46px] lg:text-[44px] lg:leading-[56px]"
+          >
+            Youth Mental <em class="italic text-brand-rust">Health</em>
+          </h2>
+          <p class="text-xl leading-[31px] text-brand-gray mt-5 mb-0">
+            Young people face unique mental health challenges. Understanding
+            these challenges is the first step toward providing support and
+            intervention.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-5 max-w-[600px] mb-12">
+          <div class="bg-brand-offwhite rounded-[18px] p-8 text-center">
+            <p class="text-[52px] font-bold text-brand-orange m-0">60%</p>
+            <p class="text-base text-brand-gray mt-2 mb-0">Women</p>
+          </div>
+          <div class="bg-brand-offwhite rounded-[18px] p-8 text-center">
+            <p class="text-[52px] font-bold text-brand-orange m-0">40%</p>
+            <p class="text-base text-brand-gray mt-2 mb-0">Men</p>
+          </div>
+        </div>
+        <div class="grid gap-3">
+          <div
+            class="bg-brand-offwhite border border-brand-border rounded-[18px] overflow-hidden"
+          >
+            <button
+              onclick="toggleAccordion(this)"
+              class="w-full flex items-center justify-between px-7 py-6 bg-transparent border-0 cursor-pointer text-left"
+            >
+              <span class="font-serif font-bold text-xl text-brand-heading"
+                >Social Media &amp; Mental Health</span
+              >
+              <span
+                class="accordion-icon text-xl text-brand-orange transition-transform duration-300"
+                >▼</span
+              >
+            </button>
+            <div class="accordion-content hidden px-7 pb-6">
+              <p class="text-base leading-[26px] text-brand-gray m-0">
+                Social media can significantly impact youth mental health
+                through comparison, cyberbullying, and fear of missing out
+                (FOMO). While it offers connection, excessive use correlates
+                with increased anxiety, depression, and sleep problems.
+              </p>
+              <p class="text-base leading-[26px] text-brand-gray mt-3 mb-0">
+                <strong>Healthy habits:</strong> Set time limits, curate your
+                feed positively, take regular breaks, and remember that posts
+                show highlight reels, not reality.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-brand-offwhite border border-brand-border rounded-[18px] overflow-hidden"
+          >
+            <button
+              onclick="toggleAccordion(this)"
+              class="w-full flex items-center justify-between px-7 py-6 bg-transparent border-0 cursor-pointer text-left"
+            >
+              <span class="font-serif font-bold text-xl text-brand-heading"
+                >Academic Pressure &amp; Performance Anxiety</span
+              >
+              <span
+                class="accordion-icon text-xl text-brand-orange transition-transform duration-300"
+                >▼</span
+              >
+            </button>
+            <div class="accordion-content hidden px-7 pb-6">
+              <p class="text-base leading-[26px] text-brand-gray m-0">
+                Academic stress is one of the leading causes of mental health
+                issues in youth. Pressure to achieve high grades, get into
+                university, and meet expectations can lead to anxiety, burnout,
+                and depression.
+              </p>
+              <p class="text-base leading-[26px] text-brand-gray mt-3 mb-0">
+                <strong>Coping strategies:</strong> Break tasks into manageable
+                steps, practice self-compassion, seek help when needed, and
+                remember that grades don't define your worth.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-brand-offwhite border border-brand-border rounded-[18px] overflow-hidden"
+          >
+            <button
+              onclick="toggleAccordion(this)"
+              class="w-full flex items-center justify-between px-7 py-6 bg-transparent border-0 cursor-pointer text-left"
+            >
+              <span class="font-serif font-bold text-xl text-brand-heading"
+                >School Anxiety &amp; Social Challenges</span
+              >
+              <span
+                class="accordion-icon text-xl text-brand-orange transition-transform duration-300"
+                >▼</span
+              >
+            </button>
+            <div class="accordion-content hidden px-7 pb-6">
+              <p class="text-base leading-[26px] text-brand-gray m-0">
+                Social anxiety, peer pressure, bullying, and fitting in are
+                major concerns. These experiences can lead to school refusal,
+                isolation, and declining mental health.
+              </p>
+              <p class="text-base leading-[26px] text-brand-gray mt-3 mb-0">
+                <strong>Support:</strong> Talk to a trusted adult, school
+                counselor, or therapist. Building a support network and
+                developing social skills can help navigate these challenges.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-brand-offwhite border border-brand-border rounded-[18px] overflow-hidden"
+          >
+            <button
+              onclick="toggleAccordion(this)"
+              class="w-full flex items-center justify-between px-7 py-6 bg-transparent border-0 cursor-pointer text-left"
+            >
+              <span class="font-serif font-bold text-xl text-brand-heading"
+                >Family Conflicts &amp; Independence</span
+              >
+              <span
+                class="accordion-icon text-xl text-brand-orange transition-transform duration-300"
+                >▼</span
+              >
+            </button>
+            <div class="accordion-content hidden px-7 pb-6">
+              <p class="text-base leading-[26px] text-brand-gray m-0">
+                As young people develop independence, conflicts with parents and
+                caregivers are common. Communication breakdowns and
+                misunderstandings can create stress and impact mental health.
+              </p>
+              <p class="text-base leading-[26px] text-brand-gray mt-3 mb-0">
+                <strong>Tips:</strong> Practice open communication, express
+                feelings calmly, listen to understand, and consider family
+                therapy if conflicts persist.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Substance Abuse -->
+    <section
+      id="mh-substance"
+      class="px-6 md:px-12 lg:px-16 bg-brand-brown text-white pt-24 pb-24"
+    >
+      <div class="max-w-[1312px] mx-auto">
+        <div
+          class="grid grid-cols-1 gap-12 items-center lg:grid-cols-2 lg:gap-16"
+        >
+          <div>
+            <p
+              class="font-sans font-semibold text-base tracking-[2px] uppercase text-brand-peach m-0"
+            >
+              Co-occurring Conditions
+            </p>
+            <h2
+              class="font-serif font-bold text-white mt-3.5 mb-0 text-[30px] leading-[39px] md:text-[36px] md:leading-[46px] lg:text-[44px] lg:leading-[56px]"
+            >
+              Substance Abuse &amp;
+              <em class="italic text-brand-pink">Mental Health</em>
+            </h2>
+            <p class="text-xl leading-[31px] text-white/90 mt-5 mb-0">
+              Substance abuse and mental health disorders often occur together.
+              Nearly 50% of people with severe mental disorders are also
+              affected by substance abuse, and vice versa.
+            </p>
+            <p class="text-xl leading-[31px] text-white/90 mt-4 mb-0">
+              This connection exists because mental health conditions may lead
+              people to self-medicate with drugs or alcohol, while substance use
+              can trigger or worsen mental health symptoms.
+            </p>
+            <div class="grid grid-cols-2 gap-4 mt-8">
+              <div class="bg-white/10 rounded-2xl p-6 text-center">
+                <p class="text-[32px] mt-0 mb-2">🧠</p>
+                <p class="text-sm m-0">
+                  Dual diagnosis requires integrated treatment
+                </p>
+              </div>
+              <div class="bg-white/10 rounded-2xl p-6 text-center">
+                <p class="text-[32px] mt-0 mb-2">🔄</p>
+                <p class="text-sm m-0">Each condition affects the other</p>
+              </div>
+              <div class="bg-white/10 rounded-2xl p-6 text-center">
+                <p class="text-[32px] mt-0 mb-2">⚕️</p>
+                <p class="text-sm m-0">Professional help is essential</p>
+              </div>
+              <div class="bg-white/10 rounded-2xl p-6 text-center">
+                <p class="text-[32px] mt-0 mb-2">💪</p>
+                <p class="text-sm m-0">Recovery is possible with support</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              class="bg-white text-brand-heading border-l-4 border-[#DC3545] rounded-[18px] px-8 py-7"
+            >
+              <p class="text-[28px] mt-0 mb-3">⚠️</p>
+              <h4 class="font-serif font-bold text-[22px] mt-0 mb-4">
+                Alcohol Withdrawal Warning
+              </h4>
+              <p class="text-base leading-[26px] text-brand-gray mt-0 mb-3">
+                Stopping alcohol suddenly can be dangerous if you've been
+                drinking heavily for a long time. Withdrawal symptoms can
+                include:
+              </p>
+              <ul class="mt-0 mb-4 pl-5">
+                <li class="text-[15px] text-brand-gray mb-1.5">
+                  Tremors and shakiness
+                </li>
+                <li class="text-[15px] text-brand-gray mb-1.5">
+                  Anxiety and agitation
+                </li>
+                <li class="text-[15px] text-brand-gray mb-1.5">
+                  Hallucinations
+                </li>
+                <li class="text-[15px] text-brand-gray mb-1.5">
+                  Seizures (in severe cases)
+                </li>
+                <li class="text-[15px] text-brand-gray mb-1.5">
+                  Delirium tremens (DTs) - a medical emergency
+                </li>
+              </ul>
+              <p class="text-base font-bold text-brand-heading mt-0 mb-5">
+                Always consult a healthcare professional before stopping
+                alcohol. Medically supervised detox may be necessary for your
+                safety.
+              </p>
+              <button
+                onclick="location.href = '#mh-book'"
+                class="font-sans font-bold text-base text-white bg-brand-orange border-0 rounded-full px-7 py-3.5 cursor-pointer"
+              >
+                Get Professional Support
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- For Relatives -->
+    <section
+      id="mh-relatives"
+      class="px-6 md:px-12 lg:px-16 bg-brand-offwhite pt-24 pb-24"
+    >
+      <div class="max-w-[1312px] mx-auto">
+        <div
+          class="grid grid-cols-1 gap-12 items-center lg:grid-cols-2 lg:gap-16"
+        >
+          <div>
+            <p
+              class="font-sans font-semibold text-base tracking-[2px] uppercase text-brand-rust m-0"
+            >
+              Supporting Loved Ones
+            </p>
+            <h2
+              class="font-serif font-bold text-brand-heading mt-3.5 mb-0 text-[30px] leading-[39px] md:text-[36px] md:leading-[46px] lg:text-[44px] lg:leading-[56px]"
+            >
+              Support for <em class="italic text-brand-rust">Relatives</em>
+            </h2>
+            <p class="text-xl leading-[31px] text-brand-gray mt-5 mb-8">
+              Supporting someone with mental health challenges can be difficult.
+              Here are practical tips to help your loved one while taking care
+              of yourself.
+            </p>
+            <div class="grid gap-4">
+              <div
+                class="bg-white border-l-4 border-brand-orange rounded-2xl px-6 py-5"
+              >
+                <p class="font-bold text-lg text-brand-heading mt-0 mb-2">
+                  <span
+                    class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-offwhite text-brand-orange mr-3"
+                    >01</span
+                  >Listen Without Judgment
+                </p>
+                <p class="text-[15px] text-brand-gray m-0">
+                  Create a safe space for them to express feelings. Avoid saying
+                  "just cheer up" or "others have it worse." Validate their
+                  experience.
+                </p>
+              </div>
+              <div
+                class="bg-white border-l-4 border-brand-orange rounded-2xl px-6 py-5"
+              >
+                <p class="font-bold text-lg text-brand-heading mt-0 mb-2">
+                  <span
+                    class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-offwhite text-brand-orange mr-3"
+                    >02</span
+                  >Encourage Professional Help
+                </p>
+                <p class="text-[15px] text-brand-gray m-0">
+                  Gently suggest seeing a mental health professional. Offer to
+                  help find a therapist or attend the first appointment with
+                  them if they'd like.
+                </p>
+              </div>
+              <div
+                class="bg-white border-l-4 border-brand-orange rounded-2xl px-6 py-5"
+              >
+                <p class="font-bold text-lg text-brand-heading mt-0 mb-2">
+                  <span
+                    class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-offwhite text-brand-orange mr-3"
+                    >03</span
+                  >Be Patient
+                </p>
+                <p class="text-[15px] text-brand-gray m-0">
+                  Recovery isn't linear. There will be good days and bad days.
+                  Your consistent support makes a difference even when progress
+                  seems slow.
+                </p>
+              </div>
+              <div
+                class="bg-white border-l-4 border-brand-orange rounded-2xl px-6 py-5"
+              >
+                <p class="font-bold text-lg text-brand-heading mt-0 mb-2">
+                  <span
+                    class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-offwhite text-brand-orange mr-3"
+                    >04</span
+                  >Take Care of Yourself
+                </p>
+                <p class="text-[15px] text-brand-gray m-0">
+                  You can't pour from an empty cup. Set boundaries, seek your
+                  own support, and maintain your wellbeing so you can be there
+                  for them.
+                </p>
+              </div>
+              <div
+                class="bg-white border-l-4 border-brand-orange rounded-2xl px-6 py-5"
+              >
+                <p class="font-bold text-lg text-brand-heading mt-0 mb-2">
+                  <span
+                    class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-offwhite text-brand-orange mr-3"
+                    >05</span
+                  >Learn About Their Condition
+                </p>
+                <p class="text-[15px] text-brand-gray m-0">
+                  Understanding their diagnosis helps you recognize symptoms,
+                  triggers, and how to provide appropriate support. Knowledge
+                  reduces fear and stigma.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="relative rounded-[20px] overflow-hidden mb-6">
+              <img
+                src="images/Card.webp"
+                alt="Supporting loved ones"
+                class="w-full h-auto block"
+              />
+              <div
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-7 py-8"
+              >
+                <p class="text-2xl font-bold text-white m-0">
+                  Your support matters
+                </p>
+                <p class="text-base text-white/90 mt-1 mb-0">
+                  You're not alone in this journey
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-[#DC3545] text-white rounded-[20px] p-10 text-center"
+            >
+              <p class="text-[64px] font-bold mt-0 mb-3">113</p>
+              <p class="text-lg m-0">
+                In case of emergency or immediate danger
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Booking -->
+    <section id="mh-book" class="px-6 md:px-12 lg:px-16 bg-white pt-24 pb-24">
+      <div class="max-w-[1312px] mx-auto">
+        <div
+          class="bg-brand-offwhite border-2 border-brand-border rounded-[32px] overflow-hidden"
+        >
+          <div
+            class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 items-end p-8 lg:p-14"
+          >
+            <div>
+              <h2
+                class="font-serif font-bold text-[42px] text-brand-heading mt-0 mb-4"
+              >
+                Ready to Take the
+                <em class="italic text-brand-rust">First Step?</em>
+              </h2>
+              <p class="text-lg leading-7 text-brand-gray mt-0 mb-3">
+                You don't have to face mental health challenges alone. Our
+                licensed psychologists are here to support you.
+              </p>
+              <p class="text-lg leading-7 text-brand-gray mt-0 mb-8">
+                Available within 1-3 days, no referral needed.
+              </p>
+              <div class="grid gap-3 mb-8">
+                <div class="flex items-center gap-2.5">
+                  <span
+                    class="inline-flex w-6 h-6 items-center justify-center rounded-full bg-[#D4EDDA] text-[#155724] font-bold text-sm"
+                    >✓</span
+                  >
+                  <span class="text-base text-brand-dark"
+                    >Licensed clinical psychologists</span
+                  >
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <span
+                    class="inline-flex w-6 h-6 items-center justify-center rounded-full bg-[#D4EDDA] text-[#155724] font-bold text-sm"
+                    >✓</span
+                  >
+                  <span class="text-base text-brand-dark"
+                    >Online or in-person sessions</span
+                  >
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <span
+                    class="inline-flex w-6 h-6 items-center justify-center rounded-full bg-[#D4EDDA] text-[#155724] font-bold text-sm"
+                    >✓</span
+                  >
+                  <span class="text-base text-brand-dark"
+                    >Covered by most insurance plans</span
+                  >
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <span
+                    class="inline-flex w-6 h-6 items-center justify-center rounded-full bg-[#D4EDDA] text-[#155724] font-bold text-sm"
+                    >✓</span
+                  >
+                  <span class="text-base text-brand-dark"
+                    >Flexible scheduling including evenings</span
+                  >
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <button
+                  class="font-sans font-bold text-lg text-white bg-brand-orange border-0 rounded-full px-9 py-[18px] cursor-pointer"
+                >
+                  Book Appointment
+                </button>
+                <button
+                  class="font-sans font-bold text-lg text-brand-orange bg-white border-2 border-brand-orange rounded-full px-9 py-[18px] cursor-pointer"
+                >
+                  Call: 22 00 00 00
+                </button>
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <img
+                src="images/Psyc_1.webp"
+                alt="Professional psychologist"
+                class="max-w-[300px] rounded-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section
+      id="mh-faq"
+      class="px-6 md:px-12 lg:px-16 bg-brand-offwhite pt-24 pb-24"
+    >
+      <div class="max-w-[1312px] mx-auto">
+        <div
+          class="grid grid-cols-1 gap-12 items-center lg:grid-cols-2 lg:gap-16"
+        >
+          <div class="lg:sticky lg:top-[148px] lg:self-start">
+            <p
+              class="font-sans font-semibold text-base tracking-[2px] uppercase text-brand-rust m-0"
+            >
+              Questions
+            </p>
+            <h2
+              class="font-serif font-bold text-brand-heading mt-3.5 mb-0 text-[30px] leading-[39px] md:text-[36px] md:leading-[46px] lg:text-[44px] lg:leading-[56px]"
+            >
+              Frequently Asked <em class="italic text-brand-rust">Questions</em>
+            </h2>
+            <p class="text-lg leading-7 text-brand-gray mt-5 mb-8">
+              Common questions about mental health services, insurance, and what
+              to expect.
+            </p>
+            <button
+              onclick="location.href = '#mh-book'"
+              class="font-sans font-bold text-base text-white bg-brand-orange border-0 rounded-full px-8 py-4 cursor-pointer"
+            >
+              Book Appointment
+            </button>
+          </div>
+          <div class="grid gap-3">
+            <div
+              class="bg-white border border-brand-border rounded-[18px] overflow-hidden"
+            >
+              <button
+                onclick="toggleAccordion(this)"
+                class="w-full flex items-center justify-between px-7 py-6 bg-transparent border-0 cursor-pointer text-left"
+              >
+                <span
+                  class="font-serif font-bold text-[19px] text-brand-heading"
+                  >Do I need a referral to see a psychologist?</span
+                >
+                <span
+                  class="accordion-icon text-xl text-brand-orange transition-transform duration-300"
+                  >▼</span
+                >
+              </button>
+              <div class="accordion-content hidden px-7 pb-6">
+                <p class="text-base leading-[26px] text-brand-gray m-0">
+                  No, you do not need a referral from your GP to see a
+                  psychologist. You can book directly with us. However, if you
+                  want reimbursement through the public health system, you may
+                  need a referral for certain conditions.
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-white border border-brand-border rounded-[18px] overflow-hidden"
+            >
+              <button
+                onclick="toggleAccordion(this)"
+                class="w-full flex items-center justify-between px-7 py-6 bg-transparent border-0 cursor-pointer text-left"
+              >
+                <span
+                  class="font-serif font-bold text-[19px] text-brand-heading"
+                  >Will my insurance cover therapy sessions?</span
+                >
+                <span
+                  class="accordion-icon text-xl text-brand-orange transition-transform duration-300"
+                  >▼</span
+                >
+              </button>
+              <div class="accordion-content hidden px-7 pb-6">
+                <p class="text-base leading-[26px] text-brand-gray m-0">
+                  Most private health insurance plans in Norway cover
+                  psychological services. Coverage varies by provider and plan.
+                  We recommend checking with your insurance company before your
+                  first session. We can provide documentation for insurance
+                  claims.
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-white border border-brand-border rounded-[18px] overflow-hidden"
+            >
+              <button
+                onclick="toggleAccordion(this)"
+                class="w-full flex items-center justify-between px-7 py-6 bg-transparent border-0 cursor-pointer text-left"
+              >
+                <span
+                  class="font-serif font-bold text-[19px] text-brand-heading"
+                  >What's the difference between a psychologist and a
+                  psychiatrist?</span
+                >
+                <span
+                  class="accordion-icon text-xl text-brand-orange transition-transform duration-300"
+                  >▼</span
+                >
+              </button>
+              <div class="accordion-content hidden px-7 pb-6">
+                <p class="text-base leading-[26px] text-brand-gray mt-0 mb-3">
+                  Psychologists provide therapy and psychological assessments
+                  but cannot prescribe medication (in Norway). They focus on
+                  talk therapy, cognitive-behavioral interventions, and other
+                  therapeutic approaches.
+                </p>
+                <p class="text-base leading-[26px] text-brand-gray m-0">
+                  Psychiatrists are medical doctors who can diagnose mental
+                  health conditions, prescribe medication, and provide therapy.
+                  They typically focus on medication management for moderate to
+                  severe mental health conditions.
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-white border border-brand-border rounded-[18px] overflow-hidden"
+            >
+              <button
+                onclick="toggleAccordion(this)"
+                class="w-full flex items-center justify-between px-7 py-6 bg-transparent border-0 cursor-pointer text-left"
+              >
+                <span
+                  class="font-serif font-bold text-[19px] text-brand-heading"
+                  >How long does therapy take?</span
+                >
+                <span
+                  class="accordion-icon text-xl text-brand-orange transition-transform duration-300"
+                  >▼</span
+                >
+              </button>
+              <div class="accordion-content hidden px-7 pb-6">
+                <p class="text-base leading-[26px] text-brand-gray m-0">
+                  The duration of therapy varies depending on your needs, goals,
+                  and the complexity of your concerns. Some people benefit from
+                  short-term therapy (8-12 sessions), while others engage in
+                  longer-term work. We'll discuss a treatment plan during your
+                  first session and regularly review your progress.
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-white border border-brand-border rounded-[18px] overflow-hidden"
+            >
+              <button
+                onclick="toggleAccordion(this)"
+                class="w-full flex items-center justify-between px-7 py-6 bg-transparent border-0 cursor-pointer text-left"
+              >
+                <span
+                  class="font-serif font-bold text-[19px] text-brand-heading"
+                  >Is therapy confidential?</span
+                >
+                <span
+                  class="accordion-icon text-xl text-brand-orange transition-transform duration-300"
+                  >▼</span
+                >
+              </button>
+              <div class="accordion-content hidden px-7 pb-6">
+                <p class="text-base leading-[26px] text-brand-gray m-0">
+                  Yes, therapy is confidential. Psychologists are bound by
+                  professional ethics and Norwegian law to protect your privacy.
+                  Information is only shared without your consent in rare
+                  situations involving imminent risk of harm to yourself or
+                  others, child abuse, or court orders.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-brown text-white pt-[72px] pb-8">
+      <div class="px-6 md:px-12 lg:px-16">
+        <div class="max-w-[1312px] mx-auto">
+          <div class="mb-14">
+            <h3 class="font-serif font-bold text-3xl mt-0 mb-3">
+              Stay Informed
+            </h3>
+            <p class="text-base text-white/80 mt-0 mb-6">
+              Get mental health tips and updates delivered to your inbox.
+            </p>
+            <form class="flex gap-3 max-w-[600px] mb-4">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                required
+                class="flex-1 px-6 py-4 rounded-full border border-white/20 bg-white/10 text-white text-[15px]"
+              />
+              <button
+                type="submit"
+                class="font-sans font-bold text-base text-white bg-brand-orange border-0 rounded-full px-8 py-4 cursor-pointer whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </form>
+            <label class="flex items-center gap-2 text-sm text-white/70">
+              <input
+                type="checkbox"
+                required
+                class="w-4 h-4 accent-brand-orange"
+              />
+              <span>I agree to receive emails from psykolog.no</span>
+            </label>
+          </div>
+          <div
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12"
+          >
+            <div>
+              <h4 class="font-bold text-[15px] mt-0 mb-4">Services</h4>
+              <div class="grid gap-2.5">
+                <a
+                  href="index.html#home-conditions"
+                  class="text-sm text-white/70"
+                  >Individual Therapy</a
+                >
+                <a
+                  href="index.html#home-conditions"
+                  class="text-sm text-white/70"
+                  >Couples Therapy</a
+                >
+                <a
+                  href="index.html#home-conditions"
+                  class="text-sm text-white/70"
+                  >Family Therapy</a
+                >
+                <a
+                  href="index.html#home-conditions"
+                  class="text-sm text-white/70"
+                  >Group Therapy</a
+                >
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-[15px] mt-0 mb-4">Conditions</h4>
+              <div class="grid gap-2.5">
+                <a href="adhd.html" class="text-sm text-white/70">ADHD</a>
+                <a href="#mh-conditions" class="text-sm text-white/70"
+                  >Depression</a
+                >
+                <a href="#mh-conditions" class="text-sm text-white/70"
+                  >Anxiety</a
+                >
+                <a href="#mh-conditions" class="text-sm text-white/70">PTSD</a>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-[15px] mt-0 mb-4">Clinic</h4>
+              <div class="grid gap-2.5">
+                <a href="about.html" class="text-sm text-white/70">About Us</a>
+                <a href="index.html#home-team" class="text-sm text-white/70"
+                  >Our Team</a
+                >
+                <a
+                  href="index.html#home-locations"
+                  class="text-sm text-white/70"
+                  >Locations</a
+                >
+                <a href="index.html#home-pricing" class="text-sm text-white/70"
+                  >Pricing</a
+                >
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-[15px] mt-0 mb-4">Company</h4>
+              <div class="grid gap-2.5">
+                <a href="#" class="text-sm text-white/70">Careers</a>
+                <a href="#" class="text-sm text-white/70">Blog</a>
+                <a href="#" class="text-sm text-white/70">Press</a>
+                <a href="#" class="text-sm text-white/70">Contact</a>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-[15px] mt-0 mb-4">Legal</h4>
+              <div class="grid gap-2.5">
+                <a href="#" class="text-sm text-white/70">Privacy Policy</a>
+                <a href="#" class="text-sm text-white/70">Terms of Service</a>
+                <a href="#" class="text-sm text-white/70">Cookie Policy</a>
+                <a href="#" class="text-sm text-white/70">Accessibility</a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="border-t border-white/20 pt-6 flex flex-col gap-4 md:flex-row md:justify-between md:items-center"
+          >
+            <p class="text-sm text-white/60 m-0">
+              &copy; 2024 psykolog.no. All rights reserved.
+            </p>
+            <div class="flex items-center gap-5">
+              <a href="#" class="text-white/70 text-xl">📷</a>
+              <a href="#" class="text-white/70 text-xl">💼</a>
+              <a href="#" class="text-white/70 text-xl">📘</a>
+              <span class="text-[13px] text-white/50"
+                >Made by
+                <a href="https://sysinn.no" class="text-white/70"
+                  >Sysinn</a
+                ></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const navToggle = document.getElementById("navToggle");
+      const navLinks = document.getElementById("navLinks");
+      if (navToggle) {
+        navToggle.addEventListener("click", () => {
+          navLinks.classList.toggle("hidden");
+          navLinks.classList.toggle("flex");
+        });
+      }
+
+      // Accordion toggle
+      function toggleAccordion(button) {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector(".accordion-icon");
+        const isOpen = !content.classList.contains("hidden");
+
+        // Close all accordions in the same section
+        const section = button.closest("section");
+        section
+          .querySelectorAll(".accordion-content")
+          .forEach((c) => c.classList.add("hidden"));
+        section
+          .querySelectorAll(".accordion-icon")
+          .forEach((i) => (i.style.transform = "rotate(0deg)"));
+
+        // Toggle current
+        if (!isOpen) {
+          content.classList.remove("hidden");
+          icon.style.transform = "rotate(180deg)";
+        }
+      }
+
+      // Checklist tally
+      function updateTally() {
+        const checkboxes = document.querySelectorAll(
+          '#checklistContainer input[type="checkbox"]',
+        );
+        const checked = Array.from(checkboxes).filter(
+          (cb) => cb.checked,
+        ).length;
+        document.getElementById("signsTally").textContent = checked;
+      }
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
