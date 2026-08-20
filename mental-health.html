@@ -2210,8 +2210,8 @@
       </div>
 
       <!-- Right Column: Sticky Image Card + Emergency Banner (5 Cols) -->
-      <div class="lg:sticky lg:top-24 flex flex-col gap-4">
-        
+     <div class="lg:sticky lg:top-24 lg:self-start flex flex-col gap-4 lg:min-h-[760px]">
+
         <!-- Main Sticky Image Display Card -->
         <div class="relative bg-white rounded-[24px] overflow-hidden shadow-md border border-[#E8DDD7] aspect-[4/4.5] lg:aspect-auto lg:h-[520px] flex items-end">
           <!-- Dynamic Image -->
@@ -2289,264 +2289,233 @@
   }
 </script>
 
-    <!-- CTA Booking -->
-    <section id="mh-book" class="px-6 md:px-12 lg:px-16 bg-white pt-24 pb-24">
-      <div class="max-w-[1312px] mx-auto">
-        <div
-          class="bg-brand-offwhite border-2 border-brand-border rounded-[32px] overflow-hidden"
-        >
-          <div
-            class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 items-end p-8 lg:p-14"
+    <!-- CTA Booking / When Should You Seek Help -->
+<section id="mh-book" class="section section--white">
+  <div class="container mx-auto">
+    <div class="bg-surface-peach rounded-[32px] overflow-hidden p-8 sm:p-12 lg:p-16 relative">
+      
+      <!-- Full Width Heading Section -->
+      <div class="w-full mb-8">
+        <p class="font-sans font-semibold text-xs tracking-[2px] uppercase text-[#A85848] m-0 mb-3">
+          YOUR NEXT STEP
+        </p>
+        <h2 class="font-serif font-bold text-ink-900 text-2xl sm:text-3xl lg:text-[40px] leading-[1.2] m-0">
+          When Should You Seek Help For <em>Your Mental Health?</em>
+        </h2>
+      </div>
+      
+      <!-- Grid for Content & Image -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        
+        <!-- Left Column: Content & Button (7 Cols) -->
+        <div class="lg:col-span-7">
+          <p class="text-[15px] sm:text-lg leading-[26px] text-ink-muted m-0 mb-4">
+            If mental health symptoms are affecting your daily life, relationships, work, or overall well-being, it may be time to seek professional support. You do not need to have a diagnosis to talk to a psychologist.
+          </p>
+          
+          <p class="text-[15px] sm:text-lg leading-[26px] text-ink-muted m-0 mb-8">
+            We connect you with experienced psychologists across Norway, without a referral, and with no long waiting list. Early support can help you understand what you are experiencing and explore appropriate ways to manage it.
+          </p>
+          
+          <!-- Action Button -->
+          <button
+            type="button"
+            class="bg-[#C14C37] hover:bg-[#A83E2B] text-white font-sans font-bold text-[16px] py-4 px-8 rounded-full transition-all duration-200 shadow-md hover:shadow-lg inline-flex items-center gap-3 cursor-pointer group"
           >
-            <div>
-              <h2
-                class="font-serif font-bold text-[42px] text-brand-heading mt-0 mb-4"
-              >
-                Ready to Take the
-                <em class="italic text-brand-hover">First Step?</em>
-              </h2>
-              <p class="text-lg leading-7 text-brand-gray mt-0 mb-3">
-                You don't have to face mental health challenges alone. Our
-                licensed psychologists are here to support you.
-              </p>
-              <p class="text-lg leading-7 text-brand-gray mt-0 mb-8">
-                Available within 1-3 days, no referral needed.
-              </p>
-              <div class="grid gap-3 mb-8">
-                <div class="flex items-center gap-2.5">
-                  <span
-                    class="inline-flex w-6 h-6 items-center justify-center rounded-full bg-[#D4EDDA] text-[#155724] font-bold text-sm"
-                    >✓</span
-                  >
-                  <span class="text-base text-brand-dark"
-                    >Licensed clinical psychologists</span
-                  >
-                </div>
-                <div class="flex items-center gap-2.5">
-                  <span
-                    class="inline-flex w-6 h-6 items-center justify-center rounded-full bg-[#D4EDDA] text-[#155724] font-bold text-sm"
-                    >✓</span
-                  >
-                  <span class="text-base text-brand-dark"
-                    >Online or in-person sessions</span
-                  >
-                </div>
-                <div class="flex items-center gap-2.5">
-                  <span
-                    class="inline-flex w-6 h-6 items-center justify-center rounded-full bg-[#D4EDDA] text-[#155724] font-bold text-sm"
-                    >✓</span
-                  >
-                  <span class="text-base text-brand-dark"
-                    >Covered by most insurance plans</span
-                  >
-                </div>
-                <div class="flex items-center gap-2.5">
-                  <span
-                    class="inline-flex w-6 h-6 items-center justify-center rounded-full bg-[#D4EDDA] text-[#155724] font-bold text-sm"
-                    >✓</span
-                  >
-                  <span class="text-base text-brand-dark"
-                    >Flexible scheduling including evenings</span
-                  >
-                </div>
-              </div>
-              <div class="flex gap-4">
-                <button
-                  class="font-sans font-bold text-lg text-white bg-brand-orange border-0 rounded-full px-9 py-[18px] cursor-pointer"
-                >
-                  Book Appointment
-                </button>
-                <button
-                  class="font-sans font-bold text-lg text-brand-orange bg-white border-2 border-brand-orange rounded-full px-9 py-[18px] cursor-pointer"
-                >
-                  Call: 22 00 00 00
-                </button>
-              </div>
-            </div>
-            <div class="flex justify-end">
-              <img
-                src="images/Psyc_1.webp"
-                alt="Professional psychologist"
-                class="max-w-[300px] rounded-2xl"
-              />
-            </div>
-          </div>
+            <span>Book an appointment</span>
+            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-white/20 group-hover:bg-white/30 transition-colors">
+              <svg class="w-3.5 h-3.5 text-white transform group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </span>
+          </button>
         </div>
-      </div>
-    </section>
 
-    <!-- FAQ -->
-    <section
-      id="mh-faq"
-      class="px-6 md:px-12 lg:px-16 bg-brand-offwhite pt-24 pb-24"
-    >
-      <div class="max-w-[1312px] mx-auto">
-        <div
-          class="grid grid-cols-1 gap-12 items-center lg:grid-cols-2 lg:gap-16"
-        >
-          <div class="lg:sticky lg:top-[148px] lg:self-start">
-            <p
-              class="font-sans font-semibold text-base tracking-[2px] uppercase text-brand-hover m-0"
-            >
-              Questions
-            </p>
-            <h2
-              class="font-serif font-bold text-brand-heading mt-3.5 mb-0 text-[30px] leading-[39px] md:text-[36px] md:leading-[46px] lg:text-[44px] lg:leading-[56px]"
-            >
-              Frequently Asked
-              <em class="italic text-brand-hover">Questions</em>
-            </h2>
-            <p class="text-lg leading-7 text-brand-gray mt-5 mb-8">
-              Common questions about mental health services, insurance, and what
-              to expect.
-            </p>
-            <button
-              onclick="location.href = '#mh-book'"
-              class="font-sans font-bold text-base text-white bg-brand-orange border-0 rounded-full px-8 py-4 cursor-pointer"
-            >
-              Book Appointment
-            </button>
-          </div>
-          <div class="grid gap-3">
-            <div
-              class="bg-white border border-brand-border rounded-[18px] overflow-hidden"
-            >
-              <button
-                onclick="toggleAccordion(this)"
-                class="w-full flex items-center justify-between px-7 py-6 bg-transparent border-0 cursor-pointer text-left"
-              >
-                <span
-                  class="font-serif font-bold text-[19px] text-brand-heading"
-                  >Do I need a referral to see a psychologist?</span
-                >
-                <span
-                  class="accordion-icon text-xl text-brand-orange transition-transform duration-300"
-                  >▼</span
-                >
-              </button>
-              <div class="accordion-content hidden px-7 pb-6">
-                <p class="text-base leading-[26px] text-brand-gray m-0">
-                  No, you do not need a referral from your GP to see a
-                  psychologist. You can book directly with us. However, if you
-                  want reimbursement through the public health system, you may
-                  need a referral for certain conditions.
-                </p>
-              </div>
-            </div>
-            <div
-              class="bg-white border border-brand-border rounded-[18px] overflow-hidden"
-            >
-              <button
-                onclick="toggleAccordion(this)"
-                class="w-full flex items-center justify-between px-7 py-6 bg-transparent border-0 cursor-pointer text-left"
-              >
-                <span
-                  class="font-serif font-bold text-[19px] text-brand-heading"
-                  >Will my insurance cover therapy sessions?</span
-                >
-                <span
-                  class="accordion-icon text-xl text-brand-orange transition-transform duration-300"
-                  >▼</span
-                >
-              </button>
-              <div class="accordion-content hidden px-7 pb-6">
-                <p class="text-base leading-[26px] text-brand-gray m-0">
-                  Most private health insurance plans in Norway cover
-                  psychological services. Coverage varies by provider and plan.
-                  We recommend checking with your insurance company before your
-                  first session. We can provide documentation for insurance
-                  claims.
-                </p>
-              </div>
-            </div>
-            <div
-              class="bg-white border border-brand-border rounded-[18px] overflow-hidden"
-            >
-              <button
-                onclick="toggleAccordion(this)"
-                class="w-full flex items-center justify-between px-7 py-6 bg-transparent border-0 cursor-pointer text-left"
-              >
-                <span
-                  class="font-serif font-bold text-[19px] text-brand-heading"
-                  >What's the difference between a psychologist and a
-                  psychiatrist?</span
-                >
-                <span
-                  class="accordion-icon text-xl text-brand-orange transition-transform duration-300"
-                  >▼</span
-                >
-              </button>
-              <div class="accordion-content hidden px-7 pb-6">
-                <p class="text-base leading-[26px] text-brand-gray mt-0 mb-3">
-                  Psychologists provide therapy and psychological assessments
-                  but cannot prescribe medication (in Norway). They focus on
-                  talk therapy, cognitive-behavioral interventions, and other
-                  therapeutic approaches.
-                </p>
-                <p class="text-base leading-[26px] text-brand-gray m-0">
-                  Psychiatrists are medical doctors who can diagnose mental
-                  health conditions, prescribe medication, and provide therapy.
-                  They typically focus on medication management for moderate to
-                  severe mental health conditions.
-                </p>
-              </div>
-            </div>
-            <div
-              class="bg-white border border-brand-border rounded-[18px] overflow-hidden"
-            >
-              <button
-                onclick="toggleAccordion(this)"
-                class="w-full flex items-center justify-between px-7 py-6 bg-transparent border-0 cursor-pointer text-left"
-              >
-                <span
-                  class="font-serif font-bold text-[19px] text-brand-heading"
-                  >How long does therapy take?</span
-                >
-                <span
-                  class="accordion-icon text-xl text-brand-orange transition-transform duration-300"
-                  >▼</span
-                >
-              </button>
-              <div class="accordion-content hidden px-7 pb-6">
-                <p class="text-base leading-[26px] text-brand-gray m-0">
-                  The duration of therapy varies depending on your needs, goals,
-                  and the complexity of your concerns. Some people benefit from
-                  short-term therapy (8-12 sessions), while others engage in
-                  longer-term work. We'll discuss a treatment plan during your
-                  first session and regularly review your progress.
-                </p>
-              </div>
-            </div>
-            <div
-              class="bg-white border border-brand-border rounded-[18px] overflow-hidden"
-            >
-              <button
-                onclick="toggleAccordion(this)"
-                class="w-full flex items-center justify-between px-7 py-6 bg-transparent border-0 cursor-pointer text-left"
-              >
-                <span
-                  class="font-serif font-bold text-[19px] text-brand-heading"
-                  >Is therapy confidential?</span
-                >
-                <span
-                  class="accordion-icon text-xl text-brand-orange transition-transform duration-300"
-                  >▼</span
-                >
-              </button>
-              <div class="accordion-content hidden px-7 pb-6">
-                <p class="text-base leading-[26px] text-brand-gray m-0">
-                  Yes, therapy is confidential. Psychologists are bound by
-                  professional ethics and Norwegian law to protect your privacy.
-                  Information is only shared without your consent in rare
-                  situations involving imminent risk of harm to yourself or
-                  others, child abuse, or court orders.
-                </p>
-              </div>
-            </div>
+        <!-- Right Column: Illustration (5 Cols) -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <div class="max-w-[340px] sm:max-w-[400px] w-full">
+            <img
+              src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop"
+              alt="Meditating brain illustration representing mental well-being"
+              class="w-full h-auto object-contain drop-shadow-sm rounded-2xl"
+            />
           </div>
         </div>
+
       </div>
-    </section>
+
+    </div>
+  </div>
+</section>
+
+  <section id="mh-faq" class="section section--white">
+  <div class="container">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Left Column: Heading & Patient Info (5 Cols) -->
+      <div class="lg:col-span-5 lg:sticky lg:top-24 flex flex-col gap-8">
+        <div>
+          <h2 class="font-serif font-bold text-ink-900 text-3xl sm:text-4xl lg:text-[48px] leading-[1.1] m-0 mb-4">
+            FAQs
+          </h2>
+          <p class="text-[15px] sm:text-[16px] leading-[26px] text-ink-muted m-0 mb-6 max-w-[420px]">
+            Still unsure whether speaking to a psychologist is the right next step? Book a first conversation.
+          </p>
+          
+          <!-- Outline Button -->
+          <button
+            type="button"
+            class="bg-transparent hover:bg-[#A85848]/5 text-[#C24C33] border-2 border-[#C24C33] font-sans font-bold text-[15px] py-3.5 px-7 rounded-full transition-all duration-200 inline-flex items-center gap-2 cursor-pointer"
+          >
+            <span>Book an appointment</span>
+          </button>
+        </div>
+
+        <!-- Bottom Patient Card/Box from image -->
+        <div class="bg-white/60 border border-[#E8DDD7] rounded-[24px] p-6 backdrop-blur-sm max-w-[460px]">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="flex -space-x-2">
+              <span class="w-8 h-8 rounded-full bg-[#E5D5C5] border-2 border-white"></span>
+              <span class="w-8 h-8 rounded-full bg-[#E5E8C5] border-2 border-white"></span>
+              <span class="w-8 h-8 rounded-full bg-[#E8C5C5] border-2 border-white"></span>
+              <span class="w-8 h-8 rounded-full bg-[#F2E5D5] border-2 border-white"></span>
+            </div>
+            <span class="font-serif font-bold text-[15px] text-[#A85848]">
+              Mental Health Question Asked By Our Patients
+            </span>
+          </div>
+
+          <p class="text-[14px] leading-[22px] text-ink-muted m-0 mb-5">
+            These are the questions people ask us most often before booking their first consultation.
+          </p>
+
+          <button
+            type="button"
+            onclick="location.href = '#mh-book'"
+            class="bg-[#A85848] hover:bg-[#924A3D] text-white font-sans font-bold text-[14px] py-3 px-6 rounded-full transition-colors inline-flex items-center gap-2 cursor-pointer shadow-sm"
+          >
+            <span>Ask Your Own Question</span>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column: Accordion Items (7 Cols) -->
+      <div class="lg:col-span-7 flex flex-col gap-4">
+        
+        <!-- Item 1 (Default Open) -->
+        <div class="faq-item bg-white border border-[#E8DDD7] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between p-6 sm:p-7 bg-transparent border-0 cursor-pointer text-left group"
+          >
+            <span class="font-serif font-bold text-lg sm:text-xl text-ink-900 group-hover:text-[#A85848] transition-colors pr-4">
+              What is mental health?
+            </span>
+            <span class="faq-icon w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#A85848] flex-none transition-transform duration-300 font-bold text-lg">
+              −
+            </span>
+          </button>
+          <div class="faq-content px-6 sm:px-7 pb-7 pt-0">
+            <p class="text-[15px] leading-[26px] text-ink-muted m-0">
+              Mental health is about how you feel about yourself, how you cope with everyday challenges, and how you function in relationships and work. Good mental health is not the absence of difficult emotions. However, it is the ability to manage them.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="faq-item bg-white border border-[#E8DDD7] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between p-6 sm:p-7 bg-transparent border-0 cursor-pointer text-left group"
+          >
+            <span class="font-serif font-bold text-lg sm:text-xl text-ink-900 group-hover:text-[#A85848] transition-colors pr-4">
+              What is the difference between mental health problems and mental illness?
+            </span>
+            <span class="faq-icon w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#A85848] flex-none transition-transform duration-300 font-bold text-lg">
+              +
+            </span>
+          </button>
+          <div class="faq-content hidden px-6 sm:px-7 pb-7 pt-0">
+            <p class="text-[15px] leading-[26px] text-ink-muted m-0">
+              Mental health problems involve emotional distress or challenges that affect daily life temporarily, whereas mental illness (or mental disorder) refers to clinically diagnosed conditions that significantly impair daily functioning over a longer period.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="faq-item bg-white border border-[#E8DDD7] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between p-6 sm:p-7 bg-transparent border-0 cursor-pointer text-left group"
+          >
+            <span class="font-serif font-bold text-lg sm:text-xl text-ink-900 group-hover:text-[#A85848] transition-colors pr-4">
+              When should you seek help for mental health problems?
+            </span>
+            <span class="faq-icon w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#A85848] flex-none transition-transform duration-300 font-bold text-lg">
+              +
+            </span>
+          </button>
+          <div class="faq-content hidden px-6 sm:px-7 pb-7 pt-0">
+            <p class="text-[15px] leading-[26px] text-ink-muted m-0">
+              If your symptoms persist for more than two weeks and interfere with your work, sleep, relationships, or general ability to cope, it's a good time to speak with a professional.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="faq-item bg-white border border-[#E8DDD7] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between p-6 sm:p-7 bg-transparent border-0 cursor-pointer text-left group"
+          >
+            <span class="font-serif font-bold text-lg sm:text-xl text-ink-900 group-hover:text-[#A85848] transition-colors pr-4">
+              Does physical activity help mental health?
+            </span>
+            <span class="faq-icon w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#A85848] flex-none transition-transform duration-300 font-bold text-lg">
+              +
+            </span>
+          </button>
+          <div class="faq-content hidden px-6 sm:px-7 pb-7 pt-0">
+            <p class="text-[15px] leading-[26px] text-ink-muted m-0">
+              Yes, regular physical activity releases endorphins, reduces stress hormones, and improves overall mood and sleep patterns, acting as a great complementary tool alongside therapy.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="faq-item bg-white border border-[#E8DDD7] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between p-6 sm:p-7 bg-transparent border-0 cursor-pointer text-left group"
+          >
+            <span class="font-serif font-bold text-lg sm:text-xl text-ink-900 group-hover:text-[#A85848] transition-colors pr-4">
+              What do I do if I or someone I know is in acute difficulty?
+            </span>
+            <span class="faq-icon w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#A85848] flex-none transition-transform duration-300 font-bold text-lg">
+              +
+            </span>
+          </button>
+          <div class="faq-content hidden px-6 sm:px-7 pb-7 pt-0">
+            <p class="text-[15px] leading-[26px] text-ink-muted m-0">
+              If there is immediate danger or risk of self-harm, please contact emergency services immediately by calling 113 or reaching out to a local crisis helpline.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
 
     <!-- Footer -->
     <footer class="bg-brand-brown text-white pt-[72px] pb-8">
