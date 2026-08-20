@@ -435,8 +435,20 @@
     if (!item) return;
     const content = item.querySelector('.accordion-content');
     const iconWrap = item.querySelector('.accordion-icon');
-    const isOpen = item.classList.toggle('is-open');
-    if (content) content.classList.toggle('hidden', !isOpen);
+    const isOpen = !item.classList.contains('is-open');
+    item.classList.toggle('is-open', isOpen);
+
+    if (content) {
+      content.classList.remove('hidden');
+      if (isOpen) {
+        content.style.maxHeight = `${content.scrollHeight}px`;
+        content.style.opacity = '1';
+      } else {
+        content.style.maxHeight = '0px';
+        content.style.opacity = '0';
+        setTimeout(() => content.classList.add('hidden'), 260);
+      }
+    }
     if (iconWrap) {
       const svg = iconWrap.querySelector('svg');
       if (svg) svg.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
@@ -448,8 +460,20 @@
     if (!item) return;
     const content = item.querySelector('.faq-content');
     const icon = button.querySelector('.faq-icon');
-    const isOpen = item.classList.toggle('is-open');
-    if (content) content.classList.toggle('hidden', !isOpen);
+    const isOpen = !item.classList.contains('is-open');
+    item.classList.toggle('is-open', isOpen);
+
+    if (content) {
+      content.classList.remove('hidden');
+      if (isOpen) {
+        content.style.maxHeight = `${content.scrollHeight}px`;
+        content.style.opacity = '1';
+      } else {
+        content.style.maxHeight = '0px';
+        content.style.opacity = '0';
+        setTimeout(() => content.classList.add('hidden'), 260);
+      }
+    }
     if (icon) icon.textContent = isOpen ? '−' : '+';
   }
 

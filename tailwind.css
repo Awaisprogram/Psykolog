@@ -517,6 +517,9 @@
   .h-\[26px\] {
     height: 26px;
   }
+  .h-\[32\] {
+    height: 32;
+  }
   .h-\[46px\] {
     height: 46px;
   }
@@ -534,6 +537,9 @@
   }
   .h-\[300px\] {
     height: 300px;
+  }
+  .h-\[329px\] {
+    height: 329px;
   }
   .h-\[400px\] {
     height: 400px;
@@ -625,6 +631,9 @@
   .w-full {
     width: 100%;
   }
+  .max-w-624 {
+    max-width: calc(var(--spacing) * 624);
+  }
   .max-w-\[340px\] {
     max-width: 340px;
   }
@@ -642,6 +651,9 @@
   }
   .max-w-\[600px\] {
     max-width: 600px;
+  }
+  .max-w-\[624px\] {
+    max-width: 624px;
   }
   .max-w-\[680px\] {
     max-width: 680px;
@@ -1218,9 +1230,6 @@
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
   }
-  .py-16 {
-    padding-block: calc(var(--spacing) * 16);
-  }
   .py-\[9px\] {
     padding-block: 9px;
   }
@@ -1514,11 +1523,20 @@
   .text-\[\#E5D7D3\] {
     color: #E5D7D3;
   }
+  .text-\[\#F8EBE2\] {
+    color: #F8EBE2;
+  }
   .text-\[\#F09367\] {
     color: #F09367;
   }
   .text-\[\#f09367\] {
     color: #f09367;
+  }
+  .text-\[3\] {
+    color: 3;
+  }
+  .text-\[v\] {
+    color: v;
   }
   .text-brand-brown {
     color: var(--color-brand-brown);
@@ -2079,9 +2097,6 @@
     .md\:px-12 {
       padding-inline: calc(var(--spacing) * 12);
     }
-    .md\:py-24 {
-      padding-block: calc(var(--spacing) * 24);
-    }
     .md\:text-xl {
       font-size: var(--text-xl);
       line-height: var(--tw-leading, var(--text-xl--line-height));
@@ -2107,6 +2122,9 @@
     .md\:text-\[48px\] {
       font-size: 48px;
     }
+    .md\:text-\[52px\] {
+      font-size: 52px;
+    }
     .md\:leading-\[46px\] {
       --tw-leading: 46px;
       line-height: 46px;
@@ -2128,14 +2146,23 @@
     .lg\:col-span-5 {
       grid-column: span 5 / span 5;
     }
+    .lg\:col-span-6 {
+      grid-column: span 6 / span 6;
+    }
     .lg\:col-span-7 {
       grid-column: span 7 / span 7;
+    }
+    .lg\:col-span-8 {
+      grid-column: span 8 / span 8;
     }
     .lg\:-mt-\[86px\] {
       margin-top: calc(86px * -1);
     }
     .lg\:aspect-auto {
       aspect-ratio: auto;
+    }
+    .lg\:h-\[329px\] {
+      height: 329px;
     }
     .lg\:h-\[520px\] {
       height: 520px;
@@ -2281,6 +2308,81 @@
   }
   h1, h2, h3, h4, h5, h6 {
     color: var(--color-ink-900);
+  }
+}
+.ps-jump::-webkit-scrollbar {
+  display: none;
+}
+.ps-jump {
+  scrollbar-width: none;
+}
+.accordion-content, .faq-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+.accordion-item.is-open .accordion-content, .faq-item.is-open .faq-content {
+  opacity: 1;
+}
+.accordion-item .accordion-content, .faq-item .faq-content {
+  will-change: max-height, opacity;
+}
+.accordion__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #c24c33;
+  padding: 13px 20px;
+  border-radius: 100px;
+  background: transparent;
+  color: var(--brand-primary-hover);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+}
+.accordion__trigger--pill {
+  background: transparent;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-pill);
+  padding: 10px 20px;
+}
+.accordion__chevron {
+  transition: transform 0.3s var(--ease-standard);
+}
+.accordion.is-open .accordion__chevron {
+  transform: rotate(180deg);
+}
+.accordion.is-open .accordion__trigger--pill {
+  background: var(--brand-primary);
+  color: #fff;
+  border-color: var(--brand-primary);
+}
+.accordion__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s var(--ease-standard);
+}
+.accordion.is-open .accordion__panel {
+  grid-template-rows: 1fr;
+}
+.accordion__panel-inner {
+  overflow: hidden;
+}
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
 @layer utilities {
