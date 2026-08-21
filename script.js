@@ -414,6 +414,35 @@
   }
 
   /* -------------------------------------------------------------------
+     Mental health checklist tally
+     ------------------------------------------------------------------- */
+  function initChecklistTally() {
+    const tallyScore = document.getElementById('tallyScore');
+    const tallyProgress = document.getElementById('tallyProgress');
+    const checkboxes = document.querySelectorAll('.form-checkbox');
+    if (!tallyScore || !tallyProgress || !checkboxes.length) return;
+
+    const update = () => {
+      const checkedCount = [...checkboxes].filter((cb) => cb.checked).length;
+      tallyScore.textContent = checkedCount;
+
+      const percentage = (checkedCount / checkboxes.length) * 100;
+      tallyProgress.style.width = `${percentage}%`;
+
+      if (checkedCount > 5) {
+        tallyProgress.style.backgroundColor = 'var(--brand-primary)';
+      } else if (checkedCount > 0) {
+        tallyProgress.style.backgroundColor = '#8F3420';
+      } else {
+        tallyProgress.style.backgroundColor = '#DFD0C7';
+      }
+    };
+
+    checkboxes.forEach((cb) => cb.addEventListener('change', update));
+    update();
+  }
+
+  /* -------------------------------------------------------------------
      FAQ accordion (main site FAQ list — #faqList)
      ------------------------------------------------------------------- */
   function initFaq() {
@@ -1199,6 +1228,7 @@
     initMoreTherapies();
     initPricing();
     initLocations();
+    initChecklistTally();
     initFaq();
     initMentalHealthInteractions();
     initArticlesPagination();
