@@ -1,15 +1,6 @@
 /* =====================================================================
    psykolog.no — production script (merged: main site + ADHD page)
    Vanilla JS, no dependencies. Organised by feature block.
-
-   NOTE ON THIS MERGE:
-   The original main script and adhd.js each shipped their own copies of
-   header-scroll, mobile-nav, smooth-scroll and reveal-on-scroll. Only
-   one implementation of each survives here — the adhd.js versions were
-   kept, since the site uses the side-drawer markup (#navDrawer /
-   #navBackdrop / #navDrawerClose / [data-close-nav]), which the old
-   main-script version did not target. Everything else from both files
-   is preserved and initialised exactly once.
    ===================================================================== */
 (() => {
   'use strict';
@@ -417,8 +408,8 @@
      Mental health checklist tally
      ------------------------------------------------------------------- */
   function initChecklistTally() {
-    const tallyScore = document.getElementById('tallyScore');
-    const tallyProgress = document.getElementById('tallyProgress');
+    const tallyScore = document.getElementById('mhTallyScore');
+    const tallyProgress = document.getElementById('mhTallyProgress');
     const checkboxes = document.querySelectorAll('.form-checkbox');
     if (!tallyScore || !tallyProgress || !checkboxes.length) return;
 
@@ -484,28 +475,6 @@
     }
   }
 
-  function toggleFaq(button) {
-    const item = button.closest('.faq-item');
-    if (!item) return;
-    const content = item.querySelector('.faq-content');
-    const icon = button.querySelector('.faq-icon');
-    const isOpen = !item.classList.contains('is-open');
-    item.classList.toggle('is-open', isOpen);
-
-    if (content) {
-      content.classList.remove('hidden');
-      if (isOpen) {
-        content.style.maxHeight = `${content.scrollHeight}px`;
-        content.style.opacity = '1';
-      } else {
-        content.style.maxHeight = '0px';
-        content.style.opacity = '0';
-        setTimeout(() => content.classList.add('hidden'), 260);
-      }
-    }
-    if (icon) icon.textContent = isOpen ? '−' : '+';
-  }
-
   function switchRelativeTab(index) {
     const cards = document.querySelectorAll('.relative_tab_card');
     if (!cards.length) return;
@@ -526,8 +495,8 @@
 
     const newImage = selectedCard.getAttribute('data-image');
     const newTitle = selectedCard.getAttribute('data-title');
-    const imgElement = document.getElementById('relativesActiveImg');
-    const titleElement = document.getElementById('relativesActiveTitle');
+    const imgElement = document.getElementById('mhRelativesActiveImg');
+    const titleElement = document.getElementById('mhRelativesActiveTitle');
 
     if (imgElement) {
       imgElement.style.opacity = '0.4';
@@ -546,11 +515,6 @@
     const youthButtons = document.querySelectorAll('#mh-youth .accordion-item button');
     youthButtons.forEach((button) => {
       button.addEventListener('click', () => toggleAccordion(button));
-    });
-
-    const faqButtons = document.querySelectorAll('#mh-faq .faq-item button');
-    faqButtons.forEach((button) => {
-      button.addEventListener('click', () => toggleFaq(button));
     });
 
     const relativeCards = document.querySelectorAll('.relative_tab_card');
@@ -1246,6 +1210,12 @@
     });
     initAccordionGroup({
       groupSelector: "#adhdFaqList",
+      itemSelector: ".faq-item",
+      triggerSelector: ".faq-item__trigger",
+      exclusive: true,
+    });
+    initAccordionGroup({
+      groupSelector: "#mhFaqList",
       itemSelector: ".faq-item",
       triggerSelector: ".faq-item__trigger",
       exclusive: true,

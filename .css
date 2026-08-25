@@ -1,0 +1,22 @@
+.tag-row {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  background-color: #0b7b6c1a;
+  padding: 8px 18px;
+  border-radius: 100px;
+  gap: 8px;
+  p {
+    margin: 0;
+    font-family: AlbertSans, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #0b6b5e;
+    line-height: 1;
+    &:not(:last-child)::after {
+      content: "·";
+      margin-left: 8px;
+      font-weight: 700;
+    }
+  }
+}
