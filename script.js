@@ -1176,6 +1176,53 @@
   }
 
   /* -------------------------------------------------------------------
+     Habit cards interaction
+     ------------------------------------------------------------------- */
+  function initHabitCards() {
+    const habitCards = document.querySelectorAll('.habit-card');
+    const previewImg = document.getElementById('habit-preview-img');
+    const previewTitle = document.getElementById('habit-preview-title');
+    const previewDesc = document.getElementById('habit-preview-desc');
+
+    if (!habitCards.length || !previewImg || !previewTitle || !previewDesc) return;
+
+    habitCards.forEach(card => {
+      ['mouseenter', 'click'].forEach(evt => {
+        card.addEventListener(evt, () => {
+        // Reset state on all cards
+        habitCards.forEach(c => {
+          c.classList.remove('shadow-sm', 'active-card');
+          const bar = c.querySelector('.active-bar');
+          if (bar) bar.classList.add('hidden');
+        });
+
+        // Set active state on clicked card
+        card.classList.add('shadow-sm', 'active-card');
+        const activeBar = card.querySelector('.active-bar');
+        if (activeBar) activeBar.classList.remove('hidden');
+
+        // Extract data attributes
+        const title = card.getAttribute('data-title');
+        const desc = card.getAttribute('data-desc');
+        const imgSrc = card.getAttribute('data-img');
+
+        // Update preview content with a smooth fade
+        previewImg.style.opacity = '0.3';
+        setTimeout(() => {
+          if (title) previewTitle.textContent = title;
+          if (desc) previewDesc.textContent = desc;
+          if (imgSrc) {
+            previewImg.src = imgSrc;
+            previewImg.alt = title || '';
+          }
+          previewImg.style.opacity = '1';
+        }, 150);
+        });
+      });
+    });
+  }
+
+  /* -------------------------------------------------------------------
      Init — every feature initialised exactly once
      ------------------------------------------------------------------- */
   document.addEventListener('DOMContentLoaded', () => {
@@ -1197,6 +1244,7 @@
     initMentalHealthInteractions();
     initArticlesPagination();
     initAiAssistant();
+    initHabitCards();
 
     initJumpNav();
     initAddAccordion();
