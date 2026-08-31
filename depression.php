@@ -1,123 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Depression | psykolog.no</title>
-    <link rel="stylesheet" href="fonts.css" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="responsive.css" />
-    <link rel="stylesheet" href="tailwind.css" />
-  </head>
-  <body class="m-0 bg-white text-brand-taupe font-sans">
-    <div class="relative z-[51] bg-ink-600">
-      <div class="px-6 md:px-12 lg:px-16">
-        <div
-          class="max-w-[1312px] mx-auto flex items-center justify-between gap-6 h-[52px]"
-        >
-          <span class="inline-flex items-center gap-3">
-            <span
-              class="w-[22px] h-px bg-[rgba(248,216,212,0.5)] flex-none"
-            ></span>
-            <span
-              class="font-sans font-semibold text-[11px] leading-4 tracking-[2px] uppercase text-white whitespace-nowrap"
-              >Our mental health network</span
-            >
-          </span>
-          <span class="flex items-center gap-0">
-            <a
-              href="#"
-              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-transparent"
-              >Dps.no <span class="text-[11px] text-brand-mauve">↗</span></a
-            >
-            <a
-              href="#"
-              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-[rgba(248,216,212,0.2)]"
-              >Psykiater.no
-              <span class="text-[11px] text-brand-mauve">↗</span></a
-            >
-            <a
-              href="#"
-              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-[rgba(248,216,212,0.2)]"
-              >Spesialistpsykiatri.no
-              <span class="text-[11px] text-brand-mauve">↗</span></a
-            >
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <header
-      class="sticky top-0 left-0 right-0 z-50 pt-[18px] pointer-events-none"
-    >
-      <div class="px-6 md:px-12 lg:px-16">
-        <div
-          class="max-w-[1312px] mx-auto bg-white/[.66] backdrop-blur-2xl backdrop-saturate-[1.4] border border-white/[.82] rounded-[22px] p-2.5 pl-[26px] shadow-[0_2px_12px_rgba(0,0,0,0.06)] pointer-events-auto"
-        >
-          <div class="flex items-center justify-between gap-8">
-            <a href="index.html" class="inline-flex flex-none"
-              ><img
-                src="logo.webp"
-                alt="psykolog.no"
-                class="h-[26px] w-auto block brightness-0 opacity-[.86]"
-            /></a>
-            <nav id="navLinks" class="flex gap-9">
-              <a
-                href="index.html#home-conditions"
-                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
-                >Services</a
-              >
-              <a
-                href="index.html#home-formats"
-                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
-                >Therapy</a
-              >
-              <a
-                href="index.html#home-right-place"
-                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
-                >About Us</a
-              >
-              <a
-                href="index.html#home-pricing"
-                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
-                >Pricing</a
-              >
-              <a
-                href="index.html#home-locations"
-                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
-                >Contact</a
-              >
-            </nav>
-            <div class="flex items-center gap-2 flex-none">
-              <button
-                onclick="location.href = '#mh-book'"
-                class="font-sans font-bold text-[15px] leading-5 whitespace-nowrap text-white border-0 rounded-full px-7 py-[13px] cursor-pointer bg-brand-orange"
-              >
-                Book An Appointment
-              </button>
-              <button
-                id="navToggle"
-                class="w-[46px] h-[46px] rounded-full border border-brand-border bg-white cursor-pointer hidden"
-              >
-                <span class="relative block w-[18px] h-3 mx-auto">
-                  <span
-                    class="absolute left-0 top-0 w-[18px] h-0.5 rounded-sm bg-brand-dark"
-                  ></span>
-                  <span
-                    class="absolute left-0 top-[5px] w-[18px] h-0.5 rounded-sm bg-brand-dark"
-                  ></span>
-                  <span
-                    class="absolute left-0 top-[10px] w-[18px] h-0.5 rounded-sm bg-brand-dark"
-                  ></span>
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <main>
+<main>
       <section
         class="relative w-full max-w-full overflow-hidden bg-brand-cream grid grid-cols-1 grid-rows-1 -mt-20 lg:-mt-[86px] min-h-[500px] lg:min-h-[626px]"
       >
@@ -125,7 +6,7 @@
           class="[grid-area:1/1] relative w-full min-h-full lg:min-h-0 overflow-hidden"
         >
           <img
-            src="assets/Depression/Hero.webp"
+            src="<?php echo get_template_directory_uri(); ?>/images/Depression/Hero.webp"
             alt="Anxiety"
             class="absolute inset-0 w-full h-full object-cover object-[100%_50%]"
           />
@@ -259,7 +140,7 @@
         <div class="bg-[#FFF7F3] border border-[#F2E4DC] rounded-[20px] p-6 md:p-8">
           <div class="mb-4">
              <!-- Icon Placeholder -->
-            <img src="assets/Depression/Brain.webp" alt="Brain Icon" class="w-[40px] h-[40px] object-cover" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Brain.webp" alt="Brain Icon" class="w-[40px] h-[40px] object-cover" />
           </div>
           <h3 class="font-serif font-bold text-[20px] md:text-[24px] text-[#241C19] m-0 mb-4">
             As Per FHI Report
@@ -284,7 +165,7 @@
             <!-- Diagnosis Item -->
             <div class="flex items-start gap-4">
               <!-- Icon Placeholder -->
-              <img src="assets/Depression/Psykolog.webp" alt="Diagnosis Icon" class="w-8 h-8 rounded-full bg-white/20 flex-none object-cover" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Psykolog.webp" alt="Diagnosis Icon" class="w-8 h-8 rounded-full bg-white/20 flex-none object-cover" />
               <p class="text-white text-[15px] md:text-[16px] leading-[1.5] m-0">
                 <span class="underline underline-offset-2 font-semibold">Diagnosis:</span> 
                 In Norway, depression is diagnosed using ICD-10 criteria and requires a clinical assessment.
@@ -294,7 +175,7 @@
             <!-- Key Difference Item -->
             <div class="flex items-start gap-4">
               <!-- Icon Placeholder -->
-              <img src="assets/Depression/Psykolog.webp" alt="Difference Icon" class="w-8 h-8 rounded-full bg-white/20 flex-none object-cover" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Psykolog.webp" alt="Difference Icon" class="w-8 h-8 rounded-full bg-white/20 flex-none object-cover" />
               <p class="text-white text-[15px] md:text-[16px] leading-[1.5] m-0">
                 <span class="underline underline-offset-2 font-semibold">Key difference:</span> 
                 Sadness is a normal response to something painful, while depression persists regardless of circumstanc...
@@ -352,41 +233,41 @@
     <!-- Content Card -->
     <div class="bg-white rounded-[2rem] p-4 md:p-6 border border-[#F0F0F0] shadow-sm">
       <div id="depression-panel-emotional" class="depression-panel flex flex-col lg:flex-row items-center gap-8 lg:gap-12" role="tabpanel" aria-labelledby="depression-tab-emotional" data-depression-panel="emotional">
-        <img src="assets/Depression/Behavioural Depression.webp" alt="Emotional symptoms of depression" class="w-full lg:w-[400px] h-[330px] shrink-0 object-cover rounded-[18px] bg-[#FDE7E1]" />
+        <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Behavioural Depression.webp" alt="Emotional symptoms of depression" class="w-full lg:w-[400px] h-[330px] shrink-0 object-cover rounded-[18px] bg-[#FDE7E1]" />
         <div class="flex-1 py-2 lg:py-6">
           <p class="text-[#555555] text-[16px] md:text-[18px] m-0 mb-6">Common emotional symptoms include:</p>
           <div class="flex flex-wrap gap-3 md:gap-4">
            <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom text-[#4E403B] text-[12px] md:text-[16px] font-semibold">Persistent sadness or low mood</span>
           </div>
           <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom text-[#4E403B] text-[12px] md:text-[16px] font-semibold">Feeling hopeless or pessimistic</span>
              </div>
           <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom text-[#4E403B] text-[12px] md:text-[16px] font-semibold">Reduced motivation</span>
           </div>
           <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom text-[#4E403B] text-[12px] md:text-[16px] font-semibold">Loss of interest in hobbies and activities</span>
             </div>
             
               <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom text-[#4E403B] text-[12px] md:text-[16px] font-semibold">Irritability or frustration</span>
             </div>
               <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom text-[#4E403B] text-[12px] md:text-[16px] font-semibold">Feelings of guilt, worthlessness, or self criticism</span>
               </div>
                 <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom text-[#4E403B] text-[12px] md:text-[16px] font-semibold">Difficulty experiencing pleasure</span>
                 </div>
                   <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom text-[#4E403B] text-[12px] md:text-[16px] font-semibold">Increased sensitivity to rejection</span>
                   </div>
           </div>
@@ -394,33 +275,33 @@
       </div>
 
       <div id="depression-panel-physical" class="depression-panel hidden flex-col lg:flex-row items-center gap-8 lg:gap-12" role="tabpanel" aria-labelledby="depression-tab-physical" data-depression-panel="physical" hidden>
-        <img src="assets/Depression/Physical Symptoms Of Depression.webp" alt="Physical symptoms of depression" class="w-full lg:w-[400px] h-[330px] shrink-0 object-cover rounded-[18px] bg-[#FDE7E1]" />
+        <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Physical Symptoms Of Depression.webp" alt="Physical symptoms of depression" class="w-full lg:w-[400px] h-[330px] shrink-0 object-cover rounded-[18px] bg-[#FDE7E1]" />
         <div class="flex-1 py-2 lg:py-6">
           <p class="text-[#555555] text-[16px] md:text-[18px] m-0 mb-6">Common physical symptoms include:</p>
           <div class="flex flex-wrap gap-3 md:gap-4">
 
             <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Low energy and fatigue</span>
             </div>
              <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Changes in sleep</span>
              </div>
              <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Changes in appetite or weight</span>
               </div>
               <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Slowed movement or speech</span>
              </div>
               <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Aches and unexplained pain</span>
             </div>
              <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Restlessness</span>
              </div>
           </div>
@@ -428,32 +309,32 @@
       </div>
 
       <div id="depression-panel-cognitive" class="depression-panel hidden flex-col lg:flex-row items-center gap-8 lg:gap-12" role="tabpanel" aria-labelledby="depression-tab-cognitive" data-depression-panel="cognitive" hidden>
-        <img src="assets/Depression/Cognitive Symptoms.webp" alt="Cognitive symptoms of depression" class="w-full lg:w-[400px] h-[330px] shrink-0 object-cover rounded-[18px] bg-[#FDE7E1]" />
+        <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Cognitive Symptoms.webp" alt="Cognitive symptoms of depression" class="w-full lg:w-[400px] h-[330px] shrink-0 object-cover rounded-[18px] bg-[#FDE7E1]" />
         <div class="flex-1 py-2 lg:py-6">
           <p class="text-[#555555] text-[16px] md:text-[18px] m-0 mb-6">Common cognitive symptoms include:</p>
           <div class="flex flex-wrap gap-3 md:gap-4">
             <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Difficulty concentrating</span>
             </div>
              <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Indecisiveness</span>
             </div>
               <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Negative thinking</span>
             </div>
              <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Feeling worthless</span>
              </div>
              <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Self criticism</span>
             </div>
              <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Thoughts of death or suicide</span>
             </div>
           </div>
@@ -461,32 +342,32 @@
       </div>
 
       <div id="depression-panel-behavioural" class="depression-panel hidden flex-col lg:flex-row items-center gap-8 lg:gap-12" role="tabpanel" aria-labelledby="depression-tab-behavioural" data-depression-panel="behavioural" hidden>
-        <img src="assets/Depression/Behavioural and everyday-functioning symptoms.webp" alt="Behavioural symptoms of depression" class="w-full lg:w-[400px] h-[330px] shrink-0 object-cover object-[65%_50%] rounded-[18px] bg-[#FDE7E1]" />
+        <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Behavioural and everyday-functioning symptoms.webp" alt="Behavioural symptoms of depression" class="w-full lg:w-[400px] h-[330px] shrink-0 object-cover object-[65%_50%] rounded-[18px] bg-[#FDE7E1]" />
         <div class="flex-1 py-2 lg:py-6">
           <p class="text-[#555555] text-[16px] md:text-[18px] m-0 mb-6">Common behavioural and everyday-functioning symptoms include:</p>
           <div class="flex flex-wrap gap-3 md:gap-4">
         <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Withdrawing from others</span>
              </div>
                <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Neglecting responsibilities</span>
              </div>
               <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Difficulty completing tasks</span>
              </div>
              <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Reduced self-care</span>
               </div>
               <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Avoiding usual activities</span>
             </div>
               <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FFF7F3] border border-[#F2E4DC]">
-            <img src="assets/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/check-icon.webp" alt="check" class="w-[24px] h-[24px] object-contain" />
             <span class="depression-symptom">Using alcohol or substances to cope</span>
              </div>
           </div>
@@ -512,7 +393,7 @@
         <div class="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6">
           <!-- Icon Box -->
           <div class="flex-shrink-0 w-[52px] h-[52px]">
-            <img src="assets/Depression/Diagnostic criteria.webp" alt="Clipboard Icon" class="object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Diagnostic criteria.webp" alt="Clipboard Icon" class="object-contain" />
           </div>
           
           <!-- Text Content -->
@@ -573,7 +454,7 @@
           <!-- Sign Item 1 -->
           <div class="flex items-center gap-4 bg-[#FCF8F6] border border-[#F6EBE7] rounded-[20px] p-4">
             <div class="flex-shrink-0 w-10 h-10">
-               <img src="assets/Depression/Social withdrawal.webp" alt="Social withdrawal icon" class="object-contain" />
+               <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Social withdrawal.webp" alt="Social withdrawal icon" class="object-contain" />
             </div>
             <span class="text-[#333333] text-[15px] font-medium">Social withdrawal</span>
           </div>
@@ -581,7 +462,7 @@
           <!-- Sign Item 2 -->
           <div class="flex items-center gap-4 bg-[#FCF8F6] border border-[#F6EBE7] rounded-[20px] p-4">
             <div class="flex-shrink-0 w-10 h-10">
-               <img src="assets/Depression/Increased isolation.webp" alt="Increased isolation icon" class="object-contain" />
+               <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Increased isolation.webp" alt="Increased isolation icon" class="object-contain" />
             </div>
             <span class="text-[#333333] text-[15px] font-medium">Increased isolation</span>
           </div>
@@ -589,7 +470,7 @@
           <!-- Sign Item 3 -->
           <div class="flex items-center gap-4 bg-[#FCF8F6] border border-[#F6EBE7] rounded-[20px] p-4">
             <div class="flex-shrink-0 w-10 h-10">
-               <img src="assets/Depression/Reduced performance at work or school.webp" alt="Reduced performance icon" class="object-contain" />
+               <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Reduced performance at work or school.webp" alt="Reduced performance icon" class="object-contain" />
             </div>
             <span class="text-[#333333] text-[15px] font-medium leading-snug">Reduced performance at work or school</span>
           </div>
@@ -597,7 +478,7 @@
           <!-- Sign Item 4 -->
           <div class="flex items-center gap-4 bg-[#FCF8F6] border border-[#F6EBE7] rounded-[20px] p-4">
             <div class="flex-shrink-0 w-10 h-10">
-               <img src="assets/Depression/Neglecting responsibilities.webp" alt="Neglecting responsibilities icon" class="object-contain" />
+               <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Neglecting responsibilities.webp" alt="Neglecting responsibilities icon" class="object-contain" />
             </div>
             <span class="text-[#333333] text-[15px] font-medium">Neglecting responsibilities</span>
           </div>
@@ -605,7 +486,7 @@
           <!-- Sign Item 5 -->
           <div class="flex items-center gap-4 bg-[#FCF8F6] border border-[#F6EBE7] rounded-[20px] p-4">
             <div class="flex-shrink-0 w-10 h-10">
-               <img src="assets/Depression/Changes in appearance or self-care.webp" alt="Changes in appearance icon" class="object-contain" />
+               <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Changes in appearance or self-care.webp" alt="Changes in appearance icon" class="object-contain" />
             </div>
             <span class="text-[#333333] text-[15px] font-medium leading-snug">Changes in appearance or self-care</span>
           </div>
@@ -613,7 +494,7 @@
           <!-- Sign Item 6 -->
           <div class="flex items-center gap-4 bg-[#FCF8F6] border border-[#F6EBE7] rounded-[20px] p-4">
             <div class="flex-shrink-0 w-10 h-10">
-               <img src="assets/Depression/Frequent cancellations of plans.webp" alt="Frequent cancellations icon" class="object-contain" />
+               <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Frequent cancellations of plans.webp" alt="Frequent cancellations icon" class="object-contain" />
             </div>
             <span class="text-[#333333] text-[15px] font-medium">Frequent cancellations of plans</span>
           </div>
@@ -621,7 +502,7 @@
           <!-- Sign Item 7 -->
           <div class="flex items-center gap-4 bg-[#FCF8F6] border border-[#F6EBE7] rounded-[20px] p-4">
             <div class="flex-shrink-0 w-10 h-10">
-               <img src="assets/Depression/Loss of interest in previously valued activities.webp" alt="Loss of interest icon" class="object-contain" />
+               <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Loss of interest in previously valued activities.webp" alt="Loss of interest icon" class="object-contain" />
             </div>
             <span class="text-[#333333] text-[15px] font-medium leading-snug">Loss of interest in previously valued activities</span>
           </div>
@@ -629,7 +510,7 @@
           <!-- Sign Item 8 -->
           <div class="flex items-center gap-4 bg-[#FCF8F6] border border-[#F6EBE7] rounded-[20px] p-4">
             <div class="flex-shrink-0 w-10 h-10">
-               <img src="assets/Depression/Persistent tiredness.webp" alt="Persistent tiredness icon" class="object-contain" />
+               <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Persistent tiredness.webp" alt="Persistent tiredness icon" class="object-contain" />
             </div>
             <span class="text-[#333333] text-[15px] font-medium">Persistent tiredness</span>
           </div>
@@ -642,7 +523,7 @@
         <div class="w-full max-w-[540px] aspect-square rounded-[32px] overflow-hidden bg-gray-200">
            <!-- Main Image Placeholder -->
            <img 
-            src="assets/Depression/Early signs of Depression.webp" 
+            src="<?php echo get_template_directory_uri(); ?>/images/Depression/Early signs of Depression.webp" 
             alt="Collage depicting various signs of depression" 
             class="w-full h-full object-cover"
           />
@@ -673,7 +554,7 @@
       <div class="bg-white rounded-[24px] p-8 border border-[#F2E8E3] shadow-sm flex flex-col">
         <div class="w-12 h-12 mb-4 shrink-0">
           <!-- Icon Placeholder -->
-          <img src="assets/Depression/Mild depression.webp" alt="Cloud icon" class="object-contain" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Mild depression.webp" alt="Cloud icon" class="object-contain" />
         </div>
         <h3 class="font-serif text-[22px] lg:text-[24px] text-[#2B2B2B] font-bold m-0 mb-4">
           Mild depression
@@ -688,7 +569,7 @@
       <div class="bg-white rounded-[24px] p-8 border border-[#F2E8E3] shadow-sm flex flex-col">
         <div class="w-12 h-12 mb-4 shrink-0">
           <!-- Icon Placeholder -->
-          <img src="assets/Depression/Moderate depression.webp" alt="Cloud with rain icon" class="object-contain" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Moderate depression.webp" alt="Cloud with rain icon" class="object-contain" />
         </div>
         <h3 class="font-serif text-[22px] lg:text-[24px] text-[#2B2B2B] font-bold m-0 mb-4">
           Moderate depression
@@ -703,7 +584,7 @@
       <div class="bg-white rounded-[24px] p-8 border border-[#F2E8E3] shadow-sm flex flex-col">
         <div class="w-12 h-12 mb-4 shrink-0">
           <!-- Icon Placeholder -->
-          <img src="assets/Depression/Severe Depression.webp" alt="Cloud with lightning icon" class="object-contain" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Severe Depression.webp" alt="Cloud with lightning icon" class="object-contain" />
         </div>
         <h3 class="font-serif text-[22px] lg:text-[24px] text-[#2B2B2B] font-bold m-0 mb-4">
           Severe Depression
@@ -743,14 +624,14 @@
         <div class="dep-cause-header flex items-center justify-between cursor-pointer">
           <div class="flex items-center gap-5">
             <div class="w-[52px] h-[52px] shrink-0">
-               <img src="assets/Depression/Biological factors.webp" alt="Biological factors icon" class="object-contain" />
+               <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Biological factors.webp" alt="Biological factors icon" class="object-contain" />
             </div>
             <h3 class="font-serif text-[22px] md:text-[24px] text-[#2B2B2B] font-bold m-0">
               Biological factors
             </h3>
           </div>
           <div class="w-8 h-8 shrink-0 dep-cause-arrow transition-transform duration-300" style="transform:rotate(180deg);">
-             <img src="assets/Depression/Arrow1.webp" alt="Chevron" class="object-contain" />
+             <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Arrow1.webp" alt="Chevron" class="object-contain" />
           </div>
         </div>
 
@@ -759,7 +640,7 @@
           <div class="mt-8 pl-0 md:pl-[72px] flex flex-col gap-6">
             <div class="flex items-start gap-4">
               <div class="w-[22px] h-[22px] shrink-0 mt-0.5">
-                 <img src="assets/Depression/tick.webp" alt="Checkmark" class="object-contain" />
+                 <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/tick.webp" alt="Checkmark" class="object-contain" />
               </div>
               <p class="text-[#555555] text-[15px] md:text-[16px] leading-[1.6] m-0">
                 Genetics play a role; depression runs in families, though having a relative with depression does not mean you will develop it.
@@ -767,7 +648,7 @@
             </div>
             <div class="flex items-start gap-4">
               <div class="w-[22px] h-[22px] shrink-0 mt-0.5">
-                 <img src="assets/Depression/tick.webp" alt="Checkmark" class="object-contain" />
+                 <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/tick.webp" alt="Checkmark" class="object-contain" />
               </div>
               <p class="text-[#555555] text-[15px] md:text-[16px] leading-[1.6] m-0">
                 Brain chemistry is also involved: neurotransmitters such as serotonin, noradrenaline, and dopamine help regulate mood, and disruptions.
@@ -775,7 +656,7 @@
             </div>
             <div class="flex items-start gap-4">
               <div class="w-[22px] h-[22px] shrink-0 mt-0.5">
-                 <img src="assets/Depression/tick.webp" alt="Checkmark" class="object-contain" />
+                 <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/tick.webp" alt="Checkmark" class="object-contain" />
               </div>
               <p class="text-[#555555] text-[15px] md:text-[16px] leading-[1.6] m-0">
                 Hormonal changes, such as those during pregnancy, after childbirth, or during menopause can also be contributing factors.
@@ -783,7 +664,7 @@
             </div>
             <div class="flex items-start gap-4">
               <div class="w-[22px] h-[22px] shrink-0 mt-0.5">
-                 <img src="assets/Depression/tick.webp" alt="Checkmark" class="object-contain" />
+                 <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/tick.webp" alt="Checkmark" class="object-contain" />
               </div>
               <p class="text-[#555555] text-[15px] md:text-[16px] leading-[1.6] m-0">
                 Physical illness, chronic pain, thyroid problems, and sleep disorders all increase vulnerability.
@@ -800,14 +681,14 @@
         <div class="dep-cause-header flex items-center justify-between cursor-pointer">
           <div class="flex items-center gap-5">
             <div class="w-[52px] h-[52px] shrink-0">
-               <img src="assets/Depression/Psychological factors.webp" alt="Psychological factors icon" class="object-contain" />
+               <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Psychological factors.webp" alt="Psychological factors icon" class="object-contain" />
             </div>
             <h3 class="font-serif text-[22px] md:text-[24px] text-[#2B2B2B] font-bold m-0">
               Psychological factors
             </h3>
           </div>
           <div class="w-8 h-8 shrink-0 dep-cause-arrow transition-transform duration-300" style="transform:rotate(0deg);">
-             <img src="assets/Depression/Arrow2.webp" alt="Chevron" class="object-contain" />
+             <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Arrow2.webp" alt="Chevron" class="object-contain" />
           </div>
         </div>
 
@@ -816,7 +697,7 @@
           <div class="mt-8 pl-0 md:pl-[72px] flex flex-col gap-6">
             <div class="flex items-start gap-4">
               <div class="w-[22px] h-[22px] shrink-0 mt-0.5">
-                 <img src="assets/Depression/tick-green.webp" alt="Checkmark" class="object-contain" />
+                 <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/tick-green.webp" alt="Checkmark" class="object-contain" />
               </div>
               <p class="text-[#555555] text-[15px] md:text-[16px] leading-[1.6] m-0">
                 Personality traits such as perfectionism, low self-esteem, or a tendency to worry can increase the risk of depression.
@@ -824,7 +705,7 @@
             </div>
             <div class="flex items-start gap-4">
               <div class="w-[22px] h-[22px] shrink-0 mt-0.5">
-                 <img src="assets/Depression/tick-green.webp" alt="Checkmark" class="object-contain" />
+                 <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/tick-green.webp" alt="Checkmark" class="object-contain" />
               </div>
               <p class="text-[#555555] text-[15px] md:text-[16px] leading-[1.6] m-0">
                 Negative thinking patterns and cognitive distortions, such as catastrophising or black-and-white thinking, can maintain depressive episodes.
@@ -832,7 +713,7 @@
             </div>
             <div class="flex items-start gap-4">
               <div class="w-[22px] h-[22px] shrink-0 mt-0.5">
-                 <img src="assets/Depression/tick-green.webp" alt="Checkmark" class="object-contain" />
+                 <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/tick-green.webp" alt="Checkmark" class="object-contain" />
               </div>
               <p class="text-[#555555] text-[15px] md:text-[16px] leading-[1.6] m-0">
                 Childhood experiences, including trauma, neglect, or loss, can shape emotional regulation and increase vulnerability later in life.
@@ -840,7 +721,7 @@
             </div>
             <div class="flex items-start gap-4">
               <div class="w-[22px] h-[22px] shrink-0 mt-0.5">
-                 <img src="assets/Depression/tick-green.webp" alt="Checkmark" class="object-contain" />
+                 <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/tick-green.webp" alt="Checkmark" class="object-contain" />
               </div>
               <p class="text-[#555555] text-[15px] md:text-[16px] leading-[1.6] m-0">
                 Chronic stress and unresolved emotional conflicts can gradually wear down resilience and contribute to depression.
@@ -857,14 +738,14 @@
         <div class="dep-cause-header flex items-center justify-between cursor-pointer">
           <div class="flex items-center gap-5">
             <div class="w-[52px] h-[52px] shrink-0">
-               <img src="assets/Depression/Social and environmental factors.webp" alt="Social factors icon" class="object-contain" />
+               <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Social and environmental factors.webp" alt="Social factors icon" class="object-contain" />
             </div>
             <h3 class="font-serif text-[22px] md:text-[24px] text-[#2B2B2B] font-bold m-0">
               Social and environmental factors
             </h3>
           </div>
           <div class="w-8 h-8 shrink-0 dep-cause-arrow transition-transform duration-300" style="transform:rotate(0deg);">
-             <img src="assets/Depression/Arrow3.webp" alt="Chevron" class="object-contain" />
+             <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Arrow3.webp" alt="Chevron" class="object-contain" />
           </div>
         </div>
 
@@ -873,7 +754,7 @@
           <div class="mt-8 pl-0 md:pl-[72px] flex flex-col gap-6">
             <div class="flex items-start gap-4">
               <div class="w-[22px] h-[22px] shrink-0 mt-0.5">
-                 <img src="assets/Depression/tick-blue.webp" alt="Checkmark" class="object-contain" />
+                 <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/tick-blue.webp" alt="Checkmark" class="object-contain" />
               </div>
               <p class="text-[#555555] text-[15px] md:text-[16px] leading-[1.6] m-0">
                 Major life events such as divorce, job loss, financial difficulties, or bereavement can trigger depression.
@@ -881,7 +762,7 @@
             </div>
             <div class="flex items-start gap-4">
               <div class="w-[22px] h-[22px] shrink-0 mt-0.5">
-                 <img src="assets/Depression/tick-blue.webp" alt="Checkmark" class="object-contain" />
+                 <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/tick-blue.webp" alt="Checkmark" class="object-contain" />
               </div>
               <p class="text-[#555555] text-[15px] md:text-[16px] leading-[1.6] m-0">
                 Social isolation and loneliness, especially over extended periods, significantly increase the risk of developing depression.
@@ -889,7 +770,7 @@
             </div>
             <div class="flex items-start gap-4">
               <div class="w-[22px] h-[22px] shrink-0 mt-0.5">
-                 <img src="assets/Depression/tick-blue.webp" alt="Checkmark" class="object-contain" />
+                 <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/tick-blue.webp" alt="Checkmark" class="object-contain" />
               </div>
               <p class="text-[#555555] text-[15px] md:text-[16px] leading-[1.6] m-0">
                 Difficult working conditions, bullying, discrimination, or living in unsafe environments contribute to chronic stress and depression.
@@ -897,7 +778,7 @@
             </div>
             <div class="flex items-start gap-4">
               <div class="w-[22px] h-[22px] shrink-0 mt-0.5">
-                 <img src="assets/Depression/tick-blue.webp" alt="Checkmark" class="object-contain" />
+                 <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/tick-blue.webp" alt="Checkmark" class="object-contain" />
               </div>
               <p class="text-[#555555] text-[15px] md:text-[16px] leading-[1.6] m-0">
                 Substance use, including alcohol and drugs, can both contribute to and worsen depressive symptoms over time.
@@ -930,7 +811,7 @@
       <!-- Card 1: Clinical Depression -->
       <div class="bg-white rounded-[24px] p-8 border border-[#F2E8E3] shadow-sm flex flex-col">
         <div class="w-12 h-12 mb-4 shrink-0">
-          <img src="assets/Depression/Clinical Depression.webp" alt="Target Icon" class="object-contain" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Clinical Depression.webp" alt="Target Icon" class="object-contain" />
         </div>
         <h3 class="font-serif text-[18px] lg:text-[22px] text-[#241C19] font-bold m-0 mb-2">
           Clinical Depression
@@ -943,7 +824,7 @@
       <!-- Card 2: Chronic Depression -->
       <div class="bg-white rounded-[24px] p-8 border border-[#F2E8E3] shadow-sm flex flex-col">
         <div class="w-12 h-12 mb-4 shrink-0">
-          <img src="assets/Depression/Chronic Depression.webp" alt="Infinity Icon" class=" object-contain" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Chronic Depression.webp" alt="Infinity Icon" class=" object-contain" />
         </div>
         <h3 class="font-serif text-[18px] lg:text-[22px] text-[#241C19] font-bold m-0 mb-2">
           Chronic Depression
@@ -956,7 +837,7 @@
       <!-- Card 3: Recurrent Depression -->
       <div class="bg-white rounded-[24px] p-8 border border-[#F2E8E3] shadow-sm flex flex-col">
         <div class="w-12 h-12 mb-4 shrink-0">
-          <img src="assets/Depression/Recurrent Depression.webp" alt="Refresh Icon" class=" object-contain" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Recurrent Depression.webp" alt="Refresh Icon" class=" object-contain" />
         </div>
         <h3 class="font-serif text-[18px] lg:text-[22px] text-[#241C19] font-bold m-0 mb-2">
           Recurrent Depression
@@ -969,7 +850,7 @@
       <!-- Card 4: Postpartum depression -->
       <div class="bg-white rounded-[24px] p-8 border border-[#F2E8E3] shadow-sm flex flex-col">
         <div class="w-12 h-12 mb-4 shrink-0">
-          <img src="assets/Depression/Postpartum depression.webp" alt="Baby Icon" class="object-contain" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Postpartum depression.webp" alt="Baby Icon" class="object-contain" />
         </div>
         <h3 class="font-serif text-[18px] lg:text-[22px] text-[#241C19] font-bold m-0 mb-2">
           Postpartum depression
@@ -982,7 +863,7 @@
       <!-- Card 5: Seasonal affective disorder (SAD) -->
       <div class="bg-white rounded-[24px] p-8 border border-[#F2E8E3] shadow-sm flex flex-col">
         <div class="w-12 h-12 mb-4 shrink-0">
-          <img src="assets/Depression/Seasonal affective disorder (SAD).webp" alt="Sun Snowflake Icon" class="object-contain" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Seasonal affective disorder (SAD).webp" alt="Sun Snowflake Icon" class="object-contain" />
         </div>
         <h3 class="font-serif text-[18px] lg:text-[22px] text-[#241C19] font-bold m-0 mb-2">
           Seasonal affective disorder (SAD)
@@ -995,7 +876,7 @@
       <!-- Card 6: Psychotic depression -->
       <div class="bg-white rounded-[24px] p-8 border border-[#F2E8E3] shadow-sm flex flex-col">
         <div class="w-12 h-12 mb-4 shrink-0">
-          <img src="assets/Depression/Psychotic depression.webp" alt="Shield Exclamation Icon" class="object-contain" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Psychotic depression.webp" alt="Shield Exclamation Icon" class="object-contain" />
         </div>
         <h3 class="font-serif text-[18px] lg:text-[22px] text-[#241C19] font-bold m-0 mb-2">
           Psychotic depression
@@ -1032,14 +913,14 @@
         <div class="dep-co-tab is-active flex items-center justify-between p-4 rounded-2xl cursor-pointer transition-colors bg-[#FCF6F4] border border-[#F2E8E3]" data-dep-tab="0">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 shrink-0">
-              <img src="assets/Depression/Depression and anxiety.webp" alt="Anxiety Icon" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Depression and anxiety.webp" alt="Anxiety Icon" class="object-contain" />
             </div>
             <h3 class="font-serif text-[20px] md:text-[24px] text-[#241C19] font-bold m-0">
               Depression and anxiety
             </h3>
           </div>
           <div class="dep-co-arrow w-[32px] h-[32px] shrink-0 mr-1">
-             <img src="assets/Depression/Arrow-right.webp" alt="Arrow Right" class="object-contain" />
+             <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Arrow-right.webp" alt="Arrow Right" class="object-contain" />
           </div>
         </div>
 
@@ -1047,14 +928,14 @@
         <div class="dep-co-tab flex items-center justify-between p-4 rounded-2xl cursor-pointer transition-colors bg-white border border-[#EAEAEA]" data-dep-tab="1">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 shrink-0">
-              <img src="assets/Depression/Depression and sleep problems.webp" alt="Sleep Icon" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Depression and sleep problems.webp" alt="Sleep Icon" class="object-contain" />
             </div>
             <h3 class="font-serif text-[20px] md:text-[24px] text-[#241C19] font-bold m-0">
               Depression And Sleep Problems
             </h3>
           </div>
           <div class="dep-co-arrow w-[32px] h-[32px] shrink-0 mr-1" style="display:none;">
-             <img src="assets/Depression/Arrow-right.webp" alt="Arrow Right" class="object-contain" />
+             <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Arrow-right.webp" alt="Arrow Right" class="object-contain" />
           </div>
         </div>
 
@@ -1062,14 +943,14 @@
         <div class="dep-co-tab flex items-center justify-between p-4 rounded-2xl cursor-pointer transition-colors bg-white border border-[#EAEAEA]" data-dep-tab="2">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 shrink-0">
-              <img src="assets/Depression/Depression and ADHD.webp" alt="ADHD Icon" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Depression and ADHD.webp" alt="ADHD Icon" class="object-contain" />
             </div>
             <h3 class="font-serif text-[20px] md:text-[24px] text-[#241C19] font-bold m-0">
               Depression And ADHD
             </h3>
           </div>
           <div class="dep-co-arrow w-[32px] h-[32px] shrink-0 mr-1" style="display:none;">
-             <img src="assets/Depression/Arrow-right.webp" alt="Arrow Right" class="object-contain" />
+             <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Arrow-right.webp" alt="Arrow Right" class="object-contain" />
           </div>
         </div>
 
@@ -1077,14 +958,14 @@
         <div class="dep-co-tab flex items-center justify-between p-4 rounded-2xl cursor-pointer transition-colors bg-white border border-[#EAEAEA]" data-dep-tab="3">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 shrink-0">
-              <img src="assets/Depression/Depression and stress or burnout.webp" alt="Stress Icon" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Depression and stress or burnout.webp" alt="Stress Icon" class="object-contain" />
             </div>
             <h3 class="font-serif text-[20px] md:text-[24px] text-[#241C19] font-bold m-0">
               Depression And Stress Or Burnout
             </h3>
           </div>
           <div class="dep-co-arrow w-[32px] h-[32px] shrink-0 mr-1" style="display:none;">
-             <img src="assets/Depression/Arrow-right.webp" alt="Arrow Right" class="object-contain" />
+             <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Arrow-right.webp" alt="Arrow Right" class="object-contain" />
           </div>
         </div>
 
@@ -1092,14 +973,14 @@
         <div class="dep-co-tab flex items-center justify-between p-4 rounded-2xl cursor-pointer transition-colors bg-white border border-[#EAEAEA]" data-dep-tab="4">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 shrink-0">
-              <img src="assets/Depression/Other Important Consideration.webp" alt="Consideration Icon" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Other Important Consideration.webp" alt="Consideration Icon" class="object-contain" />
             </div>
             <h3 class="font-serif text-[20px] md:text-[24px] text-[#241C19] font-bold m-0">
               Other Important Consideration
             </h3>
           </div>
           <div class="dep-co-arrow w-[32px] h-[32px] shrink-0 mr-1" style="display:none;">
-             <img src="assets/Depression/Arrow-right.webp" alt="Arrow Right" class="object-contain" />
+             <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Arrow-right.webp" alt="Arrow Right" class="object-contain" />
           </div>
         </div>
 
@@ -1112,7 +993,7 @@
         <div class="dep-co-panel flex flex-col flex-grow" data-dep-panel="0">
           <div class="flex items-center gap-4 mb-8">
             <div class="w-12 h-12 shrink-0">
-              <img src="assets/Depression/Depression and anxiety.webp" alt="Anxiety Icon" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Depression and anxiety.webp" alt="Anxiety Icon" class="object-contain" />
             </div>
             <h3 class="font-serif text-[22px] md:text-[24px] text-[#241C19] font-bold m-0">
               Depression and anxiety
@@ -1130,7 +1011,7 @@
         <div class="dep-co-panel flex-col flex-grow hidden" data-dep-panel="1">
           <div class="flex items-center gap-4 mb-8">
             <div class="w-12 h-12 shrink-0">
-              <img src="assets/Depression/Depression and sleep problems.webp" alt="Sleep Icon" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Depression and sleep problems.webp" alt="Sleep Icon" class="object-contain" />
             </div>
             <h3 class="font-serif text-[22px] md:text-[24px] text-[#241C19] font-bold m-0">
               Depression And Sleep Problems
@@ -1148,7 +1029,7 @@
         <div class="dep-co-panel flex-col flex-grow hidden" data-dep-panel="2">
           <div class="flex items-center gap-4 mb-8">
             <div class="w-12 h-12 shrink-0">
-              <img src="assets/Depression/Depression and ADHD.webp" alt="ADHD Icon" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Depression and ADHD.webp" alt="ADHD Icon" class="object-contain" />
             </div>
             <h3 class="font-serif text-[22px] md:text-[24px] text-[#241C19] font-bold m-0">
               Depression And ADHD
@@ -1166,7 +1047,7 @@
         <div class="dep-co-panel flex-col flex-grow hidden" data-dep-panel="3">
           <div class="flex items-center gap-4 mb-8">
             <div class="w-12 h-12 shrink-0">
-              <img src="assets/Depression/Depression and stress or burnout.webp" alt="Stress Icon" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Depression and stress or burnout.webp" alt="Stress Icon" class="object-contain" />
             </div>
             <h3 class="font-serif text-[22px] md:text-[24px] text-[#241C19] font-bold m-0">
               Depression And Stress Or Burnout
@@ -1184,7 +1065,7 @@
         <div class="dep-co-panel flex-col flex-grow hidden" data-dep-panel="4">
           <div class="flex items-center gap-4 mb-8">
             <div class="w-12 h-12 shrink-0">
-              <img src="assets/Depression/Other Important Consideration.webp" alt="Consideration Icon" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Other Important Consideration.webp" alt="Consideration Icon" class="object-contain" />
             </div>
             <h3 class="font-serif text-[22px] md:text-[24px] text-[#241C19] font-bold m-0">
               Other Important Consideration
@@ -1265,7 +1146,7 @@
       <div class="w-full">
         <!-- Placeholder for the therapy session image -->
         <img 
-          src="assets/Depression/How Is Depression Assessed.webp" 
+          src="<?php echo get_template_directory_uri(); ?>/images/Depression/How Is Depression Assessed.webp" 
           alt="Therapist consulting with a male patient" 
           class="w-full h-auto object-cover rounded-[24px] shadow-sm"
         />
@@ -1312,7 +1193,7 @@
           <!-- Item 1 -->
           <div class="flex items-center gap-5 py-5 border-b border-[#F2E8E3]">
             <div class="w-10 h-10 shrink-0">
-              <img src="assets/Depression/Arrow-right-light.webp" alt="Arrow Right" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Arrow-right-light.webp" alt="Arrow Right" class="object-contain" />
             </div>
             <p class="text-[#4E403B] text-[15px] md:text-[18px] leading-[1.5] m-0">
               Have I felt sad, empty, or numb for most of the past two weeks?
@@ -1322,7 +1203,7 @@
           <!-- Item 2 -->
           <div class="flex items-center gap-5 py-5 border-b border-[#F2E8E3]">
            <div class="w-10 h-10 shrink-0">
-              <img src="assets/Depression/Arrow-right-light.webp" alt="Arrow Right" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Arrow-right-light.webp" alt="Arrow Right" class="object-contain" />
             </div>
             <p class="text-[#4E403B] text-[15px] md:text-[18px] leading-[1.5] m-0">
               Have I lost interest in things I used to enjoy?
@@ -1332,7 +1213,7 @@
           <!-- Item 3 -->
           <div class="flex items-center gap-5 py-5 border-b border-[#F2E8E3]">
            <div class="w-10 h-10 shrink-0">
-              <img src="assets/Depression/Arrow-right-light.webp" alt="Arrow Right" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Arrow-right-light.webp" alt="Arrow Right" class="object-contain" />
             </div>
             <p class="text-[#4E403B] text-[15px] md:text-[18px] leading-[1.5] m-0">
               Do I feel worthless or like I do not matter?  
@@ -1342,7 +1223,7 @@
           <!-- Item 4 -->
           <div class="flex items-center gap-5 py-5 border-b border-[#F2E8E3]">
             <div class="w-10 h-10 shrink-0">
-              <img src="assets/Depression/Arrow-right-light.webp" alt="Arrow Right" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Arrow-right-light.webp" alt="Arrow Right" class="object-contain" />
             </div>
             <p class="text-[#4E403B] text-[15px] md:text-[18px] leading-[1.5] m-0">
               Do I feel no energy or desire to do anything at all?
@@ -1352,7 +1233,7 @@
           <!-- Item 5 -->
           <div class="flex items-center gap-5 py-5">
             <div class="w-10 h-10 shrink-0">
-              <img src="assets/Depression/Arrow-right-light.webp" alt="Arrow Right" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Arrow-right-light.webp" alt="Arrow Right" class="object-contain" />
             </div>
             <p class="text-[#4E403B] text-[15px] md:text-[18px] leading-[1.5] m-0">
               Do I feel like things will never get better?
@@ -1373,7 +1254,7 @@
     <div class="w-full lg:w-1/2 xl:w-[550px]">
       <!-- Image Placeholder -->
       <img 
-        src="assets/Depression/Depression In Children And  Teenagers.webp" 
+        src="<?php echo get_template_directory_uri(); ?>/images/Depression/Depression In Children And  Teenagers.webp" 
         alt="Therapist with a young boy" 
         class="w-full h-auto lg:h-[400px] object-cover rounded-[24px] shadow-sm"
       />
@@ -1419,7 +1300,7 @@
         <div class="flex-1">
           <div class="flex items-center gap-4 mb-5 max-w-[746px] ">
             <div class="w-11 h-11 shrink-0">
-              <img src="assets/Depression/CBT-icon.webp" alt="Icon" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/CBT-icon.webp" alt="Icon" class="object-contain" />
             </div>
             <h3 class="font-serif text-[20px] md:text-[24px] text-[#241C19] font-bold m-0">
               Cognitive Behavioral Therapy for Depression
@@ -1441,7 +1322,7 @@
 
         <!-- Right Illustration Placeholder -->
         <div class="w-full md:w-[280px] lg:w-[447px] shrink-0 flex justify-center">
-          <img src="assets/Depression/CBT.webp" alt="CBT Illustration" class="w-full h-auto max-h-[300px] object-contain" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/CBT.webp" alt="CBT Illustration" class="w-full h-auto max-h-[300px] object-contain" />
         </div>
       </div>
 
@@ -1450,7 +1331,7 @@
         <div class="flex-1">
           <div class="flex items-center gap-4 mb-5 max-w-[746px]">
             <div class="w-11 h-11 shrink-0">
-              <img src="assets/Depression/Behavioural Activation-icon.webp" alt="Icon" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Behavioural Activation-icon.webp" alt="Icon" class="object-contain" />
             </div>
             <h3 class="font-serif text-[20px] md:text-[24px] text-[#241C19] font-bold m-0">
               Behavioural Activation
@@ -1469,7 +1350,7 @@
 
         <!-- Right Illustration Placeholder -->
         <div class="w-full md:w-[280px] lg:w-[447px] shrink-0 flex justify-center">
-          <img src="assets/Depression/Behavioural Activation illustration.webp" alt="Behavioural Activation Illustration" class="w-full h-auto max-h-[300px] object-contain" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Behavioural Activation illustration.webp" alt="Behavioural Activation Illustration" class="w-full h-auto max-h-[300px] object-contain" />
         </div>
       </div>
 
@@ -1478,7 +1359,7 @@
         <div class="flex-1">
           <div class="flex items-center gap-4 mb-5 max-w-[746px]">
             <div class="w-11 h-11 shrink-0">
-              <img src="assets/Depression/ipt-icon.webp" alt="Icon" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/ipt-icon.webp" alt="Icon" class="object-contain" />
             </div>
             <h3 class="font-serif text-[20px] md:text-[24px] text-[#241C19] font-bold m-0">
               Interpersonal Therapy (IPT)
@@ -1497,7 +1378,7 @@
 
         <!-- Right Illustration Placeholder -->
         <div class="w-full md:w-[280px] lg:w-[447px] shrink-0 flex justify-center">
-          <img src="assets/Depression/IPT illustration.webp" alt="IPT Illustration" class="w-full h-auto max-h-[300px] object-contain" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/IPT illustration.webp" alt="IPT Illustration" class="w-full h-auto max-h-[300px] object-contain" />
         </div>
       </div>
 
@@ -1506,7 +1387,7 @@
         <div class="flex-1">
           <div class="flex items-center gap-4 mb-5 max-w-[746px]">
             <div class="w-11 h-11 bg-[#FCECE8] rounded-2xl flex items-center justify-center shrink-0">
-              <img src="assets/Depression/medicattion-icon.webp" alt="Icon" class="object-contain" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/medicattion-icon.webp" alt="Icon" class="object-contain" />
             </div>
             <h3 class="font-serif text-[20px] md:text-[24px] text-[#241C19] font-bold m-0">
               Medication for Depression
@@ -1525,7 +1406,7 @@
 
         <!-- Right Illustration Placeholder -->
         <div class="w-full md:w-[280px] lg:w-[447px] shrink-0 flex justify-center">
-          <img src="assets/Depression/Medication for Depression illustrattion.webp" alt="Medication Illustration" class="w-full h-auto max-h-[300px] object-contain" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Medication for Depression illustrattion.webp" alt="Medication Illustration" class="w-full h-auto max-h-[300px] object-contain" />
         </div>
       </div>
 
@@ -1552,7 +1433,7 @@
       <!-- Left Column: Image -->
       <div class="w-full lg:w-1/2 xl:w-[550px]">
         <img 
-          src="assets/Depression/What Can You Do Yourself.webp" 
+          src="<?php echo get_template_directory_uri(); ?>/images/Depression/What Can You Do Yourself.webp" 
           alt="Woman sitting in an armchair writing in a journal" 
           class="w-full h-[300px] lg:h-[500px] object-cover rounded-[24px] shadow-sm"
         />
@@ -1564,7 +1445,7 @@
         <!-- List Item 1 -->
         <div class="flex items-start gap-5 py-5 border-b border-[#F2E8E3]">
           <div class="w-10 h-10 shrink-0 mt-1">
-            <img src="assets/Depression/Do one small activity each day.webp" alt="Footsteps Icon" class="object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Do one small activity each day.webp" alt="Footsteps Icon" class="object-contain" />
           </div>
           <div>
             <h3 class="font-serif text-[15px] md:text-[18px] text-[#241C19] font-bold m-0 mb-1">
@@ -1579,7 +1460,7 @@
         <!-- List Item 2 -->
         <div class="flex items-start gap-5 py-5 border-b border-[#F2E8E3]">
           <div class="w-10 h-10 shrink-0 mt-1">
-            <img src="assets/Depression/Go outside for a short walk.webp" alt="Sun Icon" class="object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Go outside for a short walk.webp" alt="Sun Icon" class="object-contain" />
           </div>
           <div>
             <h3 class="font-serif text-[15px] md:text-[18px] text-[#241C19] font-bold m-0 mb-1">
@@ -1594,7 +1475,7 @@
         <!-- List Item 3 -->
         <div class="flex items-start gap-5 py-5 border-b border-[#F2E8E3]">
           <div class="w-10 h-10 shrink-0 mt-1">
-            <img src="assets/Depression/Stay in contact.webp" alt="Message Icon" class="object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Stay in contact.webp" alt="Message Icon" class="object-contain" />
           </div>
           <div>
             <h3 class="font-serif text-[15px] md:text-[18px] text-[#241C19] font-bold m-0 mb-1">
@@ -1609,7 +1490,7 @@
         <!-- List Item 4 -->
         <div class="flex items-start gap-5 py-5 border-b border-[#F2E8E3]">
           <div class="w-10 h-10 shrink-0 mt-1">
-            <img src="assets/Depression/Maintain a basic routine.webp" alt="Clock Icon" class="object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Maintain a basic routine.webp" alt="Clock Icon" class="object-contain" />
           </div>
           <div>
             <h3 class="font-serif text-[15px] md:text-[18px] text-[#241C19] font-bold m-0 mb-1">
@@ -1624,7 +1505,7 @@
         <!-- List Item 5 -->
         <div class="flex items-start gap-5 py-5">
           <div class="w-10 h-10 shrink-0 mt-1">
-            <img src="assets/Depression/Be patient with yourself.webp" alt="Heart Icon" class="object-contain" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/Be patient with yourself.webp" alt="Heart Icon" class="object-contain" />
           </div>
           <div>
             <h3 class="font-serif text-[15px] md:text-[18px] text-[#241C19] font-bold m-0 mb-1">
@@ -1643,7 +1524,7 @@
     <!-- Remember Callout Box -->
     <div class="bg-[#FFF7F3] border-l-4 border-[#C24C33] rounded-l-[12px] p-6 md:p-8 flex items-start gap-4">
       <div class="w-[38px] h-[38px] shrink-0 mt-0.5">
-        <img src="assets/Depression/REMEMBER.webp" alt="Info Icon" class="object-contain" />
+        <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/REMEMBER.webp" alt="Info Icon" class="object-contain" />
       </div>
       <div>
         <h4 class="text-[#A93E28] text-[16px] md:text-[20px] font-bold tracking-wider uppercase m-0 mb-2">
@@ -1687,7 +1568,7 @@
         <!-- Card 1 -->
         <div class="bg-white border border-[#F2E8E3] rounded-[16px] p-5 flex items-center gap-4 shadow-[0px_4px_4px_0px_#C24C331F] hover:shadow-md transition-shadow">
           <div class="w-[48px] h-[48px] shrink-0">
-            <img src="/assets/Depression/Symptoms for more than two weeks.webp" alt="Calendar Icon" class="object-contain" />
+            <img src="/<?php echo get_template_directory_uri(); ?>/images/Depression/Symptoms for more than two weeks.webp" alt="Calendar Icon" class="object-contain" />
           </div>
           <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.4] m-0 font-medium">
             Symptoms for more than two weeks
@@ -1697,7 +1578,7 @@
         <!-- Card 2 -->
         <div class="bg-white border border-[#F2E8E3] rounded-[16px] p-5 flex items-center gap-4 shadow-[0px_4px_4px_0px_#C24C331F] hover:shadow-md transition-shadow">
           <div class="w-[48px] h-[48px] shrink-0">
-            <img src="/assets/Depression/Functioning.webp" alt="Graph Down Icon" class="object-contain" />
+            <img src="/<?php echo get_template_directory_uri(); ?>/images/Depression/Functioning.webp" alt="Graph Down Icon" class="object-contain" />
           </div>
           <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.4] m-0 font-medium">
             Functioning poorly at work/school or at home
@@ -1707,7 +1588,7 @@
         <!-- Card 3 -->
         <div class="bg-white border border-[#F2E8E3] rounded-[16px] p-5 flex items-center gap-4 shadow-[0px_4px_4px_0px_#C24C331F] hover:shadow-md transition-shadow">
           <div class="w-[48px] h-[48px] shrink-0">
-            <img src="/assets/Depression/Withdrawn from friends and family.webp" alt="User Minus Icon" class="object-contain" />
+            <img src="/<?php echo get_template_directory_uri(); ?>/images/Depression/Withdrawn from friends and family.webp" alt="User Minus Icon" class="object-contain" />
           </div>
           <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.4] m-0 font-medium">
             Withdrawn from friends and family
@@ -1717,7 +1598,7 @@
         <!-- Card 4 -->
         <div class="bg-white border border-[#F2E8E3] rounded-[16px] p-5 flex items-center gap-4 shadow-[0px_4px_4px_0px_#C24C331F] hover:shadow-md transition-shadow">
           <div class="w-[48px] h-[48px] shrink-0">
-            <img src="/assets/Depression/Sleeping much worse or much more than normal.webp" alt="Moon Icon" class="object-contain" />
+            <img src="/<?php echo get_template_directory_uri(); ?>/images/Depression/Sleeping much worse or much more than normal.webp" alt="Moon Icon" class="object-contain" />
           </div>
           <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.4] m-0 font-medium">
             Sleeping much worse or much more than normal
@@ -1727,7 +1608,7 @@
         <!-- Card 5 -->
         <div class="bg-white border border-[#F2E8E3] rounded-[16px] p-5 flex items-center gap-4 shadow-[0px_4px_4px_0px_#C24C331F] hover:shadow-md transition-shadow">
           <div class="w-[48px] h-[48px] shrink-0">
-            <img src="/assets/Depression/Have had depression before.webp" alt="Clock Icon" class="object-contain" />
+            <img src="/<?php echo get_template_directory_uri(); ?>/images/Depression/Have had depression before.webp" alt="Clock Icon" class="object-contain" />
           </div>
           <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.4] m-0 font-medium">
             Have had depression before
@@ -1737,7 +1618,7 @@
         <!-- Card 6 -->
         <div class="bg-white border border-[#F2E8E3] rounded-[16px] p-5 flex items-center gap-4 shadow-[0px_4px_4px_0px_#C24C331F] hover:shadow-md transition-shadow">
           <div class="w-[48px] h-[48px] shrink-0">
-            <img src="/assets/Depression/Self help and self care don't help.webp" alt="Question Icon" class="object-contain" />
+            <img src="/<?php echo get_template_directory_uri(); ?>/images/Depression/Self help and self care don't help.webp" alt="Question Icon" class="object-contain" />
           </div>
           <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.4] m-0 font-medium">
             Self help and self care don't help
@@ -1749,7 +1630,7 @@
       <!-- Emergency Callout Box -->
       <div class="relative z-10 bg-[#FFF7F3] border-l-[3px] border-[#C24C33] rounded-l-[12px] p-6 md:p-8 flex items-start gap-4 shadow-sm">
         <div class="w-[62px] h-[62px] shrink-0 mt-0.5">
-          <img src="assets/Depression/thoughts.webp" alt="Phone Icon" class="object-contain" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/Depression/thoughts.webp" alt="Phone Icon" class="object-contain" />
         </div>
         <div>
           <h4 class="text-[#A93E28] text-[16px] md:text-[20] font-bold tracking-wide uppercase m-0 mb-2">
@@ -1775,7 +1656,7 @@
       <div class="w-full">
         <!-- Image Placeholder -->
         <img 
-          src="assets/Depression/Depression Treatment At Psykolog.webp" 
+          src="<?php echo get_template_directory_uri(); ?>/images/Depression/Depression Treatment At Psykolog.webp" 
           alt="Therapist with a patient" 
           class="w-full h-auto object-cover rounded-[24px] shadow-sm"
         />
@@ -1970,7 +1851,7 @@
       <!-- Right Illustration Area -->
       <div class="w-full lg:w-[45%] flex justify-center lg:justify-end z-10">
         <img 
-          src="assets/Depression/sad-brain.webp" 
+          src="<?php echo get_template_directory_uri(); ?>/images/Depression/sad-brain.webp" 
           alt="Sad brain character sitting next to a drooping flower" 
           class="w-full max-w-[380px] lg:max-w-[420px] h-auto object-contain"
         />
@@ -1981,139 +1862,3 @@
   </div>
 </section>
     </main>
-
-    <footer class="bg-brand-brown text-white pt-[72px] pb-8">
-      <div class="px-6 md:px-12 lg:px-16">
-        <div class="max-w-[1312px] mx-auto">
-          <div class="mb-14">
-            <h3 class="font-serif font-bold text-3xl mt-0 mb-3">
-              Stay Informed
-            </h3>
-            <p class="text-base text-white/80 mt-0 mb-6">
-              Get mental health tips and updates delivered to your inbox.
-            </p>
-            <form class="flex gap-3 max-w-[600px] mb-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                required
-                class="flex-1 px-6 py-4 rounded-full border border-white/20 bg-[#FFFFFF17] text-white text-[15px]"
-              />
-              <button
-                type="submit"
-                class="font-sans font-bold text-base text-white bg-brand-orange border-0 rounded-full px-8 py-4 cursor-pointer whitespace-nowrap"
-              >
-                Subscribe
-              </button>
-            </form>
-            <label class="flex items-center gap-2 text-sm text-white/70">
-              <input
-                type="checkbox"
-                required
-                class="w-4 h-4 accent-brand-orange"
-              />
-              <span>I agree to receive emails from psykolog.no</span>
-            </label>
-          </div>
-          <div
-            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12"
-          >
-            <div>
-              <h4 class="font-bold text-[15px] mt-0 mb-4">Services</h4>
-              <div class="grid gap-2.5">
-                <a
-                  href="index.html#home-conditions"
-                  class="text-sm text-white/70"
-                  >Individual Therapy</a
-                >
-                <a
-                  href="index.html#home-conditions"
-                  class="text-sm text-white/70"
-                  >Couples Therapy</a
-                >
-                <a
-                  href="index.html#home-conditions"
-                  class="text-sm text-white/70"
-                  >Family Therapy</a
-                >
-                <a
-                  href="index.html#home-conditions"
-                  class="text-sm text-white/70"
-                  >Group Therapy</a
-                >
-              </div>
-            </div>
-            <div>
-              <h4 class="font-bold text-[15px] mt-0 mb-4">Conditions</h4>
-              <div class="grid gap-2.5">
-                <a href="adhd.html" class="text-sm text-white/70">ADHD</a>
-                <a href="#mh-conditions" class="text-sm text-white/70"
-                  >Depression</a
-                >
-                <a href="#mh-conditions" class="text-sm text-white/70"
-                  >Anxiety</a
-                >
-                <a href="#mh-conditions" class="text-sm text-white/70">PTSD</a>
-              </div>
-            </div>
-            <div>
-              <h4 class="font-bold text-[15px] mt-0 mb-4">Clinic</h4>
-              <div class="grid gap-2.5">
-                <a href="about.html" class="text-sm text-white/70">About Us</a>
-                <a href="index.html#home-team" class="text-sm text-white/70"
-                  >Our Team</a
-                >
-                <a
-                  href="index.html#home-locations"
-                  class="text-sm text-white/70"
-                  >Locations</a
-                >
-                <a href="index.html#home-pricing" class="text-sm text-white/70"
-                  >Pricing</a
-                >
-              </div>
-            </div>
-            <div>
-              <h4 class="font-bold text-[15px] mt-0 mb-4">Company</h4>
-              <div class="grid gap-2.5">
-                <a href="#" class="text-sm text-white/70">Careers</a>
-                <a href="#" class="text-sm text-white/70">Blog</a>
-                <a href="#" class="text-sm text-white/70">Press</a>
-                <a href="#" class="text-sm text-white/70">Contact</a>
-              </div>
-            </div>
-            <div>
-              <h4 class="font-bold text-[15px] mt-0 mb-4">Legal</h4>
-              <div class="grid gap-2.5">
-                <a href="#" class="text-sm text-white/70">Privacy Policy</a>
-                <a href="#" class="text-sm text-white/70">Terms of Service</a>
-                <a href="#" class="text-sm text-white/70">Cookie Policy</a>
-                <a href="#" class="text-sm text-white/70">Accessibility</a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="border-t border-white/20 pt-6 flex flex-col gap-4 md:flex-row md:justify-between md:items-center"
-          >
-            <p class="text-sm text-white/60 m-0">
-              &copy; 2024 psykolog.no. All rights reserved.
-            </p>
-            <div class="flex items-center gap-5">
-              <a href="#" class="text-white/70 text-xl">📷</a>
-              <a href="#" class="text-white/70 text-xl">💼</a>
-              <a href="#" class="text-white/70 text-xl">📘</a>
-              <span class="text-[13px] text-white/50"
-                >Made by
-                <a href="https://sysinn.no" class="text-white/70"
-                  >Sysinn</a
-                ></span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script src="script.js"></script>
-  </body>
-</html>

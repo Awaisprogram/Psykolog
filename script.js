@@ -1223,6 +1223,122 @@
   }
 
   /* -------------------------------------------------------------------
+     Depression symptoms — HTML-backed tab panels
+     ------------------------------------------------------------------- */
+  function initDepressionTabs() {
+    const tabs = document.querySelectorAll('[data-depression-tab]');
+    const panels = document.querySelectorAll('[data-depression-panel]');
+    if (!tabs.length || !panels.length) return;
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const key = tab.dataset.depressionTab;
+        tabs.forEach((item) => {
+          const active = item === tab;
+          item.classList.toggle('border-[#E8B8AC]', active);
+          item.classList.toggle('text-[#C24C33]', active);
+          item.classList.toggle('bg-transparent', active);
+          item.classList.toggle('border-[#F2E4DC]', !active);
+          item.classList.toggle('text-[#333333]', !active);
+          item.classList.toggle('bg-white', !active);
+          item.setAttribute('aria-selected', String(active));
+        });
+        panels.forEach((panel) => {
+          const active = panel.dataset.depressionPanel === key;
+          panel.hidden = !active;
+          panel.classList.toggle('hidden', !active);
+          panel.classList.toggle('flex', active);
+        });
+      });
+    });
+  }
+
+  /* -------------------------------------------------------------------
+     Depression causes accordion (per-item active colors)
+     ------------------------------------------------------------------- */
+  function initDepressionCausesAccordion() {
+    const wrap = document.getElementById('depressionCausesAccordion');
+    if (!wrap) return;
+
+    const items = wrap.querySelectorAll('.dep-cause-item');
+
+    items.forEach(function (item) {
+      const header = item.querySelector('.dep-cause-header');
+      if (!header) return;
+
+      header.addEventListener('click', function () {
+        const isOpen = item.classList.contains('is-open');
+
+        // Close every item first
+        items.forEach(function (it) {
+          it.classList.remove('is-open');
+          it.style.background = '#ffffff';
+          it.style.border = '1px solid #EAEAEA';
+          var content = it.querySelector('.dep-cause-content');
+          if (content) { content.style.maxHeight = '0'; content.style.opacity = '0'; }
+          var arrow = it.querySelector('.dep-cause-arrow');
+          if (arrow) arrow.style.transform = 'rotate(0deg)';
+        });
+
+        // If it was closed, open the clicked one
+        if (!isOpen) {
+          item.classList.add('is-open');
+          item.style.background = item.dataset.activeBg || '#FFF7F3';
+          item.style.border = '1px solid ' + (item.dataset.activeBorder || '#C24C33');
+          var content = item.querySelector('.dep-cause-content');
+          if (content) { content.style.maxHeight = content.scrollHeight + 'px'; content.style.opacity = '1'; }
+          var arrow = item.querySelector('.dep-cause-arrow');
+          if (arrow) arrow.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  }
+
+  /* -------------------------------------------------------------------
+     Depression co-occurrence tabs
+     ------------------------------------------------------------------- */
+  function initDepCooccurTabs() {
+    const wrap = document.getElementById('depCooccurTabs');
+    if (!wrap) return;
+
+    const tabs = wrap.querySelectorAll('.dep-co-tab');
+    const panels = wrap.querySelectorAll('.dep-co-panel');
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var idx = tab.getAttribute('data-dep-tab');
+
+        // Reset all tabs to inactive classes
+        tabs.forEach(function (t) {
+          t.classList.remove('is-active');
+          t.classList.remove('bg-[#FCF6F4]', 'border-[#F2E8E3]');
+          t.classList.add('bg-white', 'border-[#EAEAEA]');
+          var arrow = t.querySelector('.dep-co-arrow');
+          if (arrow) arrow.style.display = 'none';
+        });
+
+        // Activate clicked tab classes
+        tab.classList.add('is-active');
+        tab.classList.remove('bg-white', 'border-[#EAEAEA]');
+        tab.classList.add('bg-[#FCF6F4]', 'border-[#F2E8E3]');
+        var arrow = tab.querySelector('.dep-co-arrow');
+        if (arrow) arrow.style.display = '';
+
+        // Show matching panel, hide others
+        panels.forEach(function (p) {
+          var isMatch = p.getAttribute('data-dep-panel') === idx;
+          p.classList.toggle('hidden', !isMatch);
+          if (isMatch) {
+            p.classList.add('flex');
+          } else {
+            p.classList.remove('flex');
+          }
+        });
+      });
+    });
+  }
+
+  /* -------------------------------------------------------------------
      Init — every feature initialised exactly once
      ------------------------------------------------------------------- */
   document.addEventListener('DOMContentLoaded', () => {
@@ -1245,6 +1361,9 @@
     initArticlesPagination();
     initAiAssistant();
     initHabitCards();
+    initDepressionTabs();
+    initDepressionCausesAccordion();
+    initDepCooccurTabs();
 
     initJumpNav();
     initAddAccordion();
