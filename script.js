@@ -1223,34 +1223,47 @@
   }
 
   /* -------------------------------------------------------------------
-     Depression symptoms — HTML-backed tab panels
+     Generic tab-group helper
+     Usage: initTabGroup('stress', 'physical')
+       - looks for elements with  data-{prefix}-tab="key"
+       - looks for elements with  data-{prefix}-panel="key"
+       - activates defaultKey on load
+     To register a new section just call initTabGroup(prefix, defaultKey).
      ------------------------------------------------------------------- */
-  function initDepressionTabs() {
-    const tabs = document.querySelectorAll('[data-depression-tab]');
-    const panels = document.querySelectorAll('[data-depression-panel]');
+  function initTabGroup(prefix, defaultKey) {
+    // Convert 'my-prefix' -> camelCase 'myPrefix' for dataset access
+    const camel = prefix.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+    const tabAttr   = `data-${prefix}-tab`;
+    const panelAttr = `data-${prefix}-panel`;
+
+    const tabs   = document.querySelectorAll(`[${tabAttr}]`);
+    const panels = document.querySelectorAll(`[${panelAttr}]`);
     if (!tabs.length || !panels.length) return;
 
-    tabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        const key = tab.dataset.depressionTab;
-        tabs.forEach((item) => {
-          const active = item === tab;
-          item.classList.toggle('border-[#E8B8AC]', active);
-          item.classList.toggle('text-[#C24C33]', active);
-          item.classList.toggle('bg-transparent', active);
-          item.classList.toggle('border-[#F2E4DC]', !active);
-          item.classList.toggle('text-[#333333]', !active);
-          item.classList.toggle('bg-white', !active);
-          item.setAttribute('aria-selected', String(active));
-        });
-        panels.forEach((panel) => {
-          const active = panel.dataset.depressionPanel === key;
-          panel.hidden = !active;
-          panel.classList.toggle('hidden', !active);
-          panel.classList.toggle('flex', active);
-        });
+    function activate(key) {
+      tabs.forEach((tab) => {
+        const active = tab.dataset[`${camel}Tab`] === key;
+        tab.classList.toggle('border-[#E8B8AC]',  active);
+        tab.classList.toggle('text-[#C24C33]',     active);
+        tab.classList.toggle('bg-transparent',     active);
+        tab.classList.toggle('border-[#F2E4DC]',  !active);
+        tab.classList.toggle('text-[#333333]',    !active);
+        tab.classList.toggle('bg-white',          !active);
+        tab.setAttribute('aria-selected', String(active));
       });
+      panels.forEach((panel) => {
+        const active = panel.dataset[`${camel}Panel`] === key;
+        panel.hidden = !active;
+        panel.classList.toggle('hidden', !active);
+        panel.classList.toggle('flex',   active);
+      });
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => activate(tab.dataset[`${camel}Tab`]));
     });
+
+    activate(defaultKey);
   }
 
   /* -------------------------------------------------------------------
@@ -1361,7 +1374,8 @@
     initArticlesPagination();
     initAiAssistant();
     initHabitCards();
-    initDepressionTabs();
+    initTabGroup('depression', 'emotional');  // depression.html
+    initTabGroup('stress',     'physical');   // stress.html
     initDepressionCausesAccordion();
     initDepCooccurTabs();
 
