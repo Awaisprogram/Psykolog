@@ -1179,35 +1179,34 @@
      Habit cards interaction
      ------------------------------------------------------------------- */
   function initHabitCards() {
-    const habitCards = document.querySelectorAll('.habit-card');
-    const previewImg = document.getElementById('habit-preview-img');
-    const previewTitle = document.getElementById('habit-preview-title');
-    const previewDesc = document.getElementById('habit-preview-desc');
+    const groups = document.querySelectorAll('.habit-card-group');
+    const fallbackCards = document.querySelectorAll('.habit-card');
+    const groupsToInit = groups.length ? groups : [{ querySelectorAll: () => fallbackCards }];
 
-    if (!habitCards.length || !previewImg || !previewTitle || !previewDesc) return;
+    groupsToInit.forEach((group) => {
+      const habitCards = group.querySelectorAll ? group.querySelectorAll('.habit-card') : fallbackCards;
+      const previewImg = group.querySelector ? group.querySelector('.habit-preview-img') : document.getElementById('habit-preview-img');
+      const previewTitle = group.querySelector ? group.querySelector('.habit-preview-title') : document.getElementById('habit-preview-title');
+      const previewDesc = group.querySelector ? group.querySelector('.habit-preview-desc') : document.getElementById('habit-preview-desc');
 
-    habitCards.forEach(card => {
-      ['mouseenter', 'click'].forEach(evt => {
-        card.addEventListener(evt, () => {
-        // Reset state on all cards
-        habitCards.forEach(c => {
+      if (!habitCards.length || !previewImg || !previewTitle || !previewDesc) return;
+
+      const setActiveCard = (card) => {
+        habitCards.forEach((c) => {
           c.classList.remove('shadow-sm', 'active-card');
-          const bar = c.querySelector('.active-bar');
-          if (bar) bar.classList.add('hidden');
+          c.classList.remove('border-[#C24C33]');
+          c.classList.add('border-[#E8B8AC]');
         });
 
-        // Set active state on clicked card
         card.classList.add('shadow-sm', 'active-card');
-        const activeBar = card.querySelector('.active-bar');
-        if (activeBar) activeBar.classList.remove('hidden');
+        card.classList.remove('border-[#E8B8AC]');
+        card.classList.add('border-[#C24C33]');
 
-        // Extract data attributes
         const title = card.getAttribute('data-title');
         const desc = card.getAttribute('data-desc');
         const imgSrc = card.getAttribute('data-img');
 
-        // Update preview content with a smooth fade
-        previewImg.style.opacity = '0.3';
+        previewImg.style.opacity = '0.35';
         setTimeout(() => {
           if (title) previewTitle.textContent = title;
           if (desc) previewDesc.textContent = desc;
@@ -1216,9 +1215,21 @@
             previewImg.alt = title || '';
           }
           previewImg.style.opacity = '1';
-        }, 150);
+        }, 120);
+      };
+
+      habitCards.forEach((card) => {
+        ['mouseenter', 'click'].forEach((evt) => {
+          card.addEventListener(evt, () => setActiveCard(card));
         });
       });
+
+      // Keep the preview empty until the user hovers or clicks a card.
+      const previewTitleText = previewTitle.textContent.trim();
+      const previewDescText = previewDesc.textContent.trim();
+      if (!previewTitleText && !previewDescText && !previewImg.getAttribute('src')) {
+        previewImg.style.opacity = '0';
+      }
     });
   }
 
@@ -1351,6 +1362,47 @@
     });
   }
 
+  function initBipolarTreatmentTabs() {
+    const wrap = document.getElementById('bipolarTreatTabs');
+    if (!wrap) return;
+
+    const tabs = wrap.querySelectorAll('.bipolar-tab');
+    const panels = wrap.querySelectorAll('.bipolar-panel');
+    if (!tabs.length || !panels.length) return;
+
+    function activate(index) {
+      tabs.forEach((tab, tabIndex) => {
+        const isActive = tabIndex === index;
+        tab.classList.toggle('is-active', isActive);
+        tab.classList.toggle('bg-[#FAF0EC]', isActive);
+        tab.classList.toggle('border-[#F2E4DC]', isActive);
+        tab.classList.toggle('bg-white', !isActive);
+        tab.classList.toggle('border-[#F2E8E3]', !isActive);
+        tab.classList.toggle('hover:bg-[#FAF0EC]', !isActive);
+
+        const arrow = tab.querySelector('.bipolar-arrow');
+        if (arrow) {
+          arrow.classList.toggle('hidden', !isActive);
+          arrow.classList.toggle('flex', isActive);
+          arrow.classList.toggle('items-center', isActive);
+          arrow.classList.toggle('justify-center', isActive);
+        }
+      });
+
+      panels.forEach((panel, panelIndex) => {
+        const isActive = panelIndex === index;
+        panel.classList.toggle('hidden', !isActive);
+        panel.classList.toggle('flex', isActive);
+      });
+    }
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activate(index));
+    });
+
+    activate(0);
+  }
+
   /* -------------------------------------------------------------------
      Init — every feature initialised exactly once
      ------------------------------------------------------------------- */
@@ -1376,6 +1428,8 @@
     initHabitCards();
     initTabGroup('depression', 'emotional');  // depression.html
     initTabGroup('stress',     'physical');   // stress.html
+    initTabGroup('bipolar',    'mania');      // bipolar.html symptom tabs
+    initBipolarTreatmentTabs();               // bipolar.html treatment tabs
     initDepressionCausesAccordion();
     initDepCooccurTabs();
 
