@@ -1140,6 +1140,39 @@
     activate(0);
   }
 
+  function initBurnoutRecoverySteps() {
+    const list = document.getElementById('burnoutRecoverySteps');
+    const preview = document.getElementById('burnoutRecoveryPreview');
+    if (!list) return;
+
+    const steps = Array.from(list.querySelectorAll('[data-recovery-step]'));
+    function activate(step) {
+      steps.forEach((item) => {
+        const active = item === step;
+        item.classList.toggle('bg-[#FFF7F3]', active);
+        item.classList.toggle('border-[#C24C33]', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      if (preview && step.dataset.image) {
+        preview.src = step.dataset.image;
+        preview.alt = step.dataset.imageAlt || '';
+      }
+    }
+
+    steps.forEach((step) => {
+      step.addEventListener('click', () => activate(step));
+      step.addEventListener('mouseenter', () => activate(step));
+      step.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          activate(step);
+        }
+      });
+    });
+
+    activate(steps[0]);
+  }
+
   /* ---------------------------------------------------------
      Footer newsletter: consent checkbox + fake submit
   --------------------------------------------------------- */
@@ -1456,6 +1489,7 @@
       exclusive: true,
     });
     initAssessmentSteps();
+    initBurnoutRecoverySteps();
     initNewsletterForm();
 
     // hero video: attempt autoplay, fall back to poster only

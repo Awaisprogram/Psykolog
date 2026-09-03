@@ -4571,6 +4571,9 @@
     .lg\:top-8 {
       top: calc(var(--spacing) * 8) !important;
     }
+    .lg\:top-12 {
+      top: calc(var(--spacing) * 12) !important;
+    }
     .lg\:top-24 {
       top: calc(var(--spacing) * 24) !important;
     }
@@ -4955,6 +4958,18 @@
     }
     .xl\:grid-cols-\[700px_560px\] {
       grid-template-columns: 700px 560px !important;
+    }
+    .xl\:grid-cols-\[720\] {
+      grid-template-columns: 720 !important;
+    }
+    .xl\:grid-cols-\[720px\] {
+      grid-template-columns: 720px !important;
+    }
+    .xl\:grid-cols-\[720px_560px\] {
+      grid-template-columns: 720px 560px !important;
+    }
+    .xl\:grid-cols-\[720px_\] {
+      grid-template-columns: 720px  !important;
     }
     .xl\:grid-cols-\[755px_500px\] {
       grid-template-columns: 755px 500px !important;
