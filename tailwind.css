@@ -17,10 +17,11 @@
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
+    --container-xs: 20rem;
+    --container-sm: 24rem;
     --container-xl: 36rem;
     --container-2xl: 42rem;
     --container-3xl: 48rem;
-    --container-7xl: 80rem;
     --text-xs: 0.75rem;
     --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
@@ -1095,9 +1096,6 @@
   .max-w-2xl {
     max-width: var(--container-2xl) !important;
   }
-  .max-w-7xl {
-    max-width: var(--container-7xl) !important;
-  }
   .max-w-\[90\%\] {
     max-width: 90% !important;
   }
@@ -1975,9 +1973,6 @@
   .bg-\[\#EAF2ED\] {
     background-color: #EAF2ED !important;
   }
-  .bg-\[\#EAF2F6\] {
-    background-color: #EAF2F6 !important;
-  }
   .bg-\[\#EAF2F8\] {
     background-color: #EAF2F8 !important;
   }
@@ -2005,9 +2000,6 @@
   .bg-\[\#EEF5E8\] {
     background-color: #EEF5E8 !important;
   }
-  .bg-\[\#EFEAF6\] {
-    background-color: #EFEAF6 !important;
-  }
   .bg-\[\#F2E5D5\] {
     background-color: #F2E5D5 !important;
   }
@@ -2017,14 +2009,8 @@
   .bg-\[\#F3EEFA\] {
     background-color: #F3EEFA !important;
   }
-  .bg-\[\#F4F9DE\] {
-    background-color: #F4F9DE !important;
-  }
   .bg-\[\#F5E6E3\] {
     background-color: #F5E6E3 !important;
-  }
-  .bg-\[\#F7F2E2\] {
-    background-color: #F7F2E2 !important;
   }
   .bg-\[\#F093671A\] {
     background-color: #F093671A !important;
@@ -2040,9 +2026,6 @@
   }
   .bg-\[\#FAF1E3\] {
     background-color: #FAF1E3 !important;
-  }
-  .bg-\[\#FAF6F3\] {
-    background-color: #FAF6F3 !important;
   }
   .bg-\[\#FAF8DE\] {
     background-color: #FAF8DE !important;
@@ -2815,9 +2798,6 @@
   .text-\[\#6F6259\] {
     color: #6F6259 !important;
   }
-  .text-\[\#7C659D\] {
-    color: #7C659D !important;
-  }
   .text-\[\#8C7A3E\] {
     color: #8C7A3E !important;
   }
@@ -2826,9 +2806,6 @@
   }
   .text-\[\#9A4636\] {
     color: #9A4636 !important;
-  }
-  .text-\[\#9D882D\] {
-    color: #9D882D !important;
   }
   .text-\[\#241C19\] {
     color: #241C19 !important;
@@ -2839,14 +2816,8 @@
   .text-\[\#528A5B\] {
     color: #528A5B !important;
   }
-  .text-\[\#909D2D\] {
-    color: #909D2D !important;
-  }
   .text-\[\#33170F\] {
     color: #33170F !important;
-  }
-  .text-\[\#55849D\] {
-    color: #55849D !important;
   }
   .text-\[\#333333\] {
     color: #333333 !important;
@@ -3189,6 +3160,10 @@
   .shadow-sm {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)) !important;
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow) !important;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style) !important;
+    outline-width: 1px !important;
   }
   .blur-xl {
     --tw-blur: blur(var(--blur-xl)) !important;
@@ -4027,9 +4002,6 @@
     .md\:py-20 {
       padding-block: calc(var(--spacing) * 20) !important;
     }
-    .md\:py-24 {
-      padding-block: calc(var(--spacing) * 24) !important;
-    }
     .md\:py-\[14px\] {
       padding-block: 14px !important;
     }
@@ -4264,9 +4236,6 @@
     .lg\:min-h-0 {
       min-height: 0px !important;
     }
-    .lg\:min-h-\[6px\] {
-      min-height: 6px !important;
-    }
     .lg\:min-h-\[626px\] {
       min-height: 626px !important;
     }
@@ -4278,12 +4247,6 @@
     }
     .lg\:min-h-\[760px\] {
       min-height: 760px !important;
-    }
-    .lg\:min-h-\[796px\] {
-      min-height: 796px !important;
-    }
-    .lg\:min-h-\[896px\] {
-      min-height: 896px !important;
     }
     .lg\:w-1\/2 {
       width: calc(1 / 2 * 100%) !important;
@@ -4528,10 +4491,6 @@
     }
     .lg\:text-\[56px\] {
       font-size: 56px !important;
-    }
-    .lg\:leading-\[31\] {
-      --tw-leading: 31 !important;
-      line-height: 31 !important;
     }
     .lg\:leading-\[31px\] {
       --tw-leading: 31px !important;
@@ -5215,6 +5174,11 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-blur {
   syntax: "*";
   inherits: false;
@@ -5356,6 +5320,7 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
