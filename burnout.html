@@ -166,47 +166,57 @@
       </section>
 
       <div class="bg-white pt-10">
-        <div class="container">
+        <div class="container ps-jump-wrap">
           <nav
+            id="jumpNav"
             class="ps-jump flex items-center justify-center gap-0.5 bg-[#FDF6F2] rounded-full px-3.5 py-2 overflow-x-auto w-fit mx-auto"
+            aria-label="Section navigation"
           >
             <a
               href="#mh-what"
-              class="font-sans font-bold text-[15px] leading-5 whitespace-nowrap text-brand-hover bg-brand-active rounded-full px-[18px] py-2.5"
-              >What is Stress</a
+              data-jump="what"
+              class="is-active font-sans font-bold text-[15px] leading-5 whitespace-nowrap text-brand-hover bg-brand-active rounded-full px-[18px] py-2.5"
+              >What is Burnout</a
             >
             <a
               href="#mh-conditions"
+              data-jump="conditions"
               class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >Symptoms</a
+              >Burnout vs Stress</a
             >
             <a
               href="#mh-activity"
+              data-jump="activity"
               class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >What Can Cause</a
+              >3 Dimensions</a
             >
             <a
               href="#mh-seek"
+              data-jump="seek"
               class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >Types</a
+              >What Causes Burnout</a
             >
             <a
               href="#mh-youth"
+              data-jump="youth"
               class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >Professional Assessment</a
+              >Signs</a
             >
             <a
               href="#mh-substance"
+              data-jump="substance"
               class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >Stress & Other Difficulties</a
+              >Overlapping Conditions</a
             >
             <a
               href="#mh-relatives"
+              data-jump="relatives"
               class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >Psychologist for Stress</a
+              >Treatment</a
             >
             <a
               href="#mh-faq"
+              data-jump="faq"
               class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
               >FAQS</a
             >
@@ -214,7 +224,7 @@
         </div>
       </div>
 
-      <section id="mh-what" class="section section--white" data-reveal>
+      <section id="mh-what" class="section section--white" data-reveal data-sec="what">
         <div class="container max-w-[1360px] mx-auto px-4 md:px-8">
           <div
             class="grid grid-cols-1 gap-12 items-start lg:grid-cols-[924px_340px] lg:gap-[46px]"
@@ -257,7 +267,7 @@ The World Health Organization (WHO) classifies burnout in ICD-11 as an occupatio
         </div>
       </section>
 
- <section class="section bg-[#FEF0EA]">
+ <section id="mh-conditions" class="section bg-[#FEF0EA]" data-sec="conditions" data-reveal>
   <div class="container mx-auto px-4">
     <!-- Header -->
     <div class="text-center mb-12 md:mb-16">
@@ -342,7 +352,7 @@ The World Health Organization (WHO) classifies burnout in ICD-11 as an occupatio
   </div>
 </section>
 
-<section class="section">
+<section id="mh-activity" class="section" data-sec="activity" data-reveal>
   <div class="container">
     
     <!-- Header -->
@@ -455,7 +465,7 @@ The World Health Organization (WHO) classifies burnout in ICD-11 as an occupatio
   </div>
 </section>
 
-<section class="section bg-[#FFF7F3]">
+<section id="mh-seek" class="section bg-[#FFF7F3]" data-sec="seek" data-reveal>
   <div class="container">
     
     <!-- Header -->
@@ -560,7 +570,7 @@ The World Health Organization (WHO) classifies burnout in ICD-11 as an occupatio
   </div>
 </section>
 
-<section class="section">
+<section id="mh-youth" class="section" data-sec="youth" data-reveal>
   <div class="container">
     
     <!-- Header -->
@@ -815,12 +825,12 @@ The World Health Organization (WHO) classifies burnout in ICD-11 as an occupatio
 </section>
 
 
- <section class="section">
+ <section id="mh-substance" class="section" data-sec="substance" data-reveal>
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
       
       <!-- Left Column: Heading & Content -->
-      <div class="flex flex-col">
+      <div class="flex flex-col sticky top-0">
         <span class="text-[12px] font-bold tracking-[0.15em] text-[#C24C33] uppercase mb-3">
           Overlapping Conditions
         </span>
@@ -844,98 +854,127 @@ The World Health Organization (WHO) classifies burnout in ICD-11 as an occupatio
       </div>
 
       <!-- Right Column: Accordion List -->
-      <div class="flex flex-col gap-4">
-        
-        <!-- Item 1 (Expanded) -->
-        <div class="bg-[#FDF6F3] border border-[#EAD4CD] rounded-[22px] p-5 md:p-6 transition-all duration-300">
-          <div class="flex items-center justify-between mb-3">
-            <div class="flex items-center gap-4">
-            <img src="assets/Burnout/condition1.webp" alt="Lightning Bolt Icon" class="w-[44px] h-[44px] object-contain" />
+      <div id="burnoutOverlapAccordion" class="flex flex-col gap-4">
+        <div class="burnout-accordion-item is-open bg-[#FDF6F3] border border-[#EAD4CD] rounded-[22px] p-5 md:p-6 transition-all duration-300">
+          <button type="button" class="burnout-accordion-trigger w-full flex items-center justify-between gap-4 bg-transparent border-0 p-0 text-left cursor-pointer">
+            <div class="flex items-center gap-4 min-w-0">
+              <img src="assets/Burnout/condition1.webp" alt="Lightning Bolt Icon" class="w-[44px] h-[44px] object-contain" />
               <h3 class="font-serif font-bold text-[#2A2321] text-[18px] md:text-[20px]">
                 Ordinary Stress And General Fatigue
               </h3>
             </div>
-           <button class="w-8 h-8  shrink-0">
-           <img src="assets/Burnout/Dropdown1.webp" alt="Chevron Down Icon" class="object-contain" />
-        </button>
+            <span class="burnout-accordion-icon w-8 h-8 shrink-0 transition-transform duration-300 flex items-center justify-center" style="transform: rotate(180deg);">
+              <img src="assets/Burnout/Dropdown1.webp" alt="Chevron Down Icon" class="object-contain" />
+            </span>
+          </button>
+          <div class="burnout-accordion-panel overflow-hidden transition-all duration-300" style="max-height: 220px; opacity: 1;">
+            <p class="text-[#4E403B] text-[14px] md:text-[18px] leading-relaxed pl-[60px] pr-2 mt-4 mb-0">
+              Stress and fatigue are normal responses to demanding periods. Burnout does not. It persists and typically worsens when rest alone is available, because the underlying patterns have not changed.
+            </p>
           </div>
-          <p class="text-[#4E403B] text-[14px] md:text-[18px] leading-relaxed pl-[60px] pr-2 m-0">
-            Stress and fatigue are normal responses to demanding periods. Burnout does not. It persist and typically worsens when rest alone is available, because the underlying patterns have not changed.
-          </p>
         </div>
 
-        <!-- Item 2 (Collapsed - Depression) -->
-        <div class="bg-white border border-[#F2E8E5] rounded-[22px] p-4 md:p-5 flex items-center justify-between shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:border-[#EAD4CD] transition-colors cursor-pointer">
-          <div class="flex items-center gap-4">
-            <img src="assets/Burnout/condition2.webp" alt="Lightning Bolt Icon" class="w-[44px] h-[44px] object-contain" />
-            <h3 class="font-serif font-bold text-[#2A2321] text-[18px] md:text-[20px]">
-              Depression
-            </h3>
+        <div class="burnout-accordion-item bg-white border border-[#F2E8E5] rounded-[22px] p-4 md:p-5 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:border-[#EAD4CD] transition-colors cursor-pointer">
+          <button type="button" class="burnout-accordion-trigger w-full flex items-center justify-between gap-4 bg-transparent border-0 p-0 text-left cursor-pointer">
+            <div class="flex items-center gap-4 min-w-0">
+              <img src="assets/Burnout/condition2.webp" alt="Lightning Bolt Icon" class="w-[44px] h-[44px] object-contain" />
+              <h3 class="font-serif font-bold text-[#2A2321] text-[18px] md:text-[20px]">
+                Depression
+              </h3>
+            </div>
+            <span class="burnout-accordion-icon w-8 h-8 shrink-0 transition-transform duration-300 flex items-center justify-center" style="transform: rotate(0deg);">
+              <img src="assets/Burnout/Dropdown2.webp" alt="Chevron Down Icon" class="object-contain" />
+            </span>
+          </button>
+          <div class="burnout-accordion-panel hidden overflow-hidden transition-all duration-300" style="max-height: 0; opacity: 0;">
+            <p class="text-[#4E403B] text-[14px] md:text-[18px] leading-relaxed pl-[60px] pr-2 mt-4 mb-0">
+              Depression is a mood disorder that can involve persistent sadness, low motivation, sleep disturbance, and a reduced sense of pleasure. It is different from burnout, even though the two can overlap.
+            </p>
           </div>
-         <button class="w-8 h-8  shrink-0">
-           <img src="assets/Burnout/Dropdown2.webp" alt="Chevron Down Icon" class="object-contain" />
-        </button>
         </div>
 
-        <!-- Item 3 (Collapsed - Anxiety) -->
-        <div class="bg-white border border-[#F2E8E5] rounded-[22px] p-4 md:p-5 flex items-center justify-between shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:border-[#EAD4CD] transition-colors cursor-pointer">
-          <div class="flex items-center gap-4">
+        <div class="burnout-accordion-item bg-white border border-[#F2E8E5] rounded-[22px] p-4 md:p-5 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:border-[#EAD4CD] transition-colors cursor-pointer">
+          <button type="button" class="burnout-accordion-trigger w-full flex items-center justify-between gap-4 bg-transparent border-0 p-0 text-left cursor-pointer">
+            <div class="flex items-center gap-4 min-w-0">
               <img src="assets/Burnout/condition3.webp" alt="Lightning Bolt Icon" class="w-[44px] h-[44px] object-contain" />
-            <h3 class="font-serif font-bold text-[#2A2321] text-[18px] md:text-[20px]">
-              Anxiety
-            </h3>
+              <h3 class="font-serif font-bold text-[#2A2321] text-[18px] md:text-[20px]">
+                Anxiety
+              </h3>
+            </div>
+            <span class="burnout-accordion-icon w-8 h-8 shrink-0 transition-transform duration-300 flex items-center justify-center" style="transform: rotate(0deg);">
+              <img src="assets/Burnout/Dropdown3.webp" alt="Chevron Down Icon" class="object-contain" />
+            </span>
+          </button>
+          <div class="burnout-accordion-panel hidden overflow-hidden transition-all duration-300" style="max-height: 0; opacity: 0;">
+            <p class="text-[#4E403B] text-[14px] md:text-[18px] leading-relaxed pl-[60px] pr-2 mt-4 mb-0">
+              Anxiety often brings excessive worry, tension, and a sense of being on alert. Burnout can also feel exhausting, but anxiety is usually more fear- and anticipation-driven than pure depletion.
+            </p>
           </div>
-         <button class="w-8 h-8  shrink-0">
-           <img src="assets/Burnout/Dropdown3.webp" alt="Chevron Down Icon" class="object-contain" />
-        </button>
         </div>
 
-        <!-- Item 4 (Collapsed - ADHD) -->
-        <div class="bg-white border border-[#F2E8E5] rounded-[22px] p-4 md:p-5 flex items-center justify-between shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:border-[#EAD4CD] transition-colors cursor-pointer">
-          <div class="flex items-center gap-4">
-            <img src="assets/Burnout/condition4.webp" alt="Lightning Bolt Icon" class="w-[44px] h-[44px] object-contain" />
-            <h3 class="font-serif font-bold text-[#2A2321] text-[18px] md:text-[20px]">
-              ADHD
-            </h3>
+        <div class="burnout-accordion-item bg-white border border-[#F2E8E5] rounded-[22px] p-4 md:p-5 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:border-[#EAD4CD] transition-colors cursor-pointer">
+          <button type="button" class="burnout-accordion-trigger w-full flex items-center justify-between gap-4 bg-transparent border-0 p-0 text-left cursor-pointer">
+            <div class="flex items-center gap-4 min-w-0">
+              <img src="assets/Burnout/condition4.webp" alt="Lightning Bolt Icon" class="w-[44px] h-[44px] object-contain" />
+              <h3 class="font-serif font-bold text-[#2A2321] text-[18px] md:text-[20px]">
+                ADHD
+              </h3>
+            </div>
+            <span class="burnout-accordion-icon w-8 h-8 shrink-0 transition-transform duration-300 flex items-center justify-center" style="transform: rotate(0deg);">
+              <img src="assets/Burnout/Dropdown4.webp" alt="Chevron Down Icon" class="object-contain" />
+            </span>
+          </button>
+          <div class="burnout-accordion-panel hidden overflow-hidden transition-all duration-300" style="max-height: 0; opacity: 0;">
+            <p class="text-[#4E403B] text-[14px] md:text-[18px] leading-relaxed pl-[60px] pr-2 mt-4 mb-0">
+              ADHD can increase vulnerability to burnout because the brain works harder to compensate for attention, planning, and time-management challenges. This can lead to exhaustion that feels deeper and more persistent.
+            </p>
           </div>
-          <button class="w-8 h-8  shrink-0">
-           <img src="assets/Burnout/Dropdown4.webp" alt="Chevron Down Icon" class="object-contain" />
-        </button>
         </div>
 
-        <!-- Item 5 (Collapsed - Sleep disorders) -->
-        <div class="bg-white border border-[#F2E8E5] rounded-[22px] p-4 md:p-5 flex items-center justify-between shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:border-[#EAD4CD] transition-colors cursor-pointer">
-          <div class="flex items-center gap-4">
-            <img src="assets/Burnout/condition5.webp" alt="Lightning Bolt Icon" class="w-[44px] h-[44px] object-contain" />
-            <h3 class="font-serif font-bold text-[#2A2321] text-[18px] md:text-[20px]">
-              Sleep disorders
-            </h3>
+        <div class="burnout-accordion-item bg-white border border-[#F2E8E5] rounded-[22px] p-4 md:p-5 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:border-[#EAD4CD] transition-colors cursor-pointer">
+          <button type="button" class="burnout-accordion-trigger w-full flex items-center justify-between gap-4 bg-transparent border-0 p-0 text-left cursor-pointer">
+            <div class="flex items-center gap-4 min-w-0">
+              <img src="assets/Burnout/condition5.webp" alt="Lightning Bolt Icon" class="w-[44px] h-[44px] object-contain" />
+              <h3 class="font-serif font-bold text-[#2A2321] text-[18px] md:text-[20px]">
+                Sleep disorders
+              </h3>
+            </div>
+            <span class="burnout-accordion-icon w-8 h-8 shrink-0 transition-transform duration-300 flex items-center justify-center" style="transform: rotate(0deg);">
+              <img src="assets/Burnout/Dropdown5.webp" alt="Chevron Down Icon" class="object-contain" />
+            </span>
+          </button>
+          <div class="burnout-accordion-panel hidden overflow-hidden transition-all duration-300" style="max-height: 0; opacity: 0;">
+            <p class="text-[#4E403B] text-[14px] md:text-[18px] leading-relaxed pl-[60px] pr-2 mt-4 mb-0">
+              Poor sleep can both trigger and worsen burnout. When the body never gets enough recovery, fatigue, irritability, and low concentration can intensify quickly.
+            </p>
           </div>
-          <button class="w-8 h-8  shrink-0">
-           <img src="assets/Burnout/Dropdown5.webp" alt="Chevron Down Icon" class="object-contain" />
-        </button>
         </div>
 
-        <!-- Item 6 (Collapsed - Physical and medical causes) -->
-        <div class="bg-white border border-[#F2E8E5] rounded-[22px] p-4 md:p-5 flex items-center justify-between shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:border-[#EAD4CD] transition-colors cursor-pointer">
-          <div class="flex items-center gap-4">
-            <img src="assets/Burnout/condition6.webp" alt="Lightning Bolt Icon" class="w-[44px] h-[44px] object-contain" />
-            <h3 class="font-serif font-bold text-[#2A2321] text-[18px] md:text-[20px]">
-              Physical and medical causes
-            </h3>
+        <div class="burnout-accordion-item bg-white border border-[#F2E8E5] rounded-[22px] p-4 md:p-5 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:border-[#EAD4CD] transition-colors cursor-pointer">
+          <button type="button" class="burnout-accordion-trigger w-full flex items-center justify-between gap-4 bg-transparent border-0 p-0 text-left cursor-pointer">
+            <div class="flex items-center gap-4 min-w-0">
+              <img src="assets/Burnout/condition6.webp" alt="Lightning Bolt Icon" class="w-[44px] h-[44px] object-contain" />
+              <h3 class="font-serif font-bold text-[#2A2321] text-[18px] md:text-[20px]">
+                Physical and medical causes
+              </h3>
+            </div>
+            <span class="burnout-accordion-icon w-8 h-8 shrink-0 transition-transform duration-300 flex items-center justify-center" style="transform: rotate(0deg);">
+              <img src="assets/Burnout/Dropdown6.webp" alt="Chevron Down Icon" class="object-contain" />
+            </span>
+          </button>
+          <div class="burnout-accordion-panel hidden overflow-hidden transition-all duration-300" style="max-height: 0; opacity: 0;">
+            <p class="text-[#4E403B] text-[14px] md:text-[18px] leading-relaxed pl-[60px] pr-2 mt-4 mb-0">
+              Some medical conditions, such as thyroid problems, iron deficiency, chronic pain, or autoimmune issues, can resemble burnout or make it much harder to recover.
+            </p>
           </div>
-         <button class="w-8 h-8  shrink-0">
-           <img src="assets/Burnout/Dropdown6.webp" alt="Chevron Down Icon" class="object-contain" />
-        </button>
         </div>
-
       </div>
 
     </div>
   </div>
 </section>
 
-<section class="section bg-[#FFF7F3]">
+<section id="mh-relatives" class="section bg-[#FFF7F3]" data-sec="relatives" data-reveal>
   <div class="container">
     
     <!-- Section Header -->
@@ -1163,7 +1202,7 @@ The World Health Organization (WHO) classifies burnout in ICD-11 as an occupatio
 </section>
 
 
-<section class="section">
+<section id="mh-recovery" class="section" data-sec="recovery">
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[720px_560px] gap-8 lg:gap-12 items-start">
       
@@ -1292,7 +1331,7 @@ The World Health Organization (WHO) classifies burnout in ICD-11 as an occupatio
 </section>
 
 
-<section class="section">
+<section class="section" data-reveal>
   <div class="container">
     
     <!-- Top Content Grid -->
@@ -1370,7 +1409,7 @@ The World Health Organization (WHO) classifies burnout in ICD-11 as an occupatio
 </section>
 
 <section class="section bg-[#FFF7F3]">
-  <div class="container">
+  <div class="container" data-reveal>
     
     <!-- Header Section -->
     <div class="text-center mb-10 md:mb-14">
@@ -1676,7 +1715,7 @@ The World Health Organization (WHO) classifies burnout in ICD-11 as an occupatio
 </section>
 
 
-      <section id="mh-faq" class="section section--white" data-reveal>
+      <section id="mh-faq" class="section section--white" data-reveal data-sec="faq">
         <div class="container max-w-[1360px]">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div class="lg:col-span-5 lg:sticky lg:top-24 flex flex-col gap-8">
@@ -1882,7 +1921,7 @@ The World Health Organization (WHO) classifies burnout in ICD-11 as an occupatio
         </div>
       </section>
 
-       <section id="home-articles" class="section section--white">
+       <section id="home-articles" class="section section--white" data-reveal>
   <div class="container">
     <div class="section-head section-head--center">
       <div class="eyebrow">

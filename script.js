@@ -1222,7 +1222,8 @@
       const previewTitle = group.querySelector ? group.querySelector('.habit-preview-title') : document.getElementById('habit-preview-title');
       const previewDesc = group.querySelector ? group.querySelector('.habit-preview-desc') : document.getElementById('habit-preview-desc');
 
-      if (!habitCards.length || !previewImg || !previewTitle || !previewDesc) return;
+      // Only require habitCards and previewImg; title and desc are optional
+      if (!habitCards.length || !previewImg) return;
 
       const setActiveCard = (card) => {
         habitCards.forEach((c) => {
@@ -1239,16 +1240,26 @@
         const desc = card.getAttribute('data-desc');
         const imgSrc = card.getAttribute('data-img');
 
-        previewImg.style.opacity = '0.35';
-        setTimeout(() => {
-          if (title) previewTitle.textContent = title;
-          if (desc) previewDesc.textContent = desc;
-          if (imgSrc) {
+        if (title && previewTitle) previewTitle.textContent = title;
+        if (desc && previewDesc) previewDesc.textContent = desc;
+
+        if (imgSrc) {
+          previewImg.style.opacity = '0.35';
+          // Preload image before displaying it
+          const tempImg = new Image();
+          tempImg.onload = () => {
             previewImg.src = imgSrc;
             previewImg.alt = title || '';
-          }
-          previewImg.style.opacity = '1';
-        }, 120);
+            previewImg.style.opacity = '1';
+          };
+          tempImg.onerror = () => {
+            // If image fails to load, still update and show it
+            previewImg.src = imgSrc;
+            previewImg.alt = title || '';
+            previewImg.style.opacity = '1';
+          };
+          tempImg.src = imgSrc;
+        }
       };
 
       habitCards.forEach((card) => {
@@ -1258,10 +1269,12 @@
       });
 
       // Keep the preview empty until the user hovers or clicks a card.
-      const previewTitleText = previewTitle.textContent.trim();
-      const previewDescText = previewDesc.textContent.trim();
-      if (!previewTitleText && !previewDescText && !previewImg.getAttribute('src')) {
-        previewImg.style.opacity = '0';
+      if (previewTitle && previewDesc) {
+        const previewTitleText = previewTitle.textContent.trim();
+        const previewDescText = previewDesc.textContent.trim();
+        if (!previewTitleText && !previewDescText && !previewImg.getAttribute('src')) {
+          previewImg.style.opacity = '0';
+        }
       }
     });
   }
@@ -1285,8 +1298,12 @@
     if (!tabs.length || !panels.length) return;
 
     function activate(key) {
+      // If key doesn't match any panel, activate first tab instead
+      const keyExists = Array.from(panels).some(p => p.dataset[`${camel}Panel`] === key);
+      const activeKey = keyExists ? key : tabs[0]?.dataset[`${camel}Tab`];
+
       tabs.forEach((tab) => {
-        const active = tab.dataset[`${camel}Tab`] === key;
+        const active = tab.dataset[`${camel}Tab`] === activeKey;
         tab.classList.toggle('border-[#E8B8AC]',  active);
         tab.classList.toggle('text-[#C24C33]',     active);
         tab.classList.toggle('bg-transparent',     active);
@@ -1296,7 +1313,7 @@
         tab.setAttribute('aria-selected', String(active));
       });
       panels.forEach((panel) => {
-        const active = panel.dataset[`${camel}Panel`] === key;
+        const active = panel.dataset[`${camel}Panel`] === activeKey;
         panel.hidden = !active;
         panel.classList.toggle('hidden', !active);
         panel.classList.toggle('flex',   active);
@@ -1313,6 +1330,64 @@
   /* -------------------------------------------------------------------
      Depression causes accordion (per-item active colors)
      ------------------------------------------------------------------- */
+  function initBurnoutOverlapAccordion() {
+    const wrap = document.getElementById('burnoutOverlapAccordion');
+    if (!wrap) return;
+
+    const items = wrap.querySelectorAll('.burnout-accordion-item');
+
+    items.forEach((item) => {
+      const trigger = item.querySelector('.burnout-accordion-trigger');
+      const panel = item.querySelector('.burnout-accordion-panel');
+      const icon = item.querySelector('.burnout-accordion-icon');
+
+      if (!trigger) return;
+
+      const setOpenState = (open) => {
+        item.classList.toggle('is-open', open);
+        item.classList.toggle('bg-[#FDF6F3]', open);
+        item.classList.toggle('bg-white', !open);
+        item.classList.toggle('border-[#EAD4CD]', open);
+        item.classList.toggle('border-[#F2E8E5]', !open);
+
+        if (panel) {
+          panel.classList.toggle('hidden', !open);
+          panel.style.maxHeight = open ? `${panel.scrollHeight}px` : '0px';
+          panel.style.opacity = open ? '1' : '0';
+        }
+        if (icon) {
+          icon.style.transform = open ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+      };
+
+      trigger.addEventListener('click', () => {
+        const shouldOpen = !item.classList.contains('is-open');
+
+        items.forEach((otherItem) => {
+          const otherPanel = otherItem.querySelector('.burnout-accordion-panel');
+          const otherIcon = otherItem.querySelector('.burnout-accordion-icon');
+          otherItem.classList.remove('is-open');
+          otherItem.classList.remove('bg-[#FDF6F3]');
+          otherItem.classList.add('bg-white');
+          otherItem.classList.remove('border-[#EAD4CD]');
+          otherItem.classList.add('border-[#F2E8E5]');
+          if (otherPanel) {
+            otherPanel.classList.add('hidden');
+            otherPanel.style.maxHeight = '0px';
+            otherPanel.style.opacity = '0';
+          }
+          if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+        });
+
+        if (shouldOpen) {
+          setOpenState(true);
+        }
+      });
+
+      setOpenState(item.classList.contains('is-open'));
+    });
+  }
+
   function initDepressionCausesAccordion() {
     const wrap = document.getElementById('depressionCausesAccordion');
     if (!wrap) return;
@@ -1463,6 +1538,7 @@
     initTabGroup('stress',     'physical');   // stress.html
     initTabGroup('bipolar',    'mania');      // bipolar.html symptom tabs
     initBipolarTreatmentTabs();               // bipolar.html treatment tabs
+    initBurnoutOverlapAccordion();            // burnout.html overlap accordion
     initDepressionCausesAccordion();
     initDepCooccurTabs();
 
