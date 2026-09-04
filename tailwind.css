@@ -826,6 +826,9 @@
   .h-\[62px\] {
     height: 62px !important;
   }
+  .h-\[130px\] {
+    height: 130px !important;
+  }
   .h-\[140px\] {
     height: 140px !important;
   }
@@ -837,6 +840,9 @@
   }
   .h-\[176px\] {
     height: 176px !important;
+  }
+  .h-\[190px\] {
+    height: 190px !important;
   }
   .h-\[200px\] {
     height: 200px !important;
@@ -1057,6 +1063,9 @@
   .w-\[65\%\] {
     width: 65% !important;
   }
+  .w-\[130px\] {
+    width: 130px !important;
+  }
   .w-\[140px\] {
     width: 140px !important;
   }
@@ -1068,6 +1077,12 @@
   }
   .w-\[176px\] {
     width: 176px !important;
+  }
+  .w-\[190\] {
+    width: 190 !important;
+  }
+  .w-\[190px\] {
+    width: 190px !important;
   }
   .w-\[210px\] {
     width: 210px !important;
@@ -1149,6 +1164,9 @@
   }
   .max-w-\[600px\] {
     max-width: 600px !important;
+  }
+  .max-w-\[620px\] {
+    max-width: 620px !important;
   }
   .max-w-\[623px\] {
     max-width: 623px !important;
@@ -2005,6 +2023,9 @@
   }
   .bg-\[\#EEF5E8\] {
     background-color: #EEF5E8 !important;
+  }
+  .bg-\[\#F2D9D2\] {
+    background-color: #F2D9D2 !important;
   }
   .bg-\[\#F2E5D5\] {
     background-color: #F2E5D5 !important;
@@ -3287,6 +3308,9 @@
         background-color: color-mix(in oklab, var(--color-white) 30%, transparent) !important;
       }
     }
+    .group-hover\:text-\[\#A93E28\]:is(:where(.group):hover *) {
+      color: #A93E28 !important;
+    }
     .group-hover\:text-\[\#A85848\]:is(:where(.group):hover *) {
       color: #A85848 !important;
     }
@@ -3410,6 +3434,9 @@
     }
     .hover\:bg-\[\#FAF0EC\]:hover {
       background-color: #FAF0EC !important;
+    }
+    .hover\:bg-\[\#FBF3EF\]:hover {
+      background-color: #FBF3EF !important;
     }
     .hover\:bg-\[\#FFF7F3\]:hover {
       background-color: #FFF7F3 !important;
@@ -3756,6 +3783,9 @@
     .md\:col-span-2 {
       grid-column: span 2 / span 2 !important;
     }
+    .md\:mx-0 {
+      margin-inline: 0px !important;
+    }
     .md\:mt-14 {
       margin-top: calc(var(--spacing) * 14) !important;
     }
@@ -3909,6 +3939,9 @@
     .md\:justify-end {
       justify-content: flex-end !important;
     }
+    .md\:justify-start {
+      justify-content: flex-start !important;
+    }
     .md\:gap-4 {
       gap: calc(var(--spacing) * 4) !important;
     }
@@ -3993,6 +4026,9 @@
     .md\:px-\[28px\] {
       padding-inline: 28px !important;
     }
+    .md\:px-\[56px\] {
+      padding-inline: 56px !important;
+    }
     .md\:py-6 {
       padding-block: calc(var(--spacing) * 6) !important;
     }
@@ -4001,6 +4037,9 @@
     }
     .md\:py-10 {
       padding-block: calc(var(--spacing) * 10) !important;
+    }
+    .md\:py-14 {
+      padding-block: calc(var(--spacing) * 14) !important;
     }
     .md\:py-16 {
       padding-block: calc(var(--spacing) * 16) !important;

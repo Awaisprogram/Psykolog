@@ -437,13 +437,34 @@
      FAQ accordion (main site FAQ list — #faqList)
      ------------------------------------------------------------------- */
   function initFaq() {
-    const list = document.getElementById('faqList');
-    if (!list) return;
-    list.addEventListener('click', (e) => {
-      const trigger = e.target.closest('.faq-item__trigger');
-      if (!trigger) return;
-      const item = trigger.closest('.faq-item');
-      item.classList.toggle('is-open');
+    const items = $$('.faq-item');
+    if (!items.length) return;
+    const minusIcon = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"%3E%3Cpath d="M4 10h12" fill="none" stroke="%23C24C33" stroke-width="2" stroke-linecap="round"/%3E%3C/svg%3E';
+
+    items.forEach((item, index) => {
+      const trigger = item.querySelector('.faq-item__trigger, button');
+      const panel = item.querySelector('.faq-item__panel, .faq-content');
+      const icon = trigger && trigger.querySelector('img');
+      if (!trigger || !panel) return;
+
+      if (!panel.id) panel.id = `faq-answer-${index + 1}`;
+      trigger.type = 'button';
+      trigger.setAttribute('aria-controls', panel.id);
+      trigger.setAttribute('aria-expanded', 'false');
+      const plusIcon = icon && icon.getAttribute('src');
+
+      trigger.addEventListener('click', () => {
+        const isOpen = item.classList.toggle('is-open');
+        trigger.setAttribute('aria-expanded', String(isOpen));
+        if (icon && plusIcon) {
+          icon.src = isOpen ? minusIcon : plusIcon;
+          icon.alt = isOpen ? 'Minus Icon' : 'Plus Icon';
+        }
+
+        if (panel.classList.contains('faq-content')) {
+          panel.classList.toggle('hidden', !isOpen);
+        }
+      });
     });
   }
 
