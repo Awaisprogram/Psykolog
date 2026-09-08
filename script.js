@@ -393,14 +393,22 @@
     list.addEventListener('click', (e) => {
       const card = e.target.closest('[data-clinic]');
       if (!card) return;
-      list.querySelectorAll('[data-clinic]').forEach((c) => c.classList.toggle('is-active', c === card));
+      list.querySelectorAll('[data-clinic]').forEach((c) => {
+        const isActive = c === card;
+        c.classList.toggle('is-active', isActive);
+        c.classList.toggle('bg-[#F8D8D4]', isActive);
+        c.classList.toggle('border-[#A93E28]', isActive);
+        c.classList.toggle('bg-white', !isActive);
+        c.classList.toggle('border-[#EBE1DA]', !isActive);
+        c.setAttribute('aria-pressed', String(isActive));
+      });
       const idx = +card.dataset.clinic;
       const d = CLINIC_DATA[idx];
       if (!d) return;
       map.src = d.map;
       map.title = d.mapTitle;
       mapTag.textContent = `${d.short} clinic`;
-      if (bookBtn) bookBtn.textContent = `Book An Appointment At ${d.short}`;
+      if (bookBtn) bookBtn.textContent = `Bestill time hos ${d.short}`;
     });
   }
 

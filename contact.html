@@ -88,7 +88,7 @@
                 >Contact</a
               >
             </nav>
-            <div class="flex items-center gap-2 flex-none">
+            <div class="flex items-center gap-[10px] flex-none">
               <button
                 onclick="location.href = '#mh-book'"
                 class="font-sans font-bold text-[15px] leading-5 whitespace-nowrap text-white border-0 rounded-full px-7 py-[13px] cursor-pointer bg-brand-orange"
@@ -167,7 +167,7 @@
               >
                 <a
                   href="#"
-                  class="inline-flex items-center justify-center px-8 py-4 bg-[#C24C33] text-white rounded-full  font-bold text-base transition hover:bg-opacity-90"
+                  class="inline-flex items-center justify-center px-8 py-4 bg-[#C24C33] text-white rounded-full font-bold text-base transition hover:bg-opacity-90"
                 >
                   Book An Appointment
                 </a>
@@ -184,337 +184,464 @@
       </section>
 
       <section class="py-[48px]" data-reveal>
-  <div class="container mx-auto px-4">
-    <!-- Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-[16px]">
-      
-      <!-- Card 1: Phone -->
-      <a
-        href="tel:96044444"
-        class="bg-[#FBEAE7] border-t-[4px] border-t-[#C2543F] rounded-[24px] p-6 lg:p-[32px] flex flex-col justify-start transition-transform hover:-translate-y-1"
-      >
-        <div class="w-full flex justify-between items-start mb-[24px]">
-          <!-- Icon -->
-          <div class="w-[48px] h-[48px] bg-white rounded-[16px] flex items-center justify-center text-[#C2543F]">
-           <img src="assets/Contact/Phone.webp" alt="Phone Icon" class="object-contain" />
-        </div>
-          <!-- Arrow -->
-          <div class="text-[#C2543F]">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
-            </svg>
-          </div>
-        </div>
-        
-        <!-- Text Content -->
-        <span class="text-[#A93E28] text-[11px] font-bold tracking-[0.15em] uppercase mb-2">
-          Phone
-        </span>
-        <h3 class="font-serif text-[22px] md:text-[26px]  text-[#393939] mb-3 font-bold">
-          96 04 44 44
-        </h3>
-        <p class="text-[#5B5B5B] text-[14px] md:text-[16px] leading-relaxed m-0">
-          You can also send us a text message on the same number.
-        </p>
-      </a>
-
-      <!-- Card 2: Email -->
-      <a
-        href="mailto:hei@psykolog.no"
-        class="bg-[#E8EFE5] border-t-[4px] border-t-[#5C7454] rounded-[24px] p-6 lg:p-[32px] flex flex-col justify-start transition-transform hover:-translate-y-1"
-      >
-        <div class="w-full flex justify-between items-start mb-[24px]">
-        <div class="w-[48px] h-[48px] bg-white rounded-[16px] flex items-center justify-center text-[#5C7454]">
-           <img src="assets/Contact/Email.webp" alt="Email Icon" class="object-contain" />
-        </div>
-          <!-- Arrow -->
-          <div class="text-[#5C7454]">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
-            </svg>
-          </div>
-        </div>
-        
-        <!-- Text Content -->
-        <span class="text-[#4A5D46] text-[11px] font-bold tracking-[0.15em] uppercase mb-2">
-          Email
-        </span>
-        <h3 class="font-serif text-[22px] md:text-[26px]  text-[#393939] mb-3 font-bold">
-          hei@psykolog.no
-        </h3>
-        <p class="text-[#5B5B5B] text-[14px] md:text-[16px] leading-relaxed m-0">
-          We usually reply within 1–3 days.
-        </p>
-      </a>
-
-      <!-- Card 3: Our Clinics -->
-      <a
-        href="#clinics"
-        class="bg-[#E6EDF3] border-t-[4px] border-t-[#40627C] rounded-[24px] p-6 lg:p-[32px] flex flex-col justify-start transition-transform hover:-translate-y-1"
-      >
-        <div class="w-full flex justify-between items-start mb-[24px]">
-          <!-- Icon -->
-          <div class="w-[48px] h-[48px] bg-white rounded-[16px] flex items-center justify-center text-[#40627C]">
-            <img src="assets/Contact/Location.webp" alt="Location Icon" class="object-contain" />
-          </div>
-          <!-- Arrow -->
-          <div class="text-[#40627C]">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
-            </svg>
-          </div>
-        </div>
-        
-        <!-- Text Content -->
-        <span class="text-[#40627C] text-[11px] font-bold tracking-[0.15em] uppercase mb-2">
-          Our Clinics
-        </span>
-        <h3 class="font-serif text-[22px] md:text-[26px]  text-[#3F5568] mb-3 font-bold">
-          Oslo and Ski
-        </h3>
-        <p class="text-[#5B5B5B] text-[14px] md:text-[16px] leading-relaxed m-0">
-          Video consultations available across Norway.
-        </p>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<section class="section" data-reveal>
-  <div class="container">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-stretch">
-      
-      <!-- Left Column: Contact Form -->
-      <div class="bg-[#FFF7F3] border-[#F2E4DC] rounded-[24px] p-8 lg:p-[46px] flex flex-col justify-center">
-        <span class="text-[#C24C33] text-[11px] md:text-[14px] font-semibold tracking-[0.15em] uppercase mb-4 block">
-          Write To Us
-        </span>
-        <h2 class="font-serif text-[32px] md:text-[38px] lg:text-[40px] text-[#241C19] font-bold mb-8 leading-[1.2]">
-          Send us a message
-        </h2>
-
-        <form action="#" method="POST" class="flex flex-col gap-5">
-          <!-- Name & Email Row -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div class="flex flex-col gap-2">
-              <label for="name" class="text-[12px] md:text-[14px] text-[#4E403B]">Name</label>
-              <input
-                type="text"
-                id="name"
-                placeholder="Your full name"
-                class="w-full h-[52px] px-4 rounded-[12px] border border-[#EBE1DA] bg-white text-[#241C19] placeholder-[#A9A09A] focus:outline-none focus:border-[#CE5A43] focus:ring-1 focus:ring-[#CE5A43] transition-colors"
-              />
-            </div>
-            <div class="flex flex-col gap-2">
-              <label for="email" class="text-[12px] md:text-[14px] text-[#4E403B]">Email</label>
-              <input
-                type="email"
-                id="email"
-                placeholder="you@example.com"
-                class="w-full h-[52px] px-4 rounded-[12px] border border-[#EBE1DA] bg-white text-[#241C19] placeholder-[#A9A09A] focus:outline-none focus:border-[#CE5A43] focus:ring-1 focus:ring-[#CE5A43] transition-colors"
-              />
-            </div>
-          </div>
-
-          <!-- Phone Row -->
-          <div class="flex flex-col gap-2">
-            <label for="phone" class="text-[12px] md:text-[14px] text-[#4E403B]">Phone</label>
-            <input
-              type="tel"
-              id="phone"
-              placeholder="Your phone number"
-              class="w-full h-[52px] px-4 rounded-[12px] border border-[#EBE1DA] bg-white text-[#241C19] placeholder-[#A9A09A] focus:outline-none focus:border-[#CE5A43] focus:ring-1 focus:ring-[#CE5A43] transition-colors"
-            />
-          </div>
-
-          <!-- Message Row -->
-          <div class="flex flex-col gap-2">
-            <label for="message" class="text-[12px] md:text-[14px] text-[#4E403B]">Message</label>
-            <textarea
-              id="message"
-              placeholder="What would you like to ask us?"
-              class="w-full min-h-[140px] px-4 py-4 rounded-[12px] border border-[#EBE1DA] bg-white text-[#241C19] placeholder-[#A9A09A] focus:outline-none focus:border-[#CE5A43] focus:ring-1 focus:ring-[#CE5A43] transition-colors resize-y"
-            ></textarea>
-          </div>
-
-          <!-- Submit Button -->
-          <div class="mt-2 block">
-            <button
-              type="submit"
-              class="inline-flex items-center justify-center gap-2 bg-[#C2543F] hover:bg-[#A94836] text-white px-8 py-3.5 rounded-full font-sans text-[15px] font-semibold transition-colors"
+        <div class="container mx-auto px-4">
+          <!-- Cards Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-[16px]">
+            <!-- Card 1: Phone -->
+            <a
+              href="tel:96044444"
+              class="bg-[#FBEAE7] border-t-[4px] border-t-[#C2543F] rounded-[24px] p-6 lg:p-[32px] flex flex-col justify-start transition-transform hover:-translate-y-1"
             >
-              Send <span class="text-lg leading-none">&rarr;</span>
-            </button>
-          </div>
-        </form>
-      </div>
+              <div class="w-full flex justify-between items-start mb-[24px]">
+                <!-- Icon -->
+                <div
+                  class="w-[48px] h-[48px] bg-white rounded-[16px] flex items-center justify-center text-[#C2543F]"
+                >
+                  <img
+                    src="assets/Contact/Phone.webp"
+                    alt="Phone Icon"
+                    class="object-contain"
+                  />
+                </div>
+                <!-- Arrow -->
+             <img src="assets/Contact/Arrow-1.webp" alt="Arrow Up Right Icon" class="w-5 h-5 object-contain" />
+              </div>
 
-      <!-- Right Column: Image & Overlays -->
-      <div class="relative w-full h-[500px] lg:h-auto rounded-[24px] overflow-hidden bg-gray-100">
-        <!-- Main Image -->
-        <img
-          src="assets/Contact/Contact-form.webp" 
-          alt="Therapist speaking with patient"
-          class="absolute inset-0 w-full h-full object-cover object-center"
-        />
+              <!-- Text Content -->
+              <span
+                class="text-[#A93E28] text-[11px] font-bold tracking-[0.15em] uppercase mb-2"
+              >
+                Phone
+              </span>
+              <h3
+                class="font-serif text-[22px] md:text-[26px] text-[#393939] mb-3 font-bold"
+              >
+                96 04 44 44
+              </h3>
+              <p
+                class="text-[#5B5B5B] text-[14px] md:text-[16px] leading-relaxed m-0"
+              >
+                You can also send us a text message on the same number.
+              </p>
+            </a>
 
-        <!-- Top Left Badge Overlay -->
-        <div class="absolute top-6 left-6 inline-flex items-center gap-2.5 bg-white/95 backdrop-blur-md shadow-sm rounded-full pl-2 pr-5 py-2 z-10 border border-[#F09367]">
-          <div class="w-[22px] h-[22px] flex-shrink-0">
-           <img src="assets/Contact/phone-dark.webp" alt="Phone Icon" class="object-contain" />
+            <!-- Card 2: Email -->
+            <a
+              href="mailto:hei@psykolog.no"
+              class="bg-[#E8EFE5] border-t-[4px] border-t-[#5C7454] rounded-[24px] p-6 lg:p-[32px] flex flex-col justify-start transition-transform hover:-translate-y-1"
+            >
+              <div class="w-full flex justify-between items-start mb-[24px]">
+                <div
+                  class="w-[48px] h-[48px] bg-white rounded-[16px] flex items-center justify-center text-[#5C7454]"
+                >
+                  <img
+                    src="assets/Contact/Email.webp"
+                    alt="Email Icon"
+                    class="object-contain"
+                  />
+                </div>
+                <!-- Arrow -->
+                <img src="assets/Contact/Arrow-2.webp" alt="Arrow Up Right Icon" class="w-5 h-5 object-contain" />
+              </div>
+
+              <!-- Text Content -->
+              <span
+                class="text-[#4A5D46] text-[11px] font-bold tracking-[0.15em] uppercase mb-2"
+              >
+                Email
+              </span>
+              <h3
+                class="font-serif text-[22px] md:text-[26px] text-[#393939] mb-3 font-bold"
+              >
+                hei@psykolog.no
+              </h3>
+              <p
+                class="text-[#5B5B5B] text-[14px] md:text-[16px] leading-relaxed m-0"
+              >
+                We usually reply within 1–3 days.
+              </p>
+            </a>
+
+            <!-- Card 3: Our Clinics -->
+            <a
+              href="#clinics"
+              class="bg-[#E6EDF3] border-t-[4px] border-t-[#40627C] rounded-[24px] p-6 lg:p-[32px] flex flex-col justify-start transition-transform hover:-translate-y-1"
+            >
+              <div class="w-full flex justify-between items-start mb-[24px]">
+                <!-- Icon -->
+                <div
+                  class="w-[48px] h-[48px] bg-white rounded-[16px] flex items-center justify-center text-[#40627C]"
+                >
+                  <img
+                    src="assets/Contact/Location.webp"
+                    alt="Location Icon"
+                    class="object-contain"
+                  />
+                </div>
+                <!-- Arrow -->
+                <img src="assets/Contact/Arrow-3.webp" alt="Arrow Up Right Icon" class="w-5 h-5 object-contain" />
+              </div>
+
+              <!-- Text Content -->
+              <span
+                class="text-[#40627C] text-[11px] font-bold tracking-[0.15em] uppercase mb-2"
+              >
+                Our Clinics
+              </span>
+              <h3
+                class="font-serif text-[22px] md:text-[26px] text-[#3F5568] mb-3 font-bold"
+              >
+                Oslo and Ski
+              </h3>
+              <p
+                class="text-[#5B5B5B] text-[14px] md:text-[16px] leading-relaxed m-0"
+              >
+                Video consultations available across Norway.
+              </p>
+            </a>
           </div>
-          <span class="text-[12px] font-bold text-[#F09367] uppercase">
-            Rather speak to us
-          </span>
         </div>
+      </section>
 
-        <!-- Bottom Warning Card Overlay -->
-        <div class="absolute bottom-6 left-6 right-6 bg-white rounded-[20px] p-5 md:p-6 shadow-[0_12px_30px_rgba(0,0,0,0.08)] z-10 flex items-start gap-4 border-l-[3px] border-l-[#F09367]">
-          <!-- Icon -->
-        <div class="w-[34px] h-[34px] flex-shrink-0">
-           <img src="assets/Contact/info.webp" alt="Phone Icon" class="object-contain" />
+      <section class="section" data-reveal>
+        <div class="container">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-stretch"
+          >
+            <!-- Left Column: Contact Form -->
+            <div
+              class="bg-[#FFF7F3] border-[#F2E4DC] rounded-[24px] p-8 lg:p-[46px] flex flex-col justify-center"
+            >
+              <span
+                class="text-[#C24C33] text-[11px] md:text-[14px] font-semibold tracking-[0.15em] uppercase mb-4 block"
+              >
+                Write To Us
+              </span>
+              <h2
+                class="font-serif text-[32px] md:text-[38px] lg:text-[40px] text-[#241C19] font-bold mb-8 leading-[1.2]"
+              >
+                Send us a message
+              </h2>
+
+              <form action="#" method="POST" class="flex flex-col gap-5">
+                <!-- Name & Email Row -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div class="flex flex-col gap-2">
+                    <label
+                      for="name"
+                      class="text-[12px] md:text-[14px] text-[#4E403B]"
+                      >Name</label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      placeholder="Your full name"
+                      class="w-full h-[52px] px-4 rounded-[12px] border border-[#EBE1DA] bg-white text-[#241C19] placeholder-[#A9A09A] focus:outline-none focus:border-[#CE5A43] focus:ring-1 focus:ring-[#CE5A43] transition-colors"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    <label
+                      for="email"
+                      class="text-[12px] md:text-[14px] text-[#4E403B]"
+                      >Email</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="you@example.com"
+                      class="w-full h-[52px] px-4 rounded-[12px] border border-[#EBE1DA] bg-white text-[#241C19] placeholder-[#A9A09A] focus:outline-none focus:border-[#CE5A43] focus:ring-1 focus:ring-[#CE5A43] transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <!-- Phone Row -->
+                <div class="flex flex-col gap-2">
+                  <label
+                    for="phone"
+                    class="text-[12px] md:text-[14px] text-[#4E403B]"
+                    >Phone</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Your phone number"
+                    class="w-full h-[52px] px-4 rounded-[12px] border border-[#EBE1DA] bg-white text-[#241C19] placeholder-[#A9A09A] focus:outline-none focus:border-[#CE5A43] focus:ring-1 focus:ring-[#CE5A43] transition-colors"
+                  />
+                </div>
+
+                <!-- Message Row -->
+                <div class="flex flex-col gap-2">
+                  <label
+                    for="message"
+                    class="text-[12px] md:text-[14px] text-[#4E403B]"
+                    >Message</label
+                  >
+                  <textarea
+                    id="message"
+                    placeholder="What would you like to ask us?"
+                    class="w-full min-h-[140px] px-4 py-4 rounded-[12px] border border-[#EBE1DA] bg-white text-[#241C19] placeholder-[#A9A09A] focus:outline-none focus:border-[#CE5A43] focus:ring-1 focus:ring-[#CE5A43] transition-colors resize-y"
+                  ></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mt-2 block">
+                  <button
+                    type="submit"
+                    class="inline-flex items-center justify-center gap-[2.5px] bg-[#C24C33] hover:bg-[#A94836] text-white px-8 py-3.5 rounded-full text-[15px] font-bold transition-colors cursor-pointer"
+                  >
+                    Send
+                    <img
+                      src="assets/Faqs/arrow.webp"
+                      alt="Right Arrow Icon"
+                      class="h-6 w-6 object-contain mt-0.5"
+                    />
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Right Column: Image & Overlays -->
+            <div
+              class="relative w-full h-[500px] lg:h-auto rounded-[24px] overflow-hidden bg-gray-100"
+            >
+              <!-- Main Image -->
+              <img
+                src="assets/Contact/Contact-form.webp"
+                alt="Therapist speaking with patient"
+                class="absolute inset-0 w-full h-full object-cover object-center"
+              />
+
+              <!-- Top Left Badge Overlay -->
+              <div
+                class="absolute top-6 left-6 inline-flex items-center gap-2.5 bg-white/95 backdrop-blur-md shadow-sm rounded-full pl-2 pr-5 py-2 z-10 border border-[#F09367]"
+              >
+                <div class="w-[22px] h-[22px] flex-shrink-0">
+                  <img
+                    src="assets/Contact/phone-dark.webp"
+                    alt="Phone Icon"
+                    class="object-contain"
+                  />
+                </div>
+                <span class="text-[12px] font-bold text-[#F09367] uppercase">
+                  Rather speak to us
+                </span>
+              </div>
+
+              <!-- Bottom Warning Card Overlay -->
+              <div
+                class="absolute bottom-6 left-6 right-6 bg-white rounded-[20px] p-5 md:p-6 shadow-[0_12px_30px_rgba(0,0,0,0.08)] z-10 flex items-start gap-4 border-l-[3px] border-l-[#F09367]"
+              >
+                <!-- Icon -->
+                <div class="w-[34px] h-[34px] flex-shrink-0">
+                  <img
+                    src="assets/Contact/info.webp"
+                    alt="Phone Icon"
+                    class="object-contain"
+                  />
+                </div>
+                <!-- Content -->
+                <div>
+                  <span
+                    class="block text-[11px] md:text-[16px] font-bold text-[#F09367] uppercase mb-1.5"
+                  >
+                    Before you write
+                  </span>
+                  <p
+                    class="text-[14px] md:text-[16px] text-[#5B5B5B] leading-[1.6] m-0 pr-4"
+                  >
+                    We don't use this form to give treatment or assess your
+                    health. If you need help quickly, please call us instead.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <!-- Content -->
-          <div>
-            <span class="block text-[11px] md:text-[16px] font-bold text-[#F09367] uppercase mb-1.5">
-              Before you write
+        </div>
+      </section>
+
+      <section class="section bg-[#F8EBE2]">
+        <div class="container" data-reveal>
+          <!-- Section Header -->
+          <div class="mb-10">
+            <span
+              class="text-[#A93E28] text-[11px] md:text-[14px] font-bold tracking-[0.15em] uppercase mb-3 block"
+            >
+              Where Can I Receive Help?
             </span>
-            <p class="text-[14px] md:text-[16px] text-[#5B5B5B] leading-[1.6] m-0 pr-4">
-              We don't use this form to give treatment or assess your health. If you need help quickly, please call us instead.
+            <h2
+              class="font-serif text-[36px] md:text-[44px] font-bold text-[#241C19] mb-4 leading-tight"
+            >
+              Our Clinics
+            </h2>
+            <p
+              class="text-[#5B5B5B] text-[16px] md:text-[20px] leading-relaxed m-0"
+            >
+              Psykolog.no serves patients across all of Norway, both online and
+              in person. If you prefer an in person session, we have clinics in
+              major cities and we also offer a full online mental health
+              service.
             </p>
           </div>
-        </div>
 
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section bg-[#F8EBE2]">
-  <div class="container" data-reveal>
-    
-    <!-- Section Header -->
-    <div class="mb-10">
-      <span class="text-[#A93E28] text-[11px] md:text-[14px] font-bold tracking-[0.15em] uppercase mb-3 block">
-        Where Can I Receive Help?
-      </span>
-      <h2 class="font-serif text-[36px] md:text-[44px] font-bold text-[#241C19] mb-4 leading-tight">
-        Our Clinics
-      </h2>
-      <p class="text-[#5B5B5B] text-[16px] md:text-[20px] leading-relaxed m-0">
-        Psykolog.no serves patients across all of Norway, both online and in person. If you prefer an in person session, we have clinics in major cities and we also offer a full online mental health service.
-      </p>
-    </div>
-
-    <!-- Main Content: Location Selector & Map -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[420px_820px] gap-6 items-stretch">
-      
-      <!-- Left Column: Location Cards & Action -->
-      <div class="flex flex-col justify-between gap-4">
-        <div class="flex flex-col gap-3">
-          
-          <!-- Active Card: Oslo -->
-          <div class="bg-[#F8D8D4] border border-[#A93E28] rounded-[20px] p-5 flex items-center gap-4 cursor-pointer transition-all lg:h-[108px]">
-            <div class="w-[40px] h-[40px]">
-            <img src="assets/Contact/Pin.webp" alt="Location Pin Icon" class="object-contain" />
-             </div>
-            <div>
-              <h3 class="font-serif font-bold text-[20px] text-[#241C19] leading-snug">Oslo</h3>
-              <p class="text-[#665D59] text-[14px] m-0">Veitvetveien 8, 0586 Oslo</p>
-            </div>
-          </div>
-
-          <!-- Inactive Card: Ski -->
-          <div class="bg-white border border-[#EBE1DA] rounded-[20px] p-5 flex items-center gap-4 cursor-pointer hover:border-[#CE5A43]/40 transition-all lg:h-[108px]">
-            <div class="w-[40px] h-[40px]">
-            <img src="assets/Contact/Pin.webp" alt="Location Pin Icon" class="object-contain" />
-             </div>
-            <div>
-              <h3 class="font-serif font-bold text-[20px] text-[#241C19] leading-snug">Ski</h3>
-              <p class="text-[#665D59] text-[14px] m-0">Åsenveien 1, 1400 Ski</p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Action Button -->
-        <div class="mt-2">
-          <a
-            href="#"
-            class="inline-flex items-center justify-center bg-[#A93E28] hover:bg-[#A94836] text-white px-7 py-3.5 rounded-full font-sans text-[15px] md:textt-[18px] font-bold transition-colors"
+          <!-- Main Content: Location Selector & Map -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[420px_820px] gap-6 items-stretch"
           >
-            Book An Appointment At Oslo
-          </a>
+            <!-- Left Column: Location Cards & Action -->
+            <div class="flex flex-col justify-between gap-4" id="clinicList">
+              <div class="flex flex-col gap-3">
+                <!-- Active Card: Oslo -->
+                <div
+                  class="bg-[#F8D8D4] border border-[#A93E28] rounded-[20px] p-5 flex items-center gap-4 cursor-pointer transition-all lg:h-[108px] is-active"
+                  data-clinic="0"
+                  role="button"
+                  tabindex="0"
+                  aria-pressed="true"
+                >
+                  <div class="w-[40px] h-[40px]">
+                    <img
+                      src="assets/Contact/Pin.webp"
+                      alt="Location Pin Icon"
+                      class="object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h3
+                      class="font-serif font-bold text-[20px] text-[#241C19] leading-snug"
+                    >
+                      Oslo
+                    </h3>
+                    <p class="text-[#665D59] text-[14px] m-0">
+                      Veitvetveien 8, 0586 Oslo
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Inactive Card: Ski -->
+                <div
+                  class="bg-white border border-[#EBE1DA] rounded-[20px] p-5 flex items-center gap-4 cursor-pointer hover:border-[#CE5A43]/40 transition-all lg:h-[108px]"
+                  data-clinic="1"
+                  role="button"
+                  tabindex="0"
+                  aria-pressed="false"
+                >
+                  <div class="w-[40px] h-[40px]">
+                    <img
+                      src="assets/Contact/Pin.webp"
+                      alt="Location Pin Icon"
+                      class="object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h3
+                      class="font-serif font-bold text-[20px] text-[#241C19] leading-snug"
+                    >
+                      Ski
+                    </h3>
+                    <p class="text-[#665D59] text-[14px] m-0">
+                      Åsenveien 1, 1400 Ski
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action Button -->
+              <div class="mt-2">
+                <a
+                  id="clinicBookBtn"
+                  href="#"
+                  class="inline-flex items-center justify-center bg-[#A93E28] hover:bg-[#A94836] text-white px-7 py-3.5 rounded-full font-sans text-[15px] md:textt-[18px] font-bold transition-colors"
+                >
+                  Book An Appointment At Oslo
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive Map Display -->
+            <div
+              class="relative min-h-[320px] rounded-[24px] overflow-hidden border border-[#EBE1DA] shadow-sm bg-[#E5E9E7]"
+            >
+              <!-- Map Image Background -->
+              <iframe
+                id="clinicMap"
+                title="Map of Oslo"
+                loading="lazy"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=10.70%2C59.895%2C10.80%2C59.93&amp;layer=mapnik"
+                class="absolute inset-0 w-full h-full border-0"
+              ></iframe>
+
+             
+              <!-- Location Badge Overlay -->
+              <div
+                class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-full px-4 py-2 shadow-md border border-white flex items-center gap-2"
+              >
+                <span class="w-2 h-2 rounded-full bg-[#CE5A43]"></span>
+                <span
+                  id="clinicMapTag"
+                  class="text-[11px] font-bold tracking-[0.12em] text-[#CE5A43] uppercase"
+                >
+                  Oslo Clinic
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Banner: Urgent Matters -->
+          <div
+            class="mt-10 bg-[#C24C33] rounded-[24px] p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-sm relative overflow-hidden"
+          >
+            <!-- Subtle Decorative Background Patterns (Right & Bottom) -->
+
+            <div
+              class="absolute -right-28 top-[-152px] w-[320px] h-[320px] rounded-full border-[26px] border-[#F093671A] pointer-events-none"
+            ></div>
+            <span
+              class="absolute right-36 -bottom-4 text-white/15 text-5xl pointer-events-none select-none"
+              >✦</span
+            >
+
+            <!-- Text Content -->
+            <div class="max-w-2xl relative z-10">
+              <h3
+                class="font-serif text-[28px] lg:text-[32px] font-bold text-white mb-2 leading-tight"
+              >
+                Urgent Matters
+              </h3>
+              <p
+                class="text-white text-[15px] md:text-[17px] leading-relaxed m-0"
+              >
+                Our contact and booking form is not meant for emergencies. If
+                you or someone you know needs help right away:
+              </p>
+            </div>
+
+            <!-- Emergency Box -->
+            <div
+              class="bg-[#FFFFFF1A] border border-white/20 backdrop-blur-md rounded-[20px] p-5 lg:p-6 flex items-center gap-4 shrink-0 w-full sm:w-auto sm:min-w-[340px] relative z-10"
+            >
+              <div class="w-12 h-12">
+                <img
+                  src="assets/Contact/call.webp"
+                  alt="Phone Icon"
+                  class="object-contain"
+                />
+              </div>
+              <div>
+                <span
+                  class="font-serif block text-[11px] md:text-[16px] font-bold text-white uppercase mb-[8px]"
+                >
+                  Call The Emergency Number
+                </span>
+                <span
+                  class="md:text-[24px] text-[20px] font-bold text-white leading-none block"
+                >
+                  113
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <!-- Right Column: Interactive Map Display -->
-      <div class="relative min-h-[320px] rounded-[24px] overflow-hidden border border-[#EBE1DA] shadow-sm bg-[#E5E9E7]">
-        <!-- Map Image Background -->
-        <img
-          src="assets/Contact/oslo-map.webp"
-          alt="Oslo Map Location"
-          class="absolute inset-0 w-full h-full object-cover"
-        />
-
-        <!-- Map Zoom Controls Top Right -->
-        <div class="absolute top-4 right-4 flex flex-col bg-white rounded-lg shadow-sm border border-[#EBE1DA] overflow-hidden">
-          <button type="button" aria-label="Zoom in" class="w-8 h-8 flex items-center justify-center text-[#241C19] font-bold text-lg hover:bg-gray-50 border-b border-[#EBE1DA]">+</button>
-          <button type="button" aria-label="Zoom out" class="w-8 h-8 flex items-center justify-center text-[#241C19] font-bold text-lg hover:bg-gray-50">−</button>
-        </div>
-
-        <!-- Location Badge Overlay -->
-        <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-full px-4 py-2 shadow-md border border-white flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-[#CE5A43]"></span>
-          <span class="text-[11px] font-bold tracking-[0.12em] text-[#CE5A43] uppercase">
-            Oslo Clinic
-          </span>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Bottom Banner: Urgent Matters -->
-    <div class="mt-10 bg-[#C24C33] rounded-[24px] p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-sm relative overflow-hidden">
-  
-  <!-- Subtle Decorative Background Patterns (Right & Bottom) -->
-  
-  <div class="absolute -right-28 top-[-152px] w-[320px] h-[320px] rounded-full border-[26px] border-[#F093671A] pointer-events-none"></div>
-  <span class="absolute right-36 -bottom-4 text-white/15 text-5xl pointer-events-none select-none">✦</span>
-
-  <!-- Text Content -->
-  <div class="max-w-2xl relative z-10">
-    <h3 class="font-serif text-[28px] lg:text-[32px] font-bold text-white mb-2 leading-tight">
-      Urgent Matters
-    </h3>
-    <p class="text-white text-[15px] md:text-[17px] leading-relaxed m-0">
-      Our contact and booking form is not meant for emergencies. If you or someone you know needs help right away:
-    </p>
-  </div>
-
-  <!-- Emergency Box -->
-  <div class="bg-[#FFFFFF1A] border border-white/20 backdrop-blur-md rounded-[20px] p-5 lg:p-6 flex items-center gap-4 shrink-0 w-full sm:w-auto sm:min-w-[340px] relative z-10">
-    <div class="w-12 h-12">
-    <img src="assets/Contact/call.webp" alt="Phone Icon" class="object-contain" />
-    </div>
-    <div>
-      <span class=" font-serif block text-[11px] md:text-[16px] font-bold text-white uppercase mb-[8px]">
-        Call The Emergency Number
-      </span>
-      <span class="md:text-[24px] text-[20px] font-bold text-white leading-none block">
-        113
-      </span>
-    </div>
-  </div>
-
-</div>
-
-  </div>
-</section>
-
-   
+      </section>
 
       <!-- ============ CTA ============ -->
       <section class="section" data-reveal>
@@ -542,39 +669,33 @@
           >
             <div class="text-center md:text-left max-w-[665px]">
               <h2
-                class="font-serif text-[30px] md:text-[36px] text-[#241C19] mb-4 font-bold"
+                class="font-serif text-[30px] md:text-[38px] text-[#241C19] mb-4 font-bold"
               >
-                Didn't Find The Answer To
-                <em class="italic text-[#C24C33]">Your Questions?</em>
+                Need An Appointment Quickly?
               </h2>
 
               <p
                 class="text-[#6B5F5A] text-[15px] md:text-[18px] leading-[1.6] max-w-[620px] mx-auto md:mx-0 mb-8 font-normal"
               >
-                Contact us, or book an initial conversation with one of our
-                psychologists, who can help you further.
+                We understand that waiting for mental health support can be
+                difficult. At Psykolog.no, we aim to offer a short waiting time,
+                and you don't need a referral from your GP to book a session
+                with a psychologist here.
               </p>
 
               <div
-                class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4"
+                class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-[10px]"
               >
                 <a
                   href="#"
-                  class="inline-flex items-center justify-center gap-2 bg-[#C24C33] hover:bg-[#A93E28] text-white font-bold text-[15px] px-[24px] py-[12px] rounded-full transition-colors"
+                  class="inline-flex items-center justify-center bg-[#C24C33] hover:bg-[#A93E28] text-white font-bold text-[15px] px-[24px] py-[12px] rounded-full transition-colors"
                 >
-                  Ask Question
+                  Book An Appointment
                   <img
                     src="assets/Faqs/arrow.webp"
                     alt="Right Arrow Icon"
-                    class="h-6 w-6 object-contain"
+                    class="h-6 w-6 object-contain mt-0.5"
                   />
-                </a>
-
-                <a
-                  href="#"
-                  class="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#FBF3EF] text-[#C24C33] border border-[#C24C33] font-bold text-[15px] px-[24px] py-[12px] rounded-full transition-colors"
-                >
-                  Book An Appointment
                 </a>
               </div>
             </div>
@@ -582,7 +703,7 @@
             <div class="shrink-0">
               <div class="w-[421px] h-[280px]">
                 <img
-                  src="assets/Faqs/cta.webp"
+                  src="assets/Contact/cta.webp"
                   alt="Chat/Support Icon"
                   class="object-contain"
                 />
@@ -592,104 +713,149 @@
         </div>
       </section>
 
-
       <section class="section">
-  <div class="container">
-    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[782px_482px] gap-10 lg:gap-12 items-center">
-      
-      <!-- Left Column: Informational Text & Button -->
-      <div class="flex flex-col items-start pr-0 lg:pr-6">
-        <!-- Badge -->
-        <span class="text-[#A93E28] text-[11px] md:text-[14px] font-bold tracking-[0.15em] uppercase mb-3 block">
-          Self Serve
-        </span>
+        <div class="container">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[782px_482px] gap-10 lg:gap-12 items-center"
+          >
+            <!-- Left Column: Informational Text & Button -->
+            <div class="flex flex-col items-start pr-0 lg:pr-6">
+              <!-- Badge -->
+              <span
+                class="text-[#A93E28] text-[11px] md:text-[14px] font-bold tracking-[0.15em] uppercase mb-3 block"
+              >
+                Self Serve
+              </span>
 
-        <!-- Heading -->
-        <h2 class="h2 mb-6">
-          Other Ways to Find <em>Answers</em>
-        </h2>
+              <!-- Heading -->
+              <h2 class="h2 mb-6">Other Ways to Find <em>Answers</em></h2>
 
-        <!-- Description -->
-        <p class="text-[#524B48] text-[16px] md:text-[20px] leading-relaxed mb-8 max-w-[580px]">
-          What to know about prices, waiting times, or what a session looks like? Check our frequently asked questions.
-        </p>
+              <!-- Description -->
+              <p
+                class="text-[#524B48] text-[16px] md:text-[20px] leading-relaxed mb-8 max-w-[580px]"
+              >
+                What to know about prices, waiting times, or what a session
+                looks like? Check our frequently asked questions.
+              </p>
 
-        <!-- CTA Button -->
-        <a
-          href="#"
-          class="inline-flex items-center justify-center gap-3 bg-[#C24C33] hover:bg-[#A94836] text-white px-7 py-3.5 rounded-full font-sans text-[16px] font-bold transition-colors"
-        >
-          Frequently Asked Question
-          <span class="text-base leading-none">&rarr;</span>
-        </a>
-      </div>
+              <!-- CTA Button -->
+              <a
+                href="#"
+                class="inline-flex items-center justify-center gap-[10px] bg-[#C24C33] hover:bg-[#A94836] text-white px-7 py-3.5 rounded-full font-sans text-[16px] font-bold transition-colors"
+              >
+                Frequently Asked Question
+                <img
+                  src="assets/Faqs/arrow.webp"
+                  alt="Right Arrow Icon"
+                  class="h-6 w-6 object-contain mt-0.5"
+                />
+              </a>
+            </div>
 
-      <!-- Right Column: Stay In Touch Card -->
-      <div>
-        <div class="bg-[#C24C33] rounded-[32px] p-8 lg:px-[36px] lg:py-[50px] relative overflow-hidden shadow-sm flex flex-col justify-between">
-          
-          <!-- Decorative Background Curves (Top Right) -->
-           <div class="absolute -right-16 top-[-102px] w-[230px] h-[230px] rounded-full border-[26px] border-[#F093671A] pointer-events-none"></div>
+            <!-- Right Column: Stay In Touch Card -->
+            <div>
+              <div
+                class="bg-[#C24C33] rounded-[32px] p-8 lg:px-[36px] lg:py-[50px] relative overflow-hidden shadow-sm flex flex-col justify-between"
+              >
+                <!-- Decorative Background Curves (Top Right) -->
+                <div
+                  class="absolute -right-16 top-[-102px] w-[230px] h-[230px] rounded-full border-[26px] border-[#F093671A] pointer-events-none"
+                ></div>
 
-          <!-- Top Section -->
-          <div class="relative z-10 mb-8">
-            <span class="text-white/80 text-[11px] font-bold tracking-[0.15em] uppercase mb-2 block">
-              Stay In Touch
-            </span>
-            <h3 class="font-serif text-[24px] lg:text-[28px] font-bold text-white mb-6">
-              Follow Us
-            </h3>
+                <!-- Top Section -->
+                <div class="relative z-10 mb-8">
+                  <span
+                    class="text-white/80 text-[11px] font-bold tracking-[0.15em] uppercase mb-2 block"
+                  >
+                    Stay In Touch
+                  </span>
+                  <h3
+                    class="font-serif text-[24px] lg:text-[28px] font-bold text-white mb-6"
+                  >
+                    Follow Us
+                  </h3>
 
-            <!-- White Information Inner Card -->
-            <div class="bg-white rounded-[22px] p-5 lg:p-6 flex items-center gap-4 shadow-sm">
-              <div class="w-12 h-12 shrink-0">
-                <img src="assets/Contact/follow.webp" alt="Building / Office Icon" class="object-contain" />
+                  <!-- White Information Inner Card -->
+                  <div
+                    class="bg-white rounded-[22px] p-5 lg:p-6 flex items-center gap-4 shadow-sm"
+                  >
+                    <div class="w-12 h-12 shrink-0">
+                      <img
+                        src="assets/Contact/follow.webp"
+                        alt="Building / Office Icon"
+                        class="object-contain"
+                      />
+                    </div>
+                    <div
+                      class="text-[14px] lg:text-[16px] text-[#6B5F5A] leading-snug"
+                    >
+                      Psykolog.no, org. No: ............ . Sister clinic:<br />
+                      <a
+                        href="https://psykiater.no"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="font-bold text-[#A93E28] hover:underline inline-block mt-0.5"
+                      >
+                        Psykiater.no
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              <div class="text-[14px] lg:text-[16px] text-[#6B5F5A] leading-snug">
-                Psykolog.no, org. No: ............ . Sister clinic:<br />
-               <a href="https://psykiater.no"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="font-bold text-[#A93E28] hover:underline inline-block mt-0.5">
-                 Psykiater.no
-                </a>
+
+                <!-- Social Media Bar -->
+                <div
+                  class="relative z-10 flex flex-wrap items-center gap-6 lg:gap-8 pt-2"
+                >
+                  <!-- Facebook -->
+                  <a
+                    href="#"
+                    class="inline-flex items-center gap-3 text-white text-[12px] md:text-[16px] font-normal hover:opacity-90 transition-opacity"
+                  >
+                    <div class="w-[32px] h-[32px] shrink-0">
+                      <img
+                        src="assets/Contact/facebook.webp"
+                        alt="Facebook Icon"
+                        class="object-contain"
+                      />
+                    </div>
+                    <span>Facebook</span>
+                  </a>
+
+                  <!-- Instagram -->
+                  <a
+                    href="#"
+                    class="inline-flex items-center gap-3 text-white text-[12px] md:text-[16px] font-normal hover:opacity-90 transition-opacity"
+                  >
+                    <div class="w-[32px] h-[32px] shrink-0">
+                      <img
+                        src="assets/Contact/Instagram.webp"
+                        alt="Instagram Icon"
+                        class="object-contain"
+                      />
+                    </div>
+                    <span>Instagram</span>
+                  </a>
+
+                  <!-- Linkedin -->
+                  <a
+                    href="#"
+                    class="inline-flex items-center gap-3 text-white text-[12px] md:text-[16px] font-normal hover:opacity-90 transition-opacity"
+                  >
+                    <div class="w-[32px] h-[32px] shrink-0">
+                      <img
+                        src="assets/Contact/Linkedin.webp"
+                        alt="Linkedin Icon"
+                        class="object-contain"
+                      />
+                    </div>
+                    <span>Linkedin</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-
-          <!-- Social Media Bar -->
-          <div class="relative z-10 flex flex-wrap items-center gap-6 lg:gap-8 pt-2">
-            <!-- Facebook -->
-                <a href="#" class="inline-flex items-center gap-3 text-white text-[12px] md:text-[16px] font-normal hover:opacity-90 transition-opacity">
-                <div class="w-[32px] h-[32px] shrink-0">
-                    <img src="assets/Contact/facebook.webp" alt="Facebook Icon" class="object-contain" />
-                    </div>
-                <span>Facebook</span>
-                </a>
-
-            <!-- Instagram -->
-                <a href="#" class="inline-flex items-center gap-3 text-white text-[12px] md:text-[16px] font-normal hover:opacity-90 transition-opacity">
-                <div class="w-[32px] h-[32px] shrink-0">
-                    <img src="assets/Contact/Instagram.webp" alt="Instagram Icon" class="object-contain" />
-                    </div>
-                <span>Instagram</span>
-                </a>
-
-            <!-- Linkedin -->
-             <a href="#" class="inline-flex items-center gap-3 text-white text-[12px] md:text-[16px] font-normal hover:opacity-90 transition-opacity">
-                <div class="w-[32px] h-[32px] shrink-0">
-                    <img src="assets/Contact/Linkedin.webp" alt="Linkedin Icon" class="object-contain" />
-                    </div>
-                <span>Linkedin</span>
-                </a>
-          </div>
-
         </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+      </section>
     </main>
 
     <footer class="bg-brand-brown text-white pt-[72px] pb-8">
