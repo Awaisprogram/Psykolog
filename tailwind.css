@@ -1116,6 +1116,9 @@
   .w-\[32px\] {
     width: 32px !important;
   }
+  .w-\[34\] {
+    width: 34 !important;
+  }
   .w-\[34px\] {
     width: 34px !important;
   }
@@ -1981,6 +1984,9 @@
   .border-\[\#F7FAFD\] {
     border-color: #F7FAFD !important;
   }
+  .border-\[\#F09367\] {
+    border-color: #F09367 !important;
+  }
   .border-\[\#F093671A\] {
     border-color: #F093671A !important;
   }
@@ -2130,6 +2136,9 @@
   }
   .border-l-\[\#CE5A43\] {
     border-left-color: #CE5A43 !important;
+  }
+  .border-l-\[\#F09367\] {
+    border-left-color: #F09367 !important;
   }
   .border-l-transparent {
     border-left-color: transparent !important;
