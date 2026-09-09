@@ -798,180 +798,347 @@
             </p>
           </div>
 
-          <!-- 6-Card Grid -->
+          <!-- 6-Card Flip Grid -->
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Card 01 (Image Style) -->
-            <div
-              class="relative group h-[380px] rounded-[24px] overflow-hidden shadow-sm"
-            >
-              <img
-                 src="assets/oslo/flip1.webp"
-                alt="Authorized Psychologist"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
-              ></div>
 
-               <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end bg-gradient-to-t from-black/60 via-black/0 to-transparent rounded-[24px]">
-                <div class="flex items-end justify-between w-full">
-                <!-- Left side: Number and Title -->
-                <div class="flex flex-col">
-                    <span class="text-[#E78768] font-serif text-[18px] md:text-[20px] mb-1">
-                     01
-                    </span>
-                    <h3 class="font-serif text-white text-[24px] md:text-[28px] font-bold leading-tight">
-                        Authorized Psychologist
-                    </h3>
+            <!-- ── Card 01 ── Authorized Psychologist ─────────────────── -->
+            <div class="flip-card-perspective h-[380px]" data-flip-card="card-01">
+              <div class="flip-card-inner" id="flip-inner-01">
+
+                <!-- FRONT: photo -->
+                <div class="flip-card-face">
+                  <img src="assets/oslo/flip1.webp" alt="Authorized Psychologist"
+                       class="w-full h-full object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
+                    <div class="flex items-end justify-between w-full">
+                      <div class="flex flex-col">
+                        <span class="text-[#E78768] font-serif text-[18px] md:text-[20px] mb-1">01</span>
+                        <h3 class="font-serif text-white text-[24px] md:text-[28px] font-bold leading-tight">
+                          Authorized Psychologist
+                        </h3>
+                      </div>
+                      <button
+                        class="inline-flex items-center justify-center flex-shrink-0 transition-transform hover:scale-105 mb-1 cursor-pointer"
+                        data-flip-btn="card-01"
+                        aria-label="Flip card to read more"
+                      >
+                        <img src="assets/oslo/rotate-img.webp" alt="Flip" class="w-[44px] h-[44px] object-contain" />
+                      </button>
                     </div>
-
-                    <!-- Right side: Button -->
-                    <button class="inline-flex items-center justify-center flex-shrink-0 transition-transform hover:scale-105 mb-1">
-                    <img src="assets/oslo/rotate-img.webp" alt="Icon" class="w-[44px] h-[44px] object-contain" />
-                    </button>
-    
                   </div>
                 </div>
-            </div>
 
-            <!-- Card 02 (Terracotta Text Style) -->
-            <div
-              class="bg-[#C85237] text-white rounded-[24px] p-8 h-[380px] flex flex-col justify-between shadow-sm"
-            >
-              <div>
-                <img src="assets/oslo/icon2.webp" alt="Calendar / Date Icon" class="w-10 h-10 object-contain mb-6" />
-                <h3 class="font-serif text-[22px] font-bold mb-3 leading-snug text-white font-bold">
-                  No Referral, No Waiting List
-                </h3>
-                <p class="text-white text-[16px] leading-[1.6]">
-                  The public mental health pathway in Oslo requires a GP
-                  referral and then a wait of weeks or months. We have removed
-                  both steps. You book directly, online or in person.
-                </p>
-              </div>
-
-              <button
-                class="inline-flex items-center gap-2 text-white hover:text-white text-[14px] font-bold transition-colors"
-              >
-                <img src="assets/oslo/rotate-text.webp" alt="Icon" class="w-[34px] h-[34px] object-contain" />
-                Back to photo
-              </button>
-            </div>
-
-            <!-- Card 03 (Image Style) -->
-            <div
-              class="relative group h-[380px] rounded-[24px] overflow-hidden shadow-sm"
-            >
-              <img
-                src="assets/oslo/flip2.webp"
-                alt="Integrated Network"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
-              ></div>
-
-              <div class="flex items-end justify-between w-full">
-                <!-- Left side: Number and Title -->
-                <div class="flex flex-col">
-                    <span class="text-[#E78768] font-serif text-[18px] md:text-[20px] mb-1">
-                     03
-                    </span>
-                    <h3 class="font-serif text-white text-[24px] md:text-[28px] font-bold leading-tight">
-                        Integrated Network
-                    </h3>
+                <!-- BACK: terracotta -->
+                <div class="flip-card-face flip-card-back bg-[#C85237] p-8 flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-start justify-between mb-6">
+                      <img src="assets/oslo/icon2.webp" alt="" class="w-10 h-10 object-contain" />
+                      <span class="text-white/60 font-serif text-[18px]">01</span>
                     </div>
-
-                    <!-- Right side: Button -->
-                    <button class="inline-flex items-center justify-center flex-shrink-0 transition-transform hover:scale-105 mb-1">
-                    <img src="assets/oslo/rotate-img.webp" alt="Icon" class="w-[44px] h-[44px] object-contain" />
-                    </button>
-    
+                    <h3 class="font-serif text-white text-[22px] font-bold mb-3 leading-snug">
+                      Authorized Psychologist
+                    </h3>
+                    <p class="text-white/90 text-[15px] leading-[1.65]">
+                      Every psychologist at our Oslo clinic holds full Norwegian
+                      authorisation, meaning they have completed the required
+                      training, supervision, and licensing. You are always in
+                      qualified hands.
+                    </p>
                   </div>
-            </div>
+                  <button
+                    class="inline-flex items-center gap-2 text-white text-[14px] font-bold transition-opacity hover:opacity-80 cursor-pointer"
+                    data-flip-btn="card-01"
+                    aria-label="Flip back to photo"
+                  >
+                    <img src="assets/oslo/rotate-text.webp" alt="" class="w-[34px] h-[34px] object-contain" />
+                    Back to photo
+                  </button>
+                </div>
 
-            <!-- Card 04 (Terracotta Text Style) -->
-            <div
-              class="bg-[#C85237] text-white rounded-[24px] p-8 h-[380px] flex flex-col justify-between shadow-sm"
-            >
-              <div>
-                <img src="assets/oslo/icon4.webp" alt="Calendar / Date Icon" class="w-10 h-10 object-contain mb-6" />
-                <h3 class="font-serif text-[22px] font-bold mb-3 leading-snug text-white font-bold">
-                  Evidence Based Methods
-                </h3>
-                <p class="text-white/90 text-[14px] leading-[1.6]">
-                  Cognitive Behavioral Therapy (CBT), Acceptance and Commitment
-                  Therapy (ACT), EMDR for trauma, schema therapy, and CBT-I for
-                  sleep problems. You will be told which approach is being
-                  recommended for.
-                </p>
               </div>
-
-              <button
-                class="inline-flex items-center gap-2 text-white hover:text-white text-[14px] font-bold transition-colors"
-              >
-                <img src="assets/oslo/rotate-text.webp" alt="Icon" class="w-[34px] h-[34px] object-contain" />
-                Back to photo
-              </button>
             </div>
 
-            <!-- Card 05 (Image Style) -->
-            <div
-              class="relative group h-[380px] rounded-[24px] overflow-hidden shadow-sm"
-            >
-              <img
-                src="assets/oslo/flip3.webp"
-                alt="Full Confidentiality"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
-              ></div>
+            <!-- ── Card 02 ── No Referral ──────────────────────────────── -->
+            <div class="flip-card-perspective h-[380px]" data-flip-card="card-02">
+              <div class="flip-card-inner" id="flip-inner-02">
 
-              <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end bg-gradient-to-t from-black/60 via-black/0 to-transparent rounded-[24px]">
-                <div class="flex items-end justify-between w-full">
-    
-                    <!-- Left side: Number and Title -->
-                    <div class="flex flex-col">
-                    <span class="text-[#E78768] font-serif text-[18px] md:text-[20px] mb-1">
-                     05
-                    </span>
-                    <h3 class="font-serif text-white text-[24px] md:text-[28px] font-bold leading-tight">
-                        Full Confidentiality
+                <!-- FRONT: terracotta (this card's "front" is the info panel) -->
+                <div class="flip-card-face bg-[#C85237] p-8 flex flex-col justify-between">
+                  <div>
+                    <img src="assets/oslo/icon2.webp" alt="" class="w-10 h-10 object-contain mb-6" />
+                    <h3 class="font-serif text-white text-[22px] font-bold mb-3 leading-snug">
+                      No Referral, No Waiting List
                     </h3>
-                    </div>
+                    <p class="text-white text-[15px] leading-[1.65]">
+                      The public mental health pathway in Oslo requires a GP
+                      referral and then a wait of weeks or months. We have removed
+                      both steps. You book directly, online or in person.
+                    </p>
+                  </div>
+                  <button
+                    class="inline-flex items-center gap-2 text-white text-[14px] font-bold transition-opacity hover:opacity-80 cursor-pointer"
+                    data-flip-btn="card-02"
+                    aria-label="Flip card to see photo"
+                  >
+                    <img src="assets/oslo/rotate-text.webp" alt="" class="w-[34px] h-[34px] object-contain" />
+                    Back to photo
+                  </button>
+                </div>
 
-                    <!-- Right side: Button -->
-                    <button class="inline-flex items-center justify-center flex-shrink-0 transition-transform hover:scale-105 mb-1">
-                    <img src="assets/oslo/rotate-img.webp" alt="Icon" class="w-[44px] h-[44px] object-contain" />
-                    </button>
-    
+                <!-- BACK: photo -->
+                <div class="flip-card-face flip-card-back">
+                  <img src="assets/oslo/flip1.webp" alt="No Referral No Waiting List"
+                       class="w-full h-full object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
+                    <div class="flex items-end justify-between w-full">
+                      <div class="flex flex-col">
+                        <span class="text-[#E78768] font-serif text-[18px] md:text-[20px] mb-1">02</span>
+                        <h3 class="font-serif text-white text-[24px] md:text-[28px] font-bold leading-tight">
+                          No Referral Needed
+                        </h3>
+                      </div>
+                      <button
+                        class="inline-flex items-center justify-center flex-shrink-0 transition-transform hover:scale-105 mb-1 cursor-pointer"
+                        data-flip-btn="card-02"
+                        aria-label="Flip back"
+                      >
+                        <img src="assets/oslo/rotate-img.webp" alt="Flip" class="w-[44px] h-[44px] object-contain" />
+                      </button>
+                    </div>
                   </div>
                 </div>
-            </div>
 
-            <!-- Card 06 (Terracotta Text Style) -->
-            <div
-              class="bg-[#C85237] text-white rounded-[24px] p-8 h-[380px] flex flex-col justify-between shadow-sm"
-            >
-              <div>
-                 <img src="assets/oslo/icon6.webp" alt="Calendar / Date Icon" class="w-10 h-10 object-contain mb-6" />
-                <h3 class="font-serif text-[22px] font-bold mb-3 leading-snug text-white font-bold">
-                  Language Options
-                </h3>
-                <p class="text-white text-[16px] leading-[1.6]">
-                  Sessions are available in Norwegian, English, Swedish, Danish,
-                  Polish and Urdu, as well as other languages at the clinic.
-                </p>
               </div>
-
-             <button
-                class="inline-flex items-center gap-2 text-white hover:text-white text-[14px] font-bold transition-colors"
-              >
-                <img src="assets/oslo/rotate-text.webp" alt="Icon" class="w-[34px] h-[34px] object-contain" />
-                Back to photo
-              </button>
             </div>
+
+            <!-- ── Card 03 ── Integrated Network ──────────────────────── -->
+            <div class="flip-card-perspective h-[380px]" data-flip-card="card-03">
+              <div class="flip-card-inner" id="flip-inner-03">
+
+                <!-- FRONT: photo -->
+                <div class="flip-card-face">
+                  <img src="assets/oslo/flip2.webp" alt="Integrated Network"
+                       class="w-full h-full object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
+                    <div class="flex items-end justify-between w-full">
+                      <div class="flex flex-col">
+                        <span class="text-[#E78768] font-serif text-[18px] md:text-[20px] mb-1">03</span>
+                        <h3 class="font-serif text-white text-[24px] md:text-[28px] font-bold leading-tight">
+                          Integrated Network
+                        </h3>
+                      </div>
+                      <button
+                        class="inline-flex items-center justify-center flex-shrink-0 transition-transform hover:scale-105 mb-1 cursor-pointer"
+                        data-flip-btn="card-03"
+                        aria-label="Flip card to read more"
+                      >
+                        <img src="assets/oslo/rotate-img.webp" alt="Flip" class="w-[44px] h-[44px] object-contain" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- BACK: terracotta -->
+                <div class="flip-card-face flip-card-back bg-[#C85237] p-8 flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-start justify-between mb-6">
+                      <img src="assets/oslo/icon4.webp" alt="" class="w-10 h-10 object-contain" />
+                      <span class="text-white/60 font-serif text-[18px]">03</span>
+                    </div>
+                    <h3 class="font-serif text-white text-[22px] font-bold mb-3 leading-snug">
+                      Integrated Network
+                    </h3>
+                    <p class="text-white/90 text-[15px] leading-[1.65]">
+                      Our psychologists work closely with psychiatrists, GPs,
+                      and other specialists across Oslo. If your situation calls
+                      for a coordinated approach, we make sure all parts of
+                      your care are connected.
+                    </p>
+                  </div>
+                  <button
+                    class="inline-flex items-center gap-2 text-white text-[14px] font-bold transition-opacity hover:opacity-80 cursor-pointer"
+                    data-flip-btn="card-03"
+                    aria-label="Flip back to photo"
+                  >
+                    <img src="assets/oslo/rotate-text.webp" alt="" class="w-[34px] h-[34px] object-contain" />
+                    Back to photo
+                  </button>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- ── Card 04 ── Evidence Based Methods ──────────────────── -->
+            <div class="flip-card-perspective h-[380px]" data-flip-card="card-04">
+              <div class="flip-card-inner" id="flip-inner-04">
+
+                <!-- FRONT: terracotta -->
+                <div class="flip-card-face bg-[#C85237] p-8 flex flex-col justify-between">
+                  <div>
+                    <img src="assets/oslo/icon4.webp" alt="" class="w-10 h-10 object-contain mb-6" />
+                    <h3 class="font-serif text-white text-[22px] font-bold mb-3 leading-snug">
+                      Evidence Based Methods
+                    </h3>
+                    <p class="text-white/90 text-[15px] leading-[1.65]">
+                      Cognitive Behavioral Therapy (CBT), Acceptance and Commitment
+                      Therapy (ACT), EMDR for trauma, schema therapy, and CBT-I for
+                      sleep problems. You will be told which approach is being
+                      recommended for you.
+                    </p>
+                  </div>
+                  <button
+                    class="inline-flex items-center gap-2 text-white text-[14px] font-bold transition-opacity hover:opacity-80 cursor-pointer"
+                    data-flip-btn="card-04"
+                    aria-label="Flip card to see photo"
+                  >
+                    <img src="assets/oslo/rotate-text.webp" alt="" class="w-[34px] h-[34px] object-contain" />
+                    Back to photo
+                  </button>
+                </div>
+
+                <!-- BACK: photo -->
+                <div class="flip-card-face flip-card-back">
+                  <img src="assets/oslo/flip2.webp" alt="Evidence Based Methods"
+                       class="w-full h-full object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
+                    <div class="flex items-end justify-between w-full">
+                      <div class="flex flex-col">
+                        <span class="text-[#E78768] font-serif text-[18px] md:text-[20px] mb-1">04</span>
+                        <h3 class="font-serif text-white text-[24px] md:text-[28px] font-bold leading-tight">
+                          Evidence Based Methods
+                        </h3>
+                      </div>
+                      <button
+                        class="inline-flex items-center justify-center flex-shrink-0 transition-transform hover:scale-105 mb-1 cursor-pointer"
+                        data-flip-btn="card-04"
+                        aria-label="Flip back"
+                      >
+                        <img src="assets/oslo/rotate-img.webp" alt="Flip" class="w-[44px] h-[44px] object-contain" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- ── Card 05 ── Full Confidentiality ────────────────────── -->
+            <div class="flip-card-perspective h-[380px]" data-flip-card="card-05">
+              <div class="flip-card-inner" id="flip-inner-05">
+
+                <!-- FRONT: photo -->
+                <div class="flip-card-face">
+                  <img src="assets/oslo/flip3.webp" alt="Full Confidentiality"
+                       class="w-full h-full object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
+                    <div class="flex items-end justify-between w-full">
+                      <div class="flex flex-col">
+                        <span class="text-[#E78768] font-serif text-[18px] md:text-[20px] mb-1">05</span>
+                        <h3 class="font-serif text-white text-[24px] md:text-[28px] font-bold leading-tight">
+                          Full Confidentiality
+                        </h3>
+                      </div>
+                      <button
+                        class="inline-flex items-center justify-center flex-shrink-0 transition-transform hover:scale-105 mb-1 cursor-pointer"
+                        data-flip-btn="card-05"
+                        aria-label="Flip card to read more"
+                      >
+                        <img src="assets/oslo/rotate-img.webp" alt="Flip" class="w-[44px] h-[44px] object-contain" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- BACK: terracotta -->
+                <div class="flip-card-face flip-card-back bg-[#C85237] p-8 flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-start justify-between mb-6">
+                      <img src="assets/oslo/icon6.webp" alt="" class="w-10 h-10 object-contain" />
+                      <span class="text-white/60 font-serif text-[18px]">05</span>
+                    </div>
+                    <h3 class="font-serif text-white text-[22px] font-bold mb-3 leading-snug">
+                      Full Confidentiality
+                    </h3>
+                    <p class="text-white/90 text-[15px] leading-[1.65]">
+                      Everything discussed in your sessions is protected by strict
+                      professional confidentiality under Norwegian law. Your
+                      employer, GP, and family are not notified without your
+                      explicit consent.
+                    </p>
+                  </div>
+                  <button
+                    class="inline-flex items-center gap-2 text-white text-[14px] font-bold transition-opacity hover:opacity-80 cursor-pointer"
+                    data-flip-btn="card-05"
+                    aria-label="Flip back to photo"
+                  >
+                    <img src="assets/oslo/rotate-text.webp" alt="" class="w-[34px] h-[34px] object-contain" />
+                    Back to photo
+                  </button>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- ── Card 06 ── Language Options ────────────────────────── -->
+            <div class="flip-card-perspective h-[380px]" data-flip-card="card-06">
+              <div class="flip-card-inner" id="flip-inner-06">
+
+                <!-- FRONT: terracotta -->
+                <div class="flip-card-face bg-[#C85237] p-8 flex flex-col justify-between">
+                  <div>
+                    <img src="assets/oslo/icon6.webp" alt="" class="w-10 h-10 object-contain mb-6" />
+                    <h3 class="font-serif text-white text-[22px] font-bold mb-3 leading-snug">
+                      Language Options
+                    </h3>
+                    <p class="text-white text-[15px] leading-[1.65]">
+                      Sessions are available in Norwegian, English, Swedish, Danish,
+                      Polish and Urdu, as well as other languages at the clinic.
+                      You will always be matched with a psychologist you can
+                      speak to comfortably.
+                    </p>
+                  </div>
+                  <button
+                    class="inline-flex items-center gap-2 text-white text-[14px] font-bold transition-opacity hover:opacity-80 cursor-pointer"
+                    data-flip-btn="card-06"
+                    aria-label="Flip card to see photo"
+                  >
+                    <img src="assets/oslo/rotate-text.webp" alt="" class="w-[34px] h-[34px] object-contain" />
+                    Back to photo
+                  </button>
+                </div>
+
+                <!-- BACK: photo -->
+                <div class="flip-card-face flip-card-back">
+                  <img src="assets/oslo/flip3.webp" alt="Language Options"
+                       class="w-full h-full object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
+                    <div class="flex items-end justify-between w-full">
+                      <div class="flex flex-col">
+                        <span class="text-[#E78768] font-serif text-[18px] md:text-[20px] mb-1">06</span>
+                        <h3 class="font-serif text-white text-[24px] md:text-[28px] font-bold leading-tight">
+                          Language Options
+                        </h3>
+                      </div>
+                      <button
+                        class="inline-flex items-center justify-center flex-shrink-0 transition-transform hover:scale-105 mb-1 cursor-pointer"
+                        data-flip-btn="card-06"
+                        aria-label="Flip back"
+                      >
+                        <img src="assets/oslo/rotate-img.webp" alt="Flip" class="w-[44px] h-[44px] object-contain" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

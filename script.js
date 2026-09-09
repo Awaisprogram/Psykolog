@@ -1609,5 +1609,31 @@
         setTimeout(tryPlay, 800);
       }
     }
+
+    initFlipCards();
   });
+
+  /* -------------------------------------------------------------------
+     Flip Cards — 3D page-turn toggle (independent per card)
+     Each card wrapper carries data-flip-card="card-NN".
+     Buttons inside carry data-flip-btn="card-NN".
+     The inner rotating element has id="flip-inner-NN".
+     Toggling .is-flipped on that inner element triggers the CSS
+     rotateY(-180deg) transition around the left-spine origin.
+  ------------------------------------------------------------------- */
+  function initFlipCards() {
+    // Use event delegation on the document so future dynamic cards
+    // also work without re-initialising.
+    document.addEventListener('click', function (e) {
+      const btn = e.target.closest('[data-flip-btn]');
+      if (!btn) return;
+
+      const cardId = btn.dataset.flipBtn;           // e.g. "card-01"
+      const innerId = 'flip-inner-' + cardId.replace('card-', ''); // "flip-inner-01"
+      const inner = document.getElementById(innerId);
+      if (!inner) return;
+
+      inner.classList.toggle('is-flipped');
+    });
+  }
 })();
