@@ -660,6 +660,9 @@
   .mt-40 {
     margin-top: calc(var(--spacing) * 40) !important;
   }
+  .mt-\[0\.6\] {
+    margin-top: 0.6 !important;
+  }
   .mt-\[2px\] {
     margin-top: 2px !important;
   }
@@ -921,6 +924,9 @@
   .h-\[6px\] {
     height: 6px !important;
   }
+  .h-\[15px\] {
+    height: 15px !important;
+  }
   .h-\[20px\] {
     height: 20px !important;
   }
@@ -1176,14 +1182,23 @@
   .w-64 {
     width: calc(var(--spacing) * 64) !important;
   }
+  .w-\[1px\] {
+    width: 1px !important;
+  }
   .w-\[2px\] {
     width: 2px !important;
   }
   .w-\[5px\] {
     width: 5px !important;
   }
+  .w-\[10px\] {
+    width: 10px !important;
+  }
   .w-\[12px\] {
     width: 12px !important;
+  }
+  .w-\[16px\] {
+    width: 16px !important;
   }
   .w-\[18px\] {
     width: 18px !important;
@@ -1427,6 +1442,9 @@
   }
   .max-w-\[760px\] {
     max-width: 760px !important;
+  }
+  .max-w-\[764px\] {
+    max-width: 764px !important;
   }
   .max-w-\[769px\] {
     max-width: 769px !important;
@@ -2917,8 +2935,17 @@
     --tw-gradient-to: var(--color-white) !important;
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position)) !important;
   }
+  .stroke-\[\#3A6B97\] {
+    stroke: #3A6B97 !important;
+  }
+  .stroke-\[\#4A7862\] {
+    stroke: #4A7862 !important;
+  }
   .stroke-\[\#555\] {
     stroke: #555 !important;
+  }
+  .stroke-\[\#A48247\] {
+    stroke: #A48247 !important;
   }
   .stroke-\[\#C24C33\] {
     stroke: #C24C33 !important;
@@ -4197,6 +4224,10 @@
       --tw-translate-x: calc(var(--spacing) * 0.5) !important;
       translate: var(--tw-translate-x) var(--tw-translate-y) !important;
     }
+    .group-hover\:translate-x-1:is(:where(.group):hover *) {
+      --tw-translate-x: var(--spacing) !important;
+      translate: var(--tw-translate-x) var(--tw-translate-y) !important;
+    }
     .group-hover\:rotate-6:is(:where(.group):hover *) {
       rotate: 6deg !important;
     }
@@ -5241,6 +5272,9 @@
     }
     .md\:text-\[20\] {
       color: 20 !important;
+    }
+    .md\:text-\[26\] {
+      color: 26 !important;
     }
     @media (hover: hover) {
       .md\:hover\:border-l-3:hover {
