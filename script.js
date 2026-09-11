@@ -350,6 +350,19 @@
     });
   }
 
+  function initPsyTasks() {
+    initTabbedPreview({
+      listId: 'psyTasksList',
+      previewId: 'psyTasksPreview',
+      chipId: 'psyTasksChip',
+      titleId: 'psyTasksTitle',
+      descId: 'psyTasksDesc',
+      itemAttr: 'data-task',
+      itemClass: '.psy-tasks__item',
+      imgAttr: 'data-task-img'
+    });
+  }
+
   /* -------------------------------------------------------------------
      Psychotherapies — "read more" accordion
      ------------------------------------------------------------------- */
@@ -1554,6 +1567,7 @@
     initHiw();
     initConditions();
     initFormats();
+    initPsyTasks();
     initMoreTherapies();
     initPricing();
     initLocations();

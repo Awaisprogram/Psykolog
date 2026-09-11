@@ -909,6 +909,9 @@
   .h-64 {
     height: calc(var(--spacing) * 64) !important;
   }
+  .h-\[0px\] {
+    height: 0px !important;
+  }
   .h-\[2px\] {
     height: 2px !important;
   }
@@ -968,6 +971,9 @@
   }
   .h-\[52px\] {
     height: 52px !important;
+  }
+  .h-\[53px\] {
+    height: 53px !important;
   }
   .h-\[54px\] {
     height: 54px !important;
@@ -2404,6 +2410,9 @@
   }
   .bg-\[\#DFD0C7\] {
     background-color: #DFD0C7 !important;
+  }
+  .bg-\[\#E1FBFD\] {
+    background-color: #E1FBFD !important;
   }
   .bg-\[\#E4EDF4\] {
     background-color: #E4EDF4 !important;
@@ -4251,6 +4260,14 @@
   .group-\[\.is-active\]\:opacity-100:is(:where(.group):is(.is-active) *) {
     opacity: 100% !important;
   }
+  .group-\[\.is-active\]\:brightness-0:is(:where(.group):is(.is-active) *) {
+    --tw-brightness: brightness(0%) !important;
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,) !important;
+  }
+  .group-\[\.is-active\]\:invert:is(:where(.group):is(.is-active) *) {
+    --tw-invert: invert(100%) !important;
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,) !important;
+  }
   .group-\[\.is-open\]\:scale-y-0:is(:where(.group):is(.is-open) *) {
     --tw-scale-y: 0% !important;
     scale: var(--tw-scale-x) var(--tw-scale-y) !important;
@@ -4887,6 +4904,9 @@
     .md\:h-\[420px\] {
       height: 420px !important;
     }
+    .md\:h-\[450px\] {
+      height: 450px !important;
+    }
     .md\:h-\[500px\] {
       height: 500px !important;
     }
@@ -5323,6 +5343,9 @@
     .lg\:aspect-auto {
       aspect-ratio: auto !important;
     }
+    .lg\:h-\[0px\] {
+      height: 0px !important;
+    }
     .lg\:h-\[108px\] {
       height: 108px !important;
     }
@@ -5346,6 +5369,9 @@
     }
     .lg\:h-\[520px\] {
       height: 520px !important;
+    }
+    .lg\:h-\[530px\] {
+      height: 530px !important;
     }
     .lg\:h-\[550px\] {
       height: 550px !important;
@@ -5777,6 +5803,15 @@
     }
     .xl\:grid-cols-\[595px_682px\] {
       grid-template-columns: 595px 682px !important;
+    }
+    .xl\:grid-cols-\[618_1fr\] {
+      grid-template-columns: 618 1fr !important;
+    }
+    .xl\:grid-cols-\[618px_1fr\] {
+      grid-template-columns: 618px 1fr !important;
+    }
+    .xl\:grid-cols-\[618px_650px\] {
+      grid-template-columns: 618px 650px !important;
     }
     .xl\:grid-cols-\[681px_550px\] {
       grid-template-columns: 681px 550px !important;
