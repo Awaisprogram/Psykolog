@@ -1,123 +1,10 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Depression | psykolog.no</title>
-    <link rel="stylesheet" href="fonts.css" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="responsive.css" />
-    <link rel="stylesheet" href="tailwind.css" />
-  </head>
-  <body class="m-0 bg-white text-brand-taupe font-sans">
-    <div class="relative z-[51] bg-ink-600">
-      <div class="px-6 md:px-12 lg:px-16">
-        <div
-          class="max-w-[1312px] mx-auto flex items-center justify-between gap-6 h-[52px]"
-        >
-          <span class="inline-flex items-center gap-3">
-            <span
-              class="w-[22px] h-px bg-[rgba(248,216,212,0.5)] flex-none"
-            ></span>
-            <span
-              class="font-sans font-semibold text-[11px] leading-4 tracking-[2px] uppercase text-white whitespace-nowrap"
-              >Our mental health network</span
-            >
-          </span>
-          <span class="flex items-center gap-0">
-            <a
-              href="#"
-              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-transparent"
-              >Dps.no <span class="text-[11px] text-brand-mauve">↗</span></a
-            >
-            <a
-              href="#"
-              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-[rgba(248,216,212,0.2)]"
-              >Psykiater.no
-              <span class="text-[11px] text-brand-mauve">↗</span></a
-            >
-            <a
-              href="#"
-              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-[rgba(248,216,212,0.2)]"
-              >Spesialistpsykiatri.no
-              <span class="text-[11px] text-brand-mauve">↗</span></a
-            >
-          </span>
-        </div>
-      </div>
-    </div>
+<?php
+/* Template Name: Psychologists */
+get_header();
 
-    <header
-      class="sticky top-0 left-0 right-0 z-50 pt-[18px] pointer-events-none"
-    >
-      <div class="px-6 md:px-12 lg:px-16">
-        <div
-          class="max-w-[1312px] mx-auto bg-white/[.66] backdrop-blur-2xl backdrop-saturate-[1.4] border border-white/[.82] rounded-[22px] p-2.5 pl-[26px] shadow-[0_2px_12px_rgba(0,0,0,0.06)] pointer-events-auto"
-        >
-          <div class="flex items-center justify-between gap-8">
-            <a href="index.html" class="inline-flex flex-none"
-              ><img
-                src="logo.webp"
-                alt="psykolog.no"
-                class="h-[26px] w-auto block brightness-0 opacity-[.86]"
-            /></a>
-            <nav id="navLinks" class="flex gap-9">
-              <a
-                href="index.html#home-conditions"
-                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
-                >Services</a
-              >
-              <a
-                href="index.html#home-formats"
-                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
-                >Therapy</a
-              >
-              <a
-                href="index.html#home-right-place"
-                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
-                >About Us</a
-              >
-              <a
-                href="index.html#home-pricing"
-                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
-                >Pricing</a
-              >
-              <a
-                href="index.html#home-locations"
-                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
-                >Contact</a
-              >
-            </nav>
-            <div class="flex items-center gap-2 flex-none">
-              <button
-                onclick="location.href = '#mh-book'"
-                class="font-sans font-bold text-[15px] leading-5 whitespace-nowrap text-white border-0 rounded-full px-7 py-[13px] cursor-pointer bg-brand-orange"
-              >
-                Book An Appointment
-              </button>
-              <button
-                id="navToggle"
-                class="w-[46px] h-[46px] rounded-full border border-brand-border bg-white cursor-pointer hidden"
-              >
-                <span class="relative block w-[18px] h-3 mx-auto">
-                  <span
-                    class="absolute left-0 top-0 w-[18px] h-0.5 rounded-sm bg-brand-dark"
-                  ></span>
-                  <span
-                    class="absolute left-0 top-[5px] w-[18px] h-0.5 rounded-sm bg-brand-dark"
-                  ></span>
-                  <span
-                    class="absolute left-0 top-[10px] w-[18px] h-0.5 rounded-sm bg-brand-dark"
-                  ></span>
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <main>
+?> 
+ 
+ <main>
       <section
         class="relative w-full max-w-full overflow-hidden bg-brand-cream grid grid-cols-1 grid-rows-1 -mt-20 lg:-mt-[86px] min-h-[500px] lg:min-h-[720px]"
       >
@@ -125,7 +12,7 @@
           class="[grid-area:1/1] relative w-full min-h-full lg:min-h-0 overflow-hidden"
         >
           <img
-            src="assets/Psychologist/hero.webp"
+            src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/hero.webp"
             alt="Anxiety"
             class="absolute inset-0 w-full h-full object-cover object-[100%_50%]"
           />
@@ -167,7 +54,7 @@
                   Book a time
                   <span class="ml-2 inline-flex items-center"
                     ><img
-                      src="assets/oslo/white-arrow.webp"
+                      src="<?php echo esc_url(get_template_directory_uri()); ?>/images/bergen/white-arrow.webp"
                       alt="External Link Icon"
                       class="h-[20px] w-[12px] mt-0.5 object-contain"
                   /></span>
@@ -179,7 +66,7 @@
                   See prices
                   <span class="ml-2 inline-flex items-center"
                     ><img
-                      src="assets/oslo/Brown-arrow.webp"
+                      src="<?php echo esc_url(get_template_directory_uri()); ?>/images/bergen/Brown-arrow.webp"
                       alt="External Link Icon"
                       class="h-[20px] w-[12px] mt-0.5 object-contain"
                   /></span>
@@ -196,42 +83,52 @@
             class="ps-jump flex items-center gap-0.5 bg-[#FDF6F2] rounded-full px-3.5 py-2 overflow-x-auto"
           >
             <a
-              href="#mh-what"
+              href="#what-is"
               class="font-sans font-bold text-[15px] leading-5 whitespace-nowrap text-brand-hover bg-brand-active rounded-full px-[18px] py-2.5"
-              >What is Mental Health</a
+              >What Is A Psychologist?</a
             >
             <a
-              href="#mh-conditions"
+              href="#what-do"
               class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >Common Conditions</a
+              >What Do They Do?</a
             >
             <a
-              href="#mh-activity"
+              href="#types"
               class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >Physical Activity</a
+              >Types</a
             >
             <a
-              href="#mh-seek"
+              href="#vs-psychiatrist"
               class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >When to Seek Help</a
+              >Vs Psychiatrist</a
             >
             <a
-              href="#mh-youth"
+              href="#where-work"
               class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >Youth Mental Health</a
+              >Where They Work</a
             >
             <a
-              href="#mh-substance"
+              href="#education"
               class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >Substance Abuse</a
+              >Education</a
             >
             <a
-              href="#mh-relatives"
+              href="#how-to-find"
               class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >For Relatives</a
+              >How To Find</a
             >
             <a
-              href="#mh-faq"
+              href="#meet-ours"
+              class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
+              >Meet Ours</a
+            >
+            <a
+              href="#book-appointment"
+              class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
+              >Book Appointment</a
+            >
+            <a
+              href="#faq"
               class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
               >FAQ</a
             >
@@ -239,7 +136,7 @@
         </div>
       </div>
 
-      <section id="mh-what" class="section section--white" data-reveal>
+      <section id="what-is" class="section section--white" data-reveal>
         <div class="container max-w-[1360px] mx-auto px-4 md:px-8">
           <div
             class="grid grid-cols-1 gap-12 items-start lg:grid-cols-[777px_529px] lg:gap-[46px]"
@@ -282,7 +179,7 @@
                   <!-- Icon Placeholder -->
                   <div class="w-[50px] h-[48px]">
                     <img
-                      src="assets/Psychologist/compare.webp"
+                      src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/compare.webp"
                       alt="Icon"
                     />
                   </div>
@@ -300,7 +197,7 @@
                     <div class="flex items-center gap-3">
                       <div class="w-7 h-7">
                         <img
-                          src="assets/Psychologist/icon.webp"
+                          src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/icon.webp"
                           alt="Psychology Icon"
                         />
                       </div>
@@ -318,7 +215,7 @@
                     <div class="flex items-center gap-3">
                       <div class="w-7 h-7 ">
                         <img
-                          src="assets/Psychologist/icon.webp"
+                          src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/icon.webp"
                           alt="Psychology Icon"
                         />
                       </div>
@@ -337,7 +234,7 @@
         </div>
       </section>
 
-      <section class="section bg-[#FFF7F3]">
+      <section id="what-do" class="section bg-[#FFF7F3]">
         <div class="container" data-reveal>
           <!-- Section Header -->
           <div class="text-center mb-[48px] md:mb-[64px]">
@@ -364,13 +261,13 @@
                 >
                   <div class="flex items-center gap-6">
                     <div class="w-[54px] h-[54px] rounded-[16px] flex items-center justify-center transition-colors group-[.is-active]:bg-[#C24C33] bg-[#C24C33]">
-                      <img src="assets/Psychologist/work1.webp" alt="Talk therapy icon" class="w-6 h-6 object-contain transition-all group-[.is-active]:brightness-0 group-[.is-active]:invert" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/work1.webp" alt="Talk therapy icon" class="w-6 h-6 object-contain transition-all group-[.is-active]:brightness-0 group-[.is-active]:invert" />
                     </div>
                     <span class="font-serif font-bold text-[20px] md:text-[24px] transition-colors group-[.is-active]:text-[#C24C33] text-[#241C19]">
                       Talk therapy
                     </span>
                   </div>
-                  <img src="assets/Psychologist/arrow.webp" alt="arrow" class="w-[22px] h-[53px] object-contain opacity-0 group-[.is-active]:opacity-100 transition-opacity" />
+                  <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/arrow.webp" alt="arrow" class="w-[22px] h-[53px] object-contain opacity-0 group-[.is-active]:opacity-100 transition-opacity" />
                 </button>
 
                 <!-- Tab 2 -->
@@ -384,7 +281,7 @@
                 >
                   <div class="flex items-center gap-6">
                     <div class="w-[54px] h-[54px] rounded-[16px] flex items-center justify-center transition-colors group-[.is-active]:bg-[#C24C33] bg-[#E9F2ED]">
-                      <img src="assets/Psychologist/work2.webp" alt="Assessment And Diagnosis icon" class="w-6 h-6 object-contain transition-all group-[.is-active]:brightness-0 group-[.is-active]:invert" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/work2.webp" alt="Assessment And Diagnosis icon" class="w-6 h-6 object-contain transition-all group-[.is-active]:brightness-0 group-[.is-active]:invert" />
                     </div>
                     <span class="font-serif font-bold text-[20px] md:text-[24px] transition-colors group-[.is-active]:text-[#C24C33] text-[#241C19]">
                       Assessment And Diagnosis
@@ -406,7 +303,7 @@
                 >
                   <div class="flex items-center gap-6">
                     <div class="w-[54px] h-[54px] rounded-[16px] flex items-center justify-center transition-colors group-[.is-active]:bg-[#C24C33] bg-[#E4EDF4]">
-                      <img src="assets/Psychologist/work3.webp" alt="Making A Treatment Plan icon" class="w-6 h-6 object-contain transition-all group-[.is-active]:brightness-0 group-[.is-active]:invert" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/work3.webp" alt="Making A Treatment Plan icon" class="w-6 h-6 object-contain transition-all group-[.is-active]:brightness-0 group-[.is-active]:invert" />
                     </div>
                     <span class="font-serif font-bold text-[20px] md:text-[24px] transition-colors group-[.is-active]:text-[#C24C33] text-[#241C19]">
                       Making A Treatment Plan
@@ -428,7 +325,7 @@
                 >
                   <div class="flex items-center gap-6">
                     <div class="w-[54px] h-[54px] rounded-[16px] flex items-center justify-center transition-colors group-[.is-active]:bg-[#C24C33] bg-[#F4EFE6]">
-                      <img src="assets/Psychologist/work4.webp" alt="Guiding Families And Carers icon" class="w-6 h-6 object-contain transition-all group-[.is-active]:brightness-0 group-[.is-active]:invert" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/work4.webp" alt="Guiding Families And Carers icon" class="w-6 h-6 object-contain transition-all group-[.is-active]:brightness-0 group-[.is-active]:invert" />
                     </div>
                     <span class="font-serif font-bold text-[20px] md:text-[24px] transition-colors group-[.is-active]:text-[#C24C33] text-[#241C19]">
                       Guiding Families And Carers
@@ -453,28 +350,28 @@
               <div id="psyTasksPreview" class="absolute inset-0 w-full h-full">
                 <!-- Image 1 -->
                 <img
-                  src="assets/Psychologist/Talk therapy.webp"
+                  src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Talk therapy.webp"
                   alt="Talk therapy"
                   class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 [&:not(.is-active)]:opacity-0 is-active"
                   data-task-img="1"
                 />
                 <!-- Image 2 -->
                 <img
-                  src="assets/Psychologist/Assessment And Diagnosis.webp"
+                  src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Assessment And Diagnosis.webp"
                   alt="Assessment And Diagnosis"
                   class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 [&.is-active]:opacity-100"
                   data-task-img="2"
                 />
                 <!-- Image 3 -->
                 <img
-                  src="assets/Psychologist/Making A Treatment Plan.webp"
+                  src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Making A Treatment Plan.webp"
                   alt="Making A Treatment Plan"
                   class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 [&.is-active]:opacity-100"
                   data-task-img="3"
                 />
                 <!-- Image 4 -->
                 <img
-                  src="assets/Psychologist/Guiding Families And Carers.webp"
+                  src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Guiding Families And Carers.webp"
                   alt="Guiding Families And Carers"
                   class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 [&.is-active]:opacity-100"
                   data-task-img="4"
@@ -501,7 +398,7 @@
         </div>
       </section>
 
-      <section class="section bg-white" data-reveal>
+      <section id="types" class="section bg-white" data-reveal>
         <div class="container">
           <!-- Section Header -->
           <div class="mb-12">
@@ -518,7 +415,7 @@
             <!-- Card 1 -->
             <div class="border border-[#F2E4DC] rounded-[18px] p-6 lg:p-8 hover:shadow-sm transition-shadow duration-300">
               <div class="flex items-center gap-4 mb-4">
-                <img src="assets/Psychologist/Clinical psychologist.webp" alt="Clinical psychologist icon" class="w-[50px] h-[50px] shrink-0 object-contain" />
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Clinical psychologist.webp" alt="Clinical psychologist icon" class="w-[50px] h-[50px] shrink-0 object-contain" />
                 <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[24px] m-0">Clinical psychologist</h3>
               </div>
               <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
@@ -529,7 +426,7 @@
             <!-- Card 2 -->
             <div class="border border-[#F2E4DC] rounded-[18px] p-6 lg:p-8 hover:shadow-sm transition-shadow duration-300">
               <div class="flex items-center gap-4 mb-4">
-                <img src="assets/Psychologist/Applied Psychologist.webp" alt="Applied Psychologist icon" class="w-[50px] h-[50px] shrink-0 object-contain" />
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Applied Psychologist.webp" alt="Applied Psychologist icon" class="w-[50px] h-[50px] shrink-0 object-contain" />
                 <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[24px] m-0">Applied Psychologist</h3>
               </div>
               <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
@@ -540,7 +437,7 @@
             <!-- Card 3 -->
             <div class="border border-[#F2E4DC] rounded-[18px] p-6 lg:p-8 hover:shadow-sm transition-shadow duration-300">
               <div class="flex items-center gap-4 mb-4">
-                <img src="assets/Psychologist/Research psychologist.webp" alt="Research psychologist icon" class="w-[50px] h-[50px] shrink-0 object-contain" />
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Research psychologist.webp" alt="Research psychologist icon" class="w-[50px] h-[50px] shrink-0 object-contain" />
                 <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[24px] m-0">Research psychologist</h3>
               </div>
               <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
@@ -551,7 +448,7 @@
             <!-- Card 4 -->
             <div class="border border-[#F2E4DC] rounded-[18px] p-6 lg:p-8 hover:shadow-sm transition-shadow duration-300">
               <div class="flex items-center gap-4 mb-4">
-                <img src="assets/Psychologist/Child psychologist.webp" alt="Child psychologist icon" class="w-[50px] h-[50px] shrink-0 object-contain" />
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Child psychologist.webp" alt="Child psychologist icon" class="w-[50px] h-[50px] shrink-0 object-contain" />
                 <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[24px] m-0">Child psychologist</h3>
               </div>
               <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
@@ -572,13 +469,13 @@
             </div>
             <a href="#" class="inline-flex items-center justify-center px-8 py-2 rounded-full bg-white text-[#C24C33] font-bold text-[16px] hover:bg-gray-50 transition-colors whitespace-nowrap group shrink-0">
               Find a psychologist
-              <img src="assets/Psychologist/arrow.webp" alt="" class="w-[16px] h-auto ml-2 transition-transform group-hover:translate-x-1 mt-0.5" />
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/arrow.webp" alt="" class="w-[16px] h-auto ml-2 transition-transform group-hover:translate-x-1 mt-0.5" />
             </a>
           </div>
         </div>
       </section>
 
-      <section class="section bg-[#FFF7F3]">
+      <section id="vs-psychiatrist" class="section bg-[#FFF7F3]">
         <div class="container" data-reveal>
           <!-- Header -->
           <div class="mb-10 text-left">
@@ -604,7 +501,7 @@
                 <!-- Row 1 -->
                 <div class="grid grid-cols-[30%_35%_35%] px-8 py-6 items-center border-b border-[#F0E6E0] last:border-b-0 hover:bg-[#FAF6F3] gap-5 transition-colors">
                   <div class="flex items-center gap-4">
-                    <img src="assets/Psychologist/Education.webp" alt="Education icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Education.webp" alt="Education icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
                     <span class="font-serif font-bold text-[#241C19] text-[16px] md:text-[18px]">Education</span>
                   </div>
                   <div class="text-[#241C19] text-[14px] md:text-[16px] font-semibold">6 year psychology degree</div>
@@ -614,7 +511,7 @@
                 <!-- Row 2 -->
                 <div class="grid grid-cols-[30%_35%_35%] px-8 py-6 items-center border-b border-[#F0E6E0] last:border-b-0 hover:bg-[#FAF6F3] gap-5 transition-colors">
                   <div class="flex items-center gap-4">
-                    <img src="assets/Psychologist/Can prescribe medication.webp" alt="Can prescribe medication? icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Can prescribe medication.webp" alt="Can prescribe medication? icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
                     <span class="font-serif font-bold text-[#241C19] text-[16px] md:text-[18px]">Can prescribe medication?</span>
                   </div>
                   <div class="text-[#241C19] text-[14px] md:text-[16px] font-semibold">No</div>
@@ -624,7 +521,7 @@
                 <!-- Row 3 -->
                 <div class="grid grid-cols-[30%_35%_35%] px-8 py-6 items-center border-b border-[#F0E6E0] last:border-b-0 hover:bg-[#FAF6F3] gap-5 transition-colors">
                   <div class="flex items-center gap-4">
-                    <img src="assets/Psychologist/Method.webp" alt="Method icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Method.webp" alt="Method icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
                     <span class="font-serif font-bold text-[#241C19] text-[16px] md:text-[18px]">Method</span>
                   </div>
                   <div class="text-[#241C19] text-[14px] md:text-[16px] font-semibold">Talk therapy and psychological treatment</div>
@@ -634,7 +531,7 @@
                 <!-- Row 4 -->
                 <div class="grid grid-cols-[30%_35%_35%] px-8 py-6 items-center border-b border-[#F0E6E0] last:border-b-0 hover:bg-[#FAF6F3] gap-5 transition-colors">
                   <div class="flex items-center gap-4">
-                    <img src="assets/Psychologist/Treats which conditions.webp" alt="Treats which conditions? icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Treats which conditions.webp" alt="Treats which conditions? icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
                     <span class="font-serif font-bold text-[#241C19] text-[16px] md:text-[18px]">Treats which conditions?</span>
                   </div>
                   <div class="text-[#241C19] text-[14px] md:text-[16px] font-semibold">Anxiety, depression, trauma, stress, relationship issues, personality disorders</div>
@@ -644,7 +541,7 @@
                 <!-- Row 5 -->
                 <div class="grid grid-cols-[30%_35%_35%] px-8 py-6 items-center border-b border-[#F0E6E0] last:border-b-0 hover:bg-[#FAF6F3] gap-5 transition-colors">
                   <div class="flex items-center gap-4">
-                    <img src="assets/Psychologist/Do you need a referral.webp" alt="Do you need a referral? icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Do you need a referral.webp" alt="Do you need a referral? icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
                     <span class="font-serif font-bold text-[#241C19] text-[16px] md:text-[18px]">Do you need a referral?</span>
                   </div>
                   <div class="text-[#241C19] text-[14px] md:text-[16px] font-semibold">No (private practice). Yes (public/specialist services)</div>
@@ -654,7 +551,7 @@
                 <!-- Row 6 -->
                 <div class="grid grid-cols-[30%_35%_35%] px-8 py-6 items-center border-b border-[#F0E6E0] last:border-b-0 hover:bg-[#FAF6F3] gap-5 transition-colors">
                   <div class="flex items-center gap-4">
-                    <img src="assets/Psychologist/Good for.webp" alt="Good for... icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Good for.webp" alt="Good for... icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
                     <span class="font-serif font-bold text-[#241C19] text-[16px] md:text-[18px]">Good for...</span>
                   </div>
                   <div class="text-[#241C19] text-[14px] md:text-[16px] font-semibold">Most mental health challenges, talk therapy, emotional well being, and personal growth</div>
@@ -683,7 +580,7 @@
         </div>
       </section>
 
-      <section class="section bg-[#F8EBE2]" >
+      <section id="where-work" class="section bg-[#F8EBE2]" >
         <div class="container" data-reveal>
           <!-- Header -->
           <div class="mb-10 text-left">
@@ -699,7 +596,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-6 lg:mb-8">
             <!-- Card 1 -->
             <div class="bg-white rounded-[24px] p-6 flex flex-col sm:flex-row gap-6 items-start hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full">
-              <img src="assets/Psychologist/where1.webp" alt="Hospitals And DPS" class="w-full sm:w-[140px] h-[200px] sm:h-[140px] rounded-[16px] object-cover shrink-0" onerror="this.src='https://placehold.co/140x140?text=Hospitals+And+DPS'" />
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/where1.webp" alt="Hospitals And DPS" class="w-full sm:w-[140px] h-[200px] sm:h-[140px] rounded-[16px] object-cover shrink-0" onerror="this.src='https://placehold.co/140x140?text=Hospitals+And+DPS'" />
               <div>
                 <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[22px] m-0 mb-3">Hospitals And DPS</h3>
                 <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
@@ -710,7 +607,7 @@
 
             <!-- Card 2 -->
             <div class="bg-white rounded-[24px] p-6 flex flex-col sm:flex-row gap-6 items-start hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full">
-              <img src="assets/Psychologist/where2.webp" alt="Private Practice" class="w-full sm:w-[140px] h-[200px] sm:h-[140px] rounded-[16px] object-cover shrink-0" onerror="this.src='https://placehold.co/140x140?text=Private+Practice'" />
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/where2.webp" alt="Private Practice" class="w-full sm:w-[140px] h-[200px] sm:h-[140px] rounded-[16px] object-cover shrink-0" onerror="this.src='https://placehold.co/140x140?text=Private+Practice'" />
               <div>
                 <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[22px] m-0 mb-3">Private Practice</h3>
                 <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
@@ -721,7 +618,7 @@
 
             <!-- Card 3 -->
             <div class="bg-white rounded-[24px] p-6 flex flex-col sm:flex-row gap-6 items-start hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full">
-              <img src="assets/Psychologist/where3.webp" alt="Online/ Digital" class="w-full sm:w-[140px] h-[200px] sm:h-[140px] rounded-[16px] object-cover shrink-0" onerror="this.src='https://placehold.co/140x140?text=Online/Digital'" />
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/where3.webp" alt="Online/ Digital" class="w-full sm:w-[140px] h-[200px] sm:h-[140px] rounded-[16px] object-cover shrink-0" onerror="this.src='https://placehold.co/140x140?text=Online/Digital'" />
               <div>
                 <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[22px] m-0 mb-3">Online/ Digital</h3>
                 <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
@@ -732,7 +629,7 @@
 
             <!-- Card 4 -->
             <div class="bg-white rounded-[24px] p-6 flex flex-col sm:flex-row gap-6 items-start hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full">
-              <img src="assets/Psychologist/where4.webp" alt="Schools And Universities" class="w-full sm:w-[140px] h-[200px] sm:h-[140px] rounded-[16px] object-cover shrink-0" onerror="this.src='https://placehold.co/140x140?text=Schools+And+Universities'" />
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/where4.webp" alt="Schools And Universities" class="w-full sm:w-[140px] h-[200px] sm:h-[140px] rounded-[16px] object-cover shrink-0" onerror="this.src='https://placehold.co/140x140?text=Schools+And+Universities'" />
               <div>
                 <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[22px] m-0 mb-3">Schools And Universities</h3>
                 <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
@@ -744,7 +641,7 @@
 
           <!-- Full Width Card 5 -->
           <div class="bg-white rounded-[24px] p-6 flex flex-col sm:flex-row gap-6 items-center sm:items-start hover:shadow-md hover:-translate-y-1 transition-all duration-300 mb-12">
-            <img src="assets/Psychologist/where5.webp" alt="Work Places" class="w-full sm:w-[140px] h-[200px] sm:h-[140px] rounded-[16px] object-cover shrink-0" onerror="this.src='https://placehold.co/140x140?text=Work+Places'" />
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/where5.webp" alt="Work Places" class="w-full sm:w-[140px] h-[200px] sm:h-[140px] rounded-[16px] object-cover shrink-0" onerror="this.src='https://placehold.co/140x140?text=Work+Places'" />
             <div class="w-full">
               <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[22px] m-0 mb-3">Work Places</h3>
               <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
@@ -755,7 +652,7 @@
         </div>
       </section>
 
-      <section class="section bg-white" data-reveal>
+      <section id="education" class="section bg-white" data-reveal>
         <div class="container" >
           <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[787px_472px] gap-10 lg:gap-16 items-center">
             
@@ -777,14 +674,14 @@
 
             <!-- Right Image Content -->
             <div class="relative w-full h-[300px] md:h-[380px] lg:h-[420px] rounded-[24px] overflow-hidden shadow-sm">
-              <img src="assets/Psychologist/career.webp" alt="Psychologist Education and Career" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x800?text=Education+Image'" />
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/career.webp" alt="Psychologist Education and Career" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x800?text=Education+Image'" />
             </div>
 
           </div>
         </div>
       </section>
 
-      <section class="section bg-[#F8EBE2]">
+      <section id="how-to-find" class="section bg-[#F8EBE2]">
         <div class="container"  data-reveal>
           <!-- Header -->
           <div class="mb-10 text-left">
@@ -804,7 +701,7 @@
               <div>
                 <div class="flex items-center gap-4 mb-6">
                   <div class="w-12 h-12 shrink-0">
-                    <img src="assets/Psychologist/option1.webp" alt="Route One Icon" class="object-contain" onerror="this.src='https://placehold.co/24x24?text=R1'" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/option1.webp" alt="Route One Icon" class="object-contain" onerror="this.src='https://placehold.co/24x24?text=R1'" />
                   </div>
                   <span class="text-[#B15E4C] font-bold text-[13px] tracking-wider uppercase">Route One</span>
                 </div>
@@ -818,13 +715,13 @@
               <div class="flex flex-wrap gap-3">
                 <div class="inline-flex items-center gap-2 bg-[#E4EDF4] text-[#415C73] px-4 py-2 rounded-full text-[13px] md:text-[14px] font-semibold">
                   <div class="shrink-0">
-                    <img src="assets/Psychologist/point1.webp" alt="Route One Icon" class="w-[14px] h-[14px] object-contain" onerror="this.src='https://placehold.co/24x24?text=R1'" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/point1.webp" alt="Route One Icon" class="w-[14px] h-[14px] object-contain" onerror="this.src='https://placehold.co/24x24?text=R1'" />
                   </div>
                   Referral needed
                 </div>
                 <div class="inline-flex items-center gap-2 bg-[#E4EDF4] text-[#415C73] px-4 py-2 rounded-full text-[13px] md:text-[14px] font-semibold">
                   <div class="shrink-0">
-                    <img src="assets/Psychologist/point2.webp" alt="Route One Icon" class="w-[14px] h-[14px] object-contain" onerror="this.src='https://placehold.co/24x24?text=R1'" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/point2.webp" alt="Route One Icon" class="w-[14px] h-[14px] object-contain" onerror="this.src='https://placehold.co/24x24?text=R1'" />
                   </div>
                   4–12 weeks
                 </div>
@@ -833,7 +730,7 @@
 
             <!-- Card 2: Center Image -->
             <div class="relative w-full h-[300px] md:h-full lg:h-auto min-h-[481px] rounded-[24px] overflow-hidden shadow-sm hover:-translate-y-1 transition-all duration-300">
-              <img src="assets/Psychologist/find.webp" alt="Norway Psychologist Session" class="w-full h-full object-cover absolute inset-0" onerror="this.src='https://placehold.co/400x500?text=Therapy+Session'" />
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/find.webp" alt="Norway Psychologist Session" class="w-full h-full object-cover absolute inset-0" onerror="this.src='https://placehold.co/400x500?text=Therapy+Session'" />
             </div>
 
             <!-- Card 3: Option B -->
@@ -841,7 +738,7 @@
               <div>
                 <div class="flex items-center gap-4 mb-6">
                   <div class="w-12 h-12 shrink-0">
-                    <img src="assets/Psychologist/option2.webp" alt="Option B Icon" class="object-contain" onerror="this.src='https://placehold.co/24x24?text=OB'" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/option2.webp" alt="Option B Icon" class="object-contain" onerror="this.src='https://placehold.co/24x24?text=OB'" />
                   </div>
                   <span class="text-[#A58550] font-bold text-[13px] tracking-wider uppercase">Option B</span>
                 </div>
@@ -855,13 +752,13 @@
               <div class="flex flex-wrap gap-3">
                 <div class="inline-flex items-center gap-2 bg-[#E4EDF4] text-[#415C73] px-4 py-2 rounded-full text-[13px] md:text-[14px] font-semibold">
                   <div class="shrink-0">
-                    <img src="assets/Psychologist/point1.webp" alt="Route One Icon" class="w-[14px] h-[14px] object-contain" onerror="this.src='https://placehold.co/24x24?text=R1'" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/point1.webp" alt="Route One Icon" class="w-[14px] h-[14px] object-contain" onerror="this.src='https://placehold.co/24x24?text=R1'" />
                   </div>
                   No Referral Needed
                 </div>
                 <div class="inline-flex items-center gap-2 bg-[#E4EDF4] text-[#415C73] px-4 py-2 rounded-full text-[13px] md:text-[14px] font-semibold">
                   <div class="shrink-0">
-                    <img src="assets/Psychologist/point1.webp" alt="Route One Icon" class="w-[14px] h-[14px] object-contain" onerror="this.src='https://placehold.co/24x24?text=R1'" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/point1.webp" alt="Route One Icon" class="w-[14px] h-[14px] object-contain" onerror="this.src='https://placehold.co/24x24?text=R1'" />
                   </div>
                   </svg>
                   Fast Access
@@ -883,14 +780,14 @@
             </div>
             <a href="#" class="inline-flex items-center justify-center px-8 py-2 rounded-full bg-white text-[#C24C33] font-bold text-[16px] hover:bg-gray-50 transition-colors whitespace-nowrap group shrink-0 shadow-sm">
               Find a psychologist
-              <img src="assets/Psychologist/arrow.webp" alt="Arrow Icon" class="w-[16px] h-auto mt-0.5 object-contain ml-2" />
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/arrow.webp" alt="Arrow Icon" class="w-[16px] h-auto mt-0.5 object-contain ml-2" />
             </a>
           </div>
 
         </div>
       </section>
 
-      <section class="section bg-white" data-reveal>
+      <section id="meet-ours" class="section bg-white" data-reveal>
         <div class="container">
           
           <!-- Header Content -->
@@ -911,7 +808,7 @@
               <!-- Image Container -->
               <div class="relative w-full h-[260px] md:h-[320px] rounded-[16px] overflow-hidden mb-5">
                 <img 
-                  src="assets/oslo/Psykologist1.webp" 
+                  src="<?php echo esc_url(get_template_directory_uri()); ?>/images/bergen/Psykologist1.webp" 
                   alt="Ingrid Halvorsen" 
                   class="w-full h-full object-cover" 
                 />
@@ -945,7 +842,7 @@
               <!-- Image Container -->
               <div class="relative w-full h-[260px] md:h-[320px] rounded-[16px] overflow-hidden mb-5">
                 <img 
-                  src="assets/oslo/Psykologist2.webp" 
+                  src="<?php echo esc_url(get_template_directory_uri()); ?>/images/bergen/Psykologist2.webp" 
                   alt="Emma" 
                   class="w-full h-full object-cover" 
                 />
@@ -979,7 +876,7 @@
               <!-- Image Container -->
               <div class="relative w-full h-[260px] md:h-[320px] rounded-[16px] overflow-hidden mb-5">
                 <img 
-                   src="assets/oslo/Psykologist3.webp" 
+                   src="<?php echo esc_url(get_template_directory_uri()); ?>/images/bergen/Psykologist3.webp" 
                   alt="Looking To Join Us?" 
                   class="w-full h-full object-cover" 
                 />
@@ -1009,7 +906,7 @@
         </div>
       </section>
 
-      <section class="section bg-[#FFF7F3]" data-reveal>
+      <section id="book-appointment" class="section bg-[#FFF7F3]" data-reveal>
         <div class="container">
           
           <!-- Header -->
@@ -1081,7 +978,7 @@
 
             <!-- Right Column: Image -->
             <div class="relative w-full h-[350px] md:h-[400px] lg:h-[500px] rounded-[32px] lg:sticky lg:top-32 overflow-hidden">
-              <img id="appointment-step-img" src="assets/Psychologist/Step1.webp" alt="Booking an appointment" class="w-full h-full object-cover transition-opacity duration-300" onerror="this.src='https://placehold.co/800x1000?text=Booking+Image'" />
+              <img id="appointment-step-img" src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Step1.webp" alt="Booking an appointment" class="w-full h-full object-cover transition-opacity duration-300" onerror="this.src='https://placehold.co/800x1000?text=Booking+Image'" />
               
               <!-- Badge Overlay -->
               <div class="absolute top-6 left-6 bg-white rounded-full py-1.5 px-2 pr-4 flex items-center gap-2 shadow-sm">
@@ -1138,14 +1035,14 @@
 
             <!-- Right Content: Image -->
             <div class="w-full md:w-1/2 flex justify-center md:justify-end z-10 relative">
-              <img src="assets/Psychologist/cta.webp" alt="Ready To Speak To A Psychologist" class="w-full max-w-[480px] object-contain" />
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/cta.webp" alt="Ready To Speak To A Psychologist" class="w-full max-w-[480px] object-contain" />
             </div>
           </div>
         </div>
       </section>
 
 
-      <section id="mh-faq" class="section section--white pb-12" data-reveal>
+      <section id="faq" class="section section--white pb-12" data-reveal>
         <div class="container max-w-[1360px]">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <!-- Left Column -->
@@ -1332,7 +1229,7 @@
         <div class="bg-white/10 hover:bg-white/15 transition-colors rounded-[12px] p-5 flex items-center gap-4">
           <div class="w-[50px] h-[50px] shrink-0">
             <!-- Icon Placeholder -->
-            <img src="assets/Psychologist/call.webp" alt="Emergency phone icon" class="object-contain">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/call.webp" alt="Emergency phone icon" class="object-contain">
           </div>
           <div class="flex flex-col">
             <span class="text-white/80 text-[10px] font-bold tracking-[0.15em] uppercase mb-1">Emergency</span>
@@ -1344,7 +1241,7 @@
         <div class="bg-white/10 hover:bg-white/15 transition-colors rounded-[12px] p-5 flex items-center gap-4">
           <div class="w-[50px] h-[50px] shrink-0">
              <!-- Icon Placeholder -->
-            <img src="assets/Psychologist/call.webp" alt="Urgent medical help phone icon" class="object-contain">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/call.webp" alt="Urgent medical help phone icon" class="object-contain">
           </div>
           <div class="flex flex-col">
             <span class="text-white/80 text-[10px] font-bold tracking-[0.15em] uppercase mb-1">Urgent Medical Help</span>
@@ -1356,7 +1253,7 @@
         <div class="bg-white/10 hover:bg-white/15 transition-colors rounded-[12px] p-5 flex items-center gap-4">
           <div class="w-[50px] h-[50px] shrink-0">
              <!-- Icon Placeholder -->
-            <img src="assets/Psychologist/call.webp" alt="Mental health crisis line phone icon" class="object-contain">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/call.webp" alt="Mental health crisis line phone icon" class="object-contain">
           </div>
           <div class="flex flex-col">
             <span class="text-white/80 text-[10px] font-bold tracking-[0.15em] uppercase mb-1">Mental Health Crisis Line</span>
@@ -1372,138 +1269,5 @@
    
     </main>
 
-    <footer class="bg-brand-brown text-white pt-[72px] pb-8">
-      <div class="px-6 md:px-12 lg:px-16">
-        <div class="max-w-[1312px] mx-auto">
-          <div class="mb-14">
-            <h3 class="font-serif font-bold text-3xl mt-0 mb-3">
-              Stay Informed
-            </h3>
-            <p class="text-base text-white/80 mt-0 mb-6">
-              Get mental health tips and updates delivered to your inbox.
-            </p>
-            <form class="flex gap-3 max-w-[600px] mb-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                required
-                class="flex-1 px-6 py-4 rounded-full border border-white/20 bg-[#FFFFFF17] text-white text-[15px]"
-              />
-              <button
-                type="submit"
-                class="font-sans font-bold text-base text-white bg-brand-orange border-0 rounded-full px-8 py-4 cursor-pointer whitespace-nowrap"
-              >
-                Subscribe
-              </button>
-            </form>
-            <label class="flex items-center gap-2 text-sm text-white/70">
-              <input
-                type="checkbox"
-                required
-                class="w-4 h-4 accent-brand-orange"
-              />
-              <span>I agree to receive emails from psykolog.no</span>
-            </label>
-          </div>
-          <div
-            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12"
-          >
-            <div>
-              <h4 class="font-bold text-[15px] mt-0 mb-4">Services</h4>
-              <div class="grid gap-2.5">
-                <a
-                  href="index.html#home-conditions"
-                  class="text-sm text-white/70"
-                  >Individual Therapy</a
-                >
-                <a
-                  href="index.html#home-conditions"
-                  class="text-sm text-white/70"
-                  >Couples Therapy</a
-                >
-                <a
-                  href="index.html#home-conditions"
-                  class="text-sm text-white/70"
-                  >Family Therapy</a
-                >
-                <a
-                  href="index.html#home-conditions"
-                  class="text-sm text-white/70"
-                  >Group Therapy</a
-                >
-              </div>
-            </div>
-            <div>
-              <h4 class="font-bold text-[15px] mt-0 mb-4">Conditions</h4>
-              <div class="grid gap-2.5">
-                <a href="adhd.html" class="text-sm text-white/70">ADHD</a>
-                <a href="#mh-conditions" class="text-sm text-white/70"
-                  >Depression</a
-                >
-                <a href="#mh-conditions" class="text-sm text-white/70"
-                  >Anxiety</a
-                >
-                <a href="#mh-conditions" class="text-sm text-white/70">PTSD</a>
-              </div>
-            </div>
-            <div>
-              <h4 class="font-bold text-[15px] mt-0 mb-4">Clinic</h4>
-              <div class="grid gap-2.5">
-                <a href="about.html" class="text-sm text-white/70">About Us</a>
-                <a href="index.html#home-team" class="text-sm text-white/70"
-                  >Our Team</a
-                >
-                <a
-                  href="index.html#home-locations"
-                  class="text-sm text-white/70"
-                  >Locations</a
-                >
-                <a href="index.html#home-pricing" class="text-sm text-white/70"
-                  >Pricing</a
-                >
-              </div>
-            </div>
-            <div>
-              <h4 class="font-bold text-[15px] mt-0 mb-4">Company</h4>
-              <div class="grid gap-2.5">
-                <a href="#" class="text-sm text-white/70">Careers</a>
-                <a href="#" class="text-sm text-white/70">Blog</a>
-                <a href="#" class="text-sm text-white/70">Press</a>
-                <a href="#" class="text-sm text-white/70">Contact</a>
-              </div>
-            </div>
-            <div>
-              <h4 class="font-bold text-[15px] mt-0 mb-4">Legal</h4>
-              <div class="grid gap-2.5">
-                <a href="#" class="text-sm text-white/70">Privacy Policy</a>
-                <a href="#" class="text-sm text-white/70">Terms of Service</a>
-                <a href="#" class="text-sm text-white/70">Cookie Policy</a>
-                <a href="#" class="text-sm text-white/70">Accessibility</a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="border-t border-white/20 pt-6 flex flex-col gap-4 md:flex-row md:justify-between md:items-center"
-          >
-            <p class="text-sm text-white/60 m-0">
-              &copy; 2024 psykolog.no. All rights reserved.
-            </p>
-            <div class="flex items-center gap-5">
-              <a href="#" class="text-white/70 text-xl">📷</a>
-              <a href="#" class="text-white/70 text-xl">💼</a>
-              <a href="#" class="text-white/70 text-xl">📘</a>
-              <span class="text-[13px] text-white/50"
-                >Made by
-                <a href="https://sysinn.no" class="text-white/70"
-                  >Sysinn</a
-                ></span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
 
-    <script src="script.js"></script>
-  </body>
-</html>
+<?php get_footer(); ?>   

@@ -1625,6 +1625,7 @@
     }
 
     initFlipCards();
+    initAppointmentSteps();
   });
 
   /* -------------------------------------------------------------------
@@ -1648,6 +1649,27 @@
       if (!inner) return;
 
       inner.classList.toggle('is-flipped');
+    });
+  }
+
+  /* -------------------------------------------------------------------
+     Appointment Steps Hover
+     ------------------------------------------------------------------- */
+  function initAppointmentSteps() {
+    const steps = $$('.appointment-step');
+    const img = $('#appointment-step-img');
+    const badge = $('#appointment-step-badge');
+    
+    if (!steps.length || !img || !badge) return;
+
+    steps.forEach((step) => {
+      step.addEventListener('mouseenter', () => {
+        const stepNum = step.getAttribute('data-step');
+        if (stepNum) {
+          img.src = `assets/Psychologist/Step${stepNum}.webp`;
+          badge.textContent = stepNum;
+        }
+      });
     });
   }
 })();
