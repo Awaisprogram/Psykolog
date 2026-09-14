@@ -1216,6 +1216,49 @@
   }
 
   /* ---------------------------------------------------------
+     Appointment steps image preview
+  --------------------------------------------------------- */
+  function initAppointmentSteps() {
+    const steps = document.querySelectorAll('.appointment-step');
+    const previewImg = document.getElementById('appointment-step-img');
+    const badge = document.getElementById('appointment-step-badge');
+    if (!steps.length || !previewImg || !badge) return;
+
+    function activate(step) {
+      steps.forEach((item) => {
+        const active = item === step;
+        item.classList.toggle('border-[#C24C33]', active);
+        item.classList.toggle('border-[#F2E4DC]', !active);
+        const numWrap = item.querySelector('span');
+        if (numWrap) {
+          numWrap.classList.toggle('text-[#C24C33]', active);
+          numWrap.classList.toggle('text-[#ECA997]', !active);
+        }
+        const title = item.querySelector('h4');
+        if (title) {
+          title.classList.toggle('text-[#C24C33]', active);
+          title.classList.toggle('text-[#241C19]', !active);
+        }
+      });
+      if (step.dataset.image) {
+        previewImg.style.opacity = '0.5';
+        setTimeout(() => {
+          previewImg.src = step.dataset.image;
+          previewImg.style.opacity = '1';
+        }, 150);
+      }
+      badge.textContent = step.dataset.step;
+    }
+
+    steps.forEach((step) => {
+      step.addEventListener('click', () => activate(step));
+      step.addEventListener('mouseenter', () => activate(step));
+    });
+
+    activate(steps[0]);
+  }
+
+  /* ---------------------------------------------------------
      Footer newsletter: consent checkbox + fake submit
   --------------------------------------------------------- */
   function initNewsletterForm() {
@@ -1609,6 +1652,7 @@
     });
     initAssessmentSteps();
     initBurnoutRecoverySteps();
+    initAppointmentSteps();
     initNewsletterForm();
 
     // hero video: attempt autoplay, fall back to poster only
@@ -1625,7 +1669,6 @@
     }
 
     initFlipCards();
-    initAppointmentSteps();
   });
 
   /* -------------------------------------------------------------------
@@ -1652,24 +1695,4 @@
     });
   }
 
-  /* -------------------------------------------------------------------
-     Appointment Steps Hover
-     ------------------------------------------------------------------- */
-  function initAppointmentSteps() {
-    const steps = $$('.appointment-step');
-    const img = $('#appointment-step-img');
-    const badge = $('#appointment-step-badge');
-    
-    if (!steps.length || !img || !badge) return;
-
-    steps.forEach((step) => {
-      step.addEventListener('mouseenter', () => {
-        const stepNum = step.getAttribute('data-step');
-        if (stepNum) {
-          img.src = `assets/Psychologist/Step${stepNum}.webp`;
-          badge.textContent = stepNum;
-        }
-      });
-    });
-  }
 })();

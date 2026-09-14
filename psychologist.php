@@ -1,1273 +1,469 @@
 <?php
-/* Template Name: Psychologists */
+/**
+ * Template Name: Psychologist
+ */
+
 get_header();
 
-?> 
- 
- <main>
-      <section
-        class="relative w-full max-w-full overflow-hidden bg-brand-cream grid grid-cols-1 grid-rows-1 -mt-20 lg:-mt-[86px] min-h-[500px] lg:min-h-[720px]"
-      >
-        <span
-          class="[grid-area:1/1] relative w-full min-h-full lg:min-h-0 overflow-hidden"
-        >
-          <img
-            src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/hero.webp"
-            alt="Anxiety"
-            class="absolute inset-0 w-full h-full object-cover object-[100%_50%]"
-          />
-          <span
-            class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:hidden"
-          ></span>
-        </span>
+$s1  = get_field('section_1');
+$s2  = get_field('section_2');
+$s3  = get_field('section_3');
+$s4  = get_field('section_4');
+$s5  = get_field('section_5');
+$s6  = get_field('section_6');
+$s7  = get_field('section_7');
+$s8  = get_field('section_8');
+$s9  = get_field('section_9');
+$s10 = get_field('section_10');
+$s11 = get_field('section_11');
+$s12 = get_field('section_12');
+$s13 = get_field('section_13');
+$s14 = get_field('section_14');
 
-        <div
-          class="px-4 md:px-12 lg:px-16 relative w-full [grid-area:1/1] place-self-center z-[2] bg-transparent pt-32 pb-10 lg:pt-[90px] lg:pb-[88px]"
-        >
-          <div class="max-w-[1312px] mx-auto">
-            <div class="max-w-full lg:max-w-[577px]">
-              <h1
-                class="font-serif font-bold text-[#C24C33] mt-7 mb-0 text-[34px] leading-[1.25] md:text-[42px] lg:text-[48px] xl:text-[56px]"
-              >
-                Psychologist
-              </h1>
+// Jump-nav anchors are structural (tied to this template's own section IDs), not editable
+// destinations, so they stay hardcoded here in template order alongside the field-driven labels.
+$jump_anchors = ['what-is-psychologist', 'what-they-do', 'types-of-psychologists', 'vs-psychiatrist', 'where-they-work', 'education', 'how-to-find', 'our-psychologists', 'faq'];
+?>
 
-              <p
-                class="text-lg lg:text-xl leading-[1.6] text-[#33170F] mt-[22px] mb-6"
-              >
-                A psychologist helps people deal with mental health problems,
-                stress, relationships, and life challenges. To use the title,
-                you must complete a six year university degree in psychology and
-                hold an official authorization from Helsedirektoratet, the
-                Norwegian Directorate of Health. On psykolog.no you can find a
-                psychologist in Norway online or in Oslo and ski and book
-                consultation.
-              </p>
-
-               <div
-                class="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 lg:gap-5"
-              >
-                <a
-                  href="#"
-                  class="inline-flex items-center justify-center px-8 py-4 bg-[#C24C33] text-white rounded-full font-bold text-base transition hover:bg-opacity-90"
-                >
-                  Book a time
-                  <span class="ml-2 inline-flex items-center"
-                    ><img
-                      src="<?php echo esc_url(get_template_directory_uri()); ?>/images/bergen/white-arrow.webp"
-                      alt="External Link Icon"
-                      class="h-[20px] w-[12px] mt-0.5 object-contain"
-                  /></span>
-                </a>
-                <a
-                  href="#"
-                  class="inline-flex items-center justify-center px-8 py-3.5 bg-white border border-[#A93E28] text-[#A93E28] rounded-full font-bold text-base transition hover:bg-gray-100"
-                >
-                  See prices
-                  <span class="ml-2 inline-flex items-center"
-                    ><img
-                      src="<?php echo esc_url(get_template_directory_uri()); ?>/images/bergen/Brown-arrow.webp"
-                      alt="External Link Icon"
-                      class="h-[20px] w-[12px] mt-0.5 object-contain"
-                  /></span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="bg-white pt-10">
-        <div class="container max-w-[1360px]">
-          <nav
-            class="ps-jump flex items-center gap-0.5 bg-[#FDF6F2] rounded-full px-3.5 py-2 overflow-x-auto"
-          >
-            <a
-              href="#what-is"
-              class="font-sans font-bold text-[15px] leading-5 whitespace-nowrap text-brand-hover bg-brand-active rounded-full px-[18px] py-2.5"
-              >What Is A Psychologist?</a
-            >
-            <a
-              href="#what-do"
-              class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >What Do They Do?</a
-            >
-            <a
-              href="#types"
-              class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >Types</a
-            >
-            <a
-              href="#vs-psychiatrist"
-              class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >Vs Psychiatrist</a
-            >
-            <a
-              href="#where-work"
-              class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >Where They Work</a
-            >
-            <a
-              href="#education"
-              class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >Education</a
-            >
-            <a
-              href="#how-to-find"
-              class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >How To Find</a
-            >
-            <a
-              href="#meet-ours"
-              class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >Meet Ours</a
-            >
-            <a
-              href="#book-appointment"
-              class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >Book Appointment</a
-            >
-            <a
-              href="#faq"
-              class="font-sans font-medium text-[15px] leading-5 whitespace-nowrap text-brand-taupe bg-transparent rounded-full px-[18px] py-2.5"
-              >FAQ</a
-            >
-          </nav>
-        </div>
-      </div>
-
-      <section id="what-is" class="section section--white" data-reveal>
-        <div class="container max-w-[1360px] mx-auto px-4 md:px-8">
-          <div
-            class="grid grid-cols-1 gap-12 items-start lg:grid-cols-[777px_529px] lg:gap-[46px]"
-          >
-            <!-- Left Column: Text Content -->
-            <div>
-              <h2
-                class="font-serif text-brand-heading m-0 text-[32px] leading-[1.2] md:text-[40px] lg:text-[48px]"
-              >
-                <span class="font-bold">What Is A</span> <i class="text-[#C24C33] font-bold">Psychologist?</i>
-              </h2>
-              <p
-                class="text-lg md:text-xl leading-[1.6] text-[#5B5B5B] mt-6 mb-0"
-              >
-                A psychologist is a health professional to assess, understand, and treat mental health difficulties using psychological methods such as talk therapy, without prescribing medication. They use talk therapy and other methods to help people with mental health issues, stress, anxiety, depression, and more.
-              </p>
-              <p
-                class="text-lg md:text-xl leading-[1.6] text-[#5B5B5B] mt-6 mb-0"
-              >
-                In Norway, the title "psykolog" is protected by law. That means only people who have completed a 6 year university degree in psychology can use it. To call yourself a psychologist in Norway, you must be authorized by Helsedirektoratet (the Norwegian Directorate of Health).
-              </p>
-              <p
-                class="text-lg md:text-xl leading-[1.6] text-[#5B5B5B] mt-6 mb-0"
-              >
-                To become a psychologist, a person must complete a six year, full time professional degree in psychology at a Norwegian university. The program combines theory, research training, and supervised clinical practice with real patients.
-              </p>
-            </div>
-
-            <!-- Right Column: Cards -->
-            <div class="lg:sticky lg:top-[148px] flex flex-col gap-6 h-full">
-              <!-- Card: Psychology vs Psychologist -->
-              <div
-                class="relative overflow-hidden bg-[#A93E28] rounded-3xl p-6 lg:p-8  h-full flex flex-col"
-              >
-                <!-- Background decorative elements (optional, matching image feel) -->
-                <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-                <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl translate-y-1/3 -translate-x-1/4"></div>
-
-                <div class="relative mb-4">
-                  <!-- Icon Placeholder -->
-                  <div class="w-[50px] h-[48px]">
-                    <img
-                      src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/compare.webp"
-                      alt="Icon"
-                    />
-                  </div>
-                </div>
-
-                <h3
-                  class="relative font-serif font-bold text-[22px] md:text-[28px] tracking-[1px] uppercase text-white m-0 mb-8"
-                >
-                  PSYCHOLOGY <span class="lowercase text-xl md:text-2xl mx-1 font-medium">v/s</span> PSYCHOLOGIST
-                </h3>
-
-                <div class="relative flex flex-col gap-6">
-                  <!-- Item 1 -->
-                  <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-3">
-                      <div class="w-7 h-7">
-                        <img
-                          src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/icon.webp"
-                          alt="Psychology Icon"
-                        />
-                      </div>
-                      <h4 class="text-white text-[18px] md:text-[24px] font-bold font-serif m-0 underline underline-offset-4 decoration-white/70">
-                        Psychology:
-                      </h4>
-                    </div>
-                    <p class="text-white/90 text-[15px] md:text-[17px] leading-[1.6] m-0 pl-[40px]">
-                      Psychology is the scientific study of how people think, feel, and behave.
-                    </p>
-                  </div>
-
-                  <!-- Item 2 -->
-                  <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-3">
-                      <div class="w-7 h-7 ">
-                        <img
-                          src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/icon.webp"
-                          alt="Psychology Icon"
-                        />
-                      </div>
-                      <h4 class="text-white text-[18px] md:text-[24px] font-bold font-serif m-0 underline underline-offset-4 decoration-white/70">
-                        Psychology:
-                      </h4>
-                    </div>
-                    <p class="text-white/90 text-[15px] md:text-[17px] leading-[1.6] m-0 pl-[40px]">
-                      Psychology is the scientific study of how people think, feel, and behave.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="what-do" class="section bg-[#FFF7F3]">
-        <div class="container" data-reveal>
-          <!-- Section Header -->
-          <div class="text-center mb-[48px] md:mb-[64px]">
-            <h2 class="font-serif text-brand-heading m-0 text-[32px] leading-[1.2] md:text-[40px] lg:text-[48px]">
-              <span class="font-bold">What Does A</span> <i class="text-[#C24C33] font-bold">Psychologist</i> <span class="font-bold">Do?</span>
-            </h2>
-            <p class="text-lg md:text-xl leading-[1.6] text-[#5B5B5B] mt-6 mb-0 max-w-[800px] mx-auto">
-              A psychologist has many tasks. The main job is to listen, assess and help people improve their mental health and quality of life. Here is what a typical psychologist does.
-            </p>
-          </div>
-
-          <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 xl:grid-cols-[618px_650px] lg:gap-16 items-center">
-            <!-- Left Column: Tabs -->
-            <div class="flex flex-col">
-              <div id="psyTasksList" class="flex flex-col border-b border-[#F0E6E0]">
-                <!-- Tab 1 -->
-                <button
-                  type="button"
-                  class="psy-tasks__item is-active group flex items-center justify-between py-6 border-t border-[#F0E6E0] text-left transition-colors w-full cursor-pointer bg-transparent"
-                  data-task="1"
-                  data-chip="LISTENING"
-                  data-title="Talk therapy"
-                  data-desc="The most common task. The psychologist talks with you, listens, and helps you understand yourself and your problems better. This can include CBT, DBT, psychodynamic therapy and more."
-                >
-                  <div class="flex items-center gap-6">
-                    <div class="w-[54px] h-[54px] rounded-[16px] flex items-center justify-center transition-colors group-[.is-active]:bg-[#C24C33] bg-[#C24C33]">
-                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/work1.webp" alt="Talk therapy icon" class="w-6 h-6 object-contain transition-all group-[.is-active]:brightness-0 group-[.is-active]:invert" />
-                    </div>
-                    <span class="font-serif font-bold text-[20px] md:text-[24px] transition-colors group-[.is-active]:text-[#C24C33] text-[#241C19]">
-                      Talk therapy
-                    </span>
-                  </div>
-                  <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/arrow.webp" alt="arrow" class="w-[22px] h-[53px] object-contain opacity-0 group-[.is-active]:opacity-100 transition-opacity" />
-                </button>
-
-                <!-- Tab 2 -->
-                <button
-                  type="button"
-                  class="psy-tasks__item group flex items-center justify-between py-6 border-t border-[#F0E6E0] text-left transition-colors w-full cursor-pointer bg-transparent"
-                  data-task="2"
-                  data-chip="ASSESSING"
-                  data-title="Assessment And Diagnosis"
-                  data-desc="Psychologists use clinical interviews, observations, and psychometric tests to accurately assess and diagnose mental health conditions."
-                >
-                  <div class="flex items-center gap-6">
-                    <div class="w-[54px] h-[54px] rounded-[16px] flex items-center justify-center transition-colors group-[.is-active]:bg-[#C24C33] bg-[#E9F2ED]">
-                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/work2.webp" alt="Assessment And Diagnosis icon" class="w-6 h-6 object-contain transition-all group-[.is-active]:brightness-0 group-[.is-active]:invert" />
-                    </div>
-                    <span class="font-serif font-bold text-[20px] md:text-[24px] transition-colors group-[.is-active]:text-[#C24C33] text-[#241C19]">
-                      Assessment And Diagnosis
-                    </span>
-                  </div>
-                  <svg class="w-5 h-5 opacity-0 group-[.is-active]:opacity-100 transition-opacity stroke-[#C24C33]" fill="none" viewBox="0 0 24 24" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </button>
-
-                <!-- Tab 3 -->
-                <button
-                  type="button"
-                  class="psy-tasks__item group flex items-center justify-between py-6 border-t border-[#F0E6E0] text-left transition-colors w-full cursor-pointer bg-transparent"
-                  data-task="3"
-                  data-chip="PLANNING"
-                  data-title="Making A Treatment Plan"
-                  data-desc="Based on the assessment, a tailored treatment plan is created to address specific symptoms and improve overall well-being."
-                >
-                  <div class="flex items-center gap-6">
-                    <div class="w-[54px] h-[54px] rounded-[16px] flex items-center justify-center transition-colors group-[.is-active]:bg-[#C24C33] bg-[#E4EDF4]">
-                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/work3.webp" alt="Making A Treatment Plan icon" class="w-6 h-6 object-contain transition-all group-[.is-active]:brightness-0 group-[.is-active]:invert" />
-                    </div>
-                    <span class="font-serif font-bold text-[20px] md:text-[24px] transition-colors group-[.is-active]:text-[#C24C33] text-[#241C19]">
-                      Making A Treatment Plan
-                    </span>
-                  </div>
-                  <svg class="w-5 h-5 opacity-0 group-[.is-active]:opacity-100 transition-opacity stroke-[#C24C33]" fill="none" viewBox="0 0 24 24" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </button>
-
-                <!-- Tab 4 -->
-                <button
-                  type="button"
-                  class="psy-tasks__item group flex items-center justify-between py-6 border-t border-[#F0E6E0] text-left transition-colors w-full cursor-pointer bg-transparent"
-                  data-task="4"
-                  data-chip="GUIDING"
-                  data-title="Guiding Families And Carers"
-                  data-desc="Providing support, education, and strategies to family members to help them navigate and assist their loved ones through recovery."
-                >
-                  <div class="flex items-center gap-6">
-                    <div class="w-[54px] h-[54px] rounded-[16px] flex items-center justify-center transition-colors group-[.is-active]:bg-[#C24C33] bg-[#F4EFE6]">
-                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/work4.webp" alt="Guiding Families And Carers icon" class="w-6 h-6 object-contain transition-all group-[.is-active]:brightness-0 group-[.is-active]:invert" />
-                    </div>
-                    <span class="font-serif font-bold text-[20px] md:text-[24px] transition-colors group-[.is-active]:text-[#C24C33] text-[#241C19]">
-                      Guiding Families And Carers
-                    </span>
-                  </div>
-                  <svg class="w-5 h-5 opacity-0 group-[.is-active]:opacity-100 transition-opacity stroke-[#C24C33]" fill="none" viewBox="0 0 24 24" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </button>
-              </div>
-              
-              <!-- Under text -->
-              <div class="mt-8 pl-5 border-l-2 border-[#C24C33]">
-                <p class="text-[#4E403B] text-[15px] md:text-[18px] leading-[1.6] m-0">
-                  You don't need to have a serious mental illness to see a psychologist. Many people see one for everyday problems like stress at work, relationship issues, grief, or feeling lost in life.
-                </p>
-              </div>
-            </div>
-
-            <!-- Right Column: Image and Text Overlay -->
-            <div class="relative w-full h-[380px] md:h-[450px] lg:h-[530px] rounded-[32px] overflow-hidden bg-[#F8F5F2] shadow-sm">
-              <div id="psyTasksPreview" class="absolute inset-0 w-full h-full">
-                <!-- Image 1 -->
-                <img
-                  src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Talk therapy.webp"
-                  alt="Talk therapy"
-                  class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 [&:not(.is-active)]:opacity-0 is-active"
-                  data-task-img="1"
-                />
-                <!-- Image 2 -->
-                <img
-                  src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Assessment And Diagnosis.webp"
-                  alt="Assessment And Diagnosis"
-                  class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 [&.is-active]:opacity-100"
-                  data-task-img="2"
-                />
-                <!-- Image 3 -->
-                <img
-                  src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Making A Treatment Plan.webp"
-                  alt="Making A Treatment Plan"
-                  class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 [&.is-active]:opacity-100"
-                  data-task-img="3"
-                />
-                <!-- Image 4 -->
-                <img
-                  src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Guiding Families And Carers.webp"
-                  alt="Guiding Families And Carers"
-                  class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 [&.is-active]:opacity-100"
-                  data-task-img="4"
-                />
-              </div>
-
-              <!-- Gradient Overlay -->
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none"></div>
-
-              <!-- Text Content Overlay -->
-              <div class="absolute bottom-0 left-0 w-full p-6 lg:p-8 z-10 pointer-events-none">
-                <span id="psyTasksChip" class="inline-block px-4 py-1.5 rounded-full bg-[#C24C33] text-white font-bold text-[11px] md:text-[12px] tracking-[1px] uppercase mb-4">
-                  LISTENING
-                </span>
-                <h3 id="psyTasksTitle" class="font-serif font-bold text-white text-[28px] md:text-[32px] m-0 mb-3">
-                  Talk therapy
-                </h3>
-                <p id="psyTasksDesc" class="text-white text-[15px] md:text-[18px] leading-[1.6] m-0 ">
-                  The most common task. The psychologist talks with you, listens, and helps you understand yourself and your problems better. This can include CBT, DBT, psychodynamic therapy and more.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="types" class="section bg-white" data-reveal>
-        <div class="container">
-          <!-- Section Header -->
-          <div class="mb-12">
-            <h2 class="h2 mb-4">
-              What Types of <em>Psychologists</em> Are There?
-            </h2>
-            <p class="text-[16px] md:text-[20px] leading-[1.6] text-[#5B5B5B] mt-4 mb-0">
-              Psychologists can work in many settings and focus on different age groups or problems.
-            </p>
-          </div>
-
-          <!-- Cards Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
-            <!-- Card 1 -->
-            <div class="border border-[#F2E4DC] rounded-[18px] p-6 lg:p-8 hover:shadow-sm transition-shadow duration-300">
-              <div class="flex items-center gap-4 mb-4">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Clinical psychologist.webp" alt="Clinical psychologist icon" class="w-[50px] h-[50px] shrink-0 object-contain" />
-                <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[24px] m-0">Clinical psychologist</h3>
-              </div>
-              <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
-                Focuses on diagnosing and treating mental health conditions like anxiety, depression, trauma, and personality disorders. This is the most common type of psychologist you will meet.
-              </p>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="border border-[#F2E4DC] rounded-[18px] p-6 lg:p-8 hover:shadow-sm transition-shadow duration-300">
-              <div class="flex items-center gap-4 mb-4">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Applied Psychologist.webp" alt="Applied Psychologist icon" class="w-[50px] h-[50px] shrink-0 object-contain" />
-                <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[24px] m-0">Applied Psychologist</h3>
-              </div>
-              <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
-                Uses psychology in everyday settings like workplaces, schools, and sports. Applied psychologists help teams work better, and people perform at their best.
-              </p>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="border border-[#F2E4DC] rounded-[18px] p-6 lg:p-8 hover:shadow-sm transition-shadow duration-300">
-              <div class="flex items-center gap-4 mb-4">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Research psychologist.webp" alt="Research psychologist icon" class="w-[50px] h-[50px] shrink-0 object-contain" />
-                <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[24px] m-0">Research psychologist</h3>
-              </div>
-              <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
-                Studies how people think and behave through experiments and research. Their findings help improve how all other psychologists work.
-              </p>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="border border-[#F2E4DC] rounded-[18px] p-6 lg:p-8 hover:shadow-sm transition-shadow duration-300">
-              <div class="flex items-center gap-4 mb-4">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Child psychologist.webp" alt="Child psychologist icon" class="w-[50px] h-[50px] shrink-0 object-contain" />
-                <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[24px] m-0">Child psychologist</h3>
-              </div>
-              <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
-                Works with children, teenagers, and families. Helps with learning difficulties, ADHD, anxiety, behaviour problems, and family conflicts.
-              </p>
-            </div>
-          </div>
-
-          <!-- CTA Banner -->
-          <div class="bg-[#C24C33] rounded-[24px] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left shadow-sm">
-            <div>
-              <h3 class="font-serif font-bold text-white text-[20px] md:text-[26px] m-0 mb-3">
-                Looking for a good psychologist in Norway?
-              </h3>
-              <p class="text-white/90 text-[16px] md:text-[18px] leading-[1.6] m-0">
-                Psykolog.no connects you with licensed, experienced psychologists in Oslo and online across Norway.
-              </p>
-            </div>
-            <a href="#" class="inline-flex items-center justify-center px-8 py-2 rounded-full bg-white text-[#C24C33] font-bold text-[16px] hover:bg-gray-50 transition-colors whitespace-nowrap group shrink-0">
-              Find a psychologist
-              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/arrow.webp" alt="" class="w-[16px] h-auto ml-2 transition-transform group-hover:translate-x-1 mt-0.5" />
+<main>
+  <!-- ================= SECTION 1: HERO ================= -->
+  <section class="relative w-full max-w-full overflow-hidden bg-brand-cream grid grid-cols-1 grid-rows-1 -mt-20 lg:-mt-[86px] min-h-[500px] lg:min-h-[720px]">
+    <span class="[grid-area:1/1] relative w-full min-h-full lg:min-h-0 overflow-hidden">
+      <?php if (!empty($s1['hero_image'])): ?><img src="<?php echo esc_url($s1['hero_image']); ?>" alt="<?php echo esc_attr($s1['heading']); ?>" class="absolute inset-0 w-full h-full object-cover object-[100%_50%]" /><?php endif; ?>
+      <span class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:hidden"></span>
+    </span>
+    <div class="px-4 md:px-12 lg:px-16 relative w-full [grid-area:1/1] place-self-center z-[2] bg-transparent pt-32 pb-10 lg:pt-[90px] lg:pb-[88px]">
+      <div class="max-w-[1312px] mx-auto">
+        <div class="max-w-full lg:max-w-[577px]">
+          <h1 class="font-serif font-bold text-[#C24C33] mt-7 mb-0 text-[34px] leading-[1.25] md:text-[42px] lg:text-[48px] xl:text-[56px]"><?php echo esc_html($s1['heading']); ?></h1>
+          <p class="text-lg lg:text-xl leading-[1.6] text-[#33170F] mt-[22px] mb-6"><?php echo esc_html($s1['description']); ?></p>
+          <div class="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 lg:gap-5">
+            <a href="<?php echo esc_url($s1['primary_button_url']); ?>" class="inline-flex items-center justify-center px-8 py-4 bg-[#C24C33] text-white rounded-full font-bold text-base transition hover:bg-opacity-90">
+              <?php echo esc_html($s1['primary_button_text']); ?>
+              <span class="ml-2 inline-flex items-center"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/oslo/white-arrow.webp" alt="External Link Icon" class="h-[20px] w-[12px] mt-0.5 object-contain" /></span>
+            </a>
+            <a href="<?php echo esc_url($s1['secondary_button_url']); ?>" class="inline-flex items-center justify-center px-8 py-3.5 bg-white border border-[#A93E28] text-[#A93E28] rounded-full font-bold text-base transition hover:bg-gray-100">
+              <?php echo esc_html($s1['secondary_button_text']); ?>
+              <span class="ml-2 inline-flex items-center"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/oslo/Brown-arrow.webp" alt="External Link Icon" class="h-[20px] w-[12px] mt-0.5 object-contain" /></span>
             </a>
           </div>
         </div>
-      </section>
-
-      <section id="vs-psychiatrist" class="section bg-[#FFF7F3]">
-        <div class="container" data-reveal>
-          <!-- Header -->
-          <div class="mb-10 text-left">
-            <h2 class="h2 mb-4">
-              Psychologist Vs Psychiatrist: What Is The <em>Difference?</em>
-            </h2>
-            <p class="text-[16px] md:text-[20px] leading-[1.6] text-[#5B5B5B] mb-0">
-              Many people mix these two up. Both help with mental health, but they have different training and do different things. Here is a simple side-by-side comparison.
-            </p>
-          </div>
-
-          <!-- Table Container -->
-          <div class="bg-white rounded-[24px] overflow-hidden shadow-sm mb-12">
-            <div class="overflow-x-auto">
-              <div class="min-w-[900px]">
-                <!-- Header Row -->
-                <div class="grid grid-cols-[30%_35%_35%] bg-[#C24C33] text-white font-bold text-[12px] md:text-[13px] tracking-[0.1em] uppercase px-8 py-5">
-                  <div>Aspect</div>
-                  <div>Psychologist (Psykolog)</div>
-                  <div>Psychiatrist (Psykiater)</div>
-                </div>
-
-                <!-- Row 1 -->
-                <div class="grid grid-cols-[30%_35%_35%] px-8 py-6 items-center border-b border-[#F0E6E0] last:border-b-0 hover:bg-[#FAF6F3] gap-5 transition-colors">
-                  <div class="flex items-center gap-4">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Education.webp" alt="Education icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
-                    <span class="font-serif font-bold text-[#241C19] text-[16px] md:text-[18px]">Education</span>
-                  </div>
-                  <div class="text-[#241C19] text-[14px] md:text-[16px] font-semibold">6 year psychology degree</div>
-                  <div class="text[#6F6259] text-[14px] md:text-[16px]">6 year medical degree + 5 years psychiatry training</div>
-                </div>
-
-                <!-- Row 2 -->
-                <div class="grid grid-cols-[30%_35%_35%] px-8 py-6 items-center border-b border-[#F0E6E0] last:border-b-0 hover:bg-[#FAF6F3] gap-5 transition-colors">
-                  <div class="flex items-center gap-4">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Can prescribe medication.webp" alt="Can prescribe medication? icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
-                    <span class="font-serif font-bold text-[#241C19] text-[16px] md:text-[18px]">Can prescribe medication?</span>
-                  </div>
-                  <div class="text-[#241C19] text-[14px] md:text-[16px] font-semibold">No</div>
-                  <div class="text[#6F6259] text-[14px] md:text-[16px]">Yes</div>
-                </div>
-
-                <!-- Row 3 -->
-                <div class="grid grid-cols-[30%_35%_35%] px-8 py-6 items-center border-b border-[#F0E6E0] last:border-b-0 hover:bg-[#FAF6F3] gap-5 transition-colors">
-                  <div class="flex items-center gap-4">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Method.webp" alt="Method icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
-                    <span class="font-serif font-bold text-[#241C19] text-[16px] md:text-[18px]">Method</span>
-                  </div>
-                  <div class="text-[#241C19] text-[14px] md:text-[16px] font-semibold">Talk therapy and psychological treatment</div>
-                  <div class="text[#6F6259] text-[14px] md:text-[16px]">Medication + some therapy</div>
-                </div>
-
-                <!-- Row 4 -->
-                <div class="grid grid-cols-[30%_35%_35%] px-8 py-6 items-center border-b border-[#F0E6E0] last:border-b-0 hover:bg-[#FAF6F3] gap-5 transition-colors">
-                  <div class="flex items-center gap-4">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Treats which conditions.webp" alt="Treats which conditions? icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
-                    <span class="font-serif font-bold text-[#241C19] text-[16px] md:text-[18px]">Treats which conditions?</span>
-                  </div>
-                  <div class="text-[#241C19] text-[14px] md:text-[16px] font-semibold">Anxiety, depression, trauma, stress, relationship issues, personality disorders</div>
-                  <div class="text[#6F6259] text-[14px] md:text-[16px]">Severe mental illness, psychosis, bipolar disorder, and complex medication needs</div>
-                </div>
-
-                <!-- Row 5 -->
-                <div class="grid grid-cols-[30%_35%_35%] px-8 py-6 items-center border-b border-[#F0E6E0] last:border-b-0 hover:bg-[#FAF6F3] gap-5 transition-colors">
-                  <div class="flex items-center gap-4">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Do you need a referral.webp" alt="Do you need a referral? icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
-                    <span class="font-serif font-bold text-[#241C19] text-[16px] md:text-[18px]">Do you need a referral?</span>
-                  </div>
-                  <div class="text-[#241C19] text-[14px] md:text-[16px] font-semibold">No (private practice). Yes (public/specialist services)</div>
-                  <div class="text[#6F6259] text-[14px] md:text-[16px]">Usually yes</div>
-                </div>
-
-                <!-- Row 6 -->
-                <div class="grid grid-cols-[30%_35%_35%] px-8 py-6 items-center border-b border-[#F0E6E0] last:border-b-0 hover:bg-[#FAF6F3] gap-5 transition-colors">
-                  <div class="flex items-center gap-4">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Good for.webp" alt="Good for... icon" class="w-[40px] h-[40px] shrink-0 object-contain" />
-                    <span class="font-serif font-bold text-[#241C19] text-[16px] md:text-[18px]">Good for...</span>
-                  </div>
-                  <div class="text-[#241C19] text-[14px] md:text-[16px] font-semibold">Most mental health challenges, talk therapy, emotional well being, and personal growth</div>
-                  <div class="text[#6F6259] text-[14px] md:text-[16px]">Medication management, severe mental health conditions, and complex psychiatric illnesses</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- CTA Card Bottom -->
-          <div class="relative bg-[#683325] rounded-[24px] overflow-hidden p-8 md:p-12 shadow-sm text-left group">
-            <!-- Abstract background graphic -->
-            <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/4 pointer-events-none transition-transform duration-700 group-hover:scale-110"></div>
-            <div class="absolute bottom-0 right-1/4 w-32 h-32 bg-white/5 rounded-full blur-2xl transform translate-y-1/2 pointer-events-none transition-transform duration-700 group-hover:scale-110"></div>
-            <div class="absolute top-12 right-12 w-2 h-2 rounded-full bg-white/20 pointer-events-none"></div>
-            
-            <div class="relative z-10">
-              <h3 class="font-serif font-bold text-white text-[24px] md:text-[32px] m-0 mb-4">
-                Which One Do You Need?
-              </h3>
-              <p class="text-white/90 text-[15px] md:text-[20px] leading-[1.6] m-0">
-                For most people dealing with anxiety, stress, depression, relationship issues, or life challenges, a psychologist is the right first step. If your doctor thinks you need medication or specialist psychiatry care, they will refer you to a psychiatrist.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="where-work" class="section bg-[#F8EBE2]" >
-        <div class="container" data-reveal>
-          <!-- Header -->
-          <div class="mb-10 text-left">
-            <h2 class="h2">
-              Where Do Psychologists Work In <em>Norway?</em>
-            </h2>
-            <p class="text-[16px] md:text-[20px] leading-[1.6] text-[#5B5B5B] mt-4 mb-0 max-w-[900px]">
-              Psychologists work in many different settings. Most people see a psychologist in one of these places.
-            </p>
-          </div>
-
-          <!-- Cards Grid -->
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-6 lg:mb-8">
-            <!-- Card 1 -->
-            <div class="bg-white rounded-[24px] p-6 flex flex-col sm:flex-row gap-6 items-start hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full">
-              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/where1.webp" alt="Hospitals And DPS" class="w-full sm:w-[140px] h-[200px] sm:h-[140px] rounded-[16px] object-cover shrink-0" onerror="this.src='https://placehold.co/140x140?text=Hospitals+And+DPS'" />
-              <div>
-                <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[22px] m-0 mb-3">Hospitals And DPS</h3>
-                <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
-                  Many psychologists work at hospitals or district psychiatric centers (DPS). These are part of the public health system and treat people with serious mental health conditions. You need a referral to get here.
-                </p>
-              </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="bg-white rounded-[24px] p-6 flex flex-col sm:flex-row gap-6 items-start hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full">
-              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/where2.webp" alt="Private Practice" class="w-full sm:w-[140px] h-[200px] sm:h-[140px] rounded-[16px] object-cover shrink-0" onerror="this.src='https://placehold.co/140x140?text=Private+Practice'" />
-              <div>
-                <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[22px] m-0 mb-3">Private Practice</h3>
-                <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
-                  A private practicing psychologist works on their own or in a clinic. You pay per session. No referral needed. Faster access than the public system.
-                </p>
-              </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="bg-white rounded-[24px] p-6 flex flex-col sm:flex-row gap-6 items-start hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full">
-              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/where3.webp" alt="Online/ Digital" class="w-full sm:w-[140px] h-[200px] sm:h-[140px] rounded-[16px] object-cover shrink-0" onerror="this.src='https://placehold.co/140x140?text=Online/Digital'" />
-              <div>
-                <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[22px] m-0 mb-3">Online/ Digital</h3>
-                <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
-                  Online psychologists offer therapy via video call. In person sessions for most conditions. Very convenient; you can speak to a psychologist from home.
-                </p>
-              </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="bg-white rounded-[24px] p-6 flex flex-col sm:flex-row gap-6 items-start hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full">
-              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/where4.webp" alt="Schools And Universities" class="w-full sm:w-[140px] h-[200px] sm:h-[140px] rounded-[16px] object-cover shrink-0" onerror="this.src='https://placehold.co/140x140?text=Schools+And+Universities'" />
-              <div>
-                <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[22px] m-0 mb-3">Schools And Universities</h3>
-                <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
-                  School psychologists help children and young people with learning, behaviour, and social problems. Available for all children in Norway through the school system.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Full Width Card 5 -->
-          <div class="bg-white rounded-[24px] p-6 flex flex-col sm:flex-row gap-6 items-center sm:items-start hover:shadow-md hover:-translate-y-1 transition-all duration-300 mb-12">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/where5.webp" alt="Work Places" class="w-full sm:w-[140px] h-[200px] sm:h-[140px] rounded-[16px] object-cover shrink-0" onerror="this.src='https://placehold.co/140x140?text=Work+Places'" />
-            <div class="w-full">
-              <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[22px] m-0 mb-3">Work Places</h3>
-              <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
-                Some large companies hire psychologists to support employee well being, prevent burnout, and improve team performance. More common in large organisations.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="education" class="section bg-white" data-reveal>
-        <div class="container" >
-          <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[787px_472px] gap-10 lg:gap-16 items-center">
-            
-            <!-- Left Text Content -->
-            <div>
-              <h2 class="h2 mb-4">
-                Psychologist Education And <em>Career</em>
-              </h2>
-              
-              <div class="text-[16px] md:text-[20px] leading-[1.6] text-[#5B5B5B] flex flex-col gap-6">
-                <p class="m-0">
-                  A psychologist in Norway takes at least 6 years of full time university study. During the degree, you learn about human behavior, emotions, mental illness, developmental psychology, assessment, research methods, and therapy techniques.
-                </p>
-                <p class="m-0">
-                  You also complete supervised clinical placements where you work with real patients. After graduating, many psychologists choose to specialize. There are specialization tracks in clinical adult psychology, clinical child psychology, neuropsychology, organizational psychology, and more. Becoming a specialist takes at least 5 more years of work and supervised practice.
-                </p>
-              </div>
-            </div>
-
-            <!-- Right Image Content -->
-            <div class="relative w-full h-[300px] md:h-[380px] lg:h-[420px] rounded-[24px] overflow-hidden shadow-sm">
-              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/career.webp" alt="Psychologist Education and Career" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x800?text=Education+Image'" />
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section id="how-to-find" class="section bg-[#F8EBE2]">
-        <div class="container"  data-reveal>
-          <!-- Header -->
-          <div class="mb-10 text-left">
-            <h2 class="h2 mb-4">
-              How To Find A Psychologist In Norway
-            </h2>
-            <p class="text-[16px] md:text-[20px] leading-[1.6] text-[#5B5B5B] m-0 max-w-[900px]">
-              The right path depends on how urgent your need is and whether you want free public help or faster private help.
-            </p>
-          </div>
-
-          <!-- Cards Layout (3 columns) -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-6 lg:mb-8">
-            
-            <!-- Card 1: Route One -->
-            <div class="bg-white rounded-[24px] p-8 md:p-10 flex flex-col justify-between h-full shadow-sm hover:-translate-y-1 transition-all duration-300">
-              <div>
-                <div class="flex items-center gap-4 mb-6">
-                  <div class="w-12 h-12 shrink-0">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/option1.webp" alt="Route One Icon" class="object-contain" onerror="this.src='https://placehold.co/24x24?text=R1'" />
-                  </div>
-                  <span class="text-[#B15E4C] font-bold text-[13px] tracking-wider uppercase">Route One</span>
-                </div>
-                <h3 class="font-serif font-bold text-[#33170F] text-[24px] md:text-[28px] leading-[1.3] mb-4">
-                  Through your GP (family doctor)
-                </h3>
-                <p class="text-[#5B5B5B] text-[15px] md:text-[17px] leading-[1.6] mb-8">
-                  Your GP can refer you to a public psychologist. This is often free, but waiting times can be 4–12 weeks or more.
-                </p>
-              </div>
-              <div class="flex flex-wrap gap-3">
-                <div class="inline-flex items-center gap-2 bg-[#E4EDF4] text-[#415C73] px-4 py-2 rounded-full text-[13px] md:text-[14px] font-semibold">
-                  <div class="shrink-0">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/point1.webp" alt="Route One Icon" class="w-[14px] h-[14px] object-contain" onerror="this.src='https://placehold.co/24x24?text=R1'" />
-                  </div>
-                  Referral needed
-                </div>
-                <div class="inline-flex items-center gap-2 bg-[#E4EDF4] text-[#415C73] px-4 py-2 rounded-full text-[13px] md:text-[14px] font-semibold">
-                  <div class="shrink-0">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/point2.webp" alt="Route One Icon" class="w-[14px] h-[14px] object-contain" onerror="this.src='https://placehold.co/24x24?text=R1'" />
-                  </div>
-                  4–12 weeks
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 2: Center Image -->
-            <div class="relative w-full h-[300px] md:h-full lg:h-auto min-h-[481px] rounded-[24px] overflow-hidden shadow-sm hover:-translate-y-1 transition-all duration-300">
-              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/find.webp" alt="Norway Psychologist Session" class="w-full h-full object-cover absolute inset-0" onerror="this.src='https://placehold.co/400x500?text=Therapy+Session'" />
-            </div>
-
-            <!-- Card 3: Option B -->
-            <div class="bg-white rounded-[24px] p-8 md:p-10 flex flex-col justify-between h-full shadow-sm hover:-translate-y-1 transition-all duration-300">
-              <div>
-                <div class="flex items-center gap-4 mb-6">
-                  <div class="w-12 h-12 shrink-0">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/option2.webp" alt="Option B Icon" class="object-contain" onerror="this.src='https://placehold.co/24x24?text=OB'" />
-                  </div>
-                  <span class="text-[#A58550] font-bold text-[13px] tracking-wider uppercase">Option B</span>
-                </div>
-                <h3 class="font-serif font-bold text-[#33170F] text-[24px] md:text-[28px] leading-[1.3] mb-4">
-                  Private psychologist no referral needed
-                </h3>
-                <p class="text-[#5B5B5B] text-[15px] md:text-[17px] leading-[1.6] mb-8">
-                  You can book directly with a private psychologist without seeing your GP first. Faster access. Psykolog.no helps you find and book one quickly.
-                </p>
-              </div>
-              <div class="flex flex-wrap gap-3">
-                <div class="inline-flex items-center gap-2 bg-[#E4EDF4] text-[#415C73] px-4 py-2 rounded-full text-[13px] md:text-[14px] font-semibold">
-                  <div class="shrink-0">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/point1.webp" alt="Route One Icon" class="w-[14px] h-[14px] object-contain" onerror="this.src='https://placehold.co/24x24?text=R1'" />
-                  </div>
-                  No Referral Needed
-                </div>
-                <div class="inline-flex items-center gap-2 bg-[#E4EDF4] text-[#415C73] px-4 py-2 rounded-full text-[13px] md:text-[14px] font-semibold">
-                  <div class="shrink-0">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/point1.webp" alt="Route One Icon" class="w-[14px] h-[14px] object-contain" onerror="this.src='https://placehold.co/24x24?text=R1'" />
-                  </div>
-                  </svg>
-                  Fast Access
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Bottom CTA -->
-          <div class="bg-[#C24C33] rounded-[24px] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
-            <div class="text-center md:text-left">
-              <h3 class="font-serif font-bold text-white text-[24px] md:text-[32px] leading-[1.2] m-0 mb-3">
-                Find A Psychologist Now
-              </h3>
-              <p class="text-white/90 text-[16px] md:text-[18px] leading-[1.6] m-0">
-                Book an appointment in minutes, no referral needed.
-              </p>
-            </div>
-            <a href="#" class="inline-flex items-center justify-center px-8 py-2 rounded-full bg-white text-[#C24C33] font-bold text-[16px] hover:bg-gray-50 transition-colors whitespace-nowrap group shrink-0 shadow-sm">
-              Find a psychologist
-              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/arrow.webp" alt="Arrow Icon" class="w-[16px] h-auto mt-0.5 object-contain ml-2" />
-            </a>
-          </div>
-
-        </div>
-      </section>
-
-      <section id="meet-ours" class="section bg-white" data-reveal>
-        <div class="container">
-          
-          <!-- Header Content -->
-          <div class="mb-12">
-            <h2 class="h2 mb-4">
-              Meet Our Psychologists in Oslo
-            </h2>
-            <p class="text-[#6B5F5A] text-[15px] md:text-[18px] leading-[1.6]">
-              Our psychologists are authorised clinicians with documented clinical backgrounds. At Psykolog.no you can choose which psychologist you want to work with.
-            </p>
-          </div>
-
-          <!-- 3-Column Psychologists Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            
-            <!-- Card 1 (Ingrid Halvorsen) -->
-            <div class="bg-white border border-[#F2E4DC] rounded-[24px] p-4 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-              <!-- Image Container -->
-              <div class="relative w-full h-[260px] md:h-[320px] rounded-[16px] overflow-hidden mb-5">
-                <img 
-                  src="<?php echo esc_url(get_template_directory_uri()); ?>/images/bergen/Psykologist1.webp" 
-                  alt="Ingrid Halvorsen" 
-                  class="w-full h-full object-cover" 
-                />
-                <!-- Frosted Glass Overlay -->
-                <div class="absolute bottom-3 left-3 right-3 bg-[#FFFFFF33] backdrop-blur-[18px] border border-[#FFFFFF57] shadow-lg rounded-[12px] px-5 py-4 text-white">
-                  <h3 class="font-serif text-[20px] text-white font-bold leading-snug">Ingrid Halvorsen</h3>
-                  <p class="text-white/90 text-[12px] mt-0.5">Psychologist Specialist</p>
-                </div>
-              </div>
-              
-              <!-- Text Content -->
-              <div class="flex flex-col flex-grow justify-between px-2 pb-2">
-                <p class="text-[#6B5F5A] text-[14px] md:text-[16px] leading-[1.6] mb-6">
-                  Psychologist / Psychologist Specialist 12 years of experience in individual therapy for adults.
-                </p>
-                
-                <!-- Actions -->
-                <div class="flex flex-wrap items-center gap-3 mt-auto">
-                  <a href="#profile" class="inline-flex items-center justify-center gap-1.5 bg-[#A93E28] text-white text-[13px] md:text-[16px] font-bold py-2.5 px-5 rounded-full hover:bg-opacity-90 transition-all shrink-0">
-                    See Full Profile &rarr;
-                  </a>
-                  <a href="#book" class="inline-flex items-center justify-center gap-1.5 bg-[#FFF7F3] text-[#C24C33] text-[13px] md:text-[16px] font-bold py-2.5 px-5 rounded-full hover:bg-[#F7EBE8] transition-all border border-[#F2E4DC] shrink-0">
-                    See Full Profile &rarr;
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 2 (Emma) -->
-            <div class="bg-white border border-[#F2E4DC] rounded-[24px] p-4 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-              <!-- Image Container -->
-              <div class="relative w-full h-[260px] md:h-[320px] rounded-[16px] overflow-hidden mb-5">
-                <img 
-                  src="<?php echo esc_url(get_template_directory_uri()); ?>/images/bergen/Psykologist2.webp" 
-                  alt="Emma" 
-                  class="w-full h-full object-cover" 
-                />
-                <!-- Frosted Glass Overlay -->
-                <div class="absolute bottom-3 left-3 right-3 bg-[#FFFFFF33] backdrop-blur-[18px] border border-[#FFFFFF57] shadow-lg rounded-[12px] px-5 py-4 text-white">
-                  <h3 class="font-serif text-[20px] text-white font-bold leading-snug">Emma</h3>
-                  <p class="text-white/90 text-[12px] mt-0.5">Psychologist Specialist</p>
-                </div>
-              </div>
-              
-              <!-- Text Content -->
-              <div class="flex flex-col flex-grow justify-between px-2 pb-2">
-                <p class="text-[#6B5F5A] text-[14px] md:text-[16px] leading-[1.6] mb-6">
-                  Psychologist / Psychologist Specialist 12 years of experience in individual therapy for adults.
-                </p>
-                
-                <!-- Actions -->
-                <div class="flex flex-wrap items-center gap-3 mt-auto">
-                  <a href="#profile" class="inline-flex items-center justify-center gap-1.5 bg-[#A93E28] text-white text-[13px] md:text-[16px] font-bold py-2.5 px-5 rounded-full hover:bg-opacity-90 transition-all shrink-0">
-                    See Full Profile &rarr;
-                  </a>
-                  <a href="#book" class="inline-flex items-center justify-center gap-1.5 bg-[#FFF7F3] text-[#C24C33] text-[13px] md:text-[16px] font-bold py-2.5 px-5 rounded-full hover:bg-[#F7EBE8] transition-all border border-[#F2E4DC] shrink-0">
-                    See Full Profile &rarr;
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 3 (Looking To Join Us) -->
-            <div class="bg-white border border-[#F2E4DC] rounded-[24px] p-4 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-              <!-- Image Container -->
-              <div class="relative w-full h-[260px] md:h-[320px] rounded-[16px] overflow-hidden mb-5">
-                <img 
-                   src="<?php echo esc_url(get_template_directory_uri()); ?>/images/bergen/Psykologist3.webp" 
-                  alt="Looking To Join Us?" 
-                  class="w-full h-full object-cover" 
-                />
-                <!-- Frosted Glass Overlay -->
-                <div class="absolute bottom-3 left-3 right-3 bg-[#FFFFFF33] backdrop-blur-[18px] border border-[#FFFFFF57] shadow-lg rounded-[12px] px-5 py-4 text-white">
-                  <h3 class="font-serif text-[20px] text-white font-bold leading-snug">Looking To Join Us?</h3>
-                  <p class="text-white/90 text-[12px] mt-0.5">Psychologist</p>
-                </div>
-              </div>
-              
-              <!-- Text Content -->
-              <div class="flex flex-col flex-grow justify-between px-2 pb-2">
-                <p class="text-[#6B5F5A] text-[14px] md:text-[16px] leading-[1.6] mb-6">
-                  Psychologist 8 years of experience in couples therapy and individual therapy for adults.
-                </p>
-                
-                <!-- Actions -->
-                <div class="flex flex-wrap items-center gap-3 mt-auto">
-                  <a href="#apply" class="inline-flex items-center justify-center gap-1.5 bg-[#A93E28] text-white text-[13px] md:text-[16px] font-bold py-2.5 px-6 rounded-full hover:bg-opacity-90 transition-all shrink-0">
-                    Apply Now &rarr;
-                  </a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section id="book-appointment" class="section bg-[#FFF7F3]" data-reveal>
-        <div class="container">
-          
-          <!-- Header -->
-          <div class="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
-            <h2 class="h2">
-              How To Book An <em>Appointment</em> With A<br class="hidden md:block" /> Psychologist
-            </h2>
-          </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[720px_560px] gap-10 lg:gap-16 items-start">
-            
-            <!-- Left Column: Steps -->
-            <div>
-              <h3 class="font-serif text-[#2B211F] font-bold text-[28px] md:text-[36px] mb-4">
-                Find Your Psychologist.
-              </h3>
-              <p class="text-[#5B5B5B] text-[16px] md:text-[20px] leading-[1.6] mb-8">
-                Getting started is simple. Most people have their first appointment within 1–3 days.
-              </p>
-
-              <div class="flex flex-col gap-4">
-                
-                <!-- Step 1 -->
-                <div class="bg-white rounded-[16px] border border-[#F2E4DC] p-6 md:p-8 flex gap-6 items-start group cursor-pointer hover:border-[#C24C33] transition-colors duration-300 appointment-step" data-step="1">
-                  <span class="font-serif font-bold text-[36px] text-[#ECA997] group-hover:text-[#C24C33] transition-colors duration-300 leading-none mt-0.5">1</span>
-                  <div>
-                    <h4 class="font-serif font-bold text-[#241C19] group-hover:text-[#C24C33] transition-colors duration-300 text-[18px] md:text-[24px] mb-2">Find the Right Psychologist</h4>
-                    <p class="text-[#6B5F5A] text-[14px] md:text-[15px] leading-[1.6] m-0">
-                      Browse profiles and choose a psychologist with the experience that fits your needs.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="bg-white rounded-[16px] border border-[#F2E4DC] p-6 md:p-8 flex gap-6 items-start group cursor-pointer hover:border-[#C24C33] transition-colors duration-300 appointment-step" data-step="2">
-                  <span class="font-serif font-bold text-[36px] text-[#ECA997] group-hover:text-[#C24C33] transition-colors duration-300 leading-none mt-0.5">2</span>
-                  <div>
-                    <h4 class="font-serif font-bold text-[#241C19] group-hover:text-[#C24C33] transition-colors duration-300 text-[18px] md:text-[24px] mb-2">Choose a Convenient Time</h4>
-                    <p class="text-[#6B5F5A] text-[14px] md:text-[15px] leading-[1.6] m-0">
-                      Select a session time that works for you, whether in Oslo or online, with evenings and weekends available.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="bg-white rounded-[16px] border border-[#F2E4DC] p-6 md:p-8 flex gap-6 items-start group cursor-pointer hover:border-[#C24C33] transition-colors duration-300 appointment-step" data-step="3">
-                  <span class="font-serif font-bold text-[36px] text-[#ECA997] group-hover:text-[#C24C33] transition-colors duration-300 leading-none mt-0.5">3</span>
-                  <div>
-                    <h4 class="font-serif font-bold text-[#241C19] group-hover:text-[#C24C33] transition-colors duration-300 text-[18px] md:text-[24px] mb-2">Create Your Treatment Plan Together</h4>
-                    <p class="text-[#6B5F5A] text-[14px] md:text-[15px] leading-[1.6] m-0">
-                      Your psychologist will listen to your situation and work with you to agree on a personalized treatment plan.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="bg-white rounded-[16px] border border-[#F2E4DC] p-6 md:p-8 flex gap-6 items-start group cursor-pointer hover:border-[#C24C33] transition-colors duration-300 appointment-step" data-step="4">
-                  <span class="font-serif font-bold text-[36px] text-[#ECA997] group-hover:text-[#C24C33] transition-colors duration-300 leading-none mt-0.5">4</span>
-                  <div>
-                    <h4 class="font-serif font-bold text-[#241C19] group-hover:text-[#C24C33] transition-colors duration-300 text-[18px] md:text-[24px] mb-2">Build Skills and Feel Better</h4>
-                    <p class="text-[#6B5F5A] text-[14px] md:text-[15px] leading-[1.6] m-0">
-                      Regular sessions help you develop useful skills, manage challenges, and improve your well being
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- Right Column: Image -->
-            <div class="relative w-full h-[350px] md:h-[400px] lg:h-[500px] rounded-[32px] lg:sticky lg:top-32 overflow-hidden">
-              <img id="appointment-step-img" src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/Step1.webp" alt="Booking an appointment" class="w-full h-full object-cover transition-opacity duration-300" onerror="this.src='https://placehold.co/800x1000?text=Booking+Image'" />
-              
-              <!-- Badge Overlay -->
-              <div class="absolute top-6 left-6 bg-white rounded-full py-1.5 px-2 pr-4 flex items-center gap-2 shadow-sm">
-                <div id="appointment-step-badge" class="w-6 h-6 rounded-full bg-[#A93E28] text-white flex items-center justify-center text-[12px] font-bold transition-colors duration-300">
-                  1
-                </div>
-                <span class="text-[#33170F] font-bold text-[11px] tracking-wider uppercase">Four Steps</span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- Ready To Speak To A Psychologist Section -->
-      <section class="section" data-reveal>
-        <div class="container">
-          <!-- Main Card Container with custom gradient -->
-          <div
-            class="relative overflow-hidden rounded-[32px] p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-center gap-10"
-            style="
-              background: radial-gradient(46% 62% at 92% 88%, rgba(240, 147, 103, 0.14) 0%, rgba(240, 147, 103, 0) 70%),
-                          radial-gradient(46% 62% at 8% 84%, rgba(248, 216, 212, 0.55) 0%, rgba(248, 216, 212, 0) 70%),
-                          radial-gradient(58% 74% at 50% 0%, rgba(248, 235, 226, 0.9) 0%, rgba(248, 235, 226, 0) 72%);
-            "
-          >
-            <!-- Left Content -->
-            <div class="w-full md:w-1/2 flex flex-col items-start text-left z-10">
-              <h2 class="font-serif text-[32px] md:text-[44px] text-[#241C19] font-bold m-0 mb-4">
-                Ready To Speak To A Psychologist?
-              </h2>
-              <p class="text-[#6B5F5A] text-[16px] md:text-[18px] leading-[1.6] m-0 mb-8 max-w-[500px]">
-                You do not need a referral. No long waiting lists. Just find a psychologist who fits your needs and book in minutes.
-              </p>
-              <div class="flex flex-wrap items-center gap-4">
-                <!-- Primary Button -->
-                <a
-                  href="#"
-                  class="inline-flex items-center justify-center px-7 py-3 bg-[#C24C33] hover:bg-[#B34A34] text-white text-[15px] font-bold rounded-full transition-colors duration-300 no-underline"
-                >
-                  Find a Psychologist
-                  <span class="ml-2 font-bold text-lg leading-none mb-[2px]">→</span>
-                </a>
-                <!-- Secondary Button -->
-                <a
-                  href="#"
-                  class="inline-flex items-center justify-center px-7 py-3 bg-transparent border border-[#C24C33] text-[#C24C33] hover:bg-[#C24C33] hover:text-white text-[15px] font-bold rounded-full transition-colors duration-300 no-underline"
-                >
-                  Online Session
-                  <span class="ml-2 font-bold text-lg leading-none mb-[2px]">→</span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Right Content: Image -->
-            <div class="w-full md:w-1/2 flex justify-center md:justify-end z-10 relative">
-              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/cta.webp" alt="Ready To Speak To A Psychologist" class="w-full max-w-[480px] object-contain" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <section id="faq" class="section section--white pb-12" data-reveal>
-        <div class="container max-w-[1360px]">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <!-- Left Column -->
-            <div class="lg:col-span-5 lg:sticky lg:top-24 flex flex-col gap-6">
-              <div>
-                <span class="text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3 block">FAQS</span>
-                <h2 class="font-serif text-[40px] md:text-[56px] leading-[1.1] text-[#241C19] m-0 mb-4">
-                  Frequently<br>Asked <em class="text-[#C24C33] italic">Questions</em>
-                </h2>
-                <p class="text-[16px] leading-[26px] text-[#6B5F5A] m-0 mb-6 max-w-[420px]">
-                  Still unsure whether an appointment is the right next step? Speak to one of our psychologists.
-                </p>
-                <a href="#" class="inline-flex items-center justify-center px-6 py-2.5 bg-transparent border border-[#C24C33] text-[#C24C33] hover:bg-[#C24C33] hover:text-white text-[15px] font-bold rounded-full transition-colors duration-300 no-underline w-fit">
-                  Book a time
-                </a>
-              </div>
-
-              <!-- Separator -->
-              <div class="w-full h-px bg-[#F2E8E3] my-3"></div>
-
-              <div class="flex flex-col">
-                <div class="flex items-center gap-3 mb-4">
-                  <div class="flex -space-x-2">
-                    <span class="w-8 h-8 rounded-full bg-[#E8DCC8] border-2 border-white shrink-0"></span>
-                    <span class="w-8 h-8 rounded-full bg-[#DCE5DF] border-2 border-white shrink-0"></span>
-                    <span class="w-8 h-8 rounded-full bg-[#EED8D3] border-2 border-white shrink-0"></span>
-                    <span class="w-8 h-8 rounded-full bg-[#F3EFE9] border-2 border-white shrink-0"></span>
-                  </div>
-                  <span class="font-sans font-bold text-[14px] text-[#C24C33]">
-                    Oslo Questions Asked By Our Patients
-                  </span>
-                </div>
-
-                <p class="text-[14px] leading-[22px] text-[#6B5F5A] m-0 mb-5 max-w-[380px]">
-                  These are the questions people ask us most often before booking their first consultation.
-                </p>
-
-                <button
-                  type="button"
-                  onclick="location.href = '#mh-book'"
-                  class="bg-[#C24C33] hover:bg-[#B34A34] text-white font-sans font-bold text-[14px] py-3 px-6 rounded-full transition-colors inline-flex items-center gap-2 cursor-pointer w-fit border-0"
-                >
-                  <span>Ask Your Own Question</span>
-                  <span class="font-bold text-lg leading-none mb-[2px]">→</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- Right Column -->
-            <div class="lg:col-span-7 flex flex-col gap-4">
-              <!-- Item 1 -->
-              <div class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300">
-                <button class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left">
-                  <span class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4">
-                    Do I need a referral to book a psychologist in Oslo?
-                  </span>
-                  <span class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300">
-                    <span class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"></span>
-                    <span class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"></span>
-                  </span>
-                </button>
-                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
-                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
-                    No, you do not need a referral from a doctor to book an appointment with our psychologists in Oslo. You can easily book an appointment directly through our online booking system.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Item 2 -->
-              <div class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300">
-                <button class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left">
-                  <span class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4">
-                    What is the difference between a psychologist and a therapist?
-                  </span>
-                  <span class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300">
-                    <span class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"></span>
-                    <span class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"></span>
-                  </span>
-                </button>
-                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
-                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
-                    A psychologist has completed a 6-year professional degree in psychology and is a protected title. The title therapist is not protected, which means anyone can call themselves a therapist regardless of their background.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Item 3 -->
-              <div class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300">
-                <button class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left">
-                  <span class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4">
-                    Can I have a video session with a psychologist from Oslo?
-                  </span>
-                  <span class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300">
-                    <span class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"></span>
-                    <span class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"></span>
-                  </span>
-                </button>
-                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
-                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
-                    Yes, all our psychologists offer video sessions. You can choose whether you want to meet in person at our clinic in Oslo or have the session via secure video link.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Item 4 -->
-              <div class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300">
-                <button class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left">
-                  <span class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4">
-                    Do you offer emergency or crisis appointments?
-                  </span>
-                  <span class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300">
-                    <span class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"></span>
-                    <span class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"></span>
-                  </span>
-                </button>
-                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
-                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
-                    We can often offer appointments within 24 hours. For immediate medical emergencies or acute suicidal thoughts, please contact the emergency room (116 117) or call 113.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Item 5 -->
-              <div class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300">
-                <button class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left">
-                  <span class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4">
-                    Can I switch between in-person and video appointments?
-                  </span>
-                  <span class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300">
-                    <span class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"></span>
-                    <span class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"></span>
-                  </span>
-                </button>
-                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
-                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
-                    Yes, you are completely free to switch between meeting in person in Oslo and taking the session via video, depending on what suits you best that day.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Item 6 -->
-              <div class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300">
-                <button class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left">
-                  <span class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4">
-                    Do you work with employers and HR departments?
-                  </span>
-                  <span class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300">
-                    <span class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"></span>
-                    <span class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"></span>
-                  </span>
-                </button>
-                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
-                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
-                    Yes, we collaborate with several companies. We offer arrangements where the employer covers the cost of psychology sessions for employees.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Emergency Banner Section -->
-    <section class="section pt-0 pb-[90px]" data-reveal>
-  <div class="container mx-auto px-4 max-w-[1360px]">
-    <div class="bg-[#C24C33] rounded-[24px] p-8 md:p-10 relative overflow-hidden flex flex-col gap-8">
-      
-      <!-- Background curves -->
-      <div class="absolute -right-20 -top-20 w-[250px] h-[250px] rounded-full border-[40px] border-white/5 pointer-events-none"></div>
-      <div class="absolute right-10 -bottom-32 w-[250px] h-[250px] rounded-full border-[30px] border-white/5 pointer-events-none"></div>
-      
-      <!-- Header Text -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
-        <h3 class="font-serif text-[20px] md:text-[24px] text-white font-medium m-0 tracking-wide">
-          If you are having thoughts of harming yourself or not wanting to live:
-        </h3>
-        <span class="text-white text-[15px] whitespace-nowrap">Seek help immediately.</span>
-      </div>
-
-      <!-- Contact Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 relative z-10">
-        
-        <!-- Card 1 -->
-        <div class="bg-white/10 hover:bg-white/15 transition-colors rounded-[12px] p-5 flex items-center gap-4">
-          <div class="w-[50px] h-[50px] shrink-0">
-            <!-- Icon Placeholder -->
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/call.webp" alt="Emergency phone icon" class="object-contain">
-          </div>
-          <div class="flex flex-col">
-            <span class="text-white/80 text-[10px] font-bold tracking-[0.15em] uppercase mb-1">Emergency</span>
-            <div class="text-white font-bold text-[22px] leading-none">113</div>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="bg-white/10 hover:bg-white/15 transition-colors rounded-[12px] p-5 flex items-center gap-4">
-          <div class="w-[50px] h-[50px] shrink-0">
-             <!-- Icon Placeholder -->
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/call.webp" alt="Urgent medical help phone icon" class="object-contain">
-          </div>
-          <div class="flex flex-col">
-            <span class="text-white/80 text-[10px] font-bold tracking-[0.15em] uppercase mb-1">Urgent Medical Help</span>
-            <div class="text-white font-bold text-[22px] leading-none">116 117</div>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="bg-white/10 hover:bg-white/15 transition-colors rounded-[12px] p-5 flex items-center gap-4">
-          <div class="w-[50px] h-[50px] shrink-0">
-             <!-- Icon Placeholder -->
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Psychologist/call.webp" alt="Mental health crisis line phone icon" class="object-contain">
-          </div>
-          <div class="flex flex-col">
-            <span class="text-white/80 text-[10px] font-bold tracking-[0.15em] uppercase mb-1">Mental Health Crisis Line</span>
-            <div class="text-white font-bold text-[22px] leading-none">116 123</div>
-          </div>
-        </div>
-
       </div>
     </div>
+  </section>
+
+  <!-- ================= SECTION 2: JUMP NAV ================= -->
+  <div class="bg-white pt-10">
+    <div class="container max-w-[1360px]">
+      <nav class="ps-jump flex items-center gap-0.5 bg-[#FDF6F2] rounded-full px-3.5 py-2 overflow-x-auto">
+        <?php if (!empty($s2['nav_items'])): foreach ($s2['nav_items'] as $i => $item):
+          $anchor = $jump_anchors[$i] ?? 'what-is-psychologist';
+          $is_active = $i === 0;
+        ?>
+          <a href="#<?php echo esc_attr($anchor); ?>" class="font-sans <?php echo $is_active ? 'font-bold text-brand-hover bg-brand-active' : 'font-medium text-brand-taupe bg-transparent'; ?> text-[15px] leading-5 whitespace-nowrap rounded-full px-[18px] py-2.5"><?php echo esc_html($item['label']); ?></a>
+        <?php endforeach; endif; ?>
+      </nav>
+    </div>
   </div>
-</section>
 
-   
-    </main>
+  <!-- ================= SECTION 3: WHAT IS A PSYCHOLOGIST ================= -->
+  <section id="mh-what" class="section section--white" data-reveal>
+    <div class="container max-w-[1360px] mx-auto px-4 md:px-8">
+      <div class="grid grid-cols-1 gap-12 items-start lg:grid-cols-[777px_529px] lg:gap-[46px]">
+        <div>
+          <h2 id="what-is-psychologist" class="font-serif text-brand-heading m-0 text-[32px] leading-[1.2] md:text-[40px] lg:text-[48px]"><?php echo esc_html($s3['heading']); ?></h2>
+          <p class="text-lg md:text-xl leading-[1.6] text-[#5B5B5B] mt-6 mb-0"><?php echo esc_html($s3['paragraph_1']); ?></p>
+          <p class="text-lg md:text-xl leading-[1.6] text-[#5B5B5B] mt-6 mb-0"><?php echo esc_html($s3['paragraph_2']); ?></p>
+          <p class="text-lg md:text-xl leading-[1.6] text-[#5B5B5B] mt-6 mb-0"><?php echo esc_html($s3['paragraph_3']); ?></p>
+        </div>
+        <div class="lg:sticky lg:top-[148px] flex flex-col gap-6 h-full">
+          <div class="relative overflow-hidden bg-[#A93E28] rounded-3xl p-6 lg:p-8 h-full flex flex-col">
+            <div class="relative mb-4"><div class="w-[50px] h-[48px]"><?php if (!empty($s3['card_icon'])): ?><img src="<?php echo esc_url($s3['card_icon']); ?>" alt="Icon" /><?php endif; ?></div></div>
+            <h3 class="relative font-serif font-bold text-[22px] md:text-[28px] tracking-[1px] uppercase text-white m-0 mb-8"><?php echo esc_html($s3['card_heading']); ?></h3>
+            <div class="relative flex flex-col gap-6">
+              <?php if (!empty($s3['card_items'])): foreach ($s3['card_items'] as $item): ?>
+                <div class="flex flex-col gap-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-7 h-7"><?php if (!empty($item['icon'])): ?><img src="<?php echo esc_url($item['icon']); ?>" alt="Icon" /><?php endif; ?></div>
+                    <h4 class="text-white text-[18px] md:text-[24px] font-bold font-serif m-0 underline underline-offset-4 decoration-white/70"><?php echo esc_html($item['title']); ?></h4>
+                  </div>
+                  <p class="text-white/90 text-[15px] md:text-[17px] leading-[1.6] m-0 pl-[40px]"><?php echo esc_html($item['text']); ?></p>
+                </div>
+              <?php endforeach; endif; ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ================= SECTION 4: WHAT DOES A PSYCHOLOGIST DO ================= -->
+  <section class="section bg-[#FFF7F3]">
+    <div class="container" data-reveal>
+      <div class="text-center mb-[48px] md:mb-[64px]">
+        <h2 id="what-they-do" class="font-serif text-brand-heading m-0 text-[32px] leading-[1.2] md:text-[40px] lg:text-[48px]"><?php echo esc_html($s4['heading']); ?></h2>
+        <p class="text-lg md:text-xl leading-[1.6] text-[#5B5B5B] mt-6 mb-0 max-w-[800px] mx-auto"><?php echo esc_html($s4['intro_text']); ?></p>
+      </div>
 
-<?php get_footer(); ?>   
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 xl:grid-cols-[618px_650px] lg:gap-16 items-center">
+        <div class="flex flex-col">
+          <div id="psyTasksList" class="flex flex-col border-b border-[#F0E6E0]">
+            <?php if (!empty($s4['tasks'])): foreach ($s4['tasks'] as $i => $task): $active = $i === 0; ?>
+              <button type="button" class="psy-tasks__item <?php echo $active ? 'is-active' : ''; ?> group flex items-center justify-between py-6 border-t border-[#F0E6E0] text-left transition-colors w-full cursor-pointer bg-transparent"
+                data-task="<?php echo esc_attr($i + 1); ?>" data-chip="<?php echo esc_attr($task['chip']); ?>" data-title="<?php echo esc_attr($task['title']); ?>" data-desc="<?php echo esc_attr($task['description']); ?>">
+                <div class="flex items-center gap-6">
+                  <?php 
+                    $bg_colors = ['bg-[#C24C33]', 'bg-[#E9F2ED]', 'bg-[#E4EDF4]', 'bg-[#F4EFE6]'];
+                    $bg_class = isset($bg_colors[$i]) ? $bg_colors[$i] : 'bg-[#E9F2ED]';
+                  ?>
+                  <div class="w-[54px] h-[54px] rounded-[16px] flex items-center justify-center transition-colors group-[.is-active]:bg-[#C24C33] <?php echo $bg_class; ?>">
+                    <?php if (!empty($task['icon'])): ?><img src="<?php echo esc_url($task['icon']); ?>" alt="<?php echo esc_attr($task['title']); ?> icon" class="w-6 h-6 object-contain transition-all group-[.is-active]:brightness-0 group-[.is-active]:invert" /><?php endif; ?>
+                  </div>
+                  <span class="font-serif font-bold text-[20px] md:text-[24px] transition-colors group-[.is-active]:text-[#C24C33] text-[#241C19]"><?php echo esc_html($task['title']); ?></span>
+                </div>
+                <svg class="w-5 h-5 opacity-0 group-[.is-active]:opacity-100 transition-opacity stroke-[#C24C33]" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </button>
+            <?php endforeach; endif; ?>
+          </div>
+          <div class="mt-8 pl-5 border-l-2 border-[#C24C33]">
+            <p class="text-[#4E403B] text-[15px] md:text-[18px] leading-[1.6] m-0"><?php echo esc_html($s4['footer_text']); ?></p>
+          </div>
+        </div>
+
+        <div class="relative w-full h-[380px] md:h-[450px] lg:h-[530px] rounded-[32px] overflow-hidden bg-[#F8F5F2] shadow-sm">
+          <div id="psyTasksPreview" class="absolute inset-0 w-full h-full">
+            <?php if (!empty($s4['tasks'])): foreach ($s4['tasks'] as $i => $task): $active = $i === 0; ?>
+              <?php if (!empty($task['image'])): ?><img src="<?php echo esc_url($task['image']); ?>" alt="<?php echo esc_attr($task['title']); ?>" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 [&.is-active]:opacity-100 <?php echo $active ? 'is-active' : ''; ?>" data-task-img="<?php echo esc_attr($i + 1); ?>" /><?php endif; ?>
+            <?php endforeach; endif; ?>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none"></div>
+          <?php $first_task = !empty($s4['tasks']) ? $s4['tasks'][0] : null; if ($first_task): ?>
+            <div class="absolute bottom-0 left-0 w-full p-6 lg:p-8 z-10 pointer-events-none">
+              <span id="psyTasksChip" class="inline-block px-4 py-1.5 rounded-full bg-[#C24C33] text-white font-bold text-[11px] md:text-[12px] tracking-[1px] uppercase mb-4"><?php echo esc_html($first_task['chip']); ?></span>
+              <h3 id="psyTasksTitle" class="font-serif font-bold text-white text-[28px] md:text-[32px] m-0 mb-3"><?php echo esc_html($first_task['title']); ?></h3>
+              <p id="psyTasksDesc" class="text-white text-[15px] md:text-[18px] leading-[1.6] m-0"><?php echo esc_html($first_task['description']); ?></p>
+            </div>
+          <?php endif; ?>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 5: TYPES OF PSYCHOLOGISTS ================= -->
+  <section class="section bg-white" data-reveal>
+    <div class="container">
+      <div class="mb-12">
+        <h2 id="types-of-psychologists" class="h2 mb-4"><?php echo esc_html($s5['heading']); ?></h2>
+        <p class="text-[16px] md:text-[20px] leading-[1.6] text-[#5B5B5B] mt-4 mb-0"><?php echo esc_html($s5['intro_text']); ?></p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
+        <?php if (!empty($s5['cards'])): foreach ($s5['cards'] as $card): ?>
+          <div class="border border-[#F2E4DC] rounded-[18px] p-6 lg:p-8 hover:shadow-sm transition-shadow duration-300">
+            <div class="flex items-center gap-4 mb-4">
+              <?php if (!empty($card['icon'])): ?><img src="<?php echo esc_url($card['icon']); ?>" alt="<?php echo esc_attr($card['title']); ?> icon" class="w-[50px] h-[50px] shrink-0 object-contain" /><?php endif; ?>
+              <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[24px] m-0"><?php echo esc_html($card['title']); ?></h3>
+            </div>
+            <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0"><?php echo esc_html($card['description']); ?></p>
+          </div>
+        <?php endforeach; endif; ?>
+      </div>
+      <div class="bg-[#C24C33] rounded-[24px] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left shadow-sm">
+        <div>
+          <h3 class="font-serif font-bold text-white text-[20px] md:text-[26px] m-0 mb-3"><?php echo esc_html($s5['cta_heading']); ?></h3>
+          <p class="text-white/90 text-[16px] md:text-[18px] leading-[1.6] m-0"><?php echo esc_html($s5['cta_text']); ?></p>
+        </div>
+        <a href="<?php echo esc_url($s5['cta_button_url']); ?>" class="inline-flex items-center justify-center px-8 py-2 rounded-full bg-white text-[#C24C33] font-bold text-[16px] hover:bg-gray-50 transition-colors whitespace-nowrap shrink-0"><?php echo esc_html($s5['cta_button_text']); ?></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 6: VS PSYCHIATRIST ================= -->
+  <section class="section bg-[#FFF7F3]" data-reveal>
+    <div class="container">
+      <div class="mb-10 text-left">
+        <h2 id="vs-psychiatrist" class="h2 mb-4"><?php echo esc_html($s6['heading']); ?></h2>
+        <p class="text-[16px] md:text-[20px] leading-[1.6] text-[#5B5B5B] mb-0"><?php echo esc_html($s6['intro_text']); ?></p>
+      </div>
+      <div class="bg-white rounded-[24px] overflow-hidden shadow-sm mb-12">
+        <div class="overflow-x-auto">
+          <div class="min-w-[900px]">
+            <div class="grid grid-cols-[30%_35%_35%] bg-[#C24C33] text-white font-bold text-[12px] md:text-[13px] tracking-[0.1em] uppercase px-8 py-5">
+              <div><?php echo esc_html($s6['table_col1_header']); ?></div>
+              <div><?php echo esc_html($s6['table_col2_header']); ?></div>
+              <div><?php echo esc_html($s6['table_col3_header']); ?></div>
+            </div>
+            <?php if (!empty($s6['rows'])): foreach ($s6['rows'] as $row): ?>
+              <div class="grid grid-cols-[30%_35%_35%] px-8 py-6 items-center border-b border-[#F0E6E0] last:border-b-0 hover:bg-[#FAF6F3] gap-5 transition-colors">
+                <div class="flex items-center gap-4">
+                  <?php if (!empty($row['icon'])): ?><img src="<?php echo esc_url($row['icon']); ?>" alt="<?php echo esc_attr($row['label']); ?> icon" class="w-[40px] h-[40px] shrink-0 object-contain" /><?php endif; ?>
+                  <span class="font-serif font-bold text-[#241C19] text-[16px] md:text-[18px]"><?php echo esc_html($row['label']); ?></span>
+                </div>
+                <div class="text-[#241C19] text-[14px] md:text-[16px] font-semibold"><?php echo esc_html($row['col2']); ?></div>
+                <div class="text-[#6F6259] text-[14px] md:text-[16px]"><?php echo esc_html($row['col3']); ?></div>
+              </div>
+            <?php endforeach; endif; ?>
+          </div>
+        </div>
+      </div>
+      <div class="relative bg-[#683325] rounded-[24px] overflow-hidden p-8 md:p-12 shadow-sm text-left">
+        <div class="relative z-10">
+          <h3 class="font-serif font-bold text-white text-[24px] md:text-[32px] m-0 mb-4"><?php echo esc_html($s6['cta_heading']); ?></h3>
+          <p class="text-white/90 text-[15px] md:text-[20px] leading-[1.6] m-0"><?php echo esc_html($s6['cta_text']); ?></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 7: WHERE THEY WORK ================= -->
+  <section class="section bg-[#F8EBE2]">
+    <div class="container" data-reveal>
+      <div class="mb-10 text-left">
+        <h2 id="where-they-work" class="h2"><?php echo esc_html($s7['heading']); ?></h2>
+        <p class="text-[16px] md:text-[20px] leading-[1.6] text-[#5B5B5B] mt-4 mb-0 max-w-[900px]"><?php echo esc_html($s7['intro_text']); ?></p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-6 lg:mb-8">
+        <?php if (!empty($s7['cards'])): foreach (array_slice($s7['cards'], 0, 4) as $card): ?>
+          <div class="bg-white rounded-[24px] p-6 flex flex-col sm:flex-row gap-6 items-start hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full">
+            <?php if (!empty($card['image'])): ?><img src="<?php echo esc_url($card['image']); ?>" alt="<?php echo esc_attr($card['title']); ?>" class="w-full sm:w-[140px] h-[200px] sm:h-[140px] rounded-[16px] object-cover shrink-0" /><?php endif; ?>
+            <div>
+              <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[22px] m-0 mb-3"><?php echo esc_html($card['title']); ?></h3>
+              <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0"><?php echo esc_html($card['description']); ?></p>
+            </div>
+          </div>
+        <?php endforeach; endif; ?>
+      </div>
+      <?php if (!empty($s7['cards'][4])): $card = $s7['cards'][4]; ?>
+        <div class="bg-white rounded-[24px] p-6 flex flex-col sm:flex-row gap-6 items-center sm:items-start hover:shadow-md hover:-translate-y-1 transition-all duration-300 mb-12">
+          <?php if (!empty($card['image'])): ?><img src="<?php echo esc_url($card['image']); ?>" alt="<?php echo esc_attr($card['title']); ?>" class="w-full sm:w-[140px] h-[200px] sm:h-[140px] rounded-[16px] object-cover shrink-0" /><?php endif; ?>
+          <div class="w-full">
+            <h3 class="font-serif font-bold text-[#33170F] text-[20px] md:text-[22px] m-0 mb-3"><?php echo esc_html($card['title']); ?></h3>
+            <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0"><?php echo esc_html($card['description']); ?></p>
+          </div>
+        </div>
+      <?php endif; ?>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 8: EDUCATION ================= -->
+  <section class="section bg-white" data-reveal>
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[787px_472px] gap-10 lg:gap-16 items-center">
+        <div>
+          <h2 id="education" class="h2 mb-4"><?php echo esc_html($s8['heading']); ?></h2>
+          <div class="text-[16px] md:text-[20px] leading-[1.6] text-[#5B5B5B] flex flex-col gap-6">
+            <p class="m-0"><?php echo esc_html($s8['paragraph_1']); ?></p>
+            <p class="m-0"><?php echo esc_html($s8['paragraph_2']); ?></p>
+          </div>
+        </div>
+        <div class="relative w-full h-[300px] md:h-[380px] lg:h-[420px] rounded-[24px] overflow-hidden shadow-sm">
+          <?php if (!empty($s8['image'])): ?><img src="<?php echo esc_url($s8['image']); ?>" alt="<?php echo esc_attr($s8['heading']); ?>" class="w-full h-full object-cover" /><?php endif; ?>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 9: HOW TO FIND ================= -->
+  <section class="section bg-[#F8EBE2]">
+    <div class="container" data-reveal>
+      <div class="mb-10 text-left">
+        <h2 id="how-to-find" class="h2 mb-4"><?php echo esc_html($s9['heading']); ?></h2>
+        <p class="text-[16px] md:text-[20px] leading-[1.6] text-[#5B5B5B] m-0 max-w-[900px]"><?php echo esc_html($s9['intro_text']); ?></p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-6 lg:mb-8">
+        <div class="bg-white rounded-[24px] p-8 md:p-10 flex flex-col justify-between h-full shadow-sm hover:-translate-y-1 transition-all duration-300">
+          <div>
+            <div class="flex items-center gap-4 mb-6"><span class="text-[#B15E4C] font-bold text-[13px] tracking-wider uppercase"><?php echo esc_html($s9['route1_label']); ?></span></div>
+            <h3 class="font-serif font-bold text-[#33170F] text-[24px] md:text-[28px] leading-[1.3] mb-4"><?php echo esc_html($s9['route1_title']); ?></h3>
+            <p class="text-[#5B5B5B] text-[15px] md:text-[17px] leading-[1.6] mb-8"><?php echo esc_html($s9['route1_text']); ?></p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <?php if (!empty($s9['route1_tags'])): foreach ($s9['route1_tags'] as $tag): ?>
+              <div class="inline-flex items-center gap-2 bg-[#E4EDF4] text-[#415C73] px-4 py-2 rounded-full text-[13px] md:text-[14px] font-semibold"><?php echo esc_html($tag['text']); ?></div>
+            <?php endforeach; endif; ?>
+          </div>
+        </div>
+
+        <div class="relative w-full h-[300px] md:h-full lg:h-auto min-h-[481px] rounded-[24px] overflow-hidden shadow-sm hover:-translate-y-1 transition-all duration-300">
+          <?php if (!empty($s9['center_image'])): ?><img src="<?php echo esc_url($s9['center_image']); ?>" alt="Norway Psychologist Session" class="w-full h-full object-cover absolute inset-0" /><?php endif; ?>
+        </div>
+
+        <div class="bg-white rounded-[24px] p-8 md:p-10 flex flex-col justify-between h-full shadow-sm hover:-translate-y-1 transition-all duration-300">
+          <div>
+            <div class="flex items-center gap-4 mb-6"><span class="text-[#A58550] font-bold text-[13px] tracking-wider uppercase"><?php echo esc_html($s9['route2_label']); ?></span></div>
+            <h3 class="font-serif font-bold text-[#33170F] text-[24px] md:text-[28px] leading-[1.3] mb-4"><?php echo esc_html($s9['route2_title']); ?></h3>
+            <p class="text-[#5B5B5B] text-[15px] md:text-[17px] leading-[1.6] mb-8"><?php echo esc_html($s9['route2_text']); ?></p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <?php if (!empty($s9['route2_tags'])): foreach ($s9['route2_tags'] as $tag): ?>
+              <div class="inline-flex items-center gap-2 bg-[#E4EDF4] text-[#415C73] px-4 py-2 rounded-full text-[13px] md:text-[14px] font-semibold"><?php echo esc_html($tag['text']); ?></div>
+            <?php endforeach; endif; ?>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-[#C24C33] rounded-[24px] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
+        <div class="text-center md:text-left">
+          <h3 class="font-serif font-bold text-white text-[24px] md:text-[32px] leading-[1.2] m-0 mb-3"><?php echo esc_html($s9['cta_heading']); ?></h3>
+          <p class="text-white/90 text-[16px] md:text-[18px] leading-[1.6] m-0"><?php echo esc_html($s9['cta_text']); ?></p>
+        </div>
+        <a href="<?php echo esc_url($s9['cta_button_url']); ?>" class="inline-flex items-center justify-center px-8 py-2 rounded-full bg-white text-[#C24C33] font-bold text-[16px] hover:bg-gray-50 transition-colors whitespace-nowrap shrink-0 shadow-sm"><?php echo esc_html($s9['cta_button_text']); ?></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 10: MEET OUR PSYCHOLOGISTS ================= -->
+  <section class="section bg-white" data-reveal>
+    <div class="container">
+      <div class="mb-12">
+        <h2 id="our-psychologists" class="h2 mb-4"><?php echo esc_html($s10['heading']); ?></h2>
+        <p class="text-[#6B5F5A] text-[15px] md:text-[18px] leading-[1.6]"><?php echo esc_html($s10['text']); ?></p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <?php if (!empty($s10['doctors'])): foreach ($s10['doctors'] as $doc): ?>
+          <div class="bg-white border border-[#F2E4DC] rounded-[24px] p-4 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
+            <div class="relative w-full h-[260px] md:h-[320px] rounded-[16px] overflow-hidden mb-5">
+              <?php if (!empty($doc['image'])): ?><img src="<?php echo esc_url($doc['image']); ?>" alt="<?php echo esc_attr($doc['name']); ?>" class="w-full h-full object-cover" /><?php endif; ?>
+              <div class="absolute bottom-3 left-3 right-3 bg-[#FFFFFF33] backdrop-blur-[18px] border border-[#FFFFFF57] shadow-lg rounded-[12px] px-5 py-4 text-white">
+                <h3 class="font-serif text-[20px] text-white font-bold leading-snug"><?php echo esc_html($doc['name']); ?></h3>
+                <p class="text-white/90 text-[12px] mt-0.5"><?php echo esc_html($doc['role']); ?></p>
+              </div>
+            </div>
+            <div class="flex flex-col flex-grow justify-between px-2 pb-2">
+              <p class="text-[#6B5F5A] text-[14px] md:text-[16px] leading-[1.6] mb-6"><?php echo esc_html($doc['bio']); ?></p>
+              <div class="flex flex-wrap items-center gap-3 mt-auto">
+                <a href="<?php echo esc_url($doc['primary_button_url']); ?>" class="inline-flex items-center justify-center gap-1.5 bg-[#A93E28] text-white text-[13px] md:text-[16px] font-bold py-2.5 px-5 rounded-full hover:bg-opacity-90 transition-all shrink-0"><?php echo esc_html($doc['primary_button_text']); ?> &rarr;</a>
+                <?php if (!empty($doc['secondary_button_text'])): ?>
+                  <a href="<?php echo esc_url($doc['secondary_button_url']); ?>" class="inline-flex items-center justify-center gap-1.5 bg-[#FFF7F3] text-[#C24C33] text-[13px] md:text-[16px] font-bold py-2.5 px-5 rounded-full hover:bg-[#F7EBE8] transition-all border border-[#F2E4DC] shrink-0"><?php echo esc_html($doc['secondary_button_text']); ?> &rarr;</a>
+                <?php endif; ?>
+              </div>
+            </div>
+          </div>
+        <?php endforeach; endif; ?>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 11: HOW TO BOOK ================= -->
+  <section class="section bg-[#FFF7F3]" data-reveal>
+    <div class="container">
+      <div class="text-center mb-12 md:mb-16 max-w-3xl mx-auto"><h2 class="h2"><?php echo esc_html($s11['heading']); ?></h2></div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[720px_560px] gap-10 lg:gap-16 items-start">
+        <div>
+          <h3 class="font-serif text-[#2B211F] font-bold text-[28px] md:text-[36px] mb-4"><?php echo esc_html($s11['subheading']); ?></h3>
+          <p class="text-[#5B5B5B] text-[16px] md:text-[20px] leading-[1.6] mb-8"><?php echo esc_html($s11['intro_text']); ?></p>
+          <div class="flex flex-col gap-4">
+            <?php if (!empty($s11['steps'])): foreach ($s11['steps'] as $i => $step): ?>
+              <div class="bg-white rounded-[16px] border border-[#F2E4DC] p-6 md:p-8 flex gap-6 items-start group cursor-pointer hover:border-[#C24C33] transition-colors duration-300 appointment-step" data-step="<?php echo esc_attr($i + 1); ?>" data-image="<?php echo esc_url($step['image']); ?>">
+                <span class="font-serif font-bold text-[36px] text-[#ECA997] group-hover:text-[#C24C33] transition-colors duration-300 leading-none mt-0.5"><?php echo esc_html($i + 1); ?></span>
+                <div>
+                  <h4 class="font-serif font-bold text-[#241C19] group-hover:text-[#C24C33] transition-colors duration-300 text-[18px] md:text-[24px] mb-2"><?php echo esc_html($step['title']); ?></h4>
+                  <p class="text-[#6B5F5A] text-[14px] md:text-[15px] leading-[1.6] m-0"><?php echo esc_html($step['description']); ?></p>
+                </div>
+              </div>
+            <?php endforeach; endif; ?>
+          </div>
+        </div>
+        <div class="relative w-full h-[350px] md:h-[400px] lg:h-[500px] rounded-[32px] lg:sticky lg:top-32 overflow-hidden">
+          <?php $first_step = !empty($s11['steps']) ? $s11['steps'][0] : null; ?>
+          <img id="appointment-step-img" src="<?php echo esc_url($first_step['image'] ?? ''); ?>" alt="Booking an appointment" class="w-full h-full object-cover transition-opacity duration-300" />
+          <div class="absolute top-6 left-6 bg-white rounded-full py-1.5 px-2 pr-4 flex items-center gap-2 shadow-sm">
+            <div id="appointment-step-badge" class="w-6 h-6 rounded-full bg-[#A93E28] text-white flex items-center justify-center text-[12px] font-bold transition-colors duration-300">1</div>
+            <span class="text-[#33170F] font-bold text-[11px] tracking-wider uppercase">Four Steps</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 12: READY TO SPEAK CTA ================= -->
+  <section class="section" data-reveal>
+    <div class="container">
+      <div class="relative overflow-hidden rounded-[32px] p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-center gap-10"
+           style="background: radial-gradient(46% 62% at 92% 88%, rgba(240, 147, 103, 0.14) 0%, rgba(240, 147, 103, 0) 70%), radial-gradient(46% 62% at 8% 84%, rgba(248, 216, 212, 0.55) 0%, rgba(248, 216, 212, 0) 70%), radial-gradient(58% 74% at 50% 0%, rgba(248, 235, 226, 0.9) 0%, rgba(248, 235, 226, 0) 72%);">
+        <div class="w-full md:w-1/2 flex flex-col items-start text-left z-10">
+          <h2 class="font-serif text-[32px] md:text-[44px] text-[#241C19] font-bold m-0 mb-4"><?php echo esc_html($s12['heading']); ?></h2>
+          <p class="text-[#6B5F5A] text-[16px] md:text-[18px] leading-[1.6] m-0 mb-8 max-w-[500px]"><?php echo esc_html($s12['text']); ?></p>
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="<?php echo esc_url($s12['primary_button_url']); ?>" class="inline-flex items-center justify-center px-7 py-3 bg-[#C24C33] hover:bg-[#B34A34] text-white text-[15px] font-bold rounded-full transition-colors duration-300 no-underline"><?php echo esc_html($s12['primary_button_text']); ?> <span class="ml-2 font-bold text-lg leading-none mb-[2px]">→</span></a>
+            <a href="<?php echo esc_url($s12['secondary_button_url']); ?>" class="inline-flex items-center justify-center px-7 py-3 bg-transparent border border-[#C24C33] text-[#C24C33] hover:bg-[#C24C33] hover:text-white text-[15px] font-bold rounded-full transition-colors duration-300 no-underline"><?php echo esc_html($s12['secondary_button_text']); ?> <span class="ml-2 font-bold text-lg leading-none mb-[2px]">→</span></a>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center md:justify-end z-10 relative">
+          <?php if (!empty($s12['image'])): ?><img src="<?php echo esc_url($s12['image']); ?>" alt="<?php echo esc_attr($s12['heading']); ?>" class="w-full max-w-[480px] object-contain" /><?php endif; ?>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 13: FAQ ================= -->
+  <section id="mh-faq" class="section section--white pb-12" data-reveal>
+    <div class="container max-w-[1360px]">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5 lg:sticky lg:top-24 flex flex-col gap-6">
+          <div>
+            <span class="text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3 block"><?php echo esc_html($s13['eyebrow']); ?></span>
+            <h2 id="faq" class="font-serif text-[40px] md:text-[56px] leading-[1.1] text-[#241C19] m-0 mb-4"><?php echo esc_html($s13['heading']); ?></h2>
+            <p class="text-[16px] leading-[26px] text-[#6B5F5A] m-0 mb-6 max-w-[420px]"><?php echo esc_html($s13['intro_text']); ?></p>
+            <a href="#" class="inline-flex items-center justify-center px-6 py-2.5 bg-transparent border border-[#C24C33] text-[#C24C33] hover:bg-[#C24C33] hover:text-white text-[15px] font-bold rounded-full transition-colors duration-300 no-underline w-fit"><?php echo esc_html($s13['button_text']); ?></a>
+          </div>
+          <div class="w-full h-px bg-[#F2E8E3] my-3"></div>
+          <div class="flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="flex -space-x-2">
+                <span class="w-8 h-8 rounded-full bg-[#E8DCC8] border-2 border-white shrink-0"></span>
+                <span class="w-8 h-8 rounded-full bg-[#DCE5DF] border-2 border-white shrink-0"></span>
+                <span class="w-8 h-8 rounded-full bg-[#EED8D3] border-2 border-white shrink-0"></span>
+                <span class="w-8 h-8 rounded-full bg-[#F3EFE9] border-2 border-white shrink-0"></span>
+              </div>
+              <span class="font-sans font-bold text-[14px] text-[#C24C33]"><?php echo esc_html($s13['info_label']); ?></span>
+            </div>
+            <p class="text-[14px] leading-[22px] text-[#6B5F5A] m-0 mb-5 max-w-[380px]"><?php echo esc_html($s13['info_text']); ?></p>
+            <button type="button" onclick="location.href = '#mh-book'" class="bg-[#C24C33] hover:bg-[#B34A34] text-white font-sans font-bold text-[14px] py-3 px-6 rounded-full transition-colors inline-flex items-center gap-2 cursor-pointer w-fit border-0">
+              <span><?php echo esc_html($s13['info_button_text']); ?></span><span class="font-bold text-lg leading-none mb-[2px]">→</span>
+            </button>
+          </div>
+        </div>
+        <div class="lg:col-span-7 flex flex-col gap-4">
+          <?php if (!empty($s13['faq_items'])): foreach ($s13['faq_items'] as $faq): ?>
+            <div class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300">
+              <button class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left">
+                <span class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4"><?php echo esc_html($faq['question']); ?></span>
+                <span class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300">
+                  <span class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"></span>
+                  <span class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"></span>
+                </span>
+              </button>
+              <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0"><p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0"><?php echo esc_html($faq['answer']); ?></p></div>
+            </div>
+          <?php endforeach; endif; ?>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 14: EMERGENCY BANNER ================= -->
+  <section class="section pt-0 pb-[90px]" data-reveal>
+    <div class="container mx-auto px-4 max-w-[1360px]">
+      <div class="bg-[#C24C33] rounded-[24px] p-8 md:p-10 relative overflow-hidden flex flex-col gap-8">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
+          <h3 class="font-serif text-[20px] md:text-[24px] text-white font-medium m-0 tracking-wide"><?php echo esc_html($s14['heading']); ?></h3>
+          <span class="text-white text-[15px] whitespace-nowrap"><?php echo esc_html($s14['subtext']); ?></span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 relative z-10">
+          <?php if (!empty($s14['contacts'])): foreach ($s14['contacts'] as $c): ?>
+            <div class="bg-white/10 hover:bg-white/15 transition-colors rounded-[12px] p-5 flex items-center gap-4">
+              <div class="w-[50px] h-[50px] shrink-0"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/Psychologist/call.webp" alt="Phone icon" class="object-contain" /></div>
+              <div class="flex flex-col">
+                <span class="text-white/80 text-[10px] font-bold tracking-[0.15em] uppercase mb-1"><?php echo esc_html($c['label']); ?></span>
+                <div class="text-white font-bold text-[22px] leading-none"><?php echo esc_html($c['number']); ?></div>
+              </div>
+            </div>
+          <?php endforeach; endif; ?>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<?php get_footer(); ?>
