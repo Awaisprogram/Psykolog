@@ -1597,6 +1597,188 @@
   }
 
   /* -------------------------------------------------------------------
+     Article Filters (Categories, Search, View All)
+     ------------------------------------------------------------------- */
+  function initArticleFilters() {
+    const filterContainer = document.querySelector('.flex-wrap.items-center.gap-3');
+    const searchInput = document.querySelector('input[placeholder="Search articles"]');
+    const allCards = document.querySelectorAll('.js-article-card');
+    const viewAllBtn = document.getElementById('viewAllArticlesBtn');
+    
+    if (!allCards.length) return;
+    
+    const filterButtons = filterContainer ? filterContainer.querySelectorAll('button') : [];
+    
+    let currentCategory = 'all';
+    let currentSearch = '';
+    
+    function applyFilters() {
+      allCards.forEach(card => {
+        const cardCategory = (card.getAttribute('data-category') || '').toLowerCase();
+        const cardTitle = (card.getAttribute('data-title') || '').toLowerCase();
+        
+        const matchesCategory = currentCategory === 'all' || cardCategory === currentCategory;
+        const matchesSearch = currentSearch === '' || cardTitle.includes(currentSearch);
+        
+        const isHiddenLatest = card.classList.contains('js-latest-card') && card.dataset.hiddenByDefault === 'true';
+        
+        let shouldShow = matchesCategory && matchesSearch;
+        
+        if (currentCategory === 'all' && currentSearch === '' && isHiddenLatest) {
+          shouldShow = false;
+        }
+        
+        card.classList.toggle('hidden', !shouldShow);
+      });
+    }
+
+    if (filterButtons.length > 0) {
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach(b => {
+            b.classList.remove('bg-[#5C2A20]', 'text-white', 'border-[#5C2A20]', 'font-bold');
+            b.classList.add('bg-transparent', 'text-[#33170F]', 'border-[#F2E4DC]', 'font-medium');
+            const span = b.querySelector('span');
+            if (span) {
+              span.classList.remove('text-[#F09367]');
+              span.classList.add('text-[#33170F]/50');
+            }
+          });
+          
+          btn.classList.add('bg-[#5C2A20]', 'text-white', 'border-[#5C2A20]', 'font-bold');
+          btn.classList.remove('bg-transparent', 'text-[#33170F]', 'border-[#F2E4DC]', 'font-medium');
+          const activeSpan = btn.querySelector('span');
+          if (activeSpan) {
+            activeSpan.classList.add('text-[#F09367]');
+            activeSpan.classList.remove('text-[#33170F]/50');
+          }
+          
+          let catText = btn.childNodes[0].textContent.trim().toLowerCase();
+          currentCategory = catText;
+          
+          applyFilters();
+        });
+      });
+    }
+    
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        currentSearch = e.target.value.toLowerCase().trim();
+        applyFilters();
+      });
+    }
+    
+    if (viewAllBtn) {
+      const latestCards = document.querySelectorAll('.js-latest-card');
+      if (latestCards.length > 3) {
+        for (let i = 3; i < latestCards.length; i++) {
+          latestCards[i].dataset.hiddenByDefault = 'true';
+        }
+      }
+      
+      viewAllBtn.addEventListener('click', () => {
+        latestCards.forEach(c => c.dataset.hiddenByDefault = 'false');
+        viewAllBtn.style.display = 'none';
+        applyFilters();
+      });
+    }
+    
+    applyFilters();
+  }
+
+  /* -------------------------------------------------------------------
+     Hero Article Carousel
+     ------------------------------------------------------------------- */
+  function initHeroCarousel() {
+    const sidebarArticles = document.querySelectorAll('.js-hero-sidebar-article');
+    if (!sidebarArticles.length) return;
+
+    const mainImage = document.getElementById('heroMainImage');
+    const mainCategory = document.getElementById('heroCategory');
+    const mainTime = document.getElementById('heroTime');
+    const mainDate = document.getElementById('heroDate');
+    const mainTitle = document.getElementById('heroTitle');
+    const mainDesc = document.getElementById('heroDesc');
+    const prevArrow = document.getElementById('heroPrevArrow');
+    const nextArrow = document.getElementById('heroNextArrow');
+    const indicatorsContainer = document.getElementById('heroIndicators');
+    
+    if (!mainImage || !mainTitle) return;
+
+    let currentIndex = 0;
+    const totalItems = sidebarArticles.length;
+    const indicators = indicatorsContainer ? indicatorsContainer.querySelectorAll('div') : [];
+
+    function updateCarousel(index) {
+      if (index < 0) index = totalItems - 1;
+      if (index >= totalItems) index = 0;
+      currentIndex = index;
+
+      const activeSidebar = Array.from(sidebarArticles).find(el => parseInt(el.dataset.heroIndex, 10) === currentIndex);
+      if (!activeSidebar) return;
+
+      // Update Main Card Content (with a slight fade effect)
+      mainTitle.style.opacity = 0;
+      mainDesc.style.opacity = 0;
+      
+      setTimeout(() => {
+        mainImage.src = activeSidebar.dataset.heroImageMain;
+        mainCategory.textContent = activeSidebar.dataset.heroCategory;
+        mainCategory.style.color = activeSidebar.dataset.heroCategoryColor;
+        mainTime.textContent = activeSidebar.dataset.heroTime;
+        mainDate.textContent = activeSidebar.dataset.heroDate;
+        mainTitle.textContent = activeSidebar.dataset.heroTitle;
+        mainDesc.textContent = activeSidebar.dataset.heroDesc;
+        
+        mainTitle.style.opacity = 1;
+        mainDesc.style.opacity = 1;
+      }, 150);
+
+      // Update Sidebar Styling
+      sidebarArticles.forEach((sidebar, idx) => {
+        if (idx === currentIndex) {
+          sidebar.classList.add('bg-white', 'border-[#C24C33]', 'shadow-[0_4px_24px_rgba(194,76,51,0.08)]');
+          sidebar.classList.remove('bg-[#FCF0EB]/60', 'border-transparent');
+          // Update internal title hover color
+          const title = sidebar.querySelector('h4');
+          if (title) title.classList.replace('group-hover:text-[#8B5CF6]', 'group-hover:text-[#C24C33]');
+        } else {
+          sidebar.classList.remove('bg-white', 'border-[#C24C33]', 'shadow-[0_4px_24px_rgba(194,76,51,0.08)]');
+          sidebar.classList.add('bg-[#FCF0EB]/60', 'border-transparent');
+        }
+      });
+
+      // Update bottom indicators
+      indicators.forEach((ind, idx) => {
+        if (idx === currentIndex) {
+          ind.classList.remove('bg-white/30');
+          ind.classList.add('bg-[#F09367]');
+        } else {
+          ind.classList.remove('bg-[#F09367]', 'bg-[#C24C33]');
+          ind.classList.add('bg-white/30');
+        }
+      });
+    }
+
+    // Attach click events to sidebar articles
+    sidebarArticles.forEach(sidebar => {
+      sidebar.addEventListener('click', (e) => {
+        e.preventDefault();
+        const index = parseInt(sidebar.dataset.heroIndex, 10);
+        updateCarousel(index);
+      });
+    });
+
+    // Attach click events to arrows
+    if (prevArrow) {
+      prevArrow.addEventListener('click', () => updateCarousel(currentIndex - 1));
+    }
+    if (nextArrow) {
+      nextArrow.addEventListener('click', () => updateCarousel(currentIndex + 1));
+    }
+  }
+
+  /* -------------------------------------------------------------------
      Init — every feature initialised exactly once
      ------------------------------------------------------------------- */
   document.addEventListener('DOMContentLoaded', () => {
@@ -1654,6 +1836,8 @@
     initBurnoutRecoverySteps();
     initAppointmentSteps();
     initNewsletterForm();
+    initArticleFilters();
+    initHeroCarousel();
 
     // hero video: attempt autoplay, fall back to poster only
     const heroVideo = document.querySelector('[data-hero-video]');

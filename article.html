@@ -205,12 +205,12 @@
             </div>
 
             <!-- Main Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[869px_418px] gap-8">
               
               <!-- Featured Article -->
-              <div class="lg:col-span-8 relative rounded-[32px] overflow-hidden group min-h-[500px] flex flex-col justify-between">
+              <div class="js-article-card  relative rounded-[32px] overflow-hidden group min-h-[540px] flex flex-col justify-between" data-category="Therapy" data-title="What actually happens in a first session with a psychologist">
                 <!-- Background Image -->
-                <img src="assets/article/blog-top-1.webp" alt="Featured Article" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img id="heroMainImage" src="assets/article/blog-top-1.webp" alt="Featured Article" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <!-- Gradient Overlays -->
                 <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-500"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-[#1F1411]/90 via-[#1F1411]/40 to-transparent"></div>
@@ -218,60 +218,68 @@
                 <!-- Top actions -->
                 <div class="relative z-10 p-6 md:p-8 flex items-start justify-between w-full">
                   <div class="bg-white rounded-full pl-2.5 pr-4 py-2 flex items-center gap-2.5 shadow-sm">
-                    <span class="w-6 h-6 rounded-full bg-[#C24C33] flex items-center justify-center">
-                      <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                    <span class="w-6 h-6">
+                      <img src="assets/article/Featured.webp" alt="Star / Rating Icon" class="object-contain" />
                     </span>
-                    <span class="text-[12px] font-bold tracking-[0.1em] text-[#33170F] uppercase mt-px">FEATURED</span>
+                    <span class="text-[12px] font-bold tracking-[0.1em] text-[#241C19] uppercase mt-px">FEATURED</span>
                   </div>
                   <div class="flex gap-2.5">
-                    <button class="w-11 h-11 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/30 transition-colors border border-white/20 cursor-pointer">
-                      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                    <button id="heroPrevArrow" class="border-0 bg-transparent p-0 cursor-pointer hover:opacity-80 transition-opacity flex items-center justify-center">
+                      <img src="assets/article/Button%20-%20Previous%20featured%20article.webp" alt="Previous Article" class="w-11 h-11 object-contain block" />
                     </button>
-                    <button class="w-11 h-11 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/30 transition-colors border border-white/20 cursor-pointer">
-                      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    <button id="heroNextArrow" class="border-0 bg-transparent p-0 cursor-pointer hover:opacity-80 transition-opacity flex items-center justify-center">
+                      <img src="assets/article/Button%20-%20Next%20featured%20article.webp" alt="Next Article" class="w-11 h-11 object-contain block" />
                     </button>
                   </div>
                 </div>
                 
                 <!-- Content -->
                 <div class="relative z-10 p-6 md:p-8 lg:p-10 w-full lg:max-w-[85%] mt-auto">
-                  <div class="flex flex-wrap items-center gap-3 md:gap-4 text-white/90 text-[13px] font-bold mb-4 uppercase tracking-[0.1em]">
-                    <span class="text-[#E8A598]">THERAPY</span>
+                  <div class="flex flex-wrap items-center gap-3 md:gap-4 text-white/90 text-[14px] font-bold mb-4 uppercase tracking-[0.1em]">
+                    <span id="heroCategory" class="text-[#F09367]">THERAPY</span>
                     <span class="text-white/40">—</span>
-                    <span>6 min read</span>
+                    <span id="heroTime">6 min read</span>
                     <span class="text-white/40">—</span>
-                    <span>4 September 2026</span>
+                    <span id="heroDate">4 September 2026</span>
                   </div>
-                  <h3 class="text-[32px] md:text-[40px] lg:text-[44px] leading-[1.2] font-serif text-white font-bold mb-4">
+                  <h3 id="heroTitle" class="text-[28px] md:text-[32px] lg:text-[36px] leading-[1.2] font-serif text-white font-bold mb-4 transition-opacity duration-300">
                     What actually happens in a first session with a psychologist
                   </h3>
-                  <p class="text-white/80 text-[17px] md:text-lg mb-8 leading-[1.6] max-w-[560px] font-light">
+                  <p id="heroDesc" class="text-[#E4CFC4] text-[16px] md:text-[18px] mb-8 leading-[1.6] max-w-[560px] transition-opacity duration-300">
                     Most people arrive unsure what they are supposed to say. Here is how the first 45 minutes usually go, and what you never have to explain.
                   </p>
                   
-                  <a href="#" class="inline-flex items-center gap-3 text-white font-bold text-lg hover:text-[#E8A598] transition-colors no-underline group/link">
+                  <a href="#" class="inline-flex items-center gap-3 text-white font-bold text-lg hover:text-[#C24C33] transition-colors no-underline group/link">
                     Read article
-                    <span class="w-9 h-9 rounded-full bg-[#C24C33] flex items-center justify-center text-white group-hover/link:bg-[#b5452d] transition-colors shadow-sm">
-                      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                    </span>
+                   <span class="w-9 h-9 ">
+                    <img src="assets/article/read-more-arrow.webp" alt="Right Arrow Icon" class="object-contain" />
+                  </span>
                   </a>
                   
                   <!-- Progress/Indicator lines -->
-                  <div class="flex items-center gap-2.5 mt-10 w-full max-w-[440px]">
-                    <div class="h-[3px] flex-1 bg-[#C24C33] rounded-full"></div>
-                    <div class="h-[3px] flex-1 bg-white/30 rounded-full"></div>
-                    <div class="h-[3px] flex-1 bg-white/30 rounded-full"></div>
+                  <div id="heroIndicators" class="flex items-center gap-2.5 mt-[30px] w-full max-w-[440px]">
+                    <div class="h-[3px] flex-1 bg-[#F09367] rounded-full transition-colors duration-300"></div>
+                    <div class="h-[3px] flex-1 bg-white/30 rounded-full transition-colors duration-300"></div>
+                    <div class="h-[3px] flex-1 bg-white/30 rounded-full transition-colors duration-300"></div>
                   </div>
                 </div>
               </div>
               
               <!-- Sidebar Articles -->
-              <div class="lg:col-span-4 flex flex-col gap-6">
+              <div class="flex flex-col gap-6">
                 
                 <!-- Sidebar Article 1 (Active) -->
-                <a href="#" class="group block p-4 bg-white rounded-[24px] border border-[#C24C33] shadow-[0_4px_24px_rgba(194,76,51,0.08)] hover:shadow-[0_8px_32px_rgba(194,76,51,0.12)] transition-all relative overflow-hidden no-underline h-full flex flex-col justify-center">
-                  <div class="absolute left-0 top-0 bottom-0 w-2 bg-[#C24C33] rounded-l-[24px]"></div>
-                  <div class="flex gap-4 md:gap-5 ml-2">
+                <a href="#" class="js-article-card js-hero-sidebar-article group block p-4 bg-white rounded-[24px] border border-[#C24C33] shadow-[0_4px_24px_rgba(194,76,51,0.08)] hover:shadow-[0_8px_32px_rgba(194,76,51,0.12)] transition-all relative overflow-hidden no-underline h-full flex flex-col justify-center" 
+                   data-hero-index="0"
+                   data-hero-category="THERAPY"
+                   data-hero-category-color="#E8A598"
+                   data-hero-time="6 min read"
+                   data-hero-date="4 September 2026"
+                   data-hero-title="What actually happens in a first session with a psychologist"
+                   data-hero-desc="Most people arrive unsure what they are supposed to say. Here is how the first 45 minutes usually go, and what you never have to explain."
+                   data-hero-image-main="assets/article/blog-top-1.webp"
+                   data-category="Therapy" data-title="What Actually Happens In A First Session With A Psychologist">
+                  <div class="flex gap-4 md:gap-5">
                     <div class="w-[120px] md:w-[130px] h-[95px] md:h-[110px] rounded-[16px] overflow-hidden flex-none">
                       <img src="assets/article/blog-top-2.webp" alt="Therapy session" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                     </div>
@@ -289,18 +297,27 @@
                 </a>
                 
                 <!-- Sidebar Article 2 -->
-                <a href="#" class="group block p-4 bg-[#FCF0EB]/60 rounded-[24px] border border-transparent hover:border-[#E8DDD7] hover:bg-[#FCF0EB] transition-all no-underline h-full flex flex-col justify-center">
+                <a href="#" class="js-article-card js-hero-sidebar-article group block p-4 bg-[#FCF0EB]/60 rounded-[24px] border border-transparent hover:border-[#E8DDD7] hover:bg-[#FCF0EB] transition-all no-underline h-full flex flex-col justify-center" 
+                   data-hero-index="1"
+                   data-hero-category="MENTAL HEALTH"
+                   data-hero-category-color="#8B5CF6"
+                   data-hero-time="4 min read"
+                   data-hero-date="2 September 2026"
+                   data-hero-title="Is It Stress, Or Is It Something More?"
+                   data-hero-desc="Learn how to distinguish between everyday stress and signs that you might need professional support or a different approach to mental health."
+                   data-hero-image-main="assets/article/blog-top-3.webp"
+                   data-category="Mental health" data-title="Is It Stress, Or Is It Something More?">
                   <div class="flex gap-4 md:gap-5">
                     <div class="w-[120px] md:w-[130px] h-[95px] md:h-[110px] rounded-[16px] overflow-hidden flex-none">
                       <img src="assets/article/blog-top-3.webp" alt="Mental Health" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                     </div>
                     <div class="flex flex-col justify-center">
                       <div class="flex items-center gap-2 text-[11px] font-bold tracking-[0.1em] uppercase mb-2.5">
-                        <span class="text-[#8B5CF6]">MENTAL HEALTH</span>
+                        <span class="text-[#6B568A]">MENTAL HEALTH</span>
                         <span class="text-[#33170F]/20">—</span>
                         <span class="text-[#33170F]/50">4 min read</span>
                       </div>
-                      <h4 class="font-serif font-bold text-[17px] md:text-[19px] text-[#33170F] leading-[1.3] group-hover:text-[#8B5CF6] transition-colors m-0 pr-2">
+                      <h4 class="font-serif font-bold text-[17px] md:text-[19px] text-[#33170F] leading-[1.3] group-hover:text-[#6B568A] transition-colors m-0 pr-2">
                         Is It Stress, Or Is It Something More?
                       </h4>
                     </div>
@@ -308,7 +325,16 @@
                 </a>
                 
                 <!-- Sidebar Article 3 -->
-                <a href="#" class="group block p-4 bg-[#FCF0EB]/60 rounded-[24px] border border-transparent hover:border-[#E8DDD7] hover:bg-[#FCF0EB] transition-all no-underline h-full flex flex-col justify-center">
+                <a href="#" class="js-article-card js-hero-sidebar-article group block p-4 bg-[#FCF0EB]/60 rounded-[24px] border border-transparent hover:border-[#E8DDD7] hover:bg-[#FCF0EB] transition-all no-underline h-full flex flex-col justify-center" 
+                   data-hero-index="2"
+                   data-hero-category="THERAPY"
+                   data-hero-category-color="#E8A598"
+                   data-hero-time="5 min read"
+                   data-hero-date="28 August 2026"
+                   data-hero-title="Waiting Lists, Referrals & What You Can Skip"
+                   data-hero-desc="Navigating the mental health system can be confusing. Here is a guide to understanding the process and how to get help faster."
+                   data-hero-image-main="assets/article/blog-top-4.webP"
+                   data-category="Therapy" data-title="Waiting Lists, Referrals & What You Can Skip">
                   <div class="flex gap-4 md:gap-5">
                     <div class="w-[120px] md:w-[130px] h-[95px] md:h-[110px] rounded-[16px] overflow-hidden flex-none">
                       <img src="assets/article/blog-top-4.webP" alt="Therapy Referrals" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -329,6 +355,165 @@
               </div>
 
             </div>
+        </div>
+      </section>
+
+      <!-- ============ Latest Articles (Fresh from our psychologists) ============ -->
+      <section class="bg-[#F5EDE8] py-16 lg:py-24">
+        <div class="px-4 md:px-12 lg:px-16">
+          <div class="max-w-[1312px] mx-auto">
+            
+            <div class="mb-10">
+              <span class="text-[#C24C33] text-[13px] font-bold tracking-[0.15em] uppercase mb-3 block">LATEST ARTICLES</span>
+              <h2 class="text-[34px] md:text-[42px] lg:text-[48px] font-serif font-bold text-[#33170F] leading-tight m-0">Fresh from our psychologists</h2>
+            </div>
+
+            <!-- 3 Column Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              
+              <!-- Card 1 -->
+              <a href="#" class="js-article-card js-latest-card block bg-white rounded-[24px] overflow-hidden border border-[#E8DDD7] hover:border-[#C24C33] hover:shadow-[0_8px_32px_rgba(194,76,51,0.08)] transition-all group no-underline" data-category="ADHD" data-title="Adult ADHD Often Looks Like Exhaustion">
+                <div class="h-[220px] overflow-hidden">
+                  <img src="assets/article/Article1.webp" alt="Adult ADHD" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                </div>
+                <div class="p-6 md:p-8 flex flex-col justify-between h-[calc(100%-220px)]">
+                  <div>
+                    <div class="flex items-center justify-between gap-4 mb-4">
+                      <span class="text-[#C24C33] text-[11px] font-bold tracking-[0.15em] uppercase">ADHD</span>
+                      <span class="text-[#33170F]/50 text-xs flex items-center gap-2">
+                        <span class="w-4 h-px bg-[#33170F]/20"></span> 7 min read
+                      </span>
+                    </div>
+                    <h3 class="font-serif font-bold text-[22px] md:text-[24px] text-[#33170F] leading-[1.3] mb-4 group-hover:text-[#C24C33] transition-colors">Adult ADHD Often Looks Like Exhaustion</h3>
+                    <p class="text-[#33170F]/70 text-[15px] leading-[1.6] mb-6">Why so many adults are assessed for burnout before ADHD is identified.</p>
+                  </div>
+                  <div class="flex items-center gap-2 text-[#C24C33] font-bold text-[14px]">
+                    Read <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Card 2 -->
+              <a href="#" class="js-article-card js-latest-card block bg-white rounded-[24px] overflow-hidden border border-[#E8DDD7] hover:border-[#C24C33] hover:shadow-[0_8px_32px_rgba(194,76,51,0.08)] transition-all group no-underline" data-category="Burnout" data-title="Burnout Is Not The Same As Being Tired">
+                <div class="h-[220px] overflow-hidden">
+                  <img src="assets/article/Article2.webp" alt="Burnout" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                </div>
+                <div class="p-6 md:p-8 flex flex-col justify-between h-[calc(100%-220px)]">
+                  <div>
+                    <div class="flex items-center justify-between gap-4 mb-4">
+                      <span class="text-[#C24C33] text-[11px] font-bold tracking-[0.15em] uppercase">BURNOUT</span>
+                      <span class="text-[#33170F]/50 text-xs flex items-center gap-2">
+                        <span class="w-4 h-px bg-[#33170F]/20"></span> 5 min read
+                      </span>
+                    </div>
+                    <h3 class="font-serif font-bold text-[22px] md:text-[24px] text-[#33170F] leading-[1.3] mb-4 group-hover:text-[#C24C33] transition-colors">Burnout Is Not The Same As Being Tired</h3>
+                    <p class="text-[#33170F]/70 text-[15px] leading-[1.6] mb-6">Three signs that separate ordinary tiredness from occupational burnout.</p>
+                  </div>
+                  <div class="flex items-center gap-2 text-[#C24C33] font-bold text-[14px]">
+                    Read <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Card 3 -->
+              <a href="#" class="js-article-card js-latest-card block bg-white rounded-[24px] overflow-hidden border border-[#E8DDD7] hover:border-[#C24C33] hover:shadow-[0_8px_32px_rgba(194,76,51,0.08)] transition-all group no-underline" data-category="Mental health" data-title="How To Support Someone Without Carrying It Alone">
+                <div class="h-[220px] overflow-hidden">
+                  <img src="assets/article/Article3.webp" alt="Mental Health Support" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                </div>
+                <div class="p-6 md:p-8 flex flex-col justify-between h-[calc(100%-220px)]">
+                  <div>
+                    <div class="flex items-center justify-between gap-4 mb-4">
+                      <span class="text-[#8B5CF6] text-[11px] font-bold tracking-[0.15em] uppercase">MENTAL HEALTH</span>
+                      <span class="text-[#33170F]/50 text-xs flex items-center gap-2">
+                        <span class="w-4 h-px bg-[#33170F]/20"></span> 6 min read
+                      </span>
+                    </div>
+                    <h3 class="font-serif font-bold text-[22px] md:text-[24px] text-[#33170F] leading-[1.3] mb-4 group-hover:text-[#8B5CF6] transition-colors">How To Support Someone Without Carrying It Alone</h3>
+                    <p class="text-[#33170F]/70 text-[15px] leading-[1.6] mb-6">Practical boundaries for partners, parents and friends.</p>
+                  </div>
+                  <div class="flex items-center gap-2 text-[#C24C33] font-bold text-[14px]">
+                    Read <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Card 4 (Hidden initially) -->
+              <a href="#" class="js-article-card js-latest-card hidden block bg-white rounded-[24px] overflow-hidden border border-[#E8DDD7] hover:border-[#C24C33] hover:shadow-[0_8px_32px_rgba(194,76,51,0.08)] transition-all group no-underline" data-category="Depression" data-title="Bipolar Disorder: Signs & Treatment">
+                <div class="h-[220px] overflow-hidden">
+                  <img src="assets/article/Article4.webp" alt="Bipolar Disorder" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                </div>
+                <div class="p-6 md:p-8 flex flex-col justify-between h-[calc(100%-220px)]">
+                  <div>
+                    <div class="flex items-center justify-between gap-4 mb-4">
+                      <span class="text-[#C24C33] text-[11px] font-bold tracking-[0.15em] uppercase">BIPOLAR DISORDER</span>
+                      <span class="text-[#33170F]/50 text-xs flex items-center gap-2">
+                        <span class="w-4 h-px bg-[#33170F]/20"></span> 7 min read
+                      </span>
+                    </div>
+                    <h3 class="font-serif font-bold text-[22px] md:text-[24px] text-[#33170F] leading-[1.3] mb-4 group-hover:text-[#C24C33] transition-colors">Bipolar Disorder: Signs & Treatment</h3>
+                    <p class="text-[#33170F]/70 text-[15px] leading-[1.6] mb-6">Why so many adults are assessed for burnout before ADHD is identified.</p>
+                  </div>
+                  <div class="flex items-center gap-2 text-[#C24C33] font-bold text-[14px]">
+                    Read <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Card 5 (Hidden initially) -->
+              <a href="#" class="js-article-card js-latest-card hidden block bg-white rounded-[24px] overflow-hidden border border-[#E8DDD7] hover:border-[#C24C33] hover:shadow-[0_8px_32px_rgba(194,76,51,0.08)] transition-all group no-underline" data-category="Anxiety" data-title="Understanding PTSD: Causes, Symptoms & Recovery">
+                <div class="h-[220px] overflow-hidden">
+                  <img src="assets/article/Article5.webp" alt="PTSD & Trauma" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                </div>
+                <div class="p-6 md:p-8 flex flex-col justify-between h-[calc(100%-220px)]">
+                  <div>
+                    <div class="flex items-center justify-between gap-4 mb-4">
+                      <span class="text-[#C24C33] text-[11px] font-bold tracking-[0.15em] uppercase">PTSD & TRAUMA</span>
+                      <span class="text-[#33170F]/50 text-xs flex items-center gap-2">
+                        <span class="w-4 h-px bg-[#33170F]/20"></span> 5 min read
+                      </span>
+                    </div>
+                    <h3 class="font-serif font-bold text-[22px] md:text-[24px] text-[#33170F] leading-[1.3] mb-4 group-hover:text-[#C24C33] transition-colors">Understanding PTSD: Causes, Symptoms & Recovery</h3>
+                    <p class="text-[#33170F]/70 text-[15px] leading-[1.6] mb-6">Three signs that separate ordinary tiredness from occupational burnout.</p>
+                  </div>
+                  <div class="flex items-center gap-2 text-[#C24C33] font-bold text-[14px]">
+                    Read <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Card 6 (Hidden initially) -->
+              <a href="#" class="js-article-card js-latest-card hidden block bg-white rounded-[24px] overflow-hidden border border-[#E8DDD7] hover:border-[#C24C33] hover:shadow-[0_8px_32px_rgba(194,76,51,0.08)] transition-all group no-underline" data-category="Mental health" data-title="Mental Health: Signs, Challenges And Ways To Cope">
+                <div class="h-[220px] overflow-hidden">
+                  <img src="assets/article/Article6.webp" alt="Mental Health Signs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                </div>
+                <div class="p-6 md:p-8 flex flex-col justify-between h-[calc(100%-220px)]">
+                  <div>
+                    <div class="flex items-center justify-between gap-4 mb-4">
+                      <span class="text-[#8B5CF6] text-[11px] font-bold tracking-[0.15em] uppercase">MENTAL HEALTH</span>
+                      <span class="text-[#33170F]/50 text-xs flex items-center gap-2">
+                        <span class="w-4 h-px bg-[#33170F]/20"></span> 6 min read
+                      </span>
+                    </div>
+                    <h3 class="font-serif font-bold text-[22px] md:text-[24px] text-[#33170F] leading-[1.3] mb-4 group-hover:text-[#8B5CF6] transition-colors">Mental Health: Signs, Challenges And Ways To Cope</h3>
+                    <p class="text-[#33170F]/70 text-[15px] leading-[1.6] mb-6">Practical boundaries for partners, parents and friends.</p>
+                  </div>
+                  <div class="flex items-center gap-2 text-[#C24C33] font-bold text-[14px]">
+                    Read <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+
+            <!-- View All Button -->
+            <div class="mt-12 flex justify-start">
+              <button type="button" id="viewAllArticlesBtn" class="inline-flex items-center gap-3 bg-transparent text-[#C24C33] font-bold text-[15px] border border-[#C24C33] rounded-full px-6 py-3 hover:bg-[#C24C33] hover:text-white transition-colors cursor-pointer">
+                View All
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              </button>
+            </div>
+
+          </div>
         </div>
       </section>
 
