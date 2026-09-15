@@ -1032,6 +1032,9 @@
   .h-\[500px\] {
     height: 500px !important;
   }
+  .h-\[calc\(100\%-200px\)\] {
+    height: calc(100% - 200px) !important;
+  }
   .h-\[calc\(100\%-220px\)\] {
     height: calc(100% - 220px) !important;
   }

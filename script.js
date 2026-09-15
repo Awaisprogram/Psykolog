@@ -1609,6 +1609,29 @@
     
     const filterButtons = filterContainer ? filterContainer.querySelectorAll('button') : [];
     
+    // Dynamic counts
+    const categoryCounts = { all: allCards.length };
+    allCards.forEach(card => {
+      const cat = (card.getAttribute('data-category') || '').trim().toLowerCase();
+      if (!cat) return;
+      categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
+    });
+
+    if (filterButtons.length > 0) {
+      filterButtons.forEach(btn => {
+        let catName = '';
+        btn.childNodes.forEach(node => {
+          if (node.nodeType === Node.TEXT_NODE) catName += node.nodeValue;
+        });
+        catName = catName.trim().toLowerCase();
+        
+        const activeSpan = btn.querySelector('span');
+        if (activeSpan) {
+          activeSpan.textContent = categoryCounts[catName] || 0;
+        }
+      });
+    }
+
     let currentCategory = 'all';
     let currentSearch = '';
     
@@ -1670,8 +1693,8 @@
     
     if (viewAllBtn) {
       const latestCards = document.querySelectorAll('.js-latest-card');
-      if (latestCards.length > 3) {
-        for (let i = 3; i < latestCards.length; i++) {
+      if (latestCards.length > 6) {
+        for (let i = 6; i < latestCards.length; i++) {
           latestCards[i].dataset.hiddenByDefault = 'true';
         }
       }
