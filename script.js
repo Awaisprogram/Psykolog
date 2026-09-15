@@ -1873,7 +1873,48 @@
     }
 
     initFlipCards();
+    initSelfReflectionQuiz();
   });
+
+  /* -------------------------------------------------------------------
+     Self-Reflection Quiz
+  ------------------------------------------------------------------- */
+  function initSelfReflectionQuiz() {
+    const box = document.querySelector('.js-reflection-box');
+    if (!box) return;
+
+    const options = box.querySelectorAll('.js-reflection-option');
+    const noneOption = box.querySelector('.js-reflection-none');
+    const counter = box.querySelector('.js-reflection-counter');
+
+    function updateCounter() {
+      if (!counter) return;
+      const selectedCount = box.querySelectorAll('.js-reflection-option.is-active').length;
+      counter.textContent = selectedCount;
+    }
+
+    options.forEach(opt => {
+      opt.addEventListener('click', (e) => {
+        e.preventDefault();
+        opt.classList.toggle('is-active');
+        if (opt.classList.contains('is-active') && noneOption) {
+          noneOption.classList.remove('is-active');
+        }
+        updateCounter();
+      });
+    });
+
+    if (noneOption) {
+      noneOption.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isActive = noneOption.classList.toggle('is-active');
+        if (isActive) {
+          options.forEach(o => o.classList.remove('is-active'));
+        }
+        updateCounter();
+      });
+    }
+  }
 
   /* -------------------------------------------------------------------
      Flip Cards — 3D page-turn toggle (independent per card)
