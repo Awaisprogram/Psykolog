@@ -1,123 +1,12 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Article | psykolog.no</title>
-    <link rel="stylesheet" href="fonts.css" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="responsive.css" />
-    <link rel="stylesheet" href="tailwind.css" />
-  </head>
-  <body class="m-0 bg-white text-brand-taupe font-sans">
-    <div class="relative z-[51] bg-ink-600">
-      <div class="px-6 md:px-12 lg:px-16">
-        <div
-          class="max-w-[1312px] mx-auto flex items-center justify-between gap-6 h-[52px]"
-        >
-          <span class="inline-flex items-center gap-3">
-            <span
-              class="w-[22px] h-px bg-[rgba(248,216,212,0.5)] flex-none"
-            ></span>
-            <span
-              class="font-sans font-semibold text-[11px] leading-4 tracking-[2px] uppercase text-white whitespace-nowrap"
-              >Our mental health network</span
-            >
-          </span>
-          <span class="flex items-center gap-0">
-            <a
-              href="#"
-              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-transparent"
-              >Dps.no <span class="text-[11px] text-brand-mauve">↗</span></a
-            >
-            <a
-              href="#"
-              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-[rgba(248,216,212,0.2)]"
-              >Psykiater.no
-              <span class="text-[11px] text-brand-mauve">↗</span></a
-            >
-            <a
-              href="#"
-              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-[rgba(248,216,212,0.2)]"
-              >Spesialistpsykiatri.no
-              <span class="text-[11px] text-brand-mauve">↗</span></a
-            >
-          </span>
-        </div>
-      </div>
-    </div>
+ <?php
+/**
+ * Template Name: BlogDetail
+ */
 
-    <header
-      class="sticky top-0 left-0 right-0 z-50 pt-[18px] pointer-events-none"
-    >
-      <div class="px-6 md:px-12 lg:px-16">
-        <div
-          class="max-w-[1312px] mx-auto bg-white/[.66] backdrop-blur-2xl backdrop-saturate-[1.4] border border-white/[.82] rounded-[22px] p-2.5 pl-[26px] shadow-[0_2px_12px_rgba(0,0,0,0.06)] pointer-events-auto"
-        >
-          <div class="flex items-center justify-between gap-8">
-            <a href="index.html" class="inline-flex flex-none"
-              ><img
-                src="logo.webp"
-                alt="psykolog.no"
-                class="h-[26px] w-auto block brightness-0 opacity-[.86]"
-            /></a>
-            <nav id="navLinks" class="flex gap-9">
-              <a
-                href="index.html#home-conditions"
-                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
-                >Services</a
-              >
-              <a
-                href="index.html#home-formats"
-                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
-                >Therapy</a
-              >
-              <a
-                href="index.html#home-right-place"
-                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
-                >About Us</a
-              >
-              <a
-                href="index.html#home-pricing"
-                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
-                >Pricing</a
-              >
-              <a
-                href="index.html#home-locations"
-                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
-                >Contact</a
-              >
-            </nav>
-            <div class="flex items-center gap-2 flex-none">
-              <button
-                onclick="location.href = '#mh-book'"
-                class="font-sans font-bold text-[15px] leading-5 whitespace-nowrap text-white border-0 rounded-full px-7 py-[13px] cursor-pointer bg-brand-orange"
-              >
-                Book An Appointment
-              </button>
-              <button
-                id="navToggle"
-                class="w-[46px] h-[46px] rounded-full border border-brand-border bg-white cursor-pointer hidden"
-              >
-                <span class="relative block w-[18px] h-3 mx-auto">
-                  <span
-                    class="absolute left-0 top-0 w-[18px] h-0.5 rounded-sm bg-brand-dark"
-                  ></span>
-                  <span
-                    class="absolute left-0 top-[5px] w-[18px] h-0.5 rounded-sm bg-brand-dark"
-                  ></span>
-                  <span
-                    class="absolute left-0 top-[10px] w-[18px] h-0.5 rounded-sm bg-brand-dark"
-                  ></span>
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <main>
+get_header();
+?>
+ 
+ <main>
       <section class="relative pt-28 md:pt-42 mt-[-100px] bg-[#FBEFE9]">
         <div class="container relative z-10 max-w-[1312px] mx-auto text-center px-4">
           <!-- Breadcrumbs -->
@@ -157,7 +46,7 @@
         <div class="absolute top-0 left-0 right-0 h-[30%] bg-[#FBEFE9]"></div>
         <div class="container relative z-10  px-4">
           <div class="w-full rounded-[24px] overflow-hidden shadow-sm h-[366px]">
-            <img src="assets/article-detail/hero.webp" alt="ADHD in Adults" class="w-full h-full object-cover" />
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/hero.webp" alt="ADHD in Adults" class="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -170,7 +59,7 @@
           <div class="grid grid-cols-1 md:grid-cols-3 lg:gap-12 mb-[32px] border border-[#1E31381A] rounded-[24px] p-4 lg:p-6">
             <!-- Written by -->
             <div class="flex items-center gap-4 border-r-0 lg:border-r border-[#E8DDD7] pr-0 lg:pr-12 w-full lg:w-auto mb-6 lg:mb-0">
-              <img src="assets/article-detail/Written by.webp" alt="Author" class="w-12 h-12 rounded-full object-cover" />
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Written by.webp" alt="Author" class="w-12 h-12 rounded-full object-cover" />
               <div>
                 <span class="block text-[#C24C33] text-[10px] font-bold uppercase tracking-[1.6px] mb-1">Written by</span>
                 <span class="block text-[#241C19] font-serif font-bold text-[16px]">Dr. Rehan-Bin Nawaz</span>
@@ -179,7 +68,7 @@
             
             <!-- Published & updated -->
             <div class="flex items-center gap-4 border-r-0 lg:border-r border-[#E8DDD7] pr-0 lg:pr-12 w-full lg:w-auto mb-6 lg:mb-0">
-              <img src="assets/article-detail/Published & updated.webp" alt="Calendar" class="w-12 h-12 rounded-full object-cover" />
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Published & updated.webp" alt="Calendar" class="w-12 h-12 rounded-full object-cover" />
               <div>
                 <span class="block text-[#C24C33] text-[10px] font-bold uppercase tracking-[1.6px] mb-1">Published & updated</span>
                 <span class="block text-[#241C19] font-bold text-[16px]">Aug 12, 2026</span>
@@ -189,7 +78,7 @@
             
             <!-- Medically approved by -->
             <div class="flex items-center gap-4 w-full lg:w-auto">
-              <img src="assets/article-detail/Medically approved by.webp" alt="Reviewer" class="w-12 h-12 rounded-full object-cover" />
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Medically approved by.webp" alt="Reviewer" class="w-12 h-12 rounded-full object-cover" />
               <div>
                 <span class="block text-[#C24C33] text-[10px] font-bold uppercase tracking-[1.6px] mb-1">Medically approved by</span>
                 <span class="block text-[#241C19] font-serif font-bold text-[16px]">Dr. Hamad Khan</span>
@@ -207,7 +96,7 @@
               <!-- Key Points -->
               <div class="bg-[linear-gradient(180deg,#FFF7F3_0%,#F8EBE2_100%)] rounded-[24px] p-6 md:px-8 md:py-[56px] border border-[#C24C3333]">
                 <div class="inline-flex items-center gap-2 bg-white text-[#C24C33] border border-[#F0936757] text-[14px] font-bold tracking-[1.6px] uppercase px-4 py-2 rounded-full mb-6">
-                 <img src="assets/article-detail/key-point.webp" alt="Clock / Time Icon" class="w-[22px] h-[22px] object-contain" />
+                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/key-point.webp" alt="Clock / Time Icon" class="w-[22px] h-[22px] object-contain" />
                   Read this in 20 seconds
                 </div>
                 
@@ -241,11 +130,11 @@
               <div>
                 <div class="flex items-center justify-between mb-[16px]">
                   <div class="flex items-center gap-3 text-[#A93E28] text-[12px] md:text-[16px] font-bold tracking-[1.6px] uppercase">
-                    <img src="assets/article-detail/Overview.webp" alt="Left Arrow / Back Icon" class="w-[32px] h-[32px] object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Overview.webp" alt="Left Arrow / Back Icon" class="w-[32px] h-[32px] object-contain" />
                     01 — OVERVIEW
                   </div>
                   <button class="bg-[#FCF5F3] text-[#A93E28] border border-[#F5E6E1] hover:border-[#A93E28] rounded-full px-4 py-2 text-[11px] font-bold tracking-[1.6px] uppercase transition-colors inline-flex items-center gap-2 cursor-pointer">
-                    <img src="assets/article-detail/ask-ai.webp" alt="Microphone / Voice Icon" class="w-4 h-4 object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/ask-ai.webp" alt="Microphone / Voice Icon" class="w-4 h-4 object-contain" />
                     Ask AI about this
                   </button>
                 </div>
@@ -253,7 +142,7 @@
                 <h2 class="font-serif text-[36px] md:text-[44px] text-[#241C19] font-bold mb-8">What Adult ADHD Actually Is</h2>
                 
                 <div class="rounded-[24px] overflow-hidden mb-8 h-[400px]">
-                  <img src="assets/article-detail/What adult ADHD actually is.webp" alt="Adult ADHD" class="w-full h-full object-cover" />
+                  <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/What adult ADHD actually is.webp" alt="Adult ADHD" class="w-full h-full object-cover" />
                 </div>
                 
                 <p class="text-[#5B5B5B] text-[20px] leading-[1.8] mb-6">
@@ -266,7 +155,7 @@
                 <!-- In Simple Terms -->
                 <div class="bg-[#FFF7F3] border-l-[3px] border-[#C24C33] rounded-[24px] p-8 flex items-start gap-6 mb-12">
                  <div class="w-[54px] h-[54px]">
-                <img src="assets/article-detail/simple-terms.webp" alt="Lightning / Flash Icon" class="object-contain" />
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/simple-terms.webp" alt="Lightning / Flash Icon" class="object-contain" />
                 </div>
                   <div>
                     <h4 class="text-[#A93E28] text-[12px] md:text-[18px] font-bold tracking-[1.6px] uppercase mb-2">IN SIMPLE TERMS</h4>
@@ -279,7 +168,7 @@
                   <!-- Card 1 -->
                   <div class="bg-[#FDE7E1] rounded-[18px] p-6 h-full flex flex-col">
                     <div class="w-[54px] h-[54px]">
-                    <img src="assets/article-detail/Often identified in adulthood.webp" alt="Clock / Time Icon" class="object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Often identified in adulthood.webp" alt="Clock / Time Icon" class="object-contain" />
                     </div>
                     <h4 class="font-serif font-bold text-[20px] text-[#241C19] my-3">Often identified in adulthood</h4>
                     <p class="text-[#5B5B5B] text-[16px] md:text-[20px] leading-[1.6] m-0">Many people are assessed only after years of being read as disorganised or stressed.</p>
@@ -287,7 +176,7 @@
                   <!-- Card 2 -->
                   <div class="bg-[#EAF1F6] rounded-[18px] p-6 h-full flex flex-col">
                     <div class="w-[54px] h-[54px]">
-                    <img src="assets/article-detail/Overlaps with other conditions.webp" alt="Clock / Time Icon" class="object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Overlaps with other conditions.webp" alt="Clock / Time Icon" class="object-contain" />
                     </div>
                     <h4 class="font-serif font-bold text-[20px] text-[#241C19] my-3">Overlaps With Other Conditions</h4>
                     <p class="text-[#5B5B5B] text-[16px] md:text-[20px] leading-[1.6] m-0">Anxiety, low mood and exhaustion frequently sit alongside it.</p>
@@ -295,7 +184,7 @@
                   <!-- Card 3 -->
                   <div class="bg-[#EBF2EA] rounded-[18px] p-6 h-full flex flex-col">
                     <div class="w-[54px] h-[54px]">
-                    <img src="assets/article-detail/Responds well to support.webp" alt="Clock / Time Icon" class="object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Responds well to support.webp" alt="Clock / Time Icon" class="object-contain" />
                     </div>
                     <h4 class="font-serif font-bold text-[20px] text-[#241C19] my-3">Responds well to support</h4>
                     <p class="text-[#5B5B5B] text-[16px] md:text-[20px] leading-[1.6] m-0">Strategy work, therapy and, where appropriate, medication all help.</p>
@@ -311,7 +200,7 @@
                     02 — SIGNS AND SYMPTOMS
                   </div>
                   <button class="bg-[#FCF5F3] text-[#A93E28] border border-[#F5E6E1] hover:border-[#A93E28] rounded-full px-4 py-2 text-[11px] font-bold tracking-[1.6px] uppercase transition-colors inline-flex items-center gap-2 cursor-pointer">
-                    <img src="assets/article-detail/ask-ai.webp" alt="Microphone / Voice Icon" class="w-4 h-4 object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/ask-ai.webp" alt="Microphone / Voice Icon" class="w-4 h-4 object-contain" />
                     Ask AI about this
                   </button>
                 </div>
@@ -326,7 +215,7 @@
                 </p>
                 
                 <div class="rounded-[24px] overflow-hidden">
-                  <img src="assets/article-detail/How it tends to appear in adult life.webp" alt="Woman stressed at desk" class="w-full h-auto object-cover" />
+                  <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/How it tends to appear in adult life.webp" alt="Woman stressed at desk" class="w-full h-auto object-cover" />
                 </div>
               </div>
               
@@ -337,7 +226,7 @@
                     03 - SIX EVERYDAY AREAS
                   </div>
                   <button class="bg-[#FCF5F3] text-[#A93E28] border border-[#F5E6E1] hover:border-[#A93E28] rounded-full px-4 py-2 text-[11px] font-bold tracking-[1.6px] uppercase transition-colors inline-flex items-center gap-2 cursor-pointer">
-                    <img src="assets/article-detail/ask-ai.webp" alt="Microphone / Voice Icon" class="w-4 h-4 object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/ask-ai.webp" alt="Microphone / Voice Icon" class="w-4 h-4 object-contain" />
                     Ask AI about this
                   </button>
                 </div>
@@ -355,7 +244,7 @@
                     <div class="flex flex-col md:flex-row md:items-center px-6 md:px-8 py-6 border-b border-[#E8DDD7] gap-4 md:gap-0 hover:bg-[#F9F5F0] transition-colors cursor-pointer group">
                       <div class="md:w-1/3 flex items-center gap-4">
                         <div class="w-10 h-10">
-                          <img src="assets/article-detail/Attention.webp" alt="Attention" class="object-contain" />
+                          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Attention.webp" alt="Attention" class="object-contain" />
                         </div>
                         <span class="font-serif font-bold text-[18px] text-[#241C19]">Attention</span>
                       </div>
@@ -367,7 +256,7 @@
                     <div class="flex flex-col md:flex-row md:items-center px-6 md:px-8 py-6 border-b border-[#E8DDD7] gap-4 md:gap-0 hover:bg-[#F9F5F0] transition-colors cursor-pointer group">
                       <div class="md:w-1/3 flex items-center gap-4">
                         <div class="w-10 h-10 rounded-[10px] bg-[#EBF2EA] flex items-center justify-center shrink-0">
-                          <img src="assets/article-detail/Organization.webp" alt="Organization" class="object-contain" />
+                          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Organization.webp" alt="Organization" class="object-contain" />
                         </div>
                         <span class="font-serif font-bold text-[18px] text-[#241C19]">Organization</span>
                       </div>
@@ -379,7 +268,7 @@
                     <div class="flex flex-col md:flex-row md:items-center px-6 md:px-8 py-6 border-b border-[#E8DDD7] gap-4 md:gap-0 hover:bg-[#F9F5F0] transition-colors cursor-pointer group">
                       <div class="md:w-1/3 flex items-center gap-4">
                         <div class="w-10 h-10 rounded-[10px] bg-[#EAF1F6] flex items-center justify-center shrink-0">
-                          <img src="assets/article-detail/Choice of Psychologist.webp" alt="Choice of Psychologist" class="object-contain" />
+                          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Choice of Psychologist.webp" alt="Choice of Psychologist" class="object-contain" />
                         </div>
                         <span class="font-serif font-bold text-[18px] text-[#241C19]">Choice Of Psychologist</span>
                       </div>
@@ -391,7 +280,7 @@
                     <div class="flex flex-col md:flex-row md:items-center px-6 md:px-8 py-6 border-b border-[#E8DDD7] gap-4 md:gap-0 hover:bg-[#F9F5F0] transition-colors cursor-pointer group">
                       <div class="md:w-1/3 flex items-center gap-4">
                         <div class="w-10 h-10 rounded-[10px] bg-[#FCF8EC] flex items-center justify-center shrink-0">
-                          <img src="assets/article-detail/Evening Availability.webp" alt="Evening Availability" class="object-contain" />
+                          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Evening Availability.webp" alt="Evening Availability" class="object-contain" />
                         </div>
                         <span class="font-serif font-bold text-[18px] text-[#241C19]">Evening Availability</span>
                       </div>
@@ -403,7 +292,7 @@
                     <div class="flex flex-col md:flex-row md:items-center px-6 md:px-8 py-6 border-b border-[#E8DDD7] gap-4 md:gap-0  hover:bg-[#F9F5F0] transition-colors cursor-pointer group">
                       <div class="md:w-1/3 flex items-center gap-4">
                         <div class="w-10 h-10 rounded-[10px] bg-[#F2EBFA] flex items-center justify-center shrink-0">
-                          <img src="assets/article-detail/Video Option.webp" alt="Video Option" class="object-contain" />
+                          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Video Option.webp" alt="Video Option" class="object-contain" />
                         </div>
                         <span class="font-serif font-bold text-[18px] text-[#241C19]">Video Option</span>
                       </div>
@@ -415,7 +304,7 @@
                     <div class="flex flex-col md:flex-row md:items-center px-6 md:px-8 py-6 gap-4 md:gap-0 hover:bg-[#F9F5F0] transition-colors cursor-pointer group">
                       <div class="md:w-1/3 flex items-center gap-4">
                         <div class="w-10 h-10">
-                          <img src="assets/article-detail/Ask This Article.webp" alt="Language Options" class="object-contain" />
+                          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Ask This Article.webp" alt="Language Options" class="object-contain" />
                         </div>
                         <span class="font-serif font-bold text-[18px] text-[#241C19]">Language Options</span>
                       </div>
@@ -437,11 +326,11 @@
                     <p class="text-[#6B5F5A] text-[16px] md:text-[20px] leading-[1.6] mb-8">An authorized psychologist can talk it through with you, without a referral.</p>
                     <button class="bg-[#C24C33] hover:bg-[#9A3825] text-white font-bold text-[15px] px-6 py-4 rounded-full transition-colors inline-flex items-center gap-3">
                       Talk To A Psychologist
-                      <img src="assets/article-detail/arrow.webp" alt="Right Arrow Icon" class="w-4 h-4 object-contain filter invert brightness-0" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/arrow.webp" alt="Right Arrow Icon" class="w-4 h-4 object-contain filter invert brightness-0" />
                     </button>
                   </div>
                   <div class="shrink-0 flex justify-center">
-                    <img src="assets/article-detail/cta.webp" alt="ADHD Brain" class="w-full max-w-[280px] h-auto object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/cta.webp" alt="ADHD Brain" class="w-full max-w-[280px] h-auto object-contain" />
                   </div>
                 </div>
               </div>
@@ -456,7 +345,7 @@
               <div class="border border-[#F9EDEB] rounded-[22px] p-4 md:p-6">
                 <h3 class="font-serif font-bold text-[16px] text-[#3A1811] mb-6">About the medical reviewer</h3>
                 <div class="flex items-center gap-4 mb-6">
-                  <img src="assets/article-detail/Medically approved by.webp" alt="Reviewer" class="w-14 h-14 rounded-full object-cover" />
+                  <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Medically approved by.webp" alt="Reviewer" class="w-14 h-14 rounded-full object-cover" />
                   <div>
                     <span class="block text-[#3A1811] font-serif font-bold text-[16px]">Dr. Hamad Khan</span>
                     <span class="block text-[#5B5B5B] text-[16px] mt-1">Specialist in Psychiatry</span>
@@ -508,7 +397,7 @@
                 <div class="flex flex-col gap-6 mb-6">
                   <!-- Article 1 -->
                   <a href="#" class="flex items-start gap-4 group no-underline">
-                    <img src="assets/article/blog-top-2.webp" alt="Article" class="w-16 h-16 rounded-[12px] object-cover group-hover:opacity-80 transition-opacity shrink-0" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article/blog-top-2.webp" alt="Article" class="w-16 h-16 rounded-[12px] object-cover group-hover:opacity-80 transition-opacity shrink-0" />
                     <div>
                       <span class="block text-[#F09367] text-[10px] font-bold uppercase tracking-[1.6px] mb-1.5">MENTAL HEALTH</span>
                       <span class="block text-[#241C19] font-bold font-albert text-[16px] leading-[1.4] group-hover:text-[#1E31383] transition-colors">How to Reduce Stress Naturally</span>
@@ -516,7 +405,7 @@
                   </a>
                   <!-- Article 2 -->
                   <a href="#" class="flex items-start gap-4 group no-underline">
-                    <img src="assets/article/blog-top-3.webp" alt="Article" class="w-16 h-16 rounded-[12px] object-cover group-hover:opacity-80 transition-opacity shrink-0" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article/blog-top-3.webp" alt="Article" class="w-16 h-16 rounded-[12px] object-cover group-hover:opacity-80 transition-opacity shrink-0" />
                     <div>
                       <span class="block text-[#F09367] text-[10px] font-bold uppercase tracking-[1.6px] mb-1.5">ANXIETY</span>
                       <span class="block text-[#241C19] font-bold font-albert text-[16px] leading-[1.4] group-hover:text-[#1E31383] transition-colors">Breathing Exercises for Anxiety</span>
@@ -524,7 +413,7 @@
                   </a>
                   <!-- Article 3 -->
                   <a href="#" class="flex items-start gap-4 group no-underline">
-                    <img src="assets/article/blog-top-4.webP" alt="Article" class="w-16 h-16 rounded-[12px] object-cover group-hover:opacity-80 transition-opacity shrink-0" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article/blog-top-4.webP" alt="Article" class="w-16 h-16 rounded-[12px] object-cover group-hover:opacity-80 transition-opacity shrink-0" />
                     <div>
                       <span class="block text-[#F09367] text-[10px] font-bold uppercase tracking-[1.6px] mb-1.5">THERAPY</span>
                       <span class="block text-[#241C19] font-bold font-albert text-[16px] leading-[1.4] group-hover:text-[#1E31383] transition-colors">CBT Techniques That Really Work</span>
@@ -532,7 +421,7 @@
                   </a>
                 </div>
                 <a href="#" class="inline-flex items-center gap-2 text-[#C24C33] font-bold text-[14px] hover:text-[#9A3825] transition-colors no-underline">
-                  Explore more articles <img src="assets/article-detail/arrow.webp" alt="Right Arrow Icon" class="w-4 h-4 object-contain" />
+                  Explore more articles <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/arrow.webp" alt="Right Arrow Icon" class="w-4 h-4 object-contain" />
                 </a>
               </div>
               
@@ -551,7 +440,7 @@
                 <div class="flex items-start justify-between relative z-10 mb-8">
                   <div>
                     <div class="inline-flex items-center gap-2 bg-[#FFFFFF29] border border-[#FFFFFF4D] text-white text-[10px] font-bold tracking-[1.6px] uppercase px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
-                      <img src="assets/article-detail/Self-reflection.webp" alt="Check" class="w-[22px] h-[22px] object-contain" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIj48cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Ik01IDEzbDQgNGwxMC0xMCIgLz48L3N2Zz4='" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Self-reflection.webp" alt="Check" class="w-[22px] h-[22px] object-contain" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIj48cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Ik01IDEzbDQgNGwxMC0xMCIgLz48L3N2Zz4='" />
                       SELF-REFLECTION, NOT A TEST
                     </div>
                     
@@ -577,7 +466,7 @@
                       <svg class="w-4 h-4 text-[#C24C33] opacity-0 group-[.is-active]:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                     </div>
                     <div class="w-[34px] h-[34px]">
-                      <img src="assets/article-detail/Difficulty concentrating.webp" alt="Icon" class="object-contain" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Difficulty concentrating.webp" alt="Icon" class="object-contain" />
                     </div>
                     <span class="text-white text-[16px] font-medium">Difficulty concentrating</span>
                   </button>
@@ -588,7 +477,7 @@
                       <svg class="w-4 h-4 text-[#C24C33] opacity-0 group-[.is-active]:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                     </div>
                     <div class="w-[34px] h-[34px]">
-                      <img src="assets/article-detail/Trouble managing time.webp" alt="Icon" class="object-contain" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Trouble managing time.webp" alt="Icon" class="object-contain" />
                     </div>
                     <span class="text-white text-[16px] font-medium">Trouble managing time</span>
                   </button>
@@ -599,7 +488,7 @@
                       <svg class="w-4 h-4 text-[#C24C33] opacity-0 group-[.is-active]:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                     </div>
                     <div class="w-[34px] h-[34px]">
-                      <img src="assets/article-detail/Difficulty staying organised.webp" alt="Icon" class="object-contain" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Difficulty staying organised.webp" alt="Icon" class="object-contain" />
                     </div>
                     <span class="text-white text-[16px] font-medium">Difficulty staying organised</span>
                   </button>
@@ -610,7 +499,7 @@
                       <svg class="w-4 h-4 text-[#C24C33] opacity-0 group-[.is-active]:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                     </div>
                     <div class="w-[34px] h-[34px]">
-                      <img src="assets/article-detail/Frequently losing track of tasks.webp" alt="Icon" class="object-contain" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Frequently losing track of tasks.webp" alt="Icon" class="object-contain" />
                     </div>
                     <span class="text-white text-[16px] font-medium">Frequently losing track of tasks</span>
                   </button>
@@ -621,7 +510,7 @@
                       <svg class="w-4 h-4 text-[#C24C33] opacity-0 group-[.is-active]:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                     </div>
                     <div class="w-[34px] h-[34px]">
-                      <img src="assets/article-detail/Acting impulsively.webp" alt="Icon" class="object-contain" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Acting impulsively.webp" alt="Icon" class="object-contain" />
                     </div>
                     <span class="text-white text-[16px] font-medium">Acting impulsively</span>
                   </button>
@@ -632,7 +521,7 @@
                       <svg class="w-4 h-4 text-[#C24C33] opacity-0 group-[.is-active]:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                     </div>
                     <div class="w-[34px] h-[34px]">
-                      <img src="assets/article-detail/None of these.webp" onerror="this.style.display='none';" alt="Icon" class="object-contain" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/None of these.webp" onerror="this.style.display='none';" alt="Icon" class="object-contain" />
                     </div>
                     <span class="text-white text-[16px] font-medium">None of these</span>
                   </button>
@@ -642,7 +531,7 @@
                 <div class="bg-white rounded-[16px] p-4 md:p-6 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10 shadow-sm">
                   <div class="flex items-start gap-4">
                     <div class="w-[48px] h-[48px]">
-                      <img src="assets/article-detail/Where to Start.webp" alt="Cursor" class="object-contain" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Where to Start.webp" alt="Cursor" class="object-contain" />
                     </div>
                     <div>
                       <h4 class="text-[#C24C33] text-[12px] md:text-[16px] font-bold tracking-[1.6px] uppercase mb-1">WHERE TO START</h4>
@@ -651,7 +540,7 @@
                   </div>
                   <button class="shrink-0 bg-[#C24C33] hover:bg-[#9A3825] text-white text-[14px] font-bold px-6 py-3 rounded-full transition-colors flex items-center gap-2">
                     Talk to a psychologist
-                    <img src="assets/article-detail/arrow.webp" alt="Right Arrow" class="w-3.5 h-3.5 filter invert brightness-0" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/arrow.webp" alt="Right Arrow" class="w-3.5 h-3.5 filter invert brightness-0" />
                   </button>
                 </div>
               </div>
@@ -663,7 +552,7 @@
                     03 — TELLING THEM APART
                   </div>
                   <button class="bg-[#FCF5F3] text-[#A93E28] border border-[#F5E6E1] hover:border-[#A93E28] rounded-full px-4 py-2 text-[11px] font-bold tracking-[1.6px] uppercase transition-colors inline-flex items-center gap-2 cursor-pointer">
-                    <img src="assets/article-detail/ask-ai.webp" alt="Microphone / Voice Icon" class="w-4 h-4 object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/ask-ai.webp" alt="Microphone / Voice Icon" class="w-4 h-4 object-contain" />
                     Ask AI about this
                   </button>
                 </div>
@@ -689,7 +578,7 @@
                     <div class="grid grid-cols-[1.5fr_1fr_1fr_1fr] bg-white px-6 py-6 border-b border-[#E8DDD7] items-center">
                       <div class="flex items-center gap-3">
                         <div class="w-[38px] h-[38px] shrink-0">
-                          <img src="assets/article-detail/Attention.webp" alt="Attention" class="object-contain" />
+                          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Attention.webp" alt="Attention" class="object-contain" />
                         </div>
                         <span class="font-serif font-bold text-[16px] text-[#241C19]">Attention</span>
                       </div>
@@ -702,7 +591,7 @@
                     <div class="grid grid-cols-[1.5fr_1fr_1fr_1fr] bg-white px-6 py-6 border-b border-[#E8DDD7] items-center">
                       <div class="flex items-center gap-3">
                         <div class="w-[38px] h-[38px] shrink-0">
-                          <img src="assets/article-detail/Protect one focused block.webp" alt="Energy" class="object-contain" />
+                          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Protect one focused block.webp" alt="Energy" class="object-contain" />
                         </div>
                         <span class="font-serif font-bold text-[16px] text-[#241C19]">Energy</span>
                       </div>
@@ -715,7 +604,7 @@
                     <div class="grid grid-cols-[1.5fr_1fr_1fr_1fr] bg-white px-6 py-6 border-b border-[#E8DDD7] items-center">
                       <div class="flex items-center gap-3">
                         <div class="w-[38px] h-[38px] shrink-0">
-                          <img src="assets/article-detail/Choice of Psychologist.webp" alt="Onset" class="object-contain" />
+                          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Choice of Psychologist.webp" alt="Onset" class="object-contain" />
                         </div>
                         <span class="font-serif font-bold text-[16px] text-[#241C19]">Onset</span>
                       </div>
@@ -728,7 +617,7 @@
                     <div class="grid grid-cols-[1.5fr_1fr_1fr_1fr] bg-white px-6 py-6 items-center">
                       <div class="flex items-center gap-3">
                         <div class="w-[38px] h-[38px] shrink-0">
-                          <img src="assets/article-detail/Video Option.webp" alt="Improves when" class="object-contain" />
+                          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Video Option.webp" alt="Improves when" class="object-contain" />
                         </div>
                         <span class="font-serif font-bold text-[16px] text-[#241C19]">Improves when</span>
                       </div>
@@ -747,7 +636,7 @@
                     02 — TREATMENT
                   </div>
                   <button class="bg-[#FCF5F3] text-[#A93E28] border border-[#F5E6E1] hover:border-[#A93E28] rounded-full px-4 py-2 text-[11px] font-bold tracking-[1.6px] uppercase transition-colors inline-flex items-center gap-2 cursor-pointer">
-                    <img src="assets/article-detail/ask-ai.webp" alt="Microphone / Voice Icon" class="w-4 h-4 object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/ask-ai.webp" alt="Microphone / Voice Icon" class="w-4 h-4 object-contain" />
                     Ask AI about this
                   </button>
                 </div>
@@ -759,7 +648,7 @@
                 </p>
                 
                 <div class="rounded-[24px] overflow-hidden mb-12 shadow-sm">
-                  <img src="assets/article-detail/What support is available.webp" alt="Therapy Session" class="w-full h-auto object-cover" />
+                  <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/What support is available.webp" alt="Therapy Session" class="w-full h-auto object-cover" />
                 </div>
                 
                 <!-- 4 Cards Grid -->
@@ -770,7 +659,7 @@
                     <div class="absolute -right-6 -top-6 w-32 h-32 rounded-full border-[12px] border-[#FCF5F3] pointer-events-none group-hover:border-[#F8EBE2] transition-colors"></div>
                     <div class="relative z-10">
                       <div class="w-10 h-10 mb-3">
-                        <img src="assets/article-detail/Psychoeducation.webp" alt="Psychoeducation Icon" class="object-contain" />
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Psychoeducation.webp" alt="Psychoeducation Icon" class="object-contain" />
                       </div>
                       <h4 class="font-serif font-bold text-[20px] md:text-[24px] text-[#241C19] mb-3">Psychoeducation</h4>
                       <p class="text-[#5B5B5B] text-[16px] md:text-[20px] leading-[1.6] m-0">Understanding how ADHD affects you specifically is consistently one of the most useful early steps.</p>
@@ -783,7 +672,7 @@
                     <div class="absolute -right-6 -top-6 w-32 h-32 rounded-full border-[12px] border-[#FCF5F3] pointer-events-none group-hover:border-[#F8EBE2] transition-colors"></div>
                     <div class="relative z-10">
                       <div class="w-10 h-10 mb-3">
-                        <img src="assets/article-detail/Strategy and skills work.webp" alt="Strategy Icon" class="object-contain" />
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Strategy and skills work.webp" alt="Strategy Icon" class="object-contain" />
                       </div>
                       <h4 class="font-serif font-bold text-[20px] md:text-[24px] text-[#241C19] mb-3">Strategy and skills work</h4>
                       <p class="text-[#5B5B5B] text-[16px] md:text-[20px] leading-[1.6] m-0">Practical systems for planning, prioritising and starting tasks, built around how you actually work.</p>
@@ -796,7 +685,7 @@
                     <div class="absolute -right-6 -top-6 w-32 h-32 rounded-full border-[12px] border-[#FCF5F3] pointer-events-none group-hover:border-[#F8EBE2] transition-colors"></div>
                     <div class="relative z-10">
                       <div class="w-10 h-10 mb-3">
-                        <img src="assets/article-detail/Psychological therapy.webp" alt="Therapy Icon" class="object-contain" />
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Psychological therapy.webp" alt="Therapy Icon" class="object-contain" />
                       </div>
                       <h4 class="font-serif font-bold text-[20px] md:text-[24px] text-[#241C19] mb-3">Psychological therapy</h4>
                       <p class="text-[#5B5B5B] text-[16px] md:text-[20px] leading-[1.6] m-0">CBT and related approaches address the low self-esteem, avoidance and anxiety that often accumulate over years.</p>
@@ -809,7 +698,7 @@
                     <div class="absolute -right-6 -top-6 w-32 h-32 rounded-full border-[12px] border-[#FCF5F3] pointer-events-none group-hover:border-[#F8EBE2] transition-colors"></div>
                     <div class="relative z-10">
                       <div class="w-10 h-10 mb-3">
-                        <img src="assets/article-detail/Medication.webp" alt="Medication Icon" class="object-contain" />
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Medication.webp" alt="Medication Icon" class="object-contain" />
                       </div>
                       <h4 class="font-serif font-bold text-[20px] md:text-[24px] text-[#241C19] mb-3">Medication</h4>
                       <p class="text-[#5B5B5B] text-[16px] md:text-[20px] leading-[1.6] m-0">Prescribed and monitored by a psychiatrist. Through Psykiater.no you can be referred internally if that is appropriate.</p>
@@ -827,7 +716,7 @@
                   <div class="relative z-10 mb-8">
                     <div class="flex items-center gap-4 mb-2">
                       <div class="w-12 h-12 rounded-[12px] bg-white/10 flex items-center justify-center shrink-0">
-                         <img src="assets/article-detail/Ask This Article.webp" alt="AI Star / Sparkle Icon" class="object-contain" />
+                         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Ask This Article.webp" alt="AI Star / Sparkle Icon" class="object-contain" />
                       </div>
                       <div>
                         <h3 class="font-serif text-[28px] md:text-[32px] text-white font-bold mb-1">Ask this article</h3>
@@ -840,7 +729,7 @@
                   <div class="relative z-10 mb-6">
                     <input type="text" placeholder="Ask a question about this article..." class="w-full bg-white/10 border border-white/20 rounded-full py-5 pl-6 pr-16 text-white placeholder-white/50 text-[16px] focus:outline-none focus:border-[#F09367] transition-colors" />
                     <button class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#F09367] hover:bg-[#E5855A] flex items-center justify-center transition-colors">
-                     <img src="assets/article-detail/Send question.webp" alt="Up Arrow / Upload Icon" class="w-[44px] h-[44px] object-contain" />
+                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Send question.webp" alt="Up Arrow / Upload Icon" class="w-[44px] h-[44px] object-contain" />
                     </button>
                   </div>
                   
@@ -877,7 +766,7 @@
                     02 — SIGNS AND SYMPTOMS
                   </div>
                   <button class="bg-[#FCF5F3] text-[#A93E28] border border-[#F5E6E1] hover:border-[#A93E28] rounded-full px-4 py-2 text-[11px] font-bold tracking-[1.6px] uppercase transition-colors inline-flex items-center gap-2 cursor-pointer">
-                    <img src="assets/article-detail/ask-ai.webp" alt="Microphone / Voice Icon" class="w-4 h-4 object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/ask-ai.webp" alt="Microphone / Voice Icon" class="w-4 h-4 object-contain" />
                     Ask AI about this
                   </button>
                 </div>
@@ -889,7 +778,7 @@
                 </p>
                 
                 <div class="rounded-[24px] overflow-hidden mb-12 shadow-sm">
-                  <img src="assets/article-detail/Everyday strategies that tend to help.webp" alt="Man writing at desk" class="w-full h-auto object-cover" />
+                  <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Everyday strategies that tend to help.webp" alt="Man writing at desk" class="w-full h-auto object-cover" />
                 </div>
                 
                 <!-- Quote Block -->
@@ -910,7 +799,7 @@
                   <!-- Card 1 -->
                   <div class="bg-[#FFF8F5] rounded-[16px] p-6 md:p-8 flex items-start gap-4">
                     <div class="w-[48px] h-[48px]">
-                      <img src="assets/article-detail/Externalize the task list.webp" alt="Icon" class="object-contain" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Externalize the task list.webp" alt="Icon" class="object-contain" />
                     </div>
                     <div>
                       <h4 class="font-serif font-bold text-[16px] md:text-[18px] text-[#241C19] mb-2">Externalise the task list</h4>
@@ -920,7 +809,7 @@
                   <!-- Card 2 -->
                   <div class="bg-[#FFF8F5] rounded-[16px] p-6 md:p-8 flex items-start gap-4">
                     <div class="w-[48px] h-[48px]">
-                      <img src="assets/article-detail/Protect one focused block.webp" alt="Icon" class="object-contain" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Protect one focused block.webp" alt="Icon" class="object-contain" />
                     </div>
                     <div>
                       <h4 class="font-serif font-bold text-[16px] md:text-[18px] text-[#241C19] mb-2">Protect one focused block</h4>
@@ -930,7 +819,7 @@
                   <!-- Card 3 -->
                   <div class="bg-[#FFF8F5] rounded-[16px] p-6 md:p-8 flex items-start gap-4">
                     <div class="w-[48px] h-[48px]">
-                      <img src="assets/article-detail/Break task into visible steps.webp" alt="Icon" class="object-contain" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Break task into visible steps.webp" alt="Icon" class="object-contain" />
                     </div>
                     <div>
                       <h4 class="font-serif font-bold text-[16px] md:text-[18px] text-[#241C19] mb-2">Break tasks into visible steps</h4>
@@ -940,7 +829,7 @@
                   <!-- Card 4 -->
                   <div class="bg-[#FFF8F5] rounded-[16px] p-6 md:p-8 flex items-start gap-4">
                     <div class="w-[48px] h-[48px]">
-                      <img src="assets/article-detail/Treat Sleep and Movement.webp" alt="Icon" class="object-contain" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Treat Sleep and Movement.webp" alt="Icon" class="object-contain" />
                     </div>
                     <div>
                       <h4 class="font-serif font-bold text-[16px] md:text-[18px] text-[#241C19] mb-2">Treat sleep and movement as treatment</h4>
@@ -957,7 +846,7 @@
                     02 — SIGNS AND SYMPTOMS
                   </div>
                   <button class="bg-[#FCF5F3] text-[#A93E28] border border-[#F5E6E1] hover:border-[#A93E28] rounded-full px-4 py-2 text-[11px] font-bold tracking-[1.6px] uppercase transition-colors inline-flex items-center gap-2 cursor-pointer">
-                    <img src="assets/article-detail/ask-ai.webp" alt="Microphone / Voice Icon" class="w-4 h-4 object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/ask-ai.webp" alt="Microphone / Voice Icon" class="w-4 h-4 object-contain" />
                     Ask AI about this
                   </button>
                 </div>
@@ -972,7 +861,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 mb-16">
                   <div class="flex items-start gap-4">
                     <div class="w-[36px] h-[36px] rounded-full shrink-0">
-                      <img src="assets/article-detail/list-check.webp" alt="Check" class="w-full h-full object-contain" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/list-check.webp" alt="Check" class="w-full h-full object-contain" />
                     </div>
                     <div>
                       <h4 class="font-serif font-bold text-[16px] md:text-[18px] text-[#241C19] mb-2">Build Consistent Routine</h4>
@@ -981,7 +870,7 @@
                   </div>
                   <div class="flex items-start gap-4">
                     <div class="w-[36px] h-[36px] rounded-full shrink-0">
-                      <img src="assets/article-detail/list-check.webp" alt="Check" class="w-full h-full object-contain" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/list-check.webp" alt="Check" class="w-full h-full object-contain" />
                     </div>
                     <div>
                       <h4 class="font-serif font-bold text-[16px] md:text-[18px] text-[#241C19] mb-2">Manage Distraction</h4>
@@ -990,7 +879,7 @@
                   </div>
                   <div class="flex items-start gap-4">
                     <div class="w-[36px] h-[36px] rounded-full shrink-0">
-                      <img src="assets/article-detail/list-check.webp" alt="Check" class="w-full h-full object-contain" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/list-check.webp" alt="Check" class="w-full h-full object-contain" />
                     </div>
                     <div>
                       <h4 class="font-serif font-bold text-[16px] md:text-[18px] text-[#241C19] mb-2">Break Task Into Smaller Steps</h4>
@@ -999,7 +888,7 @@
                   </div>
                   <div class="flex items-start gap-4">
                     <div class="w-[36px] h-[36px] rounded-full shrink-0">
-                      <img src="assets/article-detail/list-check.webp" alt="Check" class="w-full h-full object-contain" />
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/list-check.webp" alt="Check" class="w-full h-full object-contain" />
                     </div>
                     <div>
                       <h4 class="font-serif font-bold text-[16px] md:text-[18px] text-[#241C19] mb-2">Be Kind To Yourself</h4>
@@ -1011,7 +900,7 @@
                 <!-- Final Thought Box -->
                 <div class="bg-[#FFF7F3] rounded-[24px] p-8 md:p-10 border-l-[3px] border-[#C24C33] flex flex-col md:flex-row items-center gap-6">
                   <div class="w-16 h-16 rounded-[16px] bg-[#FDE7E1] flex items-center justify-center shrink-0">
-                    <img src="assets/article-detail/FINAL THOUGHT.webp" alt="AI Star / Sparkle Icon" class="w-8 h-8 object-contain" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/FINAL THOUGHT.webp" alt="AI Star / Sparkle Icon" class="w-8 h-8 object-contain" />
                   </div>
                   <div>
                     <h3 class="font-serif text-[20px] md:text-[24px] text-[#A93E28] font-bold tracking-[1.6px] uppercase mb-4">FINAL THOUGHT:</h3>
@@ -1285,7 +1174,7 @@
                 >
                  Find a Psychologist
                   <img
-                    src="assets/Faqs/arrow.webp"
+                    src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Faqs/arrow.webp"
                     alt="Right Arrow Icon"
                     class="h-6 w-6 object-contain"
                   />
@@ -1303,7 +1192,7 @@
             <div class="shrink-0">
               <div class="w-[421px] h-[280px]">
                 <img
-                  src="assets/article/cta.webp"
+                  src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article/cta.webp"
                   alt="Chat/Support Icon"
                   class="object-contain"
                 />
@@ -1314,138 +1203,4 @@
       </section>
     </main>
 
-    <footer class="bg-brand-brown text-white pt-[72px] pb-8">
-      <div class="px-6 md:px-12 lg:px-16">
-        <div class="max-w-[1312px] mx-auto">
-          <div class="mb-14">
-            <h3 class="font-serif font-bold text-3xl mt-0 mb-3">
-              Stay Informed
-            </h3>
-            <p class="text-base text-white/80 mt-0 mb-6">
-              Get mental health tips and updates delivered to your inbox.
-            </p>
-            <form class="flex gap-3 max-w-[600px] mb-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                required
-                class="flex-1 px-6 py-4 rounded-full border border-white/20 bg-[#FFFFFF17] text-white text-[15px]"
-              />
-              <button
-                type="submit"
-                class="font-sans font-bold text-base text-white bg-brand-orange border-0 rounded-full px-8 py-4 cursor-pointer whitespace-nowrap"
-              >
-                Subscribe
-              </button>
-            </form>
-            <label class="flex items-center gap-2 text-sm text-white/70">
-              <input
-                type="checkbox"
-                required
-                class="w-4 h-4 accent-brand-orange"
-              />
-              <span>I agree to receive emails from psykolog.no</span>
-            </label>
-          </div>
-          <div
-            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12"
-          >
-            <div>
-              <h4 class="font-bold text-[15px] mt-0 mb-4">Services</h4>
-              <div class="grid gap-2.5">
-                <a
-                  href="index.html#home-conditions"
-                  class="text-sm text-white/70"
-                  >Individual Therapy</a
-                >
-                <a
-                  href="index.html#home-conditions"
-                  class="text-sm text-white/70"
-                  >Couples Therapy</a
-                >
-                <a
-                  href="index.html#home-conditions"
-                  class="text-sm text-white/70"
-                  >Family Therapy</a
-                >
-                <a
-                  href="index.html#home-conditions"
-                  class="text-sm text-white/70"
-                  >Group Therapy</a
-                >
-              </div>
-            </div>
-            <div>
-              <h4 class="font-bold text-[15px] mt-0 mb-4">Conditions</h4>
-              <div class="grid gap-2.5">
-                <a href="adhd.html" class="text-sm text-white/70">ADHD</a>
-                <a href="#mh-conditions" class="text-sm text-white/70"
-                  >Depression</a
-                >
-                <a href="#mh-conditions" class="text-sm text-white/70"
-                  >Anxiety</a
-                >
-                <a href="#mh-conditions" class="text-sm text-white/70">PTSD</a>
-              </div>
-            </div>
-            <div>
-              <h4 class="font-bold text-[15px] mt-0 mb-4">Clinic</h4>
-              <div class="grid gap-2.5">
-                <a href="about.html" class="text-sm text-white/70">About Us</a>
-                <a href="index.html#home-team" class="text-sm text-white/70"
-                  >Our Team</a
-                >
-                <a
-                  href="index.html#home-locations"
-                  class="text-sm text-white/70"
-                  >Locations</a
-                >
-                <a href="index.html#home-pricing" class="text-sm text-white/70"
-                  >Pricing</a
-                >
-              </div>
-            </div>
-            <div>
-              <h4 class="font-bold text-[15px] mt-0 mb-4">Company</h4>
-              <div class="grid gap-2.5">
-                <a href="#" class="text-sm text-white/70">Careers</a>
-                <a href="#" class="text-sm text-white/70">Blog</a>
-                <a href="#" class="text-sm text-white/70">Press</a>
-                <a href="#" class="text-sm text-white/70">Contact</a>
-              </div>
-            </div>
-            <div>
-              <h4 class="font-bold text-[15px] mt-0 mb-4">Legal</h4>
-              <div class="grid gap-2.5">
-                <a href="#" class="text-sm text-white/70">Privacy Policy</a>
-                <a href="#" class="text-sm text-white/70">Terms of Service</a>
-                <a href="#" class="text-sm text-white/70">Cookie Policy</a>
-                <a href="#" class="text-sm text-white/70">Accessibility</a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="border-t border-white/20 pt-6 flex flex-col gap-4 md:flex-row md:justify-between md:items-center"
-          >
-            <p class="text-sm text-white/60 m-0">
-              &copy; 2024 psykolog.no. All rights reserved.
-            </p>
-            <div class="flex items-center gap-5">
-              <a href="#" class="text-white/70 text-xl">📷</a>
-              <a href="#" class="text-white/70 text-xl">💼</a>
-              <a href="#" class="text-white/70 text-xl">📘</a>
-              <span class="text-[13px] text-white/50"
-                >Made by
-                <a href="https://sysinn.no" class="text-white/70"
-                  >Sysinn</a
-                ></span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script src="script.js"></script>
-  </body>
-</html>
+<?php get_footer(); ?>   
