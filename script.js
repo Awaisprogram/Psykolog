@@ -1739,9 +1739,6 @@
         if (idx === currentIndex) {
           sidebar.classList.add('bg-white', 'border-[#C24C33]', 'shadow-[0_4px_24px_rgba(194,76,51,0.08)]');
           sidebar.classList.remove('bg-[#FCF0EB]/60', 'border-transparent');
-          // Update internal title hover color
-          const title = sidebar.querySelector('h4');
-          if (title) title.classList.replace('group-hover:text-[#8B5CF6]', 'group-hover:text-[#C24C33]');
         } else {
           sidebar.classList.remove('bg-white', 'border-[#C24C33]', 'shadow-[0_4px_24px_rgba(194,76,51,0.08)]');
           sidebar.classList.add('bg-[#FCF0EB]/60', 'border-transparent');

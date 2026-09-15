@@ -561,6 +561,9 @@
   .mx-1 {
     margin-inline: var(--spacing) !important;
   }
+  .mx-4 {
+    margin-inline: calc(var(--spacing) * 4) !important;
+  }
   .mx-auto {
     margin-inline: auto !important;
   }
@@ -728,6 +731,9 @@
   }
   .mb-\[16px\] {
     margin-bottom: 16px !important;
+  }
+  .mb-\[18px\] {
+    margin-bottom: 18px !important;
   }
   .mb-\[22px\] {
     margin-bottom: 22px !important;
@@ -1791,6 +1797,9 @@
   }
   .overflow-x-auto {
     overflow-x: auto !important;
+  }
+  .rounded {
+    border-radius: 0.25rem !important;
   }
   .rounded-2xl {
     border-radius: var(--radius-2xl) !important;
@@ -3002,6 +3011,9 @@
   .py-\[18px\] {
     padding-block: 18px !important;
   }
+  .py-\[22px\] {
+    padding-block: 22px !important;
+  }
   .py-\[28px\] {
     padding-block: 28px !important;
   }
@@ -4172,11 +4184,17 @@
         background-color: color-mix(in oklab, var(--color-white) 30%, transparent) !important;
       }
     }
+    .group-hover\:text-\[\#4A5D46\]:is(:where(.group):hover *) {
+      color: #4A5D46 !important;
+    }
     .group-hover\:text-\[\#6B568A\]:is(:where(.group):hover *) {
       color: #6B568A !important;
     }
     .group-hover\:text-\[\#8B5CF6\]:is(:where(.group):hover *) {
       color: #8B5CF6 !important;
+    }
+    .group-hover\:text-\[\#96702B\]:is(:where(.group):hover *) {
+      color: #96702B !important;
     }
     .group-hover\:text-\[\#A93E28\]:is(:where(.group):hover *) {
       color: #A93E28 !important;
@@ -4473,6 +4491,9 @@
     }
     .hover\:pl-2:hover {
       padding-left: calc(var(--spacing) * 2) !important;
+    }
+    .hover\:text-\[\#96702B\]:hover {
+      color: #96702B !important;
     }
     .hover\:text-\[\#C24C33\]:hover {
       color: #C24C33 !important;
@@ -5119,6 +5140,9 @@
     .md\:p-12 {
       padding: calc(var(--spacing) * 12) !important;
     }
+    .md\:p-\[24px\] {
+      padding: 24px !important;
+    }
     .md\:px-5 {
       padding-inline: calc(var(--spacing) * 5) !important;
     }
@@ -5155,11 +5179,26 @@
     .md\:py-20 {
       padding-block: calc(var(--spacing) * 20) !important;
     }
+    .md\:py-\[2px\] {
+      padding-block: 2px !important;
+    }
     .md\:py-\[14px\] {
       padding-block: 14px !important;
     }
+    .md\:py-\[20px\] {
+      padding-block: 20px !important;
+    }
+    .md\:py-\[22px\] {
+      padding-block: 22px !important;
+    }
+    .md\:py-\[29px\] {
+      padding-block: 29px !important;
+    }
     .md\:py-\[32px\] {
       padding-block: 32px !important;
+    }
+    .md\:pt-\[20px\] {
+      padding-top: 20px !important;
     }
     .md\:pb-0 {
       padding-bottom: 0px !important;
