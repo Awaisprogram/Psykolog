@@ -2228,6 +2228,9 @@
   .border-\[\#F7FAFD\] {
     border-color: #F7FAFD !important;
   }
+  .border-\[\#F9EDEB\] {
+    border-color: #F9EDEB !important;
+  }
   .border-\[\#F09367\] {
     border-color: #F09367 !important;
   }
@@ -3369,6 +3372,9 @@
     font-size: var(--text-xs) !important;
     line-height: var(--tw-leading, var(--text-xs--line-height)) !important;
   }
+  .text-\[1px\] {
+    font-size: 1px !important;
+  }
   .text-\[2px\] {
     font-size: 2px !important;
   }
@@ -3863,6 +3869,9 @@
   .text-\[\#DF7A66\] {
     color: #DF7A66 !important;
   }
+  .text-\[\#E3ADA1\] {
+    color: #E3ADA1 !important;
+  }
   .text-\[\#E4CFC4\] {
     color: #E4CFC4 !important;
   }
@@ -4354,6 +4363,9 @@
       .group-hover\:bg-white\/30:is(:where(.group):hover *) {
         background-color: color-mix(in oklab, var(--color-white) 30%, transparent) !important;
       }
+    }
+    .group-hover\:text-\[\#1E31383\]:is(:where(.group):hover *) {
+      color: #1E31383 !important;
     }
     .group-hover\:text-\[\#4A5D46\]:is(:where(.group):hover *) {
       color: #4A5D46 !important;
