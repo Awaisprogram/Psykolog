@@ -1,6 +1,6 @@
  <?php
 /**
- * Template Name: BlogDetail
+ * Template Name: Blog Detail
  */
 
 get_header();
@@ -41,7 +41,7 @@ get_header();
       </section>
 
       <!-- Image Section (Overlapping) -->
-      <section class="relative bg-white pb-[24px] pt-[32px]">
+      <section class="relative bg-white pb-[24px] pt-[32px]" data-reveal>
         <!-- This absolute div creates the background split -->
         <div class="absolute top-0 left-0 right-0 h-[30%] bg-[#FBEFE9]"></div>
         <div class="container relative z-10  px-4">
@@ -52,7 +52,7 @@ get_header();
       </section>
 
       <!-- Main Blog Content & Sidebar -->
-      <section class="pb-8 bg-white">
+      <section class="pb-8 bg-white" data-reveal>
         <div class="container">
           
           <!-- Author / Reviewer Strip -->
@@ -176,7 +176,7 @@ get_header();
                   <!-- Card 2 -->
                   <div class="bg-[#EAF1F6] rounded-[18px] p-6 h-full flex flex-col">
                     <div class="w-[54px] h-[54px]">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/article-detail/Overlaps with other conditions.webp" alt="Clock / Time Icon" class="object-contain" />
+                    <img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/Overlaps-With-Other-Conditions.webp" alt="Clock / Time Icon" class="object-contain" />
                     </div>
                     <h4 class="font-serif font-bold text-[20px] text-[#241C19] my-3">Overlaps With Other Conditions</h4>
                     <p class="text-[#5B5B5B] text-[16px] md:text-[20px] leading-[1.6] m-0">Anxiety, low mood and exhaustion frequently sit alongside it.</p>
@@ -430,7 +430,7 @@ get_header();
         </div>
       </section>
 
-      <section class="lg:mb-[80px]">
+      <section class="lg:mb-[80px]" data-reveal>
         <div class="container">
              <!-- Self-Reflection Box -->
               <div class="mt-8 md:mt-12 bg-[#C24C33] rounded-[24px] p-6 md:p-12 relative overflow-hidden flex flex-col shadow-lg js-reflection-box">
@@ -840,7 +840,7 @@ get_header();
               </div>
 
               <!-- Section - Talking to Someone -->
-              <div class="mt-12 md:mt-24 mb-12">
+              <div class="mt-12 md:mt-24 mb-12" >
                 <div class="flex items-center justify-between mb-[16px]">
                   <div class="flex items-center gap-3 text-[#8A6524] text-[12px] md:text-[16px] font-bold tracking-[1.6px] uppercase">
                     02 — SIGNS AND SYMPTOMS
@@ -1076,7 +1076,7 @@ get_header();
       </section>
 
       <!-- ============ ARTICLES ============ -->
-  <section id="home-articles" class="section section--white">
+  <section id="home-articles" class="section section--white" data-reveal>
   <div class="container">
     <div class="section-head section-head--center">
       <div class="eyebrow">
@@ -1124,7 +1124,7 @@ get_header();
   </div>
 </section>
  <!-- ============ CTA ============ -->
-        <section class="pb-12" data-reveal="">
+        <section class="pb-12" data-reveal>
         <div class="container">
           <div
             class="rounded-[32px] px-8 py-12 md:py-20 md:px-[56px] shadow-sm flex flex-col md:flex-row items-center justify-between gap-10"
@@ -1174,7 +1174,7 @@ get_header();
                 >
                  Find a Psychologist
                   <img
-                    src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Faqs/arrow.webp"
+                    src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/arrow-.webp"
                     alt="Right Arrow Icon"
                     class="h-6 w-6 object-contain"
                   />
@@ -1203,4 +1203,4 @@ get_header();
       </section>
     </main>
 
-<?php get_footer(); ?>   
+<?php get_footer(); ?>

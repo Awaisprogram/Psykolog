@@ -55,7 +55,7 @@ get_header();
       </section> 
 
       <!-- ============ Articles Grid ============ -->
-      <section class="lg:pb-[90px] pb-[40px] pt-[40px]">
+      <section class="lg:pb-[90px] pb-[40px] pt-[40px]" data-reveal>
           <div class="container">
             
             <!-- Filters & Search -->
@@ -249,7 +249,7 @@ get_header();
       </section>
 
       <!-- ============ Latest Articles (Fresh from our psychologists) ============ -->
-      <section class="bg-[#F5EDE8] py-16 lg:py-24">
+      <section class="bg-[#F5EDE8] py-16 lg:py-24" data-reveal>
         <div class="px-4 md:px-12 lg:px-16">
           <div class="max-w-[1312px] mx-auto">
             
@@ -476,7 +476,7 @@ get_header();
     
 
       <!-- ============ CTA ============ -->
-        <section class="section" data-reveal="">
+        <section class="section" data-reveal>
         <div class="container">
           <div
             class="rounded-[32px] px-8 py-12 md:py-20 md:px-[56px] shadow-sm flex flex-col md:flex-row items-center justify-between gap-10"
