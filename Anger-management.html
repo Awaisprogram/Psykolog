@@ -156,6 +156,35 @@
                 behavior, and your relationships. A psychologist can help when
                 anger keeps causing difficulties or feels impossible to control.
               </p>
+
+               <div
+                class="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 lg:gap-5"
+              >
+                <a
+                  href="#"
+                  class="inline-flex items-center justify-center px-8 py-3.5 bg-[#C24C33] text-white rounded-full font-bold text-base transition hover:bg-opacity-90"
+                >
+                  Book a time
+                  <span class="ml-2 inline-flex items-center"
+                    ><img
+                      src="assets/oslo/white-arrow.webp"
+                      alt="External Link Icon"
+                      class="h-[20px] w-[12px] mt-0.5 object-contain"
+                  /></span>
+                </a>
+                <a
+                  href="#"
+                  class="inline-flex items-center justify-center px-8 py-3.5 bg-white border border-[#A93E28] text-[#A93E28] rounded-full font-bold text-base transition hover:bg-gray-100"
+                >
+                  See prices
+                  <span class="ml-2 inline-flex items-center"
+                    ><img
+                      src="assets/oslo/Brown-arrow.webp"
+                      alt="External Link Icon"
+                      class="h-[20px] w-[12px] mt-0.5 object-contain"
+                  /></span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -708,7 +737,7 @@
         </div>
       </section>
 
-      <section class="section bg-[#FFF7F3]">
+      <section class="section bg-[#FFF7F3] habit-card-group">
         <div class="container" data-reveal>
           <div class="flex flex-col lg:flex-row gap-12 lg:gap-[60px]">
             <!-- Left Column: Text and Cards -->
@@ -723,7 +752,7 @@
 
               <div class="flex flex-col gap-5">
                 <!-- Card 1 -->
-                <div class="bg-white rounded-[20px] p-6 shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
+                <button type="button" class="habit-card active-card text-left w-full bg-white rounded-[20px] p-6 shadow-[0_4px_24px_rgba(0,0,0,0.02)] border-[2px] border-[#C24C33] transition-all duration-300 cursor-pointer" data-img="assets/Anger Management/Deep Breathing.webp">
                   <div class="flex items-center gap-4 mb-4">
                     <div class="w-10 h-10 ">
                       <img src="assets/Anger Management/Breathe.webp" alt="Deep breathing" class="object-contain" onerror="this.src='assets/article-detail/Attention.webp'" />
@@ -733,10 +762,10 @@
                   <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
                     Breathe in for 4 seconds, hold for 4, and breathe out for 6. Activates the parasympathetic nervous system and immediately lowers adrenaline levels. Do this three times before reacting.
                   </p>
-                </div>
+                </button>
 
                 <!-- Card 2 -->
-                <div class="bg-white rounded-[20px] p-6 shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
+                <button type="button" class="habit-card text-left w-full bg-white rounded-[20px] p-6 shadow-[0_4px_24px_rgba(0,0,0,0.02)] border-[2px] border-transparent hover:border-[#E8B8AC] transition-all duration-300 cursor-pointer" data-img="assets/Anger Management/Thought Writing.webp">
                   <div class="flex items-center gap-4 mb-4">
                     <div class="w-10 h-10 ">
                       <img src="assets/Anger Management/Thhought Writing.webp" alt="Thought Writing" class="object-contain" onerror="this.src='assets/article-detail/Attention.webp'" />
@@ -746,10 +775,10 @@
                   <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
                     Write down what happened, what you thought, what you felt, what you did, and the consequence. Reveals the thought patterns that drive your mind.
                   </p>
-                </div>
+                </button>
 
                 <!-- Card 3 -->
-                <div class="bg-white rounded-[20px] p-6 shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
+                <button type="button" class="habit-card text-left w-full bg-white rounded-[20px] p-6 shadow-[0_4px_24px_rgba(0,0,0,0.02)] border-[2px] border-transparent hover:border-[#E8B8AC] transition-all duration-300 cursor-pointer" data-img="assets/Anger Management/Prigressive Muscle Relaxation.webp">
                   <div class="flex items-center gap-4 mb-4">
                     <div class="w-10 h-10 shrink-0 ">
                       <img src="assets/Anger Management/Progressive Muscle Relaxation.webp" alt="Progressive Muscle Relaxation" class="object-contain" onerror="this.src='assets/article-detail/Attention.webp'" />
@@ -759,10 +788,10 @@
                   <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
                     Tense and relax muscle groups systematically from feet to head. Reduces the physical tension that anger builds up in the body.
                   </p>
-                </div>
+                </button>
 
                 <!-- Card 4 -->
-                <div class="bg-white rounded-[20px] p-6 shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
+                <button type="button" class="habit-card text-left w-full bg-white rounded-[20px] p-6 shadow-[0_4px_24px_rgba(0,0,0,0.02)] border-[2px] border-transparent hover:border-[#E8B8AC] transition-all duration-300 cursor-pointer" data-img="assets/Anger Management/Cognitive Reconstruction.webp">
                   <div class="flex items-center gap-4 mb-4">
                     <div class="w-10 h-10 shrink-0 ">
                       <img src="assets/Anger Management/Coggnitive Restructuring.webp" alt="Cognitive Restructuring" class="object-contain" onerror="this.src='assets/article-detail/Attention.webp'" />
@@ -772,15 +801,15 @@
                   <p class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.6] m-0">
                     Challenge the thought that triggers the anger. "Is this really meant to be a provocation?" or "Is this actually a disaster?" can decrease the intensity.
                   </p>
-                </div>
+                </button>
               </div>
             </div>
 
             <!-- Right Column: Image and Footer Card -->
-            <div class="w-full lg:w-1/2 xl:w-[608px] flex flex-col gap-6 justify-start pt-2 lg:pt-4">
+            <div class="w-full lg:w-1/2 xl:w-[608px] flex flex-col gap-6 justify-start lg:sticky lg:top-24 self-start pt-2 lg:pt-4">
               <!-- Image -->
               <div class="w-full rounded-[32px] overflow-hidden bg-white">
-                <img src="assets/Anger Management/Self Help.webp" alt="Two women talking" class="w-full h-full object-cover lg:h-[520px]" onerror="this.src='https://placehold.co/600x600?text=Two+women+talking'" />
+                <img src="assets/Anger Management/Deep Breathing.webp" alt="Self Help Exercise" class="habit-preview-img w-full h-full object-cover lg:h-[520px] transition-opacity duration-300" onerror="this.src='https://placehold.co/600x600?text=Two+women+talking'" />
               </div>
               
               <!-- Bottom Alert Card -->
@@ -1131,613 +1160,164 @@
   </div>
 </section>
 
-      <section class="section" data-reveal>
-        <div class="container">
-          <!-- Section Header -->
-          <div class="text-center mb-12 md:mb-16">
-            <h2 class="h2 mb-4">
-              What Can You Do <em>Yourself</em> When You Are Depressed
-            </h2>
-            <p
-              class="text-[#6B5F5A] text-[16px] md:text-[18px] leading-[1.6] m-0"
-            >
-              Self-help is not a replacement for professional support when
-              depression is moderate or severe. But for mild symptoms, or
-              alongside therapy, there are things that help and they are not
-              about trying harder or thinking more positively.
-            </p>
-          </div>
+      
+     
 
-          <!-- Main Content: Image + List -->
-          <div
-            class="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center mb-12"
-          >
-            <!-- Left Column: Image -->
-            <div class="w-full lg:w-1/2 xl:w-[550px]">
-              <img
-                src="assets/Depression/What Can You Do Yourself.webp"
-                alt="Woman sitting in an armchair writing in a journal"
-                class="w-full h-[300px] lg:h-[500px] object-cover rounded-[24px] shadow-sm"
-              />
-            </div>
-
-            <!-- Right Column: Self-Help List -->
-            <div class="w-full lg:w-1/2 flex flex-col">
-              <!-- List Item 1 -->
-              <div
-                class="flex items-start gap-5 py-5 border-b border-[#F2E8E3]"
-              >
-                <div class="w-10 h-10 shrink-0 mt-1">
-                  <img
-                    src="assets/Depression/Do one small activity each day.webp"
-                    alt="Footsteps Icon"
-                    class="object-contain"
-                  />
-                </div>
-                <div>
-                  <h3
-                    class="font-serif text-[15px] md:text-[18px] text-[#241C19] font-bold m-0 mb-1"
-                  >
-                    Do one small activity each day
-                  </h3>
-                  <p
-                    class="text-[#6B5F5A] text-[15px] md:text-[16px] leading-[1.5] m-0"
-                  >
-                    Even when you do not feel like it. Doing things lifts mood
-                    over time.
-                  </p>
-                </div>
-              </div>
-
-              <!-- List Item 2 -->
-              <div
-                class="flex items-start gap-5 py-5 border-b border-[#F2E8E3]"
-              >
-                <div class="w-10 h-10 shrink-0 mt-1">
-                  <img
-                    src="assets/Depression/Go outside for a short walk.webp"
-                    alt="Sun Icon"
-                    class="object-contain"
-                  />
-                </div>
-                <div>
-                  <h3
-                    class="font-serif text-[15px] md:text-[18px] text-[#241C19] font-bold m-0 mb-1"
-                  >
-                    Go outside for a short walk
-                  </h3>
-                  <p
-                    class="text-[#6B5F5A] text-[15px] md:text-[16px] leading-[1.5] m-0"
-                  >
-                    Each day. Light and movement both improve mood.
-                  </p>
-                </div>
-              </div>
-
-              <!-- List Item 3 -->
-              <div
-                class="flex items-start gap-5 py-5 border-b border-[#F2E8E3]"
-              >
-                <div class="w-10 h-10 shrink-0 mt-1">
-                  <img
-                    src="assets/Depression/Stay in contact.webp"
-                    alt="Message Icon"
-                    class="object-contain"
-                  />
-                </div>
-                <div>
-                  <h3
-                    class="font-serif text-[15px] md:text-[18px] text-[#241C19] font-bold m-0 mb-1"
-                  >
-                    Stay in contact
-                  </h3>
-                  <p
-                    class="text-[#6B5F5A] text-[15px] md:text-[16px] leading-[1.5] m-0"
-                  >
-                    With at least one person, even just a short message.
-                  </p>
-                </div>
-              </div>
-
-              <!-- List Item 4 -->
-              <div
-                class="flex items-start gap-5 py-5 border-b border-[#F2E8E3]"
-              >
-                <div class="w-10 h-10 shrink-0 mt-1">
-                  <img
-                    src="assets/Depression/Maintain a basic routine.webp"
-                    alt="Clock Icon"
-                    class="object-contain"
-                  />
-                </div>
-                <div>
-                  <h3
-                    class="font-serif text-[15px] md:text-[18px] text-[#241C19] font-bold m-0 mb-1"
-                  >
-                    Maintain a basic routine
-                  </h3>
-                  <p
-                    class="text-[#6B5F5A] text-[15px] md:text-[16px] leading-[1.5] m-0"
-                  >
-                    For sleeping, eating, and waking up.
-                  </p>
-                </div>
-              </div>
-
-              <!-- List Item 5 -->
-              <div class="flex items-start gap-5 py-5">
-                <div class="w-10 h-10 shrink-0 mt-1">
-                  <img
-                    src="assets/Depression/Be patient with yourself.webp"
-                    alt="Heart Icon"
-                    class="object-contain"
-                  />
-                </div>
-                <div>
-                  <h3
-                    class="font-serif text-[15px] md:text-[18px] text-[#241C19] font-bold m-0 mb-1"
-                  >
-                    Be patient with yourself
-                  </h3>
-                  <p
-                    class="text-[#6B5F5A] text-[15px] md:text-[16px] leading-[1.5] m-0"
-                  >
-                    For sleeping, eating, and waking up.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Remember Callout Box -->
-          <div
-            class="bg-[#FFF7F3] border-l-4 border-[#C24C33] rounded-l-[12px] p-6 md:p-8 flex items-start gap-4"
-          >
-            <div class="w-[38px] h-[38px] shrink-0 mt-0.5">
-              <img
-                src="assets/Depression/REMEMBER.webp"
-                alt="Info Icon"
-                class="object-contain"
-              />
-            </div>
-            <div>
-              <h4
-                class="text-[#A93E28] text-[16px] md:text-[20px] font-bold tracking-wider uppercase m-0 mb-2"
-              >
-                REMEMBER
-              </h4>
-              <p
-                class="text-[#4E403B] text-[16px] md:text-[18px] leading-[1.6] m-0"
-              >
-                For moderate or severe depression, self help alone is not
-                enough. Always combine self help measures with professional help
-                from a psychologist or doctor.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="pb-[90px]" data-reveal>
-        <div class="container">
-          <!-- Main Card Container with custom gradient and shadow -->
-          <div
-            class="relative overflow-hidden rounded-[32px] p-8 md:p-12 lg:p-16"
-            style="
-              background: linear-gradient(
-                352.44deg,
-                rgba(253, 231, 225, 0.2) 28.13%,
-                rgba(240, 147, 103, 0.028) 136.14%
-              );
-              box-shadow: 0px 4px 24px 0px #a93e281f;
-            "
-          >
-            <!-- Decorative Background Circles -->
-            <div
-              class="absolute -top-[100px] -right-[100px] w-[300px] h-[300px] rounded-full border-[30px] border-[#FCECE8] opacity-50 pointer-events-none"
-            ></div>
-            <div
-              class="absolute -bottom-[100px] -left-[100px] w-[300px] h-[300px] rounded-full border-[30px] border-[#FCECE8] opacity-50 pointer-events-none"
-            ></div>
-
-            <!-- Header Section -->
-            <div class="relative z-10 text-center max-w-[830px] mx-auto mb-12">
-              <h2
-                class="font-serif text-[32px] md:text-[44px] text-[#241C19] font-bold m-0 mb-4"
-              >
-                When Should You Seek Help?
-              </h2>
-              <p
-                class="text-[#6B5F5A] text-[15px] md:text-[18px] leading-[1.6] m-0"
-              >
-                Many people wait too long to seek help because they hope it will
-                go away on its own. Here are clear signs of when you should
-                contact a doctor or psychologist.
-              </p>
-            </div>
-
-            <!-- Grid of Symptoms -->
-            <div
-              class="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10"
-            >
-              <!-- Card 1 -->
-              <div
-                class="bg-white border border-[#F2E8E3] rounded-[16px] p-5 flex items-center gap-4 shadow-[0px_4px_4px_0px_#C24C331F] hover:shadow-md transition-shadow"
-              >
-                <div class="w-[48px] h-[48px] shrink-0">
-                  <img
-                    src="/assets/Depression/Symptoms for more than two weeks.webp"
-                    alt="Calendar Icon"
-                    class="object-contain"
-                  />
-                </div>
-                <p
-                  class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.4] m-0 font-medium"
-                >
-                  Symptoms for more than two weeks
-                </p>
-              </div>
-
-              <!-- Card 2 -->
-              <div
-                class="bg-white border border-[#F2E8E3] rounded-[16px] p-5 flex items-center gap-4 shadow-[0px_4px_4px_0px_#C24C331F] hover:shadow-md transition-shadow"
-              >
-                <div class="w-[48px] h-[48px] shrink-0">
-                  <img
-                    src="/assets/Depression/Functioning.webp"
-                    alt="Graph Down Icon"
-                    class="object-contain"
-                  />
-                </div>
-                <p
-                  class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.4] m-0 font-medium"
-                >
-                  Functioning poorly at work/school or at home
-                </p>
-              </div>
-
-              <!-- Card 3 -->
-              <div
-                class="bg-white border border-[#F2E8E3] rounded-[16px] p-5 flex items-center gap-4 shadow-[0px_4px_4px_0px_#C24C331F] hover:shadow-md transition-shadow"
-              >
-                <div class="w-[48px] h-[48px] shrink-0">
-                  <img
-                    src="/assets/Depression/Withdrawn from friends and family.webp"
-                    alt="User Minus Icon"
-                    class="object-contain"
-                  />
-                </div>
-                <p
-                  class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.4] m-0 font-medium"
-                >
-                  Withdrawn from friends and family
-                </p>
-              </div>
-
-              <!-- Card 4 -->
-              <div
-                class="bg-white border border-[#F2E8E3] rounded-[16px] p-5 flex items-center gap-4 shadow-[0px_4px_4px_0px_#C24C331F] hover:shadow-md transition-shadow"
-              >
-                <div class="w-[48px] h-[48px] shrink-0">
-                  <img
-                    src="/assets/Depression/Sleeping much worse or much more than normal.webp"
-                    alt="Moon Icon"
-                    class="object-contain"
-                  />
-                </div>
-                <p
-                  class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.4] m-0 font-medium"
-                >
-                  Sleeping much worse or much more than normal
-                </p>
-              </div>
-
-              <!-- Card 5 -->
-              <div
-                class="bg-white border border-[#F2E8E3] rounded-[16px] p-5 flex items-center gap-4 shadow-[0px_4px_4px_0px_#C24C331F] hover:shadow-md transition-shadow"
-              >
-                <div class="w-[48px] h-[48px] shrink-0">
-                  <img
-                    src="/assets/Depression/Have had depression before.webp"
-                    alt="Clock Icon"
-                    class="object-contain"
-                  />
-                </div>
-                <p
-                  class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.4] m-0 font-medium"
-                >
-                  Have had depression before
-                </p>
-              </div>
-
-              <!-- Card 6 -->
-              <div
-                class="bg-white border border-[#F2E8E3] rounded-[16px] p-5 flex items-center gap-4 shadow-[0px_4px_4px_0px_#C24C331F] hover:shadow-md transition-shadow"
-              >
-                <div class="w-[48px] h-[48px] shrink-0">
-                  <img
-                    src="/assets/Depression/Self help and self care don't help.webp"
-                    alt="Question Icon"
-                    class="object-contain"
-                  />
-                </div>
-                <p
-                  class="text-[#5B5B5B] text-[15px] md:text-[16px] leading-[1.4] m-0 font-medium"
-                >
-                  Self help and self care don't help
-                </p>
-              </div>
-            </div>
-
-            <!-- Emergency Callout Box -->
-            <div
-              class="relative z-10 bg-[#FFF7F3] border-l-[3px] border-[#C24C33] rounded-l-[12px] p-6 md:p-8 flex items-start gap-4 shadow-sm"
-            >
-              <div class="w-[62px] h-[62px] shrink-0 mt-0.5">
-                <img
-                  src="assets/Depression/thoughts.webp"
-                  alt="Phone Icon"
-                  class="object-contain"
-                />
-              </div>
-              <div>
-                <h4
-                  class="text-[#A93E28] text-[16px] md:text-[20] font-bold tracking-wide uppercase m-0 mb-2"
-                >
-                  WHAT SHOULD I DO IF I HAVE THOUGHTS OF NOT WANTING TO LIVE?
-                </h4>
-                <p
-                  class="text-[#4E403B] text-[15px] md:text-[16px] leading-[1.6] m-0 font-normal"
-                >
-                  Seek help immediately. Contact the mental health team or your
-                  GP. In case of acute danger to life, call 113.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" data-reveal>
-        <div class="container">
-          <!-- CSS Grid Container -->
-          <div
-            class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[550px_728px] gap-10 items-center"
-          >
-            <!-- Left Column: Image -->
-            <div class="w-full">
-              <!-- Image Placeholder -->
-              <img
-                src="assets/Depression/Depression Treatment At Psykolog.webp"
-                alt="Therapist with a patient"
-                class="w-full h-auto object-cover rounded-[24px] shadow-sm"
-              />
-            </div>
-
-            <!-- Right Column: Text Content -->
-            <div class="w-full flex flex-col gap-4">
-              <h2 class="h2">Depression Treatment At <em>Psykolog</em></h2>
-
-              <p
-                class="text-[#5B5B5B] text-[16px] md:text-[20px] leading-[1.7] m-0"
-              >
-                At Psykolog.no we offer evidence-based assessment and treatment
-                for depression. Our psychologists provide a safe and supportive
-                environment where you can understand the underlying causes and
-                provide practical strategies for recovery.
-              </p>
-
-              <p
-                class="text-[#5B5B5B] text-[16px] md:text-[20px] leading-[1.7] m-0"
-              >
-                Whether you are experiencing mild depressive symptoms, chronic
-                depression, recurrent depression, or depression alongside ADHD
-                or anxiety, we can help you find the support that fits your
-                needs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="mh-faq" class="section section--white" data-reveal>
-        <div class="container max-w-[1360px]">
+       <section id="mh-faq" class="section bg-[#FFF7F3]" >
+        <div class="container" data-reveal>
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div class="lg:col-span-5 lg:sticky lg:top-24 flex flex-col gap-8">
+            <!-- Left Column -->
+            <div class="lg:col-span-5 lg:sticky lg:top-24 flex flex-col gap-6">
               <div>
-                <h2 class="h2 mb-4">Questions <em>& Answers</em></h2>
-                <p
-                  class="text-[15px] sm:text-[16px] leading-[26px] text-ink-muted m-0 mb-6 max-w-[420px]"
-                >
-                  Still unsure whether speaking to a psychologist is the right
-                  next step? Book a first conversation.
+                <span class="text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3 block">FAQS</span>
+                <h2 id="faq" class="h2 mb-4">
+                  Questions <em> & Answers</em>
+                </h2>
+                <p class="text-[16px] leading-[26px] text-[#6B5F5A] m-0 mb-6 max-w-[420px]">
+                  Still unsure whether an appointment is the right next step? Speak to one of our psychologists.
                 </p>
+                <a href="#" class="inline-flex items-center justify-center px-6 py-2.5 bg-transparent border border-[#C24C33] text-[#C24C33] hover:bg-[#C24C33] hover:text-white text-[15px] font-bold rounded-full transition-colors duration-300 no-underline w-fit">
+                  Book a time
+                </a>
               </div>
 
-              <div
-                class="bg-white/60 border border-[#E8DDD7] rounded-[24px] p-6 backdrop-blur-sm max-w-[460px]"
-              >
+              <!-- Separator -->
+              <div class="w-full h-px bg-[#F2E8E3] my-3"></div>
+
+              <div class="flex flex-col">
                 <div class="flex items-center gap-3 mb-4">
                   <div class="flex -space-x-2">
-                    <span
-                      class="w-8 h-8 rounded-full bg-[#E5D5C5] border-2 border-white"
-                    ></span>
-                    <span
-                      class="w-8 h-8 rounded-full bg-[#E5E8C5] border-2 border-white"
-                    ></span>
-                    <span
-                      class="w-8 h-8 rounded-full bg-[#E8C5C5] border-2 border-white"
-                    ></span>
-                    <span
-                      class="w-8 h-8 rounded-full bg-[#F2E5D5] border-2 border-white"
-                    ></span>
+                    <span class="w-8 h-8 rounded-full bg-[#E8DCC8] border-2 border-white shrink-0"></span>
+                    <span class="w-8 h-8 rounded-full bg-[#DCE5DF] border-2 border-white shrink-0"></span>
+                    <span class="w-8 h-8 rounded-full bg-[#EED8D3] border-2 border-white shrink-0"></span>
+                    <span class="w-8 h-8 rounded-full bg-[#F3EFE9] border-2 border-white shrink-0"></span>
                   </div>
-                  <span class="font-serif font-bold text-[16px] text-[#A93E28]">
-                    Depression Questions Asked By Our Patients
+                  <span class="font-sans font-bold text-[14px] text-[#C24C33]">
+                    Oslo Questions Asked By Our Patients
                   </span>
                 </div>
 
-                <p class="text-[14px] leading-[22px] text-ink-muted m-0 mb-5">
-                  These are the questions people ask us most often before
-                  booking their first consultation.
+                <p class="text-[14px] leading-[22px] text-[#6B5F5A] m-0 mb-5 max-w-[380px]">
+                  These are the questions people ask us most often before booking their first consultation.
                 </p>
 
                 <button
                   type="button"
                   onclick="location.href = '#mh-book'"
-                  class="bg-[#A85848] hover:bg-[#924A3D] text-white font-sans font-bold text-[14px] py-3 px-6 rounded-full transition-colors inline-flex items-center gap-2 cursor-pointer shadow-sm"
+                  class="bg-[#C24C33] hover:bg-[#B34A34] text-white font-sans font-bold text-[14px] py-3 px-6 rounded-full transition-colors inline-flex items-center gap-2 cursor-pointer w-fit border-0"
                 >
                   <span>Ask Your Own Question</span>
-                  <svg
-                    class="w-4 h-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                  </svg>
+                  <span class="font-bold text-lg leading-none mb-[2px]">→</span>
                 </button>
               </div>
             </div>
 
+            <!-- Right Column -->
             <div class="lg:col-span-7 flex flex-col gap-4">
-              <div
-                class="faq-item bg-white border border-[#E8DDD7] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300"
-              >
-                <button
-                  class="w-full flex items-center justify-between p-6 sm:p-7 bg-transparent border-0 cursor-pointer text-left group"
-                >
-                  <span
-                    class="font-serif font-bold text-lg sm:text-xl text-ink-900 group-hover:text-[#A85848] transition-colors pr-4"
-                  >
-                    What is mental health?
+              <!-- Item 1 -->
+              <div class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300">
+                <button class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left">
+                  <span class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4">
+                    Do I need a referral to book a psychologist in Oslo?
                   </span>
-                  <span
-                    class="faq-icon w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#A85848] flex-none transition-transform duration-300 font-bold text-lg"
-                  >
-                    −
+                  <span class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300">
+                    <span class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"></span>
+                    <span class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"></span>
                   </span>
                 </button>
-                <div class="faq-content px-6 sm:px-7 pb-7 pt-0">
-                  <p class="text-[15px] leading-[26px] text-ink-muted m-0">
-                    Mental health is about how you feel about yourself, how you
-                    cope with everyday challenges, and how you function in
-                    relationships and work. Good mental health is not the
-                    absence of difficult emotions. However, it is the ability to
-                    manage them.
+                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
+                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
+                    No, you do not need a referral from a doctor to book an appointment with our psychologists in Oslo. You can easily book an appointment directly through our online booking system.
                   </p>
                 </div>
               </div>
 
-              <div
-                class="faq-item bg-white border border-[#E8DDD7] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300"
-              >
-                <button
-                  class="w-full flex items-center justify-between p-6 sm:p-7 bg-transparent border-0 cursor-pointer text-left group"
-                >
-                  <span
-                    class="font-serif font-bold text-lg sm:text-xl text-ink-900 group-hover:text-[#A85848] transition-colors pr-4"
-                  >
-                    What is the difference between mental health problems and
-                    mental illness?
+              <!-- Item 2 -->
+              <div class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300">
+                <button class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left">
+                  <span class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4">
+                    What is the difference between a psychologist and a therapist?
                   </span>
-                  <span
-                    class="faq-icon w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#A85848] flex-none transition-transform duration-300 font-bold text-lg"
-                  >
-                    +
+                  <span class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300">
+                    <span class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"></span>
+                    <span class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"></span>
                   </span>
                 </button>
-                <div class="faq-content hidden px-6 sm:px-7 pb-7 pt-0">
-                  <p class="text-[15px] leading-[26px] text-ink-muted m-0">
-                    Mental health problems involve emotional distress or
-                    challenges that affect daily life temporarily, whereas
-                    mental illness (or mental disorder) refers to clinically
-                    diagnosed conditions that significantly impair daily
-                    functioning over a longer period.
+                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
+                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
+                    A psychologist has completed a 6-year professional degree in psychology and is a protected title. The title therapist is not protected, which means anyone can call themselves a therapist regardless of their background.
                   </p>
                 </div>
               </div>
 
-              <div
-                class="faq-item bg-white border border-[#E8DDD7] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300"
-              >
-                <button
-                  class="w-full flex items-center justify-between p-6 sm:p-7 bg-transparent border-0 cursor-pointer text-left group"
-                >
-                  <span
-                    class="font-serif font-bold text-lg sm:text-xl text-ink-900 group-hover:text-[#A85848] transition-colors pr-4"
-                  >
-                    When should you seek help for mental health problems?
+              <!-- Item 3 -->
+              <div class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300">
+                <button class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left">
+                  <span class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4">
+                    Can I have a video session with a psychologist from Oslo?
                   </span>
-                  <span
-                    class="faq-icon w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#A85848] flex-none transition-transform duration-300 font-bold text-lg"
-                  >
-                    +
+                  <span class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300">
+                    <span class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"></span>
+                    <span class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"></span>
                   </span>
                 </button>
-                <div class="faq-content hidden px-6 sm:px-7 pb-7 pt-0">
-                  <p class="text-[15px] leading-[26px] text-ink-muted m-0">
-                    If your symptoms persist for more than two weeks and
-                    interfere with your work, sleep, relationships, or general
-                    ability to cope, it's a good time to speak with a
-                    professional.
+                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
+                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
+                    Yes, all our psychologists offer video sessions. You can choose whether you want to meet in person at our clinic in Oslo or have the session via secure video link.
                   </p>
                 </div>
               </div>
 
-              <div
-                class="faq-item bg-white border border-[#E8DDD7] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300"
-              >
-                <button
-                  class="w-full flex items-center justify-between p-6 sm:p-7 bg-transparent border-0 cursor-pointer text-left group"
-                >
-                  <span
-                    class="font-serif font-bold text-lg sm:text-xl text-ink-900 group-hover:text-[#A85848] transition-colors pr-4"
-                  >
-                    Does physical activity help mental health?
+              <!-- Item 4 -->
+              <div class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300">
+                <button class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left">
+                  <span class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4">
+                    Do you offer emergency or crisis appointments?
                   </span>
-                  <span
-                    class="faq-icon w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#A85848] flex-none transition-transform duration-300 font-bold text-lg"
-                  >
-                    +
+                  <span class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300">
+                    <span class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"></span>
+                    <span class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"></span>
                   </span>
                 </button>
-                <div class="faq-content hidden px-6 sm:px-7 pb-7 pt-0">
-                  <p class="text-[15px] leading-[26px] text-ink-muted m-0">
-                    Yes, regular physical activity releases endorphins, reduces
-                    stress hormones, and improves overall mood and sleep
-                    patterns, acting as a great complementary tool alongside
-                    therapy.
+                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
+                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
+                    We can often offer appointments within 24 hours. For immediate medical emergencies or acute suicidal thoughts, please contact the emergency room (116 117) or call 113.
                   </p>
                 </div>
               </div>
 
-              <div
-                class="faq-item bg-white border border-[#E8DDD7] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300"
-              >
-                <button
-                  class="w-full flex items-center justify-between p-6 sm:p-7 bg-transparent border-0 cursor-pointer text-left group"
-                >
-                  <span
-                    class="font-serif font-bold text-lg sm:text-xl text-ink-900 group-hover:text-[#A85848] transition-colors pr-4"
-                  >
-                    What do I do if I or someone I know is in acute difficulty?
+              <!-- Item 5 -->
+              <div class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300">
+                <button class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left">
+                  <span class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4">
+                    Can I switch between in-person and video appointments?
                   </span>
-                  <span
-                    class="faq-icon w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#A85848] flex-none transition-transform duration-300 font-bold text-lg"
-                  >
-                    +
+                  <span class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300">
+                    <span class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"></span>
+                    <span class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"></span>
                   </span>
                 </button>
-                <div class="faq-content hidden px-6 sm:px-7 pb-7 pt-0">
-                  <p class="text-[15px] leading-[26px] text-ink-muted m-0">
-                    If there is immediate danger or risk of self-harm, please
-                    contact emergency services immediately by calling 113 or
-                    reaching out to a local crisis helpline.
+                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
+                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
+                    Yes, you are completely free to switch between meeting in person in Oslo and taking the session via video, depending on what suits you best that day.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 6 -->
+              <div class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300">
+                <button class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left">
+                  <span class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4">
+                    Do you work with employers and HR departments?
+                  </span>
+                  <span class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300">
+                    <span class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"></span>
+                    <span class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"></span>
+                  </span>
+                </button>
+                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
+                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
+                    Yes, we collaborate with several companies. We offer arrangements where the employer covers the cost of psychology sessions for employees.
                   </p>
                 </div>
               </div>
@@ -1746,66 +1326,129 @@
         </div>
       </section>
 
-      <!-- ============ CTA ============ -->
-      <section class="section" data-reveal>
+   
+      <!-- ============ ARTICLES ============ -->
+  <section id="home-articles" class="section section--white">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <div class="eyebrow">
+        <span class="eyebrow__dot">✳</span>
+        <span>FROM OUR PSYCHOLOGISTS</span>
+      </div>
+      <h2 class="h2">Learn More About <em>Mental Health.</em></h2>
+    </div>
+
+    <div class="grid-3">
+      <a href="#" class="article-card">
+        <div class="article-card__media">
+          <img src="https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?auto=format&fit=crop&w=900&q=72" alt="A parent with a young child at home" loading="lazy">
+        </div>
+        <span class="article-chip">Depression</span>
+        <h3>Depression and postpartum psychosis</h3>
+        <p>What to look for, and when to ask for help early.</p>
+      </a>
+
+      <!-- Article Card 2 -->
+      <a href="#" class="article-card">
+        <div class="article-card__media">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=72" alt="A notebook and pen in daylight" loading="lazy">
+        </div>
+        <span class="article-chip">Therapy</span>
+        <h3>Cognitive behavioural therapy as self-help</h3>
+        <p>Which CBT tools you can use between sessions.</p>
+      </a>
+
+      <!-- Article Card 3 -->
+      <a href="#" class="article-card">
+        <div class="article-card__media">
+          <img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=900&q=72" alt="Quiet morning light in a bedroom" loading="lazy">
+        </div>
+        <span class="article-chip">Sleep</span>
+        <h3>Sleep after trauma</h3>
+        <p>Why sleep breaks down after difficult events, and what helps.</p>
+      </a>
+    </div>
+
+    <!-- Centered Bottom Link -->
+    <div class="articles__footer">
+      <a href="#" class="link-arrow">View all articles →</a>
+    </div>
+  </div>
+</section>
+ <!-- ============ CTA ============ -->
+        <section class="pb-12" data-reveal="">
         <div class="container">
           <div
-            class="bg-[#FCF0EB] rounded-[32px] p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-12 relative overflow-hidden"
+            class="rounded-[32px] px-8 py-12 md:py-20 md:px-[56px] shadow-sm flex flex-col md:flex-row items-center justify-between gap-10"
+            style="
+              background:
+                radial-gradient(
+                  46% 62% at 92% 88%,
+                  rgba(240, 147, 103, 0.14) 0%,
+                  rgba(240, 147, 103, 0) 70%
+                ),
+                radial-gradient(
+                  46% 62% at 8% 84%,
+                  rgba(248, 216, 212, 0.55) 0%,
+                  rgba(248, 216, 212, 0) 70%
+                ),
+                radial-gradient(
+                  58% 74% at 50% 0%,
+                  rgba(248, 235, 226, 0.9) 0%,
+                  rgba(248, 235, 226, 0) 72%
+                );
+            "
           >
-            <div class="w-full lg:w-[55%] flex flex-col items-start z-10">
-              <span
-                class="text-[#C6553B] text-[13px] md:text-[14px] font-bold tracking-[0.15em] uppercase mb-3"
-              >
-                YOUR NEXT STEP
+            <div class="text-center md:text-left max-w-[665px]">
+
+              <span class="text-[#A93E28] text-[13px] md:text-[14px] font-bold tracking-[0.15em] uppercase mb-[18px]">
+                 Reading is a good first step
               </span>
-
-              <!-- Title -->
-              <h2 class="h2 mb-4">Ready To Take First Step</h2>
-
-              <!-- Description -->
-              <p
-                class="text-[#6B6B6B] text-[16px] md:text-[18px] leading-[1.6] m-0 mb-8 max-w-[745px]"
+              <h2
+                class="font-serif text-[30px] md:text-[36px] text-[#241C19] mb-4 font-bold"
               >
-                It is courage to seek help, not weakness. Psykolog.no helps you
-                find a qualified psychologist with experience in treating
-                depression.
+               Talking To Specialist Is The Next Step
+              </h2>
+
+              <p
+                class="text-[#6B5F5A] text-[15px] md:text-[18px] leading-[1.6] max-w-[620px] mx-auto md:mx-0 mb-8 font-normal"
+              >
+                Contact us, or book an initial conversation with one of our
+                psychologists, who can help you further.
               </p>
 
-              <!-- CTA Button -->
-              <a
-                href="#"
-                class="inline-flex items-center gap-3 bg-[#C24C33] hover:bg-[#B34A31] text-white font-bold text-[16px] px-7 py-3.5 rounded-full transition-colors duration-200 no-underline"
+              <div
+                class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4"
               >
-                <span>Book an appointment</span>
-                <span
-                  class="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center shrink-0"
+                <a
+                  href="#"
+                  class="inline-flex items-center justify-center gap-2 bg-[#C24C33] hover:bg-[#A93E28] text-white font-bold text-[15px] px-[24px] py-[12px] rounded-full transition-colors"
                 >
-                  <svg
-                    class="w-4 h-4 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    stroke-width="2.5"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                    />
-                  </svg>
-                </span>
-              </a>
+                 Find a Psychologist
+                  <img
+                    src="assets/Faqs/arrow.webp"
+                    alt="Right Arrow Icon"
+                    class="h-6 w-6 object-contain"
+                  />
+                </a>
+
+                <a
+                  href="#"
+                  class="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#FBF3EF] text-[#C24C33] border border-[#C24C33] font-bold text-[15px] px-[24px] py-[12px] rounded-full transition-colors"
+                >
+                 Online Session
+                </a>
+              </div>
             </div>
 
-            <!-- Right Illustration Area -->
-            <div
-              class="w-full lg:w-[45%] flex justify-center lg:justify-end z-10"
-            >
-              <img
-                src="assets/Depression/sad-brain.webp"
-                alt="Sad brain character sitting next to a drooping flower"
-                class="w-full max-w-[380px] lg:max-w-[420px] h-auto object-contain"
-              />
+            <div class="shrink-0">
+              <div class="w-[421px] h-[280px]">
+                <img
+                  src="assets/article/cta.webp"
+                  alt="Chat/Support Icon"
+                  class="object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>

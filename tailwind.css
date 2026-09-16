@@ -1993,6 +1993,10 @@
     border-style: var(--tw-border-style) !important;
     border-width: 1.5px !important;
   }
+  .border-\[2px\] {
+    border-style: var(--tw-border-style) !important;
+    border-width: 2px !important;
+  }
   .border-\[8px\] {
     border-style: var(--tw-border-style) !important;
     border-width: 8px !important;
@@ -4570,6 +4574,9 @@
     }
     .hover\:border-\[\#CE5A43\]\/40:hover {
       border-color: color-mix(in oklab, #CE5A43 40%, transparent) !important;
+    }
+    .hover\:border-\[\#E8B8AC\]:hover {
+      border-color: #E8B8AC !important;
     }
     .hover\:border-\[\#E8CFC1\]:hover {
       border-color: #E8CFC1 !important;
