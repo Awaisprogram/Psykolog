@@ -256,6 +256,9 @@
   .pointer-events-none {
     pointer-events: none !important;
   }
+  .invisible {
+    visibility: hidden !important;
+  }
   .visible {
     visibility: visible !important;
   }
@@ -2576,8 +2579,14 @@
   .bg-\[\#EAF2E6\] {
     background-color: #EAF2E6 !important;
   }
+  .bg-\[\#EAF2EA\] {
+    background-color: #EAF2EA !important;
+  }
   .bg-\[\#EAF2ED\] {
     background-color: #EAF2ED !important;
+  }
+  .bg-\[\#EAF2F6\] {
+    background-color: #EAF2F6 !important;
   }
   .bg-\[\#EAF2F8\] {
     background-color: #EAF2F8 !important;
@@ -2678,6 +2687,9 @@
   .bg-\[\#F8EBE2\] {
     background-color: #F8EBE2 !important;
   }
+  .bg-\[\#F8F1E4\] {
+    background-color: #F8F1E4 !important;
+  }
   .bg-\[\#F8F5F2\] {
     background-color: #F8F5F2 !important;
   }
@@ -2701,6 +2713,9 @@
   }
   .bg-\[\#FAF1E3\] {
     background-color: #FAF1E3 !important;
+  }
+  .bg-\[\#FAF6F2\] {
+    background-color: #FAF6F2 !important;
   }
   .bg-\[\#FAF8DE\] {
     background-color: #FAF8DE !important;
@@ -2764,6 +2779,9 @@
   }
   .bg-\[\#FDE7E1\] {
     background-color: #FDE7E1 !important;
+  }
+  .bg-\[\#FDE9E6\] {
+    background-color: #FDE9E6 !important;
   }
   .bg-\[\#FDEAE4\] {
     background-color: #FDEAE4 !important;
@@ -5333,6 +5351,9 @@
     .md\:grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     }
+    .md\:grid-cols-\[1fr_1\.5fr\] {
+      grid-template-columns: 1fr 1.5fr !important;
+    }
     .md\:flex-row {
       flex-direction: row !important;
     }
@@ -5753,6 +5774,9 @@
     .lg\:min-h-0 {
       min-height: 0px !important;
     }
+    .lg\:min-h-\[67px\] {
+      min-height: 67px !important;
+    }
     .lg\:min-h-\[460px\] {
       min-height: 460px !important;
     }
@@ -6033,6 +6057,9 @@
     .lg\:pt-4 {
       padding-top: calc(var(--spacing) * 4) !important;
     }
+    .lg\:pt-8 {
+      padding-top: calc(var(--spacing) * 8) !important;
+    }
     .lg\:pt-\[78px\] {
       padding-top: 78px !important;
     }
@@ -6050,6 +6077,9 @@
     }
     .lg\:pr-12 {
       padding-right: calc(var(--spacing) * 12) !important;
+    }
+    .lg\:pb-20 {
+      padding-bottom: calc(var(--spacing) * 20) !important;
     }
     .lg\:pb-\[88px\] {
       padding-bottom: 88px !important;
