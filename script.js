@@ -1825,6 +1825,7 @@
     initTabGroup('depression', 'emotional');  // depression.html
     initTabGroup('stress',     'physical');   // stress.html
     initTabGroup('bipolar',    'mania');      // bipolar.html symptom tabs
+    initTabGroup('ocd',        'obsessions'); // ocd.html symptom tabs
     initBipolarTreatmentTabs();               // bipolar.html treatment tabs
     initBurnoutOverlapAccordion();            // burnout.html overlap accordion
     initDepressionCausesAccordion();
