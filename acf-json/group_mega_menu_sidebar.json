@@ -1,0 +1,96 @@
+[
+  {
+    "key": "group_mega_menu_sidebar",
+    "title": "Mega Menu Sidebar Content",
+    "fields": [
+      {
+        "key": "field_sidebar_image",
+        "label": "Sidebar Image",
+        "name": "sidebar_image",
+        "type": "image",
+        "instructions": "Image shown at the top of the sidebar panel in the mega menu (recommended: 560x320px).",
+        "required": 0,
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_sidebar_title",
+        "label": "Sidebar Title",
+        "name": "sidebar_title",
+        "type": "text",
+        "instructions": "Heading in the sidebar. Default: 'Speak To A Psychologist'",
+        "required": 0,
+        "default_value": "Speak To A Psychologist",
+        "maxlength": 60,
+        "placeholder": "Speak To A Psychologist"
+      },
+      {
+        "key": "field_sidebar_description",
+        "label": "Sidebar Description",
+        "name": "sidebar_description",
+        "type": "textarea",
+        "instructions": "Short paragraph shown below the title.",
+        "required": 0,
+        "default_value": "Most people are offered an appointment within 1 to 3 days, by video or in our clinics in Oslo and Ski.",
+        "rows": 3,
+        "placeholder": "Most people are offered an appointment..."
+      },
+      {
+        "key": "field_sidebar_cta_url",
+        "label": "Sidebar Button URL",
+        "name": "sidebar_cta_url",
+        "type": "url",
+        "instructions": "URL for the 'Contact Us' button in the sidebar.",
+        "required": 0,
+        "default_value": "",
+        "placeholder": "https://psykolog.no/kontakt-oss/"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "mega-conditions-sidebar"
+        }
+      ],
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "mega-therapies-sidebar"
+        }
+      ],
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "mega-services-sidebar"
+        }
+      ],
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "mega-about-sidebar"
+        }
+      ],
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "mega-resources-sidebar"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Sidebar image, title, description and CTA button URL for each mega menu section. Editable from Appearance > Mega Menu.",
+    "modified": 1726588800
+  }
+]

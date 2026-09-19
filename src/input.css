@@ -78,6 +78,8 @@
     @apply bg-white text-ink-body antialiased;
   }
 
+
+
   h1,
   h2,
   h3,
@@ -670,4 +672,89 @@
   .flip-card-back {
     transform: rotateY(180deg);
   }
+}
+
+/* =====================================================================
+   Under-Development Page — Keyframes & Animation Utilities
+   ===================================================================== */
+
+/* ── Keyframes ── */
+@keyframes ud-fadeSlideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes ud-fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes ud-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes ud-progressGrow {
+  from { width: 0; }
+  to   { width: 68%; }
+}
+@keyframes ud-pulseRing {
+  0%   { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@layer utilities {
+
+  /* ── Animation helper classes ── */
+  .anim-fade-down-1 { animation: ud-fadeSlideDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .anim-fade-down-2 { animation: ud-fadeSlideDown 0.8s 0.10s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .anim-fade-down-3 { animation: ud-fadeSlideDown 0.8s 0.18s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .anim-fade-down-4 { animation: ud-fadeSlideDown 0.8s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .anim-fade-down-5 { animation: ud-fadeSlideDown 0.8s 0.32s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .anim-fade-down-6 { animation: ud-fadeSlideDown 0.8s 0.40s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .anim-fade-up     { animation: ud-fadeSlideUp   0.9s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .anim-float       { animation: ud-float 6s ease-in-out infinite; }
+  .anim-float-1s    { animation: ud-float 6s 1.0s ease-in-out infinite; }
+  .anim-float-0-5s  { animation: ud-float 6s 0.5s ease-in-out infinite; }
+  .anim-progress    {
+    animation: ud-progressGrow 1.4s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+    transform-origin: left center;
+  }
+
+  /* ── Background texture via ::before (pseudo-element) ── */
+  .ud-main-texture::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-radial-gradient(circle at 10% 90%, rgba(194, 76, 51, 0.06) 0 1px, rgba(194, 76, 51, 0) 1px 52px),
+      repeating-radial-gradient(circle at 90% 10%, rgba(240, 147, 103, 0.05) 0 1px, rgba(240, 147, 103, 0) 1px 46px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Progress bar knob via ::after ── */
+  .progress-fill-dot::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border: 3px solid #C24C33;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(194, 76, 51, 0.18);
+  }
+
+  /* ── Pulse ring via ::after ── */
+  .pulse-ring::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 2px solid rgba(34, 197, 94, 0.35);
+    animation: ud-pulseRing 1.8s ease-out infinite;
+  }
+
+  /* ── Condition card: arrow gap widens on hover (Tailwind group pattern) ── */
+  .group:hover .cond-arrow-hover { gap: 10px; }
 }

@@ -1798,13 +1798,116 @@
     }
   }
 
-  /* -------------------------------------------------------------------
-     Init — every feature initialised exactly once
-     ------------------------------------------------------------------- */
+  /* ---------------------------------------------------------
+     Mega Menu — hover with delayed close (setTimeout)
+     so it doesn't close too quickly when moving the mouse
+  --------------------------------------------------------- */
+  function initMegaMenu() {
+    const navItems = $$('.nav-item.has-dropdown');
+    if (!navItems.length) return;
+
+    navItems.forEach((item) => {
+      let closeTimer = null;
+
+      function openMenu() {
+        clearTimeout(closeTimer);
+        // Close all other open menus first
+        navItems.forEach((other) => {
+          if (other !== item) other.classList.remove('is-mega-open');
+        });
+        item.classList.add('is-mega-open');
+      }
+
+      function scheduleClose() {
+        closeTimer = setTimeout(() => {
+          item.classList.remove('is-mega-open');
+        }, 250); // 250ms delay — enough time to move mouse into the dropdown
+      }
+
+      function cancelClose() {
+        clearTimeout(closeTimer);
+      }
+
+      item.addEventListener('mouseenter', openMenu);
+      item.addEventListener('mouseleave', scheduleClose);
+
+      const menu = item.querySelector('.mega-menu');
+      if (menu) {
+        menu.addEventListener('mouseenter', cancelClose);
+        menu.addEventListener('mouseleave', scheduleClose);
+      }
+
+      // --- Search filtering ---
+      const searchInput = item.querySelector('.mega-menu__search input');
+      const grid = item.querySelector('.mega-menu__grid');
+      if (!searchInput || !grid) return;
+
+      // Create a "no results" message element
+      const noResults = document.createElement('p');
+      noResults.className = 'mega-menu__no-results';
+      noResults.textContent = 'No results found.';
+      noResults.style.cssText = 'display:none; grid-column:1/-1; font-size:14px; color:#999; padding:8px 12px; margin:0;';
+      grid.appendChild(noResults);
+
+      searchInput.addEventListener('input', () => {
+        const query = searchInput.value.trim().toLowerCase();
+        const links = Array.from(grid.querySelectorAll('.mega-menu__link'));
+        // Section headings (e.g. "For Businesses") are plain divs, not anchors
+        const headings = Array.from(grid.children).filter(
+          (el) => el.tagName !== 'A' && !el.classList.contains('mega-menu__no-results')
+        );
+
+        let visibleCount = 0;
+
+        links.forEach((link) => {
+          const title = (link.querySelector('.mega-menu__title')?.textContent || '').toLowerCase();
+          const desc  = (link.querySelector('.mega-menu__desc')?.textContent  || '').toLowerCase();
+          const matches = !query || title.includes(query) || desc.includes(query);
+          link.style.display = matches ? '' : 'none';
+          if (matches) visibleCount++;
+        });
+
+        // Hide section headings when nothing below them is visible
+        headings.forEach((heading) => {
+          // Find all sibling links that come after this heading until the next heading
+          let sibling = heading.nextElementSibling;
+          let anyVisible = false;
+          while (sibling && sibling.tagName === 'A') {
+            if (sibling.style.display !== 'none') anyVisible = true;
+            sibling = sibling.nextElementSibling;
+          }
+          heading.style.display = anyVisible ? '' : 'none';
+        });
+
+        noResults.style.display = visibleCount === 0 ? '' : 'none';
+      });
+
+      // Clear search when the menu closes
+      item.addEventListener('mouseleave', () => {
+        searchInput.value = '';
+        const links = Array.from(grid.querySelectorAll('.mega-menu__link'));
+        links.forEach((link) => (link.style.display = ''));
+        const headings = Array.from(grid.children).filter(
+          (el) => el.tagName !== 'A' && !el.classList.contains('mega-menu__no-results')
+        );
+        headings.forEach((h) => (h.style.display = ''));
+        noResults.style.display = 'none';
+      });
+    });
+
+    // Close any open mega menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-item.has-dropdown')) {
+        navItems.forEach((item) => item.classList.remove('is-mega-open'));
+      }
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     renderIcons();
     initHeaderScroll();
     initMobileNav();
+    initMegaMenu();
     initSmoothScroll();
     initReveal();
 
