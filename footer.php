@@ -25,22 +25,22 @@
         </p>
         <!-- Social Icons -->
         <div class="flex items-center gap-3">
-          <a href="https://www.instagram.com/psykolog.no/" aria-label="Instagram" class="w-[36px] h-[36px]">
-            <img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/insta.webp" alt="Instagram" class="object-contain" />
-          </a>
-          <a href="https://www.linkedin.com/company/psykolog-no/" aria-label="LinkedIn" class="w-[36px] h-[36px]">
-            <img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/LinkedIn-1.webp" alt="LinkedIn" class="object-contain" />
-          </a>
-          <a href="https://no.pinterest.com/psykolog_no/" aria-label="Pinterest" class="w-[36px] h-[36px]">
-            <img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/Piscart.webp" alt="Pinterest" class="object-contain" />
-          </a>
-          <a href="https://www.facebook.com/psykolog.norge" aria-label="Facebook" class="w-[36px] h-[36px]">
-            <img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/facebook-1.webp" alt="Facebook" class="object-contain" />
-          </a>
-          <a href="#" aria-label="X (Twitter)" class="w-[36px] h-[36px]">
-            <img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/x.webp" alt="X" class="object-contain" />
-          </a>
-        </div>
+  			<a href="https://www.instagram.com/psykolog.no/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-[36px] h-[36px]">
+    			<img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/insta.webp" alt="Instagram" class="object-contain" />
+  			</a>
+  			<a href="https://www.linkedin.com/company/psykolog-no/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-[36px] h-[36px]">
+    			<img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/LinkedIn-1.webp" alt="LinkedIn" class="object-contain" />
+  			</a>
+  			<a href="https://no.pinterest.com/psykolog_no/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" class="w-[36px] h-[36px]">
+    			<img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/Piscart.webp" alt="Pinterest" class="object-contain" />
+  			</a>
+  			<a href="https://www.facebook.com/psykolog.norge" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-[36px] h-[36px]">
+    			<img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/facebook-1.webp" alt="Facebook" class="object-contain" />
+  			</a>
+  			<a href="https://x.com/Psykologno" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="w-[36px] h-[36px]">
+    			<img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/x.webp" alt="X" class="object-contain" />
+  			</a>
+			</div>
       </div>
 
       <!-- Right: Newsletter -->
@@ -50,13 +50,15 @@
         </p>
         <form id="newsletterForm" class="flex items-center bg-white/10 border border-white/20 rounded-full p-1.5 w-full">
           <input
-            type="email"
-            id="newsletterEmail"
-            placeholder="Skriv inn e-posten din"
-            required
-            aria-label="E-postadresse"
-            class="flex-1 bg-transparent border-none outline-none text-white px-5 text-[14px] placeholder:text-white/50"
-          >
+  			type="email"
+  			id="newsletterEmail"
+  			placeholder="Skriv inn e-posten din"
+  			required
+  			aria-label="E-postadresse"
+  			class="flex-1 bg-transparent border-none outline-none text-white px-5 text-[14px] placeholder:text-white/50"
+  			oninvalid="this.setCustomValidity(this.value === '' ? 'Vennligst fyll ut e-postadressen din.' : 'Vennligst skriv inn en gyldig e-postadresse.')"
+  			oninput="this.setCustomValidity('')"
+			>
           <button
             type="submit"
             id="newsletterBtn"
@@ -119,14 +121,14 @@
       return;
     }
 
-    // Duplicate check (client-side, via localStorage)
+    // Duplikatsjekk (klientsiden, via localStorage)
     const subscribers = JSON.parse(localStorage.getItem('newsletter_subscribers') || '[]');
     if (subscribers.includes(email)) {
       showMessage('Denne e-postadressen er allerede påmeldt.', 'error');
       return;
     }
 
-    // Loading state
+    // Lastetilstand
     const originalText = btn.textContent;
     btn.disabled = true;
     btn.textContent = 'Sender...';
@@ -140,7 +142,7 @@
       // });
       // if (!res.ok) throw new Error('Request failed');
 
-      await new Promise((resolve) => setTimeout(resolve, 700)); // fake latency, remove when real API is wired in
+      await new Promise((resolve) => setTimeout(resolve, 700)); // falsk ventetid, fjern når ekte API er koblet til
 
       subscribers.push(email);
       localStorage.setItem('newsletter_subscribers', JSON.stringify(subscribers));
@@ -163,47 +165,47 @@
       <!-- Psykisk lidelse -->
       <div class="flex flex-col gap-4">
         <p class="font-bold font-serif text-[#FF9D6E] text-[16px] mb-2 tracking-wide">Psykisk lidelse</p>
-        <a href="https://sysinn.net/psykolog.no/psykisk-helse/adhd/" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">ADHD</a>
-        <a href="https://sysinn.net/psykolog.no/psykisk-helse/angst/" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Angst</a>
-        <a href="https://sysinn.net/psykolog.no/psykisk-helse/utbrenthet/" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Utbrenthet</a>
-        <a href="https://sysinn.net/psykolog.no/psykisk-helse/depresjon/" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Depresjon</a>
-        <a href="https://sysinn.net/psykolog.no/psykisk-helse/" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Alle tilstander</a>
+        <a href="https://sysinn.net/psykolog.no/psykisk-helse/adhd/" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">ADHD</a>
+        <a href="https://sysinn.net/psykolog.no/psykisk-helse/angst/" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Angst</a>
+        <a href="https://sysinn.net/psykolog.no/psykisk-helse/utbrenthet/" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Utbrenthet</a>
+        <a href="https://sysinn.net/psykolog.no/psykisk-helse/depresjon/" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Depresjon</a>
+        <a href="https://sysinn.net/psykolog.no/psykisk-helse/" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Alle tilstander</a>
       </div>
       <!-- Resources -->
       <div class="flex flex-col gap-4">
         <p class="font-bold font-serif text-[#FF9D6E] text-[16px] mb-2 tracking-wide">Ressurser</p>
-        <a href="https://sysinn.net/psykolog.no/artikler/" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Artikler</a>
-        <a href="#" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Vurderinger</a>
-        <a href="#" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Veiledning</a>
-        <a href="#" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Selvhjelpsverktøy</a>
-        <a href="#" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Fortell en venn</a>
+        <a href="https://sysinn.net/psykolog.no/artikler/" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Artikler</a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Vurderinger</a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Veiledning</a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Selvhjelpsverktøy</a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Fortell en venn</a>
       </div>
       <!-- Clinic -->
       <div class="flex flex-col gap-4">
         <p class="font-bold font-serif text-[#FF9D6E] text-[16px] mb-2 tracking-wide">Klinikk</p>
-        <a href="#" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Hvordan det fungerer</a>
-        <a href="https://sysinn.net/psykolog.no/vare-psykologer/" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Våre psykologer</a>
-        <a href="https://sysinn.net/psykolog.no/priser/" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Priser</a>
-        <a href="https://sysinn.net/psykolog.no/oslo/" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Klinikk i Oslo</a>
-        <a href="https://sysinn.net/psykolog.no/bergen/" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Klinikk i Bergen</a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Hvordan det fungerer</a>
+        <a href="https://sysinn.net/psykolog.no/vare-psykologer/" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Våre psykologer</a>
+        <a href="https://sysinn.net/psykolog.no/priser/" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Priser</a>
+        <a href="https://sysinn.net/psykolog.no/oslo/" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Klinikk i Oslo</a>
+        <a href="https://sysinn.net/psykolog.no/bergen/" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Klinikk i Bergen</a>
       </div>
       <!-- Company -->
       <div class="flex flex-col gap-4">
         <p class="font-bold font-serif text-[#FF9D6E] text-[16px] mb-2 tracking-wide">Selskap</p>
-        <a href="https://sysinn.net/psykolog.no/om-oss/" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Om oss</a>
-        <a href="#" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Karriere</a>
-        <a href="#" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">For bedrifter</a>
-        <a href="#" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Bli med i teamet</a>
-        <a href="#" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Fortell en venn</a>
+        <a href="https://sysinn.net/psykolog.no/om-oss/" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Om oss</a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Karriere</a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">For bedrifter</a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Bli med i teamet</a>
+        <a href="https://sysinn.net/psykolog.no/kontakt-oss/" target="_blank" rel="noopener noreferrer" class="text-[14px] text-[#F8EBE2] hover:text-white transition-colors">Kontakt oss</a>
       </div>
       <!-- Contact -->
       <div class="flex flex-col gap-4">
         <p class="font-bold font-serif text-[#FF9D6E] text-[16px] mb-2 tracking-wide">Kontakt</p>
-        <a href="tel:92844444" class="flex items-center gap-2.5 text-[14px] text-[#F8EBE2] hover:text-white transition-colors">
+        <a href="tel:92844444" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 text-[14px] text-[#F8EBE2] hover:text-white transition-colors">
          <img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/phone-1.webp" alt="Telefon" class="w-[16px] h-[16px] object-contain text-[#F09367] shrink-0" />
           92 84 4444
         </a>
-        <a href="mailto:Hei@psykolog.no" class="flex items-center gap-2.5 text-[14px] text-[#F8EBE2] hover:text-white transition-colors">
+        <a href="mailto:Hei@psykolog.no" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 text-[14px] text-[#F8EBE2] hover:text-white transition-colors">
           <img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/mail.webp" alt="e-post" class="w-[16px] h-[16px] object-contain text-[#F09367] shrink-0" />
           Hei@psykolog.no
         </a>
@@ -215,7 +217,7 @@
          <img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/sted.webp" alt="sted" class="w-[16px] h-[16px] object-contain text-[#F09367] shrink-0" />
           Asenveien 1, 1400 Ski
         </span>
-        <a href="#" class="flex items-center gap-2.5 text-[14px] text-[#F8EBE2] hover:text-white transition-colors">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 text-[14px] text-[#F8EBE2] hover:text-white transition-colors">
          <img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/DigiPost.webp" alt="DigiPost" class="w-[16px] h-[16px] object-contain text-[#F09367] shrink-0" />
           Digipost
         </a>
@@ -225,8 +227,8 @@
     <!-- Bottom Bar -->
     <div class="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-white/10 text-[13px] text-[#C9AFA4]">
       <span>© 2026 Psykolog.no, Alle rettigheter forbeholdt</span>
-      <span>Designet og utviklet av <a href="https://sysinn.no" class="text-[#C9AFA4] hover:text-white transition-colors">Sysinn.no</a></span>
-      <a href="#" class="text-[#C9AFA4] hover:text-white transition-colors">Personvernerklæring</a>
+      <span>Designet og utviklet av <a href="https://sysinn.no" target="_blank" rel="noopener noreferrer" class="text-[#FF9D6E] hover:text-white transition-colors">Sysinn.no</a></span>
+      <a href="#" target="_blank" rel="noopener noreferrer" class="text-[#C9AFA4] hover:text-white transition-colors">Personvernerklæring</a>
     </div>
     
   </div>

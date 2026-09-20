@@ -599,10 +599,35 @@ body {
       display: none;
     }
 
+    .site-header__search-btn {
+      width: 36px;
+      height: 36px;
+    }
+    .site-header__search-btn .icon {
+      width: 18px !important;
+      height: 18px !important;
+    }
+
     .site-header__toggle {
       width: 40px;
       height: 40px;
     }
+  }
+
+  .search-overlay__panel {
+    margin: 80px 16px 0;
+    max-width: calc(100% - 32px);
+    border-radius: 16px;
+  }
+  .search-overlay__form {
+    padding: 16px 18px;
+    gap: 10px;
+  }
+  .search-overlay__input {
+    font-size: 15px;
+  }
+  .search-overlay__suggestions {
+    padding: 16px 18px 20px;
   }
 
   #home-hero {

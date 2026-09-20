@@ -1976,6 +1976,7 @@
       }
     }
 
+    initSearchOverlay();
     initFlipCards();
     initSelfReflectionQuiz();
   });
@@ -2018,6 +2019,48 @@
         updateCounter();
       });
     }
+  }
+
+  /* -------------------------------------------------------------------
+     Header Search — expandable inline search triggered by icon
+     ------------------------------------------------------------------- */
+  function initSearchOverlay() {
+    const searchForm = document.getElementById('headerSearchForm');
+    const searchBtn = document.getElementById('headerSearchBtn');
+    const searchInput = document.getElementById('headerSearchInput');
+    
+    if (!searchForm || !searchBtn || !searchInput) return;
+
+    // Toggle search on button click
+    searchBtn.addEventListener('click', (e) => {
+      // If the form is already active, we submit it if there's a value, otherwise close it
+      if (searchForm.classList.contains('is-active')) {
+        if (searchInput.value.trim() !== '') {
+          searchForm.submit();
+        } else {
+          searchForm.classList.remove('is-active');
+        }
+      } else {
+        searchForm.classList.add('is-active');
+        setTimeout(() => searchInput.focus(), 150);
+      }
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!searchForm.contains(e.target) && searchForm.classList.contains('is-active')) {
+        searchForm.classList.remove('is-active');
+        searchInput.value = '';
+      }
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && searchForm.classList.contains('is-active')) {
+        searchForm.classList.remove('is-active');
+        searchInput.value = '';
+      }
+    });
   }
 
   /* -------------------------------------------------------------------

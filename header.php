@@ -41,7 +41,7 @@
         <nav class="site-header__nav" aria-label="Primary">
           
           <div class="nav-item has-dropdown">
-            <a href="#home-conditions" class="nav-link" data-scroll>Conditions <svg class="icon icon-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
+            <a href="https://sysinn.net/psykolog.no/psykisk-helse/" class="nav-link nav-link--active" data-scroll>Mental Health Disorders <svg class="icon icon-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
             <div class="mega-menu">
               <div class="mega-menu__inner">
                 <?php psykolog_mega_menu( 'mega-conditions', 'option' ); ?>
@@ -58,13 +58,8 @@
             </div>
           </div>
 
-          <div class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Services <svg class="icon icon-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
-            <div class="mega-menu">
-              <div class="mega-menu__inner">
-                <?php psykolog_mega_menu( 'mega-services', 'option' ); ?>
-              </div>
-            </div>
+          <div class="nav-item">
+            <a href="https://sysinn.net/psykolog.no/priser/" class="nav-link">Prices</a>
           </div>
 
           <div class="nav-item has-dropdown">
@@ -76,20 +71,26 @@
             </div>
           </div>
 
-          <div class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Resources <svg class="icon icon-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
-            <div class="mega-menu">
-              <div class="mega-menu__inner">
-                <?php psykolog_mega_menu( 'mega-resources', 'option' ); ?>
-              </div>
-            </div>
+          <div class="nav-item">
+            <a href="https://sysinn.net/psykolog.no/artikler/" class="nav-link">Articles</a>
           </div>
         </nav>
 
         <div class="site-header__actions">
+          <!-- Expandable Search -->
+          <form class="header-search" id="headerSearchForm" action="<?php echo esc_url(home_url('/')); ?>" method="get" role="search">
+            <input type="search" name="s" class="header-search__input" id="headerSearchInput" placeholder="Søk etter artikler..." aria-label="Search" autocomplete="off">
+            <button type="button" class="site-header__search-btn" id="headerSearchBtn" aria-label="Toggle Search">
+              <svg class="icon search-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </form>
+
           <button type="button" class="btn btn--primary" data-scroll data-target="#home-final-cta">
-            <svg class="icon" style="margin-right:8px; width:18px; height:18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-            Book An Appointment
+            Bestill Time
+            <svg class="icon" style="margin-left:8px; width:18px; height:18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M9 16l2 2 4-4"/></svg>
           </button>
           <button type="button" class="site-header__toggle" id="navToggle" aria-expanded="false" aria-label="Open menu" aria-controls="mobileNav">
             <span class="burger">
@@ -103,6 +104,8 @@
     </div>
   </div>
 </header>
+
+
 
 <!-- Mobile nav drawer overlay -->
 <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
