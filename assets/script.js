@@ -1903,6 +1903,85 @@
     });
   }
 
+  document.addEventListener('DOMContentLoaded', () => {
+    renderIcons();
+    initHeaderScroll();
+    initMobileNav();
+    initMegaMenu();
+    initSmoothScroll();
+    initReveal();
+
+    initSigns();
+    initHiw();
+    initConditions();
+    initFormats();
+    initPsyTasks();
+    initMoreTherapies();
+    initPricing();
+    initLocations();
+    initChecklistTally();
+    initFaq();
+    initMentalHealthInteractions();
+    initArticlesPagination();
+    initAiAssistant();
+    initHabitCards();
+    initTabGroup('depression', 'emotional');  // depression.html
+    initTabGroup('stress',     'physical');   // stress.html
+    initTabGroup('bipolar',    'mania');      // bipolar.html symptom tabs
+    initTabGroup('ocd',        'obsessions'); // ocd.html symptom tabs
+    initBipolarTreatmentTabs();               // bipolar.html treatment tabs
+    initBurnoutOverlapAccordion();            // burnout.html overlap accordion
+    initDepressionCausesAccordion();
+    initDepCooccurTabs();
+
+    initJumpNav();
+    initAddAccordion();
+    initSubtypesHover();
+    initVideoButton();
+    initAccordionGroup({
+      groupSelector: "#symptomGroups",
+      itemSelector: ".ps-symgroup",
+      triggerSelector: ".ps-symgroup__trigger",
+      exclusive: true,
+    });
+    initAccordionGroup({
+      groupSelector: "#adhdFaqList",
+      itemSelector: ".faq-item",
+      triggerSelector: ".faq-item__trigger",
+      exclusive: true,
+    });
+    initAccordionGroup({
+      groupSelector: "#mhFaqList",
+      itemSelector: ".faq-item",
+      triggerSelector: ".faq-item__trigger",
+      exclusive: true,
+    });
+    initAssessmentSteps();
+    initBurnoutRecoverySteps();
+    initAppointmentSteps();
+    initNewsletterForm();
+    initArticleFilters();
+    initHeroCarousel();
+
+    // hero video: attempt autoplay, fall back to poster only
+    const heroVideo = document.querySelector('[data-hero-video]');
+    if (heroVideo) {
+      const src = heroVideo.dataset.heroVideo;
+      if (src) {
+        heroVideo.src = src;
+        heroVideo.muted = true;
+        const tryPlay = () => { const p = heroVideo.play(); if (p && p.catch) p.catch(() => {}); };
+        heroVideo.addEventListener('canplay', tryPlay, { once: true });
+        setTimeout(tryPlay, 800);
+      }
+    }
+
+    initSearchOverlay();
+    initFlipCards();
+    initSelfReflectionQuiz();
+    initIncludedTabs();
+  });
+
   /* -------------------------------------------------------------------
      Included Tabs (Pricing)
   ------------------------------------------------------------------- */
@@ -2050,132 +2129,5 @@
       inner.classList.toggle('is-flipped');
     });
   }
-
-  /* ---------------------------------------------------------
-     Psychologist Directory Filter Logic
-     --------------------------------------------------------- */
-  function initPsyDirectoryFilter() {
-    const psyFilterContainer = document.getElementById('psychologist-filters');
-    if (!psyFilterContainer) return;
-    
-    const filters = Array.from(psyFilterContainer.querySelectorAll('select[data-filter]'));
-    const cards = Array.from(document.querySelectorAll('.psy-filter-card'));
-
-    function updatePsyGrid() {
-      const activeFilters = {};
-      filters.forEach(select => {
-        if (select.value) {
-          activeFilters[select.dataset.filter] = select.value.toLowerCase();
-        }
-      });
-
-      cards.forEach(card => {
-        let isMatch = true;
-        
-        for (const [key, val] of Object.entries(activeFilters)) {
-          const cardData = card.getAttribute(`data-${key}`) || '';
-          if (!cardData.toLowerCase().includes(val)) {
-            isMatch = false;
-            break;
-          }
-        }
-
-        if (isMatch) {
-          card.classList.remove('hidden');
-          card.style.display = '';
-        } else {
-          card.classList.add('hidden');
-          card.style.setProperty('display', 'none', 'important');
-        }
-      });
-    }
-
-    filters.forEach(select => {
-      select.addEventListener('change', updatePsyGrid);
-    });
-  }
-
-  // --- End of feature functions ---
-
-  document.addEventListener('DOMContentLoaded', () => {
-    initPsyDirectoryFilter();
-    
-    renderIcons();
-    initHeaderScroll();
-    initMobileNav();
-    initMegaMenu();
-    initSmoothScroll();
-    initReveal();
-
-    initSigns();
-    initHiw();
-    initConditions();
-    initFormats();
-    initPsyTasks();
-    initMoreTherapies();
-    initPricing();
-    initLocations();
-    initChecklistTally();
-    initFaq();
-    initMentalHealthInteractions();
-    initArticlesPagination();
-    initAiAssistant();
-    initHabitCards();
-    initTabGroup('depression', 'emotional');  // depression.html
-    initTabGroup('stress',     'physical');   // stress.html
-    initTabGroup('bipolar',    'mania');      // bipolar.html symptom tabs
-    initTabGroup('ocd',        'obsessions'); // ocd.html symptom tabs
-    initBipolarTreatmentTabs();               // bipolar.html treatment tabs
-    initBurnoutOverlapAccordion();            // burnout.html overlap accordion
-    initDepressionCausesAccordion();
-    initDepCooccurTabs();
-
-    initJumpNav();
-    initAddAccordion();
-    initSubtypesHover();
-    initVideoButton();
-    initAccordionGroup({
-      groupSelector: "#symptomGroups",
-      itemSelector: ".ps-symgroup",
-      triggerSelector: ".ps-symgroup__trigger",
-      exclusive: true,
-    });
-    initAccordionGroup({
-      groupSelector: "#adhdFaqList",
-      itemSelector: ".faq-item",
-      triggerSelector: ".faq-item__trigger",
-      exclusive: true,
-    });
-    initAccordionGroup({
-      groupSelector: "#mhFaqList",
-      itemSelector: ".faq-item",
-      triggerSelector: ".faq-item__trigger",
-      exclusive: true,
-    });
-    initAssessmentSteps();
-    initBurnoutRecoverySteps();
-    initAppointmentSteps();
-    initNewsletterForm();
-    initArticleFilters();
-    initHeroCarousel();
-
-    // hero video: attempt autoplay, fall back to poster only
-    const heroVideo = document.querySelector('[data-hero-video]');
-    if (heroVideo) {
-      const src = heroVideo.dataset.heroVideo;
-      if (src) {
-        heroVideo.src = src;
-        heroVideo.muted = true;
-        const tryPlay = () => { const p = heroVideo.play(); if (p && p.catch) p.catch(() => {}); };
-        heroVideo.addEventListener('canplay', tryPlay, { once: true });
-        setTimeout(tryPlay, 800);
-      }
-    }
-
-    initSearchOverlay();
-    initFlipCards();
-    initSelfReflectionQuiz();
-    initIncludedTabs();
-  });
 
 })();
