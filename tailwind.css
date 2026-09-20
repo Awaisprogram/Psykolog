@@ -3420,6 +3420,9 @@
   .pt-10 {
     padding-top: calc(var(--spacing) * 10) !important;
   }
+  .pt-12 {
+    padding-top: calc(var(--spacing) * 12) !important;
+  }
   .pt-16 {
     padding-top: calc(var(--spacing) * 16) !important;
   }
@@ -6457,6 +6460,9 @@
     .lg\:p-\[46px\] {
       padding: 46px !important;
     }
+    .lg\:p-\[330px\] {
+      padding: 330px !important;
+    }
     .lg\:px-8 {
       padding-inline: calc(var(--spacing) * 8) !important;
     }
@@ -6477,6 +6483,9 @@
     }
     .lg\:py-24 {
       padding-block: calc(var(--spacing) * 24) !important;
+    }
+    .lg\:py-\[32px\] {
+      padding-block: 32px !important;
     }
     .lg\:py-\[50px\] {
       padding-block: 50px !important;
