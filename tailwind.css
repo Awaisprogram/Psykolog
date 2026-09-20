@@ -339,6 +339,9 @@
   .top-12 {
     top: calc(var(--spacing) * 12) !important;
   }
+  .top-32 {
+    top: calc(var(--spacing) * 32) !important;
+  }
   .top-\[-50px\] {
     top: -50px !important;
   }
@@ -4407,6 +4410,10 @@
     --tw-shadow: 0 8px 30px var(--tw-shadow-color, rgba(0,0,0,0.04)) !important;
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow) !important;
   }
+  .shadow-\[0_8px_30px_rgba\(0\,0\,0\,0\.08\)\] {
+    --tw-shadow: 0 8px 30px var(--tw-shadow-color, rgba(0,0,0,0.08)) !important;
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow) !important;
+  }
   .shadow-\[0_8px_32px_rgba\(92\,42\,32\,0\.12\)\] {
     --tw-shadow: 0 8px 32px var(--tw-shadow-color, rgba(92,42,32,0.12)) !important;
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow) !important;
@@ -5064,8 +5071,15 @@
     .hover\:opacity-90:hover {
       opacity: 90% !important;
     }
+    .hover\:opacity-100:hover {
+      opacity: 100% !important;
+    }
     .hover\:shadow-\[0_4px_12px_rgba\(200\,82\,55\,0\.12\)\]:hover {
       --tw-shadow: 0 4px 12px var(--tw-shadow-color, rgba(200,82,55,0.12)) !important;
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow) !important;
+    }
+    .hover\:shadow-\[0_8px_30px_rgba\(0\,0\,0\,0\.04\)\]:hover {
+      --tw-shadow: 0 8px 30px var(--tw-shadow-color, rgba(0,0,0,0.04)) !important;
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow) !important;
     }
     .hover\:shadow-\[0_8px_32px_rgba\(194\,76\,51\,0\.08\)\]:hover {
@@ -6303,6 +6317,9 @@
     }
     .lg\:gap-\[25px\] {
       gap: 25px !important;
+    }
+    .lg\:gap-\[32px\] {
+      gap: 32px !important;
     }
     .lg\:gap-\[46px\] {
       gap: 46px !important;
