@@ -103,18 +103,4 @@ function psykolog_mega_menu( $location, $acf_option_slug ) {
     echo '</div>';
 }
 
-// -------------------------------------------------------
-// 5. Under-Development Page — Auto-redirect for unbuilt pages
-// -------------------------------------------------------
-/**
- * Any WP Page assigned the "Under Development" page template
- * will automatically render under-development.php.
- * WordPress handles this natively — no extra redirect needed.
- *
- * USAGE (WordPress Admin):
- *   1. Go to Pages → Add New
- *   2. Set the page title (e.g. "Sleep Problems")
- *   3. Set the slug (e.g. "sleep-problems")
- *   4. In Page Attributes → Template, choose "Under Development"
- *   5. Publish — done. WordPress serves under-development.php automatically.
- *
+
