@@ -1979,7 +1979,45 @@
     initSearchOverlay();
     initFlipCards();
     initSelfReflectionQuiz();
+    initIncludedTabs();
   });
+
+  /* -------------------------------------------------------------------
+     Included Tabs (Pricing)
+  ------------------------------------------------------------------- */
+  function initIncludedTabs() {
+    const tabs = document.querySelectorAll('.included-tab');
+    if (!tabs.length) return;
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('mouseenter', () => {
+        const tabId = tab.getAttribute('data-tab');
+        
+        // Update cards
+        tabs.forEach(t => {
+          if (t === tab) {
+            t.classList.add('border-[#C24C33]');
+            t.classList.remove('border-[#E8DDD7]');
+          } else {
+            t.classList.remove('border-[#C24C33]');
+            t.classList.add('border-[#E8DDD7]');
+          }
+        });
+        
+        // Update image with crossfade
+        const img = document.getElementById('included-image');
+        if (img) {
+          img.style.opacity = '0.5';
+          setTimeout(() => {
+            if(tabId === 'payment') img.src = 'assets/Priser/Payment Options.webp';
+            if(tabId === 'cancellation') img.src = 'assets/Priser/Cancellation.webp';
+            if(tabId === 'change') img.src = 'assets/Priser/Change psychologist.webp';
+            img.style.opacity = '1';
+          }, 150);
+        }
+      });
+    });
+  }
 
   /* -------------------------------------------------------------------
      Self-Reflection Quiz
