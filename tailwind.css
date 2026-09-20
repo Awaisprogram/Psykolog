@@ -3291,6 +3291,12 @@
   .px-8 {
     padding-inline: calc(var(--spacing) * 8) !important;
   }
+  .px-\[12px\] {
+    padding-inline: 12px !important;
+  }
+  .px-\[12x\] {
+    padding-inline: 12x !important;
+  }
   .px-\[14px\] {
     padding-inline: 14px !important;
   }
@@ -3302,6 +3308,9 @@
   }
   .px-\[30px\] {
     padding-inline: 30px !important;
+  }
+  .px-\[122px\] {
+    padding-inline: 122px !important;
   }
   .py-0\.5 {
     padding-block: calc(var(--spacing) * 0.5) !important;
@@ -5745,6 +5754,11 @@
     .md\:gap-12 {
       gap: calc(var(--spacing) * 12) !important;
     }
+    :where(.md\:space-y-4 > :not(:last-child)) {
+      --tw-space-y-reverse: 0 !important;
+      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse)) !important;
+      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse))) !important;
+    }
     .md\:gap-x-24 {
       column-gap: calc(var(--spacing) * 24) !important;
     }
@@ -5821,6 +5835,9 @@
     .md\:px-\[30px\] {
       padding-inline: 30px !important;
     }
+    .md\:px-\[48px\] {
+      padding-inline: 48px !important;
+    }
     .md\:px-\[56px\] {
       padding-inline: 56px !important;
     }
@@ -5845,8 +5862,14 @@
     .md\:py-\[14px\] {
       padding-block: 14px !important;
     }
+    .md\:py-\[24px\] {
+      padding-block: 24px !important;
+    }
     .md\:py-\[32px\] {
       padding-block: 32px !important;
+    }
+    .md\:py-\[36px\] {
+      padding-block: 36px !important;
     }
     .md\:py-\[56px\] {
       padding-block: 56px !important;
@@ -6382,6 +6405,9 @@
     .lg\:gap-\[52px\] {
       gap: 52px !important;
     }
+    .lg\:gap-\[56px\] {
+      gap: 56px !important;
+    }
     .lg\:gap-\[60px\] {
       gap: 60px !important;
     }
@@ -6463,6 +6489,9 @@
     }
     .lg\:pt-8 {
       padding-top: calc(var(--spacing) * 8) !important;
+    }
+    .lg\:pt-16 {
+      padding-top: calc(var(--spacing) * 16) !important;
     }
     .lg\:pt-\[78px\] {
       padding-top: 78px !important;
@@ -6586,8 +6615,14 @@
     .xl\:w-\[500px\] {
       width: 500px !important;
     }
+    .xl\:w-\[540px\] {
+      width: 540px !important;
+    }
     .xl\:w-\[550px\] {
       width: 550px !important;
+    }
+    .xl\:w-\[556px\] {
+      width: 556px !important;
     }
     .xl\:w-\[608px\] {
       width: 608px !important;
@@ -6600,6 +6635,9 @@
     }
     .xl\:w-\[672px\] {
       width: 672px !important;
+    }
+    .xl\:w-\[716px\] {
+      width: 716px !important;
     }
     .xl\:w-\[734px\] {
       width: 734px !important;
