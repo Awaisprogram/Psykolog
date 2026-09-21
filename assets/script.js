@@ -2071,8 +2071,68 @@
     const searchForm = document.getElementById('headerSearchForm');
     const searchBtn = document.getElementById('headerSearchBtn');
     const searchInput = document.getElementById('headerSearchInput');
+    const searchResults = document.getElementById('headerSearchResults');
     
     if (!searchForm || !searchBtn || !searchInput) return;
+
+    let searchTimeout;
+
+    if (searchResults) {
+      searchInput.addEventListener('input', (e) => {
+        clearTimeout(searchTimeout);
+        const query = e.target.value.trim();
+        
+        if (query.length < 2) {
+          searchResults.classList.add('hidden');
+          searchResults.innerHTML = '';
+          return;
+        }
+
+        searchTimeout = setTimeout(async () => {
+          try {
+            searchResults.classList.remove('hidden');
+            searchResults.innerHTML = '<div class="p-4 text-center text-[14px] text-[#888]">Søker...</div>';
+            
+            // Try fetching from wp-json first. Use the form's action URL as the base to support subfolder installations.
+            let baseUrl = searchForm.action;
+            if (!baseUrl.endsWith('/')) baseUrl += '/';
+            // Use the global search endpoint to include pages and other post types
+            const url = baseUrl + `wp-json/wp/v2/search?search=${encodeURIComponent(query)}&per_page=5`;
+            const response = await fetch(url);
+            if (!response.ok) throw new Error('Network response was not ok');
+            const results = await response.json();
+            
+            if (results.length === 0) {
+              searchResults.innerHTML = `<div class="p-4 text-center text-[14px] text-[#888]">Ingen resultater funnet for "${query}"</div>`;
+              return;
+            }
+            
+            let html = '<ul class="divide-y divide-[#EAEAEA]">';
+            results.forEach(item => {
+              html += `
+                <li>
+                  <a href="${item.url}" class="block p-4 hover:bg-[#F9F9F9] transition-colors">
+                    <div class="font-semibold text-[14px] text-[#33170F] mb-1 line-clamp-2">${item.title}</div>
+                  </a>
+                </li>
+              `;
+            });
+            html += '</ul>';
+            
+            html += `
+              <div class="p-3 bg-[#FDF9F7] border-t border-[#EAEAEA] text-center rounded-b-[16px]">
+                <a href="/?s=${encodeURIComponent(query)}" class="text-[13px] font-semibold text-[#C24C33] hover:underline">Se alle resultater</a>
+              </div>
+            `;
+            
+            searchResults.innerHTML = html;
+          } catch (error) {
+            console.error('Search error:', error);
+            searchResults.innerHTML = '<div class="p-4 text-center text-[14px] text-[#C24C33]">Kunne ikke hente søkeresultater. Trykk Enter for å søke.</div>';
+          }
+        }, 300);
+      });
+    }
 
     // Toggle search on button click
     searchBtn.addEventListener('click', (e) => {
@@ -2082,6 +2142,7 @@
           searchForm.submit();
         } else {
           searchForm.classList.remove('is-active');
+          if (searchResults) searchResults.classList.add('hidden');
         }
       } else {
         searchForm.classList.add('is-active');
@@ -2094,6 +2155,10 @@
       if (!searchForm.contains(e.target) && searchForm.classList.contains('is-active')) {
         searchForm.classList.remove('is-active');
         searchInput.value = '';
+        if (searchResults) {
+          searchResults.classList.add('hidden');
+          searchResults.innerHTML = '';
+        }
       }
     });
 
@@ -2102,6 +2167,10 @@
       if (e.key === 'Escape' && searchForm.classList.contains('is-active')) {
         searchForm.classList.remove('is-active');
         searchInput.value = '';
+        if (searchResults) {
+          searchResults.classList.add('hidden');
+          searchResults.innerHTML = '';
+        }
       }
     });
   }

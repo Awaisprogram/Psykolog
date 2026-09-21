@@ -143,7 +143,7 @@ textarea {
 }
 
 .section-head {
-  max-width: 720px;
+  max-width: 750px;
   margin-bottom: 32px;
 }
 
@@ -157,7 +157,7 @@ textarea {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  max-width: 760px;
+  max-width: 800px;
 }
 
 .split {
@@ -1018,7 +1018,7 @@ textarea {
 .site-header__actions {
   display: flex;
   align-items: center;
- gap: 12px;
+  gap: 12px;
 }
 
 /* Active nav link (brown pill) */
@@ -1028,9 +1028,11 @@ textarea {
   border-radius: 100px;
   padding: 8px 18px;
 }
+
 .nav-link--active .icon-chevron {
   stroke: #fff;
 }
+
 .nav-item:hover .nav-link--active {
   background: #8f3522 !important;
   color: #fff !important;
@@ -1050,6 +1052,7 @@ textarea {
   color: var(--ink-800, #3d2e28);
   transition: background 0.2s ease, color 0.2s ease;
 }
+
 .site-header__search-btn:hover {
   background: #fbeae8;
   color: var(--brand-primary-hover, #a93e28);
@@ -1583,6 +1586,12 @@ textarea {
 }
 
 #home-signs {
+	
+ .grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr ;
+  gap: 60px;
+}
   .signs__note {
     font-size: 15px;
     color: var(--ink-body);
@@ -1745,7 +1754,7 @@ textarea {
   gap: 14px;
   padding: 24px 32px;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   color: #2b2b2b;
   border-right: 1px solid #f2e2da;
 }
@@ -1768,7 +1777,7 @@ textarea {
   display: flex;
   align-items: center;
   padding: 24px 32px;
-  font-size: 15px;
+  font-size: 16px;
   color: #555555;
   line-height: 1.5;
 }
@@ -1882,7 +1891,7 @@ textarea {
 
 
   .audience-grid {
-    margin: 64px auto 0 auto;
+    margin: 60px auto 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
@@ -1913,7 +1922,7 @@ textarea {
   }
 
   .audience-card p {
-    font-size: 14px;
+    font-size: 16px;
     color: #666666;
     line-height: 1.6;
     margin: 0;
@@ -1952,8 +1961,7 @@ textarea {
 #home-short-wait {
   .intro-video {
     position: relative;
-    height: 100%;
-    min-height: 440px;
+    height: 540px;
     border-radius: var(--radius-lg);
     overflow: hidden;
     background: var(--surface-rose);
@@ -2071,6 +2079,15 @@ textarea {
     border-radius: var(--radius-pill);
     padding: 6px 12px;
   }
+	
+  .paragraph{
+     font-size: 20px;
+	 display: flex;
+	 flex-direction: column;
+	 gap: 16px; 
+	 margin-top: 20px; 
+     line-height: 28px;	
+	}	
 
   .stats-row {
     display: grid;
@@ -2332,6 +2349,7 @@ textarea {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 64px;
+	margin-top: 30px;  
     align-items: stretch;
   }
 
@@ -2559,7 +2577,7 @@ textarea {
   }
 
   .method-card p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
     color: #666666;
     margin: 0;
@@ -2779,7 +2797,7 @@ textarea {
   }
 
   .recruitment-banner {
-    margin-top: 64px;
+    margin-top: 60px;
     background: #F8EBE2;
     border-radius: 24px;
     padding: 60px 48px;
@@ -3292,7 +3310,7 @@ textarea {
   .org-media {
     border-radius: 24px;
     overflow: hidden;
-    height: 550px;
+    height: 620px;
   }
 
   .org-media img {
@@ -5897,20 +5915,39 @@ textarea {
 }
 
 #adhd-what {
+  font-size: 16px;
+
   .info-aside {
-    display: grid;
-    grid-template-columns: 1fr 340px;
+    display: flex;
+    flex-direction: row;
     gap: 48px;
-    align-items: start;
+    align-items: stretch;
+  }
+
+  .info-aside>div:first-child {
+    flex: 1;
   }
 
   .info-aside__rail {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    width: 480px;
+    flex-shrink: 0;
+    margin-bottom: 60px;
+
+    a {
+      text-decoration: none !important;
+    }
+  }
+
+  .stat-box,
+  .add-box {
+    width: 100%;
   }
 
   .stat-box {
+    flex-shrink: 0;
     background: var(--surface-cream);
     border: 1px solid var(--border-soft);
     border-radius: var(--radius-lg);
@@ -5926,26 +5963,28 @@ textarea {
     margin-top: 18px;
   }
 
+  .stat-box__d,
   .stat-box__d a {
-    text-decoration: underline;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 24px;
     color: #6B5F5A;
+  }
+
+  .stat-box__d a {
+    text-decoration: underline;
     margin-top: 6px;
   }
 
   .add-box {
+    flex: 1;
+    min-height: 0;
     position: relative;
     overflow: hidden;
-    /* Base color pehle jaise hi rakhein */
     background-color: var(--ink-600);
-
     background-image: url('https://sysinn.net/psykolog.no/wp-content/uploads/2026/08/Background.webp');
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     border-radius: var(--radius-lg);
     padding: 26px;
     z-index: 1;
@@ -5961,19 +6000,14 @@ textarea {
 
   .add-box__q {
     font-weight: 600;
-    font-size: 11px;
-    letter-spacing: 2px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
     text-transform: uppercase;
     color: var(--brand-focus);
   }
 
-  .add-box__a {
-    font-size: 16px;
-    line-height: 24px;
-    color: #fff;
-    margin-top: 12px;
-  }
-
+  .add-box__a,
   .add-box__extra {
     font-size: 16px;
     line-height: 24px;
@@ -6001,12 +6035,11 @@ textarea {
   .add-box__toggle:hover {
     background: #F5A97F;
   }
-
 }
 
 /* needs id="adhd-video" added in HTML */
 #adhd-video {
-  margin-bottom: 96px;
+  margin-bottom: 60px;
 
   .video-head {
     margin-bottom: 26px;
@@ -6240,11 +6273,11 @@ textarea {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
-    margin-top: 36px !important;
 
-    .section-head-full {
-      margin-bottom: 0px !important;
-    }
+  }
+
+  .section-head-full {
+    margin-bottom: 30px !important;
   }
 
   .cause-card {
@@ -6441,21 +6474,25 @@ textarea {
 
 #adhd-ages {
   .life-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 32px;
     margin-top: 56px;
   }
 
   .life-row+.life-row {
-    margin-top: 64px;
+    margin-top: 60px;
   }
 
   .age-media {
+    flex: 0 0 38%;
+    max-width: 38%;
     position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    width: 100%;
-    aspect-ratio: 560 / 500;
     background: var(--surface-rose);
+    aspect-ratio: 560 / 500;
   }
 
   .age-media img {
@@ -6469,6 +6506,10 @@ textarea {
     margin-left: auto;
   }
 
+  .age-content {
+    flex: 1;
+    min-width: 0;
+  }
 
   .age-kicker {
     font-weight: 600;
@@ -6489,7 +6530,7 @@ textarea {
   }
 
   .women-wrap {
-    margin-top: 64px;
+    margin-top: 60px;
   }
 
   .women-panel {
@@ -6879,11 +6920,22 @@ textarea {
   .tx-row {
     position: relative;
     z-index: 1;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 300px;
-    gap: 36px;
+    display: flex;
     align-items: center;
+    gap: 36px;
     padding: 32px 36px;
+    height: auto;
+    min-height: 0;
+  }
+
+  .tx-row>*:first-child {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .tx-row>*:last-child {
+    width: 300px;
+    flex-shrink: 0;
   }
 
   .tx-card__head {
@@ -6920,7 +6972,7 @@ textarea {
     display: flex;
     align-items: center;
     gap: 14px;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     color: #5B5B5B;
   }
@@ -7140,7 +7192,7 @@ textarea {
   }
 
   .check-list__text {
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.45;
     color: #4a4a4a;
   }
@@ -7169,6 +7221,14 @@ textarea {
     background-color: var(--theme-soft);
     color: var(--theme-primary);
   }
+}
+
+.privacy-faq {
+
+  .section {
+    padding: 0px !important;
+  }
+
 }
 
 #adhd-help {
@@ -7260,7 +7320,11 @@ textarea {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    margin-top: 52px;
+    margin-top: 30px !important;
+  }
+
+  .section-head-full {
+    margin-bottom: 0px !important;
   }
 
   .cooccur-card {
@@ -7273,6 +7337,10 @@ textarea {
     padding: 28px;
     text-decoration: none;
     transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+
+    p {
+      font-size: 18px !important;
+    }
   }
 
   .cooccur-card:hover {
@@ -7484,8 +7552,7 @@ textarea {
   .patient-card {
     background: #ffffff;
     border-radius: 16px;
-    padding: 40px;
-    border-bottom: 1px solid #F2E4DC;
+    padding: 30px 0px 0px !important;
   }
 
   .patient-card__header {

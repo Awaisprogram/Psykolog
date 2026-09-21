@@ -372,7 +372,7 @@
     if (!toggle || !accordion) return;
     toggle.addEventListener('click', () => {
       const open = accordion.classList.toggle('is-open');
-      toggle.querySelector('span').textContent = open ? 'Show fewer therapies' : 'Read about more therapies';
+       toggle.querySelector('span').textContent = open ? 'Vis færre behandlinger' : 'Les om flere behandlingsformer';
     });
   }
 
@@ -393,8 +393,8 @@
      Locations — clinic tabs + map + book button
      ------------------------------------------------------------------- */
   const CLINIC_DATA = [
-    { short: 'Oslo', mapTitle: 'Map of Oslo', map: 'https://www.openstreetmap.org/export/embed.html?bbox=10.70%2C59.895%2C10.80%2C59.93&layer=mapnik' },
-    { short: 'Ski', mapTitle: 'Map of Ski', map: 'https://www.openstreetmap.org/export/embed.html?bbox=10.80%2C59.70%2C10.87%2C59.74&layer=mapnik' }
+    { short: 'Oslo', mapTitle: 'Map of Oslo', map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.2640954672709!2d10.8478847!3d59.944352599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46415d30c93b2acf%3A0xa1e9061a67c94e9c!2sPsykiater%20Oslo%20-%20Lege%20og%20Spesialist%20i%20Rus%20og%20Avhengighet%20medisin%20-%20Psykiater.no!5e0!3m2!1sen!2s!4v1789991996457!5m2!1sen!2s' },
+    { short: 'Ski', mapTitle: 'Map of Ski', map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2011.8874016039479!2d10.837264500000002!3d59.71806389999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416fdcffe9c0f3%3A0x7abcc670d99ecbde!2sPsykiater.no%20Ski%20-%20Lege%20%26%20Spesialist%20i%20Rus%20og%20Avhengighetsmedisin!5e0!3m2!1sen!2s!4v1789992042480!5m2!1sen!2s' }
   ];
   function initLocations() {
     const list = document.getElementById('clinicList');
@@ -421,7 +421,7 @@
       map.src = d.map;
       map.title = d.mapTitle;
       mapTag.textContent = `${d.short} clinic`;
-      if (bookBtn) bookBtn.textContent = `Bestill time hos ${d.short}`;
+      if (bookBtn) bookBtn.textContent = `Bestill en time i ${d.short}`;
     });
   }
 
@@ -1992,8 +1992,68 @@
     const searchForm = document.getElementById('headerSearchForm');
     const searchBtn = document.getElementById('headerSearchBtn');
     const searchInput = document.getElementById('headerSearchInput');
+    const searchResults = document.getElementById('headerSearchResults');
     
     if (!searchForm || !searchBtn || !searchInput) return;
+
+    let searchTimeout;
+
+    if (searchResults) {
+      searchInput.addEventListener('input', (e) => {
+        clearTimeout(searchTimeout);
+        const query = e.target.value.trim();
+        
+        if (query.length < 2) {
+          searchResults.classList.add('hidden');
+          searchResults.innerHTML = '';
+          return;
+        }
+
+        searchTimeout = setTimeout(async () => {
+          try {
+            searchResults.classList.remove('hidden');
+            searchResults.innerHTML = '<div class="p-4 text-center text-[14px] text-[#888]">Søker...</div>';
+            
+            // Try fetching from wp-json first. Use the form's action URL as the base to support subfolder installations.
+            let baseUrl = searchForm.action;
+            if (!baseUrl.endsWith('/')) baseUrl += '/';
+            // Use the global search endpoint to include pages and other post types
+            const url = baseUrl + `wp-json/wp/v2/search?search=${encodeURIComponent(query)}&per_page=5`;
+            const response = await fetch(url);
+            if (!response.ok) throw new Error('Network response was not ok');
+            const results = await response.json();
+            
+            if (results.length === 0) {
+              searchResults.innerHTML = `<div class="p-4 text-center text-[14px] text-[#888]">Ingen resultater funnet for "${query}"</div>`;
+              return;
+            }
+            
+            let html = '<ul class="divide-y divide-[#EAEAEA]">';
+            results.forEach(item => {
+              html += `
+                <li>
+                  <a href="${item.url}" class="block p-4 hover:bg-[#F9F9F9] transition-colors">
+                    <div class="font-semibold text-[14px] text-[#33170F] mb-1 line-clamp-2">${item.title}</div>
+                  </a>
+                </li>
+              `;
+            });
+            html += '</ul>';
+            
+            html += `
+              <div class="p-3 bg-[#FDF9F7] border-t border-[#EAEAEA] text-center rounded-b-[16px]">
+                <a href="/?s=${encodeURIComponent(query)}" class="text-[13px] font-semibold text-[#C24C33] hover:underline">Se alle resultater</a>
+              </div>
+            `;
+            
+            searchResults.innerHTML = html;
+          } catch (error) {
+            console.error('Search error:', error);
+            searchResults.innerHTML = '<div class="p-4 text-center text-[14px] text-[#C24C33]">Kunne ikke hente søkeresultater. Trykk Enter for å søke.</div>';
+          }
+        }, 300);
+      });
+    }
 
     // Toggle search on button click
     searchBtn.addEventListener('click', (e) => {
@@ -2003,6 +2063,7 @@
           searchForm.submit();
         } else {
           searchForm.classList.remove('is-active');
+          if (searchResults) searchResults.classList.add('hidden');
         }
       } else {
         searchForm.classList.add('is-active');
@@ -2015,6 +2076,10 @@
       if (!searchForm.contains(e.target) && searchForm.classList.contains('is-active')) {
         searchForm.classList.remove('is-active');
         searchInput.value = '';
+        if (searchResults) {
+          searchResults.classList.add('hidden');
+          searchResults.innerHTML = '';
+        }
       }
     });
 
@@ -2023,6 +2088,10 @@
       if (e.key === 'Escape' && searchForm.classList.contains('is-active')) {
         searchForm.classList.remove('is-active');
         searchInput.value = '';
+        if (searchResults) {
+          searchResults.classList.add('hidden');
+          searchResults.innerHTML = '';
+        }
       }
     });
   }

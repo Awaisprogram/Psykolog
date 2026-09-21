@@ -80,6 +80,7 @@
           <!-- Expandable Search -->
           <form class="header-search" id="headerSearchForm" action="<?php echo esc_url(home_url('/')); ?>" method="get" role="search">
             <input type="search" name="s" class="header-search__input" id="headerSearchInput" placeholder="Søk etter artikler..." aria-label="Search" autocomplete="off">
+            <div id="headerSearchResults" class="header-search-results hidden absolute top-[calc(100%+10px)] right-0 w-[320px] bg-white border border-[#EAEAEA] rounded-[16px] shadow-[0_12px_40px_rgba(0,0,0,0.12)] z-[100] max-h-[400px] overflow-y-auto hidden"></div>
             <button type="button" class="site-header__search-btn" id="headerSearchBtn" aria-label="Toggle Search">
               <svg class="icon search-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;">
                 <circle cx="11" cy="11" r="8"></circle>
