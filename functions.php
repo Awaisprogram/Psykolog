@@ -82,25 +82,50 @@ function psykolog_mega_menu( $location, $acf_option_slug ) {
     echo '</div>'; // end .mega-menu__content
 
 
-    // ACF Sidebar
-    $img   = get_field( 'sidebar_image',       $acf_option_slug );
-    $title = get_field( 'sidebar_title',       $acf_option_slug ) ?: 'Speak To A Psychologist';
-    $desc  = get_field( 'sidebar_description', $acf_option_slug ) ?: 'Most people are offered an appointment within 1 to 3 days, by video or in our clinics in Oslo and Ski.';
-    $url   = get_field( 'sidebar_cta_url',     $acf_option_slug ) ?: get_home_url() . '/kontakt-oss/';
+    // ACF Sidebar - Show only for Mental Health (mega-conditions)
+    if ( $location === 'mega-conditions' ) {
+        $img   = get_field( 'sidebar_image',       $acf_option_slug );
+        $title = get_field( 'sidebar_title',       $acf_option_slug ) ?: 'Speak To A Psychologist';
+        $desc  = get_field( 'sidebar_description', $acf_option_slug ) ?: 'Most people are offered an appointment within 1 to 3 days, by video or in our clinics in Oslo and Ski.';
+        $url   = get_field( 'sidebar_cta_url',     $acf_option_slug ) ?: get_home_url() . '/kontakt-oss/';
 
-    echo '<div class="mega-menu__sidebar">';
-    if ( $img ) {
-        echo '<img src="' . esc_url($img['url']) . '" alt="' . esc_attr($img['alt']) . '" class="mega-menu__sidebar-img">';
+        echo '<div class="mega-menu__sidebar">';
+        if ( $img ) {
+            echo '<img src="' . esc_url($img['url']) . '" alt="' . esc_attr($img['alt']) . '" class="mega-menu__sidebar-img">';
+        }
+        echo '<div class="mega-menu__sidebar-content">';
+        echo '<h4 class="mega-menu__sidebar-title">' . esc_html($title) . '</h4>';
+        echo '<p class="mega-menu__sidebar-desc">' . esc_html($desc) . '</p>';
+        echo '<a href="' . esc_url($url) . '" class="btn btn--primary btn--sidebar">';
+        echo '<svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>';
+        echo ' Contact Us</a>';
+        echo '</div>';
+        echo '</div>';
     }
-    echo '<div class="mega-menu__sidebar-content">';
-    echo '<h4 class="mega-menu__sidebar-title">' . esc_html($title) . '</h4>';
-    echo '<p class="mega-menu__sidebar-desc">' . esc_html($desc) . '</p>';
-    echo '<a href="' . esc_url($url) . '" class="btn btn--primary btn--sidebar">';
-    echo '<svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>';
-    echo ' Contact Us</a>';
-    echo '</div>';
-    echo '</div>';
-    echo '</div>';
 }
 
+// -------------------------------------------------------
+// 5. Mobile Menu Walker and Helper
+// -------------------------------------------------------
+class Mobile_Menu_Walker extends Walker_Nav_Menu {
+    public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+        $output .= '
+        <a href="' . esc_url( $item->url ) . '" class="nav-drawer__sub-link" data-close-nav>
+            <span>' . esc_html( $item->title ) . '</span>
+        </a>';
+    }
+    public function start_lvl( &$output, $depth = 0, $args = null ) {}
+    public function end_lvl(   &$output, $depth = 0, $args = null ) {}
+    public function end_el(    &$output, $item,  $depth = 0, $args = null ) {}
+}
+
+function psykolog_mobile_menu( $location ) {
+    wp_nav_menu([
+        'theme_location' => $location,
+        'walker'         => new Mobile_Menu_Walker(),
+        'items_wrap'     => '%3$s',
+        'container'      => false,
+        'fallback_cb'    => false,
+    ]);
+}
 

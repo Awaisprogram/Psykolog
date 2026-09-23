@@ -51,7 +51,7 @@ function anxiety_icon_svg($key)
         <span class="[grid-area:1/1] relative w-full min-h-full lg:min-h-0 overflow-hidden">
             <?php if (!empty($s1['hero_image'])): ?>
                 <img src="<?php echo esc_url($s1['hero_image']); ?>" alt="<?php echo esc_attr($s1['title']); ?>"
-                    class="absolute inset-0 w-full h-full object-cover object-[100%_50%]">
+                    class="absolute inset-0 w-full h-full object-cover object-left lg:object-[100%_50%] opacity-60">
             <?php endif; ?>
             <span
                 class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:hidden"></span>

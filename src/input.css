@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
+@import "./privacy-page.css";
 
 
 @theme {
@@ -757,4 +758,19 @@
 
   /* ── Condition card: arrow gap widens on hover (Tailwind group pattern) ── */
   .group:hover .cond-arrow-hover { gap: 10px; }
+
+  /* Privacy policy */
+  .privacy-nav__link.is-active {
+    color: var(--brand-primary);
+    background: #fbf3ef;
+    font-weight: 600;
+  }
+
+  .privacy-summary__link:hover .privacy-summary__icon {
+    background: #f8d8d4;
+  }
+
+  .privacy-cta {
+    background: linear-gradient(145deg, #c24c33 0%, #b8432c 100%);
+  }
 }

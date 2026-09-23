@@ -162,6 +162,16 @@
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && drawer.classList.contains("is-open")) close();
     });
+
+    // Mobile nav accordions logic
+    $$('.nav-drawer__accordion-trigger', drawer).forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const accordion = trigger.closest('.nav-drawer__accordion');
+        if (!accordion) return;
+        const isOpen = accordion.classList.toggle('is-open');
+        trigger.setAttribute('aria-expanded', isOpen);
+      });
+    });
   }
 
   /* ---------------------------------------------------------
@@ -1014,6 +1024,56 @@
      Jump nav: highlight the section in view + edge fades
      for the horizontally-scrollable pill bar (ADHD page)
   --------------------------------------------------------- */
+  function initPrivacyNav() {
+    const nav = $('#privacyNav');
+    if (!nav) return;
+
+    const links = $$('a[data-privacy-section]', nav);
+    const blocks = $$('[data-privacy-block]');
+    if (!links.length || !blocks.length) return;
+
+    const headerOffset = () => {
+      const header = $('.site-header');
+      return (header ? header.offsetHeight : 0) + 48;
+    };
+
+    function setActive(id) {
+      links.forEach((link) => {
+        link.classList.toggle('is-active', link.dataset.privacySection === id);
+      });
+    }
+
+    const scrollToSection = (link, e) => {
+      const target = $(link.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.scrollY - headerOffset();
+      window.scrollTo({ top, behavior: 'smooth' });
+    };
+
+    links.forEach((link) => {
+      link.addEventListener('click', (e) => scrollToSection(link, e));
+    });
+
+    $$('.privacy-summary__link[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (e) => scrollToSection(link, e));
+    });
+
+    const onScroll = debounce(() => {
+      const scrollPos = window.scrollY + headerOffset() + 20;
+      let current = blocks[0].dataset.privacyBlock;
+      blocks.forEach((block) => {
+        if (block.offsetTop <= scrollPos) {
+          current = block.dataset.privacyBlock;
+        }
+      });
+      if (current) setActive(current);
+    }, 50);
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
   function initJumpNav() {
     const nav = $("#jumpNav");
     const wrap = nav && nav.closest(".ps-jump-wrap");
@@ -1935,6 +1995,7 @@
     initDepCooccurTabs();
 
     initJumpNav();
+    initPrivacyNav();
     initAddAccordion();
     initSubtypesHover();
     initVideoButton();

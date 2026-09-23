@@ -228,7 +228,7 @@
     <div class="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-white/10 text-[13px] text-[#C9AFA4]">
       <span>© 2026 Psykolog.no, Alle rettigheter forbeholdt</span>
       <span>Designet og utviklet av <a href="https://sysinn.no" target="_blank" rel="noopener noreferrer" class="text-[#FF9D6E] hover:text-white transition-colors">Sysinn.no</a></span>
-      <a href="#" target="_blank" rel="noopener noreferrer" class="text-[#C9AFA4] hover:text-white transition-colors">Personvernerklæring</a>
+      <a href="<?php echo esc_url( home_url( '/personvernerklaering/' ) ); ?>" class="text-[#C9AFA4] hover:text-white transition-colors">Personvernerklæring</a>
     </div>
     
   </div>

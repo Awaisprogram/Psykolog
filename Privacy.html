@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How It Works | psykolog.no</title>
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="tailwind.css" />
+  </head>
+  <body class="m-0 bg-white text-brand-taupe font-sans">
+    <div class="relative z-[51] bg-ink-600">
+      <div class="px-6 md:px-12 lg:px-16">
+        <div
+          class="max-w-[1312px] mx-auto flex items-center justify-between gap-6 h-[52px]"
+        >
+          <span class="inline-flex items-center gap-3">
+            <span
+              class="w-[22px] h-px bg-[rgba(248,216,212,0.5)] flex-none"
+            ></span>
+            <span
+              class="font-sans font-semibold text-[11px] leading-4 tracking-[2px] uppercase text-white whitespace-nowrap"
+              >Our mental health network</span
+            >
+          </span>
+          <span class="flex items-center gap-0">
+            <a
+              href="#"
+              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-transparent"
+              >Dps.no <span class="text-[11px] text-brand-mauve">↗</span></a
+            >
+            <a
+              href="#"
+              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-[rgba(248,216,212,0.2)]"
+              >Psykiater.no
+              <span class="text-[11px] text-brand-mauve">↗</span></a
+            >
+            <a
+              href="#"
+              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-[rgba(248,216,212,0.2)]"
+              >Spesialistpsykiatri.no
+              <span class="text-[11px] text-brand-mauve">↗</span></a
+            >
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <header
+      class="sticky top-0 left-0 right-0 z-50 pt-[18px] pointer-events-none"
+    >
+      <div class="px-6 md:px-12 lg:px-16">
+        <div
+          class="max-w-[1312px] mx-auto bg-white/[.66] backdrop-blur-2xl backdrop-saturate-[1.4] border border-white/[.82] rounded-[22px] p-2.5 pl-[26px] shadow-[0_2px_12px_rgba(0,0,0,0.06)] pointer-events-auto"
+        >
+          <div class="flex items-center justify-between gap-8">
+            <a href="index.html" class="inline-flex flex-none"
+              ><img
+                src="logo.webp"
+                alt="psykolog.no"
+                class="h-[26px] w-auto block brightness-0 opacity-[.86]"
+            /></a>
+            <nav id="navLinks" class="flex gap-9">
+              <a
+                href="index.html#home-conditions"
+                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
+                >Services</a
+              >
+              <a
+                href="index.html#home-formats"
+                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
+                >Therapy</a
+              >
+              <a
+                href="index.html#home-right-place"
+                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
+                >About Us</a
+              >
+              <a
+                href="index.html#home-pricing"
+                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
+                >Pricing</a
+              >
+              <a
+                href="index.html#home-locations"
+                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
+                >Contact</a
+              >
+            </nav>
+            <div class="flex items-center gap-2 flex-none">
+              <button
+                onclick="location.href = '#mh-book'"
+                class="font-sans font-bold text-[15px] leading-5 whitespace-nowrap text-white border-0 rounded-full px-7 py-[13px] cursor-pointer bg-brand-orange"
+              >
+                Book An Appointment
+              </button>
+              <button
+                id="navToggle"
+                class="w-[46px] h-[46px] rounded-full border border-brand-border bg-white cursor-pointer hidden"
+              >
+                <span class="relative block w-[18px] h-3 mx-auto">
+                  <span
+                    class="absolute left-0 top-0 w-[18px] h-0.5 rounded-sm bg-brand-dark"
+                  ></span>
+                  <span
+                    class="absolute left-0 top-[5px] w-[18px] h-0.5 rounded-sm bg-brand-dark"
+                  ></span>
+                  <span
+                    class="absolute left-0 top-[10px] w-[18px] h-0.5 rounded-sm bg-brand-dark"
+                  ></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+ <main id="privacy-policy" class="privacy-policy">
+    <!-- Hero -->
+  <section
+        class="relative w-full max-w-full overflow-hidden bg-brand-cream grid grid-cols-1 grid-rows-1 -mt-20 lg:-mt-[86px] min-h-[500px] lg:min-h-[700px]"
+      >
+        <span
+          class="[grid-area:1/1] relative w-full min-h-full lg:min-h-0 overflow-hidden"
+        >
+          <img
+            src="assets/privacy/hero.webp"
+            alt="Anxiety"
+            class="absolute inset-0 w-full h-full object-cover object-[100%_50%]"
+          />
+          <span
+            class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:hidden"
+          ></span>
+        </span>
+
+        <div
+          class="px-4 md:px-12 lg:px-16 relative w-full [grid-area:1/1] place-self-center z-[2] bg-transparent pt-32 pb-10 lg:pt-[90px] lg:pb-[88px]"
+        >
+          <div class="max-w-[1312px] mx-auto">
+            <div class="max-w-full lg:max-w-[701px]">
+              <h1
+                class="font-serif font-bold text-[#C24C33] mt-7 mb-0 text-[34px] leading-[1.25] md:text-[42px] lg:text-[48px] xl:text-[56px]"
+              >
+                Privacy Policies
+              </h1>
+
+              <p
+                class="text-lg lg:text-xl leading-[1.6] text-[#33170F] mt-[22px] mb-0"
+              >
+               Learn how Psykolog.no protects your personal data, maintains confidentiality, and securely stores information in line with Norwegian privacy laws and GDPR. Your privacy is one of our highest priorities. We are committed to protecting your personal information, and all contact with us is treated confidentially, in accordance with data protection legislation.
+              </p>
+
+              <div
+                class="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 lg:gap-5"
+              >
+                <a
+                  href="#"
+                  class="inline-flex items-center justify-center px-8 py-3.5 bg-[#C24C33] text-white rounded-full font-bold text-base transition hover:bg-opacity-90"
+                >
+                  Book a time
+                  <span class="ml-2 inline-flex items-center"
+                    ><img
+                      src="assets/oslo/white-arrow.webp"
+                      alt="External Link Icon"
+                      class="h-[20px] w-[12px] mt-0.5 object-contain"
+                  /></span>
+                </a>
+                <a
+                  href="#"
+                  class="inline-flex items-center justify-center px-8 py-3.5 bg-white border border-[#A93E28] text-[#A93E28] rounded-full font-bold text-base transition hover:bg-gray-100"
+                >
+                  See prices
+                  <span class="ml-2 inline-flex items-center"
+                    ><img
+                      src="assets/oslo/Brown-arrow.webp"
+                      alt="External Link Icon"
+                      class="h-[20px] w-[12px] mt-0.5 object-contain"
+                  /></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Content -->
+    <section class="section" data-reveal>
+        <div class="container">
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[290px_990px] gap-10 lg:gap-14 xl:gap-16 items-start">
+
+               <aside class="lg:sticky lg:top-32 self-start">
+                    <span class="block text-[10px] font-bold tracking-[0.15em] uppercase text-[#88736B] mb-3 ml-4">ON THIS PAGE</span>
+                    <nav id="privacyNav" class="privacy-nav flex flex-col text-[14.5px] font-medium text-[#4D3A33]" aria-label="On this page">
+                        <a href="#safety" data-privacy-section="safety" class="privacy-nav__link py-3.5 px-4 border-b border-transparent transition-colors no-underline text-[#4E403B] text-[16px] font-medium is-active">Safety, security, responsibility</a>
+                        <a href="#what-is-recorded" data-privacy-section="what-is-recorded" class="privacy-nav__link text-[16px] py-3.5 px-4 border-b border-[#F8F0EB] transition-colors no-underline text-[#4E403B] hover:text-[#B2462E]">What is recorded?</a>
+                        <a href="#contact" data-privacy-section="contact" class="privacy-nav__link text-[16px] py-3.5 px-4 border-b border-[#F8F0EB] transition-colors no-underline text-[#4E403B] hover:text-[#B2462E]">Contact information</a>
+                        <a href="#what-data" data-privacy-section="what-data" class="privacy-nav__link text-[16px] py-3.5 px-4 border-b border-[#F8F0EB] transition-colors no-underline text-[#4E403B] hover:text-[#B2462E]">What personal data do we process, and for what purpose?</a>
+                        <a href="#disclosure" data-privacy-section="disclosure" class="privacy-nav__link text-[16px] py-3.5 px-4 border-b border-[#F8F0EB] transition-colors no-underline text-[#4E403B] hover:text-[#B2462E]">Disclosure of personal data</a>
+                        <a href="#secure-storage" data-privacy-section="secure-storage" class="privacy-nav__link text-[16px] py-3.5 px-4 border-b border-[#F8F0EB] transition-colors no-underline text-[#4E403B] hover:text-[#B2462E]">Secure storage of personal data</a>
+                        <a href="#deletion" data-privacy-section="deletion" class="privacy-nav__link text-[16px] py-3.5 px-4 border-b border-[#F8F0EB] transition-colors no-underline text-[#4E403B] hover:text-[#B2462E]">Deletion of information</a>
+                        <a href="#your-rights" data-privacy-section="your-rights" class="privacy-nav__link text-[16px] py-3.5 px-4 border-b border-[#F8F0EB] transition-colors no-underline text-[#4E403B] hover:text-[#B2462E]">Your rights</a>
+                        <a href="#cookies" data-privacy-section="cookies" class="privacy-nav__link text-[16px] py-3.5 px-4 border-b border-[#F8F0EB] transition-colors no-underline text-[#4E403B] hover:text-[#B2462E]">Cookies</a>
+                        <a href="#security" data-privacy-section="security" class="privacy-nav__link text-[16px] py-3.5 px-4 border-b border-[#F8F0EB] transition-colors no-underline text-[#4E403B] hover:text-[#B2462E]">Security</a>
+                        <a href="#external-links" data-privacy-section="external-links" class="privacy-nav__link text-[16px] py-3.5 px-4 border-b border-[#F8F0EB] transition-colors no-underline text-[#4E403B] hover:text-[#B2462E]">External links and IP addresses</a>
+                        <a href="#questions" data-privacy-section="questions" class="privacy-nav__link py-3.5 px-4 transition-colors no-underline text-[#4D3A33] hover:text-[#B2462E]">Do you have questions about your privacy?</a>
+                    </nav>
+                </aside>
+
+                <div class="flex flex-col gap-[40px] lg:gap-[60px] text-[16px] md:text-[17px] leading-[1.75] text-[#33170F]">
+
+                    <article id="safety" class="privacy-section scroll-mt-36" data-privacy-block="safety">
+                        <h2 class="font-serif text-[32px] md:text-[36px] lg:text-[40px] text-[#241C19] mb-5 mt-0 font-bold">Safety, Security, Responsibility</h2>
+                        <p class="mb-8 text-[16px] md:text-[20px] leading-[1.6] text-[#5B5B5B]">
+                            At Psykolog.no, we want psychologist conversations over video to be at least as safe and secure as conversations at the clinic. Under the GDPR regulations, we are obliged to inform you about how we process personal data. You can read more about this in this privacy statement.
+                        </p>
+
+                        <ul class="privacy-summary list-none p-0 m-0 flex flex-col border-t border-[#F8F0EB]">
+                            <li class="border-b border-[#F8EBE6]">
+                                <a href="#contact" class="privacy-summary__link flex items-center gap-4 py-2 md:py-4 no-underline hover:bg-black/[0.02] transition-colors">
+                                    <span class="shrink-0 w-10 h-10" aria-hidden="true">
+                                        <img src="assets/privacy/icon1.webp" alt="Contact information" class="object-contain" />
+                                    </span>
+                                    <span class="text-[#241C19] font-semibold text-[16px] md:text-[18px]">Contact information for the business</span>
+                                </a>
+                            </li>
+                            <li class="border-b border-[#F8EBE6]">
+                                <a href="#what-data" class="privacy-summary__link flex items-center gap-4 py-2 md:py-4 no-underline hover:bg-black/[0.02] transition-colors">
+                                    <span class="shrink-0 w-10 h-10" aria-hidden="true">
+                                        <img src="assets/privacy/icon2.webp" alt="Personal data" class="object-contain" />
+                                    </span>
+                                    <span class="text-[#241C19] font-semibold text-[16px] md:text-[18px]">What kind of personal data do we process, and for what purpose?</span>
+                                </a>
+                            </li>
+                            <li class="border-b border-[#F8EBE6]">
+                                <a href="#disclosure" class="privacy-summary__link flex items-center gap-4 py-2 md:py-4 no-underline hover:bg-black/[0.02] transition-colors">
+                                    <span class="shrink-0 w-10 h-10" aria-hidden="true">
+                                        <img src="assets/privacy/icon3.webp" alt="Disclosure of data" class="object-contain" />
+                                    </span>
+                                    <span class="text-[#241C19] font-semibold text-[16px] md:text-[18px]">Disclosure of personal data</span>
+                                </a>
+                            </li>
+                            <li class="border-b border-[#F8EBE6]">
+                                <a href="#secure-storage" class="privacy-summary__link flex items-center gap-4 py-2 md:py-4 no-underline hover:bg-black/[0.02] transition-colors">
+                                    <span class="shrink-0 w-10 h-10" aria-hidden="true">
+                                        <img src="assets/privacy/icon4.webp" alt="Data storage" class="object-contain" />
+                                    </span>
+                                    <span class="text-[#241C19] font-semibold text-[16px] md:text-[18px]">How we store your personal data</span>
+                                </a>
+                            </li>
+                            <li class="border-b border-[#F8EBE6]">
+                                <a href="#deletion" class="privacy-summary__link flex items-center gap-4 py-2 md:py-4 no-underline hover:bg-black/[0.02] transition-colors">
+                                    <span class="shrink-0 w-10 h-10" aria-hidden="true">
+                                        <img src="assets/privacy/icon5.webp" alt="Deletion" class="object-contain" />
+                                    </span>
+                                    <span class="text-[#241C19] font-semibold text-[16px] md:text-[18px]">Deletion of personal data</span>
+                                </a>
+                            </li>
+                            <li class="border-b border-[#F8EBE6]">
+                                <a href="#your-rights" class="privacy-summary__link flex items-center gap-4 py-2 md:py-4 no-underline hover:bg-black/[0.02] transition-colors">
+                                    <span class="shrink-0 w-10 h-10" aria-hidden="true">
+                                        <img src="assets/privacy/icon6.webp" alt="Rights" class="object-contain" />
+                                    </span>
+                                    <span class="text-[#241C19] font-semibold text-[16px] md:text-[18px]">Your rights</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article id="what-is-recorded" class="privacy-section scroll-mt-36" data-privacy-block="what-is-recorded">
+                        <h2 class="font-serif font-bold text-[28px] md:text-[34px] text-[#241C19] mb-[20px] mt-0">What is Recorded?</h2>
+                        <p class="mb-4 text-[#5B5B5B] text-[16px] md:text-[20px] ">According to the Health Personnel Act and the Patient and User Rights Act, essential information from conversations and relevant communication with a psychologist must be recorded. For your own safety, this may also include identifiable information, such as your residential address, personal identification number, and contact information for your GP or next of kin.</p>
+                        <p class="mb-4 text-[#5B5B5B] text-[16px] md:text-[20px] ">This sensitive information is stored securely, using encryption technology and two-factor login in line with Norwegian data and privacy protection requirements and EU/EEA requirements through GDPR.</p>
+                        <div class="privacy-notice flex gap-4 items-start bg-white rounded-[16px] p-5 md:p-8 border border-[#F2E4DC] border-l-[4px] border-l-brand">
+                            <span class="shrink-0 w-10 h-10" aria-hidden="true">
+                                <img src="assets/privacy/danger.webp" alt="Danger" class="object-contain" />
+                            </span>
+                            <div>
+                                <p class="mb-0 text-[15px] md:text-[16px] text-[#241C19] leading-[1.65]">As long as there is no danger to the life or health of you or others, and you do not consent, your psychologist is legally bound by confidentiality towards your GP, relatives, and other public authorities.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="contact" class="privacy-section scroll-mt-36" data-privacy-block="contact">
+                        <h2 class="font-serif font-bold text-[28px] md:text-[32px] lg:text-[36px] text-ink-900 mb-4 mt-0">Contact information</h2>
+                        <p class="mb-4 text-ink-body">Contact details for the data controller:</p>
+                        <div class="privacy-contact-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 rounded-[16px] border border-[#E8DDD7] overflow-hidden bg-white">
+                            <div class="privacy-contact-grid__cell p-5 md:p-6 border border-[#F2E4DC] -mt-px -ml-px">
+                                <span class="block text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-faint mb-2">Legal name</span>
+                                <span class="block font-bold text-[16px] md:text-[17px] text-ink-900 leading-snug">Psykolog.no</span>
+                            </div>
+                            <div class="privacy-contact-grid__cell p-5 md:p-6 border border-[#F2E4DC] -mt-px -ml-px">
+                                <span class="block text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-faint mb-2">Telephone</span>
+                                <span class="block font-bold text-[16px] md:text-[17px] text-ink-900 leading-snug">92 84 4444</span>
+                            </div>
+                            <div class="privacy-contact-grid__cell p-5 md:p-6 border border-[#F2E4DC] -mt-px -ml-px">
+                                <span class="block text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-faint mb-2">Email</span>
+                                <span class="block font-bold text-[16px] md:text-[17px] text-ink-900 leading-snug">hei@psykolog.no</span>
+                            </div>
+                            <div class="privacy-contact-grid__cell p-5 md:p-6 border border-[#F2E4DC] -mt-px -ml-px">
+                                <span class="block text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-faint mb-2">Postal address</span>
+                                <span class="block font-bold text-[16px] md:text-[17px] text-ink-900 leading-snug">Veitvetveien 8, 0586 Oslo</span>
+                            </div>
+                            <div class="privacy-contact-grid__cell p-5 md:p-6 border border-[#F2E4DC] -mt-px -ml-px">
+                                <span class="block text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-faint mb-2">General manager</span>
+                                <span class="block font-bold text-[16px] md:text-[17px] text-ink-900 leading-snug">Dr. Rehan Nawaz</span>
+                            </div>
+                            <div class="privacy-contact-grid__cell p-5 md:p-6 border border-[#F2E4DC] -mt-px -ml-px">
+                                <span class="block text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-faint mb-2">Clinic</span>
+                                <span class="block font-bold text-[16px] md:text-[17px] text-ink-900 leading-snug">Asenveien 1, 1400 Ski</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="what-data" class="privacy-section scroll-mt-36" data-privacy-block="what-data">
+                        <h2 class="font-serif font-bold text-[28px] md:text-[32px] lg:text-[36px] text-ink-900 mb-5 mt-0 lg:w-[880px]">What personal data do we process, and for what purpose?</h2>
+                        <p class="mb-4 text-[#5B5B5B] text-[16px] md:text-[20px] ">According to the Health Personnel Act and the Patient and User Rights Act, essential information from conversations and relevant communication with a psychologist must be recorded. For your own safety, this may also include identifiable information, such as your residential address, personal identification number, and contact information for your GP or next of kin.</p>
+                         <p class="mb-4 text-[#5B5B5B] text-[16px] md:text-[20px] ">We process your personal data for one purpose: to provide you with psychological treatment. Recording this information is necessary to provide healthcare services. We only collect, process, and store information that is relevant and necessary for this purpose.</p>
+                        <p class="text-[#5B5B5B] text-[16px] md:text-[20px] ">For more information, see the regulations on patient records at <a href="https://lovdata.no/" class="text-brand font-semibold hover:underline" target="_blank" rel="noopener noreferrer">lovdata.no</a>.</p>
+                    </article>
+
+                    <article id="disclosure" class="privacy-section scroll-mt-36" data-privacy-block="disclosure">
+                        <h2 class="font-serif font-bold text-[28px] md:text-[34px] text-[#241C19] mb-[20px] mt-0">Disclosure of personal data</h2>
+                        <p class="mb-4 text-[#5B5B5B] text-[16px] md:text-[20px] ">We do not share your personal information with other parties, and it is not released to third parties. We only disclose personal information to the extent required by law. Examples of this may be if your psychologist suspects that you may be a danger to yourself or others, or if the psychologist's reporting obligation is triggered because there is suspicion that a child under the age of 18 is being seriously neglected.</p>
+                       
+                    </article>
+
+                    <article id="secure-storage" class="privacy-section scroll-mt-36" data-privacy-block="secure-storage">
+                        <h2 class="font-serif font-bold text-[28px] md:text-[34px] text-[#241C19] mb-[20px] mt-0">Secure storage of personal data</h2>
+                           <p class="mb-4 text-[#5B5B5B] text-[16px] md:text-[20px] ">Psykolog.no uses booking system from makeplans.com and the journal system from Aspit.no Psykbase for processing personal data. Data processing agreements have been entered into with the following suppliers: Aspit AS (Aspit.no)</p>
+                        <p class="mb-4 text-[#5B5B5B] text-[16px] md:text-[20px] ">Our video consultation solution is fully encrypted and meets the requirements for secure online conversation solutions. No audio, images or video from the conversation is stored.</p>
+                        <p class="text-[#5B5B5B] text-[16px] md:text-[20px] ">Should a security breach occur that poses a high risk to you, we will notify you as soon as possible.</p>
+                    </article>
+
+                    <article id="deletion" class="privacy-section scroll-mt-36" data-privacy-block="deletion">
+                        <h2 class="font-serif font-bold text-[28px] md:text-[34px] text-[#241C19] mb-[20px] mt-0">Deletion of information</h2>
+                        <p class="mb-4 text-[#5B5B5B] text-[16px] md:text-[20px] ">Records are deleted when, for reasons of health care, they are no longer deemed necessary. If the record information is not to be preserved according to the Archives Act or other legislation, it is normally deleted 10 years after the last record entry.</p>
+                        <p class="mb-4 text-[#5B5B5B] text-[16px] md:text-[20px] ">Correcting incorrect or incomplete information in the medical record can be done relatively easily. However, deleting medical record information is strictly regulated in Section 43 of the Health Personnel Act and requires that certain conditions are met; the medical record cannot be deleted just because you want it to be. Contact us if you believe your medical record contains errors, and we will guide you further.</p>
+                    </article>
+
+                    <article id="your-rights" class="privacy-section scroll-mt-36" data-privacy-block="your-rights">
+                        <h2 class="font-serif font-bold text-[28px] md:text-[34px] text-[#241C19] mb-[20px] mt-0">Your rights</h2>
+                        <ul class="privacy-rights list-none p-0 m-0 flex flex-col gap-3">
+                            <li class="privacy-rights__item flex items-start gap-3 bg-[#FFF7F3] rounded-[16px] px-4 py-4 md:px-[22px] md:py-[20px]">
+                                <span class="shrink-0 w-6 h-6 mt-0.5" aria-hidden="true">
+                                    <img src="assets/privacy/Tick.webp" alt="Tick" class="object-contain w-full h-full" />
+                                </span>
+                                <span class="text-[16px] md:text-[20px] text-[#5B5B5B] leading-[1.6]">Right to request access to and receive a copy of your records.</span>
+                            </li>
+                            <li class="privacy-rights__item flex items-start gap-3 bg-[#FFF7F3] rounded-[16px] px-4 py-4 md:px-5 md:py-[18px]">
+                                <span class="shrink-0 w-6 h-6 mt-0.5" aria-hidden="true">
+                                    <img src="assets/privacy/Tick.webp" alt="Tick" class="object-contain w-full h-full" />
+                                </span>
+                                <span class="text-[16px] md:text-[20px] text-[#5B5B5B] leading-[1.6]">Right to request corrections to your data (with a 30-day response timeframe).</span>
+                            </li>
+                            <li class="privacy-rights__item flex items-start gap-3 bg-[#FFF7F3] rounded-[16px] px-4 py-4 md:px-5 md:py-[18px]">
+                                <span class="shrink-0 w-6 h-6 mt-0.5" aria-hidden="true">
+                                    <img src="assets/privacy/Tick.webp" alt="Tick" class="object-contain w-full h-full" />
+                                </span>
+                                <span class="text-[16px] md:text-[20px] text-[#5B5B5B] leading-[1.6]">Right to request deletion where we no longer have a legal basis to retain data.</span>
+                            </li>
+                            <li class="privacy-rights__item flex items-start gap-3 bg-[#FFF7F3] rounded-[16px] px-4 py-4 md:px-5 md:py-[18px]">
+                                <span class="shrink-0 w-6 h-6 mt-0.5" aria-hidden="true">
+                                    <img src="assets/privacy/Tick.webp" alt="Tick" class="object-contain w-full h-full" />
+                                </span>
+                                <span class="text-[16px] md:text-[20px] text-[#5B5B5B] leading-[1.6]">Right to restrict processing in certain circumstances.</span>
+                            </li>
+                            <li class="privacy-rights__item flex items-start gap-3 bg-[#FFF7F3] rounded-[16px] px-4 py-4 md:px-5 md:py-[18px]">
+                                <span class="shrink-0 w-6 h-6 mt-0.5" aria-hidden="true">
+                                    <img src="assets/privacy/Tick.webp" alt="Tick" class="object-contain w-full h-full" />
+                                </span>
+                                <span class="text-[16px] md:text-[20px] text-[#5B5B5B] leading-[1.6]">Right to data portability for information you have provided.</span>
+                            </li>
+                            <li class="privacy-rights__item flex items-start gap-3 bg-[#FFF7F3] rounded-[16px] px-4 py-4 md:px-5 md:py-[18px]">
+                                <span class="shrink-0 w-6 h-6 mt-0.5" aria-hidden="true">
+                                    <img src="assets/privacy/Tick.webp" alt="Tick" class="object-contain w-full h-full" />
+                                </span>
+                                <span class="text-[16px] md:text-[20px] text-[#5B5B5B] leading-[1.6]">Right to lodge a complaint with the State Administrator (Statsforvalteren) or the Norwegian Data Protection Authority (Datatilsynet).</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article id="cookies" class="privacy-section scroll-mt-36" data-privacy-block="cookies">
+                        <h2 class="font-serif font-bold text-[28px] md:text-[34px] text-[#241C19] mb-[20px] mt-0">Cookies</h2>
+                        <p class="mb-4 text-[#5B5B5B] text-[16px] md:text-[20px]">We use cookies to improve your experience on our website. You can update your preferences or withdraw your consent at any time via our cookie consent manager.</p>
+                        <div class="privacy-cookies overflow-hidden rounded-[16px] border border-[#E8DDD7]">
+                            <table class="w-full border-collapse text-left text-[15px] md:text-[16px]">
+                                <thead>
+                                    <tr class="bg-brand text-white">
+                                        <th class="font-bold px-5 py-4 md:px-6 md:py-[18px] w-[178px]">Category</th>
+                                        <th class="font-bold px-5 py-4 md:px-6 md:py-[18px]">Purpose</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white text-ink-body">
+                                    <tr class="border-t border-[#E8DDD7]">
+                                        <td class="px-5 py-4 md:px-6 md:py-[18px] font-bold font-serif text-[15px] md:text-[18px] text-[#241C19]align-top">Necessary</td>
+                                        <td class="px-5 py-4 md:px-6 md:py-[18px] align-top text-[#5B5B5B]">Required for the website to function securely and correctly.</td>
+                                    </tr>
+                                    <tr class="border-t border-[#E8DDD7]">
+                                        <td class="px-5 py-4 md:px-6 md:py-[18px] font-bold font-serif text-[15px] md:text-[18px] text-[#241C19]align-top">Preferences</td>
+                                        <td class="px-5 py-4 md:px-6 md:py-[18px] align-top text-[#5B5B5B]">Remember your settings and choices on the site.</td>
+                                    </tr>
+                                    <tr class="border-t border-[#E8DDD7]">
+                                        <td class="px-5 py-4 md:px-6 md:py-[18px] font-bold font-serif text-[15px] md:text-[18px] text-[#241C19]align-top">Statistics</td>
+                                        <td class="px-5 py-4 md:px-6 md:py-[18px] align-top text-[#5B5B5B]">Help us understand how visitors use the website (anonymous analytics).</td>
+                                    </tr>
+                                    <tr class="border-t border-[#E8DDD7]">
+                                        <td class="px-5 py-4 md:px-6 md:py-[18px] font-bold font-serif text-[15px] md:text-[18px] text-[#241C19]align-top">Marketing</td>
+                                        <td class="px-5 py-4 md:px-6 md:py-[18px] align-top text-[#5B5B5B]">Used only if you consent, to show relevant content or campaigns.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+
+                    <article id="security" class="privacy-section scroll-mt-36" data-privacy-block="security">
+                        <h2 class="font-serif font-bold text-[28px] md:text-[34px] text-[#241C19] mb-[20px] mt-0">Security</h2>
+                        <p class="text-[#5B5B5B] text-[16px] md:text-[20px]">Our platforms are protected by rigorous system safeguards including robust password policies, two-factor authentication (2FA), and anti-misuse controls to prevent unauthorized access.</p>
+                    </article>
+
+                    <article id="external-links" class="privacy-section scroll-mt-36" data-privacy-block="external-links">
+                        <h2 class="font-serif font-bold text-[28px] md:text-[34px] text-[#241C19] mb-[20px] mt-0">External links and IP addresses</h2>
+                        <p class="mb-4 text-[#5B5B5B] text-[16px] md:text-[20px]">We have a strict IP collection policy intended solely for site administration and security monitoring. IP data is never linked to individual user identities or marketing profiles.</p>
+                        <p class="m- text-[#5B5B5B] text-[16px] md:text-[20px]">We have a strict IP collection policy intended solely for site administration and security monitoring. IP data is never linked to individual user identities or marketing profiles.</p>
+                    </article>
+
+                    <article id="questions" class="privacy-section scroll-mt-36" data-privacy-block="questions">
+                        <div class="privacy-cta rounded-[24px] bg-brand text-white px-6 py-10 md:px-12 md:py-14 ">
+                            <h2 class="font-serif font-bold text-[26px] md:text-[32px] lg:text-[40px] text-white mb-4 mt-0 leading-[1.25]">Do you have questions about your privacy?</h2>
+                            <p class="text-white/90 text-[16px] md:text-[20px] leading-[1.65] mb-8">
+                               You have the right to ask Psykolog.no for access to the personal information we have about you, and to have incorrect data corrected. If you wish to have your personal information deleted, please contact us by email.
+                            </p>
+                            <a href="mailto:hei@psykolog.no" class="privacy-cta__email inline-flex items-center justify-center gap-3 bg-white text-ink-900 font-bold text-[15px] md:text-[16px] px-8 py-4 rounded-[16px] hover:bg-brand-cream transition-colors no-underline">
+                                <span class="w-9 h-9  shrink-0" aria-hidden="true">
+                                    <img src="assets/privacy/question.webp" alt="Question" class="object-contain" />
+                                </span>
+                                hei@psykolog.no
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+    <footer class="bg-brand-brown text-white pt-[72px] pb-8">
+      <div class="px-6 md:px-12 lg:px-16">
+        <div class="max-w-[1312px] mx-auto">
+          <div class="mb-14">
+            <h3 class="font-serif font-bold text-3xl mt-0 mb-3">
+              Stay Informed
+            </h3>
+            <p class="text-base text-white/80 mt-0 mb-6">
+              Get mental health tips and updates delivered to your inbox.
+            </p>
+            <form class="flex gap-3 max-w-[600px] mb-4">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                required
+                class="flex-1 px-6 py-4 rounded-full border border-white/20 bg-[#FFFFFF17] text-white text-[15px]"
+              />
+              <button
+                type="submit"
+                class="font-sans font-bold text-base text-white bg-brand-orange border-0 rounded-full px-8 py-4 cursor-pointer whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </form>
+            <label class="flex items-center gap-2 text-sm text-white/70">
+              <input
+                type="checkbox"
+                required
+                class="w-4 h-4 accent-brand-orange"
+              />
+              <span>I agree to receive emails from psykolog.no</span>
+            </label>
+          </div>
+          <div
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12"
+          >
+            <div>
+              <h4 class="font-bold text-[15px] mt-0 mb-4">Services</h4>
+              <div class="grid gap-2.5">
+                <a
+                  href="index.html#home-conditions"
+                  class="text-sm text-white/70"
+                  >Individual Therapy</a
+                >
+                <a
+                  href="index.html#home-conditions"
+                  class="text-sm text-white/70"
+                  >Couples Therapy</a
+                >
+                <a
+                  href="index.html#home-conditions"
+                  class="text-sm text-white/70"
+                  >Family Therapy</a
+                >
+                <a
+                  href="index.html#home-conditions"
+                  class="text-sm text-white/70"
+                  >Group Therapy</a
+                >
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-[15px] mt-0 mb-4">Conditions</h4>
+              <div class="grid gap-2.5">
+                <a href="adhd.html" class="text-sm text-white/70">ADHD</a>
+                <a href="#mh-conditions" class="text-sm text-white/70"
+                  >Depression</a
+                >
+                <a href="#mh-conditions" class="text-sm text-white/70"
+                  >Anxiety</a
+                >
+                <a href="#mh-conditions" class="text-sm text-white/70">PTSD</a>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-[15px] mt-0 mb-4">Clinic</h4>
+              <div class="grid gap-2.5">
+                <a href="about.html" class="text-sm text-white/70">About Us</a>
+                <a href="index.html#home-team" class="text-sm text-white/70"
+                  >Our Team</a
+                >
+                <a
+                  href="index.html#home-locations"
+                  class="text-sm text-white/70"
+                  >Locations</a
+                >
+                <a href="index.html#home-pricing" class="text-sm text-white/70"
+                  >Pricing</a
+                >
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-[15px] mt-0 mb-4">Company</h4>
+              <div class="grid gap-2.5">
+                <a href="#" class="text-sm text-white/70">Careers</a>
+                <a href="#" class="text-sm text-white/70">Blog</a>
+                <a href="#" class="text-sm text-white/70">Press</a>
+                <a href="#" class="text-sm text-white/70">Contact</a>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-[15px] mt-0 mb-4">Legal</h4>
+              <div class="grid gap-2.5">
+                <a href="#" class="text-sm text-white/70">Privacy Policy</a>
+                <a href="#" class="text-sm text-white/70">Terms of Service</a>
+                <a href="#" class="text-sm text-white/70">Cookie Policy</a>
+                <a href="#" class="text-sm text-white/70">Accessibility</a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="border-t border-white/20 pt-6 flex flex-col gap-4 md:flex-row md:justify-between md:items-center"
+          >
+            <p class="text-sm text-white/60 m-0">
+              &copy; 2024 psykolog.no. All rights reserved.
+            </p>
+            <div class="flex items-center gap-5">
+              <a href="#" class="text-white/70 text-xl">📷</a>
+              <a href="#" class="text-white/70 text-xl">💼</a>
+              <a href="#" class="text-white/70 text-xl">📘</a>
+              <span class="text-[13px] text-white/50"
+                >Made by
+                <a href="https://sysinn.no" class="text-white/70"
+                  >Sysinn</a
+                ></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -19,9 +19,7 @@ body {
   }
 
   #home-netbar {
-    .netbar__row {
-      padding: 10px 24px;
-    }
+    display: none;
   }
 
   .site-header {
