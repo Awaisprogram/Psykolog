@@ -819,6 +819,9 @@
   .mb-16 {
     margin-bottom: calc(var(--spacing) * 16) !important;
   }
+  .mb-44 {
+    margin-bottom: calc(var(--spacing) * 44) !important;
+  }
   .mb-\[2px\] {
     margin-bottom: 2px !important;
   }
@@ -1945,6 +1948,9 @@
   .gap-16 {
     gap: calc(var(--spacing) * 16) !important;
   }
+  .gap-\[1\] {
+    gap: 1 !important;
+  }
   .gap-\[2\.5px\] {
     gap: 2.5px !important;
   }
@@ -1968,6 +1974,9 @@
   }
   .gap-\[20px\] {
     gap: 20px !important;
+  }
+  .gap-\[32px\] {
+    gap: 32px !important;
   }
   .gap-\[40px\] {
     gap: 40px !important;
@@ -6096,6 +6105,9 @@
     .md\:p-12 {
       padding: calc(var(--spacing) * 12) !important;
     }
+    .md\:p-\[30px\] {
+      padding: 30px !important;
+    }
     .md\:p-\[48px\] {
       padding: 48px !important;
     }
@@ -6313,6 +6325,9 @@
     .md\:text-\[20\] {
       color: 20 !important;
     }
+    .md\:text-\[20x\] {
+      color: 20x !important;
+    }
     @media (hover: hover) {
       .md\:hover\:border-l-3:hover {
         border-left-style: var(--tw-border-style) !important;
@@ -6482,6 +6497,9 @@
     }
     .lg\:h-\[530px\] {
       height: 530px !important;
+    }
+    .lg\:h-\[540px\] {
+      height: 540px !important;
     }
     .lg\:h-\[550px\] {
       height: 550px !important;
@@ -6969,11 +6987,20 @@
     .xl\:col-span-9 {
       grid-column: span 9 / span 9 !important;
     }
+    .xl\:grid {
+      display: grid !important;
+    }
     .xl\:w-\[45\%\] {
       width: 45% !important;
     }
     .xl\:w-\[55\%\] {
       width: 55% !important;
+    }
+    .xl\:w-\[450\] {
+      width: 450 !important;
+    }
+    .xl\:w-\[450px\] {
+      width: 450px !important;
     }
     .xl\:w-\[500px\] {
       width: 500px !important;
@@ -7005,11 +7032,17 @@
     .xl\:w-\[724px\] {
       width: 724px !important;
     }
+    .xl\:w-\[730px\] {
+      width: 730px !important;
+    }
     .xl\:w-\[734px\] {
       width: 734px !important;
     }
     .xl\:w-\[784px\] {
       width: 784px !important;
+    }
+    .xl\:w-\[844px\] {
+      width: 844px !important;
     }
     .xl\:grid-cols-4 {
       grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
@@ -7034,6 +7067,18 @@
     }
     .xl\:grid-cols-\[420px_820px\] {
       grid-template-columns: 420px 820px !important;
+    }
+    .xl\:grid-cols-\[450px_844\] {
+      grid-template-columns: 450px 844 !important;
+    }
+    .xl\:grid-cols-\[450px_844p\] {
+      grid-template-columns: 450px 844p !important;
+    }
+    .xl\:grid-cols-\[450px_844px\] {
+      grid-template-columns: 450px 844px !important;
+    }
+    .xl\:grid-cols-\[450px_\] {
+      grid-template-columns: 450px  !important;
     }
     .xl\:grid-cols-\[465px_804px\] {
       grid-template-columns: 465px 804px !important;
@@ -7106,6 +7151,9 @@
     }
     .xl\:gap-16 {
       gap: calc(var(--spacing) * 16) !important;
+    }
+    .xl\:gap-\[18px\] {
+      gap: 18px !important;
     }
     .xl\:text-\[14px\] {
       font-size: 14px !important;
