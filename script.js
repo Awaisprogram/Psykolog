@@ -206,7 +206,60 @@
       });
     });
   }
+	 /* ---------------------------------------------------------
+     Les mer popup
+  --------------------------------------------------------- */
+	
+// Les mer popup (section 10)
+(function initLesmerPopup() {
+    function setup() {
+        var section = document.getElementById('home-psychologists');
+        if (!section) return;
 
+        var buttons = section.querySelectorAll('.lesmer-btn');
+        var popup = section.querySelector('.lesmer-open');
+        if (!buttons.length || !popup) return;
+
+        // body mein move taake koi parent transform/overflow position: fixed na tode
+        document.body.appendChild(popup);
+
+        function openPopup() {
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePopup() {
+            popup.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        buttons.forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                openPopup();
+            });
+        });
+
+        popup.addEventListener('click', function (e) {
+            if (e.target === popup) closePopup();
+        });
+
+        var closeBtn = popup.querySelector('.lesmer-close');
+        if (closeBtn) closeBtn.addEventListener('click', closePopup);
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closePopup();
+        });
+    }
+
+    // script.js footer mein ho ya head mein, dono cases mein chalega
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setup);
+    } else {
+        setup();
+    }
+})();
+	
   /* ---------------------------------------------------------
      Fade/slide-up reveal for [data-reveal] elements
      single implementation — kept from adhd.js (adds a support
@@ -249,11 +302,11 @@
       const active = list.querySelectorAll('.signs__item.is-active').length;
       if (!note) return;
       if (active === 0) {
-        note.textContent = "If several of these statements feel familiar, it's time to talk to a psychologist.";
+        note.textContent = "Hvis flere av disse utsagnene virker kjente, er det på tide å snakke med en psykolog.";
       } else if (active < 3) {
-        note.textContent = `You recognised ${active}. A psychologist can help you to understand the condition and give the right treatment plan.`;
+        note.textContent = `Du gjenkjente ${active}. En psykolog kan hjelpe deg med å forstå tilstanden og gi deg behandlingsplan.`;
       } else {
-        note.textContent = `You recognised ${active} of 6. A psychologist can help you to understand the condition and give the right treatment plan, and you can book without a referral.`;
+        note.textContent = `Du kjente deg igjen i ${active} av 6 punkter. En psykolog kan hjelpe deg med å forstå tilstanden og sette opp en behandlingsplan, og du kan bestille time uten henvisning.`;
       }
       note.style.color = active >= 3 ? 'var(--brand-primary)' : 'var(--ink-body)';
     }
@@ -300,7 +353,7 @@
     if (toggle && accordion) {
       toggle.addEventListener('click', () => {
         const open = accordion.classList.toggle('is-open');
-        toggle.querySelector('span').textContent = open ? 'Hide the full list' : 'See all disorders';
+        toggle.querySelector('span').textContent = open ? 'Skjul hele listen' : 'Se alle lidelser';
       });
     }
   }
@@ -430,7 +483,7 @@
       if (!d) return;
       map.src = d.map;
       map.title = d.mapTitle;
-      mapTag.textContent = `${d.short} clinic`;
+      mapTag.textContent = `${d.short} klinikk`;
       if (bookBtn) bookBtn.textContent = `Bestill en time i ${d.short}`;
     });
   }
@@ -1206,26 +1259,26 @@
     const shotCaption = $("#shotCaption");
     const shotSub = $("#shotSub");
 
-    const meta = [
+   const meta = [
       {
-        label: "Initial screening",
-        caption: "A conversation about how things actually are",
-        sub: "Your difficulties, daily life, work or school, and history.",
+        label: "Innledende kartlegging",
+        caption: "En samtale om hvordan situasjonen faktisk er",
+        sub: "Vanskeligheter, hverdagsliv, jobb eller skole, samt bakgrunn.",
       },
       {
-        label: "Assessment",
-        caption: "Questionnaires, interviews and testing",
-        sub: "Structured tools measuring attention, memory and executive function.",
+        label: "Utredning",
+        caption: "Spørreskjemaer, intervjuer og testing",
+        sub: " Strukturerte verktøy som måler oppmerksomhet, hukommelse og eksekutivfunksjoner.",
       },
       {
-        label: "Feedback & diagnosis",
-        caption: "Going through the results together",
-        sub: "A clear explanation of what the assessment found.",
+        label: "Tilbakemelding og diagnose",
+        caption: "Gjennomgang av resultatene sammen",
+        sub: "En tydelig forklaring av hva utredningen viste.",
       },
       {
-        label: "Treatment plan",
-        caption: "Building a plan that fits your life",
-        sub: "Therapy, coaching, and referral to a psychiatrist if needed.",
+        label: "Behandlingsplan",
+        caption: "Utforming av en plan som passer ditt liv",
+        sub: "Terapi, coaching og henvisning til psykiater ved behov.",
       },
     ];
 
@@ -1332,7 +1385,8 @@
   function initNewsletterForm() {
     const form = $("#newsletterForm");
     const consentBox = $("#consentBox");
-    if (!form) return;
+    // The Psykolog Newsletter plugin handles its own form (data-pn-form); this legacy handler must not intercept it.
+    if (!form || form.hasAttribute("data-pn-form")) return;
 
     let consented = true; // matches the pre-checked "✓" markup
     if (consentBox) {
@@ -1667,9 +1721,10 @@
   /* -------------------------------------------------------------------
      Article Filters (Categories, Search, View All)
      ------------------------------------------------------------------- */
-  function initArticleFilters() {
+    function initArticleFilters() {
     const filterContainer = document.querySelector('.flex-wrap.items-center.gap-3');
-    const searchInput = document.querySelector('input[placeholder="Search articles"]');
+    const searchInput = document.querySelector('input[placeholder="Søk i artikler"], input[placeholder="Search articles"]');
+//     const allCards = document.querySelectorAll('.js-article-card');	
     const allCards = document.querySelectorAll('.js-article-card');
     const viewAllBtn = document.getElementById('viewAllArticlesBtn');
     
@@ -1678,8 +1733,17 @@
     const filterButtons = filterContainer ? filterContainer.querySelectorAll('button') : [];
     
     // Dynamic counts
-    const categoryCounts = { all: allCards.length };
+    const categoryCounts = { all: 0, alle: 0 };
+    const countedTitles = new Set();
+    
     allCards.forEach(card => {
+      const title = (card.getAttribute('data-title') || '').trim().toLowerCase();
+      if (title && countedTitles.has(title)) return;
+      if (title) countedTitles.add(title);
+      
+      categoryCounts.all++;
+      categoryCounts.alle++;
+      
       const cat = (card.getAttribute('data-category') || '').trim().toLowerCase();
       if (!cat) return;
       categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
@@ -1708,14 +1772,14 @@
         const cardCategory = (card.getAttribute('data-category') || '').toLowerCase();
         const cardTitle = (card.getAttribute('data-title') || '').toLowerCase();
         
-        const matchesCategory = currentCategory === 'all' || cardCategory === currentCategory;
-        const matchesSearch = currentSearch === '' || cardTitle.includes(currentSearch);
+        const matchesCategory = currentCategory === 'all' || currentCategory === 'alle' || cardCategory === currentCategory;
+        const matchesSearch = currentSearch === '' || cardTitle.includes(currentSearch) || cardCategory.includes(currentSearch);
         
         const isHiddenLatest = card.classList.contains('js-latest-card') && card.dataset.hiddenByDefault === 'true';
         
         let shouldShow = matchesCategory && matchesSearch;
         
-        if (currentCategory === 'all' && currentSearch === '' && isHiddenLatest) {
+        if ((currentCategory === 'all' || currentCategory === 'alle') && currentSearch === '' && isHiddenLatest) {
           shouldShow = false;
         }
         
@@ -1776,7 +1840,8 @@
     
     applyFilters();
   }
-
+	
+	
   /* -------------------------------------------------------------------
      Hero Article Carousel
      ------------------------------------------------------------------- */
@@ -1790,6 +1855,7 @@
     const mainDate = document.getElementById('heroDate');
     const mainTitle = document.getElementById('heroTitle');
     const mainDesc = document.getElementById('heroDesc');
+	const mainLink = document.getElementById('heroLink');  
     const prevArrow = document.getElementById('heroPrevArrow');
     const nextArrow = document.getElementById('heroNextArrow');
     const indicatorsContainer = document.getElementById('heroIndicators');
@@ -1820,6 +1886,7 @@
         mainDate.textContent = activeSidebar.dataset.heroDate;
         mainTitle.textContent = activeSidebar.dataset.heroTitle;
         mainDesc.textContent = activeSidebar.dataset.heroDesc;
+	    if (mainLink) mainLink.href = activeSidebar.dataset.heroLink;  
         
         mainTitle.style.opacity = 1;
         mainDesc.style.opacity = 1;
@@ -2191,6 +2258,286 @@
   /* ---------------------------------------------------------
      Psychologist Directory Filter Logic
      --------------------------------------------------------- */
+  /* Shared: copy text to the clipboard, with a fallback for insecure contexts. */
+  function copyTextToClipboard(text) {
+    return new Promise((resolve, reject) => {
+      const fallbackCopy = () => {
+        try {
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.setAttribute("readonly", "");
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          ta.style.left = "-9999px";
+          document.body.appendChild(ta);
+          ta.select();
+          ta.setSelectionRange(0, 99999); // mobile devices
+          const ok = document.execCommand("copy");
+          document.body.removeChild(ta);
+          if (ok) resolve();
+          else reject(new Error("copy failed"));
+        } catch (err) {
+          reject(err);
+        }
+      };
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(resolve).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+    });
+  }
+
+  /* -------------------------------------------------------------------
+     Profile copy buttons (data-copy-text="text to copy")
+     ------------------------------------------------------------------- */
+  function initDrProfileCopy() {
+    $$("[data-copy-text]").forEach((btn) => {
+      let timer = null;
+      btn.addEventListener("click", async (e) => {
+        e.preventDefault();
+        const text = btn.getAttribute("data-copy-text") || "";
+        if (!text) return;
+        try {
+          await copyTextToClipboard(text);
+          btn.classList.add("is-copied");
+          clearTimeout(timer);
+          timer = setTimeout(() => btn.classList.remove("is-copied"), 1600);
+        } catch (err) {
+          console.error("Copy failed:", err);
+        }
+      });
+    });
+  }
+
+  /* -------------------------------------------------------------------
+     Tell a Friend page — copy button (data-taf-copy)
+     Uses one delegated listener on document, so it works no matter when
+     the button is rendered and does not depend on $$ or on being called
+     at the right time. Safe to call more than once.
+     ------------------------------------------------------------------- */
+  function initTellAFriendShare() {
+    if (window.__tafCopyBound) return;
+    window.__tafCopyBound = true;
+
+    const timers = new WeakMap();
+
+    function copyText(text) {
+      return new Promise((resolve, reject) => {
+        const fallback = () => {
+          try {
+            const ta = document.createElement("textarea");
+            ta.value = text;
+            ta.setAttribute("readonly", "");
+            ta.style.cssText =
+              "position:fixed;left:-9999px;top:0;opacity:0;" +
+              "user-select:text;-webkit-user-select:text;";
+            document.body.appendChild(ta);
+            ta.focus();
+            ta.select();
+            ta.setSelectionRange(0, ta.value.length);
+            const ok = document.execCommand("copy");
+            document.body.removeChild(ta);
+            ok ? resolve() : reject(new Error("execCommand returned false"));
+          } catch (err) {
+            reject(err);
+          }
+        };
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(resolve).catch(fallback);
+        } else {
+          fallback();
+        }
+      });
+    }
+
+    document.addEventListener("click", async (e) => {
+      const btn = e.target.closest("[data-taf-copy]");
+      if (!btn) return;
+      e.preventDefault();
+
+      // Prefer the live text of the editable message; fall back to the attribute
+      const msg = document.getElementById("editable-message");
+      const text = (msg ? msg.innerText : btn.getAttribute("data-taf-copy") || "").trim();
+
+      console.log("[taf] copy clicked, length:", text.length);
+      if (!text) return;
+
+      btn.classList.remove("is-done", "is-error");
+      clearTimeout(timers.get(btn));
+
+      try {
+        await copyText(text);
+        btn.classList.add("is-done");
+      } catch (err) {
+        console.error("[taf] copy failed:", err);
+        btn.classList.add("is-error");
+      }
+
+      timers.set(btn, setTimeout(() => btn.classList.remove("is-done", "is-error"), 2200));
+    });
+  }
+
+ 
+
+  /* -------------------------------------------------------------------
+     Tell a Friend page — Interactive message card logic (toggle & actions)
+     ------------------------------------------------------------------- */
+  function initTellAFriendInteractiveCard() {
+    // 1. Toggle between Text and Email mode
+    const textBtn = document.getElementById('toggle-text');
+    const emailBtn = document.getElementById('toggle-email');
+    const imageEl = document.getElementById('share-image');
+    const emailInputs = document.getElementById('email-inputs');
+    const textActions = document.getElementById('text-actions');
+    const emailActions = document.getElementById('email-actions');
+
+    if (textBtn && emailBtn) {
+      function setShareMode(mode) {
+        const activeClass = 'bg-[#C24C33] text-white'.split(' ');
+        const inactiveClass = 'bg-transparent text-[#C24C33] hover:bg-[#FDE7E1]'.split(' ');
+        
+        if (mode === 'text') {
+          textBtn.classList.remove(...inactiveClass);
+          textBtn.classList.add(...activeClass);
+          emailBtn.classList.remove(...activeClass);
+          emailBtn.classList.add(...inactiveClass);
+          
+          if (imageEl) {
+            imageEl.style.opacity = '0';
+            setTimeout(() => {
+              imageEl.src = imageEl.getAttribute('data-text-src') || 'assets/tell/your-msg.webp';
+              imageEl.style.opacity = '1';
+            }, 150);
+          }
+          
+          if (emailInputs) emailInputs.classList.add('hidden');
+          if (textActions) {
+            textActions.classList.remove('hidden');
+            textActions.classList.add('flex');
+          }
+          if (emailActions) {
+            emailActions.classList.add('hidden');
+            emailActions.classList.remove('flex');
+          }
+        } else {
+          emailBtn.classList.remove(...inactiveClass);
+          emailBtn.classList.add(...activeClass);
+          textBtn.classList.remove(...activeClass);
+          textBtn.classList.add(...inactiveClass);
+          
+          if (imageEl) {
+            imageEl.style.opacity = '0';
+            setTimeout(() => {
+              imageEl.src = imageEl.getAttribute('data-email-src') || 'assets/tell/Din e-post.webp';
+              imageEl.style.opacity = '1';
+            }, 150);
+          }
+          
+          if (emailInputs) emailInputs.classList.remove('hidden');
+          if (emailActions) {
+            emailActions.classList.remove('hidden');
+            emailActions.classList.add('flex');
+          }
+          if (textActions) {
+            textActions.classList.add('hidden');
+            textActions.classList.remove('flex');
+          }
+        }
+      }
+
+      textBtn.addEventListener('click', () => setShareMode('text'));
+      emailBtn.addEventListener('click', () => setShareMode('email'));
+    }
+
+    // 2. Character count and dynamic content updating
+    const editableMessage = document.getElementById('editable-message');
+    const charCount = document.getElementById('char-count');
+    const copyBtn = document.getElementById('copy-btn');
+    const smsBtn = document.getElementById('sms-btn');
+
+    if (editableMessage && charCount && copyBtn && smsBtn) {
+      charCount.textContent = `${editableMessage.innerText.trim().length} / 500`;
+
+      editableMessage.addEventListener('input', function() {
+        let text = this.innerText.trim();
+        
+        if (text.length > 500) {
+          text = text.substring(0, 500);
+          this.innerText = text;
+          const range = document.createRange();
+          const sel = window.getSelection();
+          range.selectNodeContents(this);
+          range.collapse(false);
+          sel.removeAllRanges();
+          sel.addRange(range);
+        }
+        
+        charCount.textContent = `${text.length} / 500`;
+        copyBtn.setAttribute('data-taf-copy', text);
+        smsBtn.href = `sms:?body=${encodeURIComponent(text)}`;
+      });
+    }
+
+    // 3. Email form logic
+    const emailBtnSubmit = document.getElementById('email-btn-submit');
+    const friendEmailInput = document.getElementById('friend-email');
+
+    if (emailBtnSubmit && friendEmailInput) {
+      emailBtnSubmit.addEventListener('click', function(e) {
+        e.preventDefault();
+        const friendEmail = friendEmailInput.value.trim();
+        const text = editableMessage ? editableMessage.innerText.trim() : '';
+        
+        if (!friendEmail) {
+          const alertMsg = emailBtnSubmit.getAttribute('data-alert') || "Please enter your friend's email address first.";
+          alert(alertMsg);
+          friendEmailInput.focus();
+          return;
+        }
+        
+        const subjectRaw = emailBtnSubmit.getAttribute('data-subject') || "En terapeut jeg anbefaler";
+        const subject = encodeURIComponent(subjectRaw);
+        const body = encodeURIComponent(text);
+        window.location.href = `mailto:${friendEmail}?subject=${subject}&body=${body}`;
+      });
+    }
+  }
+  /* -------------------------------------------------------------------
+     Digipost page — copy a doctor's Digipost address; the card shows the
+     "copied" toast for a moment (data-dp-copy inside [data-dp-card])
+     ------------------------------------------------------------------- */
+  function initDigipostCopy() {
+    const buttons = $$("[data-dp-copy]");
+    if (!buttons.length) return;
+    buttons.forEach((btn) => {
+      const card = btn.closest("[data-dp-card]");
+      let timer = null;
+      btn.addEventListener("click", async () => {
+        const text = btn.getAttribute("data-dp-copy") || "";
+        if (!text || !card) return;
+        try {
+          await copyTextToClipboard(text);
+          card.classList.add("is-copied");
+          clearTimeout(timer);
+          timer = setTimeout(() => card.classList.remove("is-copied"), 2500);
+        } catch (e) {
+          // Clipboard unavailable: select the address text so it can be copied manually.
+          const addr = card.querySelector("[data-dp-address]");
+          if (addr && window.getSelection) {
+            const range = document.createRange();
+            range.selectNodeContents(addr);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+          }
+        }
+      });
+    });
+  }
+
   function initPsyDirectoryFilter() {
     const psyFilterContainer = document.getElementById('psychologist-filters');
     if (!psyFilterContainer) return;
@@ -2314,6 +2661,12 @@
     initFlipCards();
     initSelfReflectionQuiz();
     initIncludedTabs();
+    initDrProfileCopy();
+    initTellAFriendShare();
+    initTellAFriendInteractiveCard();
+    initDigipostCopy();
   });
 
 })();
+
+

@@ -1,7 +1,7 @@
 @import "tailwindcss";
+@source "../";
 @config "../tailwind.config.js";
 @import "./privacy-page.css";
-
 
 @theme {
   --color-brand: #c24c33;
@@ -580,7 +580,6 @@
 
   .btn--primary:hover {
     background: var(--brand-primary-hover);
-    transform: translateY(-2px);
   }
 
   .btn--outline {

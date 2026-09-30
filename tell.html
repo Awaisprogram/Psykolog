@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tell a Friend</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  .font-serif{font-family:Georgia,"Times New Roman",serif}
+  .mark{color:#C24C33}
+  .faq-content{display:block}.faq-content.hidden{display:none}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="minus" viewBox="0 0 24 24"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></g></symbol>
+    <symbol id="link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 11 18.7l1-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g></symbol>
+    <symbol id="chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.5 3-6 6-6s6 2.500 6 6M16 5a3.500 3.500 0 0 1 0 7M18 14c2 .6 3 2.500 3 5"/></g></symbol>
+    <symbol id="asterisk" viewBox="0 0 24 24"><path d="M12 3v18M4.200 7.500l15.600 9M4.200 16.500l15.600-9" fill="none" stroke="currentColor" stroke-width="2.400" stroke-linecap="round"/></symbol>
+    <symbol id="building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 21V4h9v17M14 9h5v12M3 21h18M8 8h3M8 12h3M8 16h3"/></g></symbol>
+    <symbol id="heart" viewBox="0 0 24 24"><path d="M12 20s-8-4.800-8-11a4.500 4.500 0 0 1 8-2.800A4.500 4.500 0 0 1 20 9c0 6.200-8 11-8 11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="sparkles" viewBox="0 0 24 24"><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<main class="taf">
+
+<!-- HERO -->
+<section class="relative w-full overflow-hidden bg-[#FBF4ED] pt-24 lg:pt-[110px] pb-10 lg:pb-[50px]">
+  <div class="hidden lg:block absolute inset-y-0 right-0 w-[42%] xl:w-[45.7%] pointer-events-none" aria-hidden="true">
+    <span class="absolute inset-y-0 left-0 w-[180px] bg-gradient-to-r from-[#FBF4ED] to-transparent z-[1]"></span>
+    <div class="w-full h-full bg-gradient-to-br from-[#F4C7B8] via-[#EBA58F] to-[#C24C33]"></div>
+  </div>
+  <div class="px-4 md:px-12 lg:px-16">
+    <div class="max-w-[1312px] mx-auto">
+      <div class="relative max-w-[660px] lg:max-w-[52%] xl:max-w-[660px]">
+        <span class="inline-flex items-center gap-2 bg-white rounded-full shadow-[0_6px_18px_rgba(58,24,17,0.08)] px-5 py-3 text-[12px] leading-[13px] font-semibold tracking-[2.4px] uppercase text-[#3A1811]">
+          <span class="text-[#C24C33]" aria-hidden="true"><svg class="w-3 h-3"><use href="#asterisk"/></svg></span>Refer a friend
+        </span>
+        <h1 class="font-serif font-bold text-[#3A1811] text-[38px] md:text-[48px] lg:text-[56px] leading-[1.32] mt-8 mb-0">Someone you care about may need <span class="mark">support</span></h1>
+        <p class="text-[#4E2F27] text-[18px] md:text-[20px] leading-[1.65] mt-5 mb-0 max-w-[650px]">Sharing a good therapist is one of the kindest things you can do. Send a link, a message, or a gift card, and let them take the first step at their own pace.</p>
+        <div class="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 mt-7">
+          <a href="#share" class="inline-flex items-center justify-center gap-2.5 h-[54px] px-7 bg-[#C24C33] hover:bg-[#A93E28] text-white text-[16px] font-semibold rounded-full no-underline transition-colors">Share now <svg class="w-4 h-4"><use href="#arrow-right"/></svg></a>
+          <a href="#gift" class="inline-flex items-center justify-center gap-2.5 h-[54px] px-7 bg-transparent hover:bg-white border border-[#C24C33] text-[#A93E28] text-[16px] font-semibold rounded-full no-underline transition-colors">Give a gift card <svg class="w-4 h-4"><use href="#arrow-right"/></svg></a>
+        </div>
+      </div>
+      <div class="lg:hidden mt-10 -mx-4 md:-mx-12 h-[240px] md:h-[320px] bg-gradient-to-br from-[#F4C7B8] via-[#EBA58F] to-[#C24C33]"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SHARE ACTIONS -->
+<section id="share" class="bg-[#FBF4ED] pb-16 lg:pb-24">
+  <div class="px-4 md:px-12 lg:px-16">
+    <div class="max-w-[1312px] mx-auto bg-white rounded-[24px] shadow-[0_8px_32px_rgba(58,24,17,0.06)] p-3 sm:p-5 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-stretch">
+      
+      <!-- Left side image -->
+      <div class="w-full lg:w-[45%] xl:w-[40%] shrink-0">
+        <div class="w-full h-[300px] sm:h-[400px] lg:h-full min-h-[400px] rounded-[20px] overflow-hidden relative">
+          <img id="share-image" src="assets/tell/your-msg.webp" alt="Your Message" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300">
+        </div>
+      </div>
+      
+      <!-- Right side content -->
+      <div class="w-full lg:flex-1 py-4 lg:py-8 lg:pr-8 xl:pr-12">
+        <h2 class="font-serif font-bold text-[#241C19] text-[32px] md:text-[36px] leading-[1.2] m-0 flex flex-wrap items-baseline gap-x-2">Your Message <span class="italic text-[#C24C33] font-semibold text-[26px] md:text-[32px]">(You Can Edit It)</span></h2>
+        
+        <div class="mt-6 md:mt-8 border border-[#F2E4DC] rounded-[24px] p-5 md:p-8">
+          <!-- Header controls -->
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center p-1 bg-[#FFF9F6] border border-[#F2E4DC] rounded-full">
+              <button type="button" id="toggle-text" class="flex items-center gap-2 px-5 py-2 bg-[#C24C33] text-white rounded-full text-[15px] font-semibold transition-colors">
+                <svg class="w-[18px] h-[18px]"><use href="#chat"/></svg> Text
+              </button>
+              <button type="button" id="toggle-email" class="flex items-center gap-2 px-5 py-2 bg-transparent text-[#C24C33] hover:bg-[#FDE7E1] rounded-full text-[15px] font-semibold transition-colors">
+                <svg class="w-[18px] h-[18px]"><use href="#mail"/></svg> Email
+              </button>
+            </div>
+            
+            <div class="flex items-center gap-2.5 text-[#6B5F5A] text-[14px] font-medium">
+              <div class="w-5 h-5 rounded-full border-[2px] border-[#C24C33] shrink-0"></div>
+              <span id="char-count">175 / 500</span>
+            </div>
+          </div>
+          
+          <!-- Email Inputs -->
+          <div id="email-inputs" class="hidden mt-6 mb-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[14px] font-medium text-[#6B5F5A] mb-2">Your email</label>
+              <div class="relative">
+                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-[#C24C33]">
+                  <svg class="w-[18px] h-[18px]"><use href="#users"/></svg>
+                </span>
+                <input type="email" placeholder="you@example.com" class="w-full h-12 pl-11 pr-4 rounded-[12px] border border-[#F2E4DC] focus:outline-none focus:border-[#C24C33] text-[#4E2F27] placeholder:text-[#B3A6A1] text-[15px] bg-transparent transition-colors">
+              </div>
+            </div>
+            <div>
+              <label class="block text-[14px] font-medium text-[#6B5F5A] mb-2">Friend's email</label>
+              <div class="relative">
+                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-[#C24C33] font-medium text-[18px]">@</span>
+                <input type="email" id="friend-email" placeholder="friend@example.com" class="w-full h-12 pl-11 pr-4 rounded-[12px] border border-[#F2E4DC] focus:outline-none focus:border-[#C24C33] text-[#4E2F27] placeholder:text-[#B3A6A1] text-[15px] bg-transparent transition-colors">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Message Box -->
+          <div class="mt-5 md:mt-6 bg-[#FFF9F6] border border-[#F2E4DC] rounded-[16px] p-5 md:p-6 relative group">
+            <div class="flex items-start gap-3">
+              <span class="text-[#EBC0B5] text-[32px] font-serif leading-none pt-1">“</span>
+              <p id="editable-message" class="text-[#4E2F27] text-[15px] md:text-[16px] leading-[1.7] m-0 flex-1 outline-none min-h-[70px] break-words break-all" contenteditable="true">I've been thinking about you. I found this site, Psykolog.no, you don't need a referral, and you choose who you talk to. No obligations, just wanted to share in case it's useful.</p>
+            </div>
+            <!-- Edit icon -->
+            <button type="button" class="absolute top-4 right-4 w-7 h-7 rounded-full bg-white border border-[#F2E4DC] text-[#C24C33] flex items-center justify-center transition-colors hover:bg-[#FBF4ED]" aria-label="Edit message">
+              <svg class="w-[12px] h-[12px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+            </button>
+          </div>
+          
+          <!-- Actions -->
+          <div id="text-actions" class="mt-6 flex flex-wrap items-center gap-3 md:gap-4">
+            <button type="button" id="copy-btn" class="group flex items-center justify-center gap-2 h-11 px-6 rounded-full border border-[#EBC0B5] bg-transparent hover:bg-[#FFF9F6] text-[#C24C33] text-[15px] font-semibold transition-colors" data-taf-copy="I've been thinking about you. I found this site, Psykolog.no, you don't need a referral, and you choose who you talk to. No obligations, just wanted to share in case it's useful.">
+              <span class="group-[.is-done]:hidden" aria-hidden="true"><svg class="w-[18px] h-[18px]"><use href="#copy"/></svg></span>
+              <span class="hidden group-[.is-done]:inline" aria-hidden="true"><svg class="w-[18px] h-[18px]"><use href="#check"/></svg></span>
+              <span class="group-[.is-done]:hidden group-[.is-error]:hidden">Copy message</span>
+              <span class="hidden group-[.is-done]:inline">Copied</span>
+              <span class="hidden group-[.is-error]:inline">Copy failed</span>
+            </button>
+            <a href="sms:?body=I've%20been%20thinking%20about%20you.%20I%20found%20this%20site%2C%20Psykolog.no%2C%20you%20don't%20need%20a%20referral%2C%20and%20you%20choose%20who%20you%20talk%20to.%20No%20obligations%2C%20just%20wanted%20to%20share%20in%20case%20it's%20useful." id="sms-btn" class="flex items-center justify-center gap-2 h-11 px-6 rounded-full bg-[#C24C33] hover:bg-[#A93E28] text-white text-[15px] font-semibold no-underline transition-colors">
+              Send by text <svg class="w-4 h-4 ml-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </a>
+          </div>
+          
+          <div id="email-actions" class="mt-6 hidden flex-wrap items-center gap-3 md:gap-4">
+            <button type="button" id="email-btn-submit" class="flex items-center justify-center gap-2 h-11 px-6 rounded-full bg-[#C24C33] hover:bg-[#A93E28] text-white text-[15px] font-semibold transition-colors">
+              Send by Email <svg class="w-4 h-4 ml-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="bg-[#FFF7F3] pt-16 lg:pt-[88px] pb-16">
+  <div class="px-4 md:px-12 lg:px-16">
+    <div class="max-w-[1312px] mx-auto text-center">
+      <h2 class="font-serif font-bold text-[#241C19] text-[30px] md:text-[40px] leading-[1.2] m-0">Prefer to <span class="mark">post it</span> instead?</h2>
+      <p class="text-[#6B5F5A] text-[18px] md:text-[20px] leading-[1.6] mt-4 mb-0 max-w-[1230px] mx-auto">Follow us and share our stories with your community. Every share helps someone find help sooner.</p>
+      <ul class="list-none m-0 p-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-9 text-left">
+        <li class="m-0"><a href="#" class="flex items-center gap-[18px] h-[92px] pl-6 pr-[30px] bg-white border border-[#F2E4DC] hover:border-[#C24C33] rounded-[16px] text-[18px] font-semibold text-[#241C19] no-underline transition-colors"><span class="w-[46px] h-[46px] rounded-[12px] bg-[#FDE7E1] text-[#C24C33] flex items-center justify-center shrink-0"><svg class="w-5 h-5"><use href="#heart"/></svg></span><span class="flex-1">Instagram</span><span class="text-[#A93E28]"><svg class="w-3 h-3"><use href="#arrow-up-right"/></svg></span></a></li>
+        <li class="m-0"><a href="#" class="flex items-center gap-[18px] h-[92px] pl-6 pr-[30px] bg-white border border-[#F2E4DC] hover:border-[#C24C33] rounded-[16px] text-[18px] font-semibold text-[#241C19] no-underline transition-colors"><span class="w-[46px] h-[46px] rounded-[12px] bg-[#E8EEE5] text-[#5C7355] flex items-center justify-center shrink-0"><svg class="w-5 h-5"><use href="#users"/></svg></span><span class="flex-1">Facebook</span><span class="text-[#A93E28]"><svg class="w-3 h-3"><use href="#arrow-up-right"/></svg></span></a></li>
+        <li class="m-0"><a href="#" class="flex items-center gap-[18px] h-[92px] pl-6 pr-[30px] bg-white border border-[#F2E4DC] hover:border-[#C24C33] rounded-[16px] text-[18px] font-semibold text-[#241C19] no-underline transition-colors"><span class="w-[46px] h-[46px] rounded-[12px] bg-[#FDE7E1] text-[#C24C33] flex items-center justify-center shrink-0"><svg class="w-5 h-5"><use href="#building"/></svg></span><span class="flex-1">LinkedIn</span><span class="text-[#A93E28]"><svg class="w-3 h-3"><use href="#arrow-up-right"/></svg></span></a></li>
+        <li class="m-0"><a href="#" class="flex items-center gap-[18px] h-[92px] pl-6 pr-[30px] bg-white border border-[#F2E4DC] hover:border-[#C24C33] rounded-[16px] text-[18px] font-semibold text-[#241C19] no-underline transition-colors"><span class="w-[46px] h-[46px] rounded-[12px] bg-[#E8EEE5] text-[#5C7355] flex items-center justify-center shrink-0"><svg class="w-5 h-5"><use href="#chat"/></svg></span><span class="flex-1">Podcast</span><span class="text-[#A93E28]"><svg class="w-3 h-3"><use href="#arrow-up-right"/></svg></span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="bg-white pt-16">
+  <div class="px-4 md:px-12 lg:px-16">
+    <div class="max-w-[1312px] mx-auto">
+      <div class="relative overflow-hidden bg-[#C24C33] rounded-[24px] px-6 py-10 md:px-10 lg:px-14 lg:pt-14 lg:pb-[52px] text-white text-center">
+        <span class="absolute -top-[110px] -right-[90px] w-[340px] h-[340px] rounded-full border-[44px] border-white/[.06] pointer-events-none" aria-hidden="true"></span>
+        <span class="absolute top-[60px] -right-[20px] w-[170px] h-[170px] rounded-full border-[28px] border-white/[.06] pointer-events-none" aria-hidden="true"></span>
+        <div class="relative">
+          <h2 class="font-serif font-bold text-white text-[30px] md:text-[40px] leading-[1.2] m-0">Why a recommendation matters</h2>
+          <p class="text-white/95 text-[18px] md:text-[20px] leading-[1.65] mt-4 mb-0 max-w-[800px] mx-auto">Most people start therapy because someone they trust said it helped them.</p>
+          <div class="grid grid-cols-1 lg:grid-cols-[550fr_614fr] gap-6 lg:gap-9 mt-9 text-left items-stretch">
+            <div class="rounded-[16px] overflow-hidden aspect-[550/316] bg-white/10"><div class="w-full h-full bg-gradient-to-tr from-white/10 to-white/30"></div></div>
+            <ul class="list-none m-0 bg-white/[.08] border border-white/25 rounded-[16px] p-6 md:p-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 md:gap-y-[38px] content-center">
+              <li class="flex items-start gap-4 m-0"><span class="w-[26px] h-[26px] rounded-full bg-white/20 flex items-center justify-center shrink-0 mt-0.5"><svg class="w-3 h-3"><use href="#check"/></svg></span><span class="text-[17px] md:text-[18px] leading-[28px]">Trust from the very first session</span></li>
+              <li class="flex items-start gap-4 m-0"><span class="w-[26px] h-[26px] rounded-full bg-white/20 flex items-center justify-center shrink-0 mt-0.5"><svg class="w-3 h-3"><use href="#check"/></svg></span><span class="text-[17px] md:text-[18px] leading-[28px]">Less stigma, more openness</span></li>
+              <li class="flex items-start gap-4 m-0"><span class="w-[26px] h-[26px] rounded-full bg-white/20 flex items-center justify-center shrink-0 mt-0.5"><svg class="w-3 h-3"><use href="#check"/></svg></span><span class="text-[17px] md:text-[18px] leading-[28px]">Faster access to the right help</span></li>
+              <li class="flex items-start gap-4 m-0"><span class="w-[26px] h-[26px] rounded-full bg-white/20 flex items-center justify-center shrink-0 mt-0.5"><svg class="w-3 h-3"><use href="#check"/></svg></span><span class="text-[17px] md:text-[18px] leading-[28px]">A friendly nudge, no pressure</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPTIONS TABLE -->
+<section class="bg-white pt-16 pb-20">
+  <div class="px-4 md:px-12 lg:px-16">
+    <div class="max-w-[1312px] mx-auto">
+      <h2 class="font-serif font-bold text-[#241C19] text-[30px] md:text-[40px] leading-[1.2] m-0">What you can <span class="mark">share</span></h2>
+      <p class="text-[#5B5B5B] text-[18px] md:text-[20px] leading-[1.6] mt-4 mb-0">Choose what fits your friend best.</p>
+      <div class="border border-[#F2E4DC] rounded-[16px] overflow-hidden mt-6">
+        <div class="grid grid-cols-1 md:grid-cols-[476fr_768fr] bg-[#C24C33] text-white text-[15px] leading-[19px] font-semibold tracking-[2px] uppercase px-6 md:px-[34px] py-[22px]"><span>Option</span><span class="hidden md:block">Good for</span></div>
+        <div class="grid grid-cols-1 md:grid-cols-[476fr_768fr] gap-4 md:gap-6 items-center px-6 md:px-[34px] py-7">
+          <div class="flex items-center gap-[18px] md:pr-6"><span class="w-11 h-11 rounded-[12px] bg-[#FDE7E1] text-[#C24C33] flex items-center justify-center shrink-0"><svg class="w-5 h-5"><use href="#users"/></svg></span><h3 class="font-serif font-semibold text-[#C24C33] text-[19px] md:text-[20px] leading-[1.4] m-0">Individual therapy</h3></div>
+          <div><p class="text-[#5B5B5B] text-[16px] md:text-[17px] leading-[28px] m-0">For stress, low mood, anxiety, or big life changes.</p><a href="#" class="inline-flex items-center gap-2 text-[#A93E28] hover:text-[#C24C33] text-[15px] font-semibold mt-3 no-underline">Learn more <svg class="w-3.5 h-3.5"><use href="#arrow-right"/></svg></a></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[476fr_768fr] gap-4 md:gap-6 items-center px-6 md:px-[34px] py-7 border-t border-[#F5EAE4]">
+          <div class="flex items-center gap-[18px] md:pr-6"><span class="w-11 h-11 rounded-[12px] bg-[#E8EEE5] text-[#5C7355] flex items-center justify-center shrink-0"><svg class="w-5 h-5"><use href="#heart"/></svg></span><h3 class="font-serif font-semibold text-[#C24C33] text-[19px] md:text-[20px] leading-[1.4] m-0">Couples therapy</h3></div>
+          <div><p class="text-[#5B5B5B] text-[16px] md:text-[17px] leading-[28px] m-0">For partners who want to communicate better and reconnect.</p><a href="#" class="inline-flex items-center gap-2 text-[#A93E28] hover:text-[#C24C33] text-[15px] font-semibold mt-3 no-underline">Learn more <svg class="w-3.5 h-3.5"><use href="#arrow-right"/></svg></a></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[476fr_768fr] gap-4 md:gap-6 items-center px-6 md:px-[34px] py-7 border-t border-[#F5EAE4]">
+          <div class="flex items-center gap-[18px] md:pr-6"><span class="w-11 h-11 rounded-[12px] bg-[#FDE7E1] text-[#C24C33] flex items-center justify-center shrink-0"><svg class="w-5 h-5"><use href="#building"/></svg></span><h3 class="font-serif font-semibold text-[#C24C33] text-[19px] md:text-[20px] leading-[1.4] m-0">Workplace support</h3></div>
+          <div><p class="text-[#5B5B5B] text-[16px] md:text-[17px] leading-[28px] m-0">For colleagues or teams dealing with burnout and pressure.</p></div>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8 border-l-[3px] border-[#C24C33] pl-5 sm:pl-7 py-4 sm:py-[30px] mt-8">
+        <span class="w-[54px] h-[54px] rounded-[14px] bg-[#FDE7E1] text-[#C24C33] flex items-center justify-center shrink-0"><svg class="w-7 h-7"><use href="#sparkles"/></svg></span>
+        <div>
+          <h3 class="font-serif font-bold uppercase tracking-[2px] text-[#A93E28] text-[18px] md:text-[20px] leading-[1.2] m-0">Your privacy is safe</h3>
+          <p class="text-[#5B5B5B] text-[17px] md:text-[19px] leading-[32px] mt-3 mb-0">We never ask who referred whom. Your friend decides what to share, and when.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEARN MORE -->
+<section class="bg-[#FFF7F3] pt-[68px] pb-16">
+  <div class="px-4 md:px-12 lg:px-16">
+    <div class="max-w-[1312px] mx-auto">
+      <h2 class="font-serif font-bold text-[#241C19] text-[30px] md:text-[40px] leading-[1.2] m-0">Learn more before you <span class="mark">share</span></h2>
+      <p class="text-[#5B5B5B] text-[18px] md:text-[20px] leading-[1.6] mt-4 mb-0">Explore our services and meet the team.</p>
+      <ul class="list-none m-0 p-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-9">
+        <li class="m-0"><a href="#" class="flex items-center gap-[17px] h-[90px] pl-6 pr-[30px] bg-white border border-[#F2E4DC] hover:border-[#C24C33] rounded-[16px] no-underline transition-colors"><span class="w-11 h-11 rounded-[12px] bg-[#FDE7E1] text-[#C24C33] flex items-center justify-center shrink-0"><svg class="w-5 h-5"><use href="#users"/></svg></span><span class="flex-1 font-serif font-semibold text-[#241C19] text-[19px] md:text-[20px]">Meet our therapists</span><span class="text-[#A93E28]"><svg class="w-3 h-3"><use href="#arrow-up-right"/></svg></span></a></li>
+        <li class="m-0"><a href="#" class="flex items-center gap-[17px] h-[90px] pl-6 pr-[30px] bg-white border border-[#F2E4DC] hover:border-[#C24C33] rounded-[16px] no-underline transition-colors"><span class="w-11 h-11 rounded-[12px] bg-[#E8EEE5] text-[#5C7355] flex items-center justify-center shrink-0"><svg class="w-5 h-5"><use href="#sparkles"/></svg></span><span class="flex-1 font-serif font-semibold text-[#241C19] text-[19px] md:text-[20px]">Prices and booking</span><span class="text-[#A93E28]"><svg class="w-3 h-3"><use href="#arrow-up-right"/></svg></span></a></li>
+        <li class="m-0"><a href="#" class="flex items-center gap-[17px] h-[90px] pl-6 pr-[30px] bg-white border border-[#F2E4DC] hover:border-[#C24C33] rounded-[16px] no-underline transition-colors"><span class="w-11 h-11 rounded-[12px] bg-[#FDE7E1] text-[#C24C33] flex items-center justify-center shrink-0"><svg class="w-5 h-5"><use href="#heart"/></svg></span><span class="flex-1 font-serif font-semibold text-[#241C19] text-[19px] md:text-[20px]">How therapy works</span><span class="text-[#A93E28]"><svg class="w-3 h-3"><use href="#arrow-up-right"/></svg></span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- GIFT -->
+<section id="gift" class="bg-white py-16">
+  <div class="px-4 md:px-12 lg:px-16">
+    <div class="max-w-[1312px] mx-auto grid grid-cols-1 lg:grid-cols-[592fr_647fr] gap-10 lg:gap-[73px] items-center">
+      <div class="lg:pl-6">
+        <div class="w-full max-w-[568px] aspect-[3/2] mx-auto lg:mx-0 rounded-[20px] bg-gradient-to-br from-[#C24C33] to-[#EBA58F] flex items-end p-8 text-white font-serif font-bold text-[32px] shadow-[0_20px_40px_rgba(194,76,51,0.25)]">Gift card</div>
+        <ul class="list-none m-0 p-0 flex flex-wrap justify-center lg:justify-start gap-x-9 gap-y-3 mt-8 lg:mt-10 lg:pl-6">
+          <li class="flex items-center gap-2 text-[15px] leading-none text-[#5B5B5B] m-0"><span class="w-5 h-5 rounded-full bg-[#FDE7E1] text-[#B4533F] flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5"><use href="#check"/></svg></span>Delivered instantly</li>
+          <li class="flex items-center gap-2 text-[15px] leading-none text-[#5B5B5B] m-0"><span class="w-5 h-5 rounded-full bg-[#FDE7E1] text-[#B4533F] flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5"><use href="#check"/></svg></span>Valid for 12 months</li>
+          <li class="flex items-center gap-2 text-[15px] leading-none text-[#5B5B5B] m-0"><span class="w-5 h-5 rounded-full bg-[#FDE7E1] text-[#B4533F] flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5"><use href="#check"/></svg></span>Any therapist, any service</li>
+        </ul>
+      </div>
+      <div>
+        <span class="inline-flex items-center h-8 px-5 rounded-full border border-[#EBC9BE] text-[12px] leading-none font-semibold tracking-[2px] uppercase text-[#A93E28]">Gift card</span>
+        <h2 class="font-serif font-bold text-[#241C19] text-[32px] md:text-[48px] leading-[1.15] mt-6 mb-0">Give the gift of a <span class="mark">first session</span></h2>
+        <p class="text-[#5B5B5B] text-[18px] md:text-[20px] leading-[1.6] mt-4 mb-0 max-w-[610px]">Cover a session for someone you love. They pick the therapist and the time. You add a personal note.</p>
+        <a href="#" class="inline-flex items-center justify-center h-[55px] px-9 bg-[#C24C33] hover:bg-[#A93E28] text-white text-[16px] font-semibold rounded-full mt-10 no-underline transition-colors">Buy a gift card</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="bg-[#FFF7F3] py-16 lg:py-24">
+  <div class="px-4 md:px-12 lg:px-16">
+    <div class="max-w-[1312px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+      <div>
+        <h2 class="font-serif font-bold text-[#241C19] text-[32px] md:text-[48px] leading-[1.15] m-0">Common <span class="mark">questions</span></h2>
+        <p class="text-[#5B5B5B] text-[18px] md:text-[20px] leading-[1.65] mt-4 mb-0 max-w-[590px]">Everything you might wonder before you share.</p>
+        <a href="#" class="inline-flex items-center justify-center h-[53px] px-8 border-[1.5px] border-[#C24C33] bg-transparent hover:bg-white text-[#A93E28] text-[16px] font-semibold rounded-full mt-7 no-underline transition-colors">See all FAQs</a>
+        <div class="bg-white rounded-[16px] p-6 md:p-10 mt-5">
+          <div class="flex flex-wrap items-center gap-5 md:gap-6">
+            <div class="flex -space-x-3">
+              <span class="w-10 h-10 rounded-full ring-2 ring-white bg-[#F4C7B8]"></span><span class="w-10 h-10 rounded-full ring-2 ring-white bg-[#C9D6C3]"></span><span class="w-10 h-10 rounded-full ring-2 ring-white bg-[#F8D9A8]"></span><span class="w-10 h-10 rounded-full ring-2 ring-white bg-[#EBA58F]"></span>
+            </div>
+            <h3 class="font-serif font-bold text-[#C24C33] text-[19px] md:text-[20px] leading-[1.3] m-0">Still have a question?</h3>
+          </div>
+          <p class="text-[#5B5B5B] text-[16px] md:text-[17px] leading-[28px] mt-6 mb-0">Our team replies within one working day.</p>
+          <a href="#" class="inline-flex items-center gap-2.5 h-11 px-6 bg-[#C24C33] hover:bg-[#A93E28] text-white text-[16px] font-semibold rounded-full mt-5 underline underline-offset-4 transition-colors">Contact us <svg class="w-4 h-4"><use href="#arrow-right"/></svg></a>
+        </div>
+      </div>
+      <ul class="list-none m-0 p-0 flex flex-col gap-4" id="tafFaqList">
+        <li class="faq-item group m-0 bg-white border border-[#F2E4DC] rounded-[16px] overflow-hidden transition-colors [&.is-open]:bg-[#FFF7F3] [&.is-open]:border-[#EBC0B5] is-open">
+          <button type="button" class="w-full flex items-center justify-between gap-4 p-6 bg-transparent border-0 cursor-pointer text-left"><h3 class="font-serif font-semibold text-[#241C19] text-[18px] md:text-[20px] leading-[1.35] m-0">Will my friend know I referred them?</h3><span class="text-[#A93E28] shrink-0"><span class="block group-[.is-open]:hidden"><svg class="w-5 h-5"><use href="#plus"/></svg></span><span class="hidden group-[.is-open]:block"><svg class="w-5 h-5"><use href="#minus"/></svg></span></span></button>
+          <div class="faq-content px-6 pb-6 pt-0"><div class="text-[#5B5B5B] text-[16px] md:text-[17px] leading-[27px]">Only if you tell them. The link you share is the same one everyone uses.</div></div>
+        </li>
+        <li class="faq-item group m-0 bg-white border border-[#F2E4DC] rounded-[16px] overflow-hidden transition-colors [&.is-open]:bg-[#FFF7F3] [&.is-open]:border-[#EBC0B5]">
+          <button type="button" class="w-full flex items-center justify-between gap-4 p-6 bg-transparent border-0 cursor-pointer text-left"><h3 class="font-serif font-semibold text-[#241C19] text-[18px] md:text-[20px] leading-[1.35] m-0">Does it cost anything to refer someone?</h3><span class="text-[#A93E28] shrink-0"><span class="block group-[.is-open]:hidden"><svg class="w-5 h-5"><use href="#plus"/></svg></span><span class="hidden group-[.is-open]:block"><svg class="w-5 h-5"><use href="#minus"/></svg></span></span></button>
+          <div class="faq-content hidden px-6 pb-6 pt-0"><div class="text-[#5B5B5B] text-[16px] md:text-[17px] leading-[27px]">No. Sharing is free. Only gift cards have a price.</div></div>
+        </li>
+        <li class="faq-item group m-0 bg-white border border-[#F2E4DC] rounded-[16px] overflow-hidden transition-colors [&.is-open]:bg-[#FFF7F3] [&.is-open]:border-[#EBC0B5]">
+          <button type="button" class="w-full flex items-center justify-between gap-4 p-6 bg-transparent border-0 cursor-pointer text-left"><h3 class="font-serif font-semibold text-[#241C19] text-[18px] md:text-[20px] leading-[1.35] m-0">Can I gift a session to someone abroad?</h3><span class="text-[#A93E28] shrink-0"><span class="block group-[.is-open]:hidden"><svg class="w-5 h-5"><use href="#plus"/></svg></span><span class="hidden group-[.is-open]:block"><svg class="w-5 h-5"><use href="#minus"/></svg></span></span></button>
+          <div class="faq-content hidden px-6 pb-6 pt-0"><div class="text-[#5B5B5B] text-[16px] md:text-[17px] leading-[27px]">Yes, if they book an online session. Gift cards are sent by email.</div></div>
+        </li>
+        <li class="faq-item group m-0 bg-white border border-[#F2E4DC] rounded-[16px] overflow-hidden transition-colors [&.is-open]:bg-[#FFF7F3] [&.is-open]:border-[#EBC0B5]">
+          <button type="button" class="w-full flex items-center justify-between gap-4 p-6 bg-transparent border-0 cursor-pointer text-left"><h3 class="font-serif font-semibold text-[#241C19] text-[18px] md:text-[20px] leading-[1.35] m-0">What if my friend is in crisis?</h3><span class="text-[#A93E28] shrink-0"><span class="block group-[.is-open]:hidden"><svg class="w-5 h-5"><use href="#plus"/></svg></span><span class="hidden group-[.is-open]:block"><svg class="w-5 h-5"><use href="#minus"/></svg></span></span></button>
+          <div class="faq-content hidden px-6 pb-6 pt-0"><div class="text-[#5B5B5B] text-[16px] md:text-[17px] leading-[27px]">Please contact your local emergency number or crisis line right away. Booking a session is not an emergency service.</div></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-white py-16">
+  <div class="px-4 md:px-12 lg:px-16">
+    <div class="max-w-[1312px] mx-auto relative overflow-hidden rounded-[24px] px-6 py-10 md:px-[45px] md:py-[74px] grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_390px] gap-10 items-center" style="background: radial-gradient(60% 80% at 100% 100%, rgba(240,147,103,0.12) 0%, rgba(240,147,103,0) 70%), radial-gradient(50% 70% at 0% 100%, rgba(248,216,212,0.6) 0%, rgba(248,216,212,0) 70%), #FEF8F5;">
+      <div>
+        <h2 class="font-serif font-bold text-[#241C19] text-[30px] md:text-[44px] leading-[1.2] m-0">Ready to <span class="mark">help</span> someone begin?</h2>
+        <p class="text-[#6B5F5A] text-[18px] md:text-[20px] leading-[1.6] mt-4 mb-0 max-w-[615px]">It takes less than a minute to share. It could change someone's year.</p>
+        <a href="#share" class="inline-flex items-center justify-center gap-2.5 h-[52px] px-8 bg-[#C24C33] hover:bg-[#A93E28] text-white text-[16px] font-semibold rounded-full mt-8 no-underline transition-colors">Share now <svg class="w-4 h-4"><use href="#arrow-right"/></svg></a>
+      </div>
+      <div class="justify-self-center lg:justify-self-end w-full max-w-[390px] aspect-[4/3] rounded-[20px] bg-gradient-to-br from-[#F8D8D4] to-[#F4C7B8]"></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXTRA -->
+<section class="bg-white pb-16">
+  <div class="px-4 md:px-12 lg:px-16">
+    <div class="max-w-[860px] mx-auto text-[#5B5B5B] text-[17px] md:text-[18px] leading-[1.7] [&_h2]:font-serif [&_h2]:font-bold [&_h2]:text-[#241C19] [&_h2]:text-[28px] [&_h2]:mt-8 [&_h2]:mb-3 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_a]:text-[#C24C33] [&_a]:underline">
+      <h2>How to start the conversation</h2>
+      <p>Choose a calm moment and speak from your own experience. You are offering an option, not a solution.</p>
+      <ul>
+        <li>Listen first, recommend second.</li>
+        <li>Say what helped you, not what they should do.</li>
+        <li>Leave the door open. <a href="#">Read our guide</a> for more tips.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

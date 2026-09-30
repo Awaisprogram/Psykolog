@@ -1,0 +1,2152 @@
+{
+    "key": "group_tell_a_friend",
+    "title": "Tell a Friend page",
+    "fields": [
+        {
+            "key": "field_taf_tab_hero",
+            "label": "Hero",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_taf_hero",
+            "label": "Hero",
+            "name": "hero",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_taf_hero_badge",
+                    "label": "Badge label",
+                    "name": "badge",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "How it works",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_taf_hero_badge_icon",
+                    "label": "Badge icon",
+                    "name": "badge_icon",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "link": "Link",
+                        "mail": "Mail",
+                        "message-square": "Message (SMS)",
+                        "message-circle": "Chat bubble (WhatsApp)",
+                        "message-square-quote": "Message with quote",
+                        "share": "Share",
+                        "asterisk": "Asterisk",
+                        "sparkles": "Sparkles",
+                        "instagram": "Instagram",
+                        "x-twitter": "X / Twitter",
+                        "facebook": "Facebook",
+                        "linkedin": "LinkedIn",
+                        "building": "Building (clinic)",
+                        "book-open": "Open book (article)",
+                        "newspaper": "Newspaper",
+                        "wallet": "Wallet (prices)",
+                        "clipboard-list": "Clipboard list",
+                        "users": "Users",
+                        "video": "Video camera",
+                        "map-pin": "Map pin",
+                        "gift": "Gift",
+                        "calendar-check": "Calendar check",
+                        "heart": "Heart",
+                        "brain": "Brain",
+                        "badge-check": "Badge / check",
+                        "file-text": "Document",
+                        "calendar-clock": "Calendar with clock",
+                        "devices": "Devices",
+                        "lock": "Lock",
+                        "quote": "Quote marks",
+                        "stethoscope": "Stethoscope",
+                        "languages": "Languages",
+                        "clock": "Clock",
+                        "phone": "Phone",
+                        "copy": "Copy",
+                        "check": "Check",
+                        "zap": "Bolt",
+                        "shield": "Shield",
+                        "sun": "Sun",
+                        "none": "No icon"
+                    },
+                    "default_value": "asterisk",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": ""
+                },
+                {
+                    "key": "field_taf_hero_image",
+                    "label": "Hero photo",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Shown at the right edge, full hero height (about 660 x 600). Never stretched.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_taf_hero_heading",
+                    "label": "Heading",
+                    "name": "heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Wrap words in {{ }} for red italic (e.g. Share Us With Others {{Easily}}).",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_taf_hero_text",
+                    "label": "Intro text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_taf_hero_primary",
+                    "label": "Primary button",
+                    "name": "primary_button",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_taf_hero_secondary",
+                    "label": "Secondary button (outline)",
+                    "name": "secondary_button",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                }
+            ]
+        },
+        {
+            "key": "field_taf_tab_share",
+            "label": "Share actions",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_taf_share",
+            "label": "Share actions",
+            "name": "share",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_taf_share_heading",
+                    "label": "Heading",
+                    "name": "heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Wrap words in {{ }} for red italic (e.g. Share Us With Others {{Easily}}).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_taf_share_subject",
+                    "label": "E-mail subject",
+                    "name": "share_subject",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Psykolog.no",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_taf_share_message",
+                    "label": "Ready-to-use message box",
+                    "name": "message",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_taf_share_msg_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "text",
+                            "default_value": "Your Message"
+                        },
+                        {
+                            "key": "field_taf_share_msg_subheading",
+                            "label": "Subheading",
+                            "name": "subheading",
+                            "type": "text",
+                            "default_value": "(You Can Edit It)"
+                        },
+                        {
+                            "key": "field_taf_share_msg_textimg",
+                            "label": "Text Mode Image",
+                            "name": "text_image",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium"
+                        },
+                        {
+                            "key": "field_taf_share_msg_emailimg",
+                            "label": "Email Mode Image",
+                            "name": "email_image",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium"
+                        },
+                        {
+                            "key": "field_taf_share_msg_text",
+                            "label": "Message Text",
+                            "name": "text",
+                            "type": "textarea",
+                            "default_value": "I've been thinking about you..."
+                        },
+                        {
+                            "key": "field_taf_share_msg_tabtext",
+                            "label": "Tab Text Label",
+                            "name": "tab_text_label",
+                            "type": "text",
+                            "default_value": "Text"
+                        },
+                        {
+                            "key": "field_taf_share_msg_tabemail",
+                            "label": "Tab Email Label",
+                            "name": "tab_email_label",
+                            "type": "text",
+                            "default_value": "Email"
+                        },
+                        {
+                            "key": "field_taf_share_msg_youremail",
+                            "label": "Your Email Label",
+                            "name": "your_email_label",
+                            "type": "text",
+                            "default_value": "Your email"
+                        },
+                        {
+                            "key": "field_taf_share_msg_youremailph",
+                            "label": "Your Email Placeholder",
+                            "name": "your_email_placeholder",
+                            "type": "text",
+                            "default_value": "you@example.com"
+                        },
+                        {
+                            "key": "field_taf_share_msg_friendemail",
+                            "label": "Friend's Email Label",
+                            "name": "friend_email_label",
+                            "type": "text",
+                            "default_value": "Friend's email"
+                        },
+                        {
+                            "key": "field_taf_share_msg_friendemailph",
+                            "label": "Friend's Email Placeholder",
+                            "name": "friend_email_placeholder",
+                            "type": "text",
+                            "default_value": "friend@example.com"
+                        },
+                        {
+                            "key": "field_taf_share_msg_copy",
+                            "label": "Copy Button Label",
+                            "name": "copy_label",
+                            "type": "text",
+                            "default_value": "Copy message"
+                        },
+                        {
+                            "key": "field_taf_share_msg_copied",
+                            "label": "Copied Label",
+                            "name": "copied_label",
+                            "type": "text",
+                            "default_value": "Copied!"
+                        },
+                        {
+                            "key": "field_taf_share_msg_err",
+                            "label": "Error Label",
+                            "name": "error_label",
+                            "type": "text",
+                            "default_value": "Copy failed"
+                        },
+                        {
+                            "key": "field_taf_share_msg_sendtext",
+                            "label": "Send Text Button",
+                            "name": "send_text_label",
+                            "type": "text",
+                            "default_value": "Send by text"
+                        },
+                        {
+                            "key": "field_taf_share_msg_sendemail",
+                            "label": "Send Email Button",
+                            "name": "send_email_label",
+                            "type": "text",
+                            "default_value": "Send by Email"
+                        },
+                        {
+                            "key": "field_taf_share_msg_alert",
+                            "label": "Email Alert Message",
+                            "name": "send_email_alert",
+                            "type": "text",
+                            "default_value": "Please enter your friend's email address first."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_taf_tab_social",
+            "label": "Social media",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_taf_social",
+            "label": "Social media",
+            "name": "social",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_taf_social_heading",
+                    "label": "Heading",
+                    "name": "heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_taf_social_text",
+                    "label": "Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_taf_social_links",
+                    "label": "Social links",
+                    "name": "links",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 8,
+                    "collapsed": "field_taf_social_link_label",
+                    "button_label": "Add link",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_taf_social_link_icon",
+                            "label": "Icon",
+                            "name": "icon",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "link": "Link",
+                                "mail": "Mail",
+                                "message-square": "Message (SMS)",
+                                "message-circle": "Chat bubble (WhatsApp)",
+                                "message-square-quote": "Message with quote",
+                                "share": "Share",
+                                "asterisk": "Asterisk",
+                                "sparkles": "Sparkles",
+                                "instagram": "Instagram",
+                                "x-twitter": "X / Twitter",
+                                "facebook": "Facebook",
+                                "linkedin": "LinkedIn",
+                                "building": "Building (clinic)",
+                                "book-open": "Open book (article)",
+                                "newspaper": "Newspaper",
+                                "wallet": "Wallet (prices)",
+                                "clipboard-list": "Clipboard list",
+                                "users": "Users",
+                                "video": "Video camera",
+                                "map-pin": "Map pin",
+                                "gift": "Gift",
+                                "calendar-check": "Calendar check",
+                                "heart": "Heart",
+                                "brain": "Brain",
+                                "badge-check": "Badge / check",
+                                "file-text": "Document",
+                                "calendar-clock": "Calendar with clock",
+                                "devices": "Devices",
+                                "lock": "Lock",
+                                "quote": "Quote marks",
+                                "stethoscope": "Stethoscope",
+                                "languages": "Languages",
+                                "clock": "Clock",
+                                "phone": "Phone",
+                                "copy": "Copy",
+                                "check": "Check",
+                                "zap": "Bolt",
+                                "shield": "Shield",
+                                "sun": "Sun",
+                                "none": "No icon"
+                            },
+                            "default_value": "instagram",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 1,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "allow_custom": 0,
+                            "search_placeholder": ""
+                        },
+                        {
+                            "key": "field_taf_social_link_color",
+                            "label": "Colour",
+                            "name": "color",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "15",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "red": "Red / terracotta",
+                                "green": "Green",
+                                "blue": "Blue",
+                                "gold": "Gold",
+                                "purple": "Purple"
+                            },
+                            "default_value": "red",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 1,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "allow_custom": 0,
+                            "search_placeholder": ""
+                        },
+                        {
+                            "key": "field_taf_social_link_label",
+                            "label": "Label",
+                            "name": "label",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_taf_social_link_link",
+                            "label": "Link",
+                            "name": "link",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_taf_tab_why",
+            "label": "Why recommend",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_taf_why",
+            "label": "Why recommend (red card)",
+            "name": "why",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_taf_why_heading",
+                    "label": "Heading",
+                    "name": "heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_taf_why_text",
+                    "label": "Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_taf_why_image",
+                    "label": "Photo",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "About 550 x 316; scaled to cover.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_taf_why_benefits",
+                    "label": "Benefits (checklist)",
+                    "name": "benefits",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add benefit",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_taf_why_benefit_text",
+                            "label": "Benefit",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_taf_tab_options",
+            "label": "What to share",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_taf_options",
+            "label": "What would you like to share (table)",
+            "name": "options",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_taf_options_heading",
+                    "label": "Heading",
+                    "name": "heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Wrap words in {{ }} for red italic (e.g. Share Us With Others {{Easily}}).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_taf_options_text",
+                    "label": "Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_taf_options_col1",
+                    "label": "Column 1 header",
+                    "name": "col1_label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Option",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_taf_options_col2",
+                    "label": "Column 2 header",
+                    "name": "col2_label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "What you would be sharing",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_taf_options_rows",
+                    "label": "Rows",
+                    "name": "rows",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "field_taf_options_row_title",
+                    "button_label": "Add row",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_taf_options_row_icon",
+                            "label": "Icon",
+                            "name": "icon",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "link": "Link",
+                                "mail": "Mail",
+                                "message-square": "Message (SMS)",
+                                "message-circle": "Chat bubble (WhatsApp)",
+                                "message-square-quote": "Message with quote",
+                                "share": "Share",
+                                "asterisk": "Asterisk",
+                                "sparkles": "Sparkles",
+                                "instagram": "Instagram",
+                                "x-twitter": "X / Twitter",
+                                "facebook": "Facebook",
+                                "linkedin": "LinkedIn",
+                                "building": "Building (clinic)",
+                                "book-open": "Open book (article)",
+                                "newspaper": "Newspaper",
+                                "wallet": "Wallet (prices)",
+                                "clipboard-list": "Clipboard list",
+                                "users": "Users",
+                                "video": "Video camera",
+                                "map-pin": "Map pin",
+                                "gift": "Gift",
+                                "calendar-check": "Calendar check",
+                                "heart": "Heart",
+                                "brain": "Brain",
+                                "badge-check": "Badge / check",
+                                "file-text": "Document",
+                                "calendar-clock": "Calendar with clock",
+                                "devices": "Devices",
+                                "lock": "Lock",
+                                "quote": "Quote marks",
+                                "stethoscope": "Stethoscope",
+                                "languages": "Languages",
+                                "clock": "Clock",
+                                "phone": "Phone",
+                                "copy": "Copy",
+                                "check": "Check",
+                                "zap": "Bolt",
+                                "shield": "Shield",
+                                "sun": "Sun",
+                                "none": "No icon"
+                            },
+                            "default_value": "building",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 1,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "allow_custom": 0,
+                            "search_placeholder": ""
+                        },
+                        {
+                            "key": "field_taf_options_row_color",
+                            "label": "Colour",
+                            "name": "color",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "15",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "red": "Red / terracotta",
+                                "green": "Green",
+                                "blue": "Blue",
+                                "gold": "Gold",
+                                "purple": "Purple"
+                            },
+                            "default_value": "red",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 1,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "allow_custom": 0,
+                            "search_placeholder": ""
+                        },
+                        {
+                            "key": "field_taf_options_row_title",
+                            "label": "Option title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_taf_options_row_link",
+                            "label": "Link",
+                            "name": "link",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        },
+                        {
+                            "key": "field_taf_options_row_text",
+                            "label": "Description",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_taf_privacy",
+                    "label": "Privacy note",
+                    "name": "privacy",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_taf_privacy_show",
+                            "label": "Show note",
+                            "name": "show",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_taf_privacy_icon",
+                            "label": "Icon",
+                            "name": "icon",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "link": "Link",
+                                "mail": "Mail",
+                                "message-square": "Message (SMS)",
+                                "message-circle": "Chat bubble (WhatsApp)",
+                                "message-square-quote": "Message with quote",
+                                "share": "Share",
+                                "asterisk": "Asterisk",
+                                "sparkles": "Sparkles",
+                                "instagram": "Instagram",
+                                "x-twitter": "X / Twitter",
+                                "facebook": "Facebook",
+                                "linkedin": "LinkedIn",
+                                "building": "Building (clinic)",
+                                "book-open": "Open book (article)",
+                                "newspaper": "Newspaper",
+                                "wallet": "Wallet (prices)",
+                                "clipboard-list": "Clipboard list",
+                                "users": "Users",
+                                "video": "Video camera",
+                                "map-pin": "Map pin",
+                                "gift": "Gift",
+                                "calendar-check": "Calendar check",
+                                "heart": "Heart",
+                                "brain": "Brain",
+                                "badge-check": "Badge / check",
+                                "file-text": "Document",
+                                "calendar-clock": "Calendar with clock",
+                                "devices": "Devices",
+                                "lock": "Lock",
+                                "quote": "Quote marks",
+                                "stethoscope": "Stethoscope",
+                                "languages": "Languages",
+                                "clock": "Clock",
+                                "phone": "Phone",
+                                "copy": "Copy",
+                                "check": "Check",
+                                "zap": "Bolt",
+                                "shield": "Shield",
+                                "sun": "Sun",
+                                "none": "No icon"
+                            },
+                            "default_value": "sparkles",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 1,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "allow_custom": 0,
+                            "search_placeholder": ""
+                        },
+                        {
+                            "key": "field_taf_privacy_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "60",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "Your privacy matters",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_taf_privacy_text",
+                            "label": "Text",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_taf_tab_learn",
+            "label": "Learn more",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_taf_learn",
+            "label": "Learn more about our services",
+            "name": "learn",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_taf_learn_heading",
+                    "label": "Heading",
+                    "name": "heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Wrap words in {{ }} for red italic (e.g. Share Us With Others {{Easily}}).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_taf_learn_text",
+                    "label": "Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_taf_learn_cards",
+                    "label": "Link cards",
+                    "name": "cards",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "field_taf_learn_card_label",
+                    "button_label": "Add card",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_taf_learn_card_icon",
+                            "label": "Icon",
+                            "name": "icon",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "link": "Link",
+                                "mail": "Mail",
+                                "message-square": "Message (SMS)",
+                                "message-circle": "Chat bubble (WhatsApp)",
+                                "message-square-quote": "Message with quote",
+                                "share": "Share",
+                                "asterisk": "Asterisk",
+                                "sparkles": "Sparkles",
+                                "instagram": "Instagram",
+                                "x-twitter": "X / Twitter",
+                                "facebook": "Facebook",
+                                "linkedin": "LinkedIn",
+                                "building": "Building (clinic)",
+                                "book-open": "Open book (article)",
+                                "newspaper": "Newspaper",
+                                "wallet": "Wallet (prices)",
+                                "clipboard-list": "Clipboard list",
+                                "users": "Users",
+                                "video": "Video camera",
+                                "map-pin": "Map pin",
+                                "gift": "Gift",
+                                "calendar-check": "Calendar check",
+                                "heart": "Heart",
+                                "brain": "Brain",
+                                "badge-check": "Badge / check",
+                                "file-text": "Document",
+                                "calendar-clock": "Calendar with clock",
+                                "devices": "Devices",
+                                "lock": "Lock",
+                                "quote": "Quote marks",
+                                "stethoscope": "Stethoscope",
+                                "languages": "Languages",
+                                "clock": "Clock",
+                                "phone": "Phone",
+                                "copy": "Copy",
+                                "check": "Check",
+                                "zap": "Bolt",
+                                "shield": "Shield",
+                                "sun": "Sun",
+                                "none": "No icon"
+                            },
+                            "default_value": "users",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 1,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "allow_custom": 0,
+                            "search_placeholder": ""
+                        },
+                        {
+                            "key": "field_taf_learn_card_color",
+                            "label": "Colour",
+                            "name": "color",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "15",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "red": "Red / terracotta",
+                                "green": "Green",
+                                "blue": "Blue",
+                                "gold": "Gold",
+                                "purple": "Purple"
+                            },
+                            "default_value": "red",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 1,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "allow_custom": 0,
+                            "search_placeholder": ""
+                        },
+                        {
+                            "key": "field_taf_learn_card_label",
+                            "label": "Label",
+                            "name": "label",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_taf_learn_card_link",
+                            "label": "Link",
+                            "name": "link",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "35",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_taf_tab_gift",
+            "label": "Gift card",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_taf_gift",
+            "label": "Gift card",
+            "name": "gift",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_taf_gift_image",
+                    "label": "Gift card image",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "About 570 x 345 (transparent WebP/PNG works best).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_taf_gift_badge",
+                    "label": "Badge label",
+                    "name": "badge",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Need someone to talk to a psychologist",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_taf_gift_heading",
+                    "label": "Heading",
+                    "name": "heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Wrap words in {{ }} for red italic (e.g. Share Us With Others {{Easily}}).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_taf_gift_text",
+                    "label": "Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_taf_gift_button",
+                    "label": "Button",
+                    "name": "button",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_taf_gift_checks",
+                    "label": "Check items under the card",
+                    "name": "checks",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 4,
+                    "collapsed": "",
+                    "button_label": "Add item",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_taf_gift_check_text",
+                            "label": "Text",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_taf_tab_faq",
+            "label": "FAQ",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_taf_faq",
+            "label": "FAQ",
+            "name": "faq",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_taf_faq_heading",
+                    "label": "Heading",
+                    "name": "heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Wrap words in {{ }} for red italic (e.g. Share Us With Others {{Easily}}).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_taf_faq_text",
+                    "label": "Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_taf_faq_button",
+                    "label": "Outline button",
+                    "name": "button",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_taf_faq_card",
+                    "label": "Patients card",
+                    "name": "card",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_taf_faq_card_avatars",
+                            "label": "Avatar photos (optional, max 4)",
+                            "name": "avatars",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "When empty, soft coloured circles are shown as in the design.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 4,
+                            "collapsed": "",
+                            "button_label": "Add photo",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_taf_faq_card_avatar",
+                                    "label": "Photo",
+                                    "name": "image",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "preview_size": "medium"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_taf_faq_card_title",
+                            "label": "Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "Question asked by our patients",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_taf_faq_card_button",
+                            "label": "Button",
+                            "name": "button",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        },
+                        {
+                            "key": "field_taf_faq_card_text",
+                            "label": "Text",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_taf_faq_items",
+                    "label": "Questions",
+                    "name": "items",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "field_taf_faq_item_q",
+                    "button_label": "Add question",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_taf_faq_item_q",
+                            "label": "Question",
+                            "name": "question",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "75",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_taf_faq_item_open",
+                            "label": "Open by default",
+                            "name": "open",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_taf_faq_item_a",
+                            "label": "Answer",
+                            "name": "answer",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_taf_tab_cta",
+            "label": "CTA",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_taf_cta",
+            "label": "Call to action",
+            "name": "cta",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_taf_cta_heading",
+                    "label": "Heading",
+                    "name": "heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Wrap words in {{ }} for red italic (e.g. Share Us With Others {{Easily}}).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_taf_cta_text",
+                    "label": "Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_taf_cta_button",
+                    "label": "Button",
+                    "name": "button",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_taf_cta_image",
+                    "label": "Illustration",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "About 390 x 240.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium"
+                }
+            ]
+        },
+        {
+            "key": "field_taf_tab_extra",
+            "label": "SEO / Extra",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_taf_extra",
+            "label": "Extra content",
+            "name": "extra",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_taf_extra_content",
+                    "label": "Extra content (optional)",
+                    "name": "extra_content",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Rendered above the footer when filled in. Reserved for future use.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 1
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-parts/Tell-A-Friend.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "All content for the Tell a Friend page template (template-parts/Tell-A-Friend.php).",
+    "show_in_rest": 0,
+    "modified": 1790240634
+}

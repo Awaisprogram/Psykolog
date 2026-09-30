@@ -68,13 +68,18 @@ get_header();
   ?>
   <section class="relative w-full max-w-full overflow-hidden bg-brand-cream grid grid-cols-1 grid-rows-1 -mt-20 lg:-mt-[86px] min-h-[500px] lg:min-h-[700px]">
     <span class="[grid-area:1/1] relative w-full min-h-full lg:min-h-0 overflow-hidden">
-      <?= pr_img($hero['image'] ?? 0, 'assets/Priser/hero.webp', $hero_title, 'absolute inset-0 w-full h-full object-cover object-[100%_50%]', ['loading' => 'eager', 'fetchpriority' => 'high']) ?>
+      <?= pr_img($hero['image'] ?? 0, 'assets/Priser/hero.webp', $hero_title, 'absolute inset-0 w-full h-full object-cover object-[25%_50%] lg:object-[100%_50%]', ['loading' => 'eager', 'fetchpriority' => 'high']) ?>
       <span class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:hidden"></span>
     </span>
 
     <div class="px-4 md:px-12 lg:px-16 relative w-full [grid-area:1/1] place-self-center z-[2] bg-transparent pt-32 pb-10 lg:pt-[90px] lg:pb-[88px]">
       <div class="max-w-[1312px] mx-auto">
-        <div class="max-w-full lg:max-w-[635px]">
+        <div class="max-w-full md:max-w-[450px] lg:max-w-[635px]">
+		<div class="ml-2">
+			  <?php if ( function_exists( 'yoast_breadcrumb' ) ) : ?>
+  			   <?php yoast_breadcrumb( '<nav class="page-hero__crumb" aria-label="Breadcrumb">', '</nav>' ); ?>
+	 	       <?php endif; ?>
+		  	  </div>	
           <h1 class="font-serif font-bold text-[#C24C33] mt-7 mb-0 text-[34px] leading-[1.25] md:text-[42px] lg:text-[48px] xl:text-[56px]">
             <?= esc_html($hero_title) ?>
           </h1>
@@ -88,10 +93,7 @@ get_header();
               <?= esc_html($b1['title']) ?>
               <span class="ml-2 inline-flex items-center"><img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/white-arrow-1.webp" alt="" aria-hidden="true" class="h-[20px] w-[12px] mt-0.5 object-contain" /></span>
             </a>
-            <a href="<?= esc_url($b2['url']) ?>"<?= pr_target($b2) ?> class="inline-flex items-center justify-center px-8 py-3.5 bg-white border border-[#A93E28] text-[#A93E28] rounded-full font-bold text-base transition hover:bg-gray-100">
-              <?= esc_html($b2['title']) ?>
-              <span class="ml-2 inline-flex items-center"><img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/Brown-arrow-1.webp" alt="" aria-hidden="true" class="h-[20px] w-[12px] mt-0.5 object-contain" /></span>
-            </a>
+           
           </div>
         </div>
       </div>
@@ -114,7 +116,7 @@ get_header();
                 <?= pr_img($c['image'] ?? 0, '', $c['title'] ?? '', 'w-full h-auto md:h-[220px] lg:h-[196px] object-cover rounded-[14px]', ['loading' => 'lazy']) ?>
               </div>
               <h3 class="font-serif font-bold text-[#241C19] text-[24px] mb-3"><?= esc_html($c['title'] ?? '') ?></h3>
-              <p class="text-[#6B5F5A] text-[16px] leading-[1.6] m-0"><?= esc_html($c['text'] ?? '') ?></p>
+              <p class="text-[#6B5F5A] text-[18px] leading-[1.6] m-0"><?= esc_html($c['text'] ?? '') ?></p>
             </div>
           <?php endforeach; ?>
         </div>
@@ -164,7 +166,7 @@ get_header();
                   <div class="flex flex-col gap-2">
                     <?php foreach ($items as $item) : ?>
                       <div class="flex items-start gap-2.5">
-                        <img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/tick.webp" alt="" aria-hidden="true" class="w-[20px] h-[20px] mt-0.5 object-contain" />
+                        <img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/flatt-1.webp" alt="" aria-hidden="true" class="w-[20px] h-[20px] mt-0.5 object-contain" />
                         <span class="text-[#6B5F5A] text-[15px]"><?= esc_html($item) ?></span>
                       </div>
                     <?php endforeach; ?>
@@ -183,7 +185,7 @@ get_header();
       <div class="mt-[25px] flex justify-center">
         <a href="<?= esc_url($cta['url']) ?>"<?= pr_target($cta) ?> class="inline-flex items-center gap-2 bg-[#C24C33] hover:bg-[#A93E28] text-white font-bold text-[16px] px-8 py-3.5 rounded-full transition-colors">
           <?= esc_html($cta['title']) ?>
-          <span class="inline-flex items-center"><img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/white-arrow-1.webp" alt="" aria-hidden="true" class="h-[20px] w-[12px] mt-0.5 object-contain" /></span>
+          <span class="inline-flex items-center"><img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/white-arrow-1.webp" alt="" aria-hidden="true" class="h-[20px] w-[12px] object-contain" /></span>
         </a>
       </div>
 
@@ -245,7 +247,7 @@ get_header();
                     </div>
                     <h3 class="font-serif font-bold text-[20px] text-[#241C19] m-0"><?= esc_html($t['title'] ?? '') ?></h3>
                   </div>
-                  <p class="text-[#5B5B5B] text-[16px] leading-[1.6] m-0"><?= esc_html($t['text'] ?? '') ?></p>
+                  <p class="text-[#5B5B5B] text-[18px] leading-[1.6] m-0"><?= esc_html($t['text'] ?? '') ?></p>
                 </div>
               <?php endforeach; ?>
             </div>
@@ -263,7 +265,6 @@ get_header();
   <?php /* ============================== FAQ ============================== */
   $faqg    = get_field('faq') ?: [];
   $faq     = $faqg['items'] ?? [];
-  $faq_cta = pr_link($faqg['cta'] ?? null, 'Book a time', '#');
   $faq_ask = pr_link($faqg['ask_link'] ?? null, 'Ask Your Own Question', '#mh-book');
   ?>
   <section id="mh-faq" class="section bg-[#FFF7F3] mb-[64px]">
@@ -274,10 +275,8 @@ get_header();
           <div>
             <span class="text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3 block"><?= esc_html(($faqg['eyebrow'] ?? '') ?: 'FAQS') ?></span>
             <h2 id="faq" class="h2 mb-4"><?= pr_heading($faqg['title'] ?? '', '') ?></h2>
-            <p class="text-[16px] leading-[26px] text-[#6B5F5A] m-0 mb-6 max-w-[420px]"><?= esc_html($faqg['text'] ?? '') ?></p>
-            <a href="<?= esc_url($faq_cta['url']) ?>"<?= pr_target($faq_cta) ?> class="inline-flex items-center justify-center px-6 py-2.5 bg-transparent border border-[#C24C33] text-[#C24C33] hover:bg-[#C24C33] hover:text-white text-[15px] font-bold rounded-full transition-colors duration-300 no-underline w-fit">
-              <?= esc_html($faq_cta['title']) ?>
-            </a>
+            <p class="text-[18px] text-[#6B5F5A] m-0 max-w-[420px]"><?= esc_html($faqg['text'] ?? '') ?></p>
+            
           </div>
 
           <div class="w-full h-px bg-[#F2E8E3] my-3"></div>
@@ -290,14 +289,14 @@ get_header();
                 <span class="w-8 h-8 rounded-full bg-[#EED8D3] border-2 border-white shrink-0"></span>
                 <span class="w-8 h-8 rounded-full bg-[#F3EFE9] border-2 border-white shrink-0"></span>
               </div>
-              <span class="font-sans font-bold text-[14px] text-[#C24C33]"><?= esc_html($faqg['badge_text'] ?? '') ?></span>
+              <span class="font-sans font-bold text-[16px] text-[#C24C33]"><?= esc_html($faqg['badge_text'] ?? '') ?></span>
             </div>
 
-            <p class="text-[14px] leading-[22px] text-[#6B5F5A] m-0 mb-5 max-w-[380px]"><?= esc_html($faqg['badge_desc'] ?? '') ?></p>
+            <p class="text-[16px] leading-[22px] text-[#6B5F5A] m-0 mb-5 max-w-[380px]"><?= esc_html($faqg['badge_desc'] ?? '') ?></p>
 
             <a href="<?= esc_url($faq_ask['url']) ?>"<?= pr_target($faq_ask) ?> class="bg-[#C24C33] hover:bg-[#B34A34] text-white font-sans font-bold text-[14px] py-3 px-6 rounded-full transition-colors inline-flex items-center gap-2 cursor-pointer w-fit border-0 no-underline">
               <span><?= esc_html($faq_ask['title']) ?></span>
-              <span class="inline-flex items-center"><img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/white-arrow-1.webp" alt="" aria-hidden="true" class="h-[20px] w-[12px] mt-0.5 object-contain" /></span>
+              <span class="inline-flex items-center"><img src="https://sysinn.net/psykolog.no/wp-content/uploads/2026/09/white-arrow-1.webp" alt="" aria-hidden="true" class="h-[20px] w-[12px] object-contain" /></span>
             </a>
           </div>
         </div>
@@ -306,14 +305,14 @@ get_header();
           <?php foreach ((array) $faq as $item) : ?>
             <div class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300">
               <button class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left">
-                <span class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4"><?= esc_html($item['question'] ?? '') ?></span>
+                <h3 class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4"><?= esc_html($item['question'] ?? '') ?></h3>
                 <span class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300">
                   <span class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"></span>
                   <span class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"></span>
                 </span>
               </button>
               <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
-                <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0"><?= esc_html($item['answer'] ?? '') ?></p>
+                <p class="text-[18px] leading-normal text-[#6B5F5A] m-0"><?= esc_html($item['answer'] ?? '') ?></p>
               </div>
             </div>
           <?php endforeach; ?>

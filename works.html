@@ -141,15 +141,15 @@
           <div class="max-w-[1312px] mx-auto">
             <div class="max-w-full lg:max-w-[701px]">
               <h1
-                class="font-serif font-bold text-[#C24C33] mt-7 mb-0 text-[34px] leading-[1.25] md:text-[42px] lg:text-[48px] xl:text-[56px]"
+                class="font-serif font-bold mt-7 mb-0 text-[34px] leading-[1.25] md:text-[42px] lg:text-[48px] xl:text-[56px]"
               >
-                Privacy Policies
+                A psychologist without referral, <em >in 3 easy steps.</em>
               </h1>
 
               <p
                 class="text-lg lg:text-xl leading-[1.6] text-[#33170F] mt-[22px] mb-0"
               >
-               Learn how Psykolog.no protects your personal data, maintains confidentiality, and securely stores information in line with Norwegian privacy laws and GDPR. Your privacy is one of our highest priorities. We are committed to protecting your personal information, and all contact with us is treated confidentially, in accordance with data protection legislation.
+              Our experienced psychologists provide compassionate care that fits your life online, by phone or in person.
               </p>
 
               <div
@@ -416,49 +416,7 @@
   </div>
 </section>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.format-card');
-    const previewImg = document.getElementById('format-preview-image');
-    if(!cards.length || !previewImg) return;
 
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        // Remove active styling from all
-        cards.forEach(c => {
-          c.classList.remove('border-l-[4px]', 'border-l-[#C24C33]');
-          const iconContainer = c.querySelector('.icon-container');
-          const iconSvg = c.querySelector('.icon-svg');
-          iconContainer.classList.remove('bg-[#C24C33]');
-          iconContainer.classList.add('bg-[#FDE7E1]');
-          iconSvg.classList.remove('text-white');
-          iconSvg.classList.add('text-[#C24C33]');
-        });
-
-        // Add active styling to clicked
-        card.classList.add('border-l-[4px]', 'border-l-[#C24C33]');
-        const activeContainer = card.querySelector('.icon-container');
-        const activeSvg = card.querySelector('.icon-svg');
-        activeContainer.classList.remove('bg-[#FDE7E1]');
-        activeContainer.classList.add('bg-[#C24C33]');
-        activeSvg.classList.remove('text-[#C24C33]');
-        activeSvg.classList.add('text-white');
-
-        // Update image with a quick fade
-        const newSrc = card.dataset.image;
-        if (newSrc && !previewImg.src.includes(newSrc)) {
-          previewImg.style.opacity = '0.5';
-          setTimeout(() => {
-            previewImg.src = newSrc;
-            previewImg.onload = () => {
-              previewImg.style.opacity = '1';
-            };
-          }, 150);
-        }
-      });
-    });
-  });
-</script>
 
 <section class="section bg-white">
   <div class="container">
@@ -606,12 +564,7 @@
                   />
                 </a>
 
-                <a
-                  href="#"
-                  class="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#FBF3EF] text-[#C24C33] border border-[#C24C33] font-bold text-[15px] px-[24px] py-[12px] rounded-full transition-colors"
-                >
-                 Online Session
-                </a>
+             
               </div>
             </div>
 

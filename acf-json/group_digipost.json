@@ -1,0 +1,961 @@
+{
+  "key": "group_digipost",
+  "title": "Digipost page",
+  "fields": [
+    {
+      "key": "field_dp_tab_hero",
+      "label": "Hero",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_dp_hero",
+      "label": "Hero",
+      "name": "hero",
+      "aria-label": "",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_dp_hero_breadcrumb",
+          "label": "Show breadcrumb",
+          "name": "show_breadcrumb",
+          "aria-label": "",
+          "type": "true_false",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "33",
+            "class": "",
+            "id": ""
+          },
+          "message": "",
+          "default_value": 1,
+          "ui": 1,
+          "ui_on_text": "",
+          "ui_off_text": ""
+        },
+        {
+          "key": "field_dp_hero_image",
+          "label": "Hero illustration",
+          "name": "image",
+          "aria-label": "",
+          "type": "image",
+          "instructions": "Full-width background (about 1900 x 830). Scaled to cover the hero, never stretched.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "67",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "id",
+          "library": "all",
+          "min_width": "",
+          "min_height": "",
+          "min_size": "",
+          "max_width": "",
+          "max_height": "",
+          "max_size": "",
+          "mime_types": "",
+          "preview_size": "medium"
+        },
+        {
+          "key": "field_dp_hero_heading",
+          "label": "Heading",
+          "name": "heading",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "Wrap words in {{ }} for red italic, e.g. Send Us Secure Post {{Via Digi Post}}.",
+          "required": 1,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": ""
+        },
+        {
+          "key": "field_dp_hero_text",
+          "label": "Description",
+          "name": "text",
+          "aria-label": "",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "rows": 3,
+          "placeholder": "",
+          "new_lines": ""
+        },
+        {
+          "key": "field_dp_hero_primary",
+          "label": "Primary button",
+          "name": "primary_button",
+          "aria-label": "",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "array"
+        },
+        {
+          "key": "field_dp_hero_secondary",
+          "label": "Secondary button (outline)",
+          "name": "secondary_button",
+          "aria-label": "",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "array"
+        }
+      ]
+    },
+    {
+      "key": "field_dp_tab_what_is",
+      "label": "What Is Digipost",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "aria-label": "",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "endpoint": 0
+    },
+    {
+      "key": "field_dp_what_is",
+      "label": "What Is Digipost Section",
+      "name": "what_is_digipost",
+      "type": "group",
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_dp_what_is_heading",
+          "label": "Heading",
+          "name": "heading",
+          "type": "text",
+          "instructions": "Wrap words in {{ }} for red italic.",
+          "default_value": "What Is Digipost, And Why Do We Use It?",
+          "aria-label": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": ""
+        },
+        {
+          "key": "field_dp_what_is_text",
+          "label": "Text",
+          "name": "text",
+          "type": "textarea",
+          "rows": 4,
+          "aria-label": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "maxlength": "",
+          "placeholder": "",
+          "new_lines": ""
+        },
+        {
+          "key": "field_dp_what_is_box_heading",
+          "label": "Box Heading",
+          "name": "box_heading",
+          "type": "text",
+          "default_value": "Info",
+          "aria-label": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": ""
+        },
+        {
+          "key": "field_dp_what_is_box_text",
+          "label": "Box Text",
+          "name": "box_text",
+          "type": "textarea",
+          "rows": 4,
+          "aria-label": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "maxlength": "",
+          "placeholder": "",
+          "new_lines": ""
+        }
+      ],
+      "aria-label": "",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_dp_tab_intro",
+      "label": "Introduction",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_dp_intro",
+      "label": "Introduction",
+      "name": "intro",
+      "aria-label": "",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_dp_intro_heading",
+          "label": "Heading",
+          "name": "heading",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "Wrap words in {{ }} for red italic, e.g. Send Us Secure Post {{Via Digi Post}}.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": ""
+        },
+        {
+          "key": "field_dp_intro_text",
+          "label": "Content",
+          "name": "text",
+          "aria-label": "",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "rows": 3,
+          "placeholder": "",
+          "new_lines": ""
+        }
+      ]
+    },
+    {
+      "key": "field_dp_tab_doctors",
+      "label": "Digipost addresses",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_dp_doctors",
+      "label": "Doctor cards",
+      "name": "doctors",
+      "aria-label": "",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_dp_doctor_items",
+          "label": "Doctors",
+          "name": "items",
+          "aria-label": "",
+          "type": "repeater",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "layout": "block",
+          "pagination": 0,
+          "min": 0,
+          "max": 0,
+          "collapsed": "field_dp_doctor_name",
+          "button_label": "Add doctor",
+          "rows_per_page": 20,
+          "sub_fields": [
+            {
+              "key": "field_dp_doctor_photo",
+              "label": "Portrait (optional)",
+              "name": "photo",
+              "aria-label": "",
+              "type": "image",
+              "instructions": "Square works best. Initials from the name are shown when empty.",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+              },
+              "return_format": "id",
+              "library": "all",
+              "min_width": "",
+              "min_height": "",
+              "min_size": "",
+              "max_width": "",
+              "max_height": "",
+              "max_size": "",
+              "mime_types": "",
+              "preview_size": "medium"
+            },
+            {
+              "key": "field_dp_doctor_initials",
+              "label": "Initials override",
+              "name": "initials",
+              "aria-label": "",
+              "type": "text",
+              "instructions": "Optional, max 2 letters.",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": "",
+              "placeholder": "",
+              "prepend": "",
+              "append": ""
+            },
+            {
+              "key": "field_dp_doctor_role",
+              "label": "Role label",
+              "name": "role",
+              "aria-label": "",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": "",
+              "placeholder": "Psychologist",
+              "prepend": "",
+              "append": ""
+            },
+            {
+              "key": "field_dp_doctor_name",
+              "label": "Name",
+              "name": "name",
+              "aria-label": "",
+              "type": "text",
+              "instructions": "",
+              "required": 1,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": "",
+              "placeholder": "",
+              "prepend": "",
+              "append": ""
+            },
+            {
+              "key": "field_dp_doctor_title",
+              "label": "Title / specialisation",
+              "name": "title",
+              "aria-label": "",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": "",
+              "placeholder": "",
+              "prepend": "",
+              "append": ""
+            },
+            {
+              "key": "field_dp_doctor_bio",
+              "label": "Short bio",
+              "name": "bio",
+              "aria-label": "",
+              "type": "textarea",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": "",
+              "rows": 3,
+              "placeholder": "",
+              "new_lines": ""
+            },
+            {
+              "key": "field_dp_doctor_hospitals",
+              "label": "Has worked at",
+              "name": "hospitals",
+              "aria-label": "",
+              "type": "repeater",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+              },
+              "layout": "table",
+              "pagination": 0,
+              "min": 0,
+              "max": 0,
+              "collapsed": "",
+              "button_label": "Add hospital",
+              "rows_per_page": 20,
+              "sub_fields": [
+                {
+                  "key": "field_dp_doctor_hospital",
+                  "label": "Hospital",
+                  "name": "name",
+                  "aria-label": "",
+                  "type": "text",
+                  "instructions": "",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                  },
+                  "default_value": "",
+                  "maxlength": "",
+                  "placeholder": "",
+                  "prepend": "",
+                  "append": ""
+                }
+              ]
+            },
+            {
+              "key": "field_dp_doctor_address",
+              "label": "Digipost address",
+              "name": "digipost_address",
+              "aria-label": "",
+              "type": "text",
+              "instructions": "Leave empty to show the \"address to be added\" state with a disabled copy button.",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": "",
+              "placeholder": "",
+              "prepend": "",
+              "append": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "field_dp_tab_labels",
+      "label": "Card labels",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_dp_labels",
+      "label": "Shared card labels",
+      "name": "labels",
+      "aria-label": "",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_dp_labels_worked",
+          "label": "Hospitals heading",
+          "name": "worked_at",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "33",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "Has worked at",
+          "prepend": "",
+          "append": ""
+        },
+        {
+          "key": "field_dp_labels_address",
+          "label": "Address label",
+          "name": "address",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "33",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "Digipost address",
+          "prepend": "",
+          "append": ""
+        },
+        {
+          "key": "field_dp_labels_copy",
+          "label": "Copy button",
+          "name": "copy",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "33",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "Copy",
+          "prepend": "",
+          "append": ""
+        },
+        {
+          "key": "field_dp_labels_copied",
+          "label": "Copied message",
+          "name": "copied",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "Address copied, paste it into Digipost",
+          "prepend": "",
+          "append": ""
+        },
+        {
+          "key": "field_dp_labels_empty",
+          "label": "Empty address text",
+          "name": "empty",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "Address to be added",
+          "prepend": "",
+          "append": ""
+        }
+      ]
+    },
+    {
+      "key": "field_dp_tab_what",
+      "label": "What to send",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_dp_what",
+      "label": "What can you send section",
+      "name": "what_to_send",
+      "aria-label": "",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_dp_what_heading",
+          "label": "Heading",
+          "name": "heading",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "Wrap words in {{ }} for red italic.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": ""
+        },
+        {
+          "key": "field_dp_what_text",
+          "label": "Description",
+          "name": "text",
+          "aria-label": "",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "rows": 3,
+          "placeholder": "",
+          "new_lines": ""
+        },
+        {
+          "key": "field_dp_what_items",
+          "label": "Items list",
+          "name": "items",
+          "aria-label": "",
+          "type": "repeater",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "layout": "table",
+          "pagination": 0,
+          "min": 0,
+          "max": 0,
+          "collapsed": "",
+          "button_label": "Add item",
+          "rows_per_page": 20,
+          "sub_fields": [
+            {
+              "key": "field_dp_what_item_text",
+              "label": "Item text",
+              "name": "text",
+              "aria-label": "",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": "",
+              "placeholder": "",
+              "prepend": "",
+              "append": ""
+            }
+          ]
+        },
+        {
+          "key": "field_dp_what_alert_heading",
+          "label": "Alert Heading",
+          "name": "alert_heading",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": ""
+        },
+        {
+          "key": "field_dp_what_alert_text",
+          "label": "Alert Text",
+          "name": "alert_text",
+          "aria-label": "",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "rows": 3,
+          "placeholder": "",
+          "new_lines": ""
+        }
+      ]
+    },
+    {
+      "key": "field_dp_tab_extra",
+      "label": "SEO / Extra",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_dp_extra",
+      "label": "Extra content",
+      "name": "extra",
+      "aria-label": "",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_dp_extra_content",
+          "label": "Extra content (optional)",
+          "name": "extra_content",
+          "aria-label": "",
+          "type": "wysiwyg",
+          "instructions": "Rendered above the footer when filled in. Reserved for future use.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "tabs": "all",
+          "toolbar": "full",
+          "media_upload": 1,
+          "delay": 1
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "template-parts/Digipost.php"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content"
+  ],
+  "active": true,
+  "description": "All content for the Digipost page template (template-parts/Digipost.php).",
+  "show_in_rest": 0,
+  "modified": 1790608082
+}
