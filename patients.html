@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patients | psykolog.no</title>
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="tailwind.css" />
+  </head>
+  <body class="m-0 bg-white text-brand-taupe font-sans">
+    <div class="relative z-[51] bg-ink-600">
+      <div class="px-6 md:px-12 lg:px-16">
+        <div
+          class="max-w-[1312px] mx-auto flex items-center justify-between gap-6 h-[52px]"
+        >
+          <span class="inline-flex items-center gap-3">
+            <span
+              class="w-[22px] h-px bg-[rgba(248,216,212,0.5)] flex-none"
+            ></span>
+            <span
+              class="font-sans font-semibold text-[11px] leading-4 tracking-[2px] uppercase text-white whitespace-nowrap"
+              >Our mental health network</span
+            >
+          </span>
+          <span class="flex items-center gap-0">
+            <a
+              href="#"
+              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-transparent"
+              >Dps.no <span class="text-[11px] text-brand-mauve">↗</span></a
+            >
+            <a
+              href="#"
+              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-[rgba(248,216,212,0.2)]"
+              >Psykiater.no
+              <span class="text-[11px] text-brand-mauve">↗</span></a
+            >
+            <a
+              href="#"
+              class="inline-flex items-center gap-[7px] font-sans font-medium text-[13px] leading-[18px] text-brand-rose px-[18px] py-1.5 border-l border-[rgba(248,216,212,0.2)]"
+              >Spesialistpsykiatri.no
+              <span class="text-[11px] text-brand-mauve">↗</span></a
+            >
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <header
+      class="sticky top-0 left-0 right-0 z-50 pt-[18px] pointer-events-none"
+    >
+      <div class="px-6 md:px-12 lg:px-16">
+        <div
+          class="max-w-[1312px] mx-auto bg-white/[.66] backdrop-blur-2xl backdrop-saturate-[1.4] border border-white/[.82] rounded-[22px] p-2.5 pl-[26px] shadow-[0_2px_12px_rgba(0,0,0,0.06)] pointer-events-auto"
+        >
+          <div class="flex items-center justify-between gap-8">
+            <a href="index.html" class="inline-flex flex-none"
+              ><img
+                src="logo.webp"
+                alt="psykolog.no"
+                class="h-[26px] w-auto block brightness-0 opacity-[.86]"
+            /></a>
+            <nav id="navLinks" class="flex gap-9">
+              <a
+                href="index.html#home-conditions"
+                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
+                >Services</a
+              >
+              <a
+                href="index.html#home-formats"
+                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
+                >Therapy</a
+              >
+              <a
+                href="index.html#home-right-place"
+                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
+                >About Us</a
+              >
+              <a
+                href="index.html#home-pricing"
+                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
+                >Pricing</a
+              >
+              <a
+                href="index.html#home-locations"
+                class="font-sans font-medium text-[15px] leading-5 text-brand-dark py-1.5"
+                >Contact</a
+              >
+            </nav>
+            <div class="flex items-center gap-2 flex-none">
+              <button
+                onclick="location.href = '#mh-book'"
+                class="font-sans font-bold text-[15px] leading-5 whitespace-nowrap text-white border-0 rounded-full px-7 py-[13px] cursor-pointer bg-brand-orange"
+              >
+                Book An Appointment
+              </button>
+              <button
+                id="navToggle"
+                class="w-[46px] h-[46px] rounded-full border border-brand-border bg-white cursor-pointer hidden"
+              >
+                <span class="relative block w-[18px] h-3 mx-auto">
+                  <span
+                    class="absolute left-0 top-0 w-[18px] h-0.5 rounded-sm bg-brand-dark"
+                  ></span>
+                  <span
+                    class="absolute left-0 top-[5px] w-[18px] h-0.5 rounded-sm bg-brand-dark"
+                  ></span>
+                  <span
+                    class="absolute left-0 top-[10px] w-[18px] h-0.5 rounded-sm bg-brand-dark"
+                  ></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="relative w-full overflow-hidden bg-[#FBEFE9] pt-32 lg:pt-[160px] pb-16 lg:pb-[100px] -mt-20 lg:-mt-[86px]">
+        <!-- Abstract Swoosh Background -->
+        <div class="absolute top-0 right-0 w-full max-w-[800px] h-[800px] bg-gradient-to-bl from-[#F4EBE3]/60 to-transparent rounded-bl-[100%] pointer-events-none transform translate-x-1/4 -translate-y-1/4" aria-hidden="true"></div>
+        
+        <div class="px-4 md:px-12 lg:px-16 relative z-[2]">
+          <div class="max-w-[1312px] mx-auto grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[666px_550px] gap-12 lg:gap-[95px] items-center">
+            
+            <!-- Left Side -->
+            <div class="max-w-[666px]">
+              <!-- Breadcrumbs -->
+              <nav class="flex items-center text-[14px] text-[#6B5F5A] mb-8 font-medium">
+                <a href="index.html" class="hover:text-[#C24C33] transition-colors no-underline">Home</a>
+                <span class="mx-2">/</span>
+                <span class="text-[#241C19]">Patient questions</span>
+              </nav>
+
+              <!-- Heading -->
+              <h1 class="font-serif font-bold text-[#241C19] text-[42px] md:text-[56px] leading-[1.1] mb-6">
+                Questions asked <em class="text-[#C24C33] italic">by our</em>
+                <em class="text-[#C24C33] italic">patients</em>
+              </h1>
+
+              <!-- Subheading -->
+              <div class="flex items-center gap-4 mb-2">
+                <span class="w-[30px] h-[1px] bg-[#C24C33]"></span>
+                <span class="text-[#A93E28] font-bold italic font-serif text-[20px] md:text-[22px]">Answered by our specialists</span>
+              </div>
+
+              <!-- Text -->
+              <p class="text-[#33170F] text-[16px] md:text-[20px] leading-[1.6] m-0">
+                Do you have a question about mental health, assessment, treatment or psychiatry? Submit your question to our team and find answers to questions asked by other patients. All published questions are displayed anonymously.
+              </p>
+            </div>
+
+            <!-- Right Side Image with overlapping card -->
+            <div class="relative w-full max-w-[550px] lg:ml-auto mt-10 lg:mt-0">
+              <img src="assets/Patients/hero.webp" alt="Psychiatrist consultation" class="w-full h-auto rounded-[24px] object-cover shadow-sm" />
+              
+              <!-- Overlapping Card -->
+              <div class="absolute -bottom-8 -left-4 md:bottom-8 md:-left-12 bg-white rounded-[18px] border-[#F2E4DC] shadow-[0px_26.51px_46.78px_-26.51px_#5C2A208C]  p-4 md:py-[30px] md:px-[20px] w-[280px] md:w-[385px]">
+                <h3 class="font-serif font-bold text-[#241C19] text-[14px] md:text-[16px] leading-[1.4] mb-5">
+                  Can I see a psychiatrist without a referral?
+                </h3>
+                <a href="#" class="inline-flex items-center gap-3 text-[#241C19] font-semibold text-[14px] hover:text-[#C24C33] transition-colors group no-underline">
+                  Read answer 
+                 <span class="w-7 h-7 shrink-0">
+                    <img src="assets/Patients/arrow.webp" alt="Right Arrow Icon" class="rounded-full object-contain" />
+                  </span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section" data-reveal>
+        <div class="container">
+          <h2 class="font-serif font-bold text-[#241C19] text-[32px] md:text-[44px] mb-6 md:mb-[24px]">Choose Your Session Format</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+            <!-- Card 1 -->
+            <div class="flex flex-col">
+              <div class="w-full mb-[24px]">
+                <img src="assets/Priser/Individual therapy.webp" alt="Individual Therapy" class="w-full h-auto md:h-[220px] lg:h-[196px] object-cover rounded-[14px]" />
+              </div>
+              <h3 class="font-serif font-bold text-[#241C19] text-[24px] mb-3">Individual Therapy</h3>
+              <p class="text-[#6B5F5A] text-[16px] leading-[1.6] m-0">
+                Meet your psychologist at the clinic. A good fit if you prefer talking in a quiet, dedicated room, or if your assessment requires an in-person visit.
+              </p>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="flex flex-col">
+              <div class="w-full mb-[24px]">
+                <img src="assets/Priser/Video consultation.webp" alt="Video Consultation" class="w-full h-auto md:h-[220px] lg:h-[196px] object-cover rounded-[14px]" />
+              </div>
+              <h3 class="font-serif font-bold text-[#241C19] text-[24px] mb-3">Video Consultation</h3>
+              <p class="text-[#6B5F5A] text-[16px] leading-[1.6] m-0">
+                Talk to your psychologist over a secure video connection from wherever you are. You'll receive a link by SMS shortly before your session. Available nationwide.
+              </p>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="flex flex-col">
+              <div class="w-full mb-[24px]">
+                <img src="assets/Priser/Phone consultation.webp" alt="Phone Consultation" class="w-full h-auto md:h-[220px] lg:h-[196px] object-cover rounded-[14px]" />
+              </div>
+              <h3 class="font-serif font-bold text-[#241C19] text-[24px] mb-3">Phone Consultation</h3>
+              <p class="text-[#6B5F5A] text-[16px] leading-[1.6] m-0">
+                For those who prefer a conversation without video or who don't have a stable internet connection. Same clinical quality as video and in-person sessions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section bg-[#FCF8F5]">
+        <div class="container">
+          
+          <!-- Title & Description -->
+          <div class="text-center mb-[24px]">
+            <h2 class="h2 italic mb-4">
+              No Booking Fees, <em>No Add Ons</em>
+            </h2>
+            <p class="text-[#5B5B5B] text-[16px] md:text-[20px] leading-[1.6]  m-0">
+              The price covers a full session with an authorized psychologist, secure in an approved clinical system, and, where needed, a short written summary or documentation for your employer, on request. There are no separate booking fees, platform fees, or hidden add ons.
+            </p>
+          </div>
+          
+          <!-- Pricing Table -->
+          <div class="bg-white rounded-[20px] md:rounded-[24px] border border-[#E8B8AC] overflow-hidden shadow-sm">
+            
+            <!-- Table Header -->
+            <div class="bg-[#C24C33] px-6 md:px-12 py-5 flex items-center text-white text-[13px] font-bold tracking-[1.5px] uppercase">
+              <div class="w-[30%]">PRICES</div>
+              <div class="w-[35%]">PRICES</div>
+              <div class="w-[35%]">PRICES</div>
+            </div>
+            
+            <!-- Row 1 -->
+            <div class="px-6 md:px-[30px] py-6 md:py-8 flex flex-col md:flex-row md:items-center border-b border-[#462E2C17] gap-4 md:gap-0">
+              <div class="w-full md:w-[30%]">
+                <div class="font-serif font-bold text-[#C24C33] text-[26px] md:text-[30px]">2600,- NOK</div>
+              </div>
+              <div class="w-full md:w-[35%]">
+                <div class="text-[#6B5F5A] text-[16px]">Appointment time Oslo or Ski</div>
+              </div>
+              <div class="w-full md:w-[35%] flex items-center justify-between gap-4">
+                <div>
+                  <div class="font-bold text-[#241C19] text-[16px] mb-3">Single session (up to 45 min)</div>
+                  <div class="text-[12px] font-bold tracking-[1px] uppercase text-[#E58863] mb-3">OFTEN USED FOR</div>
+                  <div class="flex flex-col gap-2">
+                    <div class="flex items-start gap-2.5">
+                      <img src="assets/Priser/tick.webp" alt="Tick" class="w-[20px] h-[20px] mt-0.5 object-contain" />
+                      <span class="text-[#6B5F5A] text-[15px]">Standard single session.</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="w-10 h-10 md:w-11 md:h-11 rounded-full bg-[#E58863] text-white flex items-center justify-center hover:bg-[#D57B57] transition-colors shrink-0 border-0 cursor-pointer">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="px-6 md:px-[30px] py-6 md:py-8 flex flex-col md:flex-row md:items-center border-b border-[#462E2C17] gap-4 md:gap-0">
+              <div class="w-full md:w-[30%]">
+                <div class="font-serif font-bold text-[#C24C33] text-[26px] md:text-[30px]">4600,- NOK</div>
+              </div>
+              <div class="w-full md:w-[35%]">
+                <div class="text-[#6B5F5A] text-[16px]">Appointment time Oslo or Ski</div>
+              </div>
+              <div class="w-full md:w-[35%] flex items-center justify-between gap-4">
+                <div>
+                  <div class="font-bold text-[#241C19] text-[16px] mb-3">Double session (up to 90 min)</div>
+                  <div class="text-[12px] font-bold tracking-[1px] uppercase text-[#E58863] mb-3">OFTEN USED FOR</div>
+                  <div class="flex flex-col gap-2">
+                    <div class="flex items-start gap-2.5">
+                      <img src="assets/Priser/tick.webp" alt="Tick" class="w-[20px] h-[20px] mt-0.5 object-contain" />
+                      <span class="text-[#6B5F5A] text-[15px]">Assessments</span>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                      <img src="assets/Priser/tick.webp" alt="Tick" class="w-[20px] h-[20px] mt-0.5 object-contain" />
+                      <span class="text-[#6B5F5A] text-[15px]">Treatment</span>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                      <img src="assets/Priser/tick.webp" alt="Tick" class="w-[20px] h-[20px] mt-0.5 object-contain" />
+                      <span class="text-[#6B5F5A] text-[15px]">External referral</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="w-10 h-10 md:w-11 md:h-11 rounded-full bg-[#E58863] text-white flex items-center justify-center hover:bg-[#D57B57] transition-colors shrink-0 border-0 cursor-pointer">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="px-6 md:px-[30px] py-6 md:py-8 flex flex-col md:flex-row md:items-center border-b border-[#462E2C17] gap-4 md:gap-0">
+              <div class="w-full md:w-[30%]">
+                <div class="font-serif font-bold text-[#C24C33] text-[26px] md:text-[30px]">2250,- NOK</div>
+              </div>
+              <div class="w-full md:w-[35%]">
+                <div class="text-[#6B5F5A] text-[16px]">Video / Phone consultation</div>
+              </div>
+              <div class="w-full md:w-[35%] flex items-center justify-between gap-4">
+                <div>
+                  <div class="font-bold text-[#241C19] text-[16px] mb-3">Single session (up to 45 min)</div>
+                  <div class="text-[12px] font-bold tracking-[1px] uppercase text-[#E58863] mb-3">OFTEN USED FOR</div>
+                  <div class="flex flex-col gap-2">
+                    <div class="flex items-start gap-2.5">
+                      <img src="assets/Priser/tick.webp" alt="Tick" class="w-[20px] h-[20px] mt-0.5 object-contain" />
+                      <span class="text-[#6B5F5A] text-[15px]">Standard single session.</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="w-10 h-10 md:w-11 md:h-11 rounded-full bg-[#E58863] text-white flex items-center justify-center hover:bg-[#D57B57] transition-colors shrink-0 border-0 cursor-pointer">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="px-6 md:px-[30px] py-6 md:py-8 flex flex-col md:flex-row md:items-center gap-4 md:gap-0">
+              <div class="w-full md:w-[30%]">
+                <div class="font-serif font-bold text-[#C24C33] text-[26px] md:text-[30px]">4250,- NOK</div>
+              </div>
+              <div class="w-full md:w-[35%]">
+                <div class="text-[#6B5F5A] text-[16px]">Video / Phone consultation</div>
+              </div>
+              <div class="w-full md:w-[35%] flex items-center justify-between gap-4">
+                <div>
+                  <div class="font-bold text-[#241C19] text-[16px] mb-3">Double session (up to 90 min)</div>
+                  <div class="text-[12px] font-bold tracking-[1px] uppercase text-[#E58863] mb-3">OFTEN USED FOR</div>
+                  <div class="flex flex-col gap-2">
+                    <div class="flex items-start gap-2.5">
+                      <img src="assets/Priser/tick.webp" alt="Tick" class="w-[20px] h-[20px] mt-0.5 object-contain" />
+                      <span class="text-[#6B5F5A] text-[15px]">Assessments</span>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                      <img src="assets/Priser/tick.webp" alt="Tick" class="w-[20px] h-[20px] mt-0.5 object-contain" />
+                      <span class="text-[#6B5F5A] text-[15px]">Treatment</span>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                      <img src="assets/Priser/tick.webp" alt="Tick" class="w-[20px] h-[20px] mt-0.5 object-contain" />
+                      <span class="text-[#6B5F5A] text-[15px]">External referral</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="w-10 h-10 md:w-11 md:h-11 rounded-full bg-[#E58863] text-white flex items-center justify-center hover:bg-[#D57B57] transition-colors shrink-0 border-0 cursor-pointer">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="mt-[25px] flex justify-center">
+            <a href="#" class="inline-flex items-center gap-2 bg-[#C24C33] hover:bg-[#A93E28] text-white font-bold text-[16px] px-8 py-3.5 rounded-full transition-colors">
+              Book a time
+               <span class="inline-flex items-center"
+                    ><img
+                      src="assets/oslo/white-arrow.webp"
+                      alt="External Link Icon"
+                      class="h-[20px] w-[12px] mt-0.5 object-contain"
+                  /></span>
+            </a>
+          </div>
+          
+        </div>
+      </section>
+
+      <section class="section " data-reveal>
+        <div class="container">
+          <div class="flex flex-col lg:flex-row gap-6 lg:gap-[32px] items-start">
+            
+            <!-- Left Side Content -->
+            <div class="w-full lg:w-[55%]">
+              <h2 class="font-serif font-bold text-[#241C19] text-[32px] md:text-[40px] mb-6">What's Included In The Price?</h2>
+              <p class="text-[#6B5F5A] text-[16px] md:text-[20px] leading-[1.6] mb-10">
+                The price covers a full session with an authorized psychologist, secure in an approved clinical system, and, where needed, a short written summary or documentation for your employer, on request. There are no separate booking fees, platform fees, or hidden add ons.
+              </p>
+              
+              <div class="flex flex-col gap-4">
+                <div class="included-tab cursor-pointer bg-white rounded-[20px] p-6 border border-[#C24C33] transition-all" data-tab="payment">
+                  <div class="flex items-center gap-4 mb-3">
+                    <div class="w-10 h-10">
+                      <img src="assets/Priser/Progressive Muscle Relaxation.webp" alt="Payment" class="object-contain" />
+                    </div>
+                    <h3 class="font-serif font-bold text-[20px] text-[#241C19] m-0">Payment</h3>
+                  </div>
+                  <p class="text-[#5B5B5B] text-[16px] leading-[1.6] m-0">
+                    You pay after the lesson. You will receive a payment link via SMS and email, where you can choose Vipps, card or invoice.
+                  </p>
+                </div>
+                
+                <div class="included-tab cursor-pointer bg-white rounded-[20px] p-6 border border-[#E8DDD7] transition-all" data-tab="cancellation">
+                  <div class="flex items-center gap-4 mb-3">
+                    <div class="w-10 h-10">
+                      <img src="assets/Priser/Thhought Writing.webp" alt="Cancellation" class="object-contain" />
+                    </div>
+                    <h3 class="font-serif font-bold text-[20px] text-[#241C19] m-0">Cancellation</h3>
+                  </div>
+                  <p class="text-[#5B5B5B] text-[16px] leading-[1.6] m-0">
+                    Free cancellation up to 48 hours (two business days) before the lesson. Late cancellations or no-shows will be invoiced in full.
+                  </p>
+                </div>
+                
+                <div class="included-tab cursor-pointer bg-white rounded-[20px] p-6 border border-[#E8DDD7] transition-all" data-tab="change">
+                  <div class="flex items-center gap-4 mb-3">
+                    <div class="w-10 h-10">
+                      <img src="assets/Priser/Breathe.webp" alt="Change Psychologist" class="object-contain" />
+                    </div>
+                    <h3 class="font-serif font-bold text-[20px] text-[#241C19] m-0">Change Psychologist</h3>
+                  </div>
+                  <p class="text-[#5B5B5B] text-[16px] leading-[1.6] m-0">
+                    You can change psychologists at any time, at no extra cost. What matters most to us is that you feel comfortable with the person you're talking to.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Right Side Image -->
+            <div class="w-full lg:w-[45%] sticky top-32 mt-10 lg:mt-0">
+              <img id="included-image" src="assets/Priser/Payment Options.webp" alt="Payment Options" class="w-full h-auto rounded-[24px] object-cover shadow-sm transition-opacity duration-300" />
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      </section>
+
+
+ <section id="mh-faq" class="section bg-[#FFF7F3] mb-[64px]">
+        <div class="container" data-reveal>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <!-- Left Column -->
+            <div class="lg:col-span-5 lg:sticky lg:top-24 flex flex-col gap-6">
+              <div>
+                <span
+                  class="text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3 block"
+                  >FAQS</span
+                >
+                <h2 id="faq" class="h2 mb-4">Questions <em> & Answers</em></h2>
+                <p
+                  class="text-[16px] leading-[26px] text-[#6B5F5A] m-0 mb-6 max-w-[420px]"
+                >
+                  Still unsure whether an appointment is the right next step?
+                  Speak to one of our psychologists.
+                </p>
+                <a
+                  href="#"
+                  class="inline-flex items-center justify-center px-6 py-2.5 bg-transparent border border-[#C24C33] text-[#C24C33] hover:bg-[#C24C33] hover:text-white text-[15px] font-bold rounded-full transition-colors duration-300 no-underline w-fit"
+                >
+                  Book a time
+                </a>
+              </div>
+
+              <!-- Separator -->
+              <div class="w-full h-px bg-[#F2E8E3] my-3"></div>
+
+              <div class="flex flex-col">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="flex -space-x-2">
+                    <span
+                      class="w-8 h-8 rounded-full bg-[#E8DCC8] border-2 border-white shrink-0"
+                    ></span>
+                    <span
+                      class="w-8 h-8 rounded-full bg-[#DCE5DF] border-2 border-white shrink-0"
+                    ></span>
+                    <span
+                      class="w-8 h-8 rounded-full bg-[#EED8D3] border-2 border-white shrink-0"
+                    ></span>
+                    <span
+                      class="w-8 h-8 rounded-full bg-[#F3EFE9] border-2 border-white shrink-0"
+                    ></span>
+                  </div>
+                  <span class="font-sans font-bold text-[14px] text-[#C24C33]">
+                    Oslo Questions Asked By Our Patients
+                  </span>
+                </div>
+
+                <p
+                  class="text-[14px] leading-[22px] text-[#6B5F5A] m-0 mb-5 max-w-[380px]"
+                >
+                  These are the questions people ask us most often before
+                  booking their first consultation.
+                </p>
+
+                <button
+                  type="button"
+                  onclick="location.href = '#mh-book'"
+                  class="bg-[#C24C33] hover:bg-[#B34A34] text-white font-sans font-bold text-[14px] py-3 px-6 rounded-full transition-colors inline-flex items-center gap-2 cursor-pointer w-fit border-0"
+                >
+                  <span>Ask Your Own Question</span>
+                  <span class="inline-flex items-center"
+                    ><img
+                      src="assets/oslo/white-arrow.webp"
+                      alt="External Link Icon"
+                      class="h-[20px] w-[12px] mt-0.5 object-contain"
+                  /></span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="lg:col-span-7 flex flex-col gap-4">
+              <!-- Item 1 -->
+              <div
+                class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300"
+              >
+                <button
+                  class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left"
+                >
+                  <span
+                    class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4"
+                  >
+                    Do I need a referral to book a psychologist in Oslo?
+                  </span>
+                  <span
+                    class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300"
+                  >
+                    <span
+                      class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"
+                    ></span>
+                    <span
+                      class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"
+                    ></span>
+                  </span>
+                </button>
+                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
+                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
+                    No, you do not need a referral from a doctor to book an
+                    appointment with our psychologists in Oslo. You can easily
+                    book an appointment directly through our online booking
+                    system.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div
+                class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300"
+              >
+                <button
+                  class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left"
+                >
+                  <span
+                    class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4"
+                  >
+                    What is the difference between a psychologist and a
+                    therapist?
+                  </span>
+                  <span
+                    class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300"
+                  >
+                    <span
+                      class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"
+                    ></span>
+                    <span
+                      class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"
+                    ></span>
+                  </span>
+                </button>
+                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
+                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
+                    A psychologist has completed a 6-year professional degree in
+                    psychology and is a protected title. The title therapist is
+                    not protected, which means anyone can call themselves a
+                    therapist regardless of their background.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div
+                class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300"
+              >
+                <button
+                  class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left"
+                >
+                  <span
+                    class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4"
+                  >
+                    Can I have a video session with a psychologist from Oslo?
+                  </span>
+                  <span
+                    class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300"
+                  >
+                    <span
+                      class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"
+                    ></span>
+                    <span
+                      class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"
+                    ></span>
+                  </span>
+                </button>
+                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
+                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
+                    Yes, all our psychologists offer video sessions. You can
+                    choose whether you want to meet in person at our clinic in
+                    Oslo or have the session via secure video link.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div
+                class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300"
+              >
+                <button
+                  class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left"
+                >
+                  <span
+                    class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4"
+                  >
+                    Do you offer emergency or crisis appointments?
+                  </span>
+                  <span
+                    class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300"
+                  >
+                    <span
+                      class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"
+                    ></span>
+                    <span
+                      class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"
+                    ></span>
+                  </span>
+                </button>
+                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
+                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
+                    We can often offer appointments within 24 hours. For
+                    immediate medical emergencies or acute suicidal thoughts,
+                    please contact the emergency room (116 117) or call 113.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 5 -->
+              <div
+                class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300"
+              >
+                <button
+                  class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left"
+                >
+                  <span
+                    class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4"
+                  >
+                    Can I switch between in-person and video appointments?
+                  </span>
+                  <span
+                    class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300"
+                  >
+                    <span
+                      class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"
+                    ></span>
+                    <span
+                      class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"
+                    ></span>
+                  </span>
+                </button>
+                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
+                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
+                    Yes, you are completely free to switch between meeting in
+                    person in Oslo and taking the session via video, depending
+                    on what suits you best that day.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 6 -->
+              <div
+                class="faq-item group bg-white border border-[#F2E8E3] rounded-[16px] overflow-hidden shadow-sm transition-all duration-300"
+              >
+                <button
+                  class="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 bg-transparent border-0 cursor-pointer text-left"
+                >
+                  <span
+                    class="font-serif font-bold text-[18px] sm:text-[20px] text-[#241C19] group-[.is-open]:text-[#C24C33] transition-colors pr-4"
+                  >
+                    Do you work with employers and HR departments?
+                  </span>
+                  <span
+                    class="relative w-4 h-4 flex-none shrink-0 transition-transform duration-300"
+                  >
+                    <span
+                      class="absolute top-1/2 left-0 w-full h-[2px] bg-[#C24C33] -translate-y-1/2"
+                    ></span>
+                    <span
+                      class="absolute top-0 left-1/2 w-[2px] h-full bg-[#C24C33] -translate-x-1/2 transition-transform duration-300 group-[.is-open]:rotate-90"
+                    ></span>
+                  </span>
+                </button>
+                <div class="faq-content hidden px-6 sm:px-8 pb-7 pt-0">
+                  <p class="text-[15px] leading-[26px] text-[#6B5F5A] m-0">
+                    Yes, we collaborate with several companies. We offer
+                    arrangements where the employer covers the cost of
+                    psychology sessions for employees.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-brand-brown text-white pt-[72px] pb-8">
+      <div class="px-6 md:px-12 lg:px-16">
+        <div class="max-w-[1312px] mx-auto">
+          <div class="mb-14">
+            <h3 class="font-serif font-bold text-3xl mt-0 mb-3">
+              Stay Informed
+            </h3>
+            <p class="text-base text-white/80 mt-0 mb-6">
+              Get mental health tips and updates delivered to your inbox.
+            </p>
+            <form class="flex gap-3 max-w-[600px] mb-4">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                required
+                class="flex-1 px-6 py-4 rounded-full border border-white/20 bg-[#FFFFFF17] text-white text-[15px]"
+              />
+              <button
+                type="submit"
+                class="font-sans font-bold text-base text-white bg-brand-orange border-0 rounded-full px-8 py-4 cursor-pointer whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </form>
+            <label class="flex items-center gap-2 text-sm text-white/70">
+              <input
+                type="checkbox"
+                required
+                class="w-4 h-4 accent-brand-orange"
+              />
+              <span>I agree to receive emails from psykolog.no</span>
+            </label>
+          </div>
+          <div
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12"
+          >
+            <div>
+              <h4 class="font-bold text-[15px] mt-0 mb-4">Services</h4>
+              <div class="grid gap-2.5">
+                <a
+                  href="index.html#home-conditions"
+                  class="text-sm text-white/70"
+                  >Individual Therapy</a
+                >
+                <a
+                  href="index.html#home-conditions"
+                  class="text-sm text-white/70"
+                  >Couples Therapy</a
+                >
+                <a
+                  href="index.html#home-conditions"
+                  class="text-sm text-white/70"
+                  >Family Therapy</a
+                >
+                <a
+                  href="index.html#home-conditions"
+                  class="text-sm text-white/70"
+                  >Group Therapy</a
+                >
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-[15px] mt-0 mb-4">Conditions</h4>
+              <div class="grid gap-2.5">
+                <a href="adhd.html" class="text-sm text-white/70">ADHD</a>
+                <a href="#mh-conditions" class="text-sm text-white/70"
+                  >Depression</a
+                >
+                <a href="#mh-conditions" class="text-sm text-white/70"
+                  >Anxiety</a
+                >
+                <a href="#mh-conditions" class="text-sm text-white/70">PTSD</a>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-[15px] mt-0 mb-4">Clinic</h4>
+              <div class="grid gap-2.5">
+                <a href="about.html" class="text-sm text-white/70">About Us</a>
+                <a href="index.html#home-team" class="text-sm text-white/70"
+                  >Our Team</a
+                >
+                <a
+                  href="index.html#home-locations"
+                  class="text-sm text-white/70"
+                  >Locations</a
+                >
+                <a href="index.html#home-pricing" class="text-sm text-white/70"
+                  >Pricing</a
+                >
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-[15px] mt-0 mb-4">Company</h4>
+              <div class="grid gap-2.5">
+                <a href="#" class="text-sm text-white/70">Careers</a>
+                <a href="#" class="text-sm text-white/70">Blog</a>
+                <a href="#" class="text-sm text-white/70">Press</a>
+                <a href="#" class="text-sm text-white/70">Contact</a>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-[15px] mt-0 mb-4">Legal</h4>
+              <div class="grid gap-2.5">
+                <a href="#" class="text-sm text-white/70">Privacy Policy</a>
+                <a href="#" class="text-sm text-white/70">Terms of Service</a>
+                <a href="#" class="text-sm text-white/70">Cookie Policy</a>
+                <a href="#" class="text-sm text-white/70">Accessibility</a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="border-t border-white/20 pt-6 flex flex-col gap-4 md:flex-row md:justify-between md:items-center"
+          >
+            <p class="text-sm text-white/60 m-0">
+              &copy; 2024 psykolog.no. All rights reserved.
+            </p>
+            <div class="flex items-center gap-5">
+              <a href="#" class="text-white/70 text-xl">📷</a>
+              <a href="#" class="text-white/70 text-xl">💼</a>
+              <a href="#" class="text-white/70 text-xl">📘</a>
+              <span class="text-[13px] text-white/50"
+                >Made by
+                <a href="https://sysinn.no" class="text-white/70"
+                  >Sysinn</a
+                ></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

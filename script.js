@@ -2665,7 +2665,73 @@
     initTellAFriendShare();
     initTellAFriendInteractiveCard();
     initDigipostCopy();
+    initEarningsCalculator();
   });
+
+  /* -------------------------------------------------------------------
+     Earnings Calculator Widget
+     ------------------------------------------------------------------- */
+  function initEarningsCalculator() {
+    const widget = document.getElementById('earnings-calculator-widget');
+    const toggleContainer = document.getElementById('earnings-toggle-container');
+    const rangeInput = document.getElementById('earnings-range-input');
+    const sliderVal = document.getElementById('earnings-slider-val');
+    const sliderFill = document.getElementById('earnings-slider-fill');
+    const sliderThumb = document.getElementById('earnings-slider-thumb');
+    const totalVal = document.getElementById('earnings-total-val');
+
+    if (!rangeInput || !totalVal) return;
+
+    // Use dynamic rate from data attribute if available, else default
+    const annualRate = widget && widget.getAttribute('data-rate') ? parseFloat(widget.getAttribute('data-rate')) : 70000; 
+
+    function updateUI() {
+      const val = parseInt(rangeInput.value, 10);
+      const min = parseInt(rangeInput.min, 10);
+      const max = parseInt(rangeInput.max, 10);
+
+      const percentage = ((val - min) / (max - min)) * 100;
+      
+      sliderVal.textContent = val;
+      sliderVal.style.left = `${percentage}%`;
+      sliderFill.style.width = `${percentage}%`;
+      sliderThumb.style.left = `${percentage}%`;
+
+      const earnings = val * annualRate;
+      totalVal.textContent = new Intl.NumberFormat('no-NO').format(earnings) + ' Kr';
+    }
+
+    rangeInput.addEventListener('input', updateUI);
+
+    if (toggleContainer) {
+      toggleContainer.addEventListener('click', (e) => {
+        if (e.target.tagName !== 'BUTTON') return;
+        
+        const buttons = toggleContainer.querySelectorAll('button');
+        buttons.forEach(btn => {
+          btn.className = 'bg-transparent text-[#6B5F5A] px-8 py-2 rounded-full text-[14px] font-bold hover:text-[#241C19] transition-all z-10 relative';
+        });
+        
+        const activeBtn = e.target;
+        activeBtn.className = 'bg-[#C24C33] text-white px-8 py-2 rounded-full text-[14px] font-bold shadow-sm transition-all z-10 relative';
+
+        const mode = activeBtn.getAttribute('data-type');
+        if (mode === 'full') {
+          rangeInput.max = 40;
+          rangeInput.value = 20;
+        } else {
+          rangeInput.max = 20;
+          rangeInput.value = 10;
+        }
+        
+        document.getElementById('earnings-max-lbl').textContent = rangeInput.max;
+        
+        updateUI();
+      });
+    }
+
+    updateUI();
+  }
 
 })();
 

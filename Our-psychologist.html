@@ -782,39 +782,40 @@
             </div>
 
             <!-- Right Side -->
-            <div class="w-full lg:w-1/2 xl:W-[560px]">
+            <div class="w-full lg:w-1/2 xl:w-[560px]" id="earnings-calculator-widget">
               <div class="bg-[linear-gradient(359.97deg,rgba(248,216,212,0.64)_2.93%,rgba(248,235,226,0.09)_99.95%)] border border-[#C24C3333] rounded-[12px] p-8 md:p-[48px] shadow-sm flex flex-col items-center">
                 <h3 class="font-serif font-bold text-[#241C19] text-[20px] md:text-[22px] mb-8 text-center">
-                  Estimated Earning With Better Help
+                  Estimated Earning With Psykolog.no
                 </h3>
 
                 <!-- Toggle -->
-                <div class="flex bg-white rounded-full p-1.5 shadow-sm border border-[#F2E8E3] mb-12 w-fit relative">
-                  <button class="bg-[#C24C33] text-white px-8 py-2 rounded-full text-[14px] font-bold shadow-sm transition-all z-10 relative">Full Time</button>
-                  <button class="text-[#6B5F5A] px-8 py-2 rounded-full text-[14px] font-bold hover:text-[#241C19] transition-all z-10 relative">Part-time</button>
+                <div class="flex bg-white rounded-full p-1.5 shadow-sm border border-[#F2E8E3] mb-12 w-fit relative" id="earnings-toggle-container">
+                  <button data-type="full" class="bg-[#C24C33] text-white px-8 py-2 rounded-full text-[14px] font-bold shadow-sm transition-all z-10 relative">Full Time</button>
+                  <button data-type="part" class="bg-transparent text-[#6B5F5A] px-8 py-2 rounded-full text-[14px] font-bold hover:text-[#241C19] transition-all z-10 relative">Part-time</button>
                 </div>
 
                 <!-- Slider Area -->
                 <div class="w-full mb-10 relative">
                   <div class="flex justify-center mb-4 text-[#6B5F5A] text-[14px] font-medium absolute w-full -top-6">
-                    <span class="left-[65%] -translate-x-1/2 absolute">20</span>
+                    <span id="earnings-slider-val" class="absolute -translate-x-1/2" style="left: 50%;">20</span>
                   </div>
                   <!-- Custom styled range slider -->
                   <div class="relative w-full h-2.5 bg-[#F2E8E3] rounded-full mt-8">
-                    <div class="absolute left-0 top-0 h-full bg-[#C24C33] rounded-full w-[65%]"></div>
-                    <div class="absolute top-1/2 -translate-y-1/2 left-[65%] w-[22px] h-[22px] bg-white rounded-full shadow border border-[#E8DDD7] -ml-3 cursor-pointer"></div>
+                    <div id="earnings-slider-fill" class="absolute left-0 top-0 h-full bg-[#C24C33] rounded-full" style="width: 50%;"></div>
+                    <div id="earnings-slider-thumb" class="absolute top-1/2 -translate-y-1/2 w-[22px] h-[22px] bg-white rounded-full shadow border border-[#E8DDD7] -ml-3 pointer-events-none" style="left: 50%;"></div>
+                    <input type="range" id="earnings-range-input" min="0" max="40" value="20" class="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer">
                   </div>
                   <div class="flex justify-between items-center mt-3 text-[#6B5F5A] text-[13px] font-medium">
-                    <span>5</span>
+                    <span id="earnings-min-lbl">0</span>
                     <span>hours per week</span>
-                    <span>30</span>
+                    <span id="earnings-max-lbl">40</span>
                   </div>
                 </div>
 
                 <!-- Earnings -->
                 <div class="flex justify-between items-end w-full mb-10 border-t border-[#F2E8E3] pt-6">
                   <span class="text-[#241C19] text-[15px] font-bold leading-[1.4] max-w-[120px]">Estimated Annual Earnings:</span>
-                  <span class="text-[#C24C33] text-[24px] md:text-[28px] font-bold">140, 000 Kr</span>
+                  <span class="text-[#C24C33] text-[24px] md:text-[28px] font-bold" id="earnings-total-val">1,400,000 Kr</span>
                 </div>
 
                 <a href="#" class="bg-[#C24C33] hover:bg-[#A93E28] text-white font-bold text-[15px] px-[32px] py-[14px] rounded-full transition-colors flex items-center justify-center gap-2">

@@ -107,7 +107,7 @@ get_header();
   $hero_title = $hero['title'] ?? '';
 	 $b1 = op_link($hero['btn_primary'] ?? null, 'See available hours', '#');
   ?>
-  <section class="relative w-full max-w-full overflow-hidden bg-brand-cream grid grid-cols-1 grid-rows-1 -mt-20 lg:-mt-[86px] min-h-[500px] lg:min-h-[700px]">
+  <section class="relative w-full max-w-full overflow-hidden bg-brand-cream grid grid-cols-1 grid-rows-1 -mt-20 lg:-mt-[120px] min-h-[500px] lg:min-h-[700px]">
     <span class="[grid-area:1/1] relative w-full min-h-full lg:min-h-0 overflow-hidden">
       <?= op_img($hero['image'] ?? 0, 'assets/Our-psych/hero.webp', $hero_title, 'absolute inset-0 w-full h-full object-cover object-[25%_50%] lg:object-[100%_50%]', ['loading' => 'eager', 'fetchpriority' => 'high']) ?>
       <span class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:hidden"></span>
@@ -115,6 +115,11 @@ get_header();
 
     <div class="px-4 md:px-12 lg:px-16 relative w-full [grid-area:1/1] place-self-center z-[2] bg-transparent pt-32 pb-10 lg:pt-[90px] lg:pb-[88px]">
       <div class="max-w-[1312px] mx-auto">
+		<div class="ml-2">
+			<?php if ( function_exists( 'yoast_breadcrumb' ) ) : ?>
+  			   <?php yoast_breadcrumb( '<nav class="page-hero__crumb" aria-label="Breadcrumb">', '</nav>' ); ?>
+	 	         <?php endif; ?>
+		  </div>  
         <div class="max-w-full lg:max-w-[710px]">
           <h1 class="font-serif font-bold text-[#C24C33] mt-7 mb-0 text-[34px] leading-[1.25] md:text-[42px] lg:text-[48px] xl:text-[56px]">
             <?= esc_html($hero_title) ?>
@@ -188,9 +193,9 @@ get_header();
 ]],
   ];
   ?>
-  <section id="psychologists-directory" class="section bg-[#FCF8F5]">
+  <section id="psychologists-directory" class="pt-[40px] pb-[60px] bg-[#FCF8F5]">
     <div class="container">
-      <div class="section-head section-head--center mb-10">
+      <div class="section-head section-head--center mb-6">
         <h2 class="font-serif text-[36px] md:text-[48px] text-[#241C19] font-bold leading-[1.2] mb-4"><?= op_mark($dir['title'] ?? '') ?></h2>
         <p class="text-[#6B5F5A] text-[16px] md:text-[20px] leading-[1.6]"><?= esc_html($dir['text'] ?? '') ?></p>
       </div>
@@ -261,7 +266,7 @@ get_header();
   ?>
   <section class="section bg-[#F8EBE2]">
     <div class="container" data-reveal>
-      <div class="text-center max-w-[700px] mx-auto mb-12 md:mb-16">
+      <div class="text-center max-w-[700px] mx-auto mb-6">
         <h2 class="font-serif font-bold text-[#241C19] text-[36px] md:text-[48px] mb-4"><?= op_mark($how['title'] ?? '') ?></h2>
         <p class="text-[#6B5F5A] text-[16px] md:text-[18px] leading-[1.6] m-0"><?= esc_html($how['text'] ?? '') ?></p>
       </div>
@@ -300,7 +305,7 @@ get_header();
   ?>
   <section class="section">
     <div class="container" data-reveal>
-      <div class="text-center max-w-[800px] mx-auto mb-12 md:mb-16">
+      <div class="text-center max-w-[800px] mx-auto mb-6">
         <h2 class="font-serif font-bold text-[#241C19] text-[36px] md:text-[48px] mb-4"><?= op_mark($team['title'] ?? '', '', 'span') ?></h2>
         <p class="text-[#6B5F5A] text-[16px] md:text-[18px] leading-[1.6] m-0"><?= op_mark($team['text'] ?? '', 'underline decoration-[#E8DDD7] underline-offset-4', 'span') ?></p>
       </div>
@@ -353,15 +358,16 @@ get_header();
 
   <?php /* ================= PRIVATE PRACTICE / EARNINGS ================= */
   $pr    = get_field('practice') ?: [];
-  $pmin  = (float) ($pr['slider_min'] ?? 5);
-  $pmax  = (float) ($pr['slider_max'] ?? 30);
+  $pmin  = (float) ($pr['slider_min'] ?? 0);
+  $pmax  = (float) ($pr['slider_max'] ?? 40);
   $pval  = (float) ($pr['slider_value'] ?? 20);
   $pct   = $pmax > $pmin ? max(0, min(100, round(($pval - $pmin) / ($pmax - $pmin) * 100, 1))) : 0;
   $pbtn  = op_link($pr['button'] ?? null, 'Get started', '#');
+  $hourly_rate = (float) ($pr['hourly_rate'] ?? 70000);
   ?>
   <section class="section" data-reveal>
     <div class="container">
-      <div class="text-center mb-16">
+      <div class="text-center mb-8">
         <h2 class="font-serif font-bold text-[#241C19] text-[36px] md:text-[48px] mb-4"><?= esc_html($pr['title'] ?? '') ?></h2>
         <p class="text-[#6B5F5A] text-[16px] md:text-[18px] leading-[1.6] m-0"><?= esc_html($pr['text'] ?? '') ?></p>
       </div>
@@ -383,33 +389,34 @@ get_header();
           </div>
         </div>
 
-        <div class="w-full lg:w-1/2 xl:w-[560px]">
+        <div class="w-full lg:w-1/2 xl:w-[560px]" id="earnings-calculator-widget" data-rate="<?= esc_attr($hourly_rate) ?>">
           <div class="bg-[linear-gradient(359.97deg,rgba(248,216,212,0.64)_2.93%,rgba(248,235,226,0.09)_99.95%)] border border-[#C24C3333] rounded-[12px] p-8 md:p-[48px] shadow-sm flex flex-col items-center">
             <h3 class="font-serif font-bold text-[#241C19] text-[20px] md:text-[22px] mb-8 text-center"><?= esc_html($pr['card_title'] ?? '') ?></h3>
 
-            <div class="flex bg-white rounded-full p-1.5 shadow-sm border border-[#F2E8E3] mb-12 w-fit relative">
-              <button type="button" class="bg-[#C24C33] text-white px-8 py-2 rounded-full text-[14px] font-bold shadow-sm transition-all z-10 relative"><?= esc_html(($pr['tab_full'] ?? '') ?: 'Full time') ?></button>
-              <button type="button" class="text-[#6B5F5A] px-8 py-2 rounded-full text-[14px] font-bold hover:text-[#241C19] transition-all z-10 relative"><?= esc_html(($pr['tab_part'] ?? '') ?: 'Part-time') ?></button>
+            <div class="flex bg-white rounded-full p-1.5 shadow-sm border border-[#F2E8E3] mb-12 w-fit relative" id="earnings-toggle-container">
+              <button type="button" data-type="full" class="bg-[#C24C33] text-white px-8 py-2 rounded-full text-[14px] font-bold shadow-sm transition-all z-10 relative"><?= esc_html(($pr['tab_full'] ?? '') ?: 'Full time') ?></button>
+              <button type="button" data-type="part" class="bg-transparent text-[#6B5F5A] px-8 py-2 rounded-full text-[14px] font-bold hover:text-[#241C19] transition-all z-10 relative"><?= esc_html(($pr['tab_part'] ?? '') ?: 'Part-time') ?></button>
             </div>
 
             <div class="w-full mb-10 relative">
               <div class="flex justify-center mb-4 text-[#6B5F5A] text-[14px] font-medium absolute w-full -top-6">
-                <span class="-translate-x-1/2 absolute" style="left: <?= esc_attr($pct) ?>%"><?= esc_html(rtrim(rtrim(number_format($pval, 1, '.', ''), '0'), '.')) ?></span>
+                <span id="earnings-slider-val" class="absolute -translate-x-1/2" style="left: <?= esc_attr($pct) ?>%"><?= esc_html(rtrim(rtrim(number_format($pval, 1, '.', ''), '0'), '.')) ?></span>
               </div>
               <div class="relative w-full h-2.5 bg-[#F2E8E3] rounded-full mt-8">
-                <div class="absolute left-0 top-0 h-full bg-[#C24C33] rounded-full" style="width: <?= esc_attr($pct) ?>%"></div>
-                <div class="absolute top-1/2 -translate-y-1/2 w-[22px] h-[22px] bg-white rounded-full shadow border border-[#E8DDD7] -ml-3 cursor-pointer" style="left: <?= esc_attr($pct) ?>%"></div>
+                <div id="earnings-slider-fill" class="absolute left-0 top-0 h-full bg-[#C24C33] rounded-full" style="width: <?= esc_attr($pct) ?>%"></div>
+                <div id="earnings-slider-thumb" class="absolute top-1/2 -translate-y-1/2 w-[22px] h-[22px] bg-white rounded-full shadow border border-[#E8DDD7] -ml-3 pointer-events-none" style="left: <?= esc_attr($pct) ?>%"></div>
+                <input type="range" id="earnings-range-input" min="<?= esc_attr($pmin) ?>" max="<?= esc_attr($pmax) ?>" value="<?= esc_attr($pval) ?>" class="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer">
               </div>
               <div class="flex justify-between items-center mt-3 text-[#6B5F5A] text-[13px] font-medium">
-                <span><?= esc_html(rtrim(rtrim(number_format($pmin, 1, '.', ''), '0'), '.')) ?></span>
+                <span id="earnings-min-lbl"><?= esc_html(rtrim(rtrim(number_format($pmin, 1, '.', ''), '0'), '.')) ?></span>
                 <span><?= esc_html($pr['slider_unit'] ?? '') ?></span>
-                <span><?= esc_html(rtrim(rtrim(number_format($pmax, 1, '.', ''), '0'), '.')) ?></span>
+                <span id="earnings-max-lbl"><?= esc_html(rtrim(rtrim(number_format($pmax, 1, '.', ''), '0'), '.')) ?></span>
               </div>
             </div>
 
             <div class="flex justify-between items-end w-full mb-10 border-t border-[#F2E8E3] pt-6">
               <span class="text-[#241C19] text-[15px] font-bold leading-[1.4] max-w-[120px]"><?= esc_html($pr['earnings_label'] ?? '') ?></span>
-              <span class="text-[#C24C33] text-[24px] md:text-[28px] font-bold"><?= esc_html($pr['earnings_value'] ?? '') ?></span>
+              <span class="text-[#C24C33] text-[24px] md:text-[28px] font-bold" id="earnings-total-val"><?= esc_html($pr['earnings_value'] ?? '') ?></span>
             </div>
 
             <a href="<?= esc_url($pbtn['url']) ?>"<?= op_target($pbtn) ?> class="bg-[#C24C33] hover:bg-[#A93E28] text-white font-bold text-[15px] px-[32px] py-[14px] rounded-full transition-colors flex items-center justify-center gap-2 no-underline">
@@ -461,7 +468,7 @@ get_header();
           <div>
             <span class="text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3 block"><?= esc_html(($faqg['eyebrow'] ?? '') ?: 'FAQS') ?></span>
             <h2 id="faq" class="h2 mb-4"><?= op_mark($faqg['title'] ?? '', '') ?></h2>
-            <p class="text-[16px] leading-[26px] text-[#6B5F5A] m-0 max-w-[420px]"><?= esc_html($faqg['text'] ?? '') ?></p>
+            <p class="text-[18px] leading-[26px] text-[#6B5F5A] m-0 max-w-[420px]"><?= esc_html($faqg['text'] ?? '') ?></p>
             
           </div>
 
