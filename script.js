@@ -2736,3 +2736,262 @@
 })();
 
 
+
+/**
+ * Patient FAQ — progressive enhancement.
+ * The question cards live in the HTML (good for SEO and no-JS). This script only adds:
+ * search + highlight, category filter, sort, accordion, pagination, helpful votes,
+ * deep links (#faq-5) and FAQPage JSON-LD.
+ *
+ * Tailwind: classes are used in this file, so add it to your `content` paths
+ * (not needed with the Play CDN).
+ */
+(() => {
+  'use strict';
+
+  const PAGE_SIZE = 8;
+
+  /* ---------------------------- helpers ---------------------------- */
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const reEsc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const norm = (s) => String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const plural = (n) => `${n} question${n === 1 ? '' : 's'}`;
+  const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
+  const tokens = (q) => norm(q).split(/\s+/).filter(Boolean);
+  const highlight = (text, toks) => {
+    const t = toks.filter((x) => x.length > 1);
+    if (!t.length) return esc(text);
+    const re = new RegExp(`(${t.map(reEsc).join('|')})`, 'gi');
+    return text.split(re).map((p, i) => (i % 2 ? `<mark class="bg-[#FDE3D9] text-inherit rounded px-0.5">${esc(p)}</mark>` : esc(p))).join('');
+  };
+  const store = {
+    get() { try { return JSON.parse(localStorage.getItem('faq-votes')) || {}; } catch { return {}; } },
+    set(v) { try { localStorage.setItem('faq-votes', JSON.stringify(v)); } catch { /* storage unavailable */ } },
+  };
+
+  /* ------------------------------ DOM ------------------------------ */
+  const el = {
+    search: $('faq-search'), clear: $('faq-search-clear'), cats: $('faq-categories'),
+    list: $('faq-list'), status: $('faq-status'), sort: $('faq-sort'),
+    sortLabel: $('faq-sort-label'), sortIcon: $('faq-sort-icon'),
+    empty: $('faq-empty'), reset: $('faq-reset'),
+    moreWrap: $('faq-more-wrap'), more: $('faq-more'), moreLabel: $('faq-more-label'),
+  };
+  if (!el.list || !el.cats) return;
+
+  // Read every card that already exists in the HTML.
+  const items = [...el.list.querySelectorAll('.faq-item')].map((node) => {
+    const qEl = node.querySelector('[data-faq-q]');
+    const aEl = node.querySelector('[data-faq-a]');
+    return {
+      node, qEl, aEl,
+      id: Number(node.dataset.id),
+      cat: node.dataset.cat,
+      date: node.dataset.date || '',
+      q: qEl.textContent.trim(),
+      a: aEl.textContent.trim(),
+      numEl: node.querySelector('[data-faq-num]'),
+      btn: node.querySelector('.faq-toggle'),
+      panel: node.querySelector('[data-faq-panel]'),
+      voteBox: node.querySelector('[data-vote-box]'),
+    };
+  });
+  if (!items.length) return;
+  const byId = new Map(items.map((i) => [i.id, i]));
+
+  const state = {
+    cat: 'All', query: '', sort: 'newest', visible: PAGE_SIZE,
+    openId: (items.find((i) => i.node.dataset.open === 'true') || {}).id ?? null,
+  };
+  const votes = store.get();
+
+  /* ------------------------- filter / sort ------------------------- */
+  const matches = (i, toks) => !toks.length || toks.every((t) => norm(`${i.q} ${i.a} ${i.cat}`).includes(t));
+  const cmp = (a, b) => {
+    const d = new Date(b.date) - new Date(a.date) || b.id - a.id;
+    return state.sort === 'newest' ? d : -d;
+  };
+
+  /* ---------------------------- accordion -------------------------- */
+  function setOpen(item, open) {
+    item.node.dataset.open = String(open);
+    item.panel.dataset.open = String(open);
+    item.btn.setAttribute('aria-expanded', String(open));
+    item.panel.inert = !open;
+  }
+  function toggle(item) {
+    const willOpen = state.openId !== item.id;
+    if (state.openId !== null && byId.get(state.openId)) setOpen(byId.get(state.openId), false);
+    state.openId = willOpen ? item.id : null;
+    if (willOpen) setOpen(item, true);
+    try { history.replaceState(null, '', willOpen ? `#faq-${item.id}` : location.pathname + location.search); } catch { /* ignore */ }
+  }
+
+  /* ---------------------------- categories ------------------------- */
+  function renderCategories(toks) {
+    const base = items.filter((i) => matches(i, toks));
+    const btns = el.cats.querySelectorAll('button[data-cat]');
+    btns.forEach((btn) => {
+      const cat = btn.dataset.cat;
+      const count = cat === 'All' ? base.length : base.filter((i) => i.cat === cat).length;
+      const active = cat === state.cat;
+      
+      btn.setAttribute('aria-pressed', String(active));
+      btn.className = `cursor-pointer flex items-center justify-between w-full px-4 py-3 rounded-[14px] transition-colors group ${active ? 'bg-[#FDF0EC] text-[#C24C33]' : 'text-[#463D39] hover:bg-[#FDF9F7]'}`;
+      
+      const spanWrapper = btn.querySelector('span.flex.items-center.gap-3');
+      if (spanWrapper) spanWrapper.className = `flex items-center gap-3 ${active ? 'text-[#C24C33]' : 'text-[#A89F9A] group-hover:text-[#C24C33]'} transition-colors`;
+      
+      const img = btn.querySelector('img');
+      if (img) img.className = `w-[28px] h-[28px] object-contain `;
+      
+      const textSpan = btn.querySelector('span.text-\\[14px\\]');
+      if (textSpan) textSpan.className = `text-[14px] transition-colors ${active ? 'font-bold' : 'font-medium text-[#463D39] group-hover:text-[#C24C33]'}`;
+      
+      const countSpan = btn.querySelector('[data-cat-count]');
+      if (countSpan) {
+        countSpan.textContent = count;
+        countSpan.className = `text-[11px] font-bold px-2 py-0.5 rounded-full min-w-[24px] text-center transition-colors ${active ? 'bg-[#C24C33] text-white' : 'bg-[#F4EAE6] text-[#6B5F5A] group-hover:bg-[#FDF0EC] group-hover:text-[#C24C33]'}`;
+      }
+    });
+  }
+
+  /* ------------------------------ render --------------------------- */
+  function render({ focusIndex = null } = {}) {
+    const toks = tokens(state.query);
+    const result = items.filter((i) => (state.cat === 'All' || i.cat === state.cat) && matches(i, toks)).sort(cmp);
+    const shown = new Set(result.slice(0, state.visible));
+
+    if (state.openId !== null && !shown.has(byId.get(state.openId))) {
+      setOpen(byId.get(state.openId), false);
+      state.openId = null;
+    }
+
+    // Re-order the existing cards in the DOM, then show/hide them.
+    [...items].sort(cmp).forEach((i) => el.list.appendChild(i.node));
+    items.forEach((i) => {
+      const show = shown.has(i);
+      i.node.hidden = !show;
+      i.qEl.innerHTML = highlight(i.q, toks);
+      i.aEl.innerHTML = highlight(i.a, toks);
+    });
+    result.slice(0, state.visible).forEach((i, n) => { if (i.numEl) i.numEl.textContent = String(n + 1).padStart(2, '0'); });
+
+    el.list.hidden = result.length === 0;
+    el.empty.hidden = result.length !== 0;
+
+    const remaining = result.length - shown.size;
+    el.moreWrap.hidden = remaining <= 0;
+    el.moreLabel.textContent = `Show more questions (${remaining})`;
+
+    el.clear.hidden = !state.query;
+    el.sortLabel.textContent = state.sort === 'newest' ? 'Newest first' : 'Oldest first';
+    el.sortIcon.style.transform = state.sort === 'newest' ? '' : 'rotate(180deg)';
+
+    const where = state.cat === 'All' ? 'all topics' : state.cat;
+    el.status.textContent = state.query
+      ? `Showing ${plural(result.length)} for \u201C${state.query}\u201D in ${where}`
+      : `Showing ${plural(result.length)} in ${where}`;
+
+    renderCategories(toks);
+    if (focusIndex !== null && result[focusIndex]) result[focusIndex].btn.focus();
+  }
+
+  /* ------------------------------ votes ---------------------------- */
+  function markVoted(item) {
+    item.voteBox.innerHTML = `
+      <span class="text-[13px] text-[#6B5F5A] font-medium">Was this answer helpful?</span>
+      <span class="text-[13px] font-bold text-[#6B5F5A]">Thanks for your feedback.</span>`;
+  }
+
+  /* ------------------------------ events --------------------------- */
+  const resetPaging = () => { state.visible = PAGE_SIZE; };
+  const clearSearch = () => { el.search.value = ''; state.query = ''; resetPaging(); render(); };
+
+  el.cats.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-cat]');
+    if (!b) return;
+    state.cat = b.dataset.cat;
+    resetPaging();
+    render();
+    el.cats.querySelector(`[data-cat="${CSS.escape(state.cat)}"]`)?.focus();
+  });
+
+  const onSearch = debounce(() => { state.query = el.search.value.trim(); resetPaging(); render(); }, 150);
+  el.search.addEventListener('input', () => { el.clear.hidden = !el.search.value; onSearch(); });
+  el.search.addEventListener('keydown', (e) => { if (e.key === 'Escape' && el.search.value) { e.preventDefault(); clearSearch(); } });
+  el.clear.addEventListener('click', () => { clearSearch(); el.search.focus(); });
+
+  el.sort.addEventListener('click', () => { state.sort = state.sort === 'newest' ? 'oldest' : 'newest'; render(); });
+
+  el.more.addEventListener('click', () => {
+    const prev = state.visible;
+    state.visible += PAGE_SIZE;
+    render({ focusIndex: prev });
+  });
+
+  el.reset.addEventListener('click', () => { el.search.value = ''; state.query = ''; state.cat = 'All'; resetPaging(); render(); });
+
+  el.list.addEventListener('click', (e) => {
+    const t = e.target.closest('.faq-toggle');
+    if (t) { toggle(byId.get(Number(t.closest('.faq-item').dataset.id))); return; }
+
+    const v = e.target.closest('[data-vote]');
+    if (v) {
+      const item = byId.get(Number(v.closest('.faq-item').dataset.id));
+      votes[item.id] = v.dataset.vote;
+      store.set(votes);
+      markVoted(item);
+      document.dispatchEvent(new CustomEvent('faq:feedback', { detail: { id: item.id, question: item.q, helpful: v.dataset.vote === 'yes' } }));
+    }
+  });
+
+  // Arrow-key navigation between questions
+  el.list.addEventListener('keydown', (e) => {
+    if (!e.target.classList.contains('faq-toggle')) return;
+    const btns = [...el.list.querySelectorAll('.faq-item:not([hidden]) .faq-toggle')];
+    const i = btns.indexOf(e.target);
+    let n = null;
+    if (e.key === 'ArrowDown') n = btns[(i + 1) % btns.length];
+    else if (e.key === 'ArrowUp') n = btns[(i - 1 + btns.length) % btns.length];
+    else if (e.key === 'Home') n = btns[0];
+    else if (e.key === 'End') n = btns[btns.length - 1];
+    if (n) { e.preventDefault(); n.focus(); }
+  });
+
+  /* -------------------------------- init --------------------------- */
+  function injectJsonLd() {
+    if ($('faq-jsonld')) return;
+    const s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.id = 'faq-jsonld';
+    s.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: items.map((i) => ({ '@type': 'Question', name: i.q, acceptedAnswer: { '@type': 'Answer', text: i.a } })),
+    });
+    document.head.appendChild(s);
+  }
+
+  function init() {
+    // Restore earlier votes
+    items.forEach((i) => { if (votes[i.id]) markVoted(i); });
+
+    // Deep link: #faq-5
+    const m = location.hash.match(/^#faq-(\d+)$/);
+    const target = m ? byId.get(Number(m[1])) : null;
+    if (target) {
+      if (state.openId !== null && state.openId !== target.id) setOpen(byId.get(state.openId), false);
+      state.openId = target.id;
+      setOpen(target, true);
+      state.visible = Math.max(PAGE_SIZE, [...items].sort(cmp).indexOf(target) + 1);
+    }
+
+    render();
+    injectJsonLd();
+    if (target) target.node.scrollIntoView({ block: 'center' });
+  }
+
+  init();
+})();
