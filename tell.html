@@ -1,18 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tell a Friend</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-  .font-serif{font-family:Georgia,"Times New Roman",serif}
-  .mark{color:#C24C33}
-  .faq-content{display:block}.faq-content.hidden{display:none}
-</style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Under Development | psykolog.no</title>
+    <meta name="description" content="This page is currently under development. We're working hard to bring you helpful information. In the meantime, book an appointment with one of our licensed psychologists." />
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="tailwind.css" />
+  </head>
+  <body class="m-0 bg-white font-sans">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -59,94 +57,94 @@
 </section>
 
 <!-- SHARE ACTIONS -->
-<section id="share" class="bg-[#FBF4ED] pb-16 lg:pb-24">
-  <div class="px-4 md:px-12 lg:px-16">
-    <div class="max-w-[1312px] mx-auto bg-white rounded-[24px] shadow-[0_8px_32px_rgba(58,24,17,0.06)] p-3 sm:p-5 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-stretch">
+<section id="share" class="section">
+  <div class="container">
+   <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[450px_798px] gap-[28px] shadow-[0px_30px_60px_-28px_#24424A59] p-4 lg:py-[36px] lg:px-[48px] rounded-[28px] items-stretch">
       
-      <!-- Left side image -->
-      <div class="w-full lg:w-[45%] xl:w-[40%] shrink-0">
-        <div class="w-full h-[300px] sm:h-[400px] lg:h-full min-h-[400px] rounded-[20px] overflow-hidden relative">
-          <img id="share-image" src="assets/tell/your-msg.webp" alt="Your Message" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300">
-        </div>
-      </div>
-      
-      <!-- Right side content -->
-      <div class="w-full lg:flex-1 py-4 lg:py-8 lg:pr-8 xl:pr-12">
-        <h2 class="font-serif font-bold text-[#241C19] text-[32px] md:text-[36px] leading-[1.2] m-0 flex flex-wrap items-baseline gap-x-2">Your Message <span class="italic text-[#C24C33] font-semibold text-[26px] md:text-[32px]">(You Can Edit It)</span></h2>
-        
-        <div class="mt-6 md:mt-8 border border-[#F2E4DC] rounded-[24px] p-5 md:p-8">
-          <!-- Header controls -->
-          <div class="flex flex-wrap items-center justify-between gap-4">
-            <div class="flex items-center p-1 bg-[#FFF9F6] border border-[#F2E4DC] rounded-full">
-              <button type="button" id="toggle-text" class="flex items-center gap-2 px-5 py-2 bg-[#C24C33] text-white rounded-full text-[15px] font-semibold transition-colors">
-                <svg class="w-[18px] h-[18px]"><use href="#chat"/></svg> Text
-              </button>
-              <button type="button" id="toggle-email" class="flex items-center gap-2 px-5 py-2 bg-transparent text-[#C24C33] hover:bg-[#FDE7E1] rounded-full text-[15px] font-semibold transition-colors">
-                <svg class="w-[18px] h-[18px]"><use href="#mail"/></svg> Email
-              </button>
-            </div>
-            
-            <div class="flex items-center gap-2.5 text-[#6B5F5A] text-[14px] font-medium">
-              <div class="w-5 h-5 rounded-full border-[2px] border-[#C24C33] shrink-0"></div>
-              <span id="char-count">175 / 500</span>
-            </div>
-          </div>
-          
-          <!-- Email Inputs -->
-          <div id="email-inputs" class="hidden mt-6 mb-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-[14px] font-medium text-[#6B5F5A] mb-2">Your email</label>
-              <div class="relative">
-                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-[#C24C33]">
-                  <svg class="w-[18px] h-[18px]"><use href="#users"/></svg>
-                </span>
-                <input type="email" placeholder="you@example.com" class="w-full h-12 pl-11 pr-4 rounded-[12px] border border-[#F2E4DC] focus:outline-none focus:border-[#C24C33] text-[#4E2F27] placeholder:text-[#B3A6A1] text-[15px] bg-transparent transition-colors">
-              </div>
-            </div>
-            <div>
-              <label class="block text-[14px] font-medium text-[#6B5F5A] mb-2">Friend's email</label>
-              <div class="relative">
-                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-[#C24C33] font-medium text-[18px]">@</span>
-                <input type="email" id="friend-email" placeholder="friend@example.com" class="w-full h-12 pl-11 pr-4 rounded-[12px] border border-[#F2E4DC] focus:outline-none focus:border-[#C24C33] text-[#4E2F27] placeholder:text-[#B3A6A1] text-[15px] bg-transparent transition-colors">
-              </div>
-            </div>
-          </div>
-          
-          <!-- Message Box -->
-          <div class="mt-5 md:mt-6 bg-[#FFF9F6] border border-[#F2E4DC] rounded-[16px] p-5 md:p-6 relative group">
-            <div class="flex items-start gap-3">
-              <span class="text-[#EBC0B5] text-[32px] font-serif leading-none pt-1">“</span>
-              <p id="editable-message" class="text-[#4E2F27] text-[15px] md:text-[16px] leading-[1.7] m-0 flex-1 outline-none min-h-[70px] break-words break-all" contenteditable="true">I've been thinking about you. I found this site, Psykolog.no, you don't need a referral, and you choose who you talk to. No obligations, just wanted to share in case it's useful.</p>
-            </div>
-            <!-- Edit icon -->
-            <button type="button" class="absolute top-4 right-4 w-7 h-7 rounded-full bg-white border border-[#F2E4DC] text-[#C24C33] flex items-center justify-center transition-colors hover:bg-[#FBF4ED]" aria-label="Edit message">
-              <svg class="w-[12px] h-[12px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
-            </button>
-          </div>
-          
-          <!-- Actions -->
-          <div id="text-actions" class="mt-6 flex flex-wrap items-center gap-3 md:gap-4">
-            <button type="button" id="copy-btn" class="group flex items-center justify-center gap-2 h-11 px-6 rounded-full border border-[#EBC0B5] bg-transparent hover:bg-[#FFF9F6] text-[#C24C33] text-[15px] font-semibold transition-colors" data-taf-copy="I've been thinking about you. I found this site, Psykolog.no, you don't need a referral, and you choose who you talk to. No obligations, just wanted to share in case it's useful.">
-              <span class="group-[.is-done]:hidden" aria-hidden="true"><svg class="w-[18px] h-[18px]"><use href="#copy"/></svg></span>
-              <span class="hidden group-[.is-done]:inline" aria-hidden="true"><svg class="w-[18px] h-[18px]"><use href="#check"/></svg></span>
-              <span class="group-[.is-done]:hidden group-[.is-error]:hidden">Copy message</span>
-              <span class="hidden group-[.is-done]:inline">Copied</span>
-              <span class="hidden group-[.is-error]:inline">Copy failed</span>
-            </button>
-            <a href="sms:?body=I've%20been%20thinking%20about%20you.%20I%20found%20this%20site%2C%20Psykolog.no%2C%20you%20don't%20need%20a%20referral%2C%20and%20you%20choose%20who%20you%20talk%20to.%20No%20obligations%2C%20just%20wanted%20to%20share%20in%20case%20it's%20useful." id="sms-btn" class="flex items-center justify-center gap-2 h-11 px-6 rounded-full bg-[#C24C33] hover:bg-[#A93E28] text-white text-[15px] font-semibold no-underline transition-colors">
-              Send by text <svg class="w-4 h-4 ml-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-            </a>
-          </div>
-          
-          <div id="email-actions" class="mt-6 hidden flex-wrap items-center gap-3 md:gap-4">
-            <button type="button" id="email-btn-submit" class="flex items-center justify-center gap-2 h-11 px-6 rounded-full bg-[#C24C33] hover:bg-[#A93E28] text-white text-[15px] font-semibold transition-colors">
-              Send by Email <svg class="w-4 h-4 ml-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-            </button>
-          </div>
-        </div>
-      </div>
-      
+  <!-- Left side image -->
+  <div class="shrink-0 flex flex-col">
+    <div class="w-full h-[300px] lg:h-full rounded-[20px] overflow-hidden relative flex-1">
+      <img id="share-image" src="assets/tell/your-msg.webp" alt="Your Message" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300">
     </div>
+  </div>
+  
+  <!-- Right side content (Removed py-4 lg:py-8 to fix bottom alignment) -->
+  <div class="w-full lg:flex-1 lg:pr-8 xl:pr-12 flex flex-col">
+    <h2 class="font-serif font-bold text-[#241C19] text-[32px] md:text-[36px] leading-[1.2] m-0 flex flex-wrap items-baseline gap-x-2">Your Message <span class="italic text-[#C24C33] font-semibold text-[26px] md:text-[32px]">(You Can Edit It)</span></h2>
+    
+    <div class="mt-6 md:mt-8 border border-[#F2E4DC] rounded-[24px] p-5 md:p-8">
+      <!-- Header controls -->
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center p-1 bg-[#FFF9F6] border border-[#F2E4DC] rounded-full">
+          <button type="button" id="toggle-text" class="flex items-center gap-2 px-5 py-2 bg-[#C24C33] text-white rounded-full text-[15px] font-semibold transition-colors">
+            <svg class="w-[18px] h-[18px]"><use href="#chat"/></svg> Text
+          </button>
+          <button type="button" id="toggle-email" class="flex items-center gap-2 px-5 py-2 bg-transparent text-[#C24C33] hover:bg-[#FDE7E1] rounded-full text-[15px] font-semibold transition-colors">
+            <svg class="w-[18px] h-[18px]"><use href="#mail"/></svg> Email
+          </button>
+        </div>
+        
+        <div class="flex items-center gap-2.5 text-[#6B5F5A] text-[14px] font-medium">
+          <div class="w-5 h-5 rounded-full border-[2px] border-[#C24C33] shrink-0"></div>
+          <span id="char-count">175 / 500</span>
+        </div>
+      </div>
+      
+      <!-- Email Inputs -->
+      <div id="email-inputs" class="hidden mt-6 mb-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-[14px] font-medium text-[#6B5F5A] mb-2">Your email</label>
+          <div class="relative">
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-[#C24C33]">
+              <svg class="w-[18px] h-[18px]"><use href="#users"/></svg>
+            </span>
+            <input type="email" placeholder="you@example.com" class="w-full h-12 pl-11 pr-4 rounded-[12px] border border-[#F2E4DC] focus:outline-none focus:border-[#C24C33] text-[#4E2F27] placeholder:text-[#B3A6A1] text-[15px] bg-transparent transition-colors">
+          </div>
+        </div>
+        <div>
+          <label class="block text-[14px] font-medium text-[#6B5F5A] mb-2">Friend's email</label>
+          <div class="relative">
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-[#C24C33] font-medium text-[18px]">@</span>
+            <input type="email" id="friend-email" placeholder="friend@example.com" class="w-full h-12 pl-11 pr-4 rounded-[12px] border border-[#F2E4DC] focus:outline-none focus:border-[#C24C33] text-[#4E2F27] placeholder:text-[#B3A6A1] text-[15px] bg-transparent transition-colors">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Message Box -->
+      <div class="mt-5 md:mt-6 bg-[#FFF9F6] border border-[#F2E4DC] rounded-[16px] p-5 md:p-6 relative group">
+        <div class="flex items-start gap-3">
+          <span class="text-[#EBC0B5] text-[32px] font-serif leading-none pt-1">“</span>
+          <p id="editable-message" class="text-[#4E2F27] text-[15px] md:text-[20px] leading-[1.7] m-0 flex-1 outline-none min-h-[70px] break-words break-all" contenteditable="true">I've been thinking about you. I found this site, Psykolog.no, you don't need a referral, and you choose who you talk to. No obligations, just wanted to share in case it's useful.</p>
+        </div>
+        <!-- Edit icon -->
+        <button type="button" class="absolute top-4 right-4 w-7 h-7 rounded-full bg-white border border-[#F2E4DC] text-[#C24C33] flex items-center justify-center transition-colors hover:bg-[#FBF4ED]" aria-label="Edit message">
+          <svg class="w-[12px] h-[12px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+        </button>
+      </div>
+      
+      <!-- Actions -->
+      <div id="text-actions" class="mt-6 flex flex-wrap items-center gap-3 md:gap-4">
+        <button type="button" id="copy-btn" class="group flex items-center justify-center gap-2 h-11 px-6 rounded-full border border-[#EBC0B5] bg-transparent hover:bg-[#FFF9F6] text-[#C24C33] text-[15px] font-semibold transition-colors" data-taf-copy="I've been thinking about you. I found this site, Psykolog.no, you don't need a referral, and you choose who you talk to. No obligations, just wanted to share in case it's useful.">
+          <span class="group-[.is-done]:hidden" aria-hidden="true"><svg class="w-[18px] h-[18px]"><use href="#copy"/></svg></span>
+          <span class="hidden group-[.is-done]:inline" aria-hidden="true"><svg class="w-[18px] h-[18px]"><use href="#check"/></svg></span>
+          <span class="group-[.is-done]:hidden group-[.is-error]:hidden">Copy message</span>
+          <span class="hidden group-[.is-done]:inline">Copied</span>
+          <span class="hidden group-[.is-error]:inline">Copy failed</span>
+        </button>
+        <a href="sms:?body=I've%20been%20thinking%20about%20you.%20I%20found%20this%20site%2C%20Psykolog.no%2C%20you%20don't%20need%20a%20referral%2C%20and%20you%20choose%20who%20you%20talk%20to.%20No%20obligations%2C%20just%20wanted%20to%20share%20in%20case%20it's%20useful." id="sms-btn" class="flex items-center justify-center gap-2 h-11 px-6 rounded-full bg-[#C24C33] hover:bg-[#A93E28] text-white text-[15px] font-semibold no-underline transition-colors">
+          Send by text <svg class="w-4 h-4 ml-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </a>
+      </div>
+      
+      <div id="email-actions" class="mt-6 hidden flex-wrap items-center gap-3 md:gap-4">
+        <button type="button" id="email-btn-submit" class="flex items-center justify-center gap-2 h-11 px-6 rounded-full bg-[#C24C33] hover:bg-[#A93E28] text-white text-[15px] font-semibold transition-colors">
+          Send by Email <svg class="w-4 h-4 ml-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+</div>
   </div>
 </section>
 

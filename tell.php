@@ -95,19 +95,19 @@ get_header();
 		$email_img_id  = $message['email_image'] ?? '';
 		$email_img_url = $email_img_id ? wp_get_attachment_image_url( $email_img_id, 'large' ) : get_template_directory_uri() . '/assets/tell/Din e-post.webp';
 	?>
-	<section id="share" class="pt-[60px]" data-reveal>
+	<section id="share" class="section" data-reveal>
 		<div class="container">
-			<div class="bg-white rounded-[24px] shadow-[0_8px_32px_rgba(58,24,17,0.06)] p-3 sm:p-5 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[390px_798px] gap-8 lg:gap-12 items-center lg:items-stretch">
+			<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[450px_798px] gap-[28px] shadow-[0px_30px_60px_-28px_#24424A59] p-4 lg:py-[36px] lg:px-[48px] rounded-[28px] items-stretch bg-white">
 				
 				<!-- Left side image -->
-				<div class="w-full lg:w-[45%] xl:w-[40%] shrink-0">
-					<div class="w-full h-[300px] sm:h-[400px] lg:h-full min-h-[400px] rounded-[20px] overflow-hidden relative">
+				<div class="shrink-0 flex flex-col">
+					<div class="w-full h-[300px] lg:h-full rounded-[20px] overflow-hidden relative flex-1">
 						<img id="share-image" src="<?php echo esc_url( $text_img_url ); ?>" data-text-src="<?php echo esc_url( $text_img_url ); ?>" data-email-src="<?php echo esc_url( $email_img_url ); ?>" alt="<?php echo esc_attr( $message['heading'] ?? 'Your Message' ); ?>" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300">
 					</div>
 				</div>
 				
 				<!-- Right side content -->
-				<div class="w-full lg:flex-1 py-4 lg:py-8 lg:pr-8 xl:pr-12">
+				<div class="w-full lg:flex-1 lg:pr-8 xl:pr-12 flex flex-col">
 					<h2 class="font-serif font-bold text-[#241C19] text-[32px] md:text-[36px] leading-[1.2] m-0 flex flex-wrap items-baseline gap-x-2">
 						<?php echo esc_html( $message['heading'] ?? 'Your Message' ); ?> 
 						<span class="italic text-[#C24C33] font-semibold text-[26px] md:text-[32px]"><?php echo esc_html( $message['subheading'] ?? '(You Can Edit It)' ); ?></span>
@@ -155,7 +155,7 @@ get_header();
 						<div class="mt-5 md:mt-6 bg-[#FFF9F6] border border-[#F2E4DC] rounded-[16px] p-5 md:p-6 relative group">
 							<div class="flex items-start gap-3">
 								<span class="text-[#EBC0B5] text-[32px] font-serif leading-none pt-1">“</span>
-								<p id="editable-message" class="text-[#4E2F27] text-[15px] md:text-[16px] leading-[1.7] m-0 flex-1 outline-none min-h-[70px] break-words break-all" contenteditable="true"><?php echo nl2br( esc_html( $message_text ) ); ?></p>
+								<p id="editable-message" class="text-[#4E2F27] text-[15px] md:text-[20px] leading-[1.7] m-0 flex-1 outline-none min-h-[70px] break-words break-all" contenteditable="true"><?php echo nl2br( esc_html( $message_text ) ); ?></p>
 							</div>
 							<!-- Edit icon -->
 							<button type="button" class="absolute top-4 right-4 w-7 h-7 rounded-full bg-white border border-[#F2E4DC] text-[#C24C33] flex items-center justify-center transition-colors hover:bg-[#FBF4ED] cursor-pointer" aria-label="Edit message">
@@ -208,7 +208,7 @@ get_header();
 						<?php if ( ! empty( $why['text'] ) ) : ?>
 							<p class="text-white/95 text-[18px] md:text-[20px] leading-[1.65] mt-4 mb-0 max-w-[800px] mx-auto"><?php echo esc_html( $why['text'] ); ?></p>
 						<?php endif; ?>
-						<div class="grid grid-cols-1 <?php echo ( ! empty( $why['image'] ) && $benefits ) ? 'lg:grid-cols-[550fr_614fr]' : ''; ?> gap-6 lg:gap-9 mt-9 text-left items-stretch">
+						<div class="grid grid-cols-1 <?php echo ( ! empty( $why['image'] ) && $benefits ) ? 'lg:grid-cols-[550fr_614fr]' : ''; ?> gap-6 lg:gap-20 mt-9 text-left items-stretch">
 							<?php if ( ! empty( $why['image'] ) ) : ?>
 								<div class="rounded-[16px] overflow-hidden aspect-[550/316] bg-white/10">
 									<?php echo drp_image( $why['image'], 'large', 'w-full h-full object-cover', [ 'alt' => $why['heading'] ?? '', 'sizes' => '(min-width: 1024px) 550px, 100vw' ] ); ?>
