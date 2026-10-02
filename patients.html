@@ -147,12 +147,9 @@
               </nav>
 
               <!-- Heading -->
-              <h1
-                class="font-serif font-bold text-[#241C19] text-[42px] md:text-[56px] leading-[1.1] mb-6"
-              >
-                Questions asked <em class="text-[#C24C33] italic">by our</em>
-                <em class="text-[#C24C33] italic">patients</em>
-              </h1>
+              <h2 class="h2 mb-6">
+                Questions asked <em>by our patients</em>
+              </h2>
 
               <!-- Subheading -->
               <div class="flex items-center gap-4 mb-2">
@@ -476,6 +473,766 @@
       </section>
     </main>
 
+<section class="section bg-[#FFF7F3]" id="patient-faq" aria-labelledby="faq-heading">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-5 h-5 bg-[#29A343] rounded flex items-center justify-center text-white shrink-0" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line><line x1="4.93" y1="19.07" x2="19.07" y2="4.93"></line></svg>
+          </div>
+          <span class="text-[#C24C33] text-[12px] font-bold tracking-[1.5px] uppercase mt-0.5">Answered questions</span>
+        </div>
+        <h2 id="faq-heading" class="font-serif font-bold text-[#241C19] text-[36px] md:text-[42px] leading-tight m-0">
+          Questions asked <span class="text-[#C24C33] italic font-serif">by our patients</span>
+        </h2>
+      </div>
+
+      <div class="w-full md:w-[420px]">
+        <form id="faq-search-form" role="search" class="relative w-full" onsubmit="return false">
+          <label for="faq-search" class="sr-only">Search questions</label>
+          <svg class="absolute left-[18px] top-[18px] text-[#C24C33] pointer-events-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input id="faq-search" type="text" autocomplete="off" spellcheck="false" placeholder="Search questions..."
+                 class="w-full h-[52px] bg-white border border-[#EADFDB] rounded-full pl-[46px] pr-12 text-[15px] text-[#241C19] outline-none focus:border-[#C24C33] focus-visible:ring-2 focus-visible:ring-[#C24C33]/20 transition-colors placeholder:text-[#A89F9A] shadow-sm" />
+          <button id="faq-search-clear" type="button" hidden aria-label="Clear search"
+                  class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-[#8C7F78] hover:text-[#C24C33] hover:bg-[#FDF0EC] transition-colors">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </form>
+        <p class="text-[16px] text-[#6B5F5A] mt-3 pl-2 flex items-start gap-1.5 leading-[1.4]">
+          <svg class="w-[14px] h-[14px] mt-[1px] shrink-0 text-[#C24C33]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          Answers are general information from our specialists and do not replace an individual assessment.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[0.6fr_1fr] xl:grid-cols-[367px_913px]  gap-8 lg:gap-10">
+
+      <!-- Sidebar -->
+      <aside class="w-full shrink-0 lg:sticky lg:top-32 self-start">
+        <div class="bg-white rounded-[24px] border border-[#F2E4DC] p-5 md:p-6 mb-6 shadow-sm">
+          <h3 id="faq-cat-label" class="text-[13px] font-medium text-[#6B5F5A] mb-4">Filter by categories</h3>
+          <!-- Rendered by faq.js -->
+          <div id="faq-categories" class="flex flex-col gap-1.5" role="group" aria-labelledby="faq-cat-label"></div>
+        </div>
+ 
+        <!-- Help Card -->
+        <div class="bg-[#5C2A20] rounded-[24px] p-8 text-white shadow-[0_20px_40px_rgba(0,0,0,0.1)]">
+          <div class="w-[46px] h-[46px] bg-white/10 rounded-full flex items-center justify-center mb-6 border border-white/5" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-90 text-[#F1A284]"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <h3 class="font-serif font-bold text-[22px] leading-tight mb-3 text-white">Can't find your answer?</h3>
+          <p class="text-[15px] text-white/80 leading-snug mb-8">Ask our specialists. Your question is published anonymously.</p>
+          <!-- TODO: point href at your real "ask a question" page / form -->
+          <a href="#ask-a-question" data-faq-ask class="inline-flex items-center gap-2 bg-[#F09367] hover:bg-[#E29274] text-[#4D3126] px-6 py-[14px] rounded-full font-bold text-[14px] transition-colors no-underline">
+            Ask a question
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </aside>
+
+    <div class="flex-1 min-w-0">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
+          <p id="faq-status" class="text-[14px] text-[#6B5F5A] font-medium m-0" role="status" aria-live="polite">Showing 12 questions in all topics</p>
+          <button id="faq-sort" type="button" class="flex items-center gap-1.5 text-[#C24C33] text-[13px] font-bold hover:opacity-80 transition-opacity self-start sm:self-auto cursor-pointer ">
+            <img id="faq-sort-icon" src="assets/Patients/filter.webp" alt="" class="w-4 h-4 object-contain transition-transform" />
+            <span id="faq-sort-label">Newest first</span>
+          </button>
+        </div>
+ 
+        <div id="faq-list" class="flex flex-col gap-4">
+        <!-- 01 · ADHD -->
+        <article id="faq-1" class="faq-item group bg-white rounded-[24px] border border-[#E8B8AC] hover:border-[#EADFDB] data-[open=true]:border-[#EADFDB] transition-colors shadow-sm p-6 md:px-8 md:py-6" data-id="1" data-cat="ADHD" data-date="2026-09-24" data-open="true">
+          <h3 class="m-0">
+            <button type="button" id="faq-btn-1" class="faq-toggle flex items-start gap-4 md:gap-5 w-full text-left cursor-pointer bg-transparent border-0 p-0 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[6px] focus-visible:outline-[#C24C33]" aria-expanded="true" aria-controls="faq-panel-1">
+              <span data-faq-num class="text-[#D1C7C1] group-hover:text-[#B3A6A1] transition-colors font-serif text-[18px] mt-1 shrink-0" aria-hidden="true">01</span>
+              <span class="flex-1 block">
+                <span class="inline-block px-3 py-1 rounded-full bg-[#FDF0EC] text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3">ADHD</span>
+                <span data-faq-q class="block font-serif font-bold text-[#241C19] text-[20px] md:text-[22px] leading-snug group-hover:text-[#C24C33] transition-colors">Can I get an ADHD assessment online?</span>
+              </span>
+              <span class="shrink-0 text-[#C24C33] w-8 h-8 flex items-center justify-center mt-1" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><line class="origin-center [transform-box:fill-box] transition-transform duration-200 motion-reduce:transition-none group-data-[open=true]:scale-y-0" x1="12" y1="5" x2="12" y2="19"></line></svg>
+              </span>
+            </button>
+          </h3>
+ 
+          <div id="faq-panel-1" data-faq-panel class="grid grid-rows-[0fr] data-[open=true]:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none" role="region" aria-labelledby="faq-btn-1" data-open="true">
+            <div class="min-h-0 overflow-hidden invisible delay-300 transition-[visibility] group-data-[open=true]:visible group-data-[open=true]:delay-0 motion-reduce:transition-none">
+              <div class="mt-8 pt-8 border-t border-[#F2E4DC]">
+                <div class="bg-[#FDF9F7] rounded-[20px] p-6 md:p-8 relative">
+                  <span class="absolute left-4 top-2 text-[#EADFDB] font-serif text-[60px] leading-none select-none" aria-hidden="true">&ldquo;</span>
+ 
+                  <div class="flex items-start gap-4 mb-5 relative z-10 pl-2">
+                    <div class="relative w-[42px] h-[42px] shrink-0">
+                      <img src="assets/Patients/Avatar.webp" alt="" class="w-full h-full rounded-full object-cover border-2 border-white shadow-sm" loading="lazy" />
+                      <div class="absolute -bottom-0.5 -right-0.5 bg-[#31C137] rounded-full w-4 h-4 flex items-center justify-center border-[1.5px] border-white">
+                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                    </div>
+                    <div class="mt-0.5">
+                      <h4 class="font-bold text-[#241C19] text-[15px] m-0 leading-snug">Answer from our specialist</h4>
+                      <p class="text-[12px] text-[#8C7F78] m-0 mt-0.5">Answered by [Specialist name] &middot; Last reviewed [date]</p>
+                    </div>
+                  </div>
+ 
+                  <p data-faq-a class="text-[#463D39] text-[15px] md:text-[16px] leading-[1.6] mb-6 pl-2 md:pl-[62px] relative z-10">Yes, parts of an ADHD assessment can be carried out through an online consultation where this is clinically appropriate. Your psychiatrist will decide together with you whether some appointments should take place in person.</p>
+ 
+              <div class="pl-2 md:pl-[62px] relative z-10">
+                <a href="#adhd-assessment" class="inline-flex items-center gap-2 text-[#C24C33] font-bold text-[14px] hover:underline">
+                  Learn more about ADHD assessment
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+ 
+                  <div data-vote-box class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8 pt-6 border-t border-[#EADFDB] pl-2 md:pl-[62px] relative z-10">
+                    <span class="text-[13px] text-[#6B5F5A] font-medium">Was this answer helpful?</span>
+                    <div class="flex items-center gap-2">
+                      <button type="button" data-vote="yes" class="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-[#CFDCC9] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#4A5D46] transition-colors shadow-sm cursor-pointer">
+                        <img src="assets/Patients/like.webp" alt="Like" class="w-[14px] h-[14px] object-contain" />
+                        Yes
+                      </button>
+                      <button type="button" data-vote="no" class="inline-flex items-center font-bold gap-1.5 px-4 py-2 bg-white border border-[#A93E28] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#A93E28] transition-colors shadow-sm cursor-pointer ">
+                        <img src="assets/Patients/Unlike.webp" alt="Unlike" class="w-[14px] h-[14px] object-contain" />
+                        No
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+ 
+        <!-- 02 · Assessment -->
+        <article id="faq-2" class="faq-item group bg-white rounded-[24px] border border-[#E8B8AC] hover:border-[#EADFDB] data-[open=true]:border-[#EADFDB] transition-colors shadow-sm p-6 md:px-8 md:py-6" data-id="2" data-cat="Assessment" data-date="2026-09-19" data-open="false">
+          <h3 class="m-0">
+            <button type="button" id="faq-btn-2" class="faq-toggle flex items-start gap-4 md:gap-5 w-full text-left cursor-pointer bg-transparent border-0 p-0 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[6px] focus-visible:outline-[#C24C33]" aria-expanded="false" aria-controls="faq-panel-2">
+              <span data-faq-num class="text-[#D1C7C1] group-hover:text-[#B3A6A1] transition-colors font-serif text-[18px] mt-1 shrink-0" aria-hidden="true">02</span>
+              <span class="flex-1 block">
+                <span class="inline-block px-3 py-1 rounded-full bg-[#FDF0EC] text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3">Assessment</span>
+                <span data-faq-q class="block font-serif font-bold text-[#241C19] text-[20px] md:text-[22px] leading-snug group-hover:text-[#C24C33] transition-colors">Can I see a psychiatrist without a referral?</span>
+              </span>
+              <span class="shrink-0 text-[#C24C33] w-8 h-8 flex items-center justify-center mt-1" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><line class="origin-center [transform-box:fill-box] transition-transform duration-200 motion-reduce:transition-none group-data-[open=true]:scale-y-0" x1="12" y1="5" x2="12" y2="19"></line></svg>
+              </span>
+            </button>
+          </h3>
+ 
+          <div id="faq-panel-2" data-faq-panel class="grid grid-rows-[0fr] data-[open=true]:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none" role="region" aria-labelledby="faq-btn-2" data-open="false" inert>
+            <div class="min-h-0 overflow-hidden invisible delay-300 transition-[visibility] group-data-[open=true]:visible group-data-[open=true]:delay-0 motion-reduce:transition-none">
+              <div class="mt-8 pt-8 border-t border-[#F2E4DC]">
+                <div class="bg-[#FDF9F7] rounded-[20px] p-6 md:p-8 relative">
+                  <span class="absolute left-4 top-2 text-[#EADFDB] font-serif text-[60px] leading-none select-none" aria-hidden="true">&ldquo;</span>
+ 
+                  <div class="flex items-start gap-4 mb-5 relative z-10 pl-2">
+                    <div class="relative w-[42px] h-[42px] shrink-0">
+                      <img src="assets/Patients/Avatar.webp" alt="" class="w-full h-full rounded-full object-cover border-2 border-white shadow-sm" loading="lazy" />
+                      <div class="absolute -bottom-0.5 -right-0.5 bg-[#31C137] rounded-full w-4 h-4 flex items-center justify-center border-[1.5px] border-white">
+                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                    </div>
+                    <div class="mt-0.5">
+                      <h4 class="font-bold text-[#241C19] text-[15px] m-0 leading-snug">Answer from our specialist</h4>
+                      <p class="text-[12px] text-[#8C7F78] m-0 mt-0.5">Answered by [Specialist name] &middot; Last reviewed [date]</p>
+                    </div>
+                  </div>
+ 
+                  <p data-faq-a class="text-[#463D39] text-[15px] md:text-[16px] leading-[1.6] mb-6 pl-2 md:pl-[62px] relative z-10">It depends on the clinic and on how your care is funded. Some appointments can be booked directly, while others require a referral from your GP. Check the booking page for your situation or contact us and we will guide you.</p>
+ 
+                  <div data-vote-box class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8 pt-6 border-t border-[#EADFDB] pl-2 md:pl-[62px] relative z-10">
+                    <span class="text-[13px] text-[#6B5F5A] font-medium">Was this answer helpful?</span>
+                    <div class="flex items-center gap-2">
+                      <button type="button" data-vote="yes" class="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-[#CFDCC9] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#4A5D46] transition-colors shadow-sm cursor-pointer">
+                        <img src="assets/Patients/like.webp" alt="Like" class="w-[14px] h-[14px] object-contain" />
+                        Yes
+                      </button>
+                      <button type="button" data-vote="no" class="inline-flex items-center font-bold gap-1.5 px-4 py-2 bg-white border border-[#A93E28] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#A93E28] transition-colors shadow-sm cursor-pointer  ">
+                        <img src="assets/Patients/Unlike.webp" alt="Unlike" class="w-[14px] h-[14px] object-contain" />
+                        No
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+ 
+        <!-- 03 · Anxiety -->
+        <article id="faq-3" class="faq-item group bg-white rounded-[24px] border border-[#E8B8AC] hover:border-[#EADFDB] data-[open=true]:border-[#EADFDB] transition-colors shadow-sm p-6 md:px-8 md:py-6" data-id="3" data-cat="Anxiety" data-date="2026-09-14" data-open="false">
+          <h3 class="m-0">
+            <button type="button" id="faq-btn-3" class="faq-toggle flex items-start gap-4 md:gap-5 w-full text-left cursor-pointer bg-transparent border-0 p-0 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[6px] focus-visible:outline-[#C24C33]" aria-expanded="false" aria-controls="faq-panel-3">
+              <span data-faq-num class="text-[#D1C7C1] group-hover:text-[#B3A6A1] transition-colors font-serif text-[18px] mt-1 shrink-0" aria-hidden="true">03</span>
+              <span class="flex-1 block">
+                <span class="inline-block px-3 py-1 rounded-full bg-[#FDF0EC] text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3">Anxiety</span>
+                <span data-faq-q class="block font-serif font-bold text-[#241C19] text-[20px] md:text-[22px] leading-snug group-hover:text-[#C24C33] transition-colors">How do I know if my anxiety needs professional help?</span>
+              </span>
+              <span class="shrink-0 text-[#C24C33] w-8 h-8 flex items-center justify-center mt-1" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><line class="origin-center [transform-box:fill-box] transition-transform duration-200 motion-reduce:transition-none group-data-[open=true]:scale-y-0" x1="12" y1="5" x2="12" y2="19"></line></svg>
+              </span>
+            </button>
+          </h3>
+ 
+          <div id="faq-panel-3" data-faq-panel class="grid grid-rows-[0fr] data-[open=true]:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none" role="region" aria-labelledby="faq-btn-3" data-open="false" inert>
+            <div class="min-h-0 overflow-hidden invisible delay-300 transition-[visibility] group-data-[open=true]:visible group-data-[open=true]:delay-0 motion-reduce:transition-none">
+              <div class="mt-8 pt-8 border-t border-[#F2E4DC]">
+                <div class="bg-[#FDF9F7] rounded-[20px] p-6 md:p-8 relative">
+                  <span class="absolute left-4 top-2 text-[#EADFDB] font-serif text-[60px] leading-none select-none" aria-hidden="true">&ldquo;</span>
+ 
+                  <div class="flex items-start gap-4 mb-5 relative z-10 pl-2">
+                    <div class="relative w-[42px] h-[42px] shrink-0">
+                      <img src="assets/Patients/Avatar.webp" alt="" class="w-full h-full rounded-full object-cover border-2 border-white shadow-sm" loading="lazy" />
+                      <div class="absolute -bottom-0.5 -right-0.5 bg-[#31C137] rounded-full w-4 h-4 flex items-center justify-center border-[1.5px] border-white">
+                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                    </div>
+                    <div class="mt-0.5">
+                      <h4 class="font-bold text-[#241C19] text-[15px] m-0 leading-snug">Answer from our specialist</h4>
+                      <p class="text-[12px] text-[#8C7F78] m-0 mt-0.5">Answered by [Specialist name] &middot; Last reviewed [date]</p>
+                    </div>
+                  </div>
+ 
+                  <p data-faq-a class="text-[#463D39] text-[15px] md:text-[16px] leading-[1.6] mb-6 pl-2 md:pl-[62px] relative z-10">Consider getting help if worry or fear is hard to control, lasts for weeks or months, or gets in the way of work, studies, sleep or relationships. Physical symptoms such as panic attacks, a racing heart or constant tension are also worth talking about. You do not need to wait until things feel unbearable. If you are in immediate danger, contact your local emergency number.</p>
+ 
+                  <div data-vote-box class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8 pt-6 border-t border-[#EADFDB] pl-2 md:pl-[62px] relative z-10">
+                    <span class="text-[13px] text-[#6B5F5A] font-medium">Was this answer helpful?</span>
+                    <div class="flex items-center gap-2">
+                      <button type="button" data-vote="yes" class="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-[#CFDCC9] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#4A5D46] transition-colors shadow-sm cursor-pointer">
+                        <img src="assets/Patients/like.webp" alt="Like" class="w-[14px] h-[14px] object-contain" />
+                        Yes
+                      </button>
+                      <button type="button" data-vote="no" class="inline-flex items-center font-bold gap-1.5 px-4 py-2 bg-white border border-[#A93E28] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#A93E28] transition-colors shadow-sm cursor-pointer ">
+                        <img src="assets/Patients/Unlike.webp" alt="Unlike" class="w-[14px] h-[14px] object-contain" />
+                        No
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+ 
+        <!-- 04 · Medication -->
+        <article id="faq-4" class="faq-item group bg-white rounded-[24px] border border-[#E8B8AC] hover:border-[#EADFDB] data-[open=true]:border-[#EADFDB] transition-colors shadow-sm p-6 md:px-8 md:py-6" data-id="4" data-cat="Medication" data-date="2026-09-09" data-open="false">
+          <h3 class="m-0">
+            <button type="button" id="faq-btn-4" class="faq-toggle flex items-start gap-4 md:gap-5 w-full text-left cursor-pointer bg-transparent border-0 p-0 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[6px] focus-visible:outline-[#C24C33]" aria-expanded="false" aria-controls="faq-panel-4">
+              <span data-faq-num class="text-[#D1C7C1] group-hover:text-[#B3A6A1] transition-colors font-serif text-[18px] mt-1 shrink-0" aria-hidden="true">04</span>
+              <span class="flex-1 block">
+                <span class="inline-block px-3 py-1 rounded-full bg-[#FDF0EC] text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3">Medication</span>
+                <span data-faq-q class="block font-serif font-bold text-[#241C19] text-[20px] md:text-[22px] leading-snug group-hover:text-[#C24C33] transition-colors">Will I automatically be prescribed medication?</span>
+              </span>
+              <span class="shrink-0 text-[#C24C33] w-8 h-8 flex items-center justify-center mt-1" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><line class="origin-center [transform-box:fill-box] transition-transform duration-200 motion-reduce:transition-none group-data-[open=true]:scale-y-0" x1="12" y1="5" x2="12" y2="19"></line></svg>
+              </span>
+            </button>
+          </h3>
+ 
+          <div id="faq-panel-4" data-faq-panel class="grid grid-rows-[0fr] data-[open=true]:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none" role="region" aria-labelledby="faq-btn-4" data-open="false" inert>
+            <div class="min-h-0 overflow-hidden invisible delay-300 transition-[visibility] group-data-[open=true]:visible group-data-[open=true]:delay-0 motion-reduce:transition-none">
+              <div class="mt-8 pt-8 border-t border-[#F2E4DC]">
+                <div class="bg-[#FDF9F7] rounded-[20px] p-6 md:p-8 relative">
+                  <span class="absolute left-4 top-2 text-[#EADFDB] font-serif text-[60px] leading-none select-none" aria-hidden="true">&ldquo;</span>
+ 
+                  <div class="flex items-start gap-4 mb-5 relative z-10 pl-2">
+                    <div class="relative w-[42px] h-[42px] shrink-0">
+                      <img src="assets/Patients/Avatar.webp" alt="" class="w-full h-full rounded-full object-cover border-2 border-white shadow-sm" loading="lazy" />
+                      <div class="absolute -bottom-0.5 -right-0.5 bg-[#31C137] rounded-full w-4 h-4 flex items-center justify-center border-[1.5px] border-white">
+                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                    </div>
+                    <div class="mt-0.5">
+                      <h4 class="font-bold text-[#241C19] text-[15px] m-0 leading-snug">Answer from our specialist</h4>
+                      <p class="text-[12px] text-[#8C7F78] m-0 mt-0.5">Answered by [Specialist name] &middot; Last reviewed [date]</p>
+                    </div>
+                  </div>
+ 
+                  <p data-faq-a class="text-[#463D39] text-[15px] md:text-[16px] leading-[1.6] mb-6 pl-2 md:pl-[62px] relative z-10">No. Medication is only one possible option and is never decided in advance. After a thorough assessment, your psychiatrist will discuss all suitable options with you, which may include talking therapy, lifestyle changes, other support, or a combination.</p>
+ 
+                  <div data-vote-box class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8 pt-6 border-t border-[#EADFDB] pl-2 md:pl-[62px] relative z-10">
+                    <span class="text-[13px] text-[#6B5F5A] font-medium">Was this answer helpful?</span>
+                    <div class="flex items-center gap-2">
+                      <button type="button" data-vote="yes" class="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-[#CFDCC9] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#4A5D46] transition-colors shadow-sm cursor-pointer">
+                        <img src="assets/Patients/like.webp" alt="Like" class="w-[14px] h-[14px] object-contain" />
+                        Yes
+                      </button>
+                      <button type="button" data-vote="no" class="inline-flex items-center font-bold gap-1.5 px-4 py-2 bg-white border border-[#A93E28] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#A93E28] transition-colors shadow-sm cursor-pointer ">
+                        <img src="assets/Patients/Unlike.webp" alt="Unlike" class="w-[14px] h-[14px] object-contain" />
+                        No
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+ 
+        <!-- 05 · Treatment -->
+        <article id="faq-5" class="faq-item group bg-white rounded-[24px] border border-[#E8B8AC] hover:border-[#EADFDB] data-[open=true]:border-[#EADFDB] transition-colors shadow-sm p-6 md:px-8 md:py-6" data-id="5" data-cat="Treatment" data-date="2026-09-04" data-open="false">
+          <h3 class="m-0">
+            <button type="button" id="faq-btn-5" class="faq-toggle flex items-start gap-4 md:gap-5 w-full text-left cursor-pointer bg-transparent border-0 p-0 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[6px] focus-visible:outline-[#C24C33]" aria-expanded="false" aria-controls="faq-panel-5">
+              <span data-faq-num class="text-[#D1C7C1] group-hover:text-[#B3A6A1] transition-colors font-serif text-[18px] mt-1 shrink-0" aria-hidden="true">05</span>
+              <span class="flex-1 block">
+                <span class="inline-block px-3 py-1 rounded-full bg-[#FDF0EC] text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3">Treatment</span>
+                <span data-faq-q class="block font-serif font-bold text-[#241C19] text-[20px] md:text-[22px] leading-snug group-hover:text-[#C24C33] transition-colors">What happens at my first appointment?</span>
+              </span>
+              <span class="shrink-0 text-[#C24C33] w-8 h-8 flex items-center justify-center mt-1" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><line class="origin-center [transform-box:fill-box] transition-transform duration-200 motion-reduce:transition-none group-data-[open=true]:scale-y-0" x1="12" y1="5" x2="12" y2="19"></line></svg>
+              </span>
+            </button>
+          </h3>
+ 
+          <div id="faq-panel-5" data-faq-panel class="grid grid-rows-[0fr] data-[open=true]:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none" role="region" aria-labelledby="faq-btn-5" data-open="false" inert>
+            <div class="min-h-0 overflow-hidden invisible delay-300 transition-[visibility] group-data-[open=true]:visible group-data-[open=true]:delay-0 motion-reduce:transition-none">
+              <div class="mt-8 pt-8 border-t border-[#F2E4DC]">
+                <div class="bg-[#FDF9F7] rounded-[20px] p-6 md:p-8 relative">
+                  <span class="absolute left-4 top-2 text-[#EADFDB] font-serif text-[60px] leading-none select-none" aria-hidden="true">&ldquo;</span>
+ 
+                  <div class="flex items-start gap-4 mb-5 relative z-10 pl-2">
+                    <div class="relative w-[42px] h-[42px] shrink-0">
+                      <img src="assets/Patients/Avatar.webp" alt="" class="w-full h-full rounded-full object-cover border-2 border-white shadow-sm" loading="lazy" />
+                      <div class="absolute -bottom-0.5 -right-0.5 bg-[#31C137] rounded-full w-4 h-4 flex items-center justify-center border-[1.5px] border-white">
+                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                    </div>
+                    <div class="mt-0.5">
+                      <h4 class="font-bold text-[#241C19] text-[15px] m-0 leading-snug">Answer from our specialist</h4>
+                      <p class="text-[12px] text-[#8C7F78] m-0 mt-0.5">Answered by [Specialist name] &middot; Last reviewed [date]</p>
+                    </div>
+                  </div>
+ 
+                  <p data-faq-a class="text-[#463D39] text-[15px] md:text-[16px] leading-[1.6] mb-6 pl-2 md:pl-[62px] relative z-10">Your psychiatrist will ask about your current difficulties, your history, daily life, sleep, general health and any medication you take. You may be asked to fill in questionnaires. Together you will agree on next steps, and you are welcome to ask questions at any point.</p>
+ 
+                  <div data-vote-box class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8 pt-6 border-t border-[#EADFDB] pl-2 md:pl-[62px] relative z-10">
+                    <span class="text-[13px] text-[#6B5F5A] font-medium">Was this answer helpful?</span>
+                    <div class="flex items-center gap-2">
+                      <button type="button" data-vote="yes" class="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-[#CFDCC9] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#4A5D46] transition-colors shadow-sm cursor-pointer">
+                        <img src="assets/Patients/like.webp" alt="Like" class="w-[14px] h-[14px] object-contain" />
+                        Yes
+                      </button>
+                      <button type="button" data-vote="no" class="inline-flex items-center font-bold gap-1.5 px-4 py-2 bg-white border border-[#A93E28] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#A93E28] transition-colors shadow-sm cursor-pointer ">
+                        <img src="assets/Patients/Unlike.webp" alt="Unlike" class="w-[14px] h-[14px] object-contain" />
+                        No
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+ 
+        <!-- 06 · Online Psychiatrist -->
+        <article id="faq-6" class="faq-item group bg-white rounded-[24px] border border-[#E8B8AC] hover:border-[#EADFDB] data-[open=true]:border-[#EADFDB] transition-colors shadow-sm p-6 md:px-8 md:py-6" data-id="6" data-cat="Online Psychiatrist" data-date="2026-08-30" data-open="false">
+          <h3 class="m-0">
+            <button type="button" id="faq-btn-6" class="faq-toggle flex items-start gap-4 md:gap-5 w-full text-left cursor-pointer bg-transparent border-0 p-0 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[6px] focus-visible:outline-[#C24C33]" aria-expanded="false" aria-controls="faq-panel-6">
+              <span data-faq-num class="text-[#D1C7C1] group-hover:text-[#B3A6A1] transition-colors font-serif text-[18px] mt-1 shrink-0" aria-hidden="true">06</span>
+              <span class="flex-1 block">
+                <span class="inline-block px-3 py-1 rounded-full bg-[#FDF0EC] text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3">Online Psychiatrist</span>
+                <span data-faq-q class="block font-serif font-bold text-[#241C19] text-[20px] md:text-[22px] leading-snug group-hover:text-[#C24C33] transition-colors">What do I need for an online consultation?</span>
+              </span>
+              <span class="shrink-0 text-[#C24C33] w-8 h-8 flex items-center justify-center mt-1" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><line class="origin-center [transform-box:fill-box] transition-transform duration-200 motion-reduce:transition-none group-data-[open=true]:scale-y-0" x1="12" y1="5" x2="12" y2="19"></line></svg>
+              </span>
+            </button>
+          </h3>
+ 
+          <div id="faq-panel-6" data-faq-panel class="grid grid-rows-[0fr] data-[open=true]:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none" role="region" aria-labelledby="faq-btn-6" data-open="false" inert>
+            <div class="min-h-0 overflow-hidden invisible delay-300 transition-[visibility] group-data-[open=true]:visible group-data-[open=true]:delay-0 motion-reduce:transition-none">
+              <div class="mt-8 pt-8 border-t border-[#F2E4DC]">
+                <div class="bg-[#FDF9F7] rounded-[20px] p-6 md:p-8 relative">
+                  <span class="absolute left-4 top-2 text-[#EADFDB] font-serif text-[60px] leading-none select-none" aria-hidden="true">&ldquo;</span>
+ 
+                  <div class="flex items-start gap-4 mb-5 relative z-10 pl-2">
+                    <div class="relative w-[42px] h-[42px] shrink-0">
+                      <img src="assets/Patients/Avatar.webp" alt="" class="w-full h-full rounded-full object-cover border-2 border-white shadow-sm" loading="lazy" />
+                      <div class="absolute -bottom-0.5 -right-0.5 bg-[#31C137] rounded-full w-4 h-4 flex items-center justify-center border-[1.5px] border-white">
+                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                    </div>
+                    <div class="mt-0.5">
+                      <h4 class="font-bold text-[#241C19] text-[15px] m-0 leading-snug">Answer from our specialist</h4>
+                      <p class="text-[12px] text-[#8C7F78] m-0 mt-0.5">Answered by [Specialist name] &middot; Last reviewed [date]</p>
+                    </div>
+                  </div>
+ 
+                  <p data-faq-a class="text-[#463D39] text-[15px] md:text-[16px] leading-[1.6] mb-6 pl-2 md:pl-[62px] relative z-10">A stable internet connection, a device with a camera and microphone, and a quiet, private place where you can talk freely. It also helps to have a list of your current medication and any earlier records at hand. Log in a few minutes early to test your setup.</p>
+ 
+                  <div data-vote-box class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8 pt-6 border-t border-[#EADFDB] pl-2 md:pl-[62px] relative z-10">
+                    <span class="text-[13px] text-[#6B5F5A] font-medium">Was this answer helpful?</span>
+                    <div class="flex items-center gap-2">
+                      <button type="button" data-vote="yes" class="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-[#CFDCC9] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#4A5D46] transition-colors shadow-sm cursor-pointer">
+                        <img src="assets/Patients/like.webp" alt="Like" class="w-[14px] h-[14px] object-contain" />
+                        Yes
+                      </button>
+                      <button type="button" data-vote="no" class="inline-flex items-center font-bold gap-1.5 px-4 py-2 bg-white border border-[#A93E28] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#A93E28] transition-colors shadow-sm cursor-pointer ">
+                        <img src="assets/Patients/Unlike.webp" alt="Unlike" class="w-[14px] h-[14px] object-contain" />
+                        No
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+ 
+        <!-- 07 · Depression -->
+        <article id="faq-7" class="faq-item group bg-white rounded-[24px] border border-[#E8B8AC] hover:border-[#EADFDB] data-[open=true]:border-[#EADFDB] transition-colors shadow-sm p-6 md:px-8 md:py-6" data-id="7" data-cat="Depression" data-date="2026-08-25" data-open="false">
+          <h3 class="m-0">
+            <button type="button" id="faq-btn-7" class="faq-toggle flex items-start gap-4 md:gap-5 w-full text-left cursor-pointer bg-transparent border-0 p-0 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[6px] focus-visible:outline-[#C24C33]" aria-expanded="false" aria-controls="faq-panel-7">
+              <span data-faq-num class="text-[#D1C7C1] group-hover:text-[#B3A6A1] transition-colors font-serif text-[18px] mt-1 shrink-0" aria-hidden="true">07</span>
+              <span class="flex-1 block">
+                <span class="inline-block px-3 py-1 rounded-full bg-[#FDF0EC] text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3">Depression</span>
+                <span data-faq-q class="block font-serif font-bold text-[#241C19] text-[20px] md:text-[22px] leading-snug group-hover:text-[#C24C33] transition-colors">How long does treatment for depression usually take?</span>
+              </span>
+              <span class="shrink-0 text-[#C24C33] w-8 h-8 flex items-center justify-center mt-1" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><line class="origin-center [transform-box:fill-box] transition-transform duration-200 motion-reduce:transition-none group-data-[open=true]:scale-y-0" x1="12" y1="5" x2="12" y2="19"></line></svg>
+              </span>
+            </button>
+          </h3>
+ 
+          <div id="faq-panel-7" data-faq-panel class="grid grid-rows-[0fr] data-[open=true]:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none" role="region" aria-labelledby="faq-btn-7" data-open="false" inert>
+            <div class="min-h-0 overflow-hidden invisible delay-300 transition-[visibility] group-data-[open=true]:visible group-data-[open=true]:delay-0 motion-reduce:transition-none">
+              <div class="mt-8 pt-8 border-t border-[#F2E4DC]">
+                <div class="bg-[#FDF9F7] rounded-[20px] p-6 md:p-8 relative">
+                  <span class="absolute left-4 top-2 text-[#EADFDB] font-serif text-[60px] leading-none select-none" aria-hidden="true">&ldquo;</span>
+ 
+                  <div class="flex items-start gap-4 mb-5 relative z-10 pl-2">
+                    <div class="relative w-[42px] h-[42px] shrink-0">
+                      <img src="assets/Patients/Avatar.webp" alt="" class="w-full h-full rounded-full object-cover border-2 border-white shadow-sm" loading="lazy" />
+                      <div class="absolute -bottom-0.5 -right-0.5 bg-[#31C137] rounded-full w-4 h-4 flex items-center justify-center border-[1.5px] border-white">
+                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                    </div>
+                    <div class="mt-0.5">
+                      <h4 class="font-bold text-[#241C19] text-[15px] m-0 leading-snug">Answer from our specialist</h4>
+                      <p class="text-[12px] text-[#8C7F78] m-0 mt-0.5">Answered by [Specialist name] &middot; Last reviewed [date]</p>
+                    </div>
+                  </div>
+ 
+                  <p data-faq-a class="text-[#463D39] text-[15px] md:text-[16px] leading-[1.6] mb-6 pl-2 md:pl-[62px] relative z-10">It varies from person to person. Many people notice some improvement within weeks to a few months, while full recovery can take longer. Some continue treatment afterwards to reduce the risk of relapse. Your psychiatrist will review your progress regularly and adjust the plan with you.</p>
+ 
+                  <div data-vote-box class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8 pt-6 border-t border-[#EADFDB] pl-2 md:pl-[62px] relative z-10">
+                    <span class="text-[13px] text-[#6B5F5A] font-medium">Was this answer helpful?</span>
+                    <div class="flex items-center gap-2">
+                      <button type="button" data-vote="yes" class="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-[#CFDCC9] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#4A5D46] transition-colors shadow-sm cursor-pointer">
+                        <img src="assets/Patients/like.webp" alt="Like" class="w-[14px] h-[14px] object-contain" />
+                        Yes
+                      </button>
+                      <button type="button" data-vote="no" class="inline-flex items-center font-bold gap-1.5 px-4 py-2 bg-white border border-[#A93E28] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#A93E28] transition-colors shadow-sm cursor-pointer ">
+                        <img src="assets/Patients/Unlike.webp" alt="Unlike" class="w-[14px] h-[14px] object-contain" />
+                        No
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+ 
+        <!-- 08 · Other -->
+        <article id="faq-8" class="faq-item group bg-white rounded-[24px] border border-[#E8B8AC] hover:border-[#EADFDB] data-[open=true]:border-[#EADFDB] transition-colors shadow-sm p-6 md:px-8 md:py-6" data-id="8" data-cat="Other" data-date="2026-08-20" data-open="false">
+          <h3 class="m-0">
+            <button type="button" id="faq-btn-8" class="faq-toggle flex items-start gap-4 md:gap-5 w-full text-left cursor-pointer bg-transparent border-0 p-0 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[6px] focus-visible:outline-[#C24C33]" aria-expanded="false" aria-controls="faq-panel-8">
+              <span data-faq-num class="text-[#D1C7C1] group-hover:text-[#B3A6A1] transition-colors font-serif text-[18px] mt-1 shrink-0" aria-hidden="true">08</span>
+              <span class="flex-1 block">
+                <span class="inline-block px-3 py-1 rounded-full bg-[#FDF0EC] text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3">Other</span>
+                <span data-faq-q class="block font-serif font-bold text-[#241C19] text-[20px] md:text-[22px] leading-snug group-hover:text-[#C24C33] transition-colors">Can a family member ask a question on my behalf?</span>
+              </span>
+              <span class="shrink-0 text-[#C24C33] w-8 h-8 flex items-center justify-center mt-1" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><line class="origin-center [transform-box:fill-box] transition-transform duration-200 motion-reduce:transition-none group-data-[open=true]:scale-y-0" x1="12" y1="5" x2="12" y2="19"></line></svg>
+              </span>
+            </button>
+          </h3>
+ 
+          <div id="faq-panel-8" data-faq-panel class="grid grid-rows-[0fr] data-[open=true]:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none" role="region" aria-labelledby="faq-btn-8" data-open="false" inert>
+            <div class="min-h-0 overflow-hidden invisible delay-300 transition-[visibility] group-data-[open=true]:visible group-data-[open=true]:delay-0 motion-reduce:transition-none">
+              <div class="mt-8 pt-8 border-t border-[#F2E4DC]">
+                <div class="bg-[#FDF9F7] rounded-[20px] p-6 md:p-8 relative">
+                  <span class="absolute left-4 top-2 text-[#EADFDB] font-serif text-[60px] leading-none select-none" aria-hidden="true">&ldquo;</span>
+ 
+                  <div class="flex items-start gap-4 mb-5 relative z-10 pl-2">
+                    <div class="relative w-[42px] h-[42px] shrink-0">
+                      <img src="assets/Patients/Avatar.webp" alt="" class="w-full h-full rounded-full object-cover border-2 border-white shadow-sm" loading="lazy" />
+                      <div class="absolute -bottom-0.5 -right-0.5 bg-[#31C137] rounded-full w-4 h-4 flex items-center justify-center border-[1.5px] border-white">
+                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                    </div>
+                    <div class="mt-0.5">
+                      <h4 class="font-bold text-[#241C19] text-[15px] m-0 leading-snug">Answer from our specialist</h4>
+                      <p class="text-[12px] text-[#8C7F78] m-0 mt-0.5">Answered by [Specialist name] &middot; Last reviewed [date]</p>
+                    </div>
+                  </div>
+ 
+                  <p data-faq-a class="text-[#463D39] text-[15px] md:text-[16px] leading-[1.6] mb-6 pl-2 md:pl-[62px] relative z-10">A family member can send a general question, but we cannot discuss an individual's care or share personal information without that person's consent. Questions are published anonymously, so please avoid including identifying details.</p>
+ 
+                  <div data-vote-box class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8 pt-6 border-t border-[#EADFDB] pl-2 md:pl-[62px] relative z-10">
+                    <span class="text-[13px] text-[#6B5F5A] font-medium">Was this answer helpful?</span>
+                    <div class="flex items-center gap-2">
+                      <button type="button" data-vote="yes" class="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-[#CFDCC9] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#4A5D46] transition-colors shadow-sm cursor-pointer">
+                        <img src="assets/Patients/like.webp" alt="Like" class="w-[14px] h-[14px] object-contain" />
+                        Yes
+                      </button>
+                      <button type="button" data-vote="no" class="inline-flex items-center font-bold gap-1.5 px-4 py-2 bg-white border border-[#A93E28] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#A93E28] transition-colors shadow-sm cursor-pointer ">
+                        <img src="assets/Patients/Unlike.webp" alt="Unlike" class="w-[14px] h-[14px] object-contain" />
+                        No
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+ 
+        <!-- 09 · ADHD -->
+        <article id="faq-9" class="faq-item group bg-white rounded-[24px] border border-[#E8B8AC] hover:border-[#EADFDB] data-[open=true]:border-[#EADFDB] transition-colors shadow-sm p-6 md:px-8 md:py-6" data-id="9" data-cat="ADHD" data-date="2026-08-15" data-open="false">
+          <h3 class="m-0">
+            <button type="button" id="faq-btn-9" class="faq-toggle flex items-start gap-4 md:gap-5 w-full text-left cursor-pointer bg-transparent border-0 p-0 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[6px] focus-visible:outline-[#C24C33]" aria-expanded="false" aria-controls="faq-panel-9">
+              <span data-faq-num class="text-[#D1C7C1] group-hover:text-[#B3A6A1] transition-colors font-serif text-[18px] mt-1 shrink-0" aria-hidden="true">09</span>
+              <span class="flex-1 block">
+                <span class="inline-block px-3 py-1 rounded-full bg-[#FDF0EC] text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3">ADHD</span>
+                <span data-faq-q class="block font-serif font-bold text-[#241C19] text-[20px] md:text-[22px] leading-snug group-hover:text-[#C24C33] transition-colors">What does an ADHD assessment involve?</span>
+              </span>
+              <span class="shrink-0 text-[#C24C33] w-8 h-8 flex items-center justify-center mt-1" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><line class="origin-center [transform-box:fill-box] transition-transform duration-200 motion-reduce:transition-none group-data-[open=true]:scale-y-0" x1="12" y1="5" x2="12" y2="19"></line></svg>
+              </span>
+            </button>
+          </h3>
+ 
+          <div id="faq-panel-9" data-faq-panel class="grid grid-rows-[0fr] data-[open=true]:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none" role="region" aria-labelledby="faq-btn-9" data-open="false" inert>
+            <div class="min-h-0 overflow-hidden invisible delay-300 transition-[visibility] group-data-[open=true]:visible group-data-[open=true]:delay-0 motion-reduce:transition-none">
+              <div class="mt-8 pt-8 border-t border-[#F2E4DC]">
+                <div class="bg-[#FDF9F7] rounded-[20px] p-6 md:p-8 relative">
+                  <span class="absolute left-4 top-2 text-[#EADFDB] font-serif text-[60px] leading-none select-none" aria-hidden="true">&ldquo;</span>
+ 
+                  <div class="flex items-start gap-4 mb-5 relative z-10 pl-2">
+                    <div class="relative w-[42px] h-[42px] shrink-0">
+                      <img src="assets/Patients/Avatar.webp" alt="" class="w-full h-full rounded-full object-cover border-2 border-white shadow-sm" loading="lazy" />
+                      <div class="absolute -bottom-0.5 -right-0.5 bg-[#31C137] rounded-full w-4 h-4 flex items-center justify-center border-[1.5px] border-white">
+                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                    </div>
+                    <div class="mt-0.5">
+                      <h4 class="font-bold text-[#241C19] text-[15px] m-0 leading-snug">Answer from our specialist</h4>
+                      <p class="text-[12px] text-[#8C7F78] m-0 mt-0.5">Answered by [Specialist name] &middot; Last reviewed [date]</p>
+                    </div>
+                  </div>
+ 
+                  <p data-faq-a class="text-[#463D39] text-[15px] md:text-[16px] leading-[1.6] mb-6 pl-2 md:pl-[62px] relative z-10">Usually a detailed interview about current symptoms and your childhood, questionnaires or rating scales, and, where possible, information from someone who knows you well or from old school reports. Your psychiatrist will also consider other conditions that can look similar. This is often spread over more than one appointment.</p>
+ 
+                  <div data-vote-box class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8 pt-6 border-t border-[#EADFDB] pl-2 md:pl-[62px] relative z-10">
+                    <span class="text-[13px] text-[#6B5F5A] font-medium">Was this answer helpful?</span>
+                    <div class="flex items-center gap-2">
+                      <button type="button" data-vote="yes" class="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-[#CFDCC9] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#4A5D46] transition-colors shadow-sm cursor-pointer">
+                        <img src="assets/Patients/like.webp" alt="Like" class="w-[14px] h-[14px] object-contain" />
+                        Yes
+                      </button>
+                      <button type="button" data-vote="no" class="inline-flex items-center font-bold gap-1.5 px-4 py-2 bg-white border border-[#A93E28] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#A93E28] transition-colors shadow-sm cursor-pointer ">
+                        <img src="assets/Patients/Unlike.webp" alt="Unlike" class="w-[14px] h-[14px] object-contain" />
+                        No
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+ 
+        <!-- 10 · Anxiety -->
+        <article id="faq-10" class="faq-item group bg-white rounded-[24px] border border-[#E8B8AC] hover:border-[#EADFDB] data-[open=true]:border-[#EADFDB] transition-colors shadow-sm p-6 md:px-8 md:py-6" data-id="10" data-cat="Anxiety" data-date="2026-08-10" data-open="false">
+          <h3 class="m-0">
+            <button type="button" id="faq-btn-10" class="faq-toggle flex items-start gap-4 md:gap-5 w-full text-left cursor-pointer bg-transparent border-0 p-0 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[6px] focus-visible:outline-[#C24C33]" aria-expanded="false" aria-controls="faq-panel-10">
+              <span data-faq-num class="text-[#D1C7C1] group-hover:text-[#B3A6A1] transition-colors font-serif text-[18px] mt-1 shrink-0" aria-hidden="true">10</span>
+              <span class="flex-1 block">
+                <span class="inline-block px-3 py-1 rounded-full bg-[#FDF0EC] text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3">Anxiety</span>
+                <span data-faq-q class="block font-serif font-bold text-[#241C19] text-[20px] md:text-[22px] leading-snug group-hover:text-[#C24C33] transition-colors">Is anxiety treatable?</span>
+              </span>
+              <span class="shrink-0 text-[#C24C33] w-8 h-8 flex items-center justify-center mt-1" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><line class="origin-center [transform-box:fill-box] transition-transform duration-200 motion-reduce:transition-none group-data-[open=true]:scale-y-0" x1="12" y1="5" x2="12" y2="19"></line></svg>
+              </span>
+            </button>
+          </h3>
+ 
+          <div id="faq-panel-10" data-faq-panel class="grid grid-rows-[0fr] data-[open=true]:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none" role="region" aria-labelledby="faq-btn-10" data-open="false" inert>
+            <div class="min-h-0 overflow-hidden invisible delay-300 transition-[visibility] group-data-[open=true]:visible group-data-[open=true]:delay-0 motion-reduce:transition-none">
+              <div class="mt-8 pt-8 border-t border-[#F2E4DC]">
+                <div class="bg-[#FDF9F7] rounded-[20px] p-6 md:p-8 relative">
+                  <span class="absolute left-4 top-2 text-[#EADFDB] font-serif text-[60px] leading-none select-none" aria-hidden="true">&ldquo;</span>
+ 
+                  <div class="flex items-start gap-4 mb-5 relative z-10 pl-2">
+                    <div class="relative w-[42px] h-[42px] shrink-0">
+                      <img src="assets/Patients/Avatar.webp" alt="" class="w-full h-full rounded-full object-cover border-2 border-white shadow-sm" loading="lazy" />
+                      <div class="absolute -bottom-0.5 -right-0.5 bg-[#31C137] rounded-full w-4 h-4 flex items-center justify-center border-[1.5px] border-white">
+                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                    </div>
+                    <div class="mt-0.5">
+                      <h4 class="font-bold text-[#241C19] text-[15px] m-0 leading-snug">Answer from our specialist</h4>
+                      <p class="text-[12px] text-[#8C7F78] m-0 mt-0.5">Answered by [Specialist name] &middot; Last reviewed [date]</p>
+                    </div>
+                  </div>
+ 
+                  <p data-faq-a class="text-[#463D39] text-[15px] md:text-[16px] leading-[1.6] mb-6 pl-2 md:pl-[62px] relative z-10">Yes. Anxiety is one of the most treatable mental health conditions. Options include talking therapies such as CBT, practical self-help strategies and, in some cases, medication. The right approach depends on your symptoms and preferences.</p>
+ 
+                  <div data-vote-box class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8 pt-6 border-t border-[#EADFDB] pl-2 md:pl-[62px] relative z-10">
+                    <span class="text-[13px] text-[#6B5F5A] font-medium">Was this answer helpful?</span>
+                    <div class="flex items-center gap-2">
+                      <button type="button" data-vote="yes" class="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-[#CFDCC9] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#4A5D46] transition-colors shadow-sm cursor-pointer">
+                        <img src="assets/Patients/like.webp" alt="Like" class="w-[14px] h-[14px] object-contain" />
+                        Yes
+                      </button>
+                      <button type="button" data-vote="no" class="inline-flex items-center font-bold gap-1.5 px-4 py-2 bg-white border border-[#A93E28] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#A93E28] transition-colors shadow-sm cursor-pointer ">
+                        <img src="assets/Patients/Unlike.webp" alt="Unlike" class="w-[14px] h-[14px] object-contain" />
+                        No
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+ 
+        <!-- 11 · Assessment -->
+        <article id="faq-11" class="faq-item group bg-white rounded-[24px] border border-[#E8B8AC] hover:border-[#EADFDB] data-[open=true]:border-[#EADFDB] transition-colors shadow-sm p-6 md:px-8 md:py-6" data-id="11" data-cat="Assessment" data-date="2026-08-05" data-open="false">
+          <h3 class="m-0">
+            <button type="button" id="faq-btn-11" class="faq-toggle flex items-start gap-4 md:gap-5 w-full text-left cursor-pointer bg-transparent border-0 p-0 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[6px] focus-visible:outline-[#C24C33]" aria-expanded="false" aria-controls="faq-panel-11">
+              <span data-faq-num class="text-[#D1C7C1] group-hover:text-[#B3A6A1] transition-colors font-serif text-[18px] mt-1 shrink-0" aria-hidden="true">11</span>
+              <span class="flex-1 block">
+                <span class="inline-block px-3 py-1 rounded-full bg-[#FDF0EC] text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3">Assessment</span>
+                <span data-faq-q class="block font-serif font-bold text-[#241C19] text-[20px] md:text-[22px] leading-snug group-hover:text-[#C24C33] transition-colors">How long does an assessment take?</span>
+              </span>
+              <span class="shrink-0 text-[#C24C33] w-8 h-8 flex items-center justify-center mt-1" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><line class="origin-center [transform-box:fill-box] transition-transform duration-200 motion-reduce:transition-none group-data-[open=true]:scale-y-0" x1="12" y1="5" x2="12" y2="19"></line></svg>
+              </span>
+            </button>
+          </h3>
+ 
+          <div id="faq-panel-11" data-faq-panel class="grid grid-rows-[0fr] data-[open=true]:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none" role="region" aria-labelledby="faq-btn-11" data-open="false" inert>
+            <div class="min-h-0 overflow-hidden invisible delay-300 transition-[visibility] group-data-[open=true]:visible group-data-[open=true]:delay-0 motion-reduce:transition-none">
+              <div class="mt-8 pt-8 border-t border-[#F2E4DC]">
+                <div class="bg-[#FDF9F7] rounded-[20px] p-6 md:p-8 relative">
+                  <span class="absolute left-4 top-2 text-[#EADFDB] font-serif text-[60px] leading-none select-none" aria-hidden="true">&ldquo;</span>
+ 
+                  <div class="flex items-start gap-4 mb-5 relative z-10 pl-2">
+                    <div class="relative w-[42px] h-[42px] shrink-0">
+                      <img src="assets/Patients/Avatar.webp" alt="" class="w-full h-full rounded-full object-cover border-2 border-white shadow-sm" loading="lazy" />
+                      <div class="absolute -bottom-0.5 -right-0.5 bg-[#31C137] rounded-full w-4 h-4 flex items-center justify-center border-[1.5px] border-white">
+                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                    </div>
+                    <div class="mt-0.5">
+                      <h4 class="font-bold text-[#241C19] text-[15px] m-0 leading-snug">Answer from our specialist</h4>
+                      <p class="text-[12px] text-[#8C7F78] m-0 mt-0.5">Answered by [Specialist name] &middot; Last reviewed [date]</p>
+                    </div>
+                  </div>
+ 
+                  <p data-faq-a class="text-[#463D39] text-[15px] md:text-[16px] leading-[1.6] mb-6 pl-2 md:pl-[62px] relative z-10">It depends on your concerns and how complex they are. Some assessments are completed in one appointment, others need several. Your psychiatrist can give you an idea of the timeline at the start.</p>
+ 
+                  <div data-vote-box class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8 pt-6 border-t border-[#EADFDB] pl-2 md:pl-[62px] relative z-10">
+                    <span class="text-[13px] text-[#6B5F5A] font-medium">Was this answer helpful?</span>
+                    <div class="flex items-center gap-2">
+                      <button type="button" data-vote="yes" class="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-[#CFDCC9] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#4A5D46] transition-colors shadow-sm cursor-pointer">
+                        <img src="assets/Patients/like.webp" alt="Like" class="w-[14px] h-[14px] object-contain" />
+                        Yes
+                      </button>
+                      <button type="button" data-vote="no" class="inline-flex items-center font-bold gap-1.5 px-4 py-2 bg-white border border-[#A93E28] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#A93E28] transition-colors shadow-sm cursor-pointer ">
+                        <img src="assets/Patients/Unlike.webp" alt="Unlike" class="w-[14px] h-[14px] object-contain" />
+                        No
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+ 
+        <!-- 12 · Other -->
+        <article id="faq-12" class="faq-item group bg-white rounded-[24px] border border-[#E8B8AC] hover:border-[#EADFDB] data-[open=true]:border-[#EADFDB] transition-colors shadow-sm p-6 md:px-8 md:py-6" data-id="12" data-cat="Other" data-date="2026-07-31" data-open="false">
+          <h3 class="m-0">
+            <button type="button" id="faq-btn-12" class="faq-toggle flex items-start gap-4 md:gap-5 w-full text-left cursor-pointer bg-transparent border-0 p-0 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[6px] focus-visible:outline-[#C24C33]" aria-expanded="false" aria-controls="faq-panel-12">
+              <span data-faq-num class="text-[#D1C7C1] group-hover:text-[#B3A6A1] transition-colors font-serif text-[18px] mt-1 shrink-0" aria-hidden="true">12</span>
+              <span class="flex-1 block">
+                <span class="inline-block px-3 py-1 rounded-full bg-[#FDF0EC] text-[#C24C33] text-[11px] font-bold tracking-widest uppercase mb-3">Other</span>
+                <span data-faq-q class="block font-serif font-bold text-[#241C19] text-[20px] md:text-[22px] leading-snug group-hover:text-[#C24C33] transition-colors">Is my information kept confidential?</span>
+              </span>
+              <span class="shrink-0 text-[#C24C33] w-8 h-8 flex items-center justify-center mt-1" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><line class="origin-center [transform-box:fill-box] transition-transform duration-200 motion-reduce:transition-none group-data-[open=true]:scale-y-0" x1="12" y1="5" x2="12" y2="19"></line></svg>
+              </span>
+            </button>
+          </h3>
+ 
+          <div id="faq-panel-12" data-faq-panel class="grid grid-rows-[0fr] data-[open=true]:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none" role="region" aria-labelledby="faq-btn-12" data-open="false" inert>
+            <div class="min-h-0 overflow-hidden invisible delay-300 transition-[visibility] group-data-[open=true]:visible group-data-[open=true]:delay-0 motion-reduce:transition-none">
+              <div class="mt-8 pt-8 border-t border-[#F2E4DC]">
+                <div class="bg-[#FDF9F7] rounded-[20px] p-6 md:p-8 relative">
+                  <span class="absolute left-4 top-2 text-[#EADFDB] font-serif text-[60px] leading-none select-none" aria-hidden="true">&ldquo;</span>
+ 
+                  <div class="flex items-start gap-4 mb-5 relative z-10 pl-2">
+                    <div class="relative w-[42px] h-[42px] shrink-0">
+                      <img src="assets/Patients/Avatar.webp" alt="" class="w-full h-full rounded-full object-cover border-2 border-white shadow-sm" loading="lazy" />
+                      <div class="absolute -bottom-0.5 -right-0.5 bg-[#31C137] rounded-full w-4 h-4 flex items-center justify-center border-[1.5px] border-white">
+                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                    </div>
+                    <div class="mt-0.5">
+                      <h4 class="font-bold text-[#241C19] text-[15px] m-0 leading-snug">Answer from our specialist</h4>
+                      <p class="text-[12px] text-[#8C7F78] m-0 mt-0.5">Answered by [Specialist name] &middot; Last reviewed [date]</p>
+                    </div>
+                  </div>
+ 
+                  <p data-faq-a class="text-[#463D39] text-[15px] md:text-[16px] leading-[1.6] mb-6 pl-2 md:pl-[62px] relative z-10">Yes. Healthcare professionals have a duty of confidentiality, and your information is handled according to applicable data protection and health-record rules. Questions published on this page are always anonymous.</p>
+ 
+                  <div data-vote-box class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8 pt-6 border-t border-[#EADFDB] pl-2 md:pl-[62px] relative z-10">
+                    <span class="text-[13px] text-[#6B5F5A] font-medium">Was this answer helpful?</span>
+                    <div class="flex items-center gap-2">
+                      <button type="button" data-vote="yes" class="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-[#CFDCC9] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#4A5D46] transition-colors shadow-sm cursor-pointer">
+                        <img src="assets/Patients/like.webp" alt="Like" class="w-[14px] h-[14px] object-contain" />
+                        Yes
+                      </button>
+                      <button type="button" data-vote="no" class="inline-flex items-center font-bold gap-1.5 px-4 py-2 bg-white border border-[#A93E28] hover:border-[#EADFDB] rounded-full text-[14px] font-bold text-[#A93E28] transition-colors shadow-sm cursor-pointer ">
+                        <img src="assets/Patients/Unlike.webp" alt="Unlike" class="w-[14px] h-[14px] object-contain" />
+                        No
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        </div>
+ 
+        <!-- Empty state -->
+        <div id="faq-empty" hidden class="bg-white rounded-[24px] border border-[#F2E4DC] p-10 text-center shadow-sm">
+          <h3 class="font-serif font-bold text-[#241C19] text-[22px] m-0 mb-2">No matching questions</h3>
+          <p class="text-[15px] text-[#6B5F5A] m-0 mb-6">Try different keywords or another category, or ask our specialists directly.</p>
+          <button id="faq-reset" type="button" class="inline-flex items-center bg-[#FDF0EC] text-[#C24C33] hover:bg-[#F9E2DA] px-6 py-3 rounded-full font-bold text-[14px] transition-colors">Reset filters</button>
+        </div>
+ 
+        <!-- Load more -->
+        <div id="faq-more-wrap" class="mt-10 flex justify-center" hidden>
+          <button id="faq-more" type="button" class="inline-flex items-center gap-2 bg-white border border-[#EADFDB] hover:border-[#C24C33] text-[#331811] hover:text-[#C24C33] transition-colors rounded-full px-7 py-[14px] font-bold text-[14px] shadow-sm cursor-pointer">
+            <span id="faq-more-label">Show more questions</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+
+<script src="faq.js" defer></script>
+
     <footer class="bg-brand-brown text-white pt-[72px] pb-8">
       <div class="px-6 md:px-12 lg:px-16">
         <div class="max-w-[1312px] mx-auto">
@@ -608,6 +1365,273 @@
       </div>
     </footer>
 
+    <script>
+  /**
+ * Patient FAQ — progressive enhancement.
+ * The question cards live in the HTML (good for SEO and no-JS). This script only adds:
+ * search + highlight, category filter, sort, accordion, pagination, helpful votes,
+ * deep links (#faq-5) and FAQPage JSON-LD.
+ *
+ * Tailwind: classes are used in this file, so add it to your `content` paths
+ * (not needed with the Play CDN).
+ */
+(() => {
+  'use strict';
+
+  const PAGE_SIZE = 8;
+
+  /* Category sidebar (counts are computed from the cards in the HTML). */
+  const CATEGORIES = ['All', 'ADHD', 'Anxiety', 'Depression', 'Assessment', 'Treatment', 'Medication', 'Online Psychiatrist', 'Other'];
+  const ICONS = {
+    All: { svg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>' },
+    'ADHD': { img: 'assets/Patients/adhd.webp' },
+    'Anxiety': { img: 'assets/Patients/Anxiety.webp' },
+    'Depression': { img: 'assets/Patients/Depression.webp' },
+    'Assessment': { img: 'assets/Patients/Assesment.webp' },
+    'Treatment': { img: 'assets/Patients/treatment.webp' },
+    'Medication': { svg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M7 8V6a5 5 0 0 1 10 0v2"/></svg>' },
+    'Online Psychiatrist': { svg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>' },
+    'Other': { svg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>' },
+  };
+
+  /* ---------------------------- helpers ---------------------------- */
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const reEsc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const norm = (s) => String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const plural = (n) => `${n} question${n === 1 ? '' : 's'}`;
+  const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
+  const tokens = (q) => norm(q).split(/\s+/).filter(Boolean);
+  const highlight = (text, toks) => {
+    const t = toks.filter((x) => x.length > 1);
+    if (!t.length) return esc(text);
+    const re = new RegExp(`(${t.map(reEsc).join('|')})`, 'gi');
+    return text.split(re).map((p, i) => (i % 2 ? `<mark class="bg-[#FDE3D9] text-inherit rounded px-0.5">${esc(p)}</mark>` : esc(p))).join('');
+  };
+  const store = {
+    get() { try { return JSON.parse(localStorage.getItem('faq-votes')) || {}; } catch { return {}; } },
+    set(v) { try { localStorage.setItem('faq-votes', JSON.stringify(v)); } catch { /* storage unavailable */ } },
+  };
+
+  /* ------------------------------ DOM ------------------------------ */
+  const el = {
+    search: $('faq-search'), clear: $('faq-search-clear'), cats: $('faq-categories'),
+    list: $('faq-list'), status: $('faq-status'), sort: $('faq-sort'),
+    sortLabel: $('faq-sort-label'), sortIcon: $('faq-sort-icon'),
+    empty: $('faq-empty'), reset: $('faq-reset'),
+    moreWrap: $('faq-more-wrap'), more: $('faq-more'), moreLabel: $('faq-more-label'),
+  };
+  if (!el.list || !el.cats) return;
+
+  // Read every card that already exists in the HTML.
+  const items = [...el.list.querySelectorAll('.faq-item')].map((node) => {
+    const qEl = node.querySelector('[data-faq-q]');
+    const aEl = node.querySelector('[data-faq-a]');
+    return {
+      node, qEl, aEl,
+      id: Number(node.dataset.id),
+      cat: node.dataset.cat,
+      date: node.dataset.date || '',
+      q: qEl.textContent.trim(),
+      a: aEl.textContent.trim(),
+      numEl: node.querySelector('[data-faq-num]'),
+      btn: node.querySelector('.faq-toggle'),
+      panel: node.querySelector('[data-faq-panel]'),
+      voteBox: node.querySelector('[data-vote-box]'),
+    };
+  });
+  if (!items.length) return;
+  const byId = new Map(items.map((i) => [i.id, i]));
+
+  const state = {
+    cat: 'All', query: '', sort: 'newest', visible: PAGE_SIZE,
+    openId: (items.find((i) => i.node.dataset.open === 'true') || {}).id ?? null,
+  };
+  const votes = store.get();
+
+  /* ------------------------- filter / sort ------------------------- */
+  const matches = (i, toks) => !toks.length || toks.every((t) => norm(`${i.q} ${i.a} ${i.cat}`).includes(t));
+  const cmp = (a, b) => {
+    const d = new Date(b.date) - new Date(a.date) || b.id - a.id;
+    return state.sort === 'newest' ? d : -d;
+  };
+
+  /* ---------------------------- accordion -------------------------- */
+  function setOpen(item, open) {
+    item.node.dataset.open = String(open);
+    item.panel.dataset.open = String(open);
+    item.btn.setAttribute('aria-expanded', String(open));
+    item.panel.inert = !open;
+  }
+  function toggle(item) {
+    const willOpen = state.openId !== item.id;
+    if (state.openId !== null && byId.get(state.openId)) setOpen(byId.get(state.openId), false);
+    state.openId = willOpen ? item.id : null;
+    if (willOpen) setOpen(item, true);
+    try { history.replaceState(null, '', willOpen ? `#faq-${item.id}` : location.pathname + location.search); } catch { /* ignore */ }
+  }
+
+  /* ---------------------------- categories ------------------------- */
+  function renderCategories(toks) {
+    const base = items.filter((i) => matches(i, toks));
+    el.cats.innerHTML = CATEGORIES.map((cat) => {
+      const count = cat === 'All' ? base.length : base.filter((i) => i.cat === cat).length;
+      const active = cat === state.cat;
+      const ic = ICONS[cat] || {};
+      const icon = ic.img
+        ? `<img src="${ic.img}" alt="" class="w-[18px] h-[18px] object-contain ${active ? '' : 'opacity-50 group-hover:opacity-100'} transition-opacity" />`
+        : ic.svg || '';
+      return `
+        <button type="button" data-cat="${esc(cat)}" aria-pressed="${active}"
+          class="flex items-center justify-between w-full px-4 py-3 rounded-[14px] transition-colors group ${active ? 'bg-[#FDF0EC] text-[#C24C33]' : 'text-[#463D39] hover:bg-[#FDF9F7]'}">
+          <span class="flex items-center gap-3 ${active ? 'text-[#C24C33]' : 'text-[#A89F9A] group-hover:text-[#C24C33]'} transition-colors">
+            ${icon}
+            <span class="text-[14px] ${active ? 'font-bold' : 'font-medium text-[#463D39] group-hover:text-[#C24C33]'} transition-colors">${esc(cat)}</span>
+          </span>
+          <span class="text-[11px] font-bold px-2 py-0.5 rounded-full min-w-[24px] text-center transition-colors ${active ? 'bg-[#C24C33] text-white' : 'bg-[#F4EAE6] text-[#6B5F5A] group-hover:bg-[#FDF0EC] group-hover:text-[#C24C33]'}">${count}</span>
+        </button>`;
+    }).join('');
+  }
+
+  /* ------------------------------ render --------------------------- */
+  function render({ focusIndex = null } = {}) {
+    const toks = tokens(state.query);
+    const result = items.filter((i) => (state.cat === 'All' || i.cat === state.cat) && matches(i, toks)).sort(cmp);
+    const shown = new Set(result.slice(0, state.visible));
+
+    if (state.openId !== null && !shown.has(byId.get(state.openId))) {
+      setOpen(byId.get(state.openId), false);
+      state.openId = null;
+    }
+
+    // Re-order the existing cards in the DOM, then show/hide them.
+    [...items].sort(cmp).forEach((i) => el.list.appendChild(i.node));
+    items.forEach((i) => {
+      const show = shown.has(i);
+      i.node.hidden = !show;
+      i.qEl.innerHTML = highlight(i.q, toks);
+      i.aEl.innerHTML = highlight(i.a, toks);
+    });
+    result.slice(0, state.visible).forEach((i, n) => { if (i.numEl) i.numEl.textContent = String(n + 1).padStart(2, '0'); });
+
+    el.list.hidden = result.length === 0;
+    el.empty.hidden = result.length !== 0;
+
+    const remaining = result.length - shown.size;
+    el.moreWrap.hidden = remaining <= 0;
+    el.moreLabel.textContent = `Show more questions (${remaining})`;
+
+    el.clear.hidden = !state.query;
+    el.sortLabel.textContent = state.sort === 'newest' ? 'Newest first' : 'Oldest first';
+    el.sortIcon.style.transform = state.sort === 'newest' ? '' : 'rotate(180deg)';
+
+    const where = state.cat === 'All' ? 'all topics' : state.cat;
+    el.status.textContent = state.query
+      ? `Showing ${plural(result.length)} for \u201C${state.query}\u201D in ${where}`
+      : `Showing ${plural(result.length)} in ${where}`;
+
+    renderCategories(toks);
+    if (focusIndex !== null && result[focusIndex]) result[focusIndex].btn.focus();
+  }
+
+  /* ------------------------------ votes ---------------------------- */
+  function markVoted(item) {
+    item.voteBox.innerHTML = `
+      <span class="text-[13px] text-[#6B5F5A] font-medium">Was this answer helpful?</span>
+      <span class="text-[13px] font-bold text-[#6B5F5A]">Thanks for your feedback.</span>`;
+  }
+
+  /* ------------------------------ events --------------------------- */
+  const resetPaging = () => { state.visible = PAGE_SIZE; };
+  const clearSearch = () => { el.search.value = ''; state.query = ''; resetPaging(); render(); };
+
+  el.cats.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-cat]');
+    if (!b) return;
+    state.cat = b.dataset.cat;
+    resetPaging();
+    render();
+    el.cats.querySelector(`[data-cat="${CSS.escape(state.cat)}"]`)?.focus();
+  });
+
+  const onSearch = debounce(() => { state.query = el.search.value.trim(); resetPaging(); render(); }, 150);
+  el.search.addEventListener('input', () => { el.clear.hidden = !el.search.value; onSearch(); });
+  el.search.addEventListener('keydown', (e) => { if (e.key === 'Escape' && el.search.value) { e.preventDefault(); clearSearch(); } });
+  el.clear.addEventListener('click', () => { clearSearch(); el.search.focus(); });
+
+  el.sort.addEventListener('click', () => { state.sort = state.sort === 'newest' ? 'oldest' : 'newest'; render(); });
+
+  el.more.addEventListener('click', () => {
+    const prev = state.visible;
+    state.visible += PAGE_SIZE;
+    render({ focusIndex: prev });
+  });
+
+  el.reset.addEventListener('click', () => { el.search.value = ''; state.query = ''; state.cat = 'All'; resetPaging(); render(); });
+
+  el.list.addEventListener('click', (e) => {
+    const t = e.target.closest('.faq-toggle');
+    if (t) { toggle(byId.get(Number(t.closest('.faq-item').dataset.id))); return; }
+
+    const v = e.target.closest('[data-vote]');
+    if (v) {
+      const item = byId.get(Number(v.closest('.faq-item').dataset.id));
+      votes[item.id] = v.dataset.vote;
+      store.set(votes);
+      markVoted(item);
+      document.dispatchEvent(new CustomEvent('faq:feedback', { detail: { id: item.id, question: item.q, helpful: v.dataset.vote === 'yes' } }));
+    }
+  });
+
+  // Arrow-key navigation between questions
+  el.list.addEventListener('keydown', (e) => {
+    if (!e.target.classList.contains('faq-toggle')) return;
+    const btns = [...el.list.querySelectorAll('.faq-item:not([hidden]) .faq-toggle')];
+    const i = btns.indexOf(e.target);
+    let n = null;
+    if (e.key === 'ArrowDown') n = btns[(i + 1) % btns.length];
+    else if (e.key === 'ArrowUp') n = btns[(i - 1 + btns.length) % btns.length];
+    else if (e.key === 'Home') n = btns[0];
+    else if (e.key === 'End') n = btns[btns.length - 1];
+    if (n) { e.preventDefault(); n.focus(); }
+  });
+
+  /* -------------------------------- init --------------------------- */
+  function injectJsonLd() {
+    if ($('faq-jsonld')) return;
+    const s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.id = 'faq-jsonld';
+    s.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: items.map((i) => ({ '@type': 'Question', name: i.q, acceptedAnswer: { '@type': 'Answer', text: i.a } })),
+    });
+    document.head.appendChild(s);
+  }
+
+  function init() {
+    // Restore earlier votes
+    items.forEach((i) => { if (votes[i.id]) markVoted(i); });
+
+    // Deep link: #faq-5
+    const m = location.hash.match(/^#faq-(\d+)$/);
+    const target = m ? byId.get(Number(m[1])) : null;
+    if (target) {
+      if (state.openId !== null && state.openId !== target.id) setOpen(byId.get(state.openId), false);
+      state.openId = target.id;
+      setOpen(target, true);
+      state.visible = Math.max(PAGE_SIZE, [...items].sort(cmp).indexOf(target) + 1);
+    }
+
+    render();
+    injectJsonLd();
+    if (target) target.node.scrollIntoView({ block: 'center' });
+  }
+
+  init();
+})();
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
