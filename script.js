@@ -456,38 +456,55 @@
      Locations — clinic tabs + map + book button
      ------------------------------------------------------------------- */
   const CLINIC_DATA = [
-    { short: 'Oslo', mapTitle: 'Map of Oslo', map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.2640954672709!2d10.8478847!3d59.944352599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46415d30c93b2acf%3A0xa1e9061a67c94e9c!2sPsykiater%20Oslo%20-%20Lege%20og%20Spesialist%20i%20Rus%20og%20Avhengighet%20medisin%20-%20Psykiater.no!5e0!3m2!1sen!2s!4v1789991996457!5m2!1sen!2s' },
-    { short: 'Ski', mapTitle: 'Map of Ski', map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2011.8874016039479!2d10.837264500000002!3d59.71806389999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416fdcffe9c0f3%3A0x7abcc670d99ecbde!2sPsykiater.no%20Ski%20-%20Lege%20%26%20Spesialist%20i%20Rus%20og%20Avhengighetsmedisin!5e0!3m2!1sen!2s!4v1789992042480!5m2!1sen!2s' }
-  ];
-  function initLocations() {
-    const list = document.getElementById('clinicList');
-    const map = document.getElementById('clinicMap');
-    const mapTag = document.getElementById('clinicMapTag');
-    const bookBtn = document.getElementById('clinicBookBtn');
-    if (!list || !map) return;
+  { short: 'Oslo', link: 'https://sysinn.net/psykolog.no/oslo/' },
+  { short: 'Ski',  link: 'https://sysinn.net/psykolog.no/ski/' }  // use your real Ski URL
+];
 
-    list.addEventListener('click', (e) => {
-      const card = e.target.closest('[data-clinic]');
-      if (!card) return;
-      list.querySelectorAll('[data-clinic]').forEach((c) => {
-        const isActive = c === card;
-        c.classList.toggle('is-active', isActive);
-        c.classList.toggle('bg-[#F8D8D4]', isActive);
-        c.classList.toggle('border-[#A93E28]', isActive);
-        c.classList.toggle('bg-white', !isActive);
-        c.classList.toggle('border-[#EBE1DA]', !isActive);
-        c.setAttribute('aria-pressed', String(isActive));
-      });
-      const idx = +card.dataset.clinic;
-      const d = CLINIC_DATA[idx];
-      if (!d) return;
-      map.src = d.map;
-      map.title = d.mapTitle;
-      mapTag.textContent = `${d.short} klinikk`;
-      if (bookBtn) bookBtn.textContent = `Bestill en time i ${d.short}`;
+function initLocations() {
+  const list = document.getElementById('clinicList');
+  const map = document.getElementById('clinicMap');
+  const mapTag = document.getElementById('clinicMapTag');
+  const bookBtn = document.getElementById('clinicBookBtn');
+  const bookBtn2 = document.getElementById('clinicBookBtn2');
+  if (!list || !map) return;
+
+  const defaults = [bookBtn, bookBtn2].map((b) =>
+    b ? { text: b.textContent.trim(), href: b.getAttribute('href') } : null
+  );
+
+  const setBtn = (btn, def, text, link) => {
+    if (!btn) return;
+    btn.textContent = text || def.text;
+    btn.setAttribute('href', link || def.href || '#');
+  };
+
+  list.addEventListener('click', (e) => {
+    const card = e.target.closest('[data-clinic]');
+    if (!card) return;
+
+    list.querySelectorAll('[data-clinic]').forEach((c) => {
+      const isActive = c === card;
+      c.classList.toggle('is-active', isActive);
+      c.classList.toggle('bg-[#F8D8D4]', isActive);
+      c.classList.toggle('border-[#A93E28]', isActive);
+      c.classList.toggle('bg-white', !isActive);
+      c.classList.toggle('border-[#EBE1DA]', !isActive);
+      c.setAttribute('aria-pressed', String(isActive));
     });
-  }
 
+    const ds = card.dataset;
+    const d = CLINIC_DATA[+ds.clinic] || {};
+
+    if (ds.mapSrc) map.src = ds.mapSrc;
+    map.title = `Map of ${d.short || ds.name || ''}`;
+    if (mapTag) mapTag.textContent = ds.mapTag || `${d.short} klinikk`;
+
+    setBtn(bookBtn, defaults[0],
+      ds.buttonText || `Bestill en time i ${d.short}`,
+      ds.buttonLink || d.link);
+    setBtn(bookBtn2, defaults[1], ds.buttonText2, ds.buttonLink2);
+  });
+}
   /* -------------------------------------------------------------------
      Mental health checklist tally
      ------------------------------------------------------------------- */
@@ -2537,6 +2554,71 @@
       });
     });
   }
+	
+	/* -------------------------------------------------------------------
+     Earnings Calculator Widget
+     ------------------------------------------------------------------- */
+  function initEarningsCalculator() {
+    const widget = document.getElementById('earnings-calculator-widget');
+    const toggleContainer = document.getElementById('earnings-toggle-container');
+    const rangeInput = document.getElementById('earnings-range-input');
+    const sliderVal = document.getElementById('earnings-slider-val');
+    const sliderFill = document.getElementById('earnings-slider-fill');
+    const sliderThumb = document.getElementById('earnings-slider-thumb');
+    const totalVal = document.getElementById('earnings-total-val');
+
+    if (!rangeInput || !totalVal) return;
+
+    // Use dynamic rate from data attribute if available, else default
+    const annualRate = widget && widget.getAttribute('data-rate') ? parseFloat(widget.getAttribute('data-rate')) : 70000; 
+
+    function updateUI() {
+      const val = parseInt(rangeInput.value, 10);
+      const min = parseInt(rangeInput.min, 10);
+      const max = parseInt(rangeInput.max, 10);
+
+      const percentage = ((val - min) / (max - min)) * 100;
+      
+      sliderVal.textContent = val;
+      sliderVal.style.left = `${percentage}%`;
+      sliderFill.style.width = `${percentage}%`;
+      sliderThumb.style.left = `${percentage}%`;
+
+      const earnings = val * annualRate;
+      totalVal.textContent = new Intl.NumberFormat('no-NO').format(earnings) + ' Kr';
+    }
+
+    rangeInput.addEventListener('input', updateUI);
+
+    if (toggleContainer) {
+      toggleContainer.addEventListener('click', (e) => {
+        if (e.target.tagName !== 'BUTTON') return;
+        
+        const buttons = toggleContainer.querySelectorAll('button');
+        buttons.forEach(btn => {
+          btn.className = 'bg-transparent text-[#6B5F5A] px-8 py-2 rounded-full text-[14px] font-bold hover:text-[#241C19] transition-all z-10 relative cursor-pointer';
+        });
+        
+        const activeBtn = e.target;
+        activeBtn.className = 'bg-[#C24C33] text-white px-8 py-2 rounded-full text-[14px] font-bold shadow-sm transition-all z-10 relative cursor-pointer';
+
+        const mode = activeBtn.getAttribute('data-type');
+        if (mode === 'full') {
+          rangeInput.max = 40;
+          rangeInput.value = 20;
+        } else {
+          rangeInput.max = 20;
+          rangeInput.value = 10;
+        }
+        
+        document.getElementById('earnings-max-lbl').textContent = rangeInput.max;
+        
+        updateUI();
+      });
+    }
+
+    updateUI();
+  }
 
   function initPsyDirectoryFilter() {
     const psyFilterContainer = document.getElementById('psychologist-filters');
@@ -2603,7 +2685,6 @@
     initFaq();
     initMentalHealthInteractions();
     initArticlesPagination();
-    initAiAssistant();
     initHabitCards();
     initTabGroup('depression', 'emotional');  // depression.html
     initTabGroup('stress',     'physical');   // stress.html
@@ -2665,76 +2746,73 @@
     initTellAFriendShare();
     initTellAFriendInteractiveCard();
     initDigipostCopy();
-    initEarningsCalculator();
+	initEarningsCalculator();
+    initFormTopics();
+    initPatientQuestionCounter();
   });
 
   /* -------------------------------------------------------------------
-     Earnings Calculator Widget
-     ------------------------------------------------------------------- */
-  function initEarningsCalculator() {
-    const widget = document.getElementById('earnings-calculator-widget');
-    const toggleContainer = document.getElementById('earnings-toggle-container');
-    const rangeInput = document.getElementById('earnings-range-input');
-    const sliderVal = document.getElementById('earnings-slider-val');
-    const sliderFill = document.getElementById('earnings-slider-fill');
-    const sliderThumb = document.getElementById('earnings-slider-thumb');
-    const totalVal = document.getElementById('earnings-total-val');
+     Patient Question Form — character counter.
+     Wires #pq-question textarea → #pq-char-count span.
+     Re-uses the same pattern as the Tell-a-Friend card counter.
+     The max limit is read from the textarea's own maxlength attribute
+     so it always matches whatever the PHP template (or HTML) sets.
+  ------------------------------------------------------------------- */
+  function initPatientQuestionCounter() {
+    const textarea = document.getElementById('pq-question');
+    const counter  = document.getElementById('pq-char-count');
+    if (!textarea || !counter) return;
 
-    if (!rangeInput || !totalVal) return;
+    const max = parseInt(textarea.getAttribute('maxlength'), 10) || 1000;
 
-    // Use dynamic rate from data attribute if available, else default
-    const annualRate = widget && widget.getAttribute('data-rate') ? parseFloat(widget.getAttribute('data-rate')) : 70000; 
+    function update() {
+      const len = textarea.value.length;
+      counter.textContent = len;
 
-    function updateUI() {
-      const val = parseInt(rangeInput.value, 10);
-      const min = parseInt(rangeInput.min, 10);
-      const max = parseInt(rangeInput.max, 10);
-
-      const percentage = ((val - min) / (max - min)) * 100;
-      
-      sliderVal.textContent = val;
-      sliderVal.style.left = `${percentage}%`;
-      sliderFill.style.width = `${percentage}%`;
-      sliderThumb.style.left = `${percentage}%`;
-
-      const earnings = val * annualRate;
-      totalVal.textContent = new Intl.NumberFormat('no-NO').format(earnings) + ' Kr';
+      // Optional visual cue: turn red when near the limit
+      const nearLimit = len >= Math.floor(max * 0.9);
+      counter.style.color = nearLimit ? '#C24C33' : '';
     }
 
-    rangeInput.addEventListener('input', updateUI);
+    textarea.addEventListener('input', update);
+    update(); // initialise on page load
+  }
 
-    if (toggleContainer) {
-      toggleContainer.addEventListener('click', (e) => {
-        if (e.target.tagName !== 'BUTTON') return;
-        
-        const buttons = toggleContainer.querySelectorAll('button');
-        buttons.forEach(btn => {
-          btn.className = 'bg-transparent text-[#6B5F5A] px-8 py-2 rounded-full text-[14px] font-bold hover:text-[#241C19] transition-all z-10 relative';
+  /* -------------------------------------------------------------------
+     Form Topics Toggle — pill buttons inside the question-submission form.
+     Clicking a topic pill highlights it and stores the value in the
+     hidden #pq-topic input (used when submitting the form).
+  ------------------------------------------------------------------- */
+  function initFormTopics() {
+    const container = document.getElementById('form-topic-btns');
+    if (!container) return;
+    const btns = container.querySelectorAll('button');
+    const topicInput = document.getElementById('pq-topic');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        // Remove active state from all buttons
+        btns.forEach(b => {
+          b.classList.remove('border-[#C24C33]', 'text-[#C24C33]', 'bg-[#FDF0EC]');
+          b.classList.add('border-[#EFD9CE]', 'text-[#33170F]', 'bg-white');
+          b.removeAttribute('aria-pressed');
         });
-        
-        const activeBtn = e.target;
-        activeBtn.className = 'bg-[#C24C33] text-white px-8 py-2 rounded-full text-[14px] font-bold shadow-sm transition-all z-10 relative';
+        // Apply active state to clicked button
+        this.classList.remove('border-[#EFD9CE]', 'text-[#33170F]', 'bg-white');
+        this.classList.add('border-[#C24C33]', 'text-[#C24C33]', 'bg-[#FDF0EC]');
+        this.setAttribute('aria-pressed', 'true');
 
-        const mode = activeBtn.getAttribute('data-type');
-        if (mode === 'full') {
-          rangeInput.max = 40;
-          rangeInput.value = 20;
-        } else {
-          rangeInput.max = 20;
-          rangeInput.value = 10;
-        }
-        
-        document.getElementById('earnings-max-lbl').textContent = rangeInput.max;
-        
-        updateUI();
+        const label = this.textContent.trim();
+        container.dataset.selected = label;
+        if (topicInput) topicInput.value = label;
       });
-    }
-
-    updateUI();
+    });
   }
 
 })();
 
+
+  
 
 
 /**
@@ -2883,16 +2961,16 @@
 
     const remaining = result.length - shown.size;
     el.moreWrap.hidden = remaining <= 0;
-    el.moreLabel.textContent = `Show more questions (${remaining})`;
+    el.moreLabel.textContent = `Vis flere spørsmål (${remaining})`;
 
     el.clear.hidden = !state.query;
-    el.sortLabel.textContent = state.sort === 'newest' ? 'Newest first' : 'Oldest first';
+    el.sortLabel.textContent = state.sort === 'newest' ? 'Nyeste først' : 'Eldste først';
     el.sortIcon.style.transform = state.sort === 'newest' ? '' : 'rotate(180deg)';
 
-    const where = state.cat === 'All' ? 'all topics' : state.cat;
+    const where = state.cat === 'All' ? 'alle emner' : state.cat;
     el.status.textContent = state.query
-      ? `Showing ${plural(result.length)} for \u201C${state.query}\u201D in ${where}`
-      : `Showing ${plural(result.length)} in ${where}`;
+      ? `Viser ${plural(result.length)} til \u201C${state.query}\u201D i ${where}`
+      : `Viser ${plural(result.length)} i ${where}`;
 
     renderCategories(toks);
     if (focusIndex !== null && result[focusIndex]) result[focusIndex].btn.focus();
@@ -2901,8 +2979,8 @@
   /* ------------------------------ votes ---------------------------- */
   function markVoted(item) {
     item.voteBox.innerHTML = `
-      <span class="text-[13px] text-[#6B5F5A] font-medium">Was this answer helpful?</span>
-      <span class="text-[13px] font-bold text-[#6B5F5A]">Thanks for your feedback.</span>`;
+      <span class="text-[13px] text-[#6B5F5A] font-medium">Var dette svaret nyttig?</span>
+      <span class="text-[13px] font-bold text-[#6B5F5A]">Takk for tilbakemeldingen.</span>`;
   }
 
   /* ------------------------------ events --------------------------- */
@@ -2995,3 +3073,6 @@
 
   init();
 })();
+
+
+

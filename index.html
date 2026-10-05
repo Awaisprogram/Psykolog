@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="fonts.css">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="responsive.css">
+<link rel="stylesheet" href="tailwind.css" />
 </head>
 <body>
 
@@ -241,7 +242,7 @@
     </div>
   </section>
 
-  <section class="who-we-help-section">
+  <section id="who-we-help-section">
   <div class="container">
   <div class="wwh-header" data-reveal>
     <div class="wwh-header__media">
@@ -1518,129 +1519,100 @@
   </div>
 </footer>
 
-<!-- ============ AI MATCHING ASSISTANT ============ -->
-<button type="button" class="ai-launcher" id="aiLauncher" aria-label="Open the psychologist matching assistant">
-  <span class="ai-launcher__halo"></span>
-  <span class="ai-launcher__core">
-    <svg class="icon" data-icon="sparkles"></svg>
-  </span>
-</button>
+<!-- ============ AI CHATBOT WIDGET ============ -->
+<div class="fixed right-4 bottom-4 md:right-7 md:bottom-7 z-[90] font-sans group" id="chatbotWidget">
+  <!-- TALK TO US Tooltip -->
+  <div class="absolute bottom-[calc(100%+16px)] right-0 whitespace-nowrap bg-white text-[#C24C33] font-bold text-[13px] tracking-wide px-4 py-2.5 rounded-2xl shadow-[0_4px_14px_rgba(194,76,51,0.15)] border border-[#F2E4DC] transition-all duration-300 opacity-100 translate-y-0 group-[.is-open]:opacity-0 group-[.is-open]:translate-y-2 group-[.is-open]:pointer-events-none pointer-events-none animate-bounce">
+    TALK TO US
+    <!-- Caret -->
+    <div class="absolute -bottom-1.5 right-6 w-3 h-3 bg-white border-b border-r border-[#F2E4DC] transform rotate-45"></div>
+  </div>
 
-<div class="ai-scrim" id="aiScrim" hidden>
-  <div class="ai-modal" role="dialog" aria-modal="true" aria-label="Psychologist matching assistant" id="aiModal">
-    <div class="ai-modal__head">
-      <div class="ai-modal__head-row">
-        <span class="ai-modal__brand">
-          <span class="icon-circle"><svg class="icon" data-icon="sparkles"></svg></span>
-          <span>
-            <span class="ai-modal__title">Find your psychologist</span>
-            <span class="ai-modal__subtitle">Takes about 2 minutes · nothing is stored</span>
-          </span>
+  <!-- Toggle Button -->
+  <button type="button" class="relative w-14 h-14 md:w-16 md:h-16 border-0 bg-transparent p-0 cursor-pointer transition-transform duration-300 hover:scale-110" id="chatbotToggle" aria-label="Open AI chat assistant">
+    <span class="absolute inset-0 rounded-full bg-[#C24C33] opacity-30 group-[.is-open]:opacity-0"></span>
+    <span class="relative w-full h-full rounded-full bg-gradient-to-br from-[#C24C33] to-[#A93E28] flex items-center justify-center shadow-[0_12px_30px_-12px_rgba(194,76,51,0.55),0_4px_12px_rgba(194,76,51,0.25)] transition-all duration-300">
+      <img src="images/Psykolog-Logo.webp" alt="Chat" class="absolute b w-full p-2 h-full rounded-full object-cover transition-all duration-300 opacity-100 scale-100 rotate-0 group-[.is-open]:opacity-0 group-[.is-open]:scale-50 group-[.is-open]:rotate-90">
+      <svg class="absolute w-6 h-6 md:w-7 md:h-7 stroke-white transition-all duration-300 opacity-0 scale-50 -rotate-90 group-[.is-open]:opacity-100 group-[.is-open]:scale-100 group-[.is-open]:rotate-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </span>
+  </button>
+
+  <!-- Chat Panel -->
+  <div class="absolute bottom-[calc(100%+16px)] right-0 w-[calc(100vw-32px)] md:w-[400px] max-h-[75vh] md:max-h-[560px] bg-white rounded-[20px] shadow-[0_32px_64px_-16px_rgba(92,42,32,0.18),0_12px_24px_-8px_rgba(92,42,32,0.1),0_0_0_1px_rgba(92,42,32,0.06)] flex flex-col overflow-hidden opacity-0 translate-y-4 scale-[0.96] pointer-events-none transition-all duration-300 origin-bottom-right group-[.is-open]:opacity-100 group-[.is-open]:translate-y-0 group-[.is-open]:scale-100 group-[.is-open]:pointer-events-auto" id="chatbotPanel" aria-hidden="true">
+    <!-- Header -->
+    <div class="flex items-center justify-between gap-3 py-4 px-5 bg-gradient-to-br from-[#5C2A20] to-[#7A3928] text-white">
+      <div class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-full shrink-0 overflow-hidden">
+          <img src="images/Psykolog-Logo.webp" alt="Bot" class="w-full h-full object-cover">
         </span>
-        <span class="ai-modal__step" id="aiStepLabel">Step 1 of 4</span>
-        <button type="button" class="ai-modal__close" id="aiCloseBtn" aria-label="Close">✕</button>
+        <div>
+          <span class="block font-bold text-[15px] leading-tight">Psykolog Assistant</span>
+          <span class="flex items-center gap-1.5 text-xs opacity-80 before:content-[''] before:w-1.5 before:h-1.5 before:rounded-full before:bg-[#4ADE80] before:inline-block" id="chatbotStatus">Online</span>
+        </div>
       </div>
-      <div class="ai-modal__progress"><span id="aiProgressBar"></span></div>
+      <div class="flex items-center gap-1.5">
+        <button type="button" class="w-8 h-8 rounded-full border-0 bg-white/10 text-white cursor-pointer flex items-center justify-center transition-colors duration-200 hover:bg-white/20 shrink-0" id="chatbotRefresh" aria-label="Refresh chat">
+          <svg class="w-4 h-4 stroke-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+            <path d="M3 3v5h5"></path>
+          </svg>
+        </button>
+        <button type="button" class="w-8 h-8 rounded-full border-0 bg-white/10 text-white cursor-pointer flex items-center justify-center transition-colors duration-200 hover:bg-white/20 shrink-0 hidden md:flex" id="chatbotMaximize" aria-label="Maximize chat">
+          <svg class="w-4 h-4 stroke-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path>
+          </svg>
+        </button>
+        <button type="button" class="w-8 h-8 rounded-full border-0 bg-white/10 text-white cursor-pointer flex items-center justify-center transition-colors duration-200 hover:bg-white/20 shrink-0" id="chatbotClose" aria-label="Close chat">
+          <svg class="w-4 h-4 stroke-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <div class="ai-modal__body" id="aiBody">
-
-      <!-- Step 0: concerns -->
-      <div class="ai-screen is-active" data-ai-step="0">
-        <h2>What best describes how you are feeling today?</h2>
-        <p id="aiSelCount">Select everything that applies, there is no wrong answer.</p>
-        <div class="ai-cards" id="aiConcernCards"></div>
-        <div class="ai-own">
-          <button type="button" class="ai-own__toggle" id="aiOwnToggle">
-            <span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="pencil"></svg></span>
-            <span>Describe it in your own words</span>
-            <span class="ai-own__badge">Optional</span>
-          </button>
-          <div class="ai-own__panel" id="aiOwnPanel">
-            <div class="ai-own__panel-inner">
-              <textarea id="aiOwnWords" placeholder="Say as much or as little as you like…" rows="3"></textarea>
-            </div>
+    <!-- Messages -->
+    <style>
+      .chatbot-quick-reply { width: 100%; text-align: center; margin-bottom: 0.25rem; }
+      .is-maximized .chatbot-quick-reply { width: auto; text-align: left; }
+    </style>
+    <div class="flex-1 overflow-y-auto py-5 px-4 flex flex-col gap-4 min-h-[300px] bg-[#FDFAF8] scroll-smooth [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#DFD0C7] [&::-webkit-scrollbar-thumb]:rounded-full" id="chatbotMessages">
+      <div class="flex gap-2.5 max-w-[88%] self-start animate-fade-in-up">
+        <div class="w-7 h-7 rounded-full shrink-0 overflow-hidden">
+          <img src="images/widget.webp" alt="Bot" class="w-full h-full object-cover">
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="py-3 px-4 rounded-2xl text-sm leading-relaxed break-words bg-white text-[#3D2E28] border border-[#F2E4DC] rounded-bl-sm shadow-[0_2px_6px_rgba(92,42,32,0.04)] [&>p]:m-0 [&>p+p]:mt-2">
+            <p>Hi there! 👋 I'm your Psykolog assistant. How can I help you today?</p>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-1">
+            <button type="button" class="chatbot-quick-reply text-xs px-3 py-1.5 bg-[#F8EBE2] text-[#C24C33] border border-[#F0E1D8] rounded-full transition-colors hover:bg-[#F0E1D8] cursor-pointer">How to contact you?</button>
+            <button type="button" class="chatbot-quick-reply text-xs px-3 py-1.5 bg-[#F8EBE2] text-[#C24C33] border border-[#F0E1D8] rounded-full transition-colors hover:bg-[#F0E1D8] cursor-pointer">What services do you offer?</button>
+            <button type="button" class="chatbot-quick-reply text-xs px-3 py-1.5 bg-[#F8EBE2] text-[#C24C33] border border-[#F0E1D8] rounded-full transition-colors hover:bg-[#F0E1D8] cursor-pointer">Book an appointment</button>
           </div>
         </div>
       </div>
-
-      <!-- Step 1: duration -->
-      <div class="ai-screen" data-ai-step="1">
-        <h2>How long have you been experiencing this?</h2>
-        <p>A rough sense is enough, it helps us understand what kind of support fits.</p>
-        <div class="ai-seg" id="aiDurations">
-          <button type="button" class="ai-seg__opt" data-duration="0"><span class="ai-seg__dot"></span>A few days</button>
-          <button type="button" class="ai-seg__opt" data-duration="1"><span class="ai-seg__dot"></span>1 to 2 weeks</button>
-          <button type="button" class="ai-seg__opt" data-duration="2"><span class="ai-seg__dot"></span>About a month</button>
-          <button type="button" class="ai-seg__opt" data-duration="3"><span class="ai-seg__dot"></span>Several months</button>
-          <button type="button" class="ai-seg__opt" data-duration="4"><span class="ai-seg__dot"></span>More than a year</button>
-          <button type="button" class="ai-seg__opt" data-duration="5"><span class="ai-seg__dot"></span>I'm not sure</button>
-        </div>
-      </div>
-
-      <!-- Step 2: dynamic questions -->
-      <div class="ai-screen" data-ai-step="2">
-        <h2>A few questions, based on what you told us.</h2>
-        <p>Answer what you can. You can skip anything that does not fit.</p>
-        <div id="aiQuestions"></div>
-      </div>
-
-      <!-- Step 3: prefs -->
-      <div class="ai-screen" data-ai-step="3">
-        <h2>What kind of support are you looking for?</h2>
-        <p>Choose as many as apply, and "not sure yet" is a perfectly good answer.</p>
-        <div class="ai-prefs" id="aiPrefs">
-          <button type="button" class="ai-pref" data-pref="Individual therapy"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="user"></svg></span><span>Individual therapy</span><span class="ai-pref__check">✓</span></button>
-          <button type="button" class="ai-pref" data-pref="Couples therapy"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="heart-handshake"></svg></span><span>Couples therapy</span><span class="ai-pref__check">✓</span></button>
-          <button type="button" class="ai-pref" data-pref="Child psychologist"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="baby"></svg></span><span>Child psychologist</span><span class="ai-pref__check">✓</span></button>
-          <button type="button" class="ai-pref" data-pref="Family therapy"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="users"></svg></span><span>Family therapy</span><span class="ai-pref__check">✓</span></button>
-          <button type="button" class="ai-pref" data-pref="Online sessions"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="video"></svg></span><span>Online sessions</span><span class="ai-pref__check">✓</span></button>
-          <button type="button" class="ai-pref" data-pref="In-person sessions"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="building-2"></svg></span><span>In-person sessions</span><span class="ai-pref__check">✓</span></button>
-          <button type="button" class="ai-pref" data-pref="First time in therapy"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="sparkles"></svg></span><span>First time in therapy</span><span class="ai-pref__check">✓</span></button>
-          <button type="button" class="ai-pref" data-pref="Not sure yet"><span class="icon-circle icon-circle--sm"><svg class="icon" data-icon="compass"></svg></span><span>Not sure yet</span><span class="ai-pref__check">✓</span></button>
-        </div>
-      </div>
-
-      <!-- Step 4: matching animation -->
-      <div class="ai-screen" data-ai-step="4">
-        <span class="ai-loader">
-          <span class="ai-loader__halo"></span>
-          <svg class="icon" data-icon="sparkles"></svg>
-        </span>
-        <h2>Finding psychologists who best match what you have shared…</h2>
-        <div class="ai-loader__lines" id="aiMatchLines">
-          <span>Reading what you have shared…</span>
-          <span>Comparing it with our psychologists' areas of expertise…</span>
-          <span>Putting your shortlist together…</span>
-        </div>
-        <div class="ai-loader__bar"><span id="aiMatchBar"></span></div>
-        <span class="ai-loader__dots"><span></span><span></span><span></span></span>
-      </div>
-
-      <!-- Step 5: results -->
-      <div class="ai-screen" data-ai-step="5">
-        <div class="eyebrow"><span class="eyebrow__dot">✳</span><span>Your shortlist</span></div>
-        <h2>Recommended psychologists</h2>
-        <p id="aiMatchIntro">These psychologists work across the concerns people most often bring to us.</p>
-        <div class="ai-results" id="aiResults"></div>
-        <div class="ai-disclaimer">
-          <svg class="icon" data-icon="info"></svg>
-          <p>This assistant helps you identify psychologists whose expertise aligns with what you have shared. It does not provide medical advice, diagnosis, or emergency support. If you are experiencing a mental health crisis, please contact your local emergency services or a qualified healthcare provider immediately.</p>
-        </div>
-        <div class="text-center mt-20">
-          <button type="button" class="btn btn--outline" id="aiRestartBtn">Start over</button>
-        </div>
-      </div>
-
     </div>
 
-    <div class="ai-modal__foot" id="aiFoot">
-      <button type="button" class="btn btn--outline" id="aiBackBtn">Previous</button>
-      <button type="button" class="btn btn--primary" id="aiNextBtn" disabled>Continue</button>
-    </div>
+    <!-- Input -->
+    <form class="flex items-center gap-2 p-3.5 px-4 border-t border-[#F2E4DC] bg-white" id="chatbotForm">
+      <input type="text" id="chatbotInput" placeholder="Type your message..." autocomplete="off" aria-label="Type a message" class="flex-1 border border-[#F2E4DC] rounded-full py-3 px-4 text-sm text-[#3D2E28] bg-[#FDFAF8] outline-none transition-all duration-200 font-inherit placeholder:text-[#C9AFA4] focus:border-[#C24C33] focus:ring-[3px] focus:ring-[#C24C33]/10">
+      <button type="submit" id="chatbotSend" aria-label="Send message" class="w-10 h-10 border-0 rounded-full bg-gradient-to-br from-[#C24C33] to-[#A93E28] text-white cursor-pointer flex items-center justify-center shrink-0 transition-all duration-200 shadow-[0_4px_12px_rgba(194,76,51,0.25)] hover:scale-105 hover:shadow-[0_6px_16px_rgba(194,76,51,0.35)] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+        <svg class="w-4 h-4 stroke-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </form>
   </div>
 </div>
 
+
+
 <script src="script.js"></script>
+<script src="chatbot.js"></script>
 </body>
 </html>
