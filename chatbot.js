@@ -2,7 +2,7 @@
    CHATBOT WIDGET — connects to FastAPI backend at /chat
    =================================================================== */
 (function initChatbotWidget() {
-  const CHAT_API_URL = 'http://127.0.0.1:8000/chat';
+  const CHAT_API_URL = 'https://psykolog-backend.vercel.app/chat';
 
   const widget = document.getElementById('chatbotWidget');
   const toggle = document.getElementById('chatbotToggle');
